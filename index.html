@@ -1469,4 +1469,79 @@ async function sendContact(e) {
           <h3>¡Listo! Mensaje recibido.</h3>
           <p>Te contactaremos en menos de 24 horas con tu auditoría gratuita personalizada.</p>
         </div>`;
-      try { gtag('event', 'contac
+      try { gtag('event', 'contact_form_submit', { event_category: 'conversion' }); } catch(_){}
+    } else {
+      throw new Error('FormSubmit error');
+    }
+  } catch (err) {
+    const subject = encodeURIComponent(`Consulta SEO — ${nom}`);
+    const body    = encodeURIComponent(`Nombre: ${nom}\nEmail: ${em}\nWeb: ${web}\n\n${msg}`);
+    window.location.href = `mailto:bernalluisdiaz@gmail.com?subject=${subject}&body=${body}`;
+    btn.disabled = false;
+    btn.textContent = 'Enviar mensaje →';
+  }
+}
+</script>
+
+<script type="application/ld+json">
+[
+  {
+    "@context": "https://schema.org",
+    "@type": ["LocalBusiness", "ProfessionalService"],
+    "@id": "https://rankeo-nu.vercel.app/#org",
+    "name": "Rankeo",
+    "url": "https://rankeo-nu.vercel.app",
+    "description": "Agencia de SEO y sitios web para Colombia, México y USA Hispanic.",
+    "areaServed": [
+      { "@type": "Country", "name": "Colombia" },
+      { "@type": "Country", "name": "México" },
+      { "@type": "Country", "name": "United States" }
+    ],
+    "priceRange": "$199-$649",
+    "currenciesAccepted": "USD",
+    "address": { "@type": "PostalAddress", "addressCountry": "CO", "addressLocality": "Bogotá" },
+    "contactPoint": { "@type": "ContactPoint", "contactType": "sales", "availableLanguage": "Spanish", "url": "https://rankeo-nu.vercel.app/#contacto" }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "serviceType": "Search Engine Optimization",
+    "name": "Plan Local",
+    "provider": { "@id": "https://rankeo-nu.vercel.app/#org" },
+    "offers": { "@type": "Offer", "price": "199", "priceCurrency": "USD" }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "serviceType": "Search Engine Optimization",
+    "name": "Plan Web + SEO",
+    "provider": { "@id": "https://rankeo-nu.vercel.app/#org" },
+    "offers": { "@type": "Offer", "price": "349", "priceCurrency": "USD" }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "serviceType": "Search Engine Optimization",
+    "name": "Plan Autoridad",
+    "provider": { "@id": "https://rankeo-nu.vercel.app/#org" },
+    "offers": { "@type": "Offer", "price": "649", "priceCurrency": "USD" }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "¿Cuánto tiempo tarda el SEO en dar resultados?", "acceptedAnswer": { "@type": "Answer", "text": "Los primeros resultados visibles se dan entre 60 y 90 días. Resultados sólidos suelen consolidarse entre los 4 y 6 meses." } },
+      { "@type": "Question", "name": "¿Tienen contratos anuales?", "acceptedAnswer": { "@type": "Answer", "text": "No. Trabajamos mes a mes. Si no ves resultados, puedes cancelar sin penalizaciones." } },
+      { "@type": "Question", "name": "¿ Qué incluye la auditoría SEO gratis?", "acceptedAnswer": { "@type": "Answer", "text": "Análisis de velocidad, SEO técnico, visibilidad en Google Maps, keywords principales y 3 acciones prioritarias concretas." } },
+      { "@type": "Question", "name": "¿Trabajan con negocios pequeños?", "acceptedAnswer": { "@type": "Answer", "text": "Sí. La mayoría de nuestros clientes son PYMES, profesionales independientes y negocios locales en Colombia y México." } },
+      { "@type": "Question", "name": "¿ Qué diferencia a Rankeo de otras agencias?", "acceptedAnswer": { "@type": "Answer", "text": "Nos especializamos en SEO local para Latinoamérica. Conocemos el mercado colombiano y mexicano, sus búsquedas y su competencia." } },
+      { "@type": "Question", "name": "¿Pueden crear mi sitio web y hacer SEO al mismo tiempo?", "acceptedAnswer": { "@type": "Answer", "text": "Sí. Nuestros planes Web + SEO y Autoridad incluyen diseño y desarrollo con SEO técnico incorporado desde el primer día." } },
+      { "@type": "Question", "name": "¿ Cómo me reportan los avances?", "acceptedAnswer": { "@type": "Answer", "text": "Reporte mensual con métricas claras: posiciones ganadas, tráfico orgánico, keywords en top 10 y acciones del mes siguiente." } },
+      { "@type": "Question", "name": "¿Trabajan con empresas fuera de Colombia?", "acceptedAnswer": { "@type": "Answer", "text": "Sí, atendemos México, Colombia y el mercado hispano en USA." } }
+    ]
+  }
+]
+</script>
+
+</body>
+</html>
