@@ -56,6 +56,12 @@
 
   <!-- Landings por industria -->
   <url>
+    <loc>https://rankeo-nu.vercel.app/seo-para-abogados.html</loc>
+    <lastmod>2026-06-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://rankeo-nu.vercel.app/seo-para-dentistas.html</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
@@ -88,6 +94,12 @@
     <lastmod>2026-06-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://rankeo-nu.vercel.app/blog/por-que-no-aparezco-en-google.html</loc>
+    <lastmod>2026-06-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://rankeo-nu.vercel.app/blog/cuanto-cuesta-seo-colombia-2026.html</loc>
