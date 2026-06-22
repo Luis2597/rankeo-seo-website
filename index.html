@@ -1328,13 +1328,65 @@ function acceptCookies() {
 })();
 
 /* ── Contact ── */
-function sendContact(e) {
+async function sendContact(e) {
   e.preventDefault();
-  document.getElementById('cwrap').innerHTML = `
-    <div class="cok" role="status" aria-live="polite">
-      <h3>¡Mensaje recibido!</h3>
-      <p>Te contactaremos en menos de 24 horas con tu auditoría gratuita personalizada.</p>
-    </div>`;
+  const form = e.target;
+  const btn  = form.querySelector('.csend');
+
+  const nom  = document.getElementById('cnom').value.trim();
+  const em   = document.getElementById('cem').value.trim();
+  const msg  = document.getElementById('cmsg').value.trim();
+  const priv = document.getElementById('cpriv').checked;
+
+  if (!nom || !em || !priv) {
+    btn.textContent = 'Completa los campos obligatorios';
+    btn.style.background = '#dc2626';
+    setTimeout(() => { btn.textContent = 'Enviar mensaje →'; btn.style.background = ''; }, 2500);
+    return;
+  }
+
+  btn.disabled = true;
+  btn.textContent = 'Enviando…';
+
+  const web = document.getElementById('cweb') ? document.getElementById('cweb').value.trim() : '';
+
+  try {
+    const data = new FormData();
+    data.append('name',    nom);
+    data.append('email',   em);
+    data.append('website', web);
+    data.append('message', msg);
+    data.append('_subject', `Nueva consulta Rankeo — ${nom}`);
+    data.append('_replyto', em);
+    data.append('_captcha', 'false');
+    data.append('_template', 'table');
+
+    const res = await fetch('https://formsubmit.co/bernalluisdiaz@gmail.com', {
+      method: 'POST',
+      headers: { 'Accept': 'application/json' },
+      body: data,
+    });
+
+    const json = await res.json().catch(() => ({}));
+
+    if (res.ok && json.success !== 'false') {
+      document.getElementById('cwrap').innerHTML = `
+        <div class="cok" role="status" aria-live="polite">
+          <svg viewBox="0 0 24 24" fill="none" stroke="var(--c-orange)" stroke-width="2" style="width:48px;height:48px;margin-bottom:16px"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          <h3>¡Listo! Mensaje recibido.</h3>
+          <p>Te contactaremos en menos de 24 horas con tu auditoría gratuita personalizada.</p>
+        </div>`;
+      try { gtag('event', 'contact_form_submit', { event_category: 'conversion' }); } catch(_){}
+    } else {
+      throw new Error('FormSubmit error');
+    }
+  } catch (err) {
+    const subject = encodeURIComponent(`Consulta SEO — ${nom}`);
+    const body    = encodeURIComponent(`Nombre: ${nom}\nEmail: ${em}\nWeb: ${web}\n\n${msg}`);
+    window.location.href = `mailto:bernalluisdiaz@gmail.com?subject=${subject}&body=${body}`;
+    btn.disabled = false;
+    btn.textContent = 'Enviar mensaje →';
+  }
 }
 </script>
 
