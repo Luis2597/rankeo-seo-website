@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="es-CO">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>La Leña Restaurante | Parrilla colombiana en La Candelaria, Bogotá</title>
+  <meta name="description" content="Restaurante de parrilla y cocina de autor en La Candelaria, Bogotá. Ingredientes locales, brasa de leña y sabores que cuentan historias. Reservas disponibles."/>
+  <link rel="canonical" href="https://rankeo-nu.vercel.app/demo/restaurante-bogota"/>
+  <meta property="og:title" content="La Leña Restaurante | Bogotá"/>
+  <meta property="og:description" content="Parrilla colombiana en La Candelaria, Bogotá. Ingredientes locales, brasa de leña."/>
+  <meta property="og:type" content="website"/>
+  <meta name="robots" content="noindex,follow"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;1,9..144,300;1,9..144,600&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --ink:    #1A1209;
+      --clay:   #8B4513;
+      --warm:   #C4692A;
+      --cream:  #FBF5EC;
+      --sand:   #F0E6D3;
+      --stone:  #E5D5BB;
+      --muted:  #6B5C47;
+      --border: #D9C9B0;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+    body { font-family: 'Outfit', sans-serif; background: var(--cream); color: var(--ink); }
+    a { text-decoration: none; color: inherit; }
+    .con { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+
+    /* ── NAV ── */
+    nav { position: sticky; top: 0; z-index: 100; background: rgba(251,245,236,.96); backdrop-filter: blur(10px); border-bottom: 1px solid var(--border); }
+    .nav-i { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; height: 68px; padding: 0 24px; }
+    .logo { font-family: 'Fraunces', serif; font-weight: 600; font-size: 24px; color: var(--ink); letter-spacing: -.01em; }
+    .logo span { color: var(--warm); }
+    .nav-links { display: flex; gap: 28px; }
+    .nav-links a { font-size: 13px; font-weight: 500; color: var(--muted); transition: color .2s; letter-spacing: .04em; }
+    .nav-links a:hover { color: var(--ink); }
+    .nav-cta { background: var(--warm); color: white; font-size: 13px; font-weight: 600; padding: 10px 22px; border-radius: 40px; transition: background .2s, transform .15s; }
+    .nav-cta:hover { background: var(--clay); transform: translateY(-1px); }
+
+    /* ── HERO ── */
+    .hero { background: var(--ink); color: white; min-height: 88vh; display: flex; align-items: center; position: relative; overflow: hidden; }
+    .hero-texture { position: absolute; inset: 0; background-image: radial-gradient(circle at 20% 80%, rgba(196,105,42,.18) 0%, transparent 50%), radial-gradient(circle at 80% 20%, rgba(139,69,19,.15) 0%, transparent 50%); }
+    .hero-inner { position: relative; z-index: 1; display: grid; grid-template-columns: 1fr 440px; gap: 80px; align-items: center; padding: 80px 0; }
+    .hero-eyebrow { font-size: 11.5px; font-weight: 500; text-transform: uppercase; letter-spacing: .18em; color: var(--warm); margin-bottom: 20px; }
+    h1 { font-family: 'Fraunces', serif; font-size: clamp(3rem, 7vw, 5.5rem); font-weight: 600; line-height: 1.0; letter-spacing: -.02em; margin-bottom: 22px; }
+    h1 em { font-style: italic; color: var(--warm); }
+    .hero-sub { font-size: 17px; color: rgba(255,255,255,.65); line-height: 1.75; margin-bottom: 36px; font-weight: 300; }
+    .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+    .btn-warm { background: var(--warm); color: white; font-size: 14px; font-weight: 600; padding: 14px 28px; border-radius: 40px; transition: background .2s, transform .15s; }
+    .btn-warm:hover { background: var(--clay); transform: translateY(-1px); }
+    .btn-ghost { background: transparent; color: rgba(255,255,255,.75); font-size: 14px; font-weight: 500; padding: 14px 20px; border-radius: 40px; border: 1px solid rgba(255,255,255,.18); transition: border-color .2s, color .2s; }
+    .btn-ghost:hover { border-color: rgba(255,255,255,.5); color: white; }
+    /* badge card */
+    .hero-card { background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.1); border-radius: 16px; overflow: hidden; }
+    .hc-img { height: 220px; background: linear-gradient(160deg, #4a2800, #8B4513, #C4692A); display: flex; align-items: center; justify-content: center; font-size: 80px; }
+    .hc-body { padding: 24px; }
+    .hc-name { font-family: 'Fraunces', serif; font-size: 1.35rem; font-weight: 600; margin-bottom: 6px; }
+    .hc-desc { font-size: 13px; color: rgba(255,255,255,.55); line-height: 1.6; margin-bottom: 20px; }
+    .hc-badges { display: flex; gap: 8px; flex-wrap: wrap; }
+    .badge { font-size: 11px; font-weight: 500; padding: 4px 10px; border-radius: 20px; background: rgba(196,105,42,.2); color: var(--warm); border: 1px solid rgba(196,105,42,.3); }
+    .hero-note { margin-top: 36px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,.1); display: flex; align-items: center; gap: 20px; }
+    .hn-item { text-align: center; }
+    .hn-n { font-family: 'Fraunces', serif; font-size: 1.7rem; font-weight: 600; color: var(--warm); }
+    .hn-l { font-size: 11px; text-transform: uppercase; letter-spacing: .1em; color: rgba(255,255,255,.4); margin-top: 2px; }
+    .hn-sep { width: 1px; height: 36px; background: rgba(255,255,255,.12); }
+
+    /* ── MENU ── */
+    .menu { padding: 100px 0; }
+    .section-eyebrow { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: .18em; color: var(--warm); margin-bottom: 10px; }
+    .section-h { font-family: 'Fraunces', serif; font-size: clamp(2rem, 4vw, 3.2rem); font-weight: 600; letter-spacing: -.02em; line-height: 1.1; margin-bottom: 52px; }
+    .menu-cats { display: flex; gap: 8px; margin-bottom: 40px; flex-wrap: wrap; }
+    .cat-btn { font-size: 12.5px; font-weight: 500; padding: 8px 20px; border-radius: 40px; border: 1px solid var(--border); cursor: pointer; transition: all .2s; background: transparent; color: var(--muted); }
+    .cat-btn.active { background: var(--ink); color: white; border-color: var(--ink); }
+    .dishes { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0; border: 1px solid var(--border); border-radius: 12px; overflow: hidden; }
+    .dish { padding: 22px 24px; border-bottom: 1px solid var(--border); display: flex; align-items: flex-start; gap: 16px; transition: background .15s; }
+    .dish:nth-last-child(-n+2) { border-bottom: none; }
+    .dish:hover { background: var(--sand); }
+    .dish:nth-child(odd) { border-right: 1px solid var(--border); }
+    .dish-emoji { font-size: 28px; flex-shrink: 0; }
+    .dish-name { font-family: 'Fraunces', serif; font-size: 1rem; font-weight: 600; letter-spacing: -.01em; margin-bottom: 4px; }
+    .dish-desc { font-size: 12.5px; color: var(--muted); line-height: 1.55; margin-bottom: 8px; }
+    .dish-foot { display: flex; align-items: center; gap: 8px; }
+    .dish-price { font-size: 14px; font-weight: 600; color: var(--warm); }
+    .dish-tag { font-size: 10.5px; padding: 2px 8px; border-radius: 20px; background: rgba(196,105,42,.1); color: var(--clay); font-weight: 500; }
+
+    /* ── ABOUT ── */
+    .about { padding: 96px 0; background: var(--ink); color: white; }
+    .about-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+    .about-visual { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .av-block { border-radius: 12px; overflow: hidden; display: flex; align-items: center; justify-content: center; font-size: 50px; }
+    .av-block:first-child { grid-row: span 2; min-height: 280px; background: linear-gradient(160deg, #2a1400, var(--clay)); }
+    .av-block:not(:first-child) { min-height: 130px; background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.08); }
+    .about-text h2 { font-family: 'Fraunces', serif; font-size: clamp(1.8rem, 3.5vw, 2.8rem); font-weight: 600; letter-spacing: -.02em; line-height: 1.15; margin-bottom: 20px; }
+    .about-text h2 em { color: var(--warm); font-style: italic; }
+    .about-text p { font-size: 15px; color: rgba(255,255,255,.6); line-height: 1.8; margin-bottom: 20px; font-weight: 300; }
+    .about-vals { margin-top: 32px; display: flex; flex-direction: column; gap: 12px; }
+    .av-item { display: flex; align-items: center; gap: 12px; font-size: 14px; color: rgba(255,255,255,.75); }
+    .av-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--warm); flex-shrink: 0; }
+
+    /* ── RESERVA ── */
+    .reserva { padding: 96px 0; }
+    .res-inner { background: var(--sand); border: 1px solid var(--border); border-radius: 20px; padding: 60px; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+    .res-left h2 { font-family: 'Fraunces', serif; font-size: clamp(2rem,4vw,3rem); font-weight: 600; letter-spacing: -.02em; line-height: 1.1; margin-bottom: 16px; }
+    .res-left p { font-size: 15px; color: var(--muted); line-height: 1.7; margin-bottom: 28px; }
+    .res-info { display: flex; flex-direction: column; gap: 12px; }
+    .ri { display: flex; align-items: flex-start; gap: 10px; font-size: 13.5px; color: var(--muted); }
+    .ri-icon { font-size: 16px; flex-shrink: 0; margin-top: 1px; }
+    .res-form { display: flex; flex-direction: column; gap: 14px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .inp { background: white; border: 1.5px solid var(--border); border-radius: 10px; padding: 13px 16px; font-family: 'Outfit', sans-serif; font-size: 14px; color: var(--ink); width: 100%; transition: border-color .2s; outline: none; }
+    .inp:focus { border-color: var(--warm); }
+    .inp::placeholder { color: #bbb; }
+    .btn-res { background: var(--warm); color: white; font-size: 14px; font-weight: 600; padding: 14px; border-radius: 10px; border: none; cursor: pointer; font-family: 'Outfit', sans-serif; width: 100%; transition: background .2s; }
+    .btn-res:hover { background: var(--clay); }
+
+    /* ── FOOTER ── */
+    footer { background: var(--ink); color: rgba(255,255,255,.5); padding: 40px 0; border-top: 1px solid rgba(255,255,255,.08); }
+    .foot-inner { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+    .foot-logo { font-family: 'Fraunces', serif; font-size: 20px; font-weight: 600; color: white; }
+    .foot-logo span { color: var(--warm); }
+    .foot-copy { font-size: 12.5px; }
+    .foot-powered a { color: rgba(255,255,255,.35); font-size: 12px; text-decoration: underline; text-underline-offset: 3px; }
+
+    /* ── DEMO BANNER ── */
+    .demo-banner { background: #0D0D0D; color: rgba(255,255,255,.75); text-align: center; padding: 9px 16px; font-size: 12.5px; }
+    .demo-banner strong { color: white; }
+    .demo-banner a { color: #F04E23; font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
+
+    @media (max-width: 768px) {
+      .hero-inner, .about-inner, .res-inner { grid-template-columns: 1fr; gap: 40px; }
+      .hero-card { display: none; }
+      .dishes { grid-template-columns: 1fr; }
+      .dish:nth-child(odd) { border-right: none; }
+      .dish:nth-last-child(-n+2) { border-bottom: 1px solid var(--border); }
+      .dish:last-child { border-bottom: none; }
+      .form-row { grid-template-columns: 1fr; }
+      .nav-links { display: none; }
+      .foot-inner { flex-direction: column; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="demo-banner">
+  <strong>Proyecto demo</strong> — Sitio de muestra creado por <a href="https://rankeo-nu.vercel.app" target="_blank" rel="noopener">Rankeo</a>. ¿Quieres uno así para tu restaurante? <a href="https://rankeo-nu.vercel.app/#contacto" target="_blank" rel="noopener">Contáctanos →</a>
+</div>
+
+<nav>
+  <div class="nav-i">
+    <div class="logo">La <span>Leña</span></div>
+    <div class="nav-links">
+      <a href="#menu">Menú</a>
+      <a href="#nosotros">Nosotros</a>
+      <a href="#reserva">Reservas</a>
+    </div>
+    <a href="#reserva" class="nav-cta">Reservar mesa</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-texture"></div>
+  <div class="con">
+    <div class="hero-inner">
+      <div>
+        <div class="hero-eyebrow">📍 La Candelaria · Bogotá</div>
+        <h1>Cocina viva,<br/><em>fuego real</em></h1>
+        <p class="hero-sub">Parrilla de leña y cocina de autor con ingredientes del campo colombiano. Cada plato cuenta una historia que empieza en Boyacá y termina en tu mesa.</p>
+        <div class="hero-actions">
+          <a href="#reserva" class="btn-warm">Reservar mesa</a>
+          <a href="#menu" class="btn-ghost">Ver menú completo</a>
+        </div>
+        <div class="hero-note">
+          <div class="hn-item"><div class="hn-n">4.8★</div><div class="hn-l">Google Maps</div></div>
+          <div class="hn-sep"></div>
+          <div class="hn-item"><div class="hn-n">320+</div><div class="hn-l">Reseñas</div></div>
+          <div class="hn-sep"></div>
+          <div class="hn-item"><div class="hn-n">8 años</div><div class="hn-l">En Bogotá</div></div>
+        </div>
+      </div>
+      <div class="hero-card">
+        <div class="hc-img">🔥</div>
+        <div class="hc-body">
+          <div class="hc-name">Costillar a la brasa</div>
+          <div class="hc-desc">Costilla de res madurada 21 días, brasa de leña de encino, chimichurri de hierbas de páramo y yuca frita de Tolima.</div>
+          <div class="hc-badges">
+            <span class="badge">Leña de encino</span>
+            <span class="badge">Madurado 21 días</span>
+            <span class="badge">Origen Colombia</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="menu" id="menu">
+  <div class="con">
+    <div class="section-eyebrow">Carta</div>
+    <h2 class="section-h">Lo que sale hoy<br/>de la brasa</h2>
+    <div class="menu-cats">
+      <button class="cat-btn active">Para compartir</button>
+      <button class="cat-btn">Carnes</button>
+      <button class="cat-btn">Mar y río</button>
+      <button class="cat-btn">Postres</button>
+    </div>
+    <div class="dishes">
+      <div class="dish">
+        <div class="dish-emoji">🫙</div>
+        <div>
+          <div class="dish-name">Hogao con tostadas de maíz</div>
+          <div class="dish-desc">Hogao lento con tomate chonto y cebolla larga, tostadas artesanales de maíz amarillo del Huila.</div>
+          <div class="dish-foot"><span class="dish-price">$24.000</span><span class="dish-tag">Vegetariano</span></div>
+        </div>
+      </div>
+      <div class="dish">
+        <div class="dish-emoji">🦴</div>
+        <div>
+          <div class="dish-name">Chicharrón de cerdo a la leña</div>
+          <div class="dish-desc">Panceta de cerdo negro de Nariño, 6 horas en brasa lenta, ají de maní y limón mandarino.</div>
+          <div class="dish-foot"><span class="dish-price">$38.000</span><span class="dish-tag">Especial del chef</span></div>
+        </div>
+      </div>
+      <div class="dish">
+        <div class="dish-emoji">🫑</div>
+        <div>
+          <div class="dish-name">Mazorca asada con mantequilla de chipotle</div>
+          <div class="dish-desc">Choclo dulce de Boyacá a la brasa, mantequilla de chipotle, queso costeño rallado y cilantro.</div>
+          <div class="dish-foot"><span class="dish-price">$18.000</span><span class="dish-tag">Vegetariano</span></div>
+        </div>
+      </div>
+      <div class="dish">
+        <div class="dish-emoji">🧀</div>
+        <div>
+          <div class="dish-name">Tabla de quesos artesanales</div>
+          <div class="dish-desc">Selección de 4 quesos de pequeños productores: quesillo, campesino, manchego colombiano y cabra de Cundinamarca.</div>
+          <div class="dish-foot"><span class="dish-price">$45.000</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="about" id="nosotros">
+  <div class="con">
+    <div class="about-inner">
+      <div class="about-visual">
+        <div class="av-block" style="font-size:60px;">🔥</div>
+        <div class="av-block">🌿</div>
+        <div class="av-block">🐄</div>
+      </div>
+      <div class="about-text">
+        <div class="section-eyebrow" style="color: var(--warm);">Nuestra historia</div>
+        <h2>Cocina con<br/><em>raíces</em></h2>
+        <p>La Leña nació de un viaje por los mercados campesinos de Colombia. Claudia Herrera dejó su puesto en un restaurante de Medellín para abrir un fogón propio donde los ingredientes mandan y el fuego es el único truco.</p>
+        <p>Trabajamos directamente con 12 familias campesinas de Boyacá, Huila y Nariño. Nada llega congelado, nada viene de importación innecesaria.</p>
+        <div class="about-vals">
+          <div class="av-item"><div class="av-dot"></div>Ingredientes de origen trazable, 100% colombiano</div>
+          <div class="av-item"><div class="av-dot"></div>Menú de temporada que cambia con la cosecha</div>
+          <div class="av-item"><div class="av-dot"></div>Sin msg ni conservantes — cocinamos el día a día</div>
+          <div class="av-item"><div class="av-dot"></div>Vinos naturales y cervezas artesanales de Colombia</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="reserva" id="reserva">
+  <div class="con">
+    <div class="res-inner">
+      <div class="res-left">
+        <div class="section-eyebrow">Reservas</div>
+        <h2>Asegura tu mesa</h2>
+        <p>Los fines de semana se agotan. Si quieres una experiencia sin afanes, reserva con anticipación.</p>
+        <div class="res-info">
+          <div class="ri"><span class="ri-icon">📍</span><span>Calle 12D #2-59, La Candelaria, Bogotá</span></div>
+          <div class="ri"><span class="ri-icon">🕐</span><span>Mar–Dom: 12pm–11pm · Lunes: cerrado</span></div>
+          <div class="ri"><span class="ri-icon">📞</span><span>(601) 234-5678 · WhatsApp disponible</span></div>
+        </div>
+      </div>
+      <form class="res-form" onsubmit="return false;">
+        <div class="form-row">
+          <input class="inp" type="text" placeholder="Tu nombre"/>
+          <input class="inp" type="email" placeholder="Email"/>
+        </div>
+        <div class="form-row">
+          <input class="inp" type="date"/>
+          <input class="inp" type="time" value="19:30"/>
+        </div>
+        <div class="form-row">
+          <select class="inp">
+            <option value="">N.º de personas</option>
+            <option>1–2 personas</option>
+            <option>3–4 personas</option>
+            <option>5–6 personas</option>
+            <option>+6 personas</option>
+          </select>
+          <input class="inp" type="tel" placeholder="Teléfono"/>
+        </div>
+        <button type="submit" class="btn-res">Solicitar reserva →</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="con">
+    <div class="foot-inner">
+      <div class="foot-logo">La <span>Leña</span></div>
+      <div class="foot-copy">Calle 12D #2-59 · La Candelaria · Bogotá · Mar–Dom 12pm–11pm</div>
+      <div class="foot-powered">Sitio web por <a href="https://rankeo-nu.vercel.app" target="_blank" rel="noopener">Rankeo</a></div>
+    </div>
+  </div>
+</footer>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Restaurant",
+  "name": "La Leña Restaurante",
+  "url": "https://rankeo-nu.vercel.app/demo/restaurante-bogota",
+  "telephone": "+5716012345678",
+  "address": {"@type":"PostalAddress","streetAddress":"Calle 12D #2-59","addressLocality":"Bogotá","addressRegion":"Cundinamarca","addressCountry":"CO"},
+  "description": "Restaurante de parrilla y cocina de autor en La Candelaria, Bogotá. Ingredientes locales, brasa de leña.",
+  "servesCuisine": "Colombian",
+  "openingHours": ["Tu-Su 12:00-23:00"],
+  "aggregateRating": {"@type":"AggregateRating","ratingValue":"4.8","reviewCount":"324"}
+}
+</script>
+</body>
+</html>
