@@ -10,7 +10,15 @@
       "Bash(Test-Path \".git\\\\index.lock\")",
       "Bash(if [ -f \".git/index.lock\" ]; then rm \".git/index.lock\" && echo \"Deleted index.lock\"; else echo \"No index.lock found\"; fi)",
       "Bash(git add *)",
-      "Bash(git commit *)"
+      "Bash(git commit *)",
+      "Bash(git push *)",
+      "Bash(echo \"EXIT:$?\")",
+      "Bash(if [ -f \".git/index.lock\" ]; then rm \".git/index.lock\"; fi && git push origin master)",
+      "PowerShell(git push origin master 2>&1; Write-Output \"EXIT:$LASTEXITCODE\")",
+      "Bash(git remote *)",
+      "PowerShell(git -c credential.helper= push https://ghp_ZJYXT69R2svnr73skKLKViD2cXeeK03Yazyg@github.com/Luis2597/rankeo-seo-website.git master)",
+      "PowerShell($env:GIT_TERMINAL_PROMPT = \"0\"; git -c credential.helper= -c credential.helper.wincred= push https://ghp_ZJYXT69R2svnr73skKLKViD2cXeeK03Yazyg@github.com/Luis2597/rankeo-seo-website.git master 2>&1)",
+      "PowerShell(python -c \"import requests; r = requests.get\\('https://api.github.com/user', headers={'Authorization': 'token ghp_ZJYXT69R2svnr73skKLKViD2cXeeK03Yazyg', 'Accept': 'application/vnd.github.v3+json'}\\); print\\(r.status_code, r.text[:300]\\)\")"
     ]
   }
 }

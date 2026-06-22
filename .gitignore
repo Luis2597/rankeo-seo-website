@@ -10,3 +10,9 @@ Thumbs.db
 *.log
 
 .vercel
+
+# Temp deploy scripts
+push.bat
+push_result.txt
+__askpass.bat
+push_to_github.py

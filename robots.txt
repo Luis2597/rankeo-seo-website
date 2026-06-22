@@ -4,6 +4,4 @@ Allow: /
 # Bloquear parámetros de búsqueda que generan URLs duplicadas
 Disallow: /*?*
 
-# Sitemap
-# TODO: actualizar a https://rankeo.agency/sitemap.xml cuando el dominio esté activo
-Sitemap: https://cosmic-banoffee-d624f3.netlify.app/sitemap.xml
+Sitemap: https://rankeo-nu.vercel.app/sitemap.xml
