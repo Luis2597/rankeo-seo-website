@@ -18,7 +18,9 @@
       "Bash(git remote *)",
       "PowerShell(git -c credential.helper= push https://ghp_ZJYXT69R2svnr73skKLKViD2cXeeK03Yazyg@github.com/Luis2597/rankeo-seo-website.git master)",
       "PowerShell($env:GIT_TERMINAL_PROMPT = \"0\"; git -c credential.helper= -c credential.helper.wincred= push https://ghp_ZJYXT69R2svnr73skKLKViD2cXeeK03Yazyg@github.com/Luis2597/rankeo-seo-website.git master 2>&1)",
-      "PowerShell(python -c \"import requests; r = requests.get\\('https://api.github.com/user', headers={'Authorization': 'token ghp_ZJYXT69R2svnr73skKLKViD2cXeeK03Yazyg', 'Accept': 'application/vnd.github.v3+json'}\\); print\\(r.status_code, r.text[:300]\\)\")"
+      "PowerShell(python -c \"import requests; r = requests.get\\('https://api.github.com/user', headers={'Authorization': 'token ghp_ZJYXT69R2svnr73skKLKViD2cXeeK03Yazyg', 'Accept': 'application/vnd.github.v3+json'}\\); print\\(r.status_code, r.text[:300]\\)\")",
+      "PowerShell(Set-Location \"C:\\\\Users\\\\berna_1oneq3n\\\\Documents\\\\Claude code poyect\\\\seo-company\"; git remote set-url origin https://Luis2597:ghp_ZJYXT69R2svnr73skKLKViD2cXeeK03Yazyg@github.com/Luis2597/seo-company.git; $env:GIT_TERMINAL_PROMPT = \"0\"; $env:GIT_ASKPASS = \"\"; git -c credential.helper= push origin master 2>&1)",
+      "PowerShell(git remote get-url origin)"
     ]
   }
 }
