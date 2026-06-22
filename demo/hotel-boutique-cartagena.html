@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="es-CO">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Casa Inés | Hotel Boutique en Getsemaní, Cartagena</title>
+  <meta name="description" content="Hotel boutique 5 estrellas en Getsemaní, Cartagena. 12 suites únicas, piscina en rooftop, desayuno en patio colonial. Reserva directa con mejor precio garantizado."/>
+  <link rel="canonical" href="https://rankeo-nu.vercel.app/demo/hotel-boutique-cartagena"/>
+  <meta property="og:title" content="Casa Inés Hotel Boutique | Cartagena"/>
+  <meta name="robots" content="noindex,follow"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Nunito+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --terra:  #C2613A;
+      --terra-d:#9D4E2E;
+      --verde:  #2E5E4E;
+      --cream:  #FBF7F0;
+      --warm:   #F5EDE0;
+      --sand:   #E8DCCB;
+      --ink:    #1C1410;
+      --muted:  #6B5C4A;
+      --border: #D8CDB8;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+    body { font-family: 'Nunito Sans', sans-serif; background: var(--cream); color: var(--ink); }
+    a { text-decoration: none; color: inherit; }
+    .con { max-width: 1100px; margin: 0 auto; padding: 0 28px; }
+
+    /* ── DEMO ── */
+    .demo-banner { background: var(--verde); color: rgba(255,255,255,.75); text-align: center; padding: 9px 16px; font-size: 12px; }
+    .demo-banner strong { color: white; }
+    .demo-banner a { color: #A8D5C4; font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
+
+    /* ── NAV ── */
+    nav { position: sticky; top: 0; z-index: 100; background: rgba(251,247,240,.97); backdrop-filter: blur(10px); border-bottom: 1px solid var(--border); }
+    .nav-i { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; height: 68px; padding: 0 28px; }
+    .logo { font-family: 'Libre Baskerville', serif; font-size: 22px; font-weight: 700; color: var(--ink); letter-spacing: -.01em; }
+    .logo em { color: var(--terra); font-style: italic; }
+    .nav-links { display: flex; gap: 28px; }
+    .nav-links a { font-size: 12.5px; font-weight: 500; color: var(--muted); transition: color .2s; letter-spacing: .04em; }
+    .nav-links a:hover { color: var(--ink); }
+    .nav-cta { background: var(--terra); color: white; font-size: 12.5px; font-weight: 600; padding: 11px 22px; border-radius: 4px; letter-spacing: .04em; transition: background .2s; }
+    .nav-cta:hover { background: var(--terra-d); }
+
+    /* ── HERO ── */
+    .hero { min-height: 92vh; background: var(--ink); color: white; display: flex; align-items: center; position: relative; overflow: hidden; }
+    .hero-bg { position: absolute; inset: 0; background: linear-gradient(to right, rgba(28,20,16,.9) 40%, rgba(28,20,16,.4) 100%), linear-gradient(180deg, transparent 60%, rgba(28,20,16,.7) 100%); }
+    .hero-pattern { position: absolute; inset: 0; background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.02'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"); }
+    .hero-floral { position: absolute; right: -60px; top: 50%; transform: translateY(-50%); font-size: 340px; opacity: .04; pointer-events: none; }
+    .hero-inner { position: relative; z-index: 1; padding: 80px 0; }
+    .h-eyebrow { display: flex; align-items: center; gap: 10px; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: .22em; color: var(--terra); margin-bottom: 22px; }
+    .h-eyebrow::after { content: ''; flex: 1; max-width: 40px; height: 1px; background: var(--terra); }
+    h1 { font-family: 'Libre Baskerville', serif; font-size: clamp(2.8rem, 7vw, 5.8rem); font-weight: 400; line-height: 1.05; margin-bottom: 22px; max-width: 680px; }
+    h1 em { font-style: italic; color: var(--terra); }
+    .hero-sub { font-size: 17px; font-weight: 300; color: rgba(255,255,255,.6); line-height: 1.75; max-width: 520px; margin-bottom: 36px; }
+    .btn-terra { background: var(--terra); color: white; font-size: 13.5px; font-weight: 600; padding: 15px 32px; border-radius: 4px; transition: background .2s; display: inline-block; letter-spacing: .04em; }
+    .btn-terra:hover { background: var(--terra-d); }
+    .btn-ghost-w { background: transparent; color: rgba(255,255,255,.7); font-size: 13.5px; font-weight: 500; padding: 15px 24px; border: 1px solid rgba(255,255,255,.2); border-radius: 4px; transition: border-color .2s; }
+    .btn-ghost-w:hover { border-color: rgba(255,255,255,.5); }
+    .hero-perks { display: flex; gap: 28px; margin-top: 48px; padding-top: 36px; border-top: 1px solid rgba(255,255,255,.1); flex-wrap: wrap; }
+    .hp { display: flex; align-items: center; gap: 8px; font-size: 12.5px; color: rgba(255,255,255,.55); }
+    .hp-icon { font-size: 16px; }
+
+    /* ── ROOMS ── */
+    .rooms { padding: 100px 0; }
+    .rm-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 48px; }
+    .sec-eyebrow { font-size: 10.5px; font-weight: 600; text-transform: uppercase; letter-spacing: .2em; color: var(--terra); margin-bottom: 8px; }
+    .sec-title { font-family: 'Libre Baskerville', serif; font-size: clamp(1.8rem,3.5vw,2.8rem); font-weight: 400; line-height: 1.1; letter-spacing: -.01em; }
+    .rm-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 3px; }
+    .rm-card { background: var(--warm); overflow: hidden; }
+    .rm-visual { height: 200px; display: flex; align-items: center; justify-content: center; font-size: 56px; position: relative; }
+    .rv-1 { background: linear-gradient(160deg, #5c3520, #3a1e0c); }
+    .rv-2 { background: linear-gradient(160deg, #1a3a2e, #2e5e4e); }
+    .rv-3 { background: linear-gradient(160deg, #3a2810, #7a5228); }
+    .rm-body { padding: 22px 20px; }
+    .rm-type { font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: .14em; color: var(--terra); margin-bottom: 6px; }
+    .rm-name { font-family: 'Libre Baskerville', serif; font-size: 1.1rem; font-weight: 400; margin-bottom: 6px; }
+    .rm-desc { font-size: 12.5px; color: var(--muted); line-height: 1.6; margin-bottom: 14px; }
+    .rm-foot { display: flex; align-items: center; justify-content: space-between; }
+    .rm-price { font-family: 'Libre Baskerville', serif; font-size: 1.1rem; color: var(--terra); }
+    .rm-price span { font-family: 'Nunito Sans', sans-serif; font-size: 11px; color: var(--muted); }
+    .rm-link { font-size: 12px; font-weight: 600; color: var(--verde); letter-spacing: .04em; }
+
+    /* ── EXPERIENCE ── */
+    .experience { padding: 96px 0; background: var(--verde); color: white; }
+    .exp-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+    .exp-left h2 { font-family: 'Libre Baskerville', serif; font-size: clamp(2rem,4vw,3rem); font-weight: 400; line-height: 1.15; margin-bottom: 18px; }
+    .exp-left h2 em { color: #A8D5C4; font-style: italic; }
+    .exp-left p { font-size: 15px; color: rgba(255,255,255,.6); line-height: 1.8; font-weight: 300; margin-bottom: 28px; }
+    .exp-list { display: flex; flex-direction: column; gap: 14px; }
+    .el { display: flex; align-items: center; gap: 12px; font-size: 14px; color: rgba(255,255,255,.8); }
+    .el::before { content: '✦'; color: #A8D5C4; font-size: 10px; flex-shrink: 0; }
+    .exp-imgs { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .ei { border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 40px; }
+    .ei-1 { background: rgba(255,255,255,.06); height: 180px; grid-row: span 2; }
+    .ei-2, .ei-3 { background: rgba(255,255,255,.06); height: 84px; }
+
+    /* ── FOOTER ── */
+    footer { background: var(--ink); color: rgba(255,255,255,.4); padding: 44px 0; }
+    .foot-inner { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+    .foot-logo { font-family: 'Libre Baskerville', serif; font-size: 20px; color: white; }
+    .foot-logo em { color: var(--terra); font-style: italic; }
+    .foot-copy { font-size: 12px; }
+    .foot-powered a { font-size: 12px; color: rgba(255,255,255,.3); text-decoration: underline; text-underline-offset: 3px; }
+
+    @media (max-width: 768px) {
+      .rm-grid { grid-template-columns: 1fr; }
+      .exp-inner { grid-template-columns: 1fr; gap: 44px; }
+      .nav-links { display: none; }
+      .foot-inner { flex-direction: column; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="demo-banner">
+  <strong>Proyecto demo</strong> — Sitio de muestra creado por <a href="https://rankeo-nu.vercel.app" target="_blank" rel="noopener">Rankeo</a>. ¿Tu hotel necesita más reservas directas? <a href="https://rankeo-nu.vercel.app/#contacto" target="_blank" rel="noopener">Hablemos →</a>
+</div>
+
+<nav>
+  <div class="nav-i">
+    <div class="logo">Casa <em>Inés</em></div>
+    <div class="nav-links">
+      <a href="#rooms">Habitaciones</a>
+      <a href="#experience">Experiencias</a>
+      <a href="#rooms">Reservar</a>
+    </div>
+    <a href="#rooms" class="nav-cta">Reserva directa</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-pattern"></div>
+  <div class="hero-floral">🌸</div>
+  <div class="con">
+    <div class="hero-inner">
+      <div class="h-eyebrow">Getsemaní · Cartagena de Indias</div>
+      <h1>Donde la historia<br/>colonial se vive<br/>en <em>silencio</em></h1>
+      <p class="hero-sub">Hotel boutique con 12 suites únicas en un caserón del siglo XVIII. Piscina en rooftop con vista a los campanarios, desayuno en patio y el barrio más auténtico de Cartagena afuera.</p>
+      <div style="display:flex;gap:12px;flex-wrap:wrap;">
+        <a href="#rooms" class="btn-terra">Ver habitaciones</a>
+        <a href="#experience" class="btn-ghost-w">Experiencias</a>
+      </div>
+      <div class="hero-perks">
+        <div class="hp"><span class="hp-icon">🌅</span>Vista a campanarios</div>
+        <div class="hp"><span class="hp-icon">🏊</span>Piscina en rooftop</div>
+        <div class="hp"><span class="hp-icon">☕</span>Desayuno incluido</div>
+        <div class="hp"><span class="hp-icon">📶</span>WiFi 300 Mbps</div>
+        <div class="hp"><span class="hp-icon">🧴</span>Amenities L'Occitane</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="rooms" id="rooms">
+  <div class="con">
+    <div class="rm-header">
+      <div>
+        <div class="sec-eyebrow">Nuestras suites</div>
+        <div class="sec-title">12 habitaciones,<br/>ninguna igual</div>
+      </div>
+      <a href="#rooms" class="btn-terra" style="white-space:nowrap;font-size:13px;padding:13px 24px;">Reservar ahora</a>
+    </div>
+    <div class="rm-grid">
+      <div class="rm-card">
+        <div class="rm-visual rv-1">🛏️</div>
+        <div class="rm-body">
+          <div class="rm-type">Suite deluxe</div>
+          <div class="rm-name">Suite Patio de Ceibas</div>
+          <div class="rm-desc">Balcón al patio interior, baño en mármol, cama king con dosel, minibar y AC silencioso. 48 m².</div>
+          <div class="rm-foot">
+            <div class="rm-price">$680.000 <span>/ noche</span></div>
+            <a href="#rooms" class="rm-link">Reservar →</a>
+          </div>
+        </div>
+      </div>
+      <div class="rm-card">
+        <div class="rm-visual rv-2">🌿</div>
+        <div class="rm-body">
+          <div class="rm-type">Suite premium</div>
+          <div class="rm-name">Suite Jardín del Aljibe</div>
+          <div class="rm-desc">Acceso directo al jardín privado, hamaca propia, ducha lluvia exterior y frigobar. 55 m².</div>
+          <div class="rm-foot">
+            <div class="rm-price">$820.000 <span>/ noche</span></div>
+            <a href="#rooms" class="rm-link">Reservar →</a>
+          </div>
+        </div>
+      </div>
+      <div class="rm-card">
+        <div class="rm-visual rv-3">🌅</div>
+        <div class="rm-body">
+          <div class="rm-type">Suite rooftop</div>
+          <div class="rm-name">Suite Campanarios</div>
+          <div class="rm-desc">Planta alta con terraza privada y vista panorámica a los campanarios de San Pedro Claver. 62 m².</div>
+          <div class="rm-foot">
+            <div class="rm-price">$1.150.000 <span>/ noche</span></div>
+            <a href="#rooms" class="rm-link">Reservar →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="experience" id="experience">
+  <div class="con">
+    <div class="exp-inner">
+      <div class="exp-left">
+        <div class="sec-eyebrow" style="color:#A8D5C4;">Más que una cama</div>
+        <h2>Experiencias que<br/>no encuentras en<br/><em>Booking</em></h2>
+        <p>Casa Inés es punto de partida para vivir Cartagena de manera diferente. Organizamos experiencias exclusivas para nuestros huéspedes con guías locales y aliados del barrio.</p>
+        <div class="exp-list">
+          <div class="el">Tour gastronómico por Getsemaní con chef local</div>
+          <div class="el">Clase de champeta y salsa en el patio de la casa</div>
+          <div class="el">Navegación privada al atardecer en Bocagrande</div>
+          <div class="el">Masajes en habitación con aceites de flores del Caribe</div>
+          <div class="el">Cena privada en el rooftop bajo las estrellas</div>
+        </div>
+      </div>
+      <div class="exp-imgs">
+        <div class="ei ei-1">🌺</div>
+        <div class="ei ei-2">🎵</div>
+        <div class="ei ei-3">🌊</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="con">
+    <div class="foot-inner">
+      <div class="foot-logo">Casa <em>Inés</em></div>
+      <div class="foot-copy">Calle del Pozo #25-82, Getsemaní · Cartagena · Check-in: 3pm · Check-out: 12pm</div>
+      <div class="foot-powered">Sitio web por <a href="https://rankeo-nu.vercel.app" target="_blank" rel="noopener">Rankeo</a></div>
+    </div>
+  </div>
+</footer>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Hotel","name":"Casa Inés Hotel Boutique","url":"https://rankeo-nu.vercel.app/demo/hotel-boutique-cartagena","telephone":"+5756001234","address":{"@type":"PostalAddress","streetAddress":"Calle del Pozo #25-82","addressLocality":"Cartagena","addressRegion":"Bolívar","addressCountry":"CO"},"description":"Hotel boutique en Getsemaní, Cartagena. 12 suites únicas, piscina en rooftop.","starRating":{"@type":"Rating","ratingValue":"5"},"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.9","reviewCount":"312"}}
+</script>
+</body>
+</html>

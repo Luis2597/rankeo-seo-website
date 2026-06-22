@@ -396,7 +396,7 @@
     .ph { font-family: 'Syne', sans-serif; font-weight: 800; font-size: clamp(2rem,4vw,3.4rem); letter-spacing: -.03em; line-height: 1.05; margin-bottom: 14px; }
     .ps { font-size: 15.5px; color: var(--c-subtle); line-height: 1.65; max-width: 560px; margin-bottom: 52px; }
     .ps strong { color: var(--c-orange); font-weight: 700; }
-    .pgrid { display: grid; grid-template-columns: repeat(3,1fr); gap: 14px; margin-bottom: 32px; }
+    .pgrid { display: grid; grid-template-columns: repeat(4,1fr); gap: 14px; margin-bottom: 32px; }
     .pc {
       border-radius: 18px; border: 1.5px solid var(--c-border);
       overflow: hidden; cursor: default;
@@ -920,7 +920,37 @@
           <div style="font-family:'Syne',sans-serif;font-weight:800;font-size:2rem;color:var(--c-orange);line-height:1;">+156%</div>
           <div style="font-size:11.5px;color:var(--c-subtle);">en 4 meses · Inmobiliaria Barranquilla</div>
         </div>
-        <div class="pc-foot"><span class="pc-industry">Inmobiliaria · Barranquilla</span><span class="pc-tag avail">● Próximamente</span></div>
+        <div class="pc-foot"><span class="pc-industry">Inmobiliaria · Barranquilla</span><a href="/demo/inmobiliaria-barranquilla" target="_blank" class="pc-tag avail" style="text-decoration:none;">Ver demo →</a></div>
+      </div>
+      <!-- Centro médico -->
+      <div class="pc rv" data-d="2" role="listitem">
+        <div class="pc-browser"><div class="pc-dot"></div><div class="pc-dot"></div><div class="pc-dot"></div><div class="pc-bar"></div></div>
+        <div class="pc-preview" style="display:flex;flex-direction:column;justify-content:center;gap:10px;padding:20px 16px;">
+          <div style="font-size:11px;font-weight:700;color:var(--c-subtle);text-transform:uppercase;letter-spacing:.1em;">Tráfico orgánico</div>
+          <div style="font-family:'Syne',sans-serif;font-weight:800;font-size:2rem;color:var(--c-orange);line-height:1;">+390%</div>
+          <div style="font-size:11.5px;color:var(--c-subtle);">12 especialidades · Centro médico CDMX</div>
+        </div>
+        <div class="pc-foot"><span class="pc-industry">Centro Médico · México</span><a href="/demo/centro-medico-cdmx" target="_blank" class="pc-tag avail" style="text-decoration:none;">Ver demo →</a></div>
+      </div>
+      <!-- Hotel boutique -->
+      <div class="pc rv" data-d="3" role="listitem">
+        <div class="pc-browser"><div class="pc-dot"></div><div class="pc-dot"></div><div class="pc-dot"></div><div class="pc-bar"></div></div>
+        <div class="pc-preview" style="display:flex;flex-direction:column;justify-content:center;gap:10px;padding:20px 16px;">
+          <div style="font-size:11px;font-weight:700;color:var(--c-subtle);text-transform:uppercase;letter-spacing:.1em;">Reservas directas</div>
+          <div style="font-family:'Syne',sans-serif;font-weight:800;font-size:2rem;color:var(--c-orange);line-height:1;">+180%</div>
+          <div style="font-size:11.5px;color:var(--c-subtle);">en 7 meses · Hotel boutique Cartagena</div>
+        </div>
+        <div class="pc-foot"><span class="pc-industry">Hotel Boutique · Cartagena</span><a href="/demo/hotel-boutique-cartagena" target="_blank" class="pc-tag avail" style="text-decoration:none;">Ver demo →</a></div>
+      </div>
+      <!-- Arquitectura -->
+      <div class="pc rv" data-d="1" role="listitem">
+        <div class="pc-browser"><div class="pc-dot"></div><div class="pc-dot"></div><div class="pc-dot"></div><div class="pc-bar"></div></div>
+        <div class="pc-preview" style="display:flex;flex-direction:column;justify-content:center;gap:10px;padding:20px 16px;">
+          <div style="font-size:11px;font-weight:700;color:var(--c-subtle);text-transform:uppercase;letter-spacing:.1em;">Consultas web</div>
+          <div style="font-family:'Syne',sans-serif;font-weight:800;font-size:2rem;color:var(--c-orange);line-height:1;">+240%</div>
+          <div style="font-size:11.5px;color:var(--c-subtle);">en 6 meses · Estudio arquitectura Bogotá</div>
+        </div>
+        <div class="pc-foot"><span class="pc-industry">Arquitectura · Bogotá</span><a href="/demo/arquitectura-bogota" target="_blank" class="pc-tag avail" style="text-decoration:none;">Ver demo →</a></div>
       </div>
     </div>
 
@@ -1439,82 +1469,4 @@ async function sendContact(e) {
           <h3>¡Listo! Mensaje recibido.</h3>
           <p>Te contactaremos en menos de 24 horas con tu auditoría gratuita personalizada.</p>
         </div>`;
-      try { gtag('event', 'contact_form_submit', { event_category: 'conversion' }); } catch(_){}
-    } else {
-      throw new Error('FormSubmit error');
-    }
-  } catch (err) {
-    const subject = encodeURIComponent(`Consulta SEO — ${nom}`);
-    const body    = encodeURIComponent(`Nombre: ${nom}\nEmail: ${em}\nWeb: ${web}\n\n${msg}`);
-    window.location.href = `mailto:bernalluisdiaz@gmail.com?subject=${subject}&body=${body}`;
-    btn.disabled = false;
-    btn.textContent = 'Enviar mensaje →';
-  }
-}
-</script>
-
-<script type="application/ld+json">
-[
-  {
-    "@context": "https://schema.org",
-    "@type": ["LocalBusiness", "ProfessionalService"],
-    "@id": "https://rankeo-nu.vercel.app/#org",
-    "name": "Rankeo",
-    "alternateName": "Rankeo Agency",
-    "url": "https://rankeo-nu.vercel.app",
-    "logo": "https://rankeo-nu.vercel.app/logo.png",
-    "image": "https://rankeo-nu.vercel.app/og-image.png",
-    "description": "Agencia de SEO y sitios web optimizados para Colombia, México y USA Hispanic. Sitios web que posicionan en Google y generan clientes.",
-    "areaServed": [
-      { "@type": "Country", "name": "Colombia" },
-      { "@type": "Country", "name": "México" },
-      { "@type": "Country", "name": "United States" }
-    ],
-    "priceRange": "$199-$649",
-    "currenciesAccepted": "USD",
-    "paymentAccepted": "Tarjeta de crédito, transferencia bancaria",
-    "address": {
-      "@type": "PostalAddress",
-      "addressCountry": "CO",
-      "addressLocality": "Bogotá"
-    },
-    "contactPoint": {
-      "@type": "ContactPoint",
-      "contactType": "sales",
-      "availableLanguage": "Spanish",
-      "url": "https://rankeo-nu.vercel.app/#contacto"
-    }
-  },
-  {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    "serviceType": "Search Engine Optimization",
-    "name": "Plan Local — SEO Básico",
-    "provider": { "@id": "https://rankeo-nu.vercel.app/#org" },
-    "description": "Auditoría SEO completa, optimización técnica, Google Business optimizado y reporte mensual. Para negocios con sitio existente.",
-    "offers": {
-      "@type": "Offer",
-      "price": "199",
-      "priceCurrency": "USD",
-      "priceSpecification": { "@type": "UnitPriceSpecification", "price": "199", "priceCurrency": "USD", "unitCode": "MON" }
-    }
-  },
-  {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    "serviceType": "Search Engine Optimization",
-    "name": "Plan Web + SEO — Sitio Web + SEO Local",
-    "provider": { "@id": "https://rankeo-nu.vercel.app/#org" },
-    "description": "Sitio web nuevo (hasta 5 páginas), SEO técnico y local completo, schema markup, metadatos y Google Business avanzado. Para dominar tu zona local.",
-    "offers": {
-      "@type": "Offer",
-      "price": "349",
-      "priceCurrency": "USD",
-      "priceSpecification": { "@type": "UnitPriceSpecification", "price": "349", "priceCurrency": "USD", "unitCode": "MON" }
-    }
-  },
-  {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    "serviceType": "Search Engine Optimization",
-    "name":
+      try { gtag('event', 'contac

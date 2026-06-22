@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Centro Médico Salud Integral | Especialistas en CDMX — Polanco</title>
+  <meta name="description" content="Centro médico con 12 especialidades en Polanco, CDMX. Médicos certificados, tecnología de diagnóstico de punta y atención humanizada. Agenda tu cita en línea."/>
+  <link rel="canonical" href="https://rankeo-nu.vercel.app/demo/centro-medico-cdmx"/>
+  <meta property="og:title" content="Centro Médico Salud Integral | CDMX"/>
+  <meta name="robots" content="noindex,follow"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --teal:    #0B7B6E;
+      --teal-d:  #085E54;
+      --teal-l:  #E8F5F3;
+      --blue:    #1A4A7A;
+      --ink:     #0F1B26;
+      --white:   #FFFFFF;
+      --bg:      #F8FBFA;
+      --surface: #EEF6F4;
+      --border:  #D4E8E4;
+      --muted:   #5C7A74;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--ink); }
+    a { text-decoration: none; color: inherit; }
+    .con { max-width: 1120px; margin: 0 auto; padding: 0 28px; }
+
+    /* ── DEMO ── */
+    .demo-banner { background: var(--blue); color: rgba(255,255,255,.75); text-align: center; padding: 9px 16px; font-size: 12px; }
+    .demo-banner strong { color: white; }
+    .demo-banner a { color: #6DD8CE; font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
+
+    /* ── NAV ── */
+    nav { position: sticky; top: 0; z-index: 100; background: rgba(248,251,250,.97); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); }
+    .nav-i { max-width: 1120px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; height: 66px; padding: 0 28px; }
+    .logo { display: flex; align-items: center; gap: 10px; }
+    .logo-mark { width: 36px; height: 36px; background: var(--teal); border-radius: 8px; display: flex; align-items: center; justify-content: center; }
+    .logo-cross { color: white; font-size: 20px; font-weight: 700; line-height: 1; }
+    .logo-text { font-size: 15px; font-weight: 600; color: var(--ink); letter-spacing: -.01em; }
+    .logo-text span { display: block; font-size: 10px; font-weight: 400; color: var(--muted); letter-spacing: .06em; text-transform: uppercase; }
+    .nav-links { display: flex; gap: 28px; }
+    .nav-links a { font-size: 13px; font-weight: 500; color: var(--muted); transition: color .2s; }
+    .nav-links a:hover { color: var(--teal); }
+    .nav-tel { font-size: 13px; font-weight: 600; color: var(--teal); margin-right: 4px; }
+    .nav-cta { background: var(--teal); color: white; font-size: 13px; font-weight: 600; padding: 10px 22px; border-radius: 8px; transition: background .2s; }
+    .nav-cta:hover { background: var(--teal-d); }
+
+    /* ── HERO ── */
+    .hero { background: var(--ink); color: white; padding: 80px 0 0; position: relative; overflow: hidden; }
+    .hero-grad { position: absolute; inset: 0; background: radial-gradient(ellipse at 80% 50%, rgba(11,123,110,.2), transparent 60%), radial-gradient(ellipse at 10% 80%, rgba(26,74,122,.25), transparent 50%); }
+    .hero-inner { position: relative; z-index: 1; display: grid; grid-template-columns: 1fr 400px; gap: 60px; align-items: flex-start; }
+    .hero-pretitle { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: .2em; color: #6DD8CE; margin-bottom: 16px; display: flex; align-items: center; gap: 8px; }
+    .hero-pretitle::before { content: ''; display: inline-block; width: 20px; height: 1.5px; background: #6DD8CE; }
+    h1 { font-family: 'DM Serif Display', serif; font-size: clamp(2.4rem, 5.5vw, 4.4rem); line-height: 1.1; margin-bottom: 20px; }
+    h1 em { font-style: italic; color: #6DD8CE; }
+    .hero-sub { font-size: 16px; font-weight: 300; color: rgba(255,255,255,.6); line-height: 1.75; margin-bottom: 32px; }
+    .btn-teal { background: var(--teal); color: white; font-size: 14px; font-weight: 600; padding: 14px 28px; border-radius: 8px; transition: background .2s, transform .15s; display: inline-flex; align-items: center; gap: 8px; }
+    .btn-teal:hover { background: var(--teal-d); transform: translateY(-1px); }
+    .hero-trust { display: flex; align-items: center; gap: 16px; margin-top: 28px; font-size: 12.5px; color: rgba(255,255,255,.45); }
+    .ht-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--teal); flex-shrink: 0; }
+    /* appt card */
+    .appt-card { background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.1); border-radius: 16px; padding: 28px; margin-top: 10px; }
+    .appt-title { font-size: 14px; font-weight: 600; margin-bottom: 20px; }
+    .appt-form { display: flex; flex-direction: column; gap: 12px; }
+    .appt-inp { background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.12); border-radius: 8px; padding: 12px 14px; font-family: 'DM Sans', sans-serif; font-size: 13px; color: white; width: 100%; outline: none; transition: border-color .2s; }
+    .appt-inp:focus { border-color: var(--teal); }
+    .appt-inp::placeholder { color: rgba(255,255,255,.35); }
+    .appt-inp option { background: #1a2a3a; color: white; }
+    .btn-appt { background: var(--teal); color: white; font-size: 13.5px; font-weight: 600; padding: 13px; border-radius: 8px; border: none; cursor: pointer; font-family: 'DM Sans', sans-serif; width: 100%; transition: background .2s; }
+    .btn-appt:hover { background: var(--teal-d); }
+    .appt-note { font-size: 11px; color: rgba(255,255,255,.35); text-align: center; margin-top: 4px; }
+    .hero-stats-bar { background: rgba(255,255,255,.04); border-top: 1px solid rgba(255,255,255,.08); margin-top: 60px; padding: 28px 0; display: flex; justify-content: space-between; }
+    .hsb-item { text-align: center; }
+    .hsb-n { font-family: 'DM Serif Display', serif; font-size: 2rem; color: #6DD8CE; }
+    .hsb-l { font-size: 11px; text-transform: uppercase; letter-spacing: .1em; color: rgba(255,255,255,.35); margin-top: 3px; }
+
+    /* ── SPECIALTIES ── */
+    .specs { padding: 96px 0; }
+    .sec-over { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: .18em; color: var(--teal); margin-bottom: 10px; }
+    .sec-h { font-family: 'DM Serif Display', serif; font-size: clamp(1.9rem,4vw,3rem); line-height: 1.1; margin-bottom: 12px; }
+    .sec-p { font-size: 15px; color: var(--muted); line-height: 1.75; font-weight: 300; margin-bottom: 48px; max-width: 540px; }
+    .spec-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 2px; }
+    .spec-card { background: white; border: 1px solid var(--border); padding: 24px 22px; transition: border-color .2s, transform .2s; }
+    .spec-card:hover { border-color: var(--teal); transform: translateY(-3px); }
+    .spec-icon { font-size: 28px; margin-bottom: 12px; }
+    .spec-name { font-size: 14px; font-weight: 600; margin-bottom: 6px; }
+    .spec-desc { font-size: 12.5px; color: var(--muted); line-height: 1.6; }
+
+    /* ── DOCTORS ── */
+    .doctors { padding: 80px 0; background: var(--surface); }
+    .doc-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; }
+    .doc-card { background: white; border: 1px solid var(--border); border-radius: 12px; padding: 28px; }
+    .doc-av { width: 52px; height: 52px; border-radius: 10px; background: var(--teal); display: flex; align-items: center; justify-content: center; font-size: 18px; font-weight: 700; color: white; margin-bottom: 14px; }
+    .doc-name { font-size: 15px; font-weight: 600; letter-spacing: -.01em; margin-bottom: 3px; }
+    .doc-spec { font-size: 12px; font-weight: 600; color: var(--teal); text-transform: uppercase; letter-spacing: .08em; margin-bottom: 10px; }
+    .doc-card p { font-size: 13px; color: var(--muted); line-height: 1.65; }
+    .doc-cert { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 12px; }
+    .dc { font-size: 10.5px; background: var(--teal-l); color: var(--teal-d); padding: 3px 10px; border-radius: 20px; font-weight: 500; }
+
+    /* ── FOOTER ── */
+    footer { background: var(--ink); color: rgba(255,255,255,.4); padding: 40px 0; }
+    .foot-inner { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+    .foot-logo { font-size: 15px; font-weight: 600; color: white; display: flex; align-items: center; gap: 8px; }
+    .foot-copy { font-size: 12px; }
+    .foot-powered a { font-size: 12px; color: rgba(255,255,255,.3); text-decoration: underline; text-underline-offset: 3px; }
+
+    @media (max-width: 768px) {
+      .hero-inner { grid-template-columns: 1fr; }
+      .appt-card { display: none; }
+      .spec-grid { grid-template-columns: repeat(2,1fr); }
+      .doc-grid { grid-template-columns: 1fr; }
+      .nav-links, .nav-tel { display: none; }
+      .foot-inner { flex-direction: column; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="demo-banner">
+  <strong>Proyecto demo</strong> — Sitio de muestra creado por <a href="https://rankeo-nu.vercel.app" target="_blank" rel="noopener">Rankeo</a>. ¿Tu clínica necesita más pacientes? <a href="https://rankeo-nu.vercel.app/#contacto" target="_blank" rel="noopener">Hablemos →</a>
+</div>
+
+<nav>
+  <div class="nav-i">
+    <div class="logo">
+      <div class="logo-mark"><div class="logo-cross">+</div></div>
+      <div class="logo-text">Salud Integral<span>Centro Médico · Polanco</span></div>
+    </div>
+    <div class="nav-links">
+      <a href="#especialidades">Especialidades</a>
+      <a href="#medicos">Médicos</a>
+      <a href="#hero">Cita en línea</a>
+    </div>
+    <a href="tel:+525555123456" class="nav-tel">📞 55 5512-3456</a>
+    <a href="#hero" class="nav-cta">Agendar cita</a>
+  </div>
+</nav>
+
+<section class="hero" id="hero">
+  <div class="hero-grad"></div>
+  <div class="con">
+    <div class="hero-inner">
+      <div>
+        <div class="hero-pretitle">Polanco · Ciudad de México</div>
+        <h1>Atención médica<br/>donde <em>el paciente</em><br/>primero</h1>
+        <p class="hero-sub">12 especialidades bajo un mismo techo. Médicos certificados por el Consejo Mexicano, tecnología de diagnóstico de primer nivel y un trato humano que sana desde adentro.</p>
+        <a href="#especialidades" class="btn-teal">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/></svg>
+          Ver especialidades
+        </a>
+        <div class="hero-trust">
+          <div class="ht-dot"></div>
+          <span>Médicos certificados SSA</span>
+          <div class="ht-dot"></div>
+          <span>Sin citas en caja</span>
+          <div class="ht-dot"></div>
+          <span>Estacionamiento gratis</span>
+        </div>
+      </div>
+      <div class="appt-card">
+        <div class="appt-title">Agenda tu cita en línea</div>
+        <form class="appt-form" onsubmit="return false;">
+          <select class="appt-inp">
+            <option value="">Selecciona especialidad</option>
+            <option>Medicina General</option>
+            <option>Cardiología</option>
+            <option>Ginecología</option>
+            <option>Pediatría</option>
+            <option>Neurología</option>
+            <option>Nutrición</option>
+          </select>
+          <input class="appt-inp" type="text" placeholder="Tu nombre completo"/>
+          <input class="appt-inp" type="tel" placeholder="WhatsApp o teléfono"/>
+          <input class="appt-inp" type="date"/>
+          <button type="submit" class="btn-appt">Confirmar cita →</button>
+          <div class="appt-note">Te confirmamos por WhatsApp en menos de 2 horas</div>
+        </form>
+      </div>
+    </div>
+    <div class="hero-stats-bar con">
+      <div class="hsb-item"><div class="hsb-n">12</div><div class="hsb-l">Especialidades</div></div>
+      <div class="hsb-item"><div class="hsb-n">28</div><div class="hsb-l">Médicos</div></div>
+      <div class="hsb-item"><div class="hsb-n">4.8★</div><div class="hsb-l">Google Maps</div></div>
+      <div class="hsb-item"><div class="hsb-n">15 años</div><div class="hsb-l">En CDMX</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="specs" id="especialidades">
+  <div class="con">
+    <div class="sec-over">Nuestros servicios</div>
+    <h2 class="sec-h">12 especialidades,<br/>un solo lugar</h2>
+    <p class="sec-p">Sin referencias, sin esperas eternas. Agendar con cualquier especialista es tan fácil como mandar un WhatsApp.</p>
+    <div class="spec-grid">
+      <div class="spec-card"><div class="spec-icon">🫀</div><div class="spec-name">Cardiología</div><div class="spec-desc">Ecocardiograma, Holter y prueba de esfuerzo en instalaciones.</div></div>
+      <div class="spec-card"><div class="spec-icon">🧠</div><div class="spec-name">Neurología</div><div class="spec-desc">Diagnóstico y tratamiento de cefaleas, epilepsia y trastornos del sueño.</div></div>
+      <div class="spec-card"><div class="spec-icon">👶</div><div class="spec-name">Pediatría</div><div class="spec-desc">Crecimiento, vacunación y urgencias pediátricas. Atención hasta los 15 años.</div></div>
+      <div class="spec-card"><div class="spec-icon">🔬</div><div class="spec-name">Laboratorio</div><div class="spec-desc">Resultados en 4 horas. Envío digital al correo incluido sin costo.</div></div>
+      <div class="spec-card"><div class="spec-icon">🦷</div><div class="spec-name">Odontología</div><div class="spec-desc">Limpieza, ortodoncia y estética dental. Urgencias el mismo día.</div></div>
+      <div class="spec-card"><div class="spec-icon">👁️</div><div class="spec-name">Oftalmología</div><div class="spec-desc">Revisión de agudeza visual y detección de glaucoma y cataratas.</div></div>
+      <div class="spec-card"><div class="spec-icon">🥗</div><div class="spec-name">Nutrición</div><div class="spec-desc">Plan nutricional personalizado con seguimiento mensual por app.</div></div>
+      <div class="spec-card"><div class="spec-icon">🏃</div><div class="spec-name">Medicina del Deporte</div><div class="spec-desc">Evaluación física, prevención de lesiones y planes de rendimiento.</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="doctors" id="medicos">
+  <div class="con">
+    <div class="sec-over">Nuestro equipo</div>
+    <h2 class="sec-h" style="margin-bottom:44px;">Médicos que explican,<br/>no solo recetan</h2>
+    <div class="doc-grid">
+      <div class="doc-card">
+        <div class="doc-av">RV</div>
+        <div class="doc-name">Dra. Renata Villanueva</div>
+        <div class="doc-spec">Cardiología</div>
+        <p>Cardióloga intervenciomista egresada del INCich. 14 años de práctica clínica en hospitales de tercer nivel de CDMX.</p>
+        <div class="doc-cert"><span class="dc">Consejo Mexicano</span><span class="dc">UNAM</span></div>
+      </div>
+      <div class="doc-card">
+        <div class="doc-av">MA</div>
+        <div class="doc-name">Dr. Marco Ángel Reyes</div>
+        <div class="doc-spec">Neurología</div>
+        <p>Neurólogo clínico con especialidad en cefaleas crónicas y trastornos del movimiento. Investigador asociado UNAM.</p>
+        <div class="doc-cert"><span class="dc">Consejo Mexicano</span><span class="dc">Fellow UNAM</span></div>
+      </div>
+      <div class="doc-card">
+        <div class="doc-av">SL</div>
+        <div class="doc-name">Dra. Sofía López Cruz</div>
+        <div class="doc-spec">Ginecología</div>
+        <p>Ginecóloga y obstetra con certificación en medicina fetal. Atención integral de la mujer en todas las etapas de vida.</p>
+        <div class="doc-cert"><span class="dc">Consejo Mexicano</span><span class="dc">IPN</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="con">
+    <div class="foot-inner">
+      <div class="foot-logo"><span>+</span> Salud Integral Centro Médico</div>
+      <div class="foot-copy">Av. Presidente Masaryk 111, Polanco · CDMX · Lun–Vie 7am–9pm · Sáb 8am–3pm</div>
+      <div class="foot-powered">Sitio web por <a href="https://rankeo-nu.vercel.app" target="_blank" rel="noopener">Rankeo</a></div>
+    </div>
+  </div>
+</footer>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"MedicalClinic","name":"Centro Médico Salud Integral","url":"https://rankeo-nu.vercel.app/demo/centro-medico-cdmx","telephone":"+525555123456","address":{"@type":"PostalAddress","streetAddress":"Av. Presidente Masaryk 111","addressLocality":"Miguel Hidalgo","addressRegion":"Ciudad de México","addressCountry":"MX"},"description":"Centro médico con 12 especialidades en Polanco, CDMX.","aggregateRating":{"@type":"AggregateRating","ratingValue":"4.8","reviewCount":"487"}}
+</script>
+</body>
+</html>
