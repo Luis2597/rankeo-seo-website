@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(winget install --id GitHub.cli --silent --accept-package-agreements --accept-source-agreements 2>&1)",
+      "PowerShell($env:Path = [System.Environment]::GetEnvironmentVariable\\(\"Path\",\"Machine\"\\) + \";\" + [System.Environment]::GetEnvironmentVariable\\(\"Path\",\"User\"\\); gh --version 2>&1)",
+      "Read(//c/Users/berna_1oneq3n/**)",
+      "Read(//c/ProgramData/**)",
+      "PowerShell(Get-Process msiexec -ErrorAction SilentlyContinue | Select-Object Id, CPU, @{N='MinutesRunning';E={\\(Get-Date\\)-$_.StartTime | Select-Object -ExpandProperty TotalMinutes}})",
+      "PowerShell(Start-Sleep -Seconds 10; Get-Content \"$env:TEMP\\\\gh_auth_out.txt\" -ErrorAction SilentlyContinue; Get-Content \"$env:TEMP\\\\gh_auth_err.txt\" -ErrorAction SilentlyContinue)",
+      "Bash(Test-Path \".git\\\\index.lock\")",
+      "Bash(if [ -f \".git/index.lock\" ]; then rm \".git/index.lock\" && echo \"Deleted index.lock\"; else echo \"No index.lock found\"; fi)",
+      "Bash(git add *)",
+      "Bash(git commit *)"
+    ]
+  }
+}
