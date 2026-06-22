@@ -56,6 +56,12 @@
 
   <!-- Landings por industria -->
   <url>
+    <loc>https://rankeo-nu.vercel.app/seo-para-gimnasios.html</loc>
+    <lastmod>2026-06-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://rankeo-nu.vercel.app/seo-para-abogados.html</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
@@ -118,6 +124,12 @@
     <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://rankeo-nu.vercel.app/blog/como-posicionarse-en-chatgpt-google-geo-2026.html</loc>
+    <lastmod>2026-06-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
 
 </urlset>
