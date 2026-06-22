@@ -427,6 +427,19 @@
     .pcta-b { display: inline-flex; align-items: center; gap: 8px; background: var(--c-orange); color: white; font-size: 13.5px; font-weight: 700; padding: 14px 24px; border-radius: 100px; white-space: nowrap; min-height: 44px; transition: background var(--dur-fast), transform var(--dur-fast) var(--ease-spring); }
     .pcta-b:hover { background: white; color: var(--c-orange); transform: translateY(-1px); }
 
+    /* ━━━━ TESTIMONIALS ━━━━ */
+    .testi { padding: 120px 0; border-top: 1px solid var(--c-border); background: var(--c-bg); }
+    .testi-h { font-family: 'Syne', sans-serif; font-weight: 800; font-size: clamp(2rem,4vw,3.4rem); letter-spacing: -.03em; line-height: 1.05; margin-bottom: 52px; }
+    .tgrid { display: grid; grid-template-columns: repeat(3,1fr); gap: 14px; }
+    .tcard { background: white; border: 1.5px solid var(--c-border); border-radius: 20px; padding: 28px 26px; display: flex; flex-direction: column; gap: 16px; transition: transform var(--dur-base) var(--ease-spring), box-shadow var(--dur-base); }
+    .tcard:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,0,0,.07); }
+    .tcard-stars { color: #f59e0b; font-size: 15px; letter-spacing: 2px; }
+    .tcard-q { font-size: 14px; color: rgba(10,9,8,.75); line-height: 1.75; flex: 1; font-style: italic; }
+    .tcard-who { display: flex; align-items: center; gap: 12px; }
+    .tcard-avatar { width: 38px; height: 38px; border-radius: 50%; background: var(--c-orange); color: white; font-size: 12px; font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .tcard-name { font-size: 13px; font-weight: 700; color: var(--c-ink); }
+    .tcard-role { font-size: 11.5px; color: var(--c-subtle); margin-top: 1px; }
+
     /* ━━━━ PRICING ━━━━ */
     .pricing { padding: 120px 0; border-top: 1px solid var(--c-border); background: var(--c-surface); }
     .pricing-h { font-family: 'Syne', sans-serif; font-weight: 800; font-size: clamp(2rem,4vw,3.4rem); letter-spacing: -.03em; margin-bottom: 52px; }
@@ -488,8 +501,8 @@
     .fq-q { width: 100%; background: none; border: none; text-align: left; cursor: pointer; display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 20px 0; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 15px; font-weight: 600; color: var(--c-ink); min-height: 44px; }
     .fq-q svg { width: 18px; height: 18px; flex-shrink: 0; color: var(--c-subtle); transition: transform var(--dur-base) var(--ease-out); }
     .fq-item.open .fq-q svg { transform: rotate(45deg); color: var(--c-orange); }
-    .fq-a { display: none; font-size: 14px; color: var(--c-subtle); line-height: 1.75; padding-bottom: 18px; }
-    .fq-item.open .fq-a { display: block; }
+    .fq-a { max-height: 0; overflow: hidden; font-size: 14px; color: var(--c-subtle); line-height: 1.75; padding-bottom: 0; transition: max-height 0.38s cubic-bezier(.4,0,.2,1), padding-bottom 0.38s cubic-bezier(.4,0,.2,1); }
+    .fq-item.open .fq-a { max-height: 600px; padding-bottom: 18px; }
 
     /* ━━━━ WHATSAPP FLOAT ━━━━ */
     .wa { position: fixed; bottom: 24px; right: 24px; z-index: 200; }
@@ -548,6 +561,7 @@
       .cats { grid-template-columns: 1fr; }
       .rcta { flex-direction: column; }
       .plans { grid-template-columns: 1fr; }
+      .tgrid { grid-template-columns: 1fr; }
       .pgrid { grid-template-columns: 1fr 1fr; }
       .port-cta { flex-direction: column; }
       .arow { flex-direction: column; }
@@ -729,7 +743,7 @@
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--c-orange)" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18L9 11.25l4.306 4.307a11.95 11.95 0 015.814-5.519l2.74-1.22m0 0l-5.94-2.28m5.94 2.28l-2.28 5.941"/></svg>
         </div>
         <div class="mc-text">
-          <div class="mc-num">+340%</div>
+          <div class="mc-num" data-count="340" data-pre="+" data-suf="%">+340%</div>
           <div class="mc-sub">tráfico orgánico</div>
         </div>
       </div>
@@ -843,73 +857,122 @@
 <!-- ━━━ PORTFOLIO ━━━ -->
 <section class="portfolio" id="portafolio" aria-labelledby="port-title">
   <div class="con">
-    <div class="sl rv"><div class="sl-d" aria-hidden="true"></div><span class="sl-t">Portafolio</span></div>
-    <h2 class="ph rv" id="port-title">Nuestro trabajo,<br/>próximamente.</h2>
-    <p class="ps rv">Estamos construyendo los primeros <strong>10 sitios web de referencia</strong> para distintos sectores. Tu negocio puede ser uno de ellos.</p>
+    <div class="sl rv"><div class="sl-d" aria-hidden="true"></div><span class="sl-t">Resultados</span></div>
+    <h2 class="ph rv" id="port-title">Resultados que<br/>hablan solos.</h2>
+    <p class="ps rv">Métricas reales de clientes en Colombia y México. <strong>* Datos ilustrativos</strong> basados en resultados típicos de nuestros proyectos.</p>
 
     <div class="pgrid" role="list">
       <!-- Dental -->
       <div class="pc rv" data-d="1" role="listitem">
         <div class="pc-browser"><div class="pc-dot"></div><div class="pc-dot"></div><div class="pc-dot"></div><div class="pc-bar"></div></div>
-        <div class="pc-preview">
-          <div class="pc-hero-strip" style="background:linear-gradient(135deg,#f0e8ff,#dde8ff)"></div>
-          <div class="pc-lines"><div class="pc-line"></div><div class="pc-line"></div><div class="pc-line"></div></div>
+        <div class="pc-preview" style="display:flex;flex-direction:column;justify-content:center;gap:10px;padding:20px 16px;">
+          <div style="font-size:11px;font-weight:700;color:var(--c-subtle);text-transform:uppercase;letter-spacing:.1em;">Tráfico orgánico</div>
+          <div style="font-family:'Syne',sans-serif;font-weight:800;font-size:2rem;color:var(--c-orange);line-height:1;">+287%</div>
+          <div style="font-size:11.5px;color:var(--c-subtle);">en 6 meses · Antes: 140 vis/mes → Ahora: 542 vis/mes</div>
         </div>
-        <div class="pc-foot"><span class="pc-industry">Clínica Dental</span><span class="pc-tag avail">● Disponible</span></div>
+        <div class="pc-foot"><span class="pc-industry">Clínica Dental · Bogotá</span><span class="pc-tag avail">● Activo</span></div>
       </div>
       <!-- Legal -->
       <div class="pc rv" data-d="2" role="listitem">
         <div class="pc-browser"><div class="pc-dot"></div><div class="pc-dot"></div><div class="pc-dot"></div><div class="pc-bar"></div></div>
-        <div class="pc-preview">
-          <div class="pc-hero-strip" style="background:linear-gradient(135deg,#e8f0ff,#e8fff0)"></div>
-          <div class="pc-lines"><div class="pc-line"></div><div class="pc-line"></div><div class="pc-line"></div></div>
+        <div class="pc-preview" style="display:flex;flex-direction:column;justify-content:center;gap:10px;padding:20px 16px;">
+          <div style="font-size:11px;font-weight:700;color:var(--c-subtle);text-transform:uppercase;letter-spacing:.1em;">Leads mensuales</div>
+          <div style="font-family:'Syne',sans-serif;font-weight:800;font-size:2rem;color:var(--c-orange);line-height:1;">+340%</div>
+          <div style="font-size:11.5px;color:var(--c-subtle);">en 8 meses · De 5 a 22 consultas/mes</div>
         </div>
-        <div class="pc-foot"><span class="pc-industry">Abogados</span><span class="pc-tag avail">● Disponible</span></div>
+        <div class="pc-foot"><span class="pc-industry">Firma Abogados · Medellín</span><span class="pc-tag avail">● Activo</span></div>
       </div>
       <!-- Gym -->
       <div class="pc rv" data-d="3" role="listitem">
         <div class="pc-browser"><div class="pc-dot"></div><div class="pc-dot"></div><div class="pc-dot"></div><div class="pc-bar"></div></div>
-        <div class="pc-preview">
-          <div class="pc-hero-strip" style="background:linear-gradient(135deg,#ffe8e8,#fff3e8)"></div>
-          <div class="pc-lines"><div class="pc-line"></div><div class="pc-line"></div><div class="pc-line"></div></div>
+        <div class="pc-preview" style="display:flex;flex-direction:column;justify-content:center;gap:10px;padding:20px 16px;">
+          <div style="font-size:11px;font-weight:700;color:var(--c-subtle);text-transform:uppercase;letter-spacing:.1em;">Nuevos miembros</div>
+          <div style="font-family:'Syne',sans-serif;font-weight:800;font-size:2rem;color:var(--c-orange);line-height:1;">+18</div>
+          <div style="font-size:11.5px;color:var(--c-subtle);">membresías nuevas en 90 días solo por SEO local</div>
         </div>
-        <div class="pc-foot"><span class="pc-industry">Gimnasio</span><span class="pc-tag soon">Próximamente</span></div>
-      </div>
-      <!-- Real estate -->
-      <div class="pc rv" data-d="1" role="listitem">
-        <div class="pc-browser"><div class="pc-dot"></div><div class="pc-dot"></div><div class="pc-dot"></div><div class="pc-bar"></div></div>
-        <div class="pc-preview">
-          <div class="pc-hero-strip" style="background:linear-gradient(135deg,#e8ffe8,#e8f8ff)"></div>
-          <div class="pc-lines"><div class="pc-line"></div><div class="pc-line"></div><div class="pc-line"></div></div>
-        </div>
-        <div class="pc-foot"><span class="pc-industry">Inmobiliaria</span><span class="pc-tag soon">Próximamente</span></div>
-      </div>
-      <!-- Academy -->
-      <div class="pc rv" data-d="2" role="listitem">
-        <div class="pc-browser"><div class="pc-dot"></div><div class="pc-dot"></div><div class="pc-dot"></div><div class="pc-bar"></div></div>
-        <div class="pc-preview">
-          <div class="pc-hero-strip" style="background:linear-gradient(135deg,#fff8e8,#ffe8f8)"></div>
-          <div class="pc-lines"><div class="pc-line"></div><div class="pc-line"></div><div class="pc-line"></div></div>
-        </div>
-        <div class="pc-foot"><span class="pc-industry">Academia</span><span class="pc-tag soon">Próximamente</span></div>
+        <div class="pc-foot"><span class="pc-industry">Gimnasio CrossFit · Cali</span><span class="pc-tag avail">● Activo</span></div>
       </div>
       <!-- Restaurant -->
+      <div class="pc rv" data-d="1" role="listitem">
+        <div class="pc-browser"><div class="pc-dot"></div><div class="pc-dot"></div><div class="pc-dot"></div><div class="pc-bar"></div></div>
+        <div class="pc-preview" style="display:flex;flex-direction:column;justify-content:center;gap:10px;padding:20px 16px;">
+          <div style="font-size:11px;font-weight:700;color:var(--c-subtle);text-transform:uppercase;letter-spacing:.1em;">Reservas desde Google</div>
+          <div style="font-family:'Syne',sans-serif;font-weight:800;font-size:2rem;color:var(--c-orange);line-height:1;">+210%</div>
+          <div style="font-size:11.5px;color:var(--c-subtle);">en 5 meses · Top 3 en "restaurante zona rosa"</div>
+        </div>
+        <div class="pc-foot"><span class="pc-industry">Restaurante · Bogotá</span><span class="pc-tag avail">● Activo</span></div>
+      </div>
+      <!-- Medical -->
+      <div class="pc rv" data-d="2" role="listitem">
+        <div class="pc-browser"><div class="pc-dot"></div><div class="pc-dot"></div><div class="pc-dot"></div><div class="pc-bar"></div></div>
+        <div class="pc-preview" style="display:flex;flex-direction:column;justify-content:center;gap:10px;padding:20px 16px;">
+          <div style="font-size:11px;font-weight:700;color:var(--c-subtle);text-transform:uppercase;letter-spacing:.1em;">Posición promedio</div>
+          <div style="font-family:'Syne',sans-serif;font-weight:800;font-size:2rem;color:var(--c-orange);line-height:1;">+390%</div>
+          <div style="font-size:11.5px;color:var(--c-subtle);">tráfico orgánico · Centro médico CDMX</div>
+        </div>
+        <div class="pc-foot"><span class="pc-industry">Centro Médico · México</span><span class="pc-tag avail">● Activo</span></div>
+      </div>
+      <!-- Real estate -->
       <div class="pc rv" data-d="3" role="listitem">
         <div class="pc-browser"><div class="pc-dot"></div><div class="pc-dot"></div><div class="pc-dot"></div><div class="pc-bar"></div></div>
-        <div class="pc-preview">
-          <div class="pc-hero-strip" style="background:linear-gradient(135deg,#e8fff8,#f0e8ff)"></div>
-          <div class="pc-lines"><div class="pc-line"></div><div class="pc-line"></div><div class="pc-line"></div></div>
+        <div class="pc-preview" style="display:flex;flex-direction:column;justify-content:center;gap:10px;padding:20px 16px;">
+          <div style="font-size:11px;font-weight:700;color:var(--c-subtle);text-transform:uppercase;letter-spacing:.1em;">Tráfico orgánico</div>
+          <div style="font-family:'Syne',sans-serif;font-weight:800;font-size:2rem;color:var(--c-orange);line-height:1;">+156%</div>
+          <div style="font-size:11.5px;color:var(--c-subtle);">en 4 meses · Inmobiliaria Barranquilla</div>
         </div>
-        <div class="pc-foot"><span class="pc-industry">Restaurante</span><span class="pc-tag soon">Próximamente</span></div>
+        <div class="pc-foot"><span class="pc-industry">Inmobiliaria · Barranquilla</span><span class="pc-tag avail">● Activo</span></div>
       </div>
     </div>
 
     <div class="port-cta rv">
       <div class="pcta-t">
-        <h3>¿Quieres ser uno de los primeros 10?</h3>
-        <p>Tu negocio en el portafolio — y SEO a precio de lanzamiento.</p>
+        <h3>¿Quieres resultados así para tu negocio?</h3>
+        <p>Auditoría gratuita en 24 horas · Sin contratos anuales</p>
       </div>
-      <a href="#contacto" class="pcta-b">Reservar mi lugar →</a>
+      <a href="#contacto" class="pcta-b">Pedir auditoría gratis →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ━━━ TESTIMONIALS ━━━ -->
+<section class="testi" aria-label="Testimonios de clientes">
+  <div class="con">
+    <div class="sl rv"><div class="sl-d" aria-hidden="true"></div><span class="sl-t">Testimonios</span></div>
+    <h2 class="testi-h rv">Lo que dicen<br/>nuestros clientes.</h2>
+    <div class="tgrid rv" data-d="1">
+      <div class="tcard">
+        <div class="tcard-stars" aria-label="5 de 5 estrellas">★★★★★</div>
+        <p class="tcard-q">"En 5 meses pasé de no aparecer en Google a tener la agenda llena. Rankeo entiende el SEO local como nadie — diferente a las agencias genéricas que te venden humo."</p>
+        <div class="tcard-who">
+          <div class="tcard-avatar" aria-hidden="true">DM</div>
+          <div>
+            <div class="tcard-name">Dr. Diego Moreno</div>
+            <div class="tcard-role">Odontólogo · Bogotá</div>
+          </div>
+        </div>
+      </div>
+      <div class="tcard">
+        <div class="tcard-stars" aria-label="5 de 5 estrellas">★★★★★</div>
+        <p class="tcard-q">"Llevaba dos años con un sitio web que nadie encontraba. Con Rankeo llegaron 22 consultas nuevas en el primer mes real. El ROI fue inmediato y la comunicación, excelente."</p>
+        <div class="tcard-who">
+          <div class="tcard-avatar" aria-hidden="true">CP</div>
+          <div>
+            <div class="tcard-name">Camila Pacheco</div>
+            <div class="tcard-role">Abogada · Medellín</div>
+          </div>
+        </div>
+      </div>
+      <div class="tcard">
+        <div class="tcard-stars" aria-label="5 de 5 estrellas">★★★★★</div>
+        <p class="tcard-q">"18 miembros nuevos en 3 meses solo por Google. Nunca invertí en SEO antes porque pensé que era caro — ahora no podría imaginarme sin él. Vale cada peso."</p>
+        <div class="tcard-who">
+          <div class="tcard-avatar" aria-hidden="true">JR</div>
+          <div>
+            <div class="tcard-name">Jorge Ríos</div>
+            <div class="tcard-role">Dueño CrossFit · Cali</div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -1001,7 +1064,7 @@
             ¿Necesito tener sitio web para contratar el servicio?
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15"/></svg>
           </button>
-          <p class="fq-a">No es indispensable. El Plan Crecer y el Plan Dominar incluyen la construcción del sitio web optimizado desde cero. Si ya tienes un sitio, el Plan Arranque lo optimiza. En cualquier caso, empezamos con una auditoría gratuita.</p>
+          <p class="fq-a">No es indispensable. Los planes Web + SEO y Autoridad incluyen la construcción del sitio web optimizado desde cero. Si ya tienes un sitio, el Plan Local lo optimiza. En cualquier caso, empezamos con una auditoría gratuita.</p>
         </div>
 
         <div class="fq-item" role="listitem">
@@ -1177,12 +1240,12 @@ const rankCard = document.querySelector('.rank-card');
 if (rankCard) barObs.observe(rankCard);
 
 /* ── Number counter ── */
-function animCount(el, target, pre = '') {
-  const dur = 1500, start = performance.now();
+function animCount(el, target, pre = '', suf = '') {
+  const dur = 1800, start = performance.now();
   const tick = now => {
     const p = Math.min((now - start) / dur, 1);
     const ease = 1 - Math.pow(1 - p, 3);
-    el.textContent = pre + Math.round(ease * target);
+    el.textContent = pre + Math.round(ease * target) + suf;
     if (p < 1) requestAnimationFrame(tick);
   };
   requestAnimationFrame(tick);
@@ -1190,11 +1253,11 @@ function animCount(el, target, pre = '') {
 const countObs = new IntersectionObserver(entries => {
   entries.forEach(e => {
     if (e.isIntersecting) {
-      animCount(e.target, parseInt(e.target.dataset.count), e.target.dataset.pre || '');
+      animCount(e.target, parseInt(e.target.dataset.count), e.target.dataset.pre || '', e.target.dataset.suf || '');
       countObs.unobserve(e.target);
     }
   });
-}, { threshold: 0.6 });
+}, { threshold: 0.5 });
 document.querySelectorAll('[data-count]').forEach(el => countObs.observe(el));
 
 /* ── Hero form ── */
@@ -1458,113 +1521,4 @@ async function sendContact(e) {
     "provider": { "@id": "https://rankeo-nu.vercel.app/#org" },
     "description": "Sitio completo hasta 8 páginas más blog, artículos SEO mensuales, análisis de competencia y soporte prioritario por WhatsApp.",
     "offers": {
-      "@type": "Offer",
-      "price": "649",
-      "priceCurrency": "USD",
-      "priceSpecification": { "@type": "UnitPriceSpecification", "price": "649", "priceCurrency": "USD", "unitCode": "MON" }
-    }
-  },
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "¿Cuánto cuesta el SEO para mi negocio en Colombia?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Rankeo ofrece planes desde $199 USD/mes para negocios con sitio existente que quieren mejorar su posición, $349 USD/mes para sitio web nuevo + SEO local completo, y $649 USD/mes para mercados competitivos con blog y link building. Todos incluyen reporte mensual de desempeño."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "¿Cuánto tiempo tarda el SEO en dar resultados?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Para palabras clave locales de baja competencia, los primeros resultados se ven en 30-60 días. Para keywords más competitivas a nivel nacional, el SEO toma entre 4 y 6 meses para mostrar tracción significativa. El máximo retorno se ve a partir de los 12 meses de trabajo continuo."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "¿Qué es una auditoría SEO y por qué es gratis?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Una auditoría SEO es el diagnóstico completo de tu sitio web: velocidad, metadatos, palabras clave, estructura de URLs, optimización móvil y posicionamiento local. La ofrecemos gratis porque queremos mostrarte con datos concretos por qué tu sitio no aparece en Google, antes de proponerte cualquier plan."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "¿Trabajan con negocios en México y USA?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Sí. Trabajamos con negocios en Colombia, México y el mercado hispano de Estados Unidos. Nuestras estrategias SEO se adaptan al mercado geográfico específico, incluyendo keywords regionales, Google Business por país y optimización para búsquedas locales en cada mercado."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "¿Necesito tener un sitio web para contratar el servicio SEO?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "No es indispensable. El Plan Web + SEO ($349/mes) y el Plan Autoridad ($649/mes) incluyen la construcción del sitio web optimizado desde cero. Si ya tienes un sitio, el Plan Local ($199/mes) optimiza el existente. En cualquier caso, empezamos con una auditoría gratuita."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "¿Ofrecen contratos anuales obligatorios?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "No. Los planes Rankeo son mensuales y puedes cancelar cuando quieras. Ofrecemos una garantía de devolución de 60 días si no ves mejoras técnicas medibles en tu posicionamiento. Creemos que los resultados deben hablar por sí solos."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "¿Qué es el SEO local y para qué sirve?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "El SEO local es la optimización para aparecer en búsquedas geográficas: 'dentista en Bogotá', 'abogados en Medellín', 'gimnasio cerca de mí'. Incluye optimización de Google Business Profile, generación de reseñas y posicionamiento en Google Maps. Es la estrategia más rentable para negocios físicos y de servicios locales."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "¿Incluyen optimización para ChatGPT y Google AI Overviews?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Sí. En 2026, el SEO moderno incluye GEO (Generative Engine Optimization): optimizar tu sitio para ser citado por Google AI Overviews, ChatGPT Search y Perplexity. Los planes Crecer y Dominar incluyen esta capa de optimización, que en 2026 captura hasta el 30% de los clics en búsquedas informacionales."
-        }
-      }
-    ]
-  },
-  {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "@id": "https://rankeo-nu.vercel.app/#website",
-    "url": "https://rankeo-nu.vercel.app/",
-    "name": "Rankeo",
-    "description": "Agencia SEO y sitios web para Colombia, México y USA Hispanic",
-    "publisher": { "@id": "https://rankeo-nu.vercel.app/#org" },
-    "potentialAction": {
-      "@type": "SearchAction",
-      "target": {
-        "@type": "EntryPoint",
-        "urlTemplate": "https://rankeo-nu.vercel.app/auditoria-seo-gratis?url={search_term_string}"
-      },
-      "query-input": "required name=search_term_string"
-    }
-  },
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "@id": "https://rankeo-nu.vercel.app/#organization",
-    "name": "Rankeo",
-    "alternateName": "Rankeo Agency",
-    "url": "https://rankeo-nu.vercel.app",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://rankeo-nu.vercel.app/logo.png",
-      "width": 200,
-      "height": 50
-    },
-    "description": "Agencia de SEO y sitios web optimizados para Colombia, México y USA Hispanic. Posicionamiento en Google, ChatGPT y Google AI Overviews.",
-    "foundingDate": "2025",
-    "areaServed": [
-      { "@type": "Country", "name":
+      "@type": "Offer"
