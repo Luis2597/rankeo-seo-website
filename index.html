@@ -1522,6 +1522,7 @@ async function doAudit(e) {
   res.querySelector('.rsc').focus?.();
 }
 
+
 /* ── Custom cursor (pointer:fine / desktop only) ── */
 (function () {
   if (!window.matchMedia('(pointer: fine)').matches) return;
@@ -1529,5 +1530,247 @@ async function doAudit(e) {
   const ring = document.getElementById('curRing');
   const dot  = document.getElementById('curDot');
   if (!cur) return;
-  let mx = -200, my = -200, rx = -200, ry = -200, raf;
-  document.addEventListener('mousemove', e => { mx = e.clientX; m
+  let mx = -200, my = -200, rx = -200, ry = -200;
+  document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; });
+  document.addEventListener('mousedown', () => cur.classList.add('is-click'));
+  document.addEventListener('mouseup',   () => cur.classList.remove('is-click'));
+  document.querySelectorAll('a, button, [role="button"]').forEach(el => {
+    el.addEventListener('mouseenter', () => cur.classList.add('is-hover'));
+    el.addEventListener('mouseleave', () => cur.classList.remove('is-hover'));
+  });
+  // Dark sections: hero + footer
+  document.querySelectorAll('.hero, footer').forEach(el => {
+    el.addEventListener('mouseenter', () => cur.classList.add('is-dark'));
+    el.addEventListener('mouseleave', () => cur.classList.remove('is-dark'));
+  });
+  function lerp(a, b, t) { return a + (b - a) * t; }
+  (function tick() {
+    rx = lerp(rx, mx, 0.14);
+    ry = lerp(ry, my, 0.14);
+    dot.style.transform  = `translate(${mx}px,${my}px) translate(-50%,-50%)`;
+    ring.style.transform = `translate(${rx}px,${ry}px) translate(-50%,-50%)`;
+    requestAnimationFrame(tick);
+  })();
+})();
+
+/* ── Hero canvas particles (desktop only) ── */
+(function () {
+  if (window.matchMedia('(max-width: 768px)').matches) return;
+  const canvas = document.getElementById('heroCanvas');
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
+  let W, H, mouse = { x: -999, y: -999 }, pts;
+
+  function resize() {
+    const hero = canvas.parentElement;
+    W = canvas.width  = hero.offsetWidth;
+    H = canvas.height = hero.offsetHeight;
+  }
+  function mkPts(n) {
+    return Array.from({ length: n }, () => ({
+      x: Math.random() * W, y: Math.random() * H,
+      vx: (Math.random() - .5) * .4, vy: (Math.random() - .5) * .4,
+      r: Math.random() * 1.5 + .5,
+    }));
+  }
+
+  resize();
+  pts = mkPts(65);
+  window.addEventListener('resize', () => { resize(); pts = mkPts(65); });
+
+  canvas.parentElement.addEventListener('mousemove', e => {
+    const rect = canvas.getBoundingClientRect();
+    mouse.x = e.clientX - rect.left;
+    mouse.y = e.clientY - rect.top;
+  });
+  canvas.parentElement.addEventListener('mouseleave', () => { mouse.x = mouse.y = -999; });
+
+  (function draw() {
+    ctx.clearRect(0, 0, W, H);
+    for (let i = 0; i < pts.length; i++) {
+      const p = pts[i];
+      const dx = mouse.x - p.x, dy = mouse.y - p.y;
+      const dist = Math.sqrt(dx * dx + dy * dy);
+      if (dist < 140 && dist > 0) { p.vx += (dx / dist) * .015; p.vy += (dy / dist) * .015; }
+      p.vx *= .98; p.vy *= .98;
+      p.x += p.vx; p.y += p.vy;
+      if (p.x < 0) p.x = W; if (p.x > W) p.x = 0;
+      if (p.y < 0) p.y = H; if (p.y > H) p.y = 0;
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+      ctx.fillStyle = 'rgba(240,78,35,.32)';
+      ctx.fill();
+      for (let j = i + 1; j < pts.length; j++) {
+        const q = pts[j];
+        const d2 = Math.sqrt((p.x-q.x)**2 + (p.y-q.y)**2);
+        if (d2 < 100) {
+          ctx.beginPath();
+          ctx.moveTo(p.x, p.y);
+          ctx.lineTo(q.x, q.y);
+          ctx.strokeStyle = 'rgba(240,78,35,' + (.15 * (1 - d2 / 100)).toFixed(3) + ')';
+          ctx.lineWidth = .6;
+          ctx.stroke();
+        }
+      }
+    }
+    requestAnimationFrame(draw);
+  })();
+})();
+
+/* ── 3D card tilt (desktop / pointer:fine only) ── */
+(function () {
+  if (!window.matchMedia('(pointer: fine)').matches) return;
+  document.querySelectorAll('.pc, .plan').forEach(card => {
+    card.addEventListener('mousemove', e => {
+      const r = card.getBoundingClientRect();
+      const x = (e.clientX - r.left) / r.width  - .5;
+      const y = (e.clientY - r.top)  / r.height - .5;
+      card.style.transform = `perspective(700px) rotateY(${(x * 8).toFixed(2)}deg) rotateX(${(-y * 6).toFixed(2)}deg) scale(1.02)`;
+    });
+    card.addEventListener('mouseleave', () => { card.style.transform = ''; });
+  });
+})();
+
+/* ── FAQ accordion ── */
+document.querySelectorAll('.fq-q').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.closest('.fq-item');
+    const open = item.classList.toggle('open');
+    btn.setAttribute('aria-expanded', open);
+  });
+});
+
+/* ── Cookie banner ── */
+function acceptCookies() {
+  document.getElementById('cookieBanner').classList.add('hidden');
+  try { localStorage.setItem('ck', '1'); } catch(e){}
+}
+(function() {
+  try { if (localStorage.getItem('ck')) document.getElementById('cookieBanner').classList.add('hidden'); } catch(e){}
+})();
+
+/* ── Contact ── */
+async function sendContact(e) {
+  e.preventDefault();
+  const form = e.target;
+  const btn  = form.querySelector('.csend');
+
+  const nom  = document.getElementById('cnom').value.trim();
+  const em   = document.getElementById('cem').value.trim();
+  const msg  = document.getElementById('cmsg').value.trim();
+  const priv = document.getElementById('cpriv').checked;
+
+  if (!nom || !em || !priv) {
+    btn.textContent = 'Completa los campos obligatorios';
+    btn.style.background = '#dc2626';
+    setTimeout(() => { btn.textContent = 'Enviar mensaje →'; btn.style.background = ''; }, 2500);
+    return;
+  }
+
+  btn.disabled = true;
+  btn.textContent = 'Enviando…';
+
+  const web = document.getElementById('cweb') ? document.getElementById('cweb').value.trim() : '';
+
+  try {
+    const data = new FormData();
+    data.append('name',    nom);
+    data.append('email',   em);
+    data.append('website', web);
+    data.append('message', msg);
+    data.append('_subject', `Nueva consulta Rankeo — ${nom}`);
+    data.append('_replyto', em);
+    data.append('_captcha', 'false');
+    data.append('_template', 'table');
+
+    const res = await fetch('https://formsubmit.co/bernalluisdiaz@gmail.com', {
+      method: 'POST',
+      headers: { 'Accept': 'application/json' },
+      body: data,
+    });
+
+    const json = await res.json().catch(() => ({}));
+
+    if (res.ok && json.success !== 'false') {
+      document.getElementById('cwrap').innerHTML = `
+        <div class="cok" role="status" aria-live="polite">
+          <svg viewBox="0 0 24 24" fill="none" stroke="var(--c-orange)" stroke-width="2" style="width:48px;height:48px;margin-bottom:16px"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          <h3>¡Listo! Mensaje recibido.</h3>
+          <p>Te contactaremos en menos de 24 horas con tu auditoría gratuita personalizada.</p>
+        </div>`;
+      try { gtag('event', 'contact_form_submit', { event_category: 'conversion' }); } catch(_){}
+    } else {
+      throw new Error('FormSubmit error');
+    }
+  } catch (err) {
+    const subject = encodeURIComponent(`Consulta SEO — ${nom}`);
+    const body    = encodeURIComponent(`Nombre: ${nom}\nEmail: ${em}\nWeb: ${web}\n\n${msg}`);
+    window.location.href = `mailto:bernalluisdiaz@gmail.com?subject=${subject}&body=${body}`;
+    btn.disabled = false;
+    btn.textContent = 'Enviar mensaje →';
+  }
+}
+</script>
+
+<script type="application/ld+json">
+[
+  {
+    "@context": "https://schema.org",
+    "@type": ["LocalBusiness", "ProfessionalService"],
+    "@id": "https://rankeo-nu.vercel.app/#org",
+    "name": "Rankeo",
+    "url": "https://rankeo-nu.vercel.app",
+    "description": "Agencia de SEO y sitios web para Colombia, México y USA Hispanic.",
+    "areaServed": [
+      { "@type": "Country", "name": "Colombia" },
+      { "@type": "Country", "name": "México" },
+      { "@type": "Country", "name": "United States" }
+    ],
+    "priceRange": "$199-$649",
+    "currenciesAccepted": "USD",
+    "address": { "@type": "PostalAddress", "addressCountry": "CO", "addressLocality": "Bogotá" },
+    "contactPoint": { "@type": "ContactPoint", "contactType": "sales", "availableLanguage": "Spanish", "url": "https://rankeo-nu.vercel.app/#contacto" }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "serviceType": "Search Engine Optimization",
+    "name": "Plan Local",
+    "provider": { "@id": "https://rankeo-nu.vercel.app/#org" },
+    "offers": { "@type": "Offer", "price": "199", "priceCurrency": "USD" }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "serviceType": "Search Engine Optimization",
+    "name": "Plan Web + SEO",
+    "provider": { "@id": "https://rankeo-nu.vercel.app/#org" },
+    "offers": { "@type": "Offer", "price": "349", "priceCurrency": "USD" }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "serviceType": "Search Engine Optimization",
+    "name": "Plan Autoridad",
+    "provider": { "@id": "https://rankeo-nu.vercel.app/#org" },
+    "offers": { "@type": "Offer", "price": "649", "priceCurrency": "USD" }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "¿Cuánto tiempo tarda el SEO en dar resultados?", "acceptedAnswer": { "@type": "Answer", "text": "Los primeros resultados visibles se dan entre 60 y 90 días. Resultados sólidos suelen consolidarse entre los 4 y 6 meses." } },
+      { "@type": "Question", "name": "¿Tienen contratos anuales?", "acceptedAnswer": { "@type": "Answer", "text": "No. Trabajamos mes a mes. Si no ves resultados, puedes cancelar sin penalizaciones." } },
+      { "@type": "Question", "name": "¿ Qué incluye la auditoría SEO gratis?", "acceptedAnswer": { "@type": "Answer", "text": "Análisis de velocidad, SEO técnico, visibilidad en Google Maps, keywords principales y 3 acciones prioritarias concretas." } },
+      { "@type": "Question", "name": "¿Trabajan con negocios pequeños?", "acceptedAnswer": { "@type": "Answer", "text": "Sí. La mayoría de nuestros clientes son PYMES, profesionales independientes y negocios locales en Colombia y México." } },
+      { "@type": "Question", "name": "¿ Qué diferencia a Rankeo de otras agencias?", "acceptedAnswer": { "@type": "Answer", "text": "Nos especializamos en SEO local para Latinoamérica. Conocemos el mercado colombiano y mexicano, sus búsquedas y su competencia." } },
+      { "@type": "Question", "name": "¿Pueden crear mi sitio web y hacer SEO al mismo tiempo?", "acceptedAnswer": { "@type": "Answer", "text": "Sí. Nuestros planes Web + SEO y Autoridad incluyen diseño y desarrollo con SEO técnico incorporado desde el primer día." } },
+      { "@type": "Question", "name": "¿ Cómo me reportan los avances?", "acceptedAnswer": { "@type": "Answer", "text": "Reporte mensual con métricas claras: posiciones ganadas, tráfico orgánico, keywords en top 10 y acciones del mes siguiente." } },
+      { "@type": "Question", "name": "¿Trabajan con empresas fuera de Colombia?", "acceptedAnswer": { "@type": "Answer", "text": "Sí, atendemos México, Colombia y el mercado hispano en USA." } }
+    ]
+  }
+]
+</script>
+
+</body>
+</html>
