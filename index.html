@@ -1381,21 +1381,24 @@ function heroGo(e) {
   if (!val || !val.includes('.')) {
     err.textContent = 'Ingresa una URL válida, ej: tuempresa.com';
     err.style.display = 'block';
-    document.getElementById('heroUrl').focus();
     return;
   }
   err.style.display = 'none';
+
+  // Dismiss mobile keyboard BEFORE scrolling (prevents viewport height shift)
+  document.activeElement && document.activeElement.blur();
+
   document.getElementById('auditUrl').value = val;
 
+  // Start audit immediately — don't wait for scroll to finish
+  doAudit({ preventDefault: function(){} });
+
+  // Scroll in parallel (audit is already running when user arrives)
   const target = document.getElementById('auditoria');
-  // Use Lenis if loaded, fallback to native scroll
   if (typeof lenis !== 'undefined') {
-    lenis.scrollTo(target, { offset: -60, duration: 1.3,
-      onComplete: () => doAudit({ preventDefault: function(){} })
-    });
+    lenis.scrollTo(target, { offset: -60, duration: 1.2 });
   } else {
-    target.scrollIntoView({ behavior: 'smooth' });
-    setTimeout(() => doAudit({ preventDefault: function(){} }), 800);
+    setTimeout(() => target.scrollIntoView({ behavior: 'smooth' }), 50);
   }
 }
 
@@ -1541,7 +1544,4 @@ async function sendContact(e) {
     data.append('email',   em);
     data.append('website', web);
     data.append('message', msg);
-    data.append('_subject', `Nueva consulta Rankeo — ${nom}`);
-    data.append('_replyto', em);
-    data.append('_captcha', 'false');
-    
+    data.append('_subject', `Nueva cons
