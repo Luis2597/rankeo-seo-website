@@ -440,7 +440,7 @@
     .ph { font-family: 'Syne', sans-serif; font-weight: 800; font-size: clamp(2rem,4vw,3.4rem); letter-spacing: -.03em; line-height: 1.05; margin-bottom: 14px; }
     .ps { font-size: 15.5px; color: var(--c-subtle); line-height: 1.65; max-width: 560px; margin-bottom: 52px; }
     .ps strong { color: var(--c-orange); font-weight: 700; }
-    .pgrid { display: grid; grid-template-columns: repeat(4,1fr); gap: 14px; margin-bottom: 32px; }
+    .pgrid { display: grid; grid-template-columns: repeat(3,1fr); gap: 14px; margin-bottom: 32px; }
     .pc {
       border-radius: 18px; border: 1.5px solid var(--c-border);
       overflow: hidden; cursor: default;
@@ -470,6 +470,27 @@
     .pcta-t p { font-size: 13.5px; color: rgba(255,255,255,.5); }
     .pcta-b { display: inline-flex; align-items: center; gap: 8px; background: var(--c-orange); color: white; font-size: 13.5px; font-weight: 700; padding: 14px 24px; border-radius: 100px; white-space: nowrap; min-height: 44px; transition: background var(--dur-fast), transform var(--dur-fast) var(--ease-spring); }
     .pcta-b:hover { background: white; color: var(--c-orange); transform: translateY(-1px); }
+
+    /* ━━━━ PORTFOLIO CARD — PHOTO OVERLAY ━━━━ */
+    .pcp-img { padding: 0; position: relative; overflow: hidden; }
+    .pcp-img img { width: 100%; height: 155px; object-fit: cover; display: block; transition: transform var(--dur-slow) var(--ease-out); }
+    .pc:hover .pcp-img img { transform: scale(1.05); }
+    .pcp-ov { position: absolute; inset: 0; background: linear-gradient(to top, rgba(10,9,8,.9) 0%, rgba(10,9,8,.12) 65%, transparent 100%); display: flex; flex-direction: column; justify-content: flex-end; padding: 14px 16px; }
+    .pcp-m { font-size: 9.5px; font-weight: 700; color: rgba(255,255,255,.55); text-transform: uppercase; letter-spacing: .12em; }
+    .pcp-n { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 1.75rem; color: var(--c-orange); line-height: 1; margin: 3px 0 2px; }
+    .pcp-s { font-size: 10.5px; color: rgba(255,255,255,.72); line-height: 1.35; }
+
+    /* ━━━━ VIDEO SECTION ━━━━ */
+    .vid-sec { padding: 120px 0; border-top: 1px solid var(--c-border); background: var(--c-ink); }
+    .vid-top { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; margin-bottom: 52px; }
+    .vid-h { font-family: 'Syne', sans-serif; font-weight: 800; font-size: clamp(1.8rem,3.5vw,2.8rem); letter-spacing: -.03em; line-height: 1.08; color: white; }
+    .vid-h em { color: var(--c-orange); font-style: normal; }
+    .vid-sub { font-size: 15px; color: rgba(255,255,255,.45); line-height: 1.75; }
+    .vid-wrap { position: relative; padding-bottom: 56.25%; border-radius: 20px; overflow: hidden; box-shadow: 0 32px 80px rgba(0,0,0,.55); }
+    .vid-wrap iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
+    @media (max-width: 768px) {
+      .vid-top { grid-template-columns: 1fr; gap: 20px; }
+    }
 
     /* ━━━━ TESTIMONIALS ━━━━ */
     .testi { padding: 120px 0; border-top: 1px solid var(--c-border); background: var(--c-bg); }
@@ -946,92 +967,83 @@
       <!-- Dental -->
       <div class="pc rv" data-d="1" role="listitem">
         <div class="pc-browser"><div class="pc-dot"></div><div class="pc-dot"></div><div class="pc-dot"></div><div class="pc-bar"></div></div>
-        <div class="pc-preview" style="display:flex;flex-direction:column;justify-content:center;gap:10px;padding:20px 16px;">
-          <div style="font-size:11px;font-weight:700;color:var(--c-subtle);text-transform:uppercase;letter-spacing:.1em;">Tráfico orgánico</div>
-          <div style="font-family:'Syne',sans-serif;font-weight:800;font-size:2rem;color:var(--c-orange);line-height:1;">+287%</div>
-          <div style="font-size:11.5px;color:var(--c-subtle);">en 6 meses · Antes: 140 vis/mes → Ahora: 542 vis/mes</div>
+        <div class="pc-preview pcp-img">
+          <img src="https://images.unsplash.com/photo-1606811971618-4486d14f3f99?auto=format&fit=crop&w=600&q=80" alt="Clínica dental Bogotá" loading="lazy">
+          <div class="pcp-ov"><div class="pcp-m">Tráfico orgánico</div><div class="pcp-n">+287%</div><div class="pcp-s">en 6 meses · 140 → 542 vis/mes</div></div>
         </div>
         <div class="pc-foot"><span class="pc-industry">Clínica Dental · Bogotá</span><a href="/demo/clinica-dental-bogota" target="_blank" class="pc-tag avail" style="text-decoration:none;">Ver demo →</a></div>
       </div>
       <!-- Legal -->
       <div class="pc rv" data-d="2" role="listitem">
         <div class="pc-browser"><div class="pc-dot"></div><div class="pc-dot"></div><div class="pc-dot"></div><div class="pc-bar"></div></div>
-        <div class="pc-preview" style="display:flex;flex-direction:column;justify-content:center;gap:10px;padding:20px 16px;">
-          <div style="font-size:11px;font-weight:700;color:var(--c-subtle);text-transform:uppercase;letter-spacing:.1em;">Leads mensuales</div>
-          <div style="font-family:'Syne',sans-serif;font-weight:800;font-size:2rem;color:var(--c-orange);line-height:1;">+340%</div>
-          <div style="font-size:11.5px;color:var(--c-subtle);">en 8 meses · De 5 a 22 consultas/mes</div>
+        <div class="pc-preview pcp-img">
+          <img src="https://images.unsplash.com/photo-1521587760476-6c12a4b040da?auto=format&fit=crop&w=600&q=80" alt="Firma de abogados Medellín" loading="lazy">
+          <div class="pcp-ov"><div class="pcp-m">Leads mensuales</div><div class="pcp-n">+340%</div><div class="pcp-s">en 8 meses · De 5 a 22 consultas/mes</div></div>
         </div>
         <div class="pc-foot"><span class="pc-industry">Firma Abogados · Medellín</span><a href="/demo/firma-abogados-medellin" target="_blank" class="pc-tag avail" style="text-decoration:none;">Ver demo →</a></div>
       </div>
       <!-- Gym -->
       <div class="pc rv" data-d="3" role="listitem">
         <div class="pc-browser"><div class="pc-dot"></div><div class="pc-dot"></div><div class="pc-dot"></div><div class="pc-bar"></div></div>
-        <div class="pc-preview" style="display:flex;flex-direction:column;justify-content:center;gap:10px;padding:20px 16px;">
-          <div style="font-size:11px;font-weight:700;color:var(--c-subtle);text-transform:uppercase;letter-spacing:.1em;">Nuevos miembros</div>
-          <div style="font-family:'Syne',sans-serif;font-weight:800;font-size:2rem;color:var(--c-orange);line-height:1;">+18</div>
-          <div style="font-size:11.5px;color:var(--c-subtle);">membresías nuevas en 90 días solo por SEO local</div>
+        <div class="pc-preview pcp-img">
+          <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=600&q=80" alt="Gimnasio CrossFit Cali" loading="lazy">
+          <div class="pcp-ov"><div class="pcp-m">Nuevos miembros</div><div class="pcp-n">+18</div><div class="pcp-s">membresías nuevas en 90 días solo por SEO local</div></div>
         </div>
         <div class="pc-foot"><span class="pc-industry">Gimnasio CrossFit · Cali</span><a href="/demo/gimnasio-crossfit-cali" target="_blank" class="pc-tag avail" style="text-decoration:none;">Ver demo →</a></div>
       </div>
       <!-- Restaurant -->
       <div class="pc rv" data-d="1" role="listitem">
         <div class="pc-browser"><div class="pc-dot"></div><div class="pc-dot"></div><div class="pc-dot"></div><div class="pc-bar"></div></div>
-        <div class="pc-preview" style="display:flex;flex-direction:column;justify-content:center;gap:10px;padding:20px 16px;">
-          <div style="font-size:11px;font-weight:700;color:var(--c-subtle);text-transform:uppercase;letter-spacing:.1em;">Reservas desde Google</div>
-          <div style="font-family:'Syne',sans-serif;font-weight:800;font-size:2rem;color:var(--c-orange);line-height:1;">+210%</div>
-          <div style="font-size:11.5px;color:var(--c-subtle);">en 5 meses · Top 3 en "restaurante La Candelaria"</div>
+        <div class="pc-preview pcp-img">
+          <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=600&q=80" alt="Restaurante Bogotá" loading="lazy">
+          <div class="pcp-ov"><div class="pcp-m">Reservas desde Google</div><div class="pcp-n">+210%</div><div class="pcp-s">en 5 meses · Top 3 "restaurante La Candelaria"</div></div>
         </div>
         <div class="pc-foot"><span class="pc-industry">Restaurante · Bogotá</span><a href="/demo/restaurante-bogota" target="_blank" class="pc-tag avail" style="text-decoration:none;">Ver demo →</a></div>
       </div>
-      <!-- Medical -->
+      <!-- Inmobiliaria -->
       <div class="pc rv" data-d="2" role="listitem">
         <div class="pc-browser"><div class="pc-dot"></div><div class="pc-dot"></div><div class="pc-dot"></div><div class="pc-bar"></div></div>
-        <div class="pc-preview" style="display:flex;flex-direction:column;justify-content:center;gap:10px;padding:20px 16px;">
-          <div style="font-size:11px;font-weight:700;color:var(--c-subtle);text-transform:uppercase;letter-spacing:.1em;">Tráfico orgánico</div>
-          <div style="font-family:'Syne',sans-serif;font-weight:800;font-size:2rem;color:var(--c-orange);line-height:1;">+390%</div>
-          <div style="font-size:11.5px;color:var(--c-subtle);">tráfico orgánico · Centro médico CDMX</div>
-        </div>
-        <div class="pc-foot"><span class="pc-industry">Centro Médico · México</span><span class="pc-tag avail">● Próximamente</span></div>
-      </div>
-      <!-- Real estate -->
-      <div class="pc rv" data-d="3" role="listitem">
-        <div class="pc-browser"><div class="pc-dot"></div><div class="pc-dot"></div><div class="pc-dot"></div><div class="pc-bar"></div></div>
-        <div class="pc-preview" style="display:flex;flex-direction:column;justify-content:center;gap:10px;padding:20px 16px;">
-          <div style="font-size:11px;font-weight:700;color:var(--c-subtle);text-transform:uppercase;letter-spacing:.1em;">Tráfico orgánico</div>
-          <div style="font-family:'Syne',sans-serif;font-weight:800;font-size:2rem;color:var(--c-orange);line-height:1;">+156%</div>
-          <div style="font-size:11.5px;color:var(--c-subtle);">en 4 meses · Inmobiliaria Barranquilla</div>
+        <div class="pc-preview pcp-img">
+          <img src="https://images.unsplash.com/photo-1580587771525-78b9dba3b914?auto=format&fit=crop&w=600&q=80" alt="Inmobiliaria Barranquilla" loading="lazy">
+          <div class="pcp-ov"><div class="pcp-m">Tráfico orgánico</div><div class="pcp-n">+156%</div><div class="pcp-s">en 4 meses · Inmobiliaria Barranquilla</div></div>
         </div>
         <div class="pc-foot"><span class="pc-industry">Inmobiliaria · Barranquilla</span><a href="/demo/inmobiliaria-barranquilla" target="_blank" class="pc-tag avail" style="text-decoration:none;">Ver demo →</a></div>
       </div>
-      <!-- Centro médico -->
-      <div class="pc rv" data-d="2" role="listitem">
-        <div class="pc-browser"><div class="pc-dot"></div><div class="pc-dot"></div><div class="pc-dot"></div><div class="pc-bar"></div></div>
-        <div class="pc-preview" style="display:flex;flex-direction:column;justify-content:center;gap:10px;padding:20px 16px;">
-          <div style="font-size:11px;font-weight:700;color:var(--c-subtle);text-transform:uppercase;letter-spacing:.1em;">Tráfico orgánico</div>
-          <div style="font-family:'Syne',sans-serif;font-weight:800;font-size:2rem;color:var(--c-orange);line-height:1;">+390%</div>
-          <div style="font-size:11.5px;color:var(--c-subtle);">12 especialidades · Centro médico CDMX</div>
-        </div>
-        <div class="pc-foot"><span class="pc-industry">Centro Médico · México</span><a href="/demo/centro-medico-cdmx" target="_blank" class="pc-tag avail" style="text-decoration:none;">Ver demo →</a></div>
-      </div>
-      <!-- Hotel boutique -->
+      <!-- Hotel Boutique -->
       <div class="pc rv" data-d="3" role="listitem">
         <div class="pc-browser"><div class="pc-dot"></div><div class="pc-dot"></div><div class="pc-dot"></div><div class="pc-bar"></div></div>
-        <div class="pc-preview" style="display:flex;flex-direction:column;justify-content:center;gap:10px;padding:20px 16px;">
-          <div style="font-size:11px;font-weight:700;color:var(--c-subtle);text-transform:uppercase;letter-spacing:.1em;">Reservas directas</div>
-          <div style="font-family:'Syne',sans-serif;font-weight:800;font-size:2rem;color:var(--c-orange);line-height:1;">+180%</div>
-          <div style="font-size:11.5px;color:var(--c-subtle);">en 7 meses · Hotel boutique Cartagena</div>
+        <div class="pc-preview pcp-img">
+          <img src="https://images.unsplash.com/photo-1584132967334-10e028bd69f7?auto=format&fit=crop&w=600&q=80" alt="Hotel boutique Cartagena" loading="lazy">
+          <div class="pcp-ov"><div class="pcp-m">Reservas directas</div><div class="pcp-n">+180%</div><div class="pcp-s">en 7 meses · Hotel boutique Cartagena</div></div>
         </div>
         <div class="pc-foot"><span class="pc-industry">Hotel Boutique · Cartagena</span><a href="/demo/hotel-boutique-cartagena" target="_blank" class="pc-tag avail" style="text-decoration:none;">Ver demo →</a></div>
       </div>
-      <!-- Arquitectura -->
+      <!-- Centro médico -->
       <div class="pc rv" data-d="1" role="listitem">
         <div class="pc-browser"><div class="pc-dot"></div><div class="pc-dot"></div><div class="pc-dot"></div><div class="pc-bar"></div></div>
-        <div class="pc-preview" style="display:flex;flex-direction:column;justify-content:center;gap:10px;padding:20px 16px;">
-          <div style="font-size:11px;font-weight:700;color:var(--c-subtle);text-transform:uppercase;letter-spacing:.1em;">Consultas web</div>
-          <div style="font-family:'Syne',sans-serif;font-weight:800;font-size:2rem;color:var(--c-orange);line-height:1;">+240%</div>
-          <div style="font-size:11.5px;color:var(--c-subtle);">en 6 meses · Estudio arquitectura Bogotá</div>
+        <div class="pc-preview pcp-img">
+          <img src="https://images.unsplash.com/photo-1584432810601-6c7f27d2362b?auto=format&fit=crop&w=600&q=80" alt="Centro médico CDMX" loading="lazy">
+          <div class="pcp-ov"><div class="pcp-m">Tráfico orgánico</div><div class="pcp-n">+390%</div><div class="pcp-s">12 especialidades · Centro médico CDMX</div></div>
+        </div>
+        <div class="pc-foot"><span class="pc-industry">Centro Médico · México</span><a href="/demo/centro-medico-cdmx" target="_blank" class="pc-tag avail" style="text-decoration:none;">Ver demo →</a></div>
+      </div>
+      <!-- Arquitectura -->
+      <div class="pc rv" data-d="2" role="listitem">
+        <div class="pc-browser"><div class="pc-dot"></div><div class="pc-dot"></div><div class="pc-dot"></div><div class="pc-bar"></div></div>
+        <div class="pc-preview pcp-img">
+          <img src="https://images.unsplash.com/photo-1486718448742-163732cd1544?auto=format&fit=crop&w=600&q=80" alt="Estudio de arquitectura Bogotá" loading="lazy">
+          <div class="pcp-ov"><div class="pcp-m">Consultas web</div><div class="pcp-n">+240%</div><div class="pcp-s">en 6 meses · Estudio arquitectura Bogotá</div></div>
         </div>
         <div class="pc-foot"><span class="pc-industry">Arquitectura · Bogotá</span><a href="/demo/arquitectura-bogota" target="_blank" class="pc-tag avail" style="text-decoration:none;">Ver demo →</a></div>
+      </div>
+      <!-- CrossFit CDMX -->
+      <div class="pc rv" data-d="3" role="listitem">
+        <div class="pc-browser"><div class="pc-dot"></div><div class="pc-dot"></div><div class="pc-dot"></div><div class="pc-bar"></div></div>
+        <div class="pc-preview pcp-img">
+          <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=600&q=80" alt="Centro médico México" loading="lazy">
+          <div class="pcp-ov"><div class="pcp-m">Tráfico orgánico</div><div class="pcp-n">+390%</div><div class="pcp-s">Centro médico · En progreso CDMX</div></div>
+        </div>
+        <div class="pc-foot"><span class="pc-industry">Centro Médico · México</span><span class="pc-tag soon">● En proceso</span></div>
       </div>
     </div>
 
@@ -1041,6 +1053,28 @@
         <p>Auditoría gratuita en 24 horas · Sin contratos anuales</p>
       </div>
       <a href="#contacto" class="pcta-b">Pedir auditoría gratis →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ━━━ VIDEO SEO ━━━ -->
+<section class="vid-sec" id="video-seo" aria-label="Qué es el SEO">
+  <div class="con">
+    <div class="vid-top rv">
+      <div>
+        <div class="sl"><div class="sl-d" style="background:rgba(255,255,255,.3)"></div><span class="sl-t" style="color:rgba(255,255,255,.4)">Educación gratuita</span></div>
+        <h2 class="vid-h">¿Qué es el SEO y por qué<br/><em>tu negocio lo necesita?</em></h2>
+      </div>
+      <p class="vid-sub">En menos de 10 minutos entenderás por qué tus clientes no te encuentran en Google — y exactamente cómo lo solucionamos para negocios en Colombia y México.</p>
+    </div>
+    <div class="vid-wrap rv" data-d="2">
+      <iframe
+        src="https://www.youtube.com/embed/BicIvYl7kkY?rel=0&modestbranding=1&color=white"
+        title="Qué es el SEO: guía definitiva para principiantes"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+        loading="lazy">
+      </iframe>
     </div>
   </div>
 </section>
