@@ -112,9 +112,7 @@
     .cur.is-dark   .cur-ring { border-color: rgba(255,255,255,.55); }
     .cur.is-dark   .cur-dot  { background: white; }
 
-    /* ━━━━ GSAP CLIP TEXT REVEAL ━━━━ */
-    .clip-wrap { overflow: hidden; display: block; }
-    .clip-inner { display: block; will-change: transform; }
+    /* clip-wrap removed — GSAP text clip caused h1 to blank on slow CDN/mobile */
     a { text-decoration: none; color: inherit; }
     button { font-family: inherit; }
     img { display: block; max-width: 100%; }
@@ -619,6 +617,11 @@
       .mf-txt { max-width: none; }
       .mini-card { right: -8px; bottom: -8px; }
     }
+    @media (max-width: 900px) {
+      /* Hide floating chips that overflow on stacked layout */
+      .mini-card-2 { display: none; }
+      .mini-card   { right: 8px; bottom: 8px; }
+    }
     @media (max-width: 768px) {
       .nav-links, .nav-cta { display: none; }
       .burger { display: flex; }
@@ -631,12 +634,23 @@
       .arow { flex-direction: column; }
       .ago { width: 100%; }
       .fi { flex-direction: column; text-align: center; }
-      .hero-stats { justify-content: center; }
-      .hst { padding: 0 16px; }
+      .flinks { justify-content: center; }
+      /* Hero stats: stack on narrow */
+      .hero-stats { flex-wrap: wrap; justify-content: center; gap: 4px; }
+      .hst { padding: 8px 14px; border-right: none; border-bottom: 1px solid rgba(10,9,8,.08); }
+      .hst:last-child { border-bottom: none; }
+      .hst-n { font-size: 19px; }
+      /* Contact send button full width on mobile */
+      .csend { align-self: stretch; text-align: center; justify-content: center; }
+      /* Geo badge wraps cleanly */
+      .geo-badge { font-size: 10px; gap: 5px; }
     }
     @media (max-width: 520px) {
       .pgrid { grid-template-columns: 1fr; }
       .rsc { flex-direction: column; align-items: flex-start; }
+      /* Pill: hide https:// prefix on very small screens to save space */
+      .pill-p { display: none; }
+      .pill-in { padding-left: 8px; }
     }
 
     /* ━━━━ MOTION SAFETY — cubre todas las animaciones infinitas ━━━━ */
@@ -1523,25 +1537,4 @@ async function sendContact(e) {
 
   const nom  = document.getElementById('cnom').value.trim();
   const em   = document.getElementById('cem').value.trim();
-  const msg  = document.getElementById('cmsg').value.trim();
-  const priv = document.getElementById('cpriv').checked;
-
-  if (!nom || !em || !priv) {
-    btn.textContent = 'Completa los campos obligatorios';
-    btn.style.background = '#dc2626';
-    setTimeout(() => { btn.textContent = 'Enviar mensaje →'; btn.style.background = ''; }, 2500);
-    return;
-  }
-
-  btn.disabled = true;
-  btn.textContent = 'Enviando…';
-
-  const web = document.getElementById('cweb') ? document.getElementById('cweb').value.trim() : '';
-
-  try {
-    const data = new FormData();
-    data.append('name',    nom);
-    data.append('email',   em);
-    data.append('website', web);
-    data.append('message', msg);
-    data.append('_subject', `Nueva cons
+  const 
