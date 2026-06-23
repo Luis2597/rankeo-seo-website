@@ -1386,8 +1386,17 @@ function heroGo(e) {
   }
   err.style.display = 'none';
   document.getElementById('auditUrl').value = val;
-  document.getElementById('auditoria').scrollIntoView({ behavior: 'smooth' });
-  setTimeout(() => document.getElementById('auditForm').dispatchEvent(new Event('submit')), 750);
+
+  const target = document.getElementById('auditoria');
+  // Use Lenis if loaded, fallback to native scroll
+  if (typeof lenis !== 'undefined') {
+    lenis.scrollTo(target, { offset: -60, duration: 1.3,
+      onComplete: () => doAudit({ preventDefault: function(){} })
+    });
+  } else {
+    target.scrollIntoView({ behavior: 'smooth' });
+    setTimeout(() => doAudit({ preventDefault: function(){} }), 800);
+  }
 }
 
 /* ── Audit tool ── */
@@ -1535,12 +1544,4 @@ async function sendContact(e) {
     data.append('_subject', `Nueva consulta Rankeo — ${nom}`);
     data.append('_replyto', em);
     data.append('_captcha', 'false');
-    data.append('_template', 'table');
-
-    const res = await fetch('https://formsubmit.co/bernalluisdiaz@gmail.com', {
-      method: 'POST',
-      headers: { 'Accept': 'application/json' },
-      body: data,
-    });
-
-    const json = await
+    
