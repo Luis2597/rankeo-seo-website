@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <!-- Home -->
+  <url>
+    <loc>https://rankeo-nu.vercel.app/</loc>
+    <lastmod>2026-06-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="es-CO" href="https://rankeo-nu.vercel.app/"/>
+    <xhtml:link rel="alternate" hreflang="es-MX" href="https://rankeo-nu.vercel.app/"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://rankeo-nu.vercel.app/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rankeo-nu.vercel.app/"/>
+  </url>
+
+  <!-- Landings de servicio por ciudad -->
+  <url>
+    <loc>https://rankeo-nu.vercel.app/seo-medellin</loc>
+    <lastmod>2026-06-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://rankeo-nu.vercel.app/seo-cali</loc>
+    <lastmod>2026-06-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Landings de servicio por país -->
+  <url>
+    <loc>https://rankeo-nu.vercel.app/seo-colombia</loc>
+    <lastmod>2026-06-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://rankeo-nu.vercel.app/seo-bogota</loc>
+    <lastmod>2026-06-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://rankeo-nu.vercel.app/seo-mexico</loc>
+    <lastmod>2026-06-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://rankeo-nu.vercel.app/geo-colombia</loc>
+    <lastmod>2026-06-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Landings por industria -->
+  <url>
+    <loc>https://rankeo-nu.vercel.app/seo-para-gimnasios</loc>
+    <lastmod>2026-06-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://rankeo-nu.vercel.app/seo-para-abogados</loc>
+    <lastmod>2026-06-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://rankeo-nu.vercel.app/seo-para-dentistas</loc>
+    <lastmod>2026-06-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://rankeo-nu.vercel.app/seo-para-restaurantes</loc>
+    <lastmod>2026-06-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Herramienta + precios -->
+  <url>
+    <loc>https://rankeo-nu.vercel.app/auditoria-seo-gratis</loc>
+    <lastmod>2026-06-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://rankeo-nu.vercel.app/precios</loc>
+    <lastmod>2026-06-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Blog -->
+  <url>
+    <loc>https://rankeo-nu.vercel.app/blog/</loc>
+    <lastmod>2026-06-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://rankeo-nu.vercel.app/blog/por-que-no-aparezco-en-google</loc>
+    <lastmod>2026-06-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://rankeo-nu.vercel.app/blog/cuanto-cuesta-seo-colombia-2026</loc>
+    <lastmod>2026-06-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://rankeo-nu.vercel.app/blog/que-es-geo-generative-engine-optimization</loc>
+    <lastmod>2026-06-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://rankeo-nu.vercel.app/blog/aparecer-en-chatgpt-con-tu-empresa</loc>
+    <lastmod>2026-06-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://rankeo-nu.vercel.app/blog/como-posicionarse-en-chatgpt-google-geo-2026</loc>
+    <lastmod>2026-06-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+</urlset>

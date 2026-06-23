@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="es-CO">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Arenas Inmobiliaria | Proyectos y Apartamentos en Barranquilla</title>
+  <meta name="description" content="Inmobiliaria premium en Barranquilla. Apartamentos nuevos en El Prado, Bello Horizonte y Puerto Colombia. Encuentra tu propiedad ideal con Arenas."/>
+  <link rel="canonical" href="https://rankeo-nu.vercel.app/demo/inmobiliaria-barranquilla"/>
+  <meta property="og:title" content="Arenas Inmobiliaria | Barranquilla"/>
+  <meta name="robots" content="noindex,follow"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --ink:     #141010;
+      --blue:    #1D3557;
+      --gold:    #BFA980;
+      --gold-l:  #D4C4A0;
+      --cream:   #FAF8F4;
+      --sand:    #F0EAE0;
+      --stone:   #E4DDD2;
+      --muted:   #7A7068;
+      --border:  #DDD6CC;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+    body { font-family: 'Jost', sans-serif; background: var(--cream); color: var(--ink); }
+    a { text-decoration: none; color: inherit; }
+    .con { max-width: 1140px; margin: 0 auto; padding: 0 28px; }
+
+    /* ── DEMO ── */
+    .demo-banner { background: #1D3557; color: rgba(255,255,255,.75); text-align: center; padding: 9px 16px; font-size: 12px; }
+    .demo-banner strong { color: white; }
+    .demo-banner a { color: #BFA980; font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
+
+    /* ── NAV ── */
+    nav { position: sticky; top: 0; z-index: 100; background: rgba(250,248,244,.97); backdrop-filter: blur(10px); border-bottom: 1px solid var(--border); }
+    .nav-i { max-width: 1140px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; height: 68px; padding: 0 28px; }
+    .logo { display: flex; flex-direction: column; }
+    .logo-main { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 400; letter-spacing: .2em; text-transform: uppercase; color: var(--ink); }
+    .logo-sub { font-size: 9px; font-weight: 500; letter-spacing: .3em; text-transform: uppercase; color: var(--muted); margin-top: -2px; }
+    .nav-links { display: flex; gap: 32px; }
+    .nav-links a { font-size: 12px; font-weight: 500; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); transition: color .2s; }
+    .nav-links a:hover { color: var(--ink); }
+    .nav-cta { background: var(--blue); color: white; font-size: 11.5px; font-weight: 500; padding: 11px 24px; letter-spacing: .1em; text-transform: uppercase; transition: background .2s; }
+    .nav-cta:hover { background: #27496D; }
+
+    /* ── HERO ── */
+    .hero { background: var(--blue); color: white; min-height: 85vh; display: flex; align-items: flex-end; position: relative; overflow: hidden; }
+    .hero-bg { position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(29,53,87,.3) 0%, rgba(29,53,87,.85) 70%, var(--blue) 100%); }
+    .hero-pattern { position: absolute; inset: 0; background-image: linear-gradient(rgba(191,169,128,.06) 1px, transparent 1px), linear-gradient(90deg, rgba(191,169,128,.06) 1px, transparent 1px); background-size: 60px 60px; }
+    .hero-inner { position: relative; z-index: 1; padding-bottom: 80px; width: 100%; }
+    .hero-tag { display: inline-flex; align-items: center; gap: 8px; border: 1px solid rgba(191,169,128,.4); color: var(--gold); font-size: 10.5px; font-weight: 500; padding: 7px 16px; letter-spacing: .2em; text-transform: uppercase; margin-bottom: 24px; }
+    h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(3rem, 7vw, 6rem); font-weight: 300; line-height: 1.05; letter-spacing: -.01em; margin-bottom: 20px; max-width: 700px; }
+    h1 em { font-style: italic; color: var(--gold); }
+    .hero-sub { font-size: 16px; font-weight: 300; color: rgba(255,255,255,.65); max-width: 480px; line-height: 1.75; margin-bottom: 36px; }
+    .hero-actions { display: flex; gap: 12px; }
+    .btn-gold { background: var(--gold); color: var(--ink); font-size: 11.5px; font-weight: 600; padding: 14px 30px; letter-spacing: .12em; text-transform: uppercase; transition: background .2s; }
+    .btn-gold:hover { background: var(--gold-l); }
+    .btn-outline-w { background: transparent; color: rgba(255,255,255,.8); font-size: 11.5px; font-weight: 500; padding: 14px 24px; letter-spacing: .1em; text-transform: uppercase; border: 1px solid rgba(255,255,255,.25); transition: border-color .2s, color .2s; }
+    .btn-outline-w:hover { border-color: rgba(255,255,255,.6); color: white; }
+    .hero-metrics { display: flex; gap: 0; margin-top: 60px; border-top: 1px solid rgba(255,255,255,.1); }
+    .hm-item { padding: 28px 40px 0 0; }
+    .hm-n { font-family: 'Cormorant Garamond', serif; font-size: 2.6rem; font-weight: 300; color: var(--gold); line-height: 1; }
+    .hm-l { font-size: 11px; font-weight: 500; text-transform: uppercase; letter-spacing: .15em; color: rgba(255,255,255,.4); margin-top: 4px; }
+
+    /* ── PROPERTIES ── */
+    .properties { padding: 100px 0; }
+    .sec-label { font-size: 10.5px; font-weight: 500; text-transform: uppercase; letter-spacing: .2em; color: var(--gold); margin-bottom: 10px; }
+    .sec-h { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 4vw, 3.4rem); font-weight: 400; letter-spacing: -.01em; line-height: 1.1; margin-bottom: 12px; }
+    .sec-p { font-size: 15px; color: var(--muted); line-height: 1.7; font-weight: 300; margin-bottom: 52px; max-width: 560px; }
+    .prop-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; grid-template-rows: auto auto; gap: 2px; }
+    .prop-card { background: var(--sand); overflow: hidden; position: relative; transition: transform .3s; }
+    .prop-card:hover { z-index: 2; transform: scale(1.01); }
+    .prop-card.featured { grid-row: span 2; }
+    .prop-visual { height: 220px; display: flex; align-items: center; justify-content: center; font-size: 52px; }
+    .prop-card.featured .prop-visual { height: 380px; }
+    .pv-1 { background: linear-gradient(160deg, #2c4a6e, #1D3557); }
+    .pv-2 { background: linear-gradient(160deg, #3a3020, #6b5a3e); }
+    .pv-3 { background: linear-gradient(160deg, #1a3a2a, #2d5540); }
+    .pv-4 { background: linear-gradient(160deg, #3a1a1a, #7a3030); }
+    .pv-5 { background: linear-gradient(160deg, #1a2a3a, #2a4060); }
+    .prop-body { padding: 20px 22px 24px; }
+    .prop-type { font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: .16em; color: var(--gold); margin-bottom: 8px; }
+    .prop-name { font-family: 'Cormorant Garamond', serif; font-size: 1.25rem; font-weight: 600; letter-spacing: -.01em; margin-bottom: 4px; }
+    .prop-loc { font-size: 12px; color: var(--muted); margin-bottom: 14px; }
+    .prop-specs { display: flex; gap: 16px; font-size: 11.5px; color: var(--muted); margin-bottom: 14px; }
+    .prop-price { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 600; color: var(--blue); }
+    .prop-badge { position: absolute; top: 14px; left: 14px; background: var(--gold); color: var(--ink); font-size: 9.5px; font-weight: 700; padding: 4px 10px; letter-spacing: .12em; text-transform: uppercase; }
+
+    /* ── WHY ── */
+    .why { padding: 96px 0; background: var(--blue); color: white; }
+    .why-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+    .why-left h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem,4vw,3.2rem); font-weight: 300; letter-spacing: -.01em; line-height: 1.15; margin-bottom: 16px; }
+    .why-left h2 em { color: var(--gold); font-style: italic; }
+    .why-left p { font-size: 15px; color: rgba(255,255,255,.6); line-height: 1.8; font-weight: 300; }
+    .why-points { display: flex; flex-direction: column; gap: 0; }
+    .wp { padding: 24px 0; border-bottom: 1px solid rgba(255,255,255,.08); display: flex; gap: 20px; align-items: flex-start; }
+    .wp:first-child { border-top: 1px solid rgba(255,255,255,.08); }
+    .wp-num { font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; color: var(--gold); font-weight: 300; line-height: 1; min-width: 32px; }
+    .wp-title { font-size: 14px; font-weight: 600; margin-bottom: 4px; letter-spacing: .02em; }
+    .wp-desc { font-size: 13px; color: rgba(255,255,255,.5); line-height: 1.65; font-weight: 300; }
+
+    /* ── CTA ── */
+    .cta-strip { padding: 80px 0; }
+    .cta-box { background: var(--sand); border: 1px solid var(--border); padding: 56px 60px; display: flex; align-items: center; justify-content: space-between; gap: 40px; flex-wrap: wrap; }
+    .cta-box h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.8rem,3vw,2.6rem); font-weight: 400; letter-spacing: -.01em; max-width: 500px; }
+    .cta-box h2 em { font-style: italic; color: var(--blue); }
+
+    /* ── FOOTER ── */
+    footer { background: var(--ink); color: rgba(255,255,255,.4); padding: 44px 0; }
+    .foot-inner { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+    .foot-logo { font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 400; letter-spacing: .2em; text-transform: uppercase; color: white; }
+    .foot-copy { font-size: 12px; }
+    .foot-powered a { font-size: 12px; color: rgba(255,255,255,.3); text-decoration: underline; text-underline-offset: 3px; }
+
+    @media (max-width: 768px) {
+      .prop-grid { grid-template-columns: 1fr; }
+      .prop-card.featured .prop-visual { height: 220px; }
+      .why-inner { grid-template-columns: 1fr; gap: 40px; }
+      .cta-box { padding: 36px 28px; }
+      .nav-links { display: none; }
+      .foot-inner { flex-direction: column; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="demo-banner">
+  <strong>Proyecto demo</strong> — Sitio de muestra creado por <a href="https://rankeo-nu.vercel.app" target="_blank" rel="noopener">Rankeo</a>. ¿Tu inmobiliaria necesita un sitio así? <a href="https://rankeo-nu.vercel.app/#contacto" target="_blank" rel="noopener">Hablemos →</a>
+</div>
+
+<nav>
+  <div class="nav-i">
+    <div class="logo">
+      <div class="logo-main">Arenas</div>
+      <div class="logo-sub">Inmobiliaria</div>
+    </div>
+    <div class="nav-links">
+      <a href="#proyectos">Proyectos</a>
+      <a href="#nosotros">Nosotros</a>
+      <a href="#cta">Contacto</a>
+    </div>
+    <a href="#cta" class="nav-cta">Buscar propiedad</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-pattern"></div>
+  <div class="con hero-inner">
+    <div class="hero-tag">🏙️ Barranquilla, Colombia</div>
+    <h1>Propiedades que<br/>definen el <em>estilo</em><br/>de vivir bien</h1>
+    <p class="hero-sub">Apartamentos nuevos y proyectos en venta en los mejores sectores de Barranquilla. 18 años construyendo hogares en la Costa.</p>
+    <div class="hero-actions">
+      <a href="#proyectos" class="btn-gold">Ver proyectos</a>
+      <a href="#cta" class="btn-outline-w">Asesoría gratuita</a>
+    </div>
+    <div class="hero-metrics">
+      <div class="hm-item"><div class="hm-n">1.400+</div><div class="hm-l">Familias ubicadas</div></div>
+      <div class="hm-item"><div class="hm-n">18 años</div><div class="hm-l">En el mercado</div></div>
+      <div class="hm-item"><div class="hm-n">32</div><div class="hm-l">Proyectos entregados</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="properties" id="proyectos">
+  <div class="con">
+    <div class="sec-label">Portafolio activo</div>
+    <h2 class="sec-h">Proyectos en<br/>Barranquilla</h2>
+    <p class="sec-p">Cada proyecto nace de entender qué necesita cada familia. Desde estudios hasta penthouses frente al mar.</p>
+    <div class="prop-grid">
+      <div class="prop-card featured">
+        <div class="prop-badge">Nuevo</div>
+        <div class="prop-visual pv-1">🌅</div>
+        <div class="prop-body">
+          <div class="prop-type">Proyecto estrella · En construcción</div>
+          <div class="prop-name">Torres del Prado</div>
+          <div class="prop-loc">📍 El Prado · Barranquilla</div>
+          <div class="prop-specs">🛏 2–4 hab &nbsp;·&nbsp; 🚿 2–3 baños &nbsp;·&nbsp; 📐 85–220 m²</div>
+          <div class="prop-price">Desde $420.000.000</div>
+        </div>
+      </div>
+      <div class="prop-card">
+        <div class="prop-visual pv-2">🏖️</div>
+        <div class="prop-body">
+          <div class="prop-type">Entrega 2025 · 4 unidades</div>
+          <div class="prop-name">Bello Mar Residencias</div>
+          <div class="prop-loc">📍 Bello Horizonte</div>
+          <div class="prop-price">Desde $680.000.000</div>
+        </div>
+      </div>
+      <div class="prop-card">
+        <div class="prop-visual pv-3">🌿</div>
+        <div class="prop-body">
+          <div class="prop-type">Preventa abierta</div>
+          <div class="prop-name">Verde Urbano</div>
+          <div class="prop-loc">📍 Los Alpes</div>
+          <div class="prop-price">Desde $290.000.000</div>
+        </div>
+      </div>
+      <div class="prop-card">
+        <div class="prop-visual pv-4">🌊</div>
+        <div class="prop-body">
+          <div class="prop-type">Frente al mar · 8 unidades</div>
+          <div class="prop-name">Puerto Sereno</div>
+          <div class="prop-loc">📍 Puerto Colombia</div>
+          <div class="prop-price">Desde $850.000.000</div>
+        </div>
+      </div>
+      <div class="prop-card">
+        <div class="prop-visual pv-5">🏙️</div>
+        <div class="prop-body">
+          <div class="prop-type">Uso mixto · Oficinas + Aptos</div>
+          <div class="prop-name">Centro Norte 85</div>
+          <div class="prop-loc">📍 Norte Centro Histórico</div>
+          <div class="prop-price">Desde $195.000.000</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="why" id="nosotros">
+  <div class="con">
+    <div class="why-inner">
+      <div class="why-left">
+        <div class="sec-label" style="color:var(--gold);">Por qué elegirnos</div>
+        <h2>18 años haciendo<br/><em>bien</em> una sola cosa</h2>
+        <p>Arenas nació en Barranquilla y se quedó en Barranquilla. Conocemos cada barrio, cada precio real y cada desarrollador de la ciudad. No somos franquicia.</p>
+      </div>
+      <div class="why-points">
+        <div class="wp"><div class="wp-num">01</div><div><div class="wp-title">Precios directos de constructor</div><div class="wp-desc">Trabajamos directo con los proyectos. Sin intermediarios extra, sin costos ocultos.</div></div></div>
+        <div class="wp"><div class="wp-num">02</div><div><div class="wp-title">Asesor exclusivo por cliente</div><div class="wp-desc">Un asesor te acompaña desde la búsqueda hasta la escritura. Siempre la misma persona.</div></div></div>
+        <div class="wp"><div class="wp-num">03</div><div><div class="wp-title">Gestión de crédito hipotecario</div><div class="wp-desc">Alianzas con Banco de Bogotá, Davivienda y Bancolombia. Tramitamos tu crédito sin costo.</div></div></div>
+        <div class="wp"><div class="wp-num">04</div><div><div class="wp-title">Postventa real</div><div class="wp-desc">Seguimiento 12 meses después de la entrega. Nuestros clientes vuelven y refieren porque saben que estamos.</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-strip" id="cta">
+  <div class="con">
+    <div class="cta-box">
+      <h2>¿Listo para encontrar<br/>tu próxima <em>propiedad</em>?</h2>
+      <a href="tel:+5753456789" class="btn-gold" style="font-size:13px;padding:16px 36px;white-space:nowrap;">Hablar con un asesor →</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="con">
+    <div class="foot-inner">
+      <div class="foot-logo">Arenas Inmobiliaria</div>
+      <div class="foot-copy">Cll. 72 #68-34, El Prado · Barranquilla · Lun–Vie 8am–6pm · Sáb 9am–1pm</div>
+      <div class="foot-powered">Sitio web por <a href="https://rankeo-nu.vercel.app" target="_blank" rel="noopener">Rankeo</a></div>
+    </div>
+  </div>
+</footer>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"RealEstateAgent","name":"Arenas Inmobiliaria","url":"https://rankeo-nu.vercel.app/demo/inmobiliaria-barranquilla","telephone":"+5753456789","address":{"@type":"PostalAddress","streetAddress":"Cll. 72 #68-34","addressLocality":"Barranquilla","addressRegion":"Atlántico","addressCountry":"CO"},"description":"Inmobiliaria premium en Barranquilla. Apartamentos nuevos y proyectos en venta."}
+</script>
+</body>
+</html>

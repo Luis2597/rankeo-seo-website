@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="es-CO">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CrossFit Valle | Gym en Cali — Entrena diferente en Ciudad Jardín</title>
+  <meta name="description" content="CrossFit y entrenamiento funcional en Ciudad Jardín, Cali. Clases para todos los niveles, coaches certificados y comunidad que te impulsa. Primera clase gratis."/>
+  <link rel="canonical" href="https://rankeo-nu.vercel.app/demo/gimnasio-crossfit-cali"/>
+  <meta property="og:title" content="CrossFit Valle | Gym Cali"/>
+  <meta property="og:description" content="CrossFit en Ciudad Jardín, Cali. Primera clase gratis."/>
+  <meta property="og:type" content="website"/>
+  <meta name="robots" content="noindex,follow"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:ital,wght@0,400;0,500;0,600;0,700;1,600&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --black:  #0D0D0D;
+      --dark:   #141414;
+      --card:   #1C1C1C;
+      --red:    #E63946;
+      --red-l:  #FF4D5A;
+      --yellow: #FFD60A;
+      --white:  #FFFFFF;
+      --muted:  rgba(255,255,255,.5);
+      --border: rgba(255,255,255,.08);
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-size: 16px; -webkit-font-smoothing: antialiased; }
+    body { font-family: 'Barlow', sans-serif; background: var(--black); color: var(--white); }
+    a { text-decoration: none; color: inherit; }
+    .con { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+
+    /* ── NAV ── */
+    nav { position: sticky; top: 0; z-index: 100; background: rgba(13,13,13,.95); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); padding: 0 24px; }
+    .nav-i { max-width: 1120px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; height: 64px; }
+    .logo { font-family: 'Bebas Neue', sans-serif; font-size: 26px; letter-spacing: .1em; color: var(--white); }
+    .logo em { color: var(--red); font-style: normal; }
+    .nav-links { display: flex; gap: 28px; }
+    .nav-links a { font-size: 13.5px; font-weight: 500; color: var(--muted); transition: color .2s; letter-spacing: .04em; text-transform: uppercase; }
+    .nav-links a:hover { color: var(--white); }
+    .nav-cta { background: var(--red); color: white; font-size: 13px; font-weight: 700; padding: 10px 22px; border-radius: 6px; transition: background .2s, transform .2s; text-transform: uppercase; letter-spacing: .06em; }
+    .nav-cta:hover { background: var(--red-l); transform: translateY(-1px); }
+
+    /* ── HERO ── */
+    .hero { min-height: 90vh; display: flex; align-items: center; position: relative; overflow: hidden; background: var(--dark); }
+    .hero-bg { position: absolute; inset: 0; background: linear-gradient(135deg, #E63946 0%, transparent 50%); opacity: .08; pointer-events: none; }
+    .hero-grid { position: absolute; inset: 0; background-image: linear-gradient(rgba(255,255,255,.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.03) 1px, transparent 1px); background-size: 48px 48px; pointer-events: none; }
+    .hero-inner { position: relative; z-index: 1; display: grid; grid-template-columns: 1fr 420px; gap: 60px; align-items: center; padding: 80px 0; }
+    .hero-tag { display: inline-flex; align-items: center; gap: 8px; background: rgba(230,57,70,.15); border: 1px solid rgba(230,57,70,.3); color: var(--red); font-size: 11.5px; font-weight: 700; padding: 6px 14px; border-radius: 4px; margin-bottom: 20px; text-transform: uppercase; letter-spacing: .1em; }
+    h1 { font-family: 'Bebas Neue', sans-serif; font-size: clamp(3.5rem, 8vw, 7rem); line-height: .95; letter-spacing: .04em; margin-bottom: 22px; }
+    h1 span { color: var(--red); }
+    .hero-sub { font-size: 17px; color: var(--muted); line-height: 1.7; margin-bottom: 36px; max-width: 500px; font-weight: 400; }
+    .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+    .btn-r { background: var(--red); color: white; font-size: 14px; font-weight: 700; padding: 15px 30px; border-radius: 6px; display: inline-flex; align-items: center; gap: 8px; transition: background .2s, transform .2s; text-transform: uppercase; letter-spacing: .06em; }
+    .btn-r:hover { background: var(--red-l); transform: translateY(-1px); }
+    .btn-o { background: transparent; color: var(--white); font-size: 14px; font-weight: 600; padding: 15px 24px; border-radius: 6px; border: 1px solid rgba(255,255,255,.2); transition: border-color .2s; text-transform: uppercase; letter-spacing: .04em; }
+    .btn-o:hover { border-color: white; }
+    .hero-stats { display: flex; gap: 24px; margin-top: 44px; padding-top: 32px; border-top: 1px solid var(--border); }
+    .hs-n { font-family: 'Bebas Neue', sans-serif; font-size: 2.2rem; color: var(--red); letter-spacing: .04em; }
+    .hs-l { font-size: 12px; color: var(--muted); text-transform: uppercase; letter-spacing: .08em; margin-top: 2px; }
+    /* WOD card */
+    .wod-card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; }
+    .wod-header { background: var(--red); padding: 16px 20px; }
+    .wod-title { font-family: 'Bebas Neue', sans-serif; font-size: 20px; letter-spacing: .1em; }
+    .wod-date { font-size: 11.5px; color: rgba(255,255,255,.7); margin-top: 2px; }
+    .wod-body { padding: 20px; }
+    .wod-type { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .12em; color: var(--red); margin-bottom: 14px; }
+    .wod-ex { display: flex; flex-direction: column; gap: 10px; }
+    .wod-line { display: flex; align-items: center; gap: 12px; font-size: 14px; color: rgba(255,255,255,.8); }
+    .wod-num { font-family: 'Bebas Neue', sans-serif; font-size: 16px; color: var(--red); min-width: 24px; }
+    .wod-footer { border-top: 1px solid var(--border); padding: 14px 20px; display: flex; align-items: center; justify-content: space-between; }
+    .wod-footer-label { font-size: 11px; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); }
+    .wod-timer { font-family: 'Bebas Neue', sans-serif; font-size: 22px; color: var(--yellow); letter-spacing: .1em; }
+
+    /* ── CLASSES ── */
+    .classes { padding: 96px 0; }
+    .section-tag { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .16em; color: var(--red); margin-bottom: 12px; }
+    .section-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(2.4rem, 5vw, 4rem); letter-spacing: .05em; line-height: .95; margin-bottom: 52px; }
+    .cgrid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; }
+    .ccard { background: var(--card); padding: 28px; transition: background .2s; border: 1px solid var(--border); }
+    .ccard:hover { background: #222; }
+    .ccard-level { font-size: 10.5px; font-weight: 700; text-transform: uppercase; letter-spacing: .12em; padding: 4px 10px; border-radius: 4px; margin-bottom: 18px; display: inline-block; }
+    .level-all { background: rgba(255,214,10,.1); color: var(--yellow); }
+    .level-med { background: rgba(230,57,70,.1); color: var(--red); }
+    .level-adv { background: rgba(255,255,255,.08); color: var(--muted); }
+    .ccard h3 { font-family: 'Bebas Neue', sans-serif; font-size: 1.8rem; letter-spacing: .06em; margin-bottom: 10px; }
+    .ccard p { font-size: 13.5px; color: var(--muted); line-height: 1.65; margin-bottom: 18px; }
+    .ccard-sch { font-size: 12px; color: rgba(255,255,255,.35); text-transform: uppercase; letter-spacing: .08em; }
+
+    /* ── COACHES ── */
+    .coaches { padding: 96px 0; background: var(--dark); }
+    .coa-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; }
+    .coa-card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 28px; }
+    .coa-av { width: 56px; height: 56px; border-radius: 8px; background: var(--red); display: flex; align-items: center; justify-content: center; font-family: 'Bebas Neue', sans-serif; font-size: 22px; letter-spacing: .06em; margin-bottom: 14px; }
+    .coa-name { font-family: 'Bebas Neue', sans-serif; font-size: 1.4rem; letter-spacing: .06em; }
+    .coa-cert { font-size: 11.5px; color: var(--red); font-weight: 600; text-transform: uppercase; letter-spacing: .08em; margin-bottom: 10px; }
+    .coa-card p { font-size: 13px; color: var(--muted); line-height: 1.65; }
+
+    /* ── COMMUNITY ── */
+    .community { padding: 80px 0; }
+    .comm-inner { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 60px; text-align: center; }
+    .comm-inner h2 { font-family: 'Bebas Neue', sans-serif; font-size: clamp(2.4rem,5vw,4rem); letter-spacing: .06em; margin-bottom: 16px; }
+    .comm-inner h2 span { color: var(--red); }
+    .comm-inner p { font-size: 16px; color: var(--muted); max-width: 540px; margin: 0 auto 36px; line-height: 1.7; }
+    .comm-stats { display: flex; justify-content: center; gap: 48px; margin-top: 48px; padding-top: 40px; border-top: 1px solid var(--border); }
+    .cs-n { font-family: 'Bebas Neue', sans-serif; font-size: 2.8rem; color: var(--red); letter-spacing: .04em; }
+    .cs-l { font-size: 12px; text-transform: uppercase; letter-spacing: .1em; color: var(--muted); }
+
+    /* ── FOOTER ── */
+    footer { background: #080808; color: var(--muted); padding: 40px 0; border-top: 1px solid var(--border); }
+    .foot-inner { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+    .foot-logo { font-family: 'Bebas Neue', sans-serif; font-size: 22px; letter-spacing: .1em; color: white; }
+    .foot-logo em { color: var(--red); font-style: normal; }
+    .foot-copy { font-size: 12.5px; }
+    .foot-powered a { color: rgba(255,255,255,.4); text-decoration: underline; text-underline-offset: 3px; font-size: 12px; }
+
+    /* ── DEMO BANNER ── */
+    .demo-banner { background: #1a1a2e; color: rgba(255,255,255,.8); text-align: center; padding: 9px 16px; font-size: 12.5px; font-weight: 500; }
+    .demo-banner strong { color: white; }
+    .demo-banner a { color: #F04E23; font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
+
+    @media (max-width: 768px) {
+      .hero-inner { grid-template-columns: 1fr; }
+      .wod-card { display: none; }
+      .cgrid, .coa-grid { grid-template-columns: 1fr; }
+      .comm-stats { flex-wrap: wrap; gap: 24px; }
+      .nav-links { display: none; }
+      .foot-inner { flex-direction: column; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="demo-banner">
+  <strong>Proyecto demo</strong> — Sitio de muestra creado por <a href="https://rankeo-nu.vercel.app" target="_blank" rel="noopener">Rankeo</a>. ¿Quieres uno así para tu gym? <a href="https://rankeo-nu.vercel.app/#contacto" target="_blank" rel="noopener">Contáctanos →</a>
+</div>
+
+<nav>
+  <div class="nav-i">
+    <div class="logo">CrossFit <em>Valle</em></div>
+    <div class="nav-links">
+      <a href="#clases">Clases</a>
+      <a href="#coaches">Coaches</a>
+      <a href="#comunidad">Comunidad</a>
+    </div>
+    <a href="#comunidad" class="nav-cta">Clase gratis</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="con">
+    <div class="hero-inner">
+      <div>
+        <div class="hero-tag">📍 Ciudad Jardín, Cali</div>
+        <h1>ENTRENA<br/><span>DIFERENTE</span></h1>
+        <p class="hero-sub">CrossFit y entrenamiento funcional de alta intensidad en Cali. Coaches certificados, comunidad real y programación que te hace progresar. Para todos los niveles.</p>
+        <div class="hero-actions">
+          <a href="#comunidad" class="btn-r">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+            Primera clase gratis
+          </a>
+          <a href="#clases" class="btn-o">Ver clases</a>
+        </div>
+        <div class="hero-stats">
+          <div><div class="hs-n">340+</div><div class="hs-l">Miembros activos</div></div>
+          <div><div class="hs-n">6 años</div><div class="hs-l">En Cali</div></div>
+          <div><div class="hs-n">4.9★</div><div class="hs-l">Google</div></div>
+        </div>
+      </div>
+      <div class="wod-card">
+        <div class="wod-header">
+          <div class="wod-title">WOD DEL DÍA</div>
+          <div class="wod-date">AMRAP 20 min</div>
+        </div>
+        <div class="wod-body">
+          <div class="wod-type">⚡ Metcon · Nivel intermedio</div>
+          <div class="wod-ex">
+            <div class="wod-line"><div class="wod-num">21</div>Thrusters (42.5/30 kg)</div>
+            <div class="wod-line"><div class="wod-num">15</div>Pull-ups</div>
+            <div class="wod-line"><div class="wod-num">9</div>Muscle-ups</div>
+          </div>
+        </div>
+        <div class="wod-footer">
+          <div class="wod-footer-label">Próxima clase</div>
+          <div class="wod-timer">6:00 AM</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="classes" id="clases">
+  <div class="con">
+    <div class="section-tag">Programación</div>
+    <h2 class="section-title">Clases para<br/>cada nivel</h2>
+    <div class="cgrid">
+      <div class="ccard">
+        <div class="ccard-level level-all">Todos los niveles</div>
+        <h3>CrossFit</h3>
+        <p>Entrenamiento funcional de alta intensidad con programación diaria variada. Escalable para principiantes y desafiante para atletas avanzados.</p>
+        <div class="ccard-sch">Lun–Sáb · 6am, 7am, 12pm, 6pm, 7pm</div>
+      </div>
+      <div class="ccard">
+        <div class="ccard-level level-all">Principiantes</div>
+        <h3>CrossFit On Ramp</h3>
+        <p>Programa de iniciación de 4 semanas. Aprende los movimientos fundamentales con seguridad antes de entrar al grupo general.</p>
+        <div class="ccard-sch">Mar y Jue · 6pm</div>
+      </div>
+      <div class="ccard">
+        <div class="ccard-level level-med">Intermedio</div>
+        <h3>Weightlifting</h3>
+        <p>Entrenamiento de levantamiento olímpico: snatch y clean & jerk. Técnica, fuerza y velocidad. Coach especializado en halterofilia.</p>
+        <div class="ccard-sch">Lun, Mié, Vie · 7am y 7pm</div>
+      </div>
+      <div class="ccard">
+        <div class="ccard-level level-all">Todas las edades</div>
+        <h3>Gymnastics</h3>
+        <p>Trabajo de habilidades: handstand, muscle-ups, anillas y movimientos de calistenia. Mejora tu capacidad corporal total.</p>
+        <div class="ccard-sch">Sábado · 9am</div>
+      </div>
+      <div class="ccard">
+        <div class="ccard-level level-all">Todos</div>
+        <h3>Open Gym</h3>
+        <p>Tiempo libre en el box para trabajar debilidades, hacer accessory work o simplemente practicar. Includio en todos los planes.</p>
+        <div class="ccard-sch">Lun–Vie · 5–9pm</div>
+      </div>
+      <div class="ccard">
+        <div class="ccard-level level-adv">Avanzado</div>
+        <h3>Competition Team</h3>
+        <p>Equipo de competencias locales y nacionales. Programación de doble sesión, periodización y preparación para CrossFit Games regionales.</p>
+        <div class="ccard-sch">Diario · Por invitación</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="coaches" id="coaches">
+  <div class="con">
+    <div class="section-tag">Nuestros coaches</div>
+    <h2 class="section-title">Te guían los mejores</h2>
+    <div class="coa-grid">
+      <div class="coa-card">
+        <div class="coa-av" style="overflow:hidden;background:none;"><img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=150&q=80&face=1" alt="Coach" style="width:100%;height:100%;object-fit:cover;border-radius:50%;"></div>
+        <div class="coa-name">Santiago Fierro</div>
+        <div class="coa-cert">Head Coach · CF-L3</div>
+        <p>CrossFit Level 3 Trainer. Competidor CrossFit Games Open. 8 años de experiencia entrenando en Colombia y Chile.</p>
+      </div>
+      <div class="coa-card">
+        <div class="coa-av" style="overflow:hidden;background:none;"><img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=150&q=80&face=1" alt="Coach" style="width:100%;height:100%;object-fit:cover;border-radius:50%;"></div>
+        <div class="coa-name">Valentina Muñoz</div>
+        <div class="coa-cert">Coach CrossFit · CF-L2</div>
+        <p>CrossFit Level 2. Especialista en gymnastics y movilidad. Ex-gimnasta artística de selección Valle del Cauca.</p>
+      </div>
+      <div class="coa-card">
+        <div class="coa-av" style="overflow:hidden;background:none;"><img src="https://images.unsplash.com/photo-1567013127542-490d757e51fc?auto=format&fit=crop&w=150&q=80" alt="Coach" style="width:100%;height:100%;object-fit:cover;border-radius:50%;"></div>
+        <div class="coa-name">David Ortega</div>
+        <div class="coa-cert">Weightlifting Coach</div>
+        <p>Entrenador certificado USA Weightlifting. Medallista en Campeonato Nacional de Halterofilia 2022. CF-L1.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="community" id="comunidad">
+  <div class="con">
+    <div class="comm-inner">
+      <h2>ÚNETE A LA<br/><span>COMUNIDAD</span></h2>
+      <p>Tu primera clase es gratis. Sin compromiso, sin excusas. Ven como estás y sal mejor de lo que entraste.</p>
+      <a href="tel:+5726001234" class="btn-r" style="font-size:15px;padding:16px 36px;">
+        Reservar clase gratis →
+      </a>
+      <div class="comm-stats">
+        <div><div class="cs-n">340+</div><div class="cs-l">Miembros</div></div>
+        <div><div class="cs-n">6</div><div class="cs-l">Años en Cali</div></div>
+        <div><div class="cs-n">18</div><div class="cs-l">Clases por semana</div></div>
+        <div><div class="cs-n">4.9★</div><div class="cs-l">Satisfacción</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="con">
+    <div class="foot-inner">
+      <div class="foot-logo">CrossFit <em>Valle</em></div>
+      <div class="foot-copy">Cll. 20 Norte #2N-29, Ciudad Jardín · Cali · Lun–Sáb 5:30am–9pm</div>
+      <div class="foot-powered">Sitio web por <a href="https://rankeo-nu.vercel.app" target="_blank" rel="noopener">Rankeo</a></div>
+    </div>
+  </div>
+</footer>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ExerciseGym",
+  "name": "CrossFit Valle",
+  "url": "https://rankeo-nu.vercel.app/demo/gimnasio-crossfit-cali",
+  "telephone": "+5726001234",
+  "address": {"@type":"PostalAddress","streetAddress":"Cll. 20 Norte #2N-29","addressLocality":"Cali","addressRegion":"Valle del Cauca","addressCountry":"CO"},
+  "description": "CrossFit y entrenamiento funcional en Ciudad Jardín, Cali. Clases para todos los niveles.",
+  "aggregateRating": {"@type":"AggregateRating","ratingValue":"4.9","reviewCount":"241"}
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+# Bloquear parámetros de búsqueda que generan URLs duplicadas
+Disallow: /*?*
+
+Sitemap: https://rankeo-nu.vercel.app/sitemap.xml

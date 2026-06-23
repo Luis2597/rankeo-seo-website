@@ -259,6 +259,25 @@ img { display: block; max-width: 100%; }
 .article-meta { font-size: 13px; color: rgba(10,9,8,.4); display: flex; flex-wrap: wrap; gap: 16px; margin-bottom: 32px; }
 .article-lead { font-size: 18px; color: rgba(10,9,8,.65); line-height: 1.75; margin-bottom: 40px; padding-bottom: 40px; border-bottom: 1px solid var(--c-border); }
 
+/* ━━━━ LANDING PAGE FAQ (details/summary) ━━━━ */
+.faq-lp { display: flex; flex-direction: column; max-width: 800px; }
+.faq-lp-item { border-bottom: 1px solid var(--c-border); }
+.faq-lp-item:first-child { border-top: 1px solid var(--c-border); }
+.faq-lp-item summary { cursor: pointer; padding: 18px 0; font-size: 15px; font-weight: 600; color: var(--c-ink); list-style: none; display: flex; align-items: center; justify-content: space-between; gap: 12px; user-select: none; }
+.faq-lp-item summary::-webkit-details-marker { display: none; }
+.faq-lp-item summary::after { content: '+'; font-size: 20px; font-weight: 300; color: var(--c-subtle); flex-shrink: 0; transition: transform 0.3s var(--ease-out); }
+.faq-lp-item[open] summary::after { transform: rotate(45deg); color: var(--c-orange); }
+.faq-lp-item p { font-size: 14px; color: var(--c-subtle); line-height: 1.78; padding-bottom: 18px; }
+
+/* ━━━━ INLINE CTA BLOCK (landing pages) ━━━━ */
+.inline-cta-block { display: grid; grid-template-columns: 1fr 360px; gap: 60px; align-items: center; background: var(--c-ink); border-radius: 24px; padding: 48px; }
+.inline-cta-text h2 { font-family: 'Syne', sans-serif; font-weight: 800; font-size: clamp(1.4rem,2.4vw,2rem); letter-spacing: -.03em; color: white; line-height: 1.15; margin-bottom: 12px; }
+.inline-cta-text p { font-size: 14.5px; color: rgba(255,255,255,.55); line-height: 1.7; }
+.inline-cta-actions { display: flex; flex-direction: column; gap: 12px; }
+@media (max-width: 900px) {
+  .inline-cta-block { grid-template-columns: 1fr; gap: 32px; padding: 32px 24px; }
+}
+
 /* ━━━━ WHATSAPP FLOAT ━━━━ */
 .wa { position: fixed; bottom: 24px; right: 24px; z-index: 200; }
 .wa-btn { display: flex; align-items: center; gap: 10px; background: #25D366; color: white; font-size: 13.5px; font-weight: 700; padding: 13px 20px 13px 16px; border-radius: 100px; box-shadow: 0 4px 24px rgba(37,211,102,.35); text-decoration: none; transition: transform var(--dur-fast) var(--ease-spring), box-shadow var(--dur-fast); min-height: 50px; }

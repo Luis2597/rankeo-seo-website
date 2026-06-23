@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="es-CO">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Forma + Materia | Estudio de Arquitectura y Diseño Interior en Bogotá</title>
+  <meta name="description" content="Estudio de arquitectura y diseño interior en Bogotá. Residencias, oficinas y espacios comerciales con diseño de autor. 60+ proyectos entregados en Colombia."/>
+  <link rel="canonical" href="https://rankeo-nu.vercel.app/demo/arquitectura-bogota"/>
+  <meta property="og:title" content="Forma + Materia | Arquitectura Bogotá"/>
+  <meta name="robots" content="noindex,follow"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@200;300;400;700&family=Epilogue:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --white:  #FFFFFF;
+      --off:    #F5F3EF;
+      --light:  #EDEAE4;
+      --stone:  #D4CFC6;
+      --ink:    #111110;
+      --mid:    #4A4845;
+      --muted:  #9A9790;
+      --accent: #C8A96E;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+    body { font-family: 'Epilogue', sans-serif; background: var(--off); color: var(--ink); }
+    a { text-decoration: none; color: inherit; }
+    .con { max-width: 1200px; margin: 0 auto; padding: 0 40px; }
+
+    /* ── DEMO ── */
+    .demo-banner { background: var(--ink); color: rgba(255,255,255,.6); text-align: center; padding: 9px 16px; font-size: 12px; letter-spacing: .04em; }
+    .demo-banner strong { color: white; }
+    .demo-banner a { color: var(--accent); font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
+
+    /* ── NAV ── */
+    nav { position: sticky; top: 0; z-index: 100; background: rgba(245,243,239,.97); backdrop-filter: blur(12px); border-bottom: 1px solid var(--stone); }
+    .nav-i { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; height: 64px; padding: 0 40px; }
+    .logo { font-family: 'Unbounded', sans-serif; font-size: 14px; font-weight: 300; letter-spacing: .12em; color: var(--ink); text-transform: uppercase; }
+    .logo em { font-style: normal; color: var(--accent); }
+    .nav-links { display: flex; gap: 36px; }
+    .nav-links a { font-size: 11.5px; font-weight: 400; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); transition: color .2s; }
+    .nav-links a:hover { color: var(--ink); }
+    .nav-cta { font-size: 11.5px; font-weight: 500; letter-spacing: .12em; text-transform: uppercase; color: var(--ink); border-bottom: 1.5px solid var(--ink); padding-bottom: 1px; transition: color .2s, border-color .2s; }
+    .nav-cta:hover { color: var(--accent); border-color: var(--accent); }
+
+    /* ── HERO ── */
+    .hero { padding: 80px 0 0; min-height: 90vh; display: flex; flex-direction: column; justify-content: flex-end; position: relative; overflow: hidden; }
+    .hero-inner { position: relative; z-index: 1; display: grid; grid-template-columns: 1fr 1fr; gap: 0; align-items: flex-end; min-height: 80vh; }
+    .hero-left { padding-bottom: 64px; }
+    .hero-num { font-family: 'Unbounded', sans-serif; font-size: clamp(6rem, 18vw, 14rem); font-weight: 200; color: var(--light); line-height: 1; position: absolute; top: 40px; left: 28px; pointer-events: none; z-index: 0; letter-spacing: -.05em; }
+    h1 { font-family: 'Unbounded', sans-serif; font-size: clamp(1.6rem, 3.5vw, 3rem); font-weight: 300; line-height: 1.2; letter-spacing: -.01em; position: relative; z-index: 1; margin-bottom: 20px; }
+    h1 span { color: var(--accent); }
+    .hero-sub { font-size: 15px; font-weight: 300; color: var(--mid); line-height: 1.8; max-width: 420px; margin-bottom: 40px; font-style: italic; }
+    .hero-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 36px; }
+    .htag { font-size: 11px; font-weight: 400; text-transform: uppercase; letter-spacing: .12em; padding: 6px 14px; border: 1px solid var(--stone); color: var(--mid); }
+    .btn-ink { background: var(--ink); color: white; font-size: 11.5px; font-weight: 400; letter-spacing: .14em; text-transform: uppercase; padding: 14px 28px; transition: background .2s; display: inline-block; }
+    .btn-ink:hover { background: var(--mid); }
+    .hero-right { display: grid; grid-template-rows: 1fr 1fr; gap: 2px; align-self: stretch; }
+    .hero-img { display: flex; align-items: center; justify-content: center; font-size: 64px; }
+    .hi-1 { background: none !important; overflow: hidden; }
+    .hi-2 { background: var(--light); display: grid; grid-template-columns: 1fr 1fr; gap: 2px; }
+    .hi-2a { background: var(--stone); display: flex; align-items: center; justify-content: center; font-size: 36px; }
+    .hi-2b { background: var(--accent); opacity: .35; }
+    .hero-stats { background: var(--ink); color: white; padding: 28px 40px; display: grid; grid-template-columns: repeat(4,1fr); gap: 0; border-top: 1px solid rgba(255,255,255,.08); }
+    .hs { padding: 0 28px 0 0; border-right: 1px solid rgba(255,255,255,.1); }
+    .hs:last-child { border-right: none; padding-left: 28px; padding-right: 0; }
+    .hs-n { font-family: 'Unbounded', sans-serif; font-size: 1.5rem; font-weight: 300; color: var(--accent); letter-spacing: -.02em; }
+    .hs-l { font-size: 10.5px; text-transform: uppercase; letter-spacing: .14em; color: rgba(255,255,255,.4); margin-top: 4px; }
+
+    /* ── WORK ── */
+    .work { padding: 100px 0; }
+    .work-header { display: flex; align-items: flex-end; justify-content: space-between; margin-bottom: 52px; }
+    .sec-label { font-size: 10px; font-weight: 400; text-transform: uppercase; letter-spacing: .22em; color: var(--muted); margin-bottom: 8px; }
+    .sec-h { font-family: 'Unbounded', sans-serif; font-size: clamp(1.4rem,2.8vw,2.2rem); font-weight: 300; letter-spacing: -.01em; }
+    .work-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; }
+    .wcard { background: var(--light); overflow: hidden; position: relative; group; }
+    .wcard:nth-child(1) { grid-row: span 2; }
+    .wcard:nth-child(3) { grid-column: span 1; }
+    .wc-img { height: 240px; display: flex; align-items: center; justify-content: center; font-size: 52px; }
+    .wcard:nth-child(1) .wc-img { height: 460px; }
+    .wi-1 { background: none; overflow: hidden; padding: 0; }
+    .wi-2 { background: none; overflow: hidden; padding: 0; }
+    .wi-3 { background: none; overflow: hidden; padding: 0; }
+    .wi-4 { background: none; overflow: hidden; padding: 0; }
+    .wc-body { padding: 20px 22px; background: white; }
+    .wc-type { font-size: 10px; text-transform: uppercase; letter-spacing: .18em; color: var(--muted); margin-bottom: 6px; }
+    .wc-name { font-family: 'Unbounded', sans-serif; font-size: .95rem; font-weight: 300; letter-spacing: -.01em; margin-bottom: 4px; }
+    .wc-loc { font-size: 12px; color: var(--muted); }
+
+    /* ── SERVICES ── */
+    .services { padding: 96px 0; background: var(--ink); color: white; }
+    .srv-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 0; border: 1px solid rgba(255,255,255,.06); }
+    .srv { padding: 36px 32px; border-right: 1px solid rgba(255,255,255,.06); border-bottom: 1px solid rgba(255,255,255,.06); }
+    .srv:nth-child(3n) { border-right: none; }
+    .srv:nth-last-child(-n+3) { border-bottom: none; }
+    .srv-n { font-family: 'Unbounded', sans-serif; font-size: .85rem; font-weight: 300; letter-spacing: .02em; margin-bottom: 10px; margin-top: 14px; }
+    .srv-icon { font-size: 24px; }
+    .srv p { font-size: 13px; color: rgba(255,255,255,.5); line-height: 1.7; font-weight: 300; }
+
+    /* ── CONTACT ── */
+    .contact { padding: 96px 0; }
+    .ct-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: flex-start; }
+    .ct-left h2 { font-family: 'Unbounded', sans-serif; font-size: clamp(1.4rem,3vw,2.2rem); font-weight: 300; letter-spacing: -.01em; margin-bottom: 14px; }
+    .ct-left p { font-size: 15px; color: var(--mid); line-height: 1.8; font-weight: 300; font-style: italic; margin-bottom: 32px; }
+    .ct-info { display: flex; flex-direction: column; gap: 10px; }
+    .ci { font-size: 13.5px; color: var(--mid); display: flex; gap: 10px; }
+    .ct-form { display: flex; flex-direction: column; gap: 12px; }
+    .ct-inp { background: white; border: 1px solid var(--stone); padding: 13px 16px; font-family: 'Epilogue', sans-serif; font-size: 14px; color: var(--ink); outline: none; transition: border-color .2s; width: 100%; }
+    .ct-inp:focus { border-color: var(--ink); }
+    .ct-inp::placeholder { color: var(--muted); }
+    .ct-ta { resize: vertical; min-height: 100px; }
+    .btn-send { background: var(--ink); color: white; font-size: 11.5px; font-weight: 400; letter-spacing: .14em; text-transform: uppercase; padding: 14px; border: none; cursor: pointer; font-family: 'Epilogue', sans-serif; width: 100%; transition: background .2s; }
+    .btn-send:hover { background: var(--mid); }
+
+    /* ── FOOTER ── */
+    footer { background: var(--ink); color: rgba(255,255,255,.35); padding: 36px 0; border-top: 1px solid rgba(255,255,255,.05); }
+    .foot-inner { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+    .foot-logo { font-family: 'Unbounded', sans-serif; font-size: 13px; font-weight: 300; letter-spacing: .12em; text-transform: uppercase; color: white; }
+    .foot-logo em { font-style: normal; color: var(--accent); }
+    .foot-copy { font-size: 11.5px; }
+    .foot-powered a { font-size: 11.5px; color: rgba(255,255,255,.25); text-decoration: underline; text-underline-offset: 3px; }
+
+    @media (max-width: 768px) {
+      .hero-inner { grid-template-columns: 1fr; }
+      .hero-right { display: none; }
+      .hero-stats { grid-template-columns: 1fr 1fr; gap: 20px; padding: 28px; }
+      .work-grid { grid-template-columns: 1fr; }
+      .wcard:nth-child(1) { grid-row: span 1; }
+      .srv-grid { grid-template-columns: 1fr; }
+      .ct-inner { grid-template-columns: 1fr; gap: 40px; }
+      .con { padding: 0 20px; }
+      .nav-i { padding: 0 20px; }
+      .nav-links { display: none; }
+      .foot-inner { flex-direction: column; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="demo-banner">
+  <strong>Proyecto demo</strong> — Sitio de muestra creado por <a href="https://rankeo-nu.vercel.app" target="_blank" rel="noopener">Rankeo</a>. ¿Tu firma de arquitectura necesita un sitio web? <a href="https://rankeo-nu.vercel.app/#contacto" target="_blank" rel="noopener">Hablemos →</a>
+</div>
+
+<nav>
+  <div class="nav-i">
+    <div class="logo">Forma <em>+</em> Materia</div>
+    <div class="nav-links">
+      <a href="#work">Proyectos</a>
+      <a href="#services">Servicios</a>
+      <a href="#contact">Contacto</a>
+    </div>
+    <a href="#contact" class="nav-cta">Conversemos</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="con">
+    <div class="hero-inner">
+      <div class="hero-left" style="position:relative;">
+        <div class="hero-num">60</div>
+        <h1 style="position:relative;z-index:1;">Espacio.<br/>Luz.<br/><span>Carácter.</span></h1>
+        <p class="hero-sub">Diseñamos espacios que duran porque entendemos el material, la luz y la vida de quienes los habitan.</p>
+        <div class="hero-tags">
+          <div class="htag">Arquitectura residencial</div>
+          <div class="htag">Interiorismo</div>
+          <div class="htag">Diseño comercial</div>
+        </div>
+        <a href="#work" class="btn-ink">Ver proyectos →</a>
+      </div>
+      <div class="hero-right">
+        <div class="hero-img hi-1"><img src="https://images.unsplash.com/photo-1527576539890-dfa815648363?auto=format&fit=crop&w=700&q=80" alt="Arquitectura moderna" style="width:100%;height:100%;object-fit:cover;display:block;border-radius:inherit;"></div>
+        <div class="hi-2">
+          <div class="hi-2a">📐</div>
+          <div class="hi-2b"></div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-stats">
+      <div class="hs"><div class="hs-n">60+</div><div class="hs-l">Proyectos</div></div>
+      <div class="hs" style="padding-left:28px;"><div class="hs-n">14 años</div><div class="hs-l">De trayectoria</div></div>
+      <div class="hs" style="padding-left:28px;"><div class="hs-n">3 premios</div><div class="hs-l">Bienal de Arquitectura</div></div>
+      <div class="hs" style="padding-left:28px;border:none;"><div class="hs-n">8 ciudades</div><div class="hs-l">Colombia</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="work" id="work">
+  <div class="con">
+    <div class="work-header">
+      <div>
+        <div class="sec-label">Selección de proyectos</div>
+        <div class="sec-h">Trabajo reciente</div>
+      </div>
+      <a href="#contact" class="btn-ink" style="font-size:11px;">Iniciar proyecto →</a>
+    </div>
+    <div class="work-grid">
+      <div class="wcard">
+        <div class="wc-img wi-1"><img src="https://images.unsplash.com/photo-1518005020951-eccb494ad742?auto=format&fit=crop&w=700&q=80" alt="Torre corporativa" style="width:100%;height:100%;object-fit:cover;display:block;border-radius:inherit;"></div>
+        <div class="wc-body">
+          <div class="wc-type">Corporativo · 2024</div>
+          <div class="wc-name">Sede Banco Artesano</div>
+          <div class="wc-loc">Bogotá · Chapinero Alto — 3.200 m²</div>
+        </div>
+      </div>
+      <div class="wcard">
+        <div class="wc-img wi-2"><img src="https://images.unsplash.com/photo-1460574283810-2aab119d8511?auto=format&fit=crop&w=700&q=80" alt="Residencia privada" style="width:100%;height:100%;object-fit:cover;display:block;border-radius:inherit;"></div>
+        <div class="wc-body">
+          <div class="wc-type">Residencial · 2024</div>
+          <div class="wc-name">Casa La Calera</div>
+          <div class="wc-loc">La Calera, Cundinamarca — 580 m²</div>
+        </div>
+      </div>
+      <div class="wcard">
+        <div class="wc-img wi-3"><img src="https://images.unsplash.com/photo-1551038247-3d9af20df552?auto=format&fit=crop&w=700&q=80" alt="Diseño interior" style="width:100%;height:100%;object-fit:cover;display:block;border-radius:inherit;"></div>
+        <div class="wc-body">
+          <div class="wc-type">Gastronomía · 2023</div>
+          <div class="wc-name">Restaurante Origen</div>
+          <div class="wc-loc">Bogotá · Usaquén — 420 m²</div>
+        </div>
+      </div>
+      <div class="wcard">
+        <div class="wc-img wi-4"><img src="https://images.unsplash.com/photo-1496307653780-42ee777d4833?auto=format&fit=crop&w=700&q=80" alt="Hotel resort" style="width:100%;height:100%;object-fit:cover;display:block;border-radius:inherit;"></div>
+        <div class="wc-body">
+          <div class="wc-type">Residencial · 2023</div>
+          <div class="wc-name">Penthouse El Retiro</div>
+          <div class="wc-loc">Bogotá · Parque El Retiro — 320 m²</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="services" id="services">
+  <div class="con">
+    <div class="sec-label" style="color:rgba(255,255,255,.4);margin-bottom:8px;">Lo que hacemos</div>
+    <div class="sec-h" style="color:white;margin-bottom:52px;">Servicios</div>
+    <div class="srv-grid">
+      <div class="srv"><div class="srv-icon">🏛️</div><div class="srv-n">Arquitectura</div><p>Proyecto completo: conceptualización, diseño, licencias, supervisión de obra y entrega.</p></div>
+      <div class="srv"><div class="srv-icon">🛋️</div><div class="srv-n">Diseño Interior</div><p>Selección de materiales, mobiliario, iluminación y styling de espacios residenciales y comerciales.</p></div>
+      <div class="srv"><div class="srv-icon">🏗️</div><div class="srv-n">Remodelación</div><p>Intervención de espacios existentes con respeto al lenguaje original y nuevas necesidades funcionales.</p></div>
+      <div class="srv"><div class="srv-icon">🏙️</div><div class="srv-n">Oficinas y Comercio</div><p>Espacios de trabajo, locales y restaurantes donde el diseño impulsa la productividad y la venta.</p></div>
+      <div class="srv"><div class="srv-icon">📐</div><div class="srv-n">Consultoría</div><p>Revisión de proyectos, evaluación de materiales y asesoría técnica para constructoras e inversionistas.</p></div>
+      <div class="srv"><div class="srv-icon">🌱</div><div class="srv-n">Arquitectura Sostenible</div><p>Diseño bioclimático, certificación LEED y uso de materiales de bajo impacto ambiental.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="con">
+    <div class="ct-inner">
+      <div class="ct-left">
+        <h2>Cuéntanos<br/>tu proyecto</h2>
+        <p>Todo gran espacio empieza con una conversación. No necesitas planos, solo una idea.</p>
+        <div class="ct-info">
+          <div class="ci">📍 Calle 93 #13-24 of. 502 · Bogotá · Colombia</div>
+          <div class="ci">📞 +57 (601) 234-5678</div>
+          <div class="ci">✉️ hola@formatmateria.co</div>
+        </div>
+      </div>
+      <form class="ct-form" onsubmit="return false;">
+        <input class="ct-inp" type="text" placeholder="Tu nombre y empresa"/>
+        <input class="ct-inp" type="email" placeholder="Email"/>
+        <input class="ct-inp" type="tel" placeholder="WhatsApp"/>
+        <select class="ct-inp">
+          <option value="">Tipo de proyecto</option>
+          <option>Vivienda nueva</option>
+          <option>Remodelación</option>
+          <option>Oficina o local</option>
+          <option>Diseño interior</option>
+          <option>Otro</option>
+        </select>
+        <textarea class="ct-inp ct-ta" placeholder="Cuéntanos brevemente el proyecto, ubicación y presupuesto aproximado"></textarea>
+        <button type="submit" class="btn-send">Enviar mensaje →</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="con">
+    <div class="foot-inner">
+      <div class="foot-logo">Forma <em>+</em> Materia</div>
+      <div class="foot-copy">Estudio de Arquitectura · Bogotá, Colombia · 2010–2026</div>
+      <div class="foot-powered">Sitio web por <a href="https://rankeo-nu.vercel.app" target="_blank" rel="noopener">Rankeo</a></div>
+    </div>
+  </div>
+</footer>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"ProfessionalService","name":"Forma + Materia Arquitectura","url":"https://rankeo-nu.vercel.app/demo/arquitectura-bogota","telephone":"+5716012345678","address":{"@type":"PostalAddress","streetAddress":"Calle 93 #13-24 of. 502","addressLocality":"Bogotá","addressRegion":"Cundinamarca","addressCountry":"CO"},"description":"Estudio de arquitectura y diseño interior en Bogotá. Residencias, oficinas y proyectos comerciales."}
+</script>
+</body>
+</html>

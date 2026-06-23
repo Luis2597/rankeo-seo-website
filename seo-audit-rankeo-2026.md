@@ -1,11 +1,17 @@
 # Auditoría SEO — Rankeo
-**Sitio:** rankeo-nu.vercel.app | **Fecha:** Junio 2026
+**Sitio:** rankeo-nu.vercel.app | **Actualizado:** 22 Junio 2026 | **Páginas auditadas:** 19
 
 ---
 
 ## Executive Summary
 
-Rankeo tiene una base técnica sólida — schema markup completo, hreflang, meta tags en todas las páginas, GA4 activo, y un diferenciador único (SEO + GEO / ChatGPT) que ningún competidor directo tiene. Sin embargo, hay **un problema crítico que bloquea toda la indexación:** el dominio activo (`rankeo-nu.vercel.app`) y el dominio de marca (`rankeo.agency`) están desconectados — todos los canonicals, el sitemap y las OG tags apuntan al dominio equivocado. Adicionalmente, el sitemap aún apunta a una URL vieja de Netlify. Mientras esto no se corrija, Google no indexará el sitio correctamente. Las tres prioridades son: (1) conectar `rankeo.agency` como dominio principal en Vercel, (2) regenerar el sitemap con las 13 URLs reales, y (3) ampliar el contenido de las landings y el blog para competir contra iaLab y otros establecidos.
+Rankeo tiene una base técnica notablemente sólida para un sitio de dos semanas: schema JSON-LD completo en cada página, sitemap.xml con 19 URLs, robots.txt correcto, OG tags, GA4 activo, hreflang, y un diferenciador único (SEO + GEO / ChatGPT) que ningún competidor directo en Colombia ofrece. Sin embargo, hay **tres problemas que bloquean todo el tráfico orgánico hoy**:
+
+1. **Cero indexación en Google** — `site:rankeo-nu.vercel.app` devuelve 0 resultados. El sitio lleva semanas publicado pero Google aún no lo ha rastreado. La causa raíz es que el dominio `rankeo-nu.vercel.app` es un subdominio de prueba de Vercel con baja autoridad inherente.
+2. **Sin dominio propio conectado** — rankeo.agency (o el dominio de marca final) no está activo en Vercel. Sin dominio propio, Google trata el sitio como temporal.
+3. **Inconsistencia canonical vs. sitemap** — algunas páginas usan URL sin `.html` en su canonical (ej. `/seo-colombia`) pero el sitemap usa `.html`. Esto crea señales duplicadas para Googlebot.
+
+Las tres prioridades son: (1) conectar el dominio de marca en Vercel inmediatamente, (2) normalizar todos los canonicals, y (3) iniciar link building para que Google empiece a rastrear.
 
 ---
 
@@ -13,26 +19,28 @@ Rankeo tiene una base técnica sólida — schema markup completo, hreflang, met
 
 | Keyword | Dificultad est. | Oportunidad | Ranking actual | Intención | Formato recomendado |
 |---|---|---|---|---|---|
-| agencia seo colombia | Alta | Alta | No indexado | Comercial | Landing `/seo-colombia` ✅ existe |
-| agencia seo bogota | Alta | Alta | No indexado | Comercial | Landing `/seo-bogota` ✅ existe |
-| cuanto cuesta seo colombia | Media | **Muy Alta** | No indexado | Informacional | Blog ✅ existe |
-| agencia seo medellin | Media | Alta | No indexado | Comercial | Landing — pendiente |
-| posicionamiento web colombia | Alta | Media | No indexado | Comercial | Ampliar `/seo-colombia` |
+| agencia seo colombia | Alta | Alta | No indexado | Comercial | Landing `/seo-colombia.html` ✅ existe |
+| agencia seo bogota | Alta | Alta | No indexado | Comercial | Landing `/seo-bogota.html` ✅ existe |
+| agencia seo medellin | Media | Alta | No indexado | Comercial | Landing `/seo-medellin.html` ✅ existe |
+| agencia seo cali | Media | Alta | No indexado | Comercial | Landing `/seo-cali.html` ✅ existe |
+| agencia seo mexico | Alta | Media | No indexado | Comercial | Landing `/seo-mexico.html` ✅ existe |
+| cuanto cuesta seo colombia 2026 | Media | **Muy Alta** | No indexado | Informacional | Blog ✅ existe |
+| por que no aparezco en google | Media | **Muy Alta** | No indexado | Informacional | Blog ✅ existe |
+| como aparecer en chatgpt | Baja | **Muy Alta** | No indexado | Informacional | Blog ✅ existe x2 |
 | seo para dentistas colombia | Baja | **Muy Alta** | No indexado | Comercial | Landing ✅ existe |
+| seo para abogados colombia | Baja | **Muy Alta** | No indexado | Comercial | Landing ✅ existe |
+| seo para gimnasios colombia | Muy baja | **Muy Alta** | No indexado | Comercial | Landing ✅ existe |
 | seo para restaurantes colombia | Baja | Alta | No indexado | Comercial | Landing ✅ existe |
-| seo para abogados colombia | Baja | Alta | No indexado | Comercial | Landing — pendiente |
-| seo para gimnasios colombia | Muy baja | **Muy Alta** | No indexado | Comercial | Landing — pendiente |
 | agencia geo colombia | Muy baja | **Muy Alta** | No indexado | Comercial | Landing ✅ existe |
-| aparecer en chatgpt con mi empresa | Muy baja | **Muy Alta** | No indexado | Informacional | Blog ✅ existe |
-| que es geo seo | Baja | Alta | No indexado | Informacional | Blog ✅ existe |
+| generative engine optimization colombia | Muy baja | **Muy Alta** | No indexado | Informacional | Blog ✅ existe |
 | auditoria seo gratis colombia | Media | Alta | No indexado | Transaccional | Landing ✅ existe |
-| agencia seo mexico | Alta | Media | No indexado | Comercial | Landing ✅ existe |
 | precios agencia seo colombia 2026 | Media | Alta | No indexado | Comercial | Landing ✅ existe |
-| seo local colombia | Media | Media | No indexado | Comercial | Sección en `/seo-colombia` |
-| por que no aparezco en google | Baja | **Muy Alta** | No indexado | Informacional | Blog — pendiente |
-| agencia seo cali | Media | Alta | No indexado | Comercial | Landing — pendiente |
-| diseno web colombia seo | Media | Media | No indexado | Comercial | Landing — pendiente |
-| seo para clinicas dentales | Baja | Alta | No indexado | Comercial | Ampliar `/seo-para-dentistas` |
+| posicionamiento web colombia | Alta | Media | No indexado | Comercial | Ampliar `/seo-colombia` |
+| seo local colombia | Media | Media | No indexado | Comercial | Sección en home |
+| diseno web colombia seo | Media | Media | No indexado | Comercial | Landing — **pendiente** |
+| casos de exito agencia seo colombia | Baja | Alta | No indexado | Comercial | Páginas de caso — **pendiente** |
+| como elegir agencia seo colombia | Baja | Alta | No indexado | Informacional | Blog post — **pendiente** |
+| seo vs sem colombia | Baja | Media | No indexado | Informacional | Blog post — **pendiente** |
 
 ---
 
@@ -40,18 +48,17 @@ Rankeo tiene una base técnica sólida — schema markup completo, hreflang, met
 
 | Página | Problema | Severidad | Fix recomendado |
 |---|---|---|---|
-| Todas (13 páginas) | Canonical apunta a `rankeo.agency` pero el sitio live es `rankeo-nu.vercel.app` | **Crítica** | Conectar dominio rankeo.agency en Vercel o cambiar canonicals al dominio activo |
-| `sitemap.xml` | URLs apuntan a `cosmic-banoffee-d624f3.netlify.app` (URL vieja de Netlify) | **Crítica** | Reemplazar todas las URLs con el dominio correcto; además solo tiene 1 URL en lugar de 13 |
-| Todas | `og:image` apunta a `rankeo.agency/og-image.png` — archivo no existe en el dominio activo | **Alta** | Subir `og-image.png` al repo |
-| `seo-colombia.html` y otras landings | `<link rel="stylesheet" href="/style.css"/>` — el archivo no existe en el repo | **Alta** | Crear `style.css` compartido o eliminar la referencia |
-| `index.html` | Title no incluye "Colombia" ni "agencia SEO" — keyword principal ausente | **Alta** | Cambiar a: "Agencia SEO Colombia, México y USA — Rankeo" |
-| `index.html` | Meta description tiene 194 caracteres (límite: 150–160) | **Media** | Recortar a máximo 160 caracteres |
-| `seo-colombia.html` | Title bien estructurado pero sin año "2026" que competidores usan | **Baja** | Añadir "2026" para capturar búsquedas con año |
-| Blog | Solo 3 posts — insuficiente para construir autoridad temática | **Alta** | Publicar mínimo 2 posts/mes |
-| Todas las landings | Contenido muy corto (168–356 líneas HTML incluyendo nav/footer) vs. competidores | **Alta** | Ampliar cada landing a 800+ palabras de cuerpo textual |
-| `index.html` | hreflang tiene 3 locales (es-CO, es-MX, es-US) apuntando a la misma URL | **Media** | Crear páginas separadas por mercado o usar solo x-default |
-| Todas | No hay favicon declarado en el `<head>` | **Baja** | Añadir `<link rel="icon" href="/favicon.ico">` |
-| Todas | Las landings no se enlazan entre sí (sin links internos cruzados) | **Media** | Añadir links entre páginas relacionadas con anchor text descriptivo |
+| Todas | 0 páginas indexadas en Google | **Crítica** | Conectar dominio propio + solicitar indexación en Search Console |
+| Sin dominio propio | Sitio vive en subdominio de prueba de Vercel | **Crítica** | Conectar rankeo.agency (o dominio elegido) en Vercel |
+| 8 páginas | Canonical sin `.html` (ej. `/seo-colombia`) pero sitemap usa `.html` | **Alta** | Uniformizar: elegir uno (preferible sin extensión) y aplicar en sitemap también |
+| 11 páginas | Meta description excede 160 caracteres (rango: 162–172 chars) | **Media** | Recortar a ≤155 chars para evitar truncamiento en SERPs |
+| `seo-colombia.html` | Sin año 2026 en title — competidores iaLab usan "2026" como señal de frescura | **Baja** | Cambiar a "Agencia SEO Colombia 2026 \| Posicionamiento Web — Rankeo" |
+| Blog | Solo 5 posts — insuficiente para construir autoridad temática en 6 meses | **Alta** | Meta: 2 posts/mes mínimo |
+| Todas las landings | Contenido textual estimado: 400–600 palabras vs. competidores con 1,200+ | **Alta** | Ampliar cada landing de ciudad/industria a 800+ palabras de body |
+| `index.html` | hreflang: 3 locales apuntan al mismo URL raíz | **Media** | Crear páginas separadas por mercado o simplificar a x-default únicamente |
+| Portafolio | "Próximamente" en 4 de 6 casos — señal de sitio nuevo sin credibilidad | **Alta** | Publicar casos reales o mockups convincentes lo antes posible |
+| FAQ | Menciona "Plan Crecer" y "Plan Dominar" pero pricing muestra "Web+SEO" y "Autoridad" | **Media** | Uniformizar nombres de planes en todo el sitio |
+| Blog posts x2 | Dos posts sobre ChatGPT/GEO con temática similar pueden canibalizar keywords | **Media** | Definir keyword primaria única para cada post, diferenciar ángulo editorial |
 
 ---
 
@@ -59,15 +66,13 @@ Rankeo tiene una base técnica sólida — schema markup completo, hreflang, met
 
 | Tema | Por qué importa | Formato | Prioridad | Esfuerzo |
 |---|---|---|---|---|
-| "Por qué no aparezco en Google" | Keyword informacional de alto volumen, intención perfecta para captar clientes | Blog post | **Alta** | Moderado (1 día) |
-| Landing Medellín | iaLab y competidores rankean fuerte para "agencia seo medellin" | Landing page | **Alta** | Bajo (3 horas) |
-| Landing Cali | Segunda ciudad de Colombia sin cobertura | Landing page | **Alta** | Bajo (3 horas) |
-| SEO para abogados | Nicho de baja competencia y alta conversión | Landing page | Media | Bajo (3 horas) |
-| SEO para gimnasios | Muy baja competencia, fácil de rankear | Landing page | Media | Bajo (3 horas) |
-| Diseño web Colombia | Servicio complementario con buen volumen, sin página actual | Landing page | Media | Moderado (1 día) |
-| Casos de éxito como páginas independientes | Generan backlinks naturales y fortalecen E-E-A-T | Páginas de caso | Alta | Alto (varios días) |
-| "Cómo elegir agencia SEO en Colombia" | Top-of-funnel, alta demanda, captura leads en etapa de consideración | Blog post | Alta | Moderado (1 día) |
-| Comparativa "SEO vs. SEM en Colombia" | Muy buscado, posiciona a Rankeo como experto | Blog post | Media | Moderado (1 día) |
+| Diseño web Colombia | Servicio complementario con alto volumen de búsqueda, 0 cobertura actual | Landing page | **Alta** | Moderado (1 día) |
+| Casos de éxito (páginas independientes) | Generan confianza, backlinks naturales y fortalecen E-E-A-T — los competidores los tienen | Páginas de caso | **Alta** | Alto (varios días) |
+| "Cómo elegir agencia SEO en Colombia" | Top-of-funnel muy buscado, captura leads en etapa de consideración | Blog post | **Alta** | Moderado (medio día) |
+| Landing /seo-hispanos-usa | Mercado hispano de USA sin cobertura específica | Landing page | Media | Moderado (1 día) |
+| Glosario SEO Colombia | Genera tráfico informacional pasivo, fortalece autoridad temática (topic cluster) | Página de glosario | Media | Moderado (1 día) |
+| "SEO vs. SEM en Colombia" | Keyword comparativa muy buscada por PYMES que no saben cuál elegir | Blog post | Media | Bajo (3 horas) |
+| Herramienta: calculadora ROI del SEO | Diferenciador único, muy compartible, genera backlinks | Herramienta interactiva | Baja | Alto (varios días) |
 
 ---
 
@@ -76,67 +81,93 @@ Rankeo tiene una base técnica sólida — schema markup completo, hreflang, met
 | Verificación | Estado | Detalle |
 |---|---|---|
 | HTTPS | ✅ Pass | Vercel provee SSL automático |
-| Mobile-friendly | ✅ Pass | Viewport declarado, fix H1 mobile aplicado, `overflow-x: hidden` |
-| Canonical tags | ❌ Fail | Apuntan a `rankeo.agency`, no al dominio activo |
-| Sitemap | ❌ Fail | URLs de Netlify, solo 1 URL, no refleja las 13 páginas del sitio |
-| robots.txt | ⚠️ Warning | No encontrado en el repo — Vercel sirve default, verificar que no bloquee rastreo |
-| Schema JSON-LD | ✅ Pass | LocalBusiness + FAQPage + Service schemas en index.html |
+| Mobile-friendly | ✅ Pass | Viewport declarado, diseño responsive |
+| robots.txt | ✅ Pass | Existe, Allow: /, sitemap declarado correctamente |
+| Sitemap.xml | ✅ Pass | 19 URLs con lastmod, changefreq, priority — actualizado |
+| Canonical tags | ⚠️ Warning | Presentes en todas las páginas pero inconsistentes (algunas con `.html`, otras sin) |
+| Schema JSON-LD | ✅ Pass | LocalBusiness + FAQPage + Service + BlogPosting — completo |
 | hreflang | ⚠️ Warning | Declarado pero todos los locales apuntan al mismo URL |
-| OG image | ❌ Fail | URL apunta a dominio inexistente (`rankeo.agency`) |
-| Google Fonts | ⚠️ Warning | Cargando sin `font-display: swap` — riesgo de render-blocking |
-| Favicon | ❌ Fail | No declarado en `<head>` |
-| GA4 | ✅ Pass | G-JCFGB2YC7G activo en los 13 archivos HTML |
-| Search Console | ✅ Pass | Propiedad verificada vía Google Analytics, sitemap enviado |
-| Páginas indexadas | ❌ Fail | 0 páginas indexadas — dominio nuevo + canonical mismatch |
-| Internal linking | ⚠️ Warning | Las landings no se enlazan entre sí |
-| Image alt text | ✅ Pass | SVGs con aria-labels, imágenes con alt declarado |
-| FAQPage schema | ✅ Pass | 8 preguntas — apto para rich results en Google |
+| OG tags | ✅ Pass | Completo en todas las páginas, imagen en preview.png (1200×630) |
+| Twitter Card | ✅ Pass | summary_large_image en todas las páginas |
+| Favicon | ✅ Pass | `<link rel="icon" href="/favicon.ico">` en todas las páginas |
+| Google Fonts | ⚠️ Warning | Syne + Plus Jakarta Sans vía CDN — riesgo render-blocking; usar `font-display: swap` |
+| GA4 | ✅ Pass | G-JCFGB2YC7G activo en las 19 páginas |
+| Search Console | ⚠️ Warning | Verificar que sitemap esté enviado y sin errores de cobertura |
+| Páginas indexadas | ❌ Fail | 0 páginas indexadas — dominio nuevo sin autoridad de dominio |
+| Internal linking | ⚠️ Warning | Landings de ciudad no se enlazan entre sí; mejorar anchor text |
+| Image alt text | ✅ Pass | SVGs con aria-labels, OG image con alt declarado |
+| Dominio propio | ❌ Fail | Usando `rankeo-nu.vercel.app` — sin dominio de marca conectado |
+| Backlinks | ❌ Fail | Cero backlinks externos — Ahrefs/Semrush darían DR 0 |
+| Core Web Vitals (estimado) | ⚠️ Warning | Google Fonts bloqueante + 93KB index.html — probables métricas LCP/CLS por mejorar |
+| Velocidad | ⚠️ Warning | preview.png = 275KB — optimizar a WebP <100KB |
 
 ---
 
 ## Comparación vs. Competidores
 
-| Dimensión | Rankeo | ialab.co | agenciaseoencolombia.com.co | Ganador |
-|---|---|---|---|---|
-| Páginas indexadas | 0 (nuevo) | 100+ | 20+ | Competidores |
-| Páginas de ciudad | 2 (Bogotá, MX) | 6+ (Bogotá, Medellín, Cali…) | 3 | Competidores |
-| Blog / contenido | 3 posts | 15+ artículos | 5+ | Competidores |
-| Schema markup | ✅ Completo | Parcial | Básico | **Rankeo** |
-| Diferenciador GEO / ChatGPT | ✅ Único en el mercado | No | No | **Rankeo** |
-| Precio visible y claro | ✅ Desde $199/mes | No | No | **Rankeo** |
-| Backlinks / autoridad de dominio | Ninguno | Establecida | Establecida | Competidores |
-| Velocidad estimada | Media | Media | Media | Empate |
+| Dimensión | Rankeo | ialab.co | btodigital.com | agenciaseocolombia.com.co | Ganador |
+|---|---|---|---|---|---|
+| Páginas indexadas | 0 (nuevo) | 200+ | 100+ | 30+ | Competidores |
+| Landings de ciudad | 4 (Bogotá, Med, Cali, MX) | 6+ | 3 | 2 | **Rankeo** (con ciudad) |
+| Landings de industria | 4 (dent, abog, gym, rest) | 2 | 1 | 1 | **Rankeo** |
+| Blog / contenido | 5 posts | 20+ | 10+ | 5 | Empate |
+| Schema markup | ✅ Completo | Parcial | Básico | Básico | **Rankeo** |
+| Diferenciador GEO/ChatGPT | ✅ Único | No | No | No | **Rankeo** |
+| Precio visible y claro | ✅ Desde $199/mes | No | No | No | **Rankeo** |
+| Backlinks / autoridad | DR 0 | DR 30+ est. | DR 25+ est. | DR 15+ est. | Competidores |
+| Velocidad estimada | Media | Media | Media | Lenta | **Rankeo** (ligero) |
+| Dominio de marca | ❌ Subdominio Vercel | ✅ Propio | ✅ Propio | ✅ Propio | Competidores |
+| Años de historia | <1 mes | 5+ años | 3+ años | 2+ años | Competidores |
+
+**Conclusión competitiva:** Rankeo tiene el mejor stack técnico y el mejor diferenciador de producto. La brecha crítica es autoridad de dominio (backlinks) y tiempo en el mercado.
 
 ---
 
 ## Plan de Acción Priorizado
 
-### Quick Wins — Esta semana
+### 🔴 Quick Wins — Esta semana (impacto máximo, mínimo esfuerzo)
 
 | Acción | Impacto | Esfuerzo | Dependencias |
 |---|---|---|---|
-| Conectar `rankeo.agency` como dominio en Vercel (DNS + dashboard) | **Crítico** | 30 min | Acceso al registrador de dominios |
-| Regenerar `sitemap.xml` con las 13 URLs reales del sitio | **Crítico** | 20 min | Ninguna |
-| Agregar `robots.txt` explícito al repo | Alto | 5 min | Ninguna |
-| Subir `og-image.png` al repo | Medio | 10 min | Diseño de imagen (1200×630px) |
-| Cambiar title del home a "Agencia SEO Colombia, México y USA — Rankeo" | Alto | 5 min | Ninguna |
-| Recortar meta description del home a ≤160 caracteres | Medio | 5 min | Ninguna |
-| Añadir favicon en `<head>` de todos los archivos | Bajo | 15 min | Ninguna |
-| Agregar links internos entre landings | Medio | 1 hora | Ninguna |
-| Crear `style.css` compartido para las landing pages | Alto | 2 horas | Ninguna |
+| **Conectar dominio propio en Vercel** (rankeo.agency u otro) | **Crítico** | 30 min | Acceso al registrador + Vercel dashboard |
+| **Normalizar canonicals**: elegir patrón sin `.html` y aplicar en sitemap también | **Alto** | 1 hora | Editar 19 archivos + sitemap.xml |
+| **Solicitar indexación** en Google Search Console para las 19 URLs (inspeccionar URL → solicitar) | **Crítico** | 30 min | Search Console activo |
+| **Optimizar preview.png** de 275KB → WebP <80KB | Medio | 15 min | squoosh.app o similar |
+| **Uniformizar nombres de planes** en FAQ vs. pricing (elegir uno y aplicar en todo el sitio) | Medio | 30 min | Decisión editorial |
+| **Recortar meta descriptions** de las 11 páginas que exceden 160 chars | Medio | 45 min | Ninguna |
+| **Agregar `display=swap`** al link de Google Fonts para evitar render-blocking | Medio | 10 min | Editar `<head>` en todos los archivos |
 
-### Inversiones Estratégicas — Este Trimestre
+### 🟡 Inversiones Estratégicas — Este mes
 
 | Acción | Impacto | Esfuerzo |
 |---|---|---|
-| Construir landings de Medellín y Cali | Alto | 1 día |
-| Ampliar contenido de todas las landings a 800+ palabras reales | Alto | 3 días |
-| Publicar "Por qué no aparezco en Google" (blog post) | Alto | 1 día |
-| Publicar "Cómo elegir agencia SEO en Colombia" (blog post) | Alto | 1 día |
-| Construir landings de abogados y gimnasios | Medio | 1 día |
-| Iniciar estrategia de backlinks (directorios + guest posts) | Crítico a largo plazo | Ongoing |
-| Migrar a Next.js (elimina Google Fonts render-blocking, sitemap dinámico) | Alto técnico | Semanas |
+| **Registrar en 10 directorios de negocios** (Clutch, GoodFirms, Hotfrog Colombia, Páginas Amarillas CO, etc.) — genera primeros backlinks y señales de autoridad | **Crítico para indexación** | 2 horas |
+| **Publicar en redes sociales** con links al sitio (LinkedIn, Instagram, Twitter/X) — genera señales sociales y primeros crawls | Alto | Ongoing |
+| **Ampliar contenido de landings de ciudad** a 800+ palabras cada una (agregar secciones: zonas que cubre, negocios que atiende, testimonios placeholder) | Alto | 2 días |
+| **Landing diseño web Colombia** — servicio complementario sin cobertura | Alto | 1 día |
+| **Blog post: "Cómo elegir agencia SEO en Colombia"** — top-of-funnel de alto volumen | Alto | Medio día |
+| **Casos de éxito**: aunque el portafolio está en construcción, publicar 2-3 casos con datos reales o proyectados claramente etiquetados | Alto | 1 día |
+
+### 🟢 Inversiones a Largo Plazo — Este trimestre
+
+| Acción | Impacto | Esfuerzo |
+|---|---|---|
+| Estrategia de backlinks activa: guest posts en blogs de marketing colombianos, mención en medios digitales | **Crítico para rankings** | Ongoing |
+| Migrar a Next.js con App Router — sitemap dinámico, `next/font` (elimina render-blocking), mejor LCP | Alto técnico | Semanas |
+| Publicar 2 posts SEO/mes hasta llegar a 20 posts — construye autoridad temática | Alto acumulativo | Ongoing |
+| Implementar páginas de casos de éxito reales con métricas verificables | Alto para conversión | Por cliente |
+| Explorar schema `Review`/`AggregateRating` en homepage cuando se tengan primeras reseñas | Medio (rich results) | 1 hora |
 
 ---
 
-*Auditoría generada con Rankeo SEO Audit Skill — Junio 2026*
+## Métricas a monitorear mensualmente
+
+- Páginas indexadas en Google Search Console (objetivo: 19 en <60 días tras conectar dominio)
+- Rankings por keyword objetivo (herramienta: Google Search Console gratuito)
+- Tráfico orgánico por página (GA4: G-JCFGB2YC7G)
+- Core Web Vitals: LCP <2.5s, CLS <0.1, INP <200ms (PageSpeed Insights)
+- Backlinks (Ahrefs / Semrush / Google Search Console → Links)
+
+---
+
+*Auditoría SEO Rankeo — Junio 2026 — 19 páginas auditadas*
