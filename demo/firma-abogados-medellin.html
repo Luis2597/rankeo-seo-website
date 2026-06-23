@@ -344,75 +344,104 @@
 }
 </script>
 
-<!-- Rankeo: enhanced animations v2 -->
+<!-- Rankeo: interactive v2 — particle canvas + 3D tilt -->
 <style>
-.rv2{opacity:0;transform:translateY(22px);transition:opacity .55s ease-out,transform .55s ease-out;}
-.rv2.in{opacity:1;transform:none;}
+.demo-canvas{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:1;}
 </style>
 <script>
 (function(){
-  /* ── Scroll reveal on cards ── */
-  var sels=[
-    '.service-card','.card','.stat-card','.team-card','.room-card',
-    '.project-card','.doctor-card','.coach-card','.suite-card',
-    '.practice-card','.property-card','.spec-card','.step',
-    '.feat','.plan-card','.blog-card','.test-card','.cert',
-    '.gallery-item','.feature-card','.benefit','.area-card',
-    '.property','.spec-item','.service-item','.team-member'
-  ];
-  var all=document.querySelectorAll(sels.join(','));
-  all.forEach(function(el,i){
-    el.classList.add('rv2');
-    el.style.transitionDelay=(i%5)*65+'ms';
-  });
-  var obs=new IntersectionObserver(function(es){
-    es.forEach(function(e){
-      if(e.isIntersecting){e.target.classList.add('in');obs.unobserve(e.target);}
-    });
-  },{threshold:.09,rootMargin:'0px 0px -28px 0px'});
-  all.forEach(function(el){obs.observe(el);});
-
-  /* ── Counter animation ── */
-  function animN(el){
-    var t=parseFloat(el.dataset.count),pre=el.dataset.pre||'',suf=el.dataset.suf||'';
-    var dur=1600,s=performance.now();
-    (function f(n){
-      var p=Math.min((n-s)/dur,1),e=1-Math.pow(1-p,3);
-      el.textContent=pre+Math.round(e*t)+suf;
-      if(p<1)requestAnimationFrame(f);
-    })(s);
-  }
-  var co=new IntersectionObserver(function(es){
-    es.forEach(function(e){if(e.isIntersecting){animN(e.target);co.unobserve(e.target);}});
-  },{threshold:.5});
-  document.querySelectorAll('[data-count]').forEach(function(el){co.observe(el);});
-
-  /* ── Floating orbs in hero ── */
-  var heroEl=document.querySelector('header,.hero,#inicio,.hero-section,.page-hero');
+  /* ── Particle canvas in hero ── */
+  var heroEl=document.querySelector('header,.hero,#inicio,.hero-section,.page-hero,.hero-wrapper');
   if(heroEl){
     if(getComputedStyle(heroEl).position==='static') heroEl.style.position='relative';
     heroEl.style.overflow='hidden';
-    [{w:520,h:520,bg:'rgba(180,140,255,.13)',t:'-18%',l:'-9%',dur:'23s',delay:'0s'},
-     {w:400,h:400,bg:'rgba(90,195,165,.12)',b:'-6%',r:'-10%',dur:'29s',delay:'3s'},
-     {w:280,h:280,bg:'rgba(255,180,100,.10)',t:'30%',l:'55%',dur:'19s',delay:'7s'}
-    ].forEach(function(o){
-      var d=document.createElement('div');
-      d.setAttribute('aria-hidden','true');
-      d.style.cssText='position:absolute;border-radius:50%;pointer-events:none;will-change:transform;'
-        +'filter:blur(68px);width:'+o.w+'px;height:'+o.h+'px;background:'+o.bg+';'
-        +(o.t?'top:'+o.t+';':'')+(o.b?'bottom:'+o.b+';':'')
-        +(o.l?'left:'+o.l+';':'')+(o.r?'right:'+o.r+';':'')
-        +'z-index:0;'
-        +'animation:orb-demo '+o.dur+' '+o.delay+' ease-in-out infinite;';
-      heroEl.insertBefore(d,heroEl.firstChild);
+    var cv=document.createElement('canvas');
+    cv.className='demo-canvas'; cv.setAttribute('aria-hidden','true');
+    heroEl.insertBefore(cv,heroEl.firstChild);
+    var ctx=cv.getContext('2d'), W,H, pts=[], mouse={x:-2e3,y:-2e3}, raf;
+    function resize(){
+      W=cv.width=cv.offsetWidth; H=cv.height=cv.offsetHeight;
+      var n=Math.min(55,Math.floor((W*H)/15000));
+      pts=Array.from({length:n},function(){return{
+        x:Math.random()*W,y:Math.random()*H,
+        vx:(Math.random()-.5)*.32,vy:(Math.random()-.5)*.32,
+        r:Math.random()*1.8+.8};});
+    }
+    function frame(){
+      ctx.clearRect(0,0,W,H);
+      var MAX=120;
+      for(var i=0;i<pts.length;i++){
+        var p=pts[i];
+        var mdx=mouse.x-p.x,mdy=mouse.y-p.y,md=Math.hypot(mdx,mdy);
+        if(md<140){p.vx+=mdx/md*.05;p.vy+=mdy/md*.05;}
+        p.vx*=.97;p.vy*=.97;
+        p.x=Math.max(0,Math.min(W,p.x+p.vx));
+        p.y=Math.max(0,Math.min(H,p.y+p.vy));
+        if(p.x<=0||p.x>=W)p.vx*=-1;
+        if(p.y<=0||p.y>=H)p.vy*=-1;
+        ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
+        ctx.fillStyle='rgba(255,255,255,.30)';ctx.fill();
+        for(var j=i+1;j<pts.length;j++){
+          var q=pts[j],d=Math.hypot(p.x-q.x,p.y-q.y);
+          if(d<MAX){
+            ctx.beginPath();ctx.moveTo(p.x,p.y);ctx.lineTo(q.x,q.y);
+            ctx.strokeStyle='rgba(255,255,255,'+(1-d/MAX)*.10+')';
+            ctx.lineWidth=.6;ctx.stroke();
+          }
+        }
+      }
+      raf=requestAnimationFrame(frame);
+    }
+    heroEl.addEventListener('mousemove',function(e){
+      var r=cv.getBoundingClientRect();
+      mouse={x:e.clientX-r.left,y:e.clientY-r.top};
     });
-    var st=document.createElement('style');
-    st.textContent='@keyframes orb-demo{'
-      +'0%,100%{transform:translate(0,0) scale(1)}'
-      +'38%{transform:translate(48px,-36px) scale(1.07)}'
-      +'72%{transform:translate(-26px,28px) scale(.95)}}';
-    document.head.appendChild(st);
+    heroEl.addEventListener('mouseleave',function(){mouse={x:-2e3,y:-2e3};});
+    if(!window.matchMedia('(max-width:768px),(pointer:coarse)').matches){
+      resize();frame();
+      window.addEventListener('resize',function(){cancelAnimationFrame(raf);resize();frame();});
+    }
   }
+
+  /* ── 3D tilt on cards ── */
+  var sels=[
+    '.service-card','.card','.team-card','.room-card','.project-card',
+    '.doctor-card','.coach-card','.suite-card','.practice-card',
+    '.property-card','.plan-card','.feature-card','.stat-card'
+  ].join(',');
+  document.querySelectorAll(sels).forEach(function(card){
+    card.addEventListener('mousemove',function(e){
+      var r=card.getBoundingClientRect();
+      var x=(e.clientX-r.left)/r.width-.5, y=(e.clientY-r.top)/r.height-.5;
+      card.style.transition='transform .12s ease-out,box-shadow .12s ease-out';
+      card.style.transform='perspective(650px) rotateX('+(- y*7)+'deg) rotateY('+(x*7)+'deg) translateY(-4px) scale(1.015)';
+      card.style.boxShadow='0 18px 44px rgba(0,0,0,.14)';
+    });
+    card.addEventListener('mouseleave',function(){
+      card.style.transition='transform .4s ease-out,box-shadow .4s ease-out';
+      card.style.transform='perspective(650px) rotateX(0deg) rotateY(0deg) translateY(0px) scale(1)';
+      card.style.boxShadow='';
+    });
+  });
+
+  /* ── Scroll reveal (staggered) ── */
+  var all=document.querySelectorAll(sels);
+  all.forEach(function(el,i){
+    if(!el.classList.contains('rv2')){
+      el.style.opacity='0'; el.style.transform='translateY(20px)';
+      el.style.transition='opacity .55s ease-out '+(i%5*65)+'ms, transform .55s ease-out '+(i%5*65)+'ms';
+    }
+  });
+  var obs=new IntersectionObserver(function(es){
+    es.forEach(function(e){
+      if(e.isIntersecting){
+        e.target.style.opacity='1';
+        e.target.style.transform='translateY(0)';
+        obs.unobserve(e.target);
+      }
+    });
+  },{threshold:.09,rootMargin:'0px 0px -28px 0px'});
+  all.forEach(function(el){obs.observe(el);});
 })();
 </script>
 
