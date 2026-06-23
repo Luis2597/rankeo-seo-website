@@ -74,7 +74,9 @@
     .prop-card { background: var(--sand); overflow: hidden; position: relative; transition: transform .3s; }
     .prop-card:hover { z-index: 2; transform: scale(1.01); }
     .prop-card.featured { grid-row: span 2; }
-    .prop-visual { height: 220px; display: flex; align-items: center; justify-content: center; font-size: 52px; }
+    .prop-visual { height: 220px; overflow: hidden; position: relative; }
+    .prop-visual img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .5s ease; }
+    .prop-card:hover .prop-visual img { transform: scale(1.06); }
     .prop-card.featured .prop-visual { height: 380px; }
     .pv-1 { background: linear-gradient(160deg, #2c4a6e, #1D3557); }
     .pv-2 { background: linear-gradient(160deg, #3a3020, #6b5a3e); }
@@ -146,9 +148,10 @@
   </div>
 </nav>
 
-<section class="hero">
-  <div class="hero-bg"></div>
-  <div class="hero-pattern"></div>
+<section class="hero" style="position:relative;">
+  <img src="https://images.unsplash.com/photo-1486325212027-8081e485255e?auto=format&fit=crop&w=1600&q=80" alt="Barranquilla – proyectos inmobiliarios premium" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;" loading="eager">
+  <div class="hero-bg" style="z-index:1;position:absolute;inset:0;"></div>
+  <div class="hero-pattern" style="z-index:1;position:absolute;inset:0;"></div>
   <div class="con hero-inner">
     <div class="hero-tag">🏙️ Barranquilla, Colombia</div>
     <h1>Propiedades que<br/>definen el <em>estilo</em><br/>de vivir bien</h1>
@@ -173,7 +176,7 @@
     <div class="prop-grid">
       <div class="prop-card featured">
         <div class="prop-badge">Nuevo</div>
-        <div class="prop-visual pv-1">🌅</div>
+        <div class="prop-visual pv-1"><img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=700&q=80" alt="Torres del Prado – apartamentos Barranquilla" loading="lazy"></div>
         <div class="prop-body">
           <div class="prop-type">Proyecto estrella · En construcción</div>
           <div class="prop-name">Torres del Prado</div>
@@ -183,7 +186,7 @@
         </div>
       </div>
       <div class="prop-card">
-        <div class="prop-visual pv-2">🏖️</div>
+        <div class="prop-visual pv-2"><img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=600&q=80" alt="Bello Mar Residencias – frente al mar" loading="lazy"></div>
         <div class="prop-body">
           <div class="prop-type">Entrega 2025 · 4 unidades</div>
           <div class="prop-name">Bello Mar Residencias</div>
@@ -192,7 +195,7 @@
         </div>
       </div>
       <div class="prop-card">
-        <div class="prop-visual pv-3">🌿</div>
+        <div class="prop-visual pv-3"><img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=600&q=80" alt="Verde Urbano – apartamentos eco" loading="lazy"></div>
         <div class="prop-body">
           <div class="prop-type">Preventa abierta</div>
           <div class="prop-name">Verde Urbano</div>
@@ -201,7 +204,7 @@
         </div>
       </div>
       <div class="prop-card">
-        <div class="prop-visual pv-4">🌊</div>
+        <div class="prop-visual pv-4"><img src="https://images.unsplash.com/photo-1499793983690-e29da59ef1c2?auto=format&fit=crop&w=600&q=80" alt="Puerto Sereno – frente al mar Puerto Colombia" loading="lazy"></div>
         <div class="prop-body">
           <div class="prop-type">Frente al mar · 8 unidades</div>
           <div class="prop-name">Puerto Sereno</div>
@@ -210,7 +213,7 @@
         </div>
       </div>
       <div class="prop-card">
-        <div class="prop-visual pv-5">🏙️</div>
+        <div class="prop-visual pv-5"><img src="https://images.unsplash.com/photo-1486325212027-8081e485255e?auto=format&fit=crop&w=600&q=80" alt="Centro Norte 85 – uso mixto" loading="lazy"></div>
         <div class="prop-body">
           <div class="prop-type">Uso mixto · Oficinas + Aptos</div>
           <div class="prop-name">Centro Norte 85</div>

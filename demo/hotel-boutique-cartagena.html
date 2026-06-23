@@ -49,7 +49,7 @@
     .hero { min-height: 92vh; background: var(--ink); color: white; display: flex; align-items: center; position: relative; overflow: hidden; }
     .hero-bg { position: absolute; inset: 0; background: linear-gradient(to right, rgba(28,20,16,.9) 40%, rgba(28,20,16,.4) 100%), linear-gradient(180deg, transparent 60%, rgba(28,20,16,.7) 100%); }
     .hero-pattern { position: absolute; inset: 0; background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.02'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"); }
-    .hero-floral { position: absolute; right: -60px; top: 50%; transform: translateY(-50%); font-size: 340px; opacity: .04; pointer-events: none; }
+    .hero-floral { display: none; }
     .hero-inner { position: relative; z-index: 1; padding: 80px 0; }
     .h-eyebrow { display: flex; align-items: center; gap: 10px; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: .22em; color: var(--terra); margin-bottom: 22px; }
     .h-eyebrow::after { content: ''; flex: 1; max-width: 40px; height: 1px; background: var(--terra); }
@@ -71,7 +71,9 @@
     .sec-title { font-family: 'Libre Baskerville', serif; font-size: clamp(1.8rem,3.5vw,2.8rem); font-weight: 400; line-height: 1.1; letter-spacing: -.01em; }
     .rm-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 3px; }
     .rm-card { background: var(--warm); overflow: hidden; }
-    .rm-visual { height: 200px; display: flex; align-items: center; justify-content: center; font-size: 56px; position: relative; }
+    .rm-visual { height: 200px; overflow: hidden; position: relative; }
+    .rm-visual img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .5s ease; }
+    .rm-card:hover .rm-visual img { transform: scale(1.06); }
     .rv-1 { background: linear-gradient(160deg, #5c3520, #3a1e0c); }
     .rv-2 { background: linear-gradient(160deg, #1a3a2e, #2e5e4e); }
     .rv-3 { background: linear-gradient(160deg, #3a2810, #7a5228); }
@@ -133,11 +135,12 @@
 </nav>
 
 <section class="hero">
-  <div class="hero-bg"></div>
-  <div class="hero-pattern"></div>
-  <div class="hero-floral">🌸</div>
+  <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1600&q=80" alt="Hotel Boutique Casa Colonial – Cartagena" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;" loading="eager">
+  <div class="hero-bg" style="z-index:1;"></div>
+  <div class="hero-pattern" style="z-index:1;"></div>
+  
   <div class="con">
-    <div class="hero-inner">
+    <div class="hero-inner" style="position:relative;z-index:2;">
       <div class="h-eyebrow">Getsemaní · Cartagena de Indias</div>
       <h1>Donde la historia<br/>colonial se vive<br/>en <em>silencio</em></h1>
       <p class="hero-sub">Hotel boutique con 12 suites únicas en un caserón del siglo XVIII. Piscina en rooftop con vista a los campanarios, desayuno en patio y el barrio más auténtico de Cartagena afuera.</p>
@@ -167,7 +170,7 @@
     </div>
     <div class="rm-grid">
       <div class="rm-card">
-        <div class="rm-visual rv-1">🛏️</div>
+        <div class="rm-visual rv-1"><img src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?auto=format&fit=crop&w=600&q=80" alt="Habitación Estándar – Hotel Boutique Cartagena" loading="lazy"></div>
         <div class="rm-body">
           <div class="rm-type">Suite deluxe</div>
           <div class="rm-name">Suite Patio de Ceibas</div>
@@ -179,7 +182,7 @@
         </div>
       </div>
       <div class="rm-card">
-        <div class="rm-visual rv-2">🌿</div>
+        <div class="rm-visual rv-2"><img src="https://images.unsplash.com/photo-1596178065887-1198b6148b2b?auto=format&fit=crop&w=600&q=80" alt="Suite Jardín – vistas al jardín" loading="lazy"></div>
         <div class="rm-body">
           <div class="rm-type">Suite premium</div>
           <div class="rm-name">Suite Jardín del Aljibe</div>
@@ -191,7 +194,7 @@
         </div>
       </div>
       <div class="rm-card">
-        <div class="rm-visual rv-3">🌅</div>
+        <div class="rm-visual rv-3"><img src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=600&q=80" alt="Suite Superior – balcón privado" loading="lazy"></div>
         <div class="rm-body">
           <div class="rm-type">Suite rooftop</div>
           <div class="rm-name">Suite Campanarios</div>
@@ -224,7 +227,7 @@
       <div class="exp-imgs">
         <div class="ei ei-1">🌺</div>
         <div class="ei ei-2">🎵</div>
-        <div class="ei ei-3">🌊</div>
+        <div class="ei ei-3"><img src="https://images.unsplash.com/photo-1582719508461-905c673771fd?auto=format&fit=crop&w=500&q=80" alt="Piscina – Hotel Boutique Cartagena" loading="lazy" style="width:100%;height:100%;object-fit:cover;"></div>
       </div>
     </div>
   </div>

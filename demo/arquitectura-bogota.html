@@ -77,7 +77,9 @@
     .wcard { background: var(--light); overflow: hidden; position: relative; group; }
     .wcard:nth-child(1) { grid-row: span 2; }
     .wcard:nth-child(3) { grid-column: span 1; }
-    .wc-img { height: 240px; display: flex; align-items: center; justify-content: center; font-size: 52px; }
+    .wc-img { height: 240px; overflow: hidden; position: relative; }
+    .wcard:nth-child(1) .wc-img img, .wc-img img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .5s ease; }
+    .wcard:hover .wc-img img { transform: scale(1.05); }
     .wcard:nth-child(1) .wc-img { height: 460px; }
     .wi-1 { background: linear-gradient(160deg, #1a1a18, #111110); }
     .wi-2 { background: linear-gradient(160deg, #2a2520, #4a4030); }
@@ -196,7 +198,7 @@
     </div>
     <div class="work-grid">
       <div class="wcard">
-        <div class="wc-img wi-1">🏢</div>
+        <div class="wc-img wi-1"><img src="https://images.unsplash.com/photo-1486325212027-8081e485255e?auto=format&fit=crop&w=800&q=80" alt="Proyecto comercial – edificio corporativo Bogotá" loading="lazy"></div>
         <div class="wc-body">
           <div class="wc-type">Corporativo · 2024</div>
           <div class="wc-name">Sede Banco Artesano</div>
@@ -204,7 +206,7 @@
         </div>
       </div>
       <div class="wcard">
-        <div class="wc-img wi-2">🏡</div>
+        <div class="wc-img wi-2"><img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=600&q=80" alt="Diseño residencial contemporáneo" loading="lazy"></div>
         <div class="wc-body">
           <div class="wc-type">Residencial · 2024</div>
           <div class="wc-name">Casa La Calera</div>
@@ -212,7 +214,7 @@
         </div>
       </div>
       <div class="wcard">
-        <div class="wc-img wi-3">🍷</div>
+        <div class="wc-img wi-3"><img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=600&q=80" alt="Restaurante – diseño de interiores" loading="lazy"></div>
         <div class="wc-body">
           <div class="wc-type">Gastronomía · 2023</div>
           <div class="wc-name">Restaurante Origen</div>
@@ -220,7 +222,7 @@
         </div>
       </div>
       <div class="wcard">
-        <div class="wc-img wi-4">🌿</div>
+        <div class="wc-img wi-4"><img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=600&q=80" alt="Arquitectura biofílica – integración con la naturaleza" loading="lazy"></div>
         <div class="wc-body">
           <div class="wc-type">Residencial · 2023</div>
           <div class="wc-name">Penthouse El Retiro</div>

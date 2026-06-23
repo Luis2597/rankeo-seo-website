@@ -56,7 +56,8 @@
     .btn-ghost:hover { border-color: rgba(255,255,255,.5); color: white; }
     /* badge card */
     .hero-card { background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.1); border-radius: 16px; overflow: hidden; }
-    .hc-img { height: 220px; background: linear-gradient(160deg, #4a2800, #8B4513, #C4692A); display: flex; align-items: center; justify-content: center; font-size: 80px; }
+    .hc-img { height: 220px; overflow: hidden; position: relative; background: #4a2800; }
+    .hc-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
     .hc-body { padding: 24px; }
     .hc-name { font-family: 'Fraunces', serif; font-size: 1.35rem; font-weight: 600; margin-bottom: 6px; }
     .hc-desc { font-size: 13px; color: rgba(255,255,255,.55); line-height: 1.6; margin-bottom: 20px; }
@@ -91,7 +92,8 @@
     .about { padding: 96px 0; background: var(--ink); color: white; }
     .about-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
     .about-visual { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-    .av-block { border-radius: 12px; overflow: hidden; display: flex; align-items: center; justify-content: center; font-size: 50px; }
+    .av-block { border-radius: 12px; overflow: hidden; position: relative; }
+    .av-block img { width: 100%; height: 100%; object-fit: cover; display: block; }
     .av-block:first-child { grid-row: span 2; min-height: 280px; background: linear-gradient(160deg, #2a1400, var(--clay)); }
     .av-block:not(:first-child) { min-height: 130px; background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.08); }
     .about-text h2 { font-family: 'Fraunces', serif; font-size: clamp(1.8rem, 3.5vw, 2.8rem); font-weight: 600; letter-spacing: -.02em; line-height: 1.15; margin-bottom: 20px; }
@@ -182,7 +184,7 @@
         </div>
       </div>
       <div class="hero-card">
-        <div class="hc-img">🔥</div>
+        <div class="hc-img"><img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=600&q=80" alt="Leño y Mesa – restaurante de cocina colombiana" loading="lazy"></div>
         <div class="hc-body">
           <div class="hc-name">Costillar a la brasa</div>
           <div class="hc-desc">Costilla de res madurada 21 días, brasa de leña de encino, chimichurri de hierbas de páramo y yuca frita de Tolima.</div>
@@ -248,9 +250,9 @@
   <div class="con">
     <div class="about-inner">
       <div class="about-visual">
-        <div class="av-block" style="font-size:60px;">🔥</div>
-        <div class="av-block">🌿</div>
-        <div class="av-block">🐄</div>
+        <div class="av-block"><img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=600&q=80" alt="Experiencia gastronómica" loading="lazy" style="min-height:280px;"></div>
+        <div class="av-block"><img src="https://images.unsplash.com/photo-1490818715691-f3a62a3f2c77?auto=format&fit=crop&w=500&q=80" alt="Ingredientes frescos y naturales" loading="lazy"></div>
+        <div class="av-block"><img src="https://images.unsplash.com/photo-1547496615-c45cb75f893f?auto=format&fit=crop&w=500&q=80" alt="Carnes premium" loading="lazy"></div>
       </div>
       <div class="about-text">
         <div class="section-eyebrow" style="color: var(--warm);">Nuestra historia</div>
