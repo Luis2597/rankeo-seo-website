@@ -1249,6 +1249,10 @@
             <input type="email" id="cem" placeholder="tu@empresa.com" required autocomplete="email" inputmode="email"/>
           </div>
           <div class="cf">
+            <label for="ctel">Teléfono / WhatsApp <span style="font-weight:400;opacity:.6">(opcional)</span></label>
+            <input type="tel" id="ctel" placeholder="+57 300 000 0000" autocomplete="tel" inputmode="tel"/>
+          </div>
+          <div class="cf">
             <label for="cweb">Sitio web <span style="font-weight:400;opacity:.6">(opcional)</span></label>
             <input type="url" id="cweb" placeholder="tuempresa.com" autocomplete="url" inputmode="url"/>
           </div>
@@ -1634,12 +1638,14 @@ async function sendContact(e) {
   btn.disabled = true;
   btn.textContent = 'Enviando…';
 
+  const tel = document.getElementById('ctel') ? document.getElementById('ctel').value.trim() : '';
   const web = document.getElementById('cweb') ? document.getElementById('cweb').value.trim() : '';
 
   try {
     const data = new FormData();
     data.append('name',    nom);
     data.append('email',   em);
+    if (tel) data.append('phone', tel);
     data.append('website', web);
     data.append('message', msg);
     data.append('_subject', `Nueva consulta Rankeo — ${nom}`);
