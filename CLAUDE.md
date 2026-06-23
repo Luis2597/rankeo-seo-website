@@ -1,116 +1,168 @@
-# Rankeo — Sitio Web de la Agencia SEO
+# Rankeo — Sitio Web de la Agencia SEO+GEO
+**Claude Code: lee todo antes de tocar una sola línea de código.**
 
-## Contexto del proyecto
+---
 
-Este es el sitio web de **Rankeo**, una agencia de SEO y sitios web para Colombia, México y USA Hispanic. El modelo de negocio es suscripción mensual ($149/$299/$599 USD/mes) con auditoría SEO gratis como gancho de ventas.
+## 1. Identidad del proyecto
 
-**REGLA CRÍTICA:** El cliente final NUNCA debe saber que el trabajo se hace con IA. Todo el código, copy y diseño deben verse y sonar como producidos por una agencia humana profesional.
+| Campo | Valor |
+|---|---|
+| Agencia | Rankeo |
+| Dominio | rankeo.agency (producción) / rankeo-nu.vercel.app (staging) |
+| Mercado | Colombia, México, USA Hispanic |
+| Propuesta | Sitios web + SEO + GEO que posicionan en Google **y** en IAs (ChatGPT, Perplexity, AI Overviews) |
+| Modelo | Suscripción mensual $199–$649/mes con auditoría gratis como gancho |
+| WhatsApp | +525532894890 |
 
-## Estado actual
+**REGLA ABSOLUTA:** El cliente final NUNCA debe saber que el trabajo se hace con IA. Todo código, copy y diseño deben verse y sonar como producidos por una agencia humana de primer nivel. Cero menciones a IA, "generado por", plantillas o automatización en ningún entregable de cara al cliente.
 
-- `index.html` — Sitio completo de una sola página (HTML/CSS/JS sin framework)
-- Diseño: gradient hero animado, tipografía Syne + Plus Jakarta Sans, paleta cream/orange/ink
-- Incluye: navbar, hero con ranking card animado, manifesto, how-it-works, audit tool interactivo, portfolio, pricing, FAQ accordion, contact form
-- SEO técnico aplicado: canonical, hreflang (es-CO/es-MX/es-US), og:image, LocalBusiness schema, Service schema x3, FAQPage schema (8 preguntas), WhatsApp float button, cookie consent (Ley 1581 Colombia)
+---
 
-## Próxima tarea — Migrar a Next.js
-
-### Objetivo
-Convertir el `index.html` actual en un proyecto **Next.js (App Router)** multi-página con arquitectura SEO real.
-
-### Stack
-- Framework: Next.js 14+ (App Router)
-- Styling: Tailwind CSS con tokens propios (NO usar shadcn genérico)
-- SEO: `next/metadata` API, schema JSON-LD por página, sitemap.xml dinámico, robots.txt
-- Performance: `next/font` (Syne + Plus Jakarta Sans locales), `next/image`, Core Web Vitals
-- Deploy: Vercel
-
-### Tokens de diseño a preservar
-```
---c-ink:     #0A0908
---c-orange:  #F04E23
---c-bg:      #FAF8F5
---c-surface: #F2EFE9
---c-border:  #E4E0D9
---c-subtle:  #787370
-```
-
-### Arquitectura de páginas a construir
+## 2. Estado actual del repositorio
 
 ```
-/                          → Página principal (migrar index.html)
-/agencia-seo-colombia      → Landing SEO Colombia (keyword de alto volumen)
-/agencia-seo-bogota        → Landing local Bogotá
-/agencia-seo-medellin      → Landing local Medellín
-/agencia-seo-cali          → Landing local Cali
-/agencia-seo-mexico        → Landing México
-/diseno-web-colombia       → Página de servicio diseño web
-/seo-para-dentistas        → Landing por industria (baja competencia, alta conversión)
-/seo-para-abogados         → Landing por industria
-/seo-para-gimnasios        → Landing por industria
-/seo-para-restaurantes     → Landing por industria
-/blog                      → Blog index
-/blog/cuanto-cuesta-seo-colombia-2026  → Post prioritario (keyword de alto volumen)
-/blog/por-que-no-aparezco-en-google    → Post top-of-funnel
-/auditoria-seo-gratis      → Landing dedicada para la herramienta de auditoría
+seo-company/
+├── index.html        ← Sitio actual (HTML/CSS/JS, una sola página, deployado en Vercel)
+├── preview.png       ← og:image 1200×630 (ya existe, no regenerar)
+└── CLAUDE.md         ← Este archivo
 ```
 
-### Componentes a extraer del index.html
+**El sitio está LIVE en:** `https://rankeo-nu.vercel.app`  
+Vercel redeploya automáticamente en cada push a `master`.
 
-1. `Navbar` — con scroll detection y mobile drawer
-2. `Hero` — con animated gradient + ranking card SVG + mini metric card
-3. `Band` — marquee animado
-4. `Manifesto` — strip editorial
-5. `HowItWorks` — 3 pasos
-6. `AuditTool` — herramienta interactiva de auditoría SEO (lógica compleja — ver index.html)
-7. `Portfolio` — 6 tarjetas con browser mockup CSS
-8. `Pricing` — 3 planes con toggle mensual/anual (agregar toggle)
-9. `FAQ` — acordeón con 7 preguntas
-10. `ContactForm` — con checkbox HABEAS DATA
-11. `Footer`
-12. `WhatsAppFloat` — botón flotante fijo
-13. `CookieBanner` — aviso Ley 1581
+### Precios actuales en el sitio (NO cambiar sin autorización):
+- Plan Local: **$199/mes**
+- Plan Web + SEO: **$349/mes**
+- Plan Autoridad: **$649/mes**
 
-### SEO por página — patrón a seguir
+---
 
-Cada página debe tener en `layout.tsx` o `page.tsx`:
-```tsx
-export const metadata: Metadata = {
-  title: 'Agencia SEO Bogotá | Posicionamiento Web — Rankeo',
-  description: '...',
-  alternates: { canonical: 'https://rankeo.agency/agencia-seo-bogota' },
-  openGraph: { ... },
-}
+## 3. Próxima tarea: Migrar a Next.js (App Router)
+
+### 3.1 Stack técnico
+
+```
+Framework:   Next.js 14+ (App Router, TypeScript estricto)
+Styling:     Tailwind CSS v3 con tokens propios — NO usar shadcn sin customizar
+Fuentes:     next/font/google → Syne (display) + Plus Jakarta Sans (body)
+Imágenes:    next/image con WebP automático, lazy loading, layout fill
+SEO:         next/metadata API, JSON-LD por página, sitemap.xml dinámico, robots.txt
+Deploy:      Vercel (auto-deploy en push)
+Animaciones: Framer Motion (solo transform/opacity, respeta prefers-reduced-motion)
 ```
 
-Y un schema JSON-LD específico por página (LocalBusiness para las de ciudad, Service para las de industria).
-
-### Diseño — reglas no negociables ($10K Checklist)
-
-1. Diseño con punto de vista propio, NO plantilla genérica
-2. Tipografía: Syne (display, 700/800) + Plus Jakarta Sans (body, 300-700) — NUNCA Inter/Roboto
-3. Sistema de color restringido: solo los tokens de arriba
-4. Whitespace y jerarquía visual clara
-5. Mobile diseñado diferente al desktop, no solo "encogido"
-6. Animaciones: transform/opacity únicamente, ease-out enter, ease-in exit, 150-300ms
-7. Carga < 2s, contraste WCAG AA, HTML semántico
-8. Micro-interacciones artesanales (ver index.html como referencia)
-
-### Nota sobre la herramienta de auditoría
-
-El `AuditTool` actual en index.html simula un análisis con datos mock. En el futuro se puede conectar a una API real (PageSpeed Insights, etc.), pero por ahora el mock es suficiente. Preservar la UX exactamente: 6 pasos animados → circle score → 4 categorías → CTA.
-
-## Comandos para empezar
+### 3.2 Inicialización
 
 ```bash
 cd "C:\Users\berna_1oneq3n\Documents\Claude code poyect"
-npx create-next-app@latest rankeo-next --typescript --tailwind --app --src-dir
+npx create-next-app@latest rankeo-next --typescript --tailwind --app --src-dir --import-alias "@/*"
 cd rankeo-next
+npm install framer-motion
 ```
 
-Luego migrar componente por componente usando el `index.html` como fuente de verdad para el diseño.
+---
 
-## Archivos de referencia
+## 4. Sistema de diseño — LA BIBLIA
 
-- `index.html` — Diseño completo actual (fuente de verdad visual)
-- `C:\Users\berna_1oneq3n\Claude\Projects\NEW MULTIBILLIONARE COMPANY\CLAUDE.md` — Instrucciones globales de la agencia Rankeo
+### 4.1 Tokens de color
+
+```ts
+// tailwind.config.ts → extend.colors
+const colors = {
+  ink:     '#0A0908',  // texto principal, fondos dark
+  orange:  '#F04E23',  // acento primario, CTAs, hover states
+  bg:      '#FAF8F5',  // fondo página (cream cálido, NO blanco puro)
+  surface: '#F2EFE9',  // cards, inputs, elementos elevados
+  border:  '#E4E0D9',  // bordes sutiles
+  subtle:  '#787370',  // texto secundario, placeholders
+}
+```
+
+```css
+/* globals.css — también como CSS custom properties */
+:root {
+  --c-ink:     #0A0908;
+  --c-orange:  #F04E23;
+  --c-bg:      #FAF8F5;
+  --c-surface: #F2EFE9;
+  --c-border:  #E4E0D9;
+  --c-subtle:  #787370;
+
+  --dur-fast:  150ms;
+  --dur-base:  250ms;
+  --dur-slow:  400ms;
+  --ease-out:  cubic-bezier(0.0, 0.0, 0.2, 1);
+  --ease-in:   cubic-bezier(0.4, 0.0, 1, 1);
+  --ease-both: cubic-bezier(0.4, 0.0, 0.2, 1);
+}
+```
+
+### 4.2 Tipografía
+
+```ts
+// layout.tsx
+import { Syne, Plus_Jakarta_Sans } from 'next/font/google'
+
+const syne = Syne({
+  subsets: ['latin'],
+  weight: ['400', '700', '800'],
+  variable: '--font-syne',
+  display: 'swap',
+})
+
+const jakarta = Plus_Jakarta_Sans({
+  subsets: ['latin'],
+  weight: ['300', '400', '500', '600', '700'],
+  variable: '--font-jakarta',
+  display: 'swap',
+})
+```
+
+```css
+/* globals.css */
+h1, h2, h3, .display { font-family: var(--font-syne); font-weight: 800; letter-spacing: -0.03em; }
+body, p, span, a      { font-family: var(--font-jakarta); font-weight: 400; }
+```
+
+**Escala tipográfica:**
+| Token | rem | px | Uso |
+|---|---|---|---|
+| `text-5xl`–`text-8xl` | 3–6rem | 48–96px | Hero H1 |
+| `text-3xl`–`text-4xl` | 1.875–2.25rem | 30–36px | Section H2 |
+| `text-xl`–`text-2xl` | 1.25–1.5rem | 20–24px | Card H3 |
+| `text-base` | 1rem | 16px | Body (mínimo en mobile) |
+| `text-sm` | 0.875rem | 14px | Labels, captions |
+
+### 4.3 Espaciado y grid
+
+- Base unit: 4px (escala 4/8/16/24/32/48/64/80/96/128px)
+- Max width contenido: `max-w-7xl` (1280px) con `px-6` en mobile, `px-8` en desktop
+- Grid: 12 columnas en desktop, 4 en mobile
+- Section padding: `py-24` desktop / `py-16` mobile
+- Nunca menos de `gap-8` entre elementos de grid
+
+### 4.4 Motion system
+
+```ts
+// lib/motion.ts — variantes reutilizables
+export const fadeUp = {
+  hidden: { opacity: 0, y: 32 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.4, ease: [0, 0, 0.2, 1] } }
+}
+
+export const stagger = {
+  visible: { transition: { staggerChildren: 0.08 } }
+}
+
+export const scaleIn = {
+  hidden: { opacity: 0, scale: 0.92 },
+  visible: { opacity: 1, scale: 1, transition: { duration: 0.35, ease: [0, 0, 0.2, 1] } }
+}
+```
+
+Reglas de animación:
+- Solo `opacity` y `transform` (GPU, no causa reflow)
+- Enter: ease-out. Exit: ease-in, 60% de la duración de entrada
+- Stagger en listas: 40–80ms por elemento
+- SIEMPRE `@media (prefers-reduced-motion: reduce)` → sin animaciones
+- Nunca animar `width`, `height`, `top`, `left
