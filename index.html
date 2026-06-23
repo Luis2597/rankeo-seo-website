@@ -229,6 +229,10 @@
       h1.ht .tl { font-size: clamp(1.75rem,10vw,2.4rem); }
       h1.ht .th { font-size: clamp(2rem,12vw,2.8rem); }
       h1.ht .ta { font-size: clamp(2rem,12vw,2.8rem); }
+      /* Tighter hero on small phones so ranking card peeks into view */
+      .hero-body { padding-top: 82px !important; padding-bottom: 48px !important; gap: 28px !important; }
+      .hero-visual { max-width: 300px; }
+      .mini-card, .mini-card-2 { display: none; }
     }
 
     .hero-desc { font-size: clamp(15px,1.6vw,17px); color: rgba(10,9,8,.55); max-width: 400px; line-height: 1.7; margin-bottom: 32px; }
@@ -545,13 +549,15 @@
     .fq-item.open .fq-a { max-height: 600px; padding-bottom: 18px; }
 
     /* ━━━━ WHATSAPP FLOAT ━━━━ */
-    .wa { position: fixed; bottom: 24px; right: 24px; z-index: 200; }
+    .wa { position: fixed; bottom: 24px; right: 24px; z-index: 350; transition: bottom var(--dur-base) var(--ease-out); }
     .wa-btn { display: flex; align-items: center; gap: 10px; background: #25D366; color: white; font-size: 13.5px; font-weight: 700; padding: 13px 20px 13px 16px; border-radius: 100px; box-shadow: 0 4px 24px rgba(37,211,102,.35); text-decoration: none; transition: transform var(--dur-fast) var(--ease-spring), box-shadow var(--dur-fast); min-height: 50px; }
     .wa-btn:hover { transform: translateY(-3px) scale(1.03); box-shadow: 0 8px 32px rgba(37,211,102,.45); }
     .wa-btn:active { transform: scale(0.97); }
     .wa-btn svg { width: 22px; height: 22px; flex-shrink: 0; }
     .wa-label { white-space: nowrap; }
     @media (max-width: 520px) { .wa-btn { padding: 13px; border-radius: 50%; } .wa-label { display: none; } }
+    /* Push WA above cookie banner while it's visible */
+    body.ck-active .wa { bottom: 160px; }
 
     /* ━━━━ GEO BADGE ━━━━ */
     .geo-badge { display: inline-flex; align-items: center; gap: 7px; background: rgba(10,9,8,.05); border: 1px solid rgba(10,9,8,.09); border-radius: 100px; padding: 5px 12px 5px 8px; font-size: 11px; font-weight: 700; letter-spacing: .04em; color: var(--c-subtle); max-width: 100%; flex-wrap: wrap; }
@@ -1328,6 +1334,15 @@ const rvEls = document.querySelectorAll('.rv');
 const rvObs = new IntersectionObserver(entries => {
   entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); rvObs.unobserve(e.target); } });
 }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
+// Reveal elements that have been scrolled above the viewport (anchor navigation)
+function rvRevealAbove() {
+  rvEls.forEach(el => {
+    if (!el.classList.contains('in') && el.getBoundingClientRect().bottom < 0) {
+      el.classList.add('in');
+    }
+  });
+}
+window.addEventListener('scroll', rvRevealAbove, { passive: true });
 rvEls.forEach(el => {
   // Elements already fully or partially in the viewport on page load → reveal immediately
   const rect = el.getBoundingClientRect();
@@ -1585,10 +1600,17 @@ document.querySelectorAll('.fq-q').forEach(btn => {
 /* ── Cookie banner ── */
 function acceptCookies() {
   document.getElementById('cookieBanner').classList.add('hidden');
+  document.body.classList.remove('ck-active');
   try { localStorage.setItem('ck', '1'); } catch(e){}
 }
 (function() {
-  try { if (localStorage.getItem('ck')) document.getElementById('cookieBanner').classList.add('hidden'); } catch(e){}
+  try {
+    if (localStorage.getItem('ck')) {
+      document.getElementById('cookieBanner').classList.add('hidden');
+    } else {
+      document.body.classList.add('ck-active');
+    }
+  } catch(e) {}
 })();
 
 /* ── Contact ── */
