@@ -90,28 +90,6 @@
     }
     body { font-family: 'Plus Jakarta Sans', sans-serif; background: var(--c-bg); color: var(--c-ink); overflow-x: hidden; overflow-wrap: break-word; word-break: break-word; }
 
-    /* ━━━━ CUSTOM CURSOR ━━━━ */
-    @media (pointer: fine) {
-      *, a, button, [role="button"], input, label, select, textarea { cursor: none !important; }
-    }
-    .cur { position: fixed; top: 0; left: 0; pointer-events: none; z-index: 99998; }
-    .cur-ring {
-      width: 38px; height: 38px; border: 1.5px solid rgba(10,9,8,.5); border-radius: 50%;
-      position: absolute; transform: translate(-50%,-50%); will-change: transform;
-      transition: width .32s var(--ease-spring), height .32s var(--ease-spring),
-                  background .22s ease-out, border-color .22s ease-out, opacity .28s;
-    }
-    .cur-dot {
-      width: 5px; height: 5px; background: var(--c-orange); border-radius: 50%;
-      position: absolute; transform: translate(-50%,-50%); will-change: transform;
-      transition: width .18s var(--ease-spring), height .18s var(--ease-spring);
-    }
-    .cur.is-hover  .cur-ring { width: 58px; height: 58px; background: rgba(240,78,35,.07); border-color: var(--c-orange); }
-    .cur.is-hover  .cur-dot  { width: 7px; height: 7px; }
-    .cur.is-click  .cur-ring { width: 26px; height: 26px; }
-    .cur.is-dark   .cur-ring { border-color: rgba(255,255,255,.55); }
-    .cur.is-dark   .cur-dot  { background: white; }
-
     /* clip-wrap removed — GSAP text clip caused h1 to blank on slow CDN/mobile */
     a { text-decoration: none; color: inherit; }
     button { font-family: inherit; }
@@ -1287,12 +1265,6 @@
 
 </main>
 
-<!-- ━━━ CUSTOM CURSOR (desktop / pointer:fine only) ━━━ -->
-<div class="cur" id="cur" aria-hidden="true">
-  <div class="cur-ring" id="curRing"></div>
-  <div class="cur-dot"  id="curDot"></div>
-</div>
-
 <!-- ━━━ WHATSAPP FLOAT ━━━ -->
 <div class="wa" role="complementary" aria-label="Contacto por WhatsApp">
   <a href="https://wa.me/525532894890?text=Hola%20Rankeo%2C%20quiero%20una%20auditoría%20SEO%20gratis%20para%20mi%20negocio."
@@ -1522,36 +1494,6 @@ async function doAudit(e) {
   res.querySelector('.rsc').focus?.();
 }
 
-
-/* ── Custom cursor (pointer:fine / desktop only) ── */
-(function () {
-  if (!window.matchMedia('(pointer: fine)').matches) return;
-  const cur  = document.getElementById('cur');
-  const ring = document.getElementById('curRing');
-  const dot  = document.getElementById('curDot');
-  if (!cur) return;
-  let mx = -200, my = -200, rx = -200, ry = -200;
-  document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; });
-  document.addEventListener('mousedown', () => cur.classList.add('is-click'));
-  document.addEventListener('mouseup',   () => cur.classList.remove('is-click'));
-  document.querySelectorAll('a, button, [role="button"]').forEach(el => {
-    el.addEventListener('mouseenter', () => cur.classList.add('is-hover'));
-    el.addEventListener('mouseleave', () => cur.classList.remove('is-hover'));
-  });
-  // Dark sections: hero + footer
-  document.querySelectorAll('.hero, footer').forEach(el => {
-    el.addEventListener('mouseenter', () => cur.classList.add('is-dark'));
-    el.addEventListener('mouseleave', () => cur.classList.remove('is-dark'));
-  });
-  function lerp(a, b, t) { return a + (b - a) * t; }
-  (function tick() {
-    rx = lerp(rx, mx, 0.14);
-    ry = lerp(ry, my, 0.14);
-    dot.style.transform  = `translate(${mx}px,${my}px) translate(-50%,-50%)`;
-    ring.style.transform = `translate(${rx}px,${ry}px) translate(-50%,-50%)`;
-    requestAnimationFrame(tick);
-  })();
-})();
 
 /* ── Hero canvas particles (desktop only) ── */
 (function () {
