@@ -3,177 +3,304 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Hotel Casa Bávaro | Boutique Hotel · Cartagena de Indias</title>
-  <meta name="description" content="Hotel boutique en el centro histórico de Cartagena. Habitaciones exclusivas, piscina privada y experiencias únicas en el Caribe colombiano."/>
+  <title>Casa Inés | Hotel Boutique en Getsemaní, Cartagena</title>
+  <meta name="description" content="Hotel boutique en Getsemaní, Cartagena. 12 suites únicas, piscina en rooftop con vista a campanarios y desayuno en patio colonial."/>
   <link rel="canonical" href="https://rankeo-nu.vercel.app/demo/hotel-boutique-cartagena"/>
+  <meta property="og:title" content="Casa Inés Hotel Boutique | Cartagena"/>
   <meta name="robots" content="noindex,follow"/>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&family=Lato:wght@300;400;700&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Nunito+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
   <style>
-    :root{--ink:#1A1209;--cream:#FDF8F2;--sand:#F5EED9;--teal:#1B6B72;--teal2:#2A8F97;--gold:#C9933C;--muted:#7A6F61;--border:#E8DDD0;--ease:cubic-bezier(0.0,0.0,0.2,1);--spring:cubic-bezier(0.34,1.56,0.64,1)}
-    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-    html{scroll-behavior:smooth;scroll-padding-top:70px;-webkit-font-smoothing:antialiased}
-    body{font-family:'Lato',sans-serif;background:var(--cream);color:var(--ink);overflow-x:hidden}
-    a{text-decoration:none;color:inherit}img{display:block;max-width:100%}
-    .con{max-width:1140px;margin:0 auto;padding:0 28px}
-    .rv{opacity:0;transform:translateY(32px);transition:opacity .6s var(--ease),transform .6s var(--ease)}
-    .rv.in{opacity:1;transform:translateY(0)}
-    .rv[data-d="1"]{transition-delay:90ms}.rv[data-d="2"]{transition-delay:180ms}.rv[data-d="3"]{transition-delay:270ms}
-    @media(prefers-reduced-motion:reduce){.rv{transition:none;opacity:1;transform:none}}
-    .demo-banner{background:var(--teal);color:rgba(255,255,255,.85);text-align:center;padding:10px 16px;font-size:12px;font-weight:700;letter-spacing:.04em}
-    .demo-banner a{color:white;text-decoration:underline;text-underline-offset:3px}
-    nav{position:fixed;top:30px;left:0;right:0;z-index:200;transition:top .3s var(--ease),background .3s var(--ease)}
-    nav.scrolled{top:0;background:rgba(26,18,9,.88);backdrop-filter:blur(14px)}
-    .nav-i{height:70px;display:flex;align-items:center;justify-content:space-between}
-    .nav-logo{font-family:'Playfair Display',serif;font-size:20px;font-weight:700;letter-spacing:.04em;color:white}
-    .nav-logo span{font-style:italic;color:var(--gold)}
-    .nav-links{display:flex;gap:32px;list-style:none}
-    .nav-links a{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.6);transition:color .2s}
-    .nav-links a:hover{color:white}
-    .nav-cta{background:var(--gold);color:white;font-size:11px;font-weight:700;padding:10px 22px;letter-spacing:.1em;text-transform:uppercase;transition:filter .2s;min-height:44px;display:flex;align-items:center}
-    .nav-cta:hover{filter:brightness(1.1)}
-    .nav-burger{display:none;background:none;border:none;cursor:pointer;width:44px;height:44px;align-items:center;justify-content:center;color:white}
-    .hero{min-height:100vh;position:relative;display:flex;flex-direction:column;justify-content:center;overflow:hidden}
-    .hero-img{position:absolute;inset:0}
-    .hero-img img{width:100%;height:100%;object-fit:cover;transform:scale(1.06);transition:transform 9s ease-out}
-    .hero-img img.loaded{transform:scale(1)}
-    .hero-grad{position:absolute;inset:0;background:linear-gradient(135deg,rgba(26,18,9,.85) 0%,rgba(26,18,9,.4) 60%,rgba(27,107,114,.2) 100%)}
-    .hero-in{position:relative;z-index:2;padding:80px 0}
-    .htag{font-size:10px;font-weight:700;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);margin-bottom:20px;display:flex;align-items:center;gap:10px}
-    .htag::before{content:'';width:30px;height:1px;background:var(--gold)}
-    h1{font-family:'Playfair Display',serif;font-size:clamp(3rem,8vw,6.5rem);font-weight:400;line-height:1.05;color:white;margin-bottom:28px;max-width:680px}
-    h1 em{font-style:italic;color:var(--gold)}
-    .hero-sub{font-size:15px;font-weight:300;color:rgba(255,255,255,.65);line-height:1.9;max-width:420px;margin-bottom:44px}
-    .hero-acts{display:flex;gap:14px;flex-wrap:wrap}
-    .btn-p{display:inline-flex;align-items:center;gap:8px;background:var(--gold);color:white;font-size:11px;font-weight:700;padding:15px 30px;letter-spacing:.12em;text-transform:uppercase;min-height:50px;transition:filter .2s,transform .2s var(--spring)}
-    .btn-p:hover{filter:brightness(1.1);transform:translateY(-2px)}
-    .btn-g{display:inline-flex;align-items:center;gap:8px;background:transparent;color:rgba(255,255,255,.8);font-size:11px;font-weight:700;padding:15px 26px;letter-spacing:.1em;text-transform:uppercase;border:1px solid rgba(255,255,255,.28);min-height:50px;transition:border-color .2s,color .2s}
-    .btn-g:hover{border-color:rgba(255,255,255,.65);color:white}
-    .hero-stats{display:flex;gap:40px;margin-top:64px;padding-top:32px;border-top:1px solid rgba(255,255,255,.1)}
-    .hstat-n{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:400;color:white;line-height:1}
-    .hstat-l{font-size:10px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.35);margin-top:5px}
-    .scue{position:absolute;bottom:30px;right:36px;z-index:3;display:flex;flex-direction:column;align-items:center;gap:8px;color:rgba(255,255,255,.3);font-size:8px;letter-spacing:.2em;text-transform:uppercase}
-    .sline{width:1px;height:40px;background:rgba(255,255,255,.12);overflow:hidden;position:relative}
-    .sline::after{content:'';position:absolute;top:-100%;left:0;width:1px;height:100%;background:var(--gold);animation:scanDown 2.2s ease-in-out infinite}
-    @keyframes scanDown{0%{top:-100%}100%{top:100%}}
-    .rooms{padding:120px 0;background:var(--ink)}
-    .rooms-head{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:end;margin-bottom:72px}
-    .sec-l{font-size:10px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:14px}
-    .sec-h{font-family:'Playfair Display',serif;font-size:clamp(2.2rem,4.5vw,3.5rem);font-weight:400;line-height:1.1;letter-spacing:-.01em}
-    .rooms .sec-h{color:white}
-    .rooms-intro{font-size:14px;font-weight:300;color:rgba(255,255,255,.45);line-height:1.9;max-width:360px}
-    .rooms-grid{display:grid;grid-template-columns:1fr 1fr;gap:3px}
-    .rm{position:relative;overflow:hidden;background:rgba(255,255,255,.04)}
-    .rm-img{overflow:hidden}
-    .rm-img img{width:100%;height:100%;object-fit:cover;transition:transform .8s var(--ease);display:block}
-    .rm:hover .rm-img img{transform:scale(1.06)}
-    .rm-info{padding:28px 28px 32px}
-    .rm-cat{font-size:9px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:10px}
-    .rm-name{font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:500;color:white;margin-bottom:8px}
-    .rm-desc{font-size:13px;font-weight:300;color:rgba(255,255,255,.45);line-height:1.7;margin-bottom:18px}
-    .rm-row{display:flex;align-items:center;justify-content:space-between}
-    .rm-price{font-family:'Playfair Display',serif;font-size:1.3rem;color:var(--gold)}
-    .rm-btn{font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.45);border-bottom:1px solid rgba(255,255,255,.2);padding-bottom:3px;transition:color .2s,border-color .2s}
-    .rm-btn:hover{color:white;border-color:white}
-    .rm.featured{grid-column:span 2}.rm.featured .rm-img{height:420px}.rm:not(.featured) .rm-img{height:260px}
-    .amens{padding:100px 0;background:var(--sand)}
-    .amens-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;margin-top:64px}
-    .amen{background:white;padding:40px 28px;text-align:center;transition:transform .3s var(--ease),box-shadow .3s}
-    .amen:hover{transform:translateY(-6px);box-shadow:0 20px 40px rgba(26,18,9,.1)}
-    .amen-icon{width:52px;height:52px;border-radius:50%;background:var(--teal);display:flex;align-items:center;justify-content:center;margin:0 auto 18px}
-    .amen-icon svg{width:22px;height:22px;stroke:white;fill:none;stroke-width:1.8}
-    .amen-name{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:500;color:var(--ink);margin-bottom:8px}
-    .amen-desc{font-size:12.5px;font-weight:300;color:var(--muted);line-height:1.65}
-    .exp{padding:120px 0}
-    .exp-in{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
-    .exp-vis{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:300px 200px;gap:8px}
-    .ev{overflow:hidden;border-radius:3px}
-    .ev:first-child{grid-row:span 2}
-    .ev img{width:100%;height:100%;object-fit:cover;transition:transform .7s var(--ease)}
-    .ev:hover img{transform:scale(1.06)}
-    .exp-text .sec-h em{font-style:italic;color:var(--teal)}
-    .exp-p{font-size:14px;font-weight:300;color:var(--muted);line-height:1.9;margin-bottom:24px}
-    .exp-feats{display:flex;flex-direction:column;gap:14px;margin-top:32px}
-    .ef{display:flex;align-items:center;gap:14px;font-size:13.5px;color:var(--muted)}
-    .ef-dot{width:6px;height:6px;border-radius:50%;background:var(--gold);flex-shrink:0}
-    .strip{background:var(--teal);padding:70px 0}
-    .strip-in{display:grid;grid-template-columns:repeat(4,1fr);text-align:center;gap:0}
-    .si{padding:0 30px;border-right:1px solid rgba(255,255,255,.15)}
-    .si:last-child{border-right:none}
-    .si-n{font-family:'Playfair Display',serif;font-size:2.8rem;font-weight:400;color:white}
-    .si-l{font-size:10px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.45);margin-top:6px}
-    .reviews{padding:110px 0;background:var(--cream)}
-    .rev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:60px}
-    .rcard{background:white;border:1px solid var(--border);padding:36px;transition:transform .3s,box-shadow .3s}
-    .rcard:hover{transform:translateY(-5px);box-shadow:0 20px 40px rgba(26,18,9,.08)}
-    .rcard-stars{color:var(--gold);font-size:13px;letter-spacing:3px;margin-bottom:16px}
-    .rcard-text{font-family:'Playfair Display',serif;font-size:1.05rem;font-style:italic;color:var(--muted);line-height:1.75;margin-bottom:24px}
-    .rcard-name{font-size:12.5px;font-weight:700;letter-spacing:.06em;color:var(--ink)}
-    .rcard-origin{font-size:11px;color:var(--muted);margin-top:2px}
-    .booking{padding:110px 0;background:var(--ink);position:relative;overflow:hidden}
-    .booking::before{content:'';position:absolute;top:-100px;right:-60px;width:500px;height:500px;background:radial-gradient(circle,rgba(27,107,114,.18) 0%,transparent 70%);pointer-events:none}
-    .book-in{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;position:relative;z-index:1}
-    .book-text .sec-l{color:var(--gold)}
-    .book-text .sec-h{color:white;margin-bottom:20px}
-    .book-p{font-size:14px;font-weight:300;color:rgba(255,255,255,.45);line-height:1.9;margin-bottom:36px}
-    .book-inf{display:flex;flex-direction:column;gap:16px}
-    .binf{display:flex;align-items:center;gap:14px;font-size:13px;color:rgba(255,255,255,.5)}
-    .binf-icon{width:34px;height:34px;border-radius:50%;background:rgba(27,107,114,.2);border:1px solid rgba(27,107,114,.3);display:flex;align-items:center;justify-content:center;flex-shrink:0}
-    .binf-icon svg{width:15px;height:15px;stroke:var(--teal2);fill:none;stroke-width:2}
-    .book-form{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);padding:42px}
-    .form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px}
-    .fg{display:flex;flex-direction:column;gap:6px}
-    label{font-size:9.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.3)}
-    .inp{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.09);padding:13px 15px;font-family:'Lato',sans-serif;font-size:13.5px;color:white;width:100%;outline:none;transition:border-color .2s}
-    .inp:focus{border-color:var(--teal2)}.inp::placeholder{color:rgba(255,255,255,.22)}
-    .btn-book{width:100%;background:var(--gold);color:white;font-family:'Lato',sans-serif;font-size:11px;font-weight:700;padding:15px;letter-spacing:.14em;text-transform:uppercase;border:none;cursor:pointer;margin-top:18px;transition:filter .2s,transform .2s var(--spring);min-height:50px}
-    .btn-book:hover{filter:brightness(1.1);transform:translateY(-2px)}
-    footer{background:#0D0905;padding:56px 0 32px}
-    .foot-in{display:grid;grid-template-columns:2fr 1fr 1fr;gap:56px;margin-bottom:44px}
-    .foot-logo{font-family:'Playfair Display',serif;font-size:22px;font-weight:400;color:white;margin-bottom:12px}
-    .foot-logo span{font-style:italic;color:var(--gold)}
-    .foot-about{font-size:12.5px;font-weight:300;color:rgba(255,255,255,.3);line-height:1.75;max-width:270px}
-    .ftitle{font-size:9px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.22);margin-bottom:14px}
-    .flinks{display:flex;flex-direction:column;gap:9px}
-    .flinks a{font-size:12.5px;color:rgba(255,255,255,.4);transition:color .2s}
-    .flinks a:hover{color:white}
-    .foot-bot{border-top:1px solid rgba(255,255,255,.06);padding-top:22px;display:flex;justify-content:space-between;align-items:center;font-size:11.5px;color:rgba(255,255,255,.2)}
-    .foot-pow a{color:var(--gold)}
-    .wa-float{position:fixed;bottom:26px;right:26px;z-index:500;width:54px;height:54px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 24px rgba(37,211,102,.35);transition:transform .2s var(--spring)}
-    .wa-float:hover{transform:scale(1.1)}.wa-float svg{width:26px;height:26px;fill:white}
-    .wa-pulse{position:absolute;inset:0;border-radius:50%;background:#25D366;animation:waPulse 2.2s ease-out infinite}
-    @keyframes waPulse{0%{transform:scale(1);opacity:.5}100%{transform:scale(1.75);opacity:0}}
-    @media(max-width:768px){
-      nav{top:26px}.nav-links,.nav-cta{display:none}.nav-burger{display:flex}
-      h1{font-size:clamp(2.5rem,10vw,3.2rem)}.hero-stats{flex-wrap:wrap;gap:20px}
-      .rooms-head{grid-template-columns:1fr;gap:20px}.rooms-grid{grid-template-columns:1fr}
-      .rm.featured{grid-column:span 1}.rm.featured .rm-img{height:280px}
-      .amens-grid{grid-template-columns:1fr 1fr}
-      .exp-in{grid-template-columns:1fr;gap:44px}.exp-vis{grid-template-rows:220px 160px}
-      .strip-in{grid-template-columns:1fr 1fr}.si:nth-child(2){border-right:none}
-      .si:nth-child(3),.si:nth-child(4){border-top:1px solid rgba(255,255,255,.15)}
-      .si:nth-child(4){border-right:none}.rev-grid{grid-template-columns:1fr}
-      .book-in{grid-template-columns:1fr;gap:44px}.foot-in{grid-template-columns:1fr;gap:32px}
-      .foot-bot{flex-direction:column;gap:6px;text-align:center}.form-row{grid-template-columns:1fr}.scue{display:none}
+    :root {
+      --terra:  #C2613A;
+      --terra-d:#9D4E2E;
+      --verde:  #2E5E4E;
+      --cream:  #FBF7F0;
+      --warm:   #F5EDE0;
+      --sand:   #E8DCCB;
+      --ink:    #1C1410;
+      --muted:  #6B5C4A;
+      --border: #D8CDB8;
     }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+    body { font-family: 'Nunito Sans', sans-serif; background: var(--cream); color: var(--ink); }
+    a { text-decoration: none; color: inherit; }
+    .con { max-width: 1100px; margin: 0 auto; padding: 0 28px; }
+
+    /* ── DEMO ── */
+    .demo-banner { background: var(--verde); color: rgba(255,255,255,.75); text-align: center; padding: 9px 16px; font-size: 12px; }
+    .demo-banner strong { color: white; }
+    .demo-banner a { color: #A8D5C4; font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
+
+    /* ── NAV ── */
+    nav { position: sticky; top: 0; z-index: 100; background: rgba(251,247,240,.97); backdrop-filter: blur(10px); border-bottom: 1px solid var(--border); }
+    .nav-i { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; height: 68px; padding: 0 28px; }
+    .logo { font-family: 'Libre Baskerville', serif; font-size: 22px; font-weight: 700; color: var(--ink); letter-spacing: -.01em; }
+    .logo em { color: var(--terra); font-style: italic; }
+    .nav-links { display: flex; gap: 28px; }
+    .nav-links a { font-size: 12.5px; font-weight: 500; color: var(--muted); transition: color .2s; letter-spacing: .04em; }
+    .nav-links a:hover { color: var(--ink); }
+    .nav-cta { background: var(--terra); color: white; font-size: 12.5px; font-weight: 600; padding: 11px 22px; border-radius: 4px; letter-spacing: .04em; transition: background .2s; }
+    .nav-cta:hover { background: var(--terra-d); }
+
+    /* ── HERO ── */
+    .hero { min-height: 92vh; background: var(--ink); color: white; display: flex; align-items: center; position: relative; overflow: hidden; }
+    .hero-bg { position: absolute; inset: 0; background: linear-gradient(to right, rgba(28,20,16,.9) 40%, rgba(28,20,16,.4) 100%), linear-gradient(180deg, transparent 60%, rgba(28,20,16,.7) 100%); }
+    .hero-pattern { position: absolute; inset: 0; background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.02'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"); }
+    .hero-floral { display: none; }
+    .hero-inner { position: relative; z-index: 1; padding: 80px 0; }
+    .h-eyebrow { display: flex; align-items: center; gap: 10px; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: .22em; color: var(--terra); margin-bottom: 22px; }
+    .h-eyebrow::after { content: ''; flex: 1; max-width: 40px; height: 1px; background: var(--terra); }
+    h1 { font-family: 'Libre Baskerville', serif; font-size: clamp(2.8rem, 7vw, 5.8rem); font-weight: 400; line-height: 1.05; margin-bottom: 22px; max-width: 680px; }
+    h1 em { font-style: italic; color: var(--terra); }
+    .hero-sub { font-size: 17px; font-weight: 300; color: rgba(255,255,255,.6); line-height: 1.75; max-width: 520px; margin-bottom: 36px; }
+    .btn-terra { background: var(--terra); color: white; font-size: 13.5px; font-weight: 600; padding: 15px 32px; border-radius: 4px; transition: background .2s; display: inline-block; letter-spacing: .04em; }
+    .btn-terra:hover { background: var(--terra-d); }
+    .btn-ghost-w { background: transparent; color: rgba(255,255,255,.7); font-size: 13.5px; font-weight: 500; padding: 15px 24px; border: 1px solid rgba(255,255,255,.2); border-radius: 4px; transition: border-color .2s; }
+    .btn-ghost-w:hover { border-color: rgba(255,255,255,.5); }
+    .hero-perks { display: flex; gap: 28px; margin-top: 48px; padding-top: 36px; border-top: 1px solid rgba(255,255,255,.1); flex-wrap: wrap; }
+    .hp { display: flex; align-items: center; gap: 8px; font-size: 12.5px; color: rgba(255,255,255,.55); }
+    .hp-icon { font-size: 16px; }
+
+    /* ── ROOMS ── */
+    .rooms { padding: 100px 0; }
+    .rm-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 48px; }
+    .sec-eyebrow { font-size: 10.5px; font-weight: 600; text-transform: uppercase; letter-spacing: .2em; color: var(--terra); margin-bottom: 8px; }
+    .sec-title { font-family: 'Libre Baskerville', serif; font-size: clamp(1.8rem,3.5vw,2.8rem); font-weight: 400; line-height: 1.1; letter-spacing: -.01em; }
+    .rm-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 3px; }
+    .rm-card { background: var(--warm); overflow: hidden; }
+    .rm-visual { height: 200px; overflow: hidden; position: relative; }
+    .rm-visual img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .5s ease; }
+    .rm-card:hover .rm-visual img { transform: scale(1.06); }
+    .rv-1 { background: linear-gradient(160deg, #5c3520, #3a1e0c); }
+    .rv-2 { background: linear-gradient(160deg, #1a3a2e, #2e5e4e); }
+    .rv-3 { background: linear-gradient(160deg, #3a2810, #7a5228); }
+    .rm-body { padding: 22px 20px; }
+    .rm-type { font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: .14em; color: var(--terra); margin-bottom: 6px; }
+    .rm-name { font-family: 'Libre Baskerville', serif; font-size: 1.1rem; font-weight: 400; margin-bottom: 6px; }
+    .rm-desc { font-size: 12.5px; color: var(--muted); line-height: 1.6; margin-bottom: 14px; }
+    .rm-foot { display: flex; align-items: center; justify-content: space-between; }
+    .rm-price { font-family: 'Libre Baskerville', serif; font-size: 1.1rem; color: var(--terra); }
+    .rm-price span { font-family: 'Nunito Sans', sans-serif; font-size: 11px; color: var(--muted); }
+    .rm-link { font-size: 12px; font-weight: 600; color: var(--verde); letter-spacing: .04em; }
+
+    /* ── EXPERIENCE ── */
+    .experience { padding: 96px 0; background: var(--verde); color: white; }
+    .exp-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+    .exp-left h2 { font-family: 'Libre Baskerville', serif; font-size: clamp(2rem,4vw,3rem); font-weight: 400; line-height: 1.15; margin-bottom: 18px; }
+    .exp-left h2 em { color: #A8D5C4; font-style: italic; }
+    .exp-left p { font-size: 15px; color: rgba(255,255,255,.6); line-height: 1.8; font-weight: 300; margin-bottom: 28px; }
+    .exp-list { display: flex; flex-direction: column; gap: 14px; }
+    .el { display: flex; align-items: center; gap: 12px; font-size: 14px; color: rgba(255,255,255,.8); }
+    .el::before { content: '✦'; color: #A8D5C4; font-size: 10px; flex-shrink: 0; }
+    .exp-imgs { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .ei { border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 40px; }
+    .ei-1 { background: rgba(255,255,255,.06); height: 180px; grid-row: span 2; }
+    .ei-2, .ei-3 { background: rgba(255,255,255,.06); height: 84px; }
+
+    /* ── FOOTER ── */
+    footer { background: var(--ink); color: rgba(255,255,255,.4); padding: 44px 0; }
+    .foot-inner { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+    .foot-logo { font-family: 'Libre Baskerville', serif; font-size: 20px; color: white; }
+    .foot-logo em { color: var(--terra); font-style: italic; }
+    .foot-copy { font-size: 12px; }
+    .foot-powered a { font-size: 12px; color: rgba(255,255,255,.3); text-decoration: underline; text-underline-offset: 3px; }
+
+    @media (max-width: 768px) {
+      .rm-grid { grid-template-columns: 1fr; }
+      .exp-inner { grid-template-columns: 1fr; gap: 44px; }
+      .nav-links { display: none; }
+      .foot-inner { flex-direction: column; text-align: center; }
+    }
+  
+    /* ── MOBILE DRAWER ── */
+    .drawer{position:fixed;inset:0;z-index:9999;display:flex;flex-direction:column;
+      background:#0D1F22;transform:translateX(100%);transition:transform .35s cubic-bezier(.4,0,.2,1);overflow-y:auto}
+    .drawer.open{transform:translateX(0)}
+    .drawer-head{display:flex;justify-content:space-between;align-items:center;
+      padding:20px 24px;border-bottom:1px solid rgba(255,255,255,.1)}
+    .drawer-logo{font-size:1.1rem;font-weight:700;color:white;text-decoration:none}
+    .drawer-close{background:none;border:none;cursor:pointer;color:white;
+      width:44px;height:44px;display:flex;align-items:center;justify-content:center;
+      border-radius:50%;transition:background .2s}
+    .drawer-close:hover{background:rgba(255,255,255,.1)}
+    .drawer-nav{display:flex;flex-direction:column;padding:32px 24px;gap:0;flex:1}
+    .drawer-nav a{color:white;text-decoration:none;font-size:1.4rem;font-weight:600;
+      padding:18px 0;border-bottom:1px solid rgba(255,255,255,.1);
+      display:block;transition:color .2s,padding-left .2s}
+    .drawer-nav a:last-child{border-bottom:none}
+    .drawer-nav a:hover{color:#C9933C;padding-left:8px}
+    .drawer-cta-wrap{padding:24px}
+    .drawer-cta-btn{display:block;text-align:center;background:#C9933C;color:white;
+      text-decoration:none;padding:16px 24px;border-radius:8px;font-weight:700;
+      font-size:1rem;transition:filter .2s}
+    .drawer-cta-btn:hover{filter:brightness(1.1)}
+    .drawer-overlay{position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:9998;
+      opacity:0;pointer-events:none;transition:opacity .35s}
+    .drawer-overlay.open{opacity:1;pointer-events:all}
   </style>
 </head>
 <body>
-<div class="demo-banner">⭐ <strong>Demo Rankeo</strong> — Así quedará tu hotel con el Plan Autoridad. &nbsp;<a href="https://rankeo-nu.vercel.app/#contacto">Quiero una así →</a></div>
-<nav id="nav">
-  <div class="con nav-i">
-    <a href="#" class="nav-logo">Casa <span>Bávaro</span></a>
-    <ul class="nav-links">
-      <li><a href="#habitaciones">Habitaciones</a></li>
-      <li><a href="#experiencias">Experiencias</a></li>
-      <li><a href="#reserva">Reservar</a></li>
-    </ul>
-    <a href="#reserva" class="nav-cta">Reservar</a>
-    <button class="nav-burger" id="burger" aria-label="Menú"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+
+<div class="demo-banner">
+  <strong>Proyecto demo</strong> — Sitio de muestra creado por <a href="https://rankeo-nu.vercel.app" target="_blank" rel="noopener">Rankeo</a>. ¿Tu hotel necesita más reservas directas? <a href="https://rankeo-nu.vercel.app/#contacto" target="_blank" rel="noopener">Hablemos →</a>
+</div>
+
+<nav>
+  <div class="nav-i">
+    <div class="logo">Casa <em>Inés</em></div>
+    <div class="nav-links">
+      <a href="#rooms">Habitaciones</a>
+      <a href="#experience">Experiencias</a>
+      <a href="#rooms">Reservar</a>
+    </div>
+    <a href="#rooms" class="nav-cta">Reserva directa</a>
   </div>
 </nav>
-<section class="hero" aria-labelledby="hero-h1">
-  <div class="hero-img"><img id="heroImg" src="https://images.unsplash.com/photo-1540541338287-41700207dee6?auto=format&fit=crop&w=1800&q=85" alt="Hotel boutique en el centro histórico de Cartagena" loading="eager"></div>
-  <div class="hero-grad"></div>
-  <div class="c
+  <!-- Mobile Drawer -->
+  <div class="drawer-overlay" id="drawer-overlay"></div>
+  <div class="drawer" id="drawer" role="dialog" aria-modal="true">
+    <div class="drawer-head">
+      <a href="#" class="drawer-logo">Menu</a>
+      <button class="drawer-close" id="drawer-close" aria-label="Cerrar menú">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" d="M18 6L6 18M6 6l12 12"/></svg>
+      </button>
+    </div>
+    <nav class="drawer-nav">
+    </nav>
+    <div class="drawer-cta-wrap">
+      <a href="#rooms" class="drawer-cta-btn">Reserva directa</a>
+    </div>
+  </div>
+
+<section class="hero">
+  <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1600&q=80" alt="Hotel Boutique Casa Colonial – Cartagena" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;" loading="eager">
+  <div class="hero-bg" style="z-index:1;"></div>
+  <div class="hero-pattern" style="z-index:1;"></div>
+  
+  <div class="con">
+    <div class="hero-inner" style="position:relative;z-index:2;">
+      <div class="h-eyebrow">Getsemaní · Cartagena de Indias</div>
+      <h1>Donde la historia<br/>colonial se vive<br/>en <em>silencio</em></h1>
+      <p class="hero-sub">Hotel boutique con 12 suites únicas en un caserón del siglo XVIII. Piscina en rooftop con vista a los campanarios, desayuno en patio y el barrio más auténtico de Cartagena afuera.</p>
+      <div style="display:flex;gap:12px;flex-wrap:wrap;">
+        <a href="#rooms" class="btn-terra">Ver habitaciones</a>
+        <a href="#experience" class="btn-ghost-w">Experiencias</a>
+      </div>
+      <div class="hero-perks">
+        <div class="hp"><span class="hp-icon">🌅</span>Vista a campanarios</div>
+        <div class="hp"><span class="hp-icon">🏊</span>Piscina en rooftop</div>
+        <div class="hp"><span class="hp-icon">☕</span>Desayuno incluido</div>
+        <div class="hp"><span class="hp-icon">📶</span>WiFi 300 Mbps</div>
+        <div class="hp"><span class="hp-icon">🧴</span>Amenities L'Occitane</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="rooms" id="rooms">
+  <div class="con">
+    <div class="rm-header">
+      <div>
+        <div class="sec-eyebrow">Nuestras suites</div>
+        <div class="sec-title">12 habitaciones,<br/>ninguna igual</div>
+      </div>
+      <a href="#rooms" class="btn-terra" style="white-space:nowrap;font-size:13px;padding:13px 24px;">Reservar ahora</a>
+    </div>
+    <div class="rm-grid">
+      <div class="rm-card">
+        <div class="rm-visual rv-1"><img src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?auto=format&fit=crop&w=600&q=80" alt="Habitación Estándar – Hotel Boutique Cartagena" loading="lazy"></div>
+        <div class="rm-body">
+          <div class="rm-type">Suite deluxe</div>
+          <div class="rm-name">Suite Patio de Ceibas</div>
+          <div class="rm-desc">Balcón al patio interior, baño en mármol, cama king con dosel, minibar y AC silencioso. 48 m².</div>
+          <div class="rm-foot">
+            <div class="rm-price">$680.000 <span>/ noche</span></div>
+            <a href="#rooms" class="rm-link">Reservar →</a>
+          </div>
+        </div>
+      </div>
+      <div class="rm-card">
+        <div class="rm-visual rv-2"><img src="https://images.unsplash.com/photo-1596178065887-1198b6148b2b?auto=format&fit=crop&w=600&q=80" alt="Suite Jardín – vistas al jardín" loading="lazy"></div>
+        <div class="rm-body">
+          <div class="rm-type">Suite premium</div>
+          <div class="rm-name">Suite Jardín del Aljibe</div>
+          <div class="rm-desc">Acceso directo al jardín privado, hamaca propia, ducha lluvia exterior y frigobar. 55 m².</div>
+          <div class="rm-foot">
+            <div class="rm-price">$820.000 <span>/ noche</span></div>
+            <a href="#rooms" class="rm-link">Reservar →</a>
+          </div>
+        </div>
+      </div>
+      <div class="rm-card">
+        <div class="rm-visual rv-3"><img src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=600&q=80" alt="Suite Superior – balcón privado" loading="lazy"></div>
+        <div class="rm-body">
+          <div class="rm-type">Suite rooftop</div>
+          <div class="rm-name">Suite Campanarios</div>
+          <div class="rm-desc">Planta alta con terraza privada y vista panorámica a los campanarios de San Pedro Claver. 62 m².</div>
+          <div class="rm-foot">
+            <div class="rm-price">$1.150.000 <span>/ noche</span></div>
+            <a href="#rooms" class="rm-link">Reservar →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="experience" id="experience">
+  <div class="con">
+    <div class="exp-inner">
+      <div class="exp-left">
+        <div class="sec-eyebrow" style="color:#A8D5C4;">Más que una cama</div>
+        <h2>Experiencias que<br/>no encuentras en<br/><em>Booking</em></h2>
+        <p>Casa Inés es punto de partida para vivir Cartagena de manera diferente. Organizamos experiencias exclusivas para nuestros huéspedes con guías locales y aliados del barrio.</p>
+        <div class="exp-list">
+          <div class="el">Tour gastronómico por Getsemaní con chef local</div>
+          <div class="el">Clase de champeta y salsa en el patio de la casa</div>
+          <div class="el">Navegación privada al atardecer en Bocagrande</div>
+          <div class="el">Masajes en habitación con aceites de flores del Caribe</div>
+          <div class="el">Cena privada en el rooftop bajo las estrellas</div>
+        </div>
+      </div>
+      <div class="exp-imgs">
+        <div class="ei ei-1">🌺</div>
+        <div class="ei ei-2">🎵</div>
+        <div class="ei ei-3"><img src="https://images.unsplash.com/photo-1582719508461-905c673771fd?auto=format&fit=crop&w=500&q=80" alt="Piscina – Hotel Boutique Cartagena" loading="lazy" style="width:100%;height:100%;object-fit:cover;"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="con">
+    <div class="foot-inner">
+      <div class="foot-logo">Casa <em>Inés</em></div>
+      <div class="foot-copy">Calle del Pozo #25-82, Getsemaní · Cartagena · Check-in: 3pm · Check-out: 12pm</div>
+      <div class="foot-powered">Sitio web por <a href="https://rankeo-nu.vercel.app" target="_blank" rel="noopener">Rankeo</a></div>
+    </div>
+  </div>
+</footer>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Hotel","name":"Casa Inés Hotel Boutique","url":"https://rankeo-nu.vercel.app/demo/hotel-boutique-cartagena","telephone":"+5756001234","address":{"@type":"PostalAddress","streetAddress":"Calle del Pozo #25-82","addressLocality":"Cartagena","addressRegion":"Bolívar","addressCountry":"CO"},"description":"Hotel boutique en Getsemaní, Cartagena. 12 suites únicas, piscina en rooftop.","starRating":{"@type":"Rating","ratingValue":"5"},"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.9","reviewCount":"312"}}
+</script>
+
+  // Mobile drawer
+  (function(){
+    var burger=document.getElementById('burger');
+    var drawer=document.getElementById('drawer');
+    var overlay=document.getElementById('drawer-overlay');
+    var closeBtn=document.getElementById('drawer-close');
+    function openD(){drawer.classList.add('open');overlay.classList.add('open');document.body.style.overflow='hidden';}
+    function closeD(){drawer.classList.remove('open');overlay.classList.remove('open');document.body.style.overflow='';}
+    if(burger) burger.addEventListener('click',openD);
+    if(closeBtn) closeBtn.addEventListener('click',closeD);
+    if(overlay) overlay.addEventListener('click',closeD);
+    if(drawer) drawer.querySelectorAll('a').forEach(function(a){a.addEventListener('click',closeD);});
+  })();
+
+</body>
+</html>
