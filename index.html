@@ -83,7 +83,7 @@
     /* ━━━━ RESET ━━━━ */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html {
-      /* scroll-behavior removed — Lenis handles smooth scroll */
+      scroll-behavior: smooth;
       scroll-padding-top: 72px;
       -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;
       font-size: 16px;
@@ -131,15 +131,15 @@
     .syne { font-family: 'Syne', sans-serif; }
     .con  { max-width: 1200px; margin: 0 auto; padding: 0 var(--sp-6); }
 
-    /* ━━━━ SCROLL REVEAL — stagger 40ms (ui-ux-pro-max §7) ━━━━ */
+    /* ━━━━ SCROLL REVEAL — stagger 40ms ━━━━ */
     .rv {
       opacity: 0; transform: translateY(28px);
       transition:
         opacity var(--dur-slow) var(--ease-out),
         transform var(--dur-slow) var(--ease-out);
-      animation: rvSafe 0.5s 1.8s both;
+      /* No CSS animation fallback — it overrides .rv.in via animation cascade.
+         JS handles both viewport-on-load (immediate) and scroll-triggered reveals. */
     }
-    @keyframes rvSafe { to { opacity:1; transform:translateY(0); } }
     .rv.in { opacity: 1; transform: translateY(0); }
     .rv[data-d="1"] { transition-delay: 40ms; }
     .rv[data-d="2"] { transition-delay: 80ms; }
@@ -1287,6 +1287,12 @@
 
 </main>
 
+<!-- ━━━ CUSTOM CURSOR (desktop / pointer:fine only) ━━━ -->
+<div class="cur" id="cur" aria-hidden="true">
+  <div class="cur-ring" id="curRing"></div>
+  <div class="cur-dot"  id="curDot"></div>
+</div>
+
 <!-- ━━━ WHATSAPP FLOAT ━━━ -->
 <div class="wa" role="complementary" aria-label="Contacto por WhatsApp">
   <a href="https://wa.me/525532894890?text=Hola%20Rankeo%2C%20quiero%20una%20auditoría%20SEO%20gratis%20para%20mi%20negocio."
@@ -1345,12 +1351,21 @@ drawer.querySelectorAll('[data-c]').forEach(el => el.addEventListener('click', (
   bico.innerHTML = BARS;
 }));
 
-/* ── Scroll reveal with IntersectionObserver (ui-ux-pro-max §7) ── */
+/* ── Scroll reveal with IntersectionObserver ── */
 const rvEls = document.querySelectorAll('.rv');
 const rvObs = new IntersectionObserver(entries => {
   entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); rvObs.unobserve(e.target); } });
-}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-rvEls.forEach(el => rvObs.observe(el));
+}, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
+rvEls.forEach(el => {
+  // Elements already fully or partially in the viewport on page load → reveal immediately
+  const rect = el.getBoundingClientRect();
+  if (rect.top < window.innerHeight && rect.bottom > 0) {
+    // Small delay so CSS transition still plays (looks intentional, not a flash)
+    setTimeout(() => el.classList.add('in'), 60);
+  } else {
+    rvObs.observe(el);
+  }
+});
 
 /* ── Animated rank bars ── */
 const barObs = new IntersectionObserver(entries => {
@@ -1409,11 +1424,7 @@ function heroGo(e) {
 
   // Scroll in parallel (audit is already running when user arrives)
   const target = document.getElementById('auditoria');
-  if (typeof lenis !== 'undefined') {
-    lenis.scrollTo(target, { offset: -60, duration: 1.2 });
-  } else {
-    setTimeout(() => target.scrollIntoView({ behavior: 'smooth' }), 50);
-  }
+  setTimeout(() => target.scrollIntoView({ behavior: 'smooth', block: 'start' }), 60);
 }
 
 /* ── Audit tool ── */
@@ -1511,30 +1522,12 @@ async function doAudit(e) {
   res.querySelector('.rsc').focus?.();
 }
 
-/* ── FAQ accordion ── */
-document.querySelectorAll('.fq-q').forEach(btn => {
-  btn.addEventListener('click', () => {
-    const item = btn.closest('.fq-item');
-    const open = item.classList.toggle('open');
-    btn.setAttribute('aria-expanded', open);
-  });
-});
-
-/* ── Cookie banner ── */
-function acceptCookies() {
-  document.getElementById('cookieBanner').classList.add('hidden');
-  try { localStorage.setItem('ck', '1'); } catch(e){}
-}
-(function() {
-  try { if (localStorage.getItem('ck')) document.getElementById('cookieBanner').classList.add('hidden'); } catch(e){}
-})();
-
-/* ── Contact ── */
-async function sendContact(e) {
-  e.preventDefault();
-  const form = e.target;
-  const btn  = form.querySelector('.csend');
-
-  const nom  = document.getElementById('cnom').value.trim();
-  const em   = document.getElementById('cem').value.trim();
-  const 
+/* ── Custom cursor (pointer:fine / desktop only) ── */
+(function () {
+  if (!window.matchMedia('(pointer: fine)').matches) return;
+  const cur  = document.getElementById('cur');
+  const ring = document.getElementById('curRing');
+  const dot  = document.getElementById('curDot');
+  if (!cur) return;
+  let mx = -200, my = -200, rx = -200, ry = -200, raf;
+  document.addEventListener('mousemove', e => { mx = e.clientX; m
