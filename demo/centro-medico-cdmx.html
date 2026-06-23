@@ -3,254 +3,193 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Centro Médico Salud Integral | Especialistas en CDMX — Polanco</title>
-  <meta name="description" content="Centro médico con 12 especialidades en Polanco, CDMX. Médicos certificados, tecnología de diagnóstico y citas el mismo día."/>
+  <title>Centro Médico Integral Polanco | Medicina Privada de Alta Especialidad · CDMX</title>
+  <meta name="description" content="Centro médico privado en Polanco, CDMX. Más de 20 especialidades, diagnóstico avanzado y atención personalizada. Agenda tu cita hoy."/>
   <link rel="canonical" href="https://rankeo-nu.vercel.app/demo/centro-medico-cdmx"/>
-  <meta property="og:title" content="Centro Médico Salud Integral | CDMX"/>
   <meta name="robots" content="noindex,follow"/>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
   <style>
-    :root {
-      --teal:    #0B7B6E;
-      --teal-d:  #085E54;
-      --teal-l:  #E8F5F3;
-      --blue:    #1A4A7A;
-      --ink:     #0F1B26;
-      --white:   #FFFFFF;
-      --bg:      #F8FBFA;
-      --surface: #EEF6F4;
-      --border:  #D4E8E4;
-      --muted:   #5C7A74;
-    }
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
-    body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--ink); }
-    a { text-decoration: none; color: inherit; }
-    .con { max-width: 1120px; margin: 0 auto; padding: 0 28px; }
-
-    /* ── DEMO ── */
-    .demo-banner { background: var(--blue); color: rgba(255,255,255,.75); text-align: center; padding: 9px 16px; font-size: 12px; }
-    .demo-banner strong { color: white; }
-    .demo-banner a { color: #6DD8CE; font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
-
-    /* ── NAV ── */
-    nav { position: sticky; top: 0; z-index: 100; background: rgba(248,251,250,.97); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); }
-    .nav-i { max-width: 1120px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; height: 66px; padding: 0 28px; }
-    .logo { display: flex; align-items: center; gap: 10px; }
-    .logo-mark { width: 36px; height: 36px; background: var(--teal); border-radius: 8px; display: flex; align-items: center; justify-content: center; }
-    .logo-cross { color: white; font-size: 20px; font-weight: 700; line-height: 1; }
-    .logo-text { font-size: 15px; font-weight: 600; color: var(--ink); letter-spacing: -.01em; }
-    .logo-text span { display: block; font-size: 10px; font-weight: 400; color: var(--muted); letter-spacing: .06em; text-transform: uppercase; }
-    .nav-links { display: flex; gap: 28px; }
-    .nav-links a { font-size: 13px; font-weight: 500; color: var(--muted); transition: color .2s; }
-    .nav-links a:hover { color: var(--teal); }
-    .nav-tel { font-size: 13px; font-weight: 600; color: var(--teal); margin-right: 4px; }
-    .nav-cta { background: var(--teal); color: white; font-size: 13px; font-weight: 600; padding: 10px 22px; border-radius: 8px; transition: background .2s; }
-    .nav-cta:hover { background: var(--teal-d); }
-
-    /* ── HERO ── */
-    .hero { background: var(--ink); color: white; padding: 80px 0 0; position: relative; overflow: hidden; }
-    .hero-grad { position: absolute; inset: 0; background: radial-gradient(ellipse at 80% 50%, rgba(11,123,110,.2), transparent 60%), radial-gradient(ellipse at 10% 80%, rgba(26,74,122,.25), transparent 50%); }
-    .hero-inner { position: relative; z-index: 1; display: grid; grid-template-columns: 1fr 400px; gap: 60px; align-items: flex-start; }
-    .hero-pretitle { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: .2em; color: #6DD8CE; margin-bottom: 16px; display: flex; align-items: center; gap: 8px; }
-    .hero-pretitle::before { content: ''; display: inline-block; width: 20px; height: 1.5px; background: #6DD8CE; }
-    h1 { font-family: 'DM Serif Display', serif; font-size: clamp(2.4rem, 5.5vw, 4.4rem); line-height: 1.1; margin-bottom: 20px; }
-    h1 em { font-style: italic; color: #6DD8CE; }
-    .hero-sub { font-size: 16px; font-weight: 300; color: rgba(255,255,255,.6); line-height: 1.75; margin-bottom: 32px; }
-    .btn-teal { background: var(--teal); color: white; font-size: 14px; font-weight: 600; padding: 14px 28px; border-radius: 8px; transition: background .2s, transform .15s; display: inline-flex; align-items: center; gap: 8px; }
-    .btn-teal:hover { background: var(--teal-d); transform: translateY(-1px); }
-    .hero-trust { display: flex; align-items: center; gap: 16px; margin-top: 28px; font-size: 12.5px; color: rgba(255,255,255,.45); }
-    .ht-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--teal); flex-shrink: 0; }
-    /* appt card */
-    .appt-card { background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.1); border-radius: 16px; padding: 28px; margin-top: 10px; }
-    .appt-title { font-size: 14px; font-weight: 600; margin-bottom: 20px; }
-    .appt-form { display: flex; flex-direction: column; gap: 12px; }
-    .appt-inp { background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.12); border-radius: 8px; padding: 12px 14px; font-family: 'DM Sans', sans-serif; font-size: 13px; color: white; width: 100%; outline: none; transition: border-color .2s; }
-    .appt-inp:focus { border-color: var(--teal); }
-    .appt-inp::placeholder { color: rgba(255,255,255,.35); }
-    .appt-inp option { background: #1a2a3a; color: white; }
-    .btn-appt { background: var(--teal); color: white; font-size: 13.5px; font-weight: 600; padding: 13px; border-radius: 8px; border: none; cursor: pointer; font-family: 'DM Sans', sans-serif; width: 100%; transition: background .2s; }
-    .btn-appt:hover { background: var(--teal-d); }
-    .appt-note { font-size: 11px; color: rgba(255,255,255,.35); text-align: center; margin-top: 4px; }
-    .hero-stats-bar { background: rgba(255,255,255,.04); border-top: 1px solid rgba(255,255,255,.08); margin-top: 60px; padding: 28px 0; display: flex; justify-content: space-between; }
-    .hsb-item { text-align: center; }
-    .hsb-n { font-family: 'DM Serif Display', serif; font-size: 2rem; color: #6DD8CE; }
-    .hsb-l { font-size: 11px; text-transform: uppercase; letter-spacing: .1em; color: rgba(255,255,255,.35); margin-top: 3px; }
-
-    /* ── SPECIALTIES ── */
-    .specs { padding: 96px 0; }
-    .sec-over { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: .18em; color: var(--teal); margin-bottom: 10px; }
-    .sec-h { font-family: 'DM Serif Display', serif; font-size: clamp(1.9rem,4vw,3rem); line-height: 1.1; margin-bottom: 12px; }
-    .sec-p { font-size: 15px; color: var(--muted); line-height: 1.75; font-weight: 300; margin-bottom: 48px; max-width: 540px; }
-    .spec-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 2px; }
-    .spec-card { background: white; border: 1px solid var(--border); padding: 24px 22px; transition: border-color .2s, transform .2s; }
-    .spec-card:hover { border-color: var(--teal); transform: translateY(-3px); }
-    .spec-icon { font-size: 28px; margin-bottom: 12px; }
-    .spec-name { font-size: 14px; font-weight: 600; margin-bottom: 6px; }
-    .spec-desc { font-size: 12.5px; color: var(--muted); line-height: 1.6; }
-
-    /* ── DOCTORS ── */
-    .doctors { padding: 80px 0; background: var(--surface); }
-    .doc-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; }
-    .doc-card { background: white; border: 1px solid var(--border); border-radius: 12px; padding: 28px; }
-    .doc-av { width: 52px; height: 52px; border-radius: 10px; background: var(--teal); display: flex; align-items: center; justify-content: center; font-size: 18px; font-weight: 700; color: white; margin-bottom: 14px; }
-    .doc-name { font-size: 15px; font-weight: 600; letter-spacing: -.01em; margin-bottom: 3px; }
-    .doc-spec { font-size: 12px; font-weight: 600; color: var(--teal); text-transform: uppercase; letter-spacing: .08em; margin-bottom: 10px; }
-    .doc-card p { font-size: 13px; color: var(--muted); line-height: 1.65; }
-    .doc-cert { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 12px; }
-    .dc { font-size: 10.5px; background: var(--teal-l); color: var(--teal-d); padding: 3px 10px; border-radius: 20px; font-weight: 500; }
-
-    /* ── FOOTER ── */
-    footer { background: var(--ink); color: rgba(255,255,255,.4); padding: 40px 0; }
-    .foot-inner { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
-    .foot-logo { font-size: 15px; font-weight: 600; color: white; display: flex; align-items: center; gap: 8px; }
-    .foot-copy { font-size: 12px; }
-    .foot-powered a { font-size: 12px; color: rgba(255,255,255,.3); text-decoration: underline; text-underline-offset: 3px; }
-
-    @media (max-width: 768px) {
-      .hero-inner { grid-template-columns: 1fr; }
-      .appt-card { display: none; }
-      .spec-grid { grid-template-columns: repeat(2,1fr); }
-      .doc-grid { grid-template-columns: 1fr; }
-      .nav-links, .nav-tel { display: none; }
-      .foot-inner { flex-direction: column; text-align: center; }
+    :root{--ink:#0E1A2B;--bg:#F5F8FA;--surf:#FFFFFF;--teal:#0A7872;--teal2:#0D9488;--slate:#1E3A5F;--muted:#5D7389;--border:#D8E4EC;--ease:cubic-bezier(0.0,0.0,0.2,1);--spring:cubic-bezier(0.34,1.56,0.64,1)}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth;scroll-padding-top:72px;-webkit-font-smoothing:antialiased}
+    body{font-family:'IBM Plex Sans',sans-serif;background:var(--bg);color:var(--ink);overflow-x:hidden}
+    a{text-decoration:none;color:inherit}img{display:block;max-width:100%}
+    .con{max-width:1120px;margin:0 auto;padding:0 28px}
+    .rv{opacity:0;transform:translateY(28px);transition:opacity .6s var(--ease),transform .6s var(--ease)}
+    .rv.in{opacity:1;transform:translateY(0)}
+    .rv[data-d="1"]{transition-delay:90ms}.rv[data-d="2"]{transition-delay:180ms}.rv[data-d="3"]{transition-delay:270ms}
+    @media(prefers-reduced-motion:reduce){.rv{transition:none;opacity:1;transform:none}}
+    .demo-banner{background:var(--teal);color:rgba(255,255,255,.9);text-align:center;padding:10px 16px;font-size:12px;font-weight:600}
+    .demo-banner a{color:white;text-decoration:underline;text-underline-offset:3px}
+    nav{position:fixed;top:30px;left:0;right:0;z-index:200;transition:top .3s var(--ease),background .3s,box-shadow .3s}
+    nav.scrolled{top:0;background:rgba(255,255,255,.97);backdrop-filter:blur(12px);box-shadow:0 1px 0 var(--border)}
+    .nav-i{height:70px;display:flex;align-items:center;justify-content:space-between}
+    .nav-logo{font-family:'Libre Baskerville',serif;font-size:18px;color:var(--ink);line-height:1.2}
+    .nav-logo span{color:var(--teal);font-style:italic}
+    .nav-links{display:flex;gap:26px;list-style:none}
+    .nav-links a{font-size:12.5px;font-weight:500;color:var(--muted);transition:color .2s}
+    .nav-links a:hover{color:var(--ink)}
+    .nav-cta{background:var(--teal);color:white;font-size:12px;font-weight:600;padding:10px 22px;border-radius:6px;transition:background .2s,transform .2s var(--spring);min-height:44px;display:flex;align-items:center}
+    .nav-cta:hover{background:var(--teal2);transform:translateY(-1px)}
+    .nav-burger{display:none;background:none;border:none;cursor:pointer;width:44px;height:44px;align-items:center;justify-content:center;color:var(--ink)}
+    .hero{min-height:100vh;position:relative;display:flex;align-items:center;overflow:hidden}
+    .hero-img{position:absolute;inset:0}
+    .hero-img img{width:100%;height:100%;object-fit:cover;transform:scale(1.05);transition:transform 8s ease-out}
+    .hero-img img.loaded{transform:scale(1)}
+    .hero-grad{position:absolute;inset:0;background:linear-gradient(115deg,rgba(14,26,43,.92) 0%,rgba(14,26,43,.65) 55%,rgba(10,120,114,.2) 100%)}
+    .hero-in{position:relative;z-index:2;display:grid;grid-template-columns:3fr 2fr;gap:70px;align-items:center;padding:90px 0}
+    .htag{font-size:10px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:#5EEAD4;margin-bottom:22px;display:flex;align-items:center;gap:10px}
+    .htag::before{content:'';width:24px;height:1px;background:#5EEAD4}
+    h1{font-family:'Libre Baskerville',serif;font-size:clamp(2.5rem,5.5vw,5rem);font-weight:400;line-height:1.1;color:white;margin-bottom:24px}
+    h1 em{font-style:italic;color:#5EEAD4}
+    .hero-sub{font-size:14.5px;font-weight:300;color:rgba(255,255,255,.55);line-height:1.9;max-width:450px;margin-bottom:38px}
+    .hero-acts{display:flex;gap:12px;flex-wrap:wrap}
+    .btn-p{display:inline-flex;align-items:center;gap:8px;background:var(--teal);color:white;font-size:12px;font-weight:600;padding:14px 28px;border-radius:6px;transition:background .2s,transform .2s var(--spring);min-height:50px}
+    .btn-p:hover{background:var(--teal2);transform:translateY(-2px)}
+    .btn-g{display:inline-flex;align-items:center;gap:8px;background:transparent;color:rgba(255,255,255,.75);font-size:12px;font-weight:500;padding:14px 22px;border:1px solid rgba(255,255,255,.25);border-radius:6px;min-height:50px;transition:border-color .2s,color .2s}
+    .btn-g:hover{border-color:rgba(255,255,255,.6);color:white}
+    .hero-trust{display:flex;gap:32px;margin-top:48px;padding-top:24px;border-top:1px solid rgba(255,255,255,.1)}
+    .ht-n{font-family:'Libre Baskerville',serif;font-size:1.8rem;color:white;line-height:1}
+    .ht-l{font-size:9.5px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.35);margin-top:4px}
+    .hero-urgencia{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:30px;backdrop-filter:blur(8px);text-align:center}
+    .hu-icon{width:56px;height:56px;border-radius:50%;background:rgba(10,120,114,.3);display:flex;align-items:center;justify-content:center;margin:0 auto 14px}
+    .hu-icon svg{width:26px;height:26px;stroke:#5EEAD4;fill:none;stroke-width:2}
+    .hu-title{font-family:'Libre Baskerville',serif;font-size:1.2rem;color:white;margin-bottom:6px}
+    .hu-sub{font-size:12.5px;color:rgba(255,255,255,.45);margin-bottom:20px;line-height:1.6}
+    .btn-ur{width:100%;background:var(--teal);color:white;font-family:'IBM Plex Sans',sans-serif;font-size:11.5px;font-weight:600;padding:13px;border-radius:6px;border:none;cursor:pointer;transition:background .2s;min-height:48px}
+    .btn-ur:hover{background:var(--teal2)}
+    .especialidades{padding:100px 0;background:var(--bg)}
+    .sec-l{font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--teal);margin-bottom:12px}
+    .sec-h{font-family:'Libre Baskerville',serif;font-size:clamp(1.8rem,4vw,3rem);font-weight:400;line-height:1.15}
+    .sec-h em{font-style:italic;color:var(--teal)}
+    .esp-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;margin-top:56px}
+    .ecard{background:white;border:1px solid var(--border);padding:32px 24px;text-align:center;transition:transform .3s var(--ease),box-shadow .3s,border-color .3s}
+    .ecard:hover{transform:translateY(-5px);box-shadow:0 16px 32px rgba(14,26,43,.07);border-color:var(--teal)}
+    .ec-icon{width:52px;height:52px;border-radius:14px;background:#F0FBF9;display:flex;align-items:center;justify-content:center;margin:0 auto 16px}
+    .ec-icon svg{width:24px;height:24px;stroke:var(--teal);fill:none;stroke-width:1.8}
+    .ec-name{font-family:'Libre Baskerville',serif;font-size:1rem;color:var(--ink);margin-bottom:8px}
+    .ec-desc{font-size:12px;color:var(--muted);line-height:1.6}
+    .medicos{padding:100px 0;background:var(--ink)}
+    .med-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:3px;margin-top:60px}
+    .mcard{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);overflow:hidden;transition:border-color .3s}
+    .mcard:hover{border-color:rgba(10,120,114,.5)}
+    .mcard:hover .mc-img img{transform:scale(1.05)}
+    .mc-img{height:280px;overflow:hidden}
+    .mc-img img{width:100%;height:100%;object-fit:cover;object-position:top;transition:transform .7s var(--ease)}
+    .mc-info{padding:24px}
+    .mc-name{font-family:'Libre Baskerville',serif;font-size:1.2rem;color:white;margin-bottom:4px}
+    .mc-esp{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#5EEAD4;margin-bottom:10px}
+    .mc-ced{font-size:12px;color:rgba(255,255,255,.4);font-weight:300}
+    .about{padding:100px 0;background:var(--bg)}
+    .about-in{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+    .ab-imgs{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:260px 175px;gap:8px}
+    .ab-img{overflow:hidden;border-radius:4px}
+    .ab-img:first-child{grid-row:span 2}
+    .ab-img img{width:100%;height:100%;object-fit:cover;transition:transform .7s var(--ease)}
+    .ab-img:hover img{transform:scale(1.05)}
+    .about-text .sec-h em{color:var(--teal)}
+    .about-p{font-size:13.5px;color:var(--muted);line-height:1.9;margin:18px 0 22px}
+    .ab-vals{display:flex;flex-direction:column;gap:12px}
+    .av{display:flex;align-items:center;gap:12px;font-size:13.5px;color:var(--muted)}
+    .av-dot{width:6px;height:6px;border-radius:50%;background:var(--teal);flex-shrink:0}
+    .strip{background:var(--teal);padding:64px 0}
+    .strip-in{display:grid;grid-template-columns:repeat(4,1fr);text-align:center}
+    .si{padding:0 20px;border-right:1px solid rgba(255,255,255,.15)}
+    .si:last-child{border-right:none}
+    .si-n{font-family:'Libre Baskerville',serif;font-size:2.8rem;color:white;line-height:1}
+    .si-l{font-size:9.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.45);margin-top:7px}
+    .agenda{padding:100px 0;background:var(--bg)}
+    .ag-in{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+    .ag-text .sec-h em{color:var(--teal)}
+    .ag-p{font-size:13.5px;color:var(--muted);line-height:1.9;margin:18px 0 28px}
+    .ag-items{display:flex;flex-direction:column;gap:14px}
+    .ai{display:flex;align-items:center;gap:12px;font-size:13.5px;color:var(--muted)}
+    .ai-icon{width:34px;height:34px;border-radius:50%;background:#F0FBF9;border:1px solid #B2E4DF;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+    .ai-icon svg{width:14px;height:14px;stroke:var(--teal);fill:none;stroke-width:2}
+    .ag-form{background:white;border:1px solid var(--border);border-radius:14px;padding:40px;box-shadow:0 8px 32px rgba(14,26,43,.06)}
+    .form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px}
+    .fg{display:flex;flex-direction:column;gap:5px}
+    label{font-size:9.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+    .inp{background:var(--bg);border:1px solid var(--border);border-radius:5px;padding:12px 14px;font-family:'IBM Plex Sans',sans-serif;font-size:13.5px;color:var(--ink);width:100%;outline:none;transition:border-color .2s,background .2s}
+    .inp:focus{border-color:var(--teal);background:white}.inp::placeholder{color:#9AB2C4}
+    .btn-ag{width:100%;background:var(--teal);color:white;font-family:'IBM Plex Sans',sans-serif;font-size:12.5px;font-weight:600;padding:14px;border-radius:6px;border:none;cursor:pointer;margin-top:14px;transition:background .2s,transform .2s var(--spring);min-height:50px}
+    .btn-ag:hover{background:var(--teal2);transform:translateY(-2px)}
+    .ag-note{text-align:center;font-size:11px;color:#9AB2C4;margin-top:10px}
+    footer{background:var(--ink);padding:56px 0 32px}
+    .fi{display:grid;grid-template-columns:2fr 1fr 1fr;gap:56px;margin-bottom:44px}
+    .fl{font-family:'Libre Baskerville',serif;font-size:18px;color:white;margin-bottom:10px}
+    .fl span{font-style:italic;color:#5EEAD4}
+    .fa{font-size:12.5px;color:rgba(255,255,255,.3);line-height:1.75;max-width:270px}
+    .ft{font-size:9px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.2);margin-bottom:14px}
+    .fls{display:flex;flex-direction:column;gap:9px}
+    .fls a{font-size:12.5px;color:rgba(255,255,255,.38);transition:color .2s}
+    .fls a:hover{color:white}
+    .fb{border-top:1px solid rgba(255,255,255,.07);padding-top:22px;display:flex;justify-content:space-between;font-size:11.5px;color:rgba(255,255,255,.2)}
+    .fb a{color:#5EEAD4}
+    .wa-float{position:fixed;bottom:26px;right:26px;z-index:500;width:54px;height:54px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 24px rgba(37,211,102,.35);transition:transform .2s var(--spring)}
+    .wa-float:hover{transform:scale(1.1)}.wa-float svg{width:26px;height:26px;fill:white}
+    .wa-pulse{position:absolute;inset:0;border-radius:50%;background:#25D366;animation:waPulse 2.2s ease-out infinite}
+    @keyframes waPulse{0%{transform:scale(1);opacity:.5}100%{transform:scale(1.75);opacity:0}}
+    @media(max-width:768px){
+      nav{top:26px}nav.scrolled{top:0}.nav-links,.nav-cta{display:none}.nav-burger{display:flex}
+      h1{font-size:clamp(2.2rem,8.5vw,3rem)}.hero-in{grid-template-columns:1fr;gap:40px;padding:80px 0}
+      .hero-urgencia{display:none}.hero-trust{flex-wrap:wrap;gap:20px}
+      .esp-grid{grid-template-columns:1fr 1fr}.med-grid{grid-template-columns:1fr}
+      .about-in{grid-template-columns:1fr;gap:44px}.ab-imgs{grid-template-rows:200px 140px}
+      .strip-in{grid-template-columns:1fr 1fr}.si:nth-child(2){border-right:none}
+      .si:nth-child(3),.si:nth-child(4){border-top:1px solid rgba(255,255,255,.15)}.si:nth-child(4){border-right:none}
+      .ag-in{grid-template-columns:1fr;gap:44px}.fi{grid-template-columns:1fr;gap:32px}
+      .fb{flex-direction:column;gap:6px;text-align:center}.form-row{grid-template-columns:1fr}
     }
   </style>
 </head>
 <body>
-
-<div class="demo-banner">
-  <strong>Proyecto demo</strong> — Sitio de muestra creado por <a href="https://rankeo-nu.vercel.app" target="_blank" rel="noopener">Rankeo</a>. ¿Tu clínica necesita más pacientes? <a href="https://rankeo-nu.vercel.app/#contacto" target="_blank" rel="noopener">Hablemos →</a>
-</div>
-
-<nav>
-  <div class="nav-i">
-    <div class="logo">
-      <div class="logo-mark"><div class="logo-cross">+</div></div>
-      <div class="logo-text">Salud Integral<span>Centro Médico · Polanco</span></div>
-    </div>
-    <div class="nav-links">
-      <a href="#especialidades">Especialidades</a>
-      <a href="#medicos">Médicos</a>
-      <a href="#hero">Cita en línea</a>
-    </div>
-    <a href="tel:+525555123456" class="nav-tel">📞 55 5512-3456</a>
-    <a href="#hero" class="nav-cta">Agendar cita</a>
+<div class="demo-banner">⭐ <strong>Demo Rankeo</strong> — Así quedará tu centro médico con el Plan Autoridad. &nbsp;<a href="https://rankeo-nu.vercel.app/#contacto">Quiero una así →</a></div>
+<nav id="nav">
+  <div class="con nav-i">
+    <a href="#" class="nav-logo">Centro Médico <span>Polanco</span></a>
+    <ul class="nav-links">
+      <li><a href="#especialidades">Especialidades</a></li>
+      <li><a href="#medicos">Médicos</a></li>
+      <li><a href="#agenda">Agendar</a></li>
+    </ul>
+    <a href="#agenda" class="nav-cta">Agendar cita</a>
+    <button class="nav-burger" id="burger" aria-label="Menú"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" d="M4 6h16M4 12h16M4 18h16"/></svg></button>
   </div>
 </nav>
-
-<section class="hero" id="hero">
+<section class="hero" aria-labelledby="hero-h1">
+  <div class="hero-img"><img id="heroImg" src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=1800&q=85" alt="Centro médico de alta especialidad en Polanco, CDMX" loading="eager"></div>
   <div class="hero-grad"></div>
-  <div class="con">
-    <div class="hero-inner">
-      <div>
-        <div class="hero-pretitle">Polanco · Ciudad de México</div>
-        <h1>Atención médica<br/>donde <em>el paciente</em><br/>primero</h1>
-        <p class="hero-sub">12 especialidades bajo un mismo techo. Médicos certificados por el Consejo Mexicano, tecnología de diagnóstico de primer nivel y un trato humano que sana desde adentro.</p>
-        <a href="#especialidades" class="btn-teal">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/></svg>
-          Ver especialidades
-        </a>
-        <div class="hero-trust">
-          <div class="ht-dot"></div>
-          <span>Médicos certificados SSA</span>
-          <div class="ht-dot"></div>
-          <span>Sin citas en caja</span>
-          <div class="ht-dot"></div>
-          <span>Estacionamiento gratis</span>
-        </div>
+  <div class="con hero-in">
+    <div>
+      <div class="htag">Polanco · Ciudad de México</div>
+      <h1 id="hero-h1">Tu salud merece<br/>la mejor<br/><em>atención médica.</em></h1>
+      <p class="hero-sub">Más de 20 especialidades médicas bajo un mismo techo en Polanco. Tecnología de diagnóstico avanzado y médicos certificados con décadas de experiencia.</p>
+      <div class="hero-acts">
+        <a href="#agenda" class="btn-p">Agendar cita en línea</a>
+        <a href="#especialidades" class="btn-g">Ver especialidades</a>
       </div>
-      <div class="appt-card">
-        <div class="appt-title">Agenda tu cita en línea</div>
-        <form class="appt-form" onsubmit="return false;">
-          <select class="appt-inp">
-            <option value="">Selecciona especialidad</option>
-            <option>Medicina General</option>
-            <option>Cardiología</option>
-            <option>Ginecología</option>
-            <option>Pediatría</option>
-            <option>Neurología</option>
-            <option>Nutrición</option>
-          </select>
-          <input class="appt-inp" type="text" placeholder="Tu nombre completo"/>
-          <input class="appt-inp" type="tel" placeholder="WhatsApp o teléfono"/>
-          <input class="appt-inp" type="date"/>
-          <button type="submit" class="btn-appt">Confirmar cita →</button>
-          <div class="appt-note">Te confirmamos por WhatsApp en menos de 2 horas</div>
-        </form>
+      <div class="hero-trust">
+        <div><div class="ht-n">+20</div><div class="ht-l">Especialidades médicas</div></div>
+        <div><div class="ht-n">4.9★</div><div class="ht-l">Google Reviews</div></div>
+        <div><div class="ht-n">+15k</div><div class="ht-l">Pacientes anuales</div></div>
       </div>
     </div>
-    <div class="hero-stats-bar con">
-      <div class="hsb-item"><div class="hsb-n">12</div><div class="hsb-l">Especialidades</div></div>
-      <div class="hsb-item"><div class="hsb-n">28</div><div class="hsb-l">Médicos</div></div>
-      <div class="hsb-item"><div class="hsb-n">4.8★</div><div class="hsb-l">Google Maps</div></div>
-      <div class="hsb-item"><div class="hsb-n">15 años</div><div class="hsb-l">En CDMX</div></div>
+    <div class="hero-urgencia rv">
+      <div class="hu-icon"><svg viewBox="0 0 24 24"><path stroke-linecap="round" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div>
+      <div class="hu-title">Urgencias médicas</div>
+      <div class="hu-sub">Atención inmediata las 24 horas.<br/>Sin cita previa. Sin esperas largas.</div>
+      <button class="btn-ur" onclick="window.open('https://wa.me/525532001234?text=Necesito%20atenci%C3%B3n%20de%20urgencias%20en%20Centro%20M%C3%A9dico%20Polanco','_blank')">Ir a urgencias →</button>
     </div>
   </div>
 </section>
-
-<section class="specs" id="especialidades">
+<section class="especialidades" id="especialidades" aria-labelledby="esp-title">
   <div class="con">
-    <div class="sec-over">Nuestros servicios</div>
-    <h2 class="sec-h">12 especialidades,<br/>un solo lugar</h2>
-    <p class="sec-p">Sin referencias, sin esperas eternas. Agendar con cualquier especialista es tan fácil como mandar un WhatsApp.</p>
-    <div class="spec-grid">
-      <div class="spec-card"><div class="spec-icon">🫀</div><div class="spec-name">Cardiología</div><div class="spec-desc">Ecocardiograma, Holter y prueba de esfuerzo en instalaciones.</div></div>
-      <div class="spec-card"><div class="spec-icon">🧠</div><div class="spec-name">Neurología</div><div class="spec-desc">Diagnóstico y tratamiento de cefaleas, epilepsia y trastornos del sueño.</div></div>
-      <div class="spec-card"><div class="spec-icon">👶</div><div class="spec-name">Pediatría</div><div class="spec-desc">Crecimiento, vacunación y urgencias pediátricas. Atención hasta los 15 años.</div></div>
-      <div class="spec-card"><div class="spec-icon">🔬</div><div class="spec-name">Laboratorio</div><div class="spec-desc">Resultados en 4 horas. Envío digital al correo incluido sin costo.</div></div>
-      <div class="spec-card"><div class="spec-icon">🦷</div><div class="spec-name">Odontología</div><div class="spec-desc">Limpieza, ortodoncia y estética dental. Urgencias el mismo día.</div></div>
-      <div class="spec-card"><div class="spec-icon">👁️</div><div class="spec-name">Oftalmología</div><div class="spec-desc">Revisión de agudeza visual y detección de glaucoma y cataratas.</div></div>
-      <div class="spec-card"><div class="spec-icon">🥗</div><div class="spec-name">Nutrición</div><div class="spec-desc">Plan nutricional personalizado con seguimiento mensual por app.</div></div>
-      <div class="spec-card"><div class="spec-icon">🏃</div><div class="spec-name">Medicina del Deporte</div><div class="spec-desc">Evaluación física, prevención de lesiones y planes de rendimiento.</div></div>
-    </div>
-  </div>
-</section>
-
-<section class="doctors" id="medicos">
-  <div class="con">
-    <div class="sec-over">Nuestro equipo</div>
-    <h2 class="sec-h" style="margin-bottom:44px;">Médicos que explican,<br/>no solo recetan</h2>
-    <div class="doc-grid">
-      <div class="doc-card">
-        <div class="doc-av">RV</div>
-        <div class="doc-name">Dra. Renata Villanueva</div>
-        <div class="doc-spec">Cardiología</div>
-        <p>Cardióloga intervenciomista egresada del INCich. 14 años de práctica clínica en hospitales de tercer nivel de CDMX.</p>
-        <div class="doc-cert"><span class="dc">Consejo Mexicano</span><span class="dc">UNAM</span></div>
-      </div>
-      <div class="doc-card">
-        <div class="doc-av">MA</div>
-        <div class="doc-name">Dr. Marco Ángel Reyes</div>
-        <div class="doc-spec">Neurología</div>
-        <p>Neurólogo clínico con especialidad en cefaleas crónicas y trastornos del movimiento. Investigador asociado UNAM.</p>
-        <div class="doc-cert"><span class="dc">Consejo Mexicano</span><span class="dc">Fellow UNAM</span></div>
-      </div>
-      <div class="doc-card">
-        <div class="doc-av">SL</div>
-        <div class="doc-name">Dra. Sofía López Cruz</div>
-        <div class="doc-spec">Ginecología</div>
-        <p>Ginecóloga y obstetra con certificación en medicina fetal. Atención integral de la mujer en todas las etapas de vida.</p>
-        <div class="doc-cert"><span class="dc">Consejo Mexicano</span><span class="dc">IPN</span></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<footer>
-  <div class="con">
-    <div class="foot-inner">
-      <div class="foot-logo"><span>+</span> Salud Integral Centro Médico</div>
-      <div class="foot-copy">Av. Presidente Masaryk 111, Polanco · CDMX · Lun–Vie 7am–9pm · Sáb 8am–3pm</div>
-      <div class="foot-powered">Sitio web por <a href="https://rankeo-nu.vercel.app" target="_blank" rel="noopener">Rankeo</a></div>
-    </div>
-  </div>
-</footer>
-
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"MedicalClinic","name":"Centro Médico Salud Integral","url":"https://rankeo-nu.vercel.app/demo/centro-medico-cdmx","telephone":"+525555123456","address":{"@type":"PostalAddress","streetAddress":"Av. Presidente Masaryk 111","addressLocality":"Miguel Hidalgo","addressRegion":"Ciudad de México","addressCountry":"MX"},"description":"Centro médico con 12 especialidades en Polanco, CDMX.","aggregateRating":{"@type":"AggregateRating","ratingValue":"4.8","reviewCount":"487"}}
-</script>
-</body>
-</html>
+    <div class="sec-l rv">Nuestras especialidades</div>
+    <h2 class="sec-h rv" id="esp-title">Medicina completa,<br/><em>en un solo lugar.</em></h2>
+    <div class="esp-grid" role="list">
+      <div class="ecard rv" role="listitem"><div class="ec-icon"><svg viewBox="0 0 24 24"><path stroke-linecap="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg></div><div class="ec-name">Cardiología</div><div class="ec-desc">Ecocardiograma, electrocardiograma, Holter y evaluación cardiovascular completa.</div></div>
+      <div class="ecard rv" data-d="1" role="listitem"><div class="ec-icon"><svg viewBox="0 0 24 24"><path stroke-linecap="round" d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18m0 0h10a2 2 0 002-2V9M9 21H5a2 2 0 01-2-2V9m0 0h18"/></svg></div><div class="ec-name">Neurología</div><div class="ec-desc">Cefaleas, epilepsia, deterioro cognitivo, vértigo y enfermedades del sistema nervioso.</div></div>
+      <div class="ecard rv" data-d="2" role="listitem"><div class="ec-icon"><svg viewBox="
