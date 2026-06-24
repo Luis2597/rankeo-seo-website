@@ -1,325 +1,560 @@
 <!DOCTYPE html>
 <html lang="es-CO">
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Arenas Inmobiliaria | Proyectos y Apartamentos en Barranquilla</title>
-  <meta name="description" content="Inmobiliaria premium en Barranquilla. Apartamentos nuevos en El Prado, Bello Horizonte y Puerto Colombia. Encuentra tu propiedad ideal con Arenas."/>
-  <link rel="canonical" href="https://rankeo-nu.vercel.app/demo/inmobiliaria-barranquilla"/>
-  <meta property="og:title" content="Arenas Inmobiliaria | Barranquilla"/>
-  <meta name="robots" content="noindex,follow"/>
-  <link rel="preconnect" href="https://fonts.googleapis.com"/>
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet"/>
-  <style>
-    :root {
-      --ink:     #141010;
-      --blue:    #1D3557;
-      --gold:    #BFA980;
-      --gold-l:  #D4C4A0;
-      --cream:   #FAF8F4;
-      --sand:    #F0EAE0;
-      --stone:   #E4DDD2;
-      --muted:   #7A7068;
-      --border:  #DDD6CC;
-    }
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
-    body { font-family: 'Jost', sans-serif; background: var(--cream); color: var(--ink); }
-    a { text-decoration: none; color: inherit; }
-    .con { max-width: 1140px; margin: 0 auto; padding: 0 28px; }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Arenas Inmobiliaria | Apartamentos y Proyectos en Barranquilla</title>
+<meta name="description" content="Inmobiliaria en Barranquilla con 18 años de experiencia. Apartamentos nuevos, casas y proyectos en los mejores sectores de la Costa. Asesoría gratis.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@300;400;600;700&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --blue:#1455A8;--blue2:#0F4090;--sky:#EAF1FB;--navy:#0A1E40;--ink:#0A1020;
+  --bg:#F6F9FE;--surface:#FFFFFF;--border:#D4E2F4;--subtle:#5A6A8A;
+  --gold:#C9933C;--dur:250ms;--ease:cubic-bezier(.4,0,.2,1);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Manrope',sans-serif;background:var(--bg);color:var(--ink);overflow-x:hidden}
+a{text-decoration:none;color:inherit}
+img{display:block;max-width:100%}
+.con{max-width:1200px;margin:0 auto;padding:0 40px}
 
-    /* ── DEMO ── */
-    .demo-banner { background: #1D3557; color: rgba(255,255,255,.75); text-align: center; padding: 9px 16px; font-size: 12px; }
-    .demo-banner strong { color: white; }
-    .demo-banner a { color: #BFA980; font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
+/* DEMO */
+.demo-band{background:var(--navy);color:rgba(255,255,255,.75);text-align:center;padding:10px;font-size:.8rem}
+.demo-band a{color:#6FB3FF;text-decoration:underline}
 
-    /* ── NAV ── */
-    nav { position: sticky; top: 0; z-index: 100; background: rgba(250,248,244,.97); backdrop-filter: blur(10px); border-bottom: 1px solid var(--border); }
-    .nav-i { max-width: 1140px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; height: 68px; padding: 0 28px; }
-    .logo { display: flex; flex-direction: column; }
-    .logo-main { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 400; letter-spacing: .2em; text-transform: uppercase; color: var(--ink); }
-    .logo-sub { font-size: 9px; font-weight: 500; letter-spacing: .3em; text-transform: uppercase; color: var(--muted); margin-top: -2px; }
-    .nav-links { display: flex; gap: 32px; }
-    .nav-links a { font-size: 12px; font-weight: 500; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); transition: color .2s; }
-    .nav-links a:hover { color: var(--ink); }
-    .nav-cta { background: var(--blue); color: white; font-size: 11.5px; font-weight: 500; padding: 11px 24px; letter-spacing: .1em; text-transform: uppercase; transition: background .2s; }
-    .nav-cta:hover { background: #27496D; }
+/* NAV */
+nav{position:sticky;top:0;z-index:100;background:white;box-shadow:0 1px 0 var(--border)}
+.nav-i{display:flex;align-items:center;justify-content:space-between;padding:16px 40px;max-width:1200px;margin:0 auto}
+.nav-logo{font-family:'Unbounded',sans-serif;font-size:1rem;font-weight:600;color:var(--ink);letter-spacing:.02em}
+.nav-logo span{color:var(--blue)}
+.nav-logo-sub{font-size:.65rem;color:var(--subtle);font-family:'Manrope',sans-serif;font-weight:400;margin-top:2px}
+.nav-counter{font-size:.78rem;color:var(--subtle);background:var(--sky);padding:5px 12px;border-radius:20px;font-weight:600}
+.nav-counter span{color:var(--blue)}
+.nav-links{display:flex;gap:28px;list-style:none}
+.nav-links a{font-size:.88rem;font-weight:500;color:var(--subtle);transition:color var(--dur)}
+.nav-links a:hover{color:var(--blue)}
+.nav-cta{background:var(--blue);color:white;padding:10px 24px;border-radius:8px;font-size:.88rem;font-weight:600;transition:background var(--dur)}
+.nav-cta:hover{background:var(--blue2)}
+.nav-burger{display:none;background:none;border:none;cursor:pointer;width:44px;height:44px;align-items:center;justify-content:center;color:var(--ink)}
 
-    /* ── HERO ── */
-    .hero { background: var(--blue); color: white; min-height: 85vh; display: flex; align-items: flex-end; position: relative; overflow: hidden; }
-    .hero-bg { position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(29,53,87,.3) 0%, rgba(29,53,87,.85) 70%, var(--blue) 100%); }
-    .hero-pattern { position: absolute; inset: 0; background-image: linear-gradient(rgba(191,169,128,.06) 1px, transparent 1px), linear-gradient(90deg, rgba(191,169,128,.06) 1px, transparent 1px); background-size: 60px 60px; }
-    .hero-inner { position: relative; z-index: 1; padding-bottom: 80px; width: 100%; }
-    .hero-tag { display: inline-flex; align-items: center; gap: 8px; border: 1px solid rgba(191,169,128,.4); color: var(--gold); font-size: 10.5px; font-weight: 500; padding: 7px 16px; letter-spacing: .2em; text-transform: uppercase; margin-bottom: 24px; }
-    h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(3rem, 7vw, 6rem); font-weight: 300; line-height: 1.05; letter-spacing: -.01em; margin-bottom: 20px; max-width: 700px; }
-    h1 em { font-style: italic; color: var(--gold); }
-    .hero-sub { font-size: 16px; font-weight: 300; color: rgba(255,255,255,.65); max-width: 480px; line-height: 1.75; margin-bottom: 36px; }
-    .hero-actions { display: flex; gap: 12px; }
-    .btn-gold { background: var(--gold); color: var(--ink); font-size: 11.5px; font-weight: 600; padding: 14px 30px; letter-spacing: .12em; text-transform: uppercase; transition: background .2s; }
-    .btn-gold:hover { background: var(--gold-l); }
-    .btn-outline-w { background: transparent; color: rgba(255,255,255,.8); font-size: 11.5px; font-weight: 500; padding: 14px 24px; letter-spacing: .1em; text-transform: uppercase; border: 1px solid rgba(255,255,255,.25); transition: border-color .2s, color .2s; }
-    .btn-outline-w:hover { border-color: rgba(255,255,255,.6); color: white; }
-    .hero-metrics { display: flex; gap: 0; margin-top: 60px; border-top: 1px solid rgba(255,255,255,.1); }
-    .hm-item { padding: 28px 40px 0 0; }
-    .hm-n { font-family: 'Cormorant Garamond', serif; font-size: 2.6rem; font-weight: 300; color: var(--gold); line-height: 1; }
-    .hm-l { font-size: 11px; font-weight: 500; text-transform: uppercase; letter-spacing: .15em; color: rgba(255,255,255,.4); margin-top: 4px; }
+/* HERO: SEARCH-FIRST */
+.hero{background:var(--bg);padding:80px 0 64px;border-bottom:1px solid var(--border)}
+.hero-text{text-align:center;margin-bottom:48px}
+.hero-label{display:inline-flex;align-items:center;gap:8px;background:var(--sky);color:var(--blue);padding:6px 16px;border-radius:20px;font-size:.75rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;margin-bottom:20px}
+h1{font-family:'Unbounded',sans-serif;font-size:clamp(2rem,4.5vw,4rem);font-weight:700;line-height:1.1;color:var(--ink);margin-bottom:16px;letter-spacing:-.02em}
+.hero-sub{font-size:1.05rem;color:var(--subtle);max-width:500px;margin:0 auto;line-height:1.7}
 
-    /* ── PROPERTIES ── */
-    .properties { padding: 100px 0; }
-    .sec-label { font-size: 10.5px; font-weight: 500; text-transform: uppercase; letter-spacing: .2em; color: var(--gold); margin-bottom: 10px; }
-    .sec-h { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 4vw, 3.4rem); font-weight: 400; letter-spacing: -.01em; line-height: 1.1; margin-bottom: 12px; }
-    .sec-p { font-size: 15px; color: var(--muted); line-height: 1.7; font-weight: 300; margin-bottom: 52px; max-width: 560px; }
-    .prop-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; grid-template-rows: auto auto; gap: 2px; }
-    .prop-card { background: var(--sand); overflow: hidden; position: relative; transition: transform .3s; }
-    .prop-card:hover { z-index: 2; transform: scale(1.01); }
-    .prop-card.featured { grid-row: span 2; }
-    .prop-visual { height: 220px; overflow: hidden; position: relative; }
-    .prop-visual img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .5s ease; }
-    .prop-card:hover .prop-visual img { transform: scale(1.06); }
-    .prop-card.featured .prop-visual { height: 380px; }
-    .pv-1 { background: linear-gradient(160deg, #2c4a6e, #1D3557); }
-    .pv-2 { background: linear-gradient(160deg, #3a3020, #6b5a3e); }
-    .pv-3 { background: linear-gradient(160deg, #1a3a2a, #2d5540); }
-    .pv-4 { background: linear-gradient(160deg, #3a1a1a, #7a3030); }
-    .pv-5 { background: linear-gradient(160deg, #1a2a3a, #2a4060); }
-    .prop-body { padding: 20px 22px 24px; }
-    .prop-type { font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: .16em; color: var(--gold); margin-bottom: 8px; }
-    .prop-name { font-family: 'Cormorant Garamond', serif; font-size: 1.25rem; font-weight: 600; letter-spacing: -.01em; margin-bottom: 4px; }
-    .prop-loc { font-size: 12px; color: var(--muted); margin-bottom: 14px; }
-    .prop-specs { display: flex; gap: 16px; font-size: 11.5px; color: var(--muted); margin-bottom: 14px; }
-    .prop-price { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 600; color: var(--blue); }
-    .prop-badge { position: absolute; top: 14px; left: 14px; background: var(--gold); color: var(--ink); font-size: 9.5px; font-weight: 700; padding: 4px 10px; letter-spacing: .12em; text-transform: uppercase; }
+/* SEARCH BOX */
+.search-box{background:white;border-radius:20px;box-shadow:0 8px 48px rgba(20,85,168,.12);padding:32px;max-width:860px;margin:0 auto 48px}
+.search-tabs{display:flex;gap:4px;margin-bottom:24px;background:var(--sky);border-radius:10px;padding:4px}
+.stab{flex:1;padding:10px;text-align:center;border-radius:8px;font-size:.88rem;font-weight:600;color:var(--subtle);cursor:pointer;transition:background var(--dur),color var(--dur);border:none;background:none;font-family:'Manrope',sans-serif}
+.stab.active{background:white;color:var(--blue);box-shadow:0 2px 8px rgba(0,0,0,.08)}
+.search-fields{display:grid;grid-template-columns:1fr 1fr 1fr auto;gap:12px;align-items:end}
+.sf-group{display:flex;flex-direction:column;gap:6px}
+.sf-label{font-size:.72rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--subtle)}
+.sf-group select,.sf-group input{padding:12px 16px;border:1.5px solid var(--border);border-radius:10px;font-family:'Manrope',sans-serif;font-size:.9rem;color:var(--ink);background:var(--bg);outline:none;transition:border-color var(--dur)}
+.sf-group select:focus,.sf-group input:focus{border-color:var(--blue);background:white}
+.btn-search{background:var(--blue);color:white;border:none;border-radius:10px;padding:12px 28px;font-family:'Manrope',sans-serif;font-size:.95rem;font-weight:700;cursor:pointer;transition:background var(--dur);white-space:nowrap;display:flex;align-items:center;gap:8px}
+.btn-search:hover{background:var(--blue2)}
+.hero-stats{display:flex;justify-content:center;gap:40px;flex-wrap:wrap}
+.hs{text-align:center}
+.hs-n{font-family:'Unbounded',sans-serif;font-size:1.6rem;font-weight:600;color:var(--ink);line-height:1}
+.hs-l{font-size:.75rem;color:var(--subtle);margin-top:4px;text-transform:uppercase;letter-spacing:.04em}
 
-    /* ── WHY ── */
-    .why { padding: 96px 0; background: var(--blue); color: white; }
-    .why-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
-    .why-left h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem,4vw,3.2rem); font-weight: 300; letter-spacing: -.01em; line-height: 1.15; margin-bottom: 16px; }
-    .why-left h2 em { color: var(--gold); font-style: italic; }
-    .why-left p { font-size: 15px; color: rgba(255,255,255,.6); line-height: 1.8; font-weight: 300; }
-    .why-points { display: flex; flex-direction: column; gap: 0; }
-    .wp { padding: 24px 0; border-bottom: 1px solid rgba(255,255,255,.08); display: flex; gap: 20px; align-items: flex-start; }
-    .wp:first-child { border-top: 1px solid rgba(255,255,255,.08); }
-    .wp-num { font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; color: var(--gold); font-weight: 300; line-height: 1; min-width: 32px; }
-    .wp-title { font-size: 14px; font-weight: 600; margin-bottom: 4px; letter-spacing: .02em; }
-    .wp-desc { font-size: 13px; color: rgba(255,255,255,.5); line-height: 1.65; font-weight: 300; }
+/* PROPERTIES */
+.properties{padding:80px 0;background:white}
+.props-header{display:flex;justify-content:space-between;align-items:end;margin-bottom:40px}
+.ph-left .section-label{font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--blue);margin-bottom:8px}
+h2{font-family:'Unbounded',sans-serif;font-size:clamp(1.6rem,3vw,2.4rem);font-weight:600;color:var(--ink);line-height:1.2;letter-spacing:-.02em}
+.ph-filter{display:flex;gap:8px}
+.pf-btn{padding:8px 18px;border-radius:20px;font-size:.82rem;font-weight:600;border:1.5px solid var(--border);color:var(--subtle);cursor:pointer;transition:all var(--dur);background:none;font-family:'Manrope',sans-serif}
+.pf-btn.active,.pf-btn:hover{background:var(--blue);color:white;border-color:var(--blue)}
+.props-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.pcard{background:var(--bg);border-radius:16px;overflow:hidden;border:1px solid var(--border);transition:transform var(--dur),box-shadow var(--dur)}
+.pcard:hover{transform:translateY(-6px);box-shadow:0 20px 60px rgba(20,85,168,.12)}
+.pcard.featured{grid-column:span 2}
+.pc-img{height:220px;overflow:hidden;position:relative}
+.pcard.featured .pc-img{height:300px}
+.pc-img img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.pcard:hover .pc-img img{transform:scale(1.05)}
+.pc-tag{position:absolute;top:16px;left:16px;background:white;padding:5px 12px;border-radius:20px;font-size:.72rem;font-weight:700;letter-spacing:.04em;color:var(--blue)}
+.pc-status{position:absolute;top:16px;right:16px;padding:5px 12px;border-radius:20px;font-size:.7rem;font-weight:700}
+.pc-status.new{background:#22C55E;color:white}
+.pc-status.limited{background:var(--gold);color:white}
+.pc-body{padding:20px}
+.pc-location{font-size:.75rem;font-weight:600;color:var(--subtle);letter-spacing:.04em;text-transform:uppercase;margin-bottom:6px;display:flex;align-items:center;gap:5px}
+.pc-name{font-family:'Unbounded',sans-serif;font-size:1rem;font-weight:600;color:var(--ink);margin-bottom:8px;line-height:1.3}
+.pc-specs{display:flex;gap:16px;margin-bottom:16px}
+.pc-spec{font-size:.8rem;color:var(--subtle);display:flex;align-items:center;gap:5px}
+.pc-price-row{display:flex;align-items:center;justify-content:space-between;border-top:1px solid var(--border);padding-top:14px;margin-top:4px}
+.pc-price{font-family:'Unbounded',sans-serif;font-size:1rem;font-weight:600;color:var(--blue)}
+.pc-price.arriendo{color:#22C55E}
+.pc-price small{font-size:.65rem;font-family:'Manrope',sans-serif;color:var(--subtle);font-weight:400;display:block;margin-top:2px}
+.pc-cta{font-size:.8rem;font-weight:700;color:var(--blue);transition:color var(--dur);display:flex;align-items:center;gap:4px}
+.pc-cta:hover{color:var(--blue2)}
 
-    /* ── CTA ── */
-    .cta-strip { padding: 80px 0; }
-    .cta-box { background: var(--sand); border: 1px solid var(--border); padding: 56px 60px; display: flex; align-items: center; justify-content: space-between; gap: 40px; flex-wrap: wrap; }
-    .cta-box h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.8rem,3vw,2.6rem); font-weight: 400; letter-spacing: -.01em; max-width: 500px; }
-    .cta-box h2 em { font-style: italic; color: var(--blue); }
+/* ABOUT */
+.about{padding:80px 0;background:var(--sky)}
+.about-in{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.about-img{border-radius:16px;overflow:hidden;height:420px}
+.about-img img{width:100%;height:100%;object-fit:cover}
+.about-text .section-label{text-align:left;margin-bottom:10px}
+.about-text h2{text-align:left;font-size:clamp(1.5rem,3vw,2.2rem);margin-bottom:20px}
+.about-text p{font-size:.95rem;color:var(--subtle);line-height:1.8;margin-bottom:16px}
+.about-nums{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:32px}
+.an{background:white;border-radius:12px;padding:20px;border:1px solid var(--border)}
+.an-v{font-family:'Unbounded',sans-serif;font-size:1.6rem;font-weight:600;color:var(--blue);line-height:1;margin-bottom:4px}
+.an-l{font-size:.78rem;color:var(--subtle)}
 
-    /* ── FOOTER ── */
-    footer { background: var(--ink); color: rgba(255,255,255,.4); padding: 44px 0; }
-    .foot-inner { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
-    .foot-logo { font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 400; letter-spacing: .2em; text-transform: uppercase; color: white; }
-    .foot-copy { font-size: 12px; }
-    .foot-powered a { font-size: 12px; color: rgba(255,255,255,.3); text-decoration: underline; text-underline-offset: 3px; }
+/* SERVICES */
+.services{padding:72px 0;background:white}
+.srv-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:48px}
+.sc{background:var(--bg);border-radius:14px;padding:28px;border:1px solid var(--border);transition:transform var(--dur),box-shadow var(--dur)}
+.sc:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(20,85,168,.1);background:white}
+.sc-icon{width:48px;height:48px;background:var(--sky);border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:16px;font-size:1.3rem}
+.sc h3{font-family:'Unbounded',sans-serif;font-size:.95rem;font-weight:600;color:var(--ink);margin-bottom:10px;line-height:1.4}
+.sc p{font-size:.85rem;color:var(--subtle);line-height:1.7}
 
-    @media (max-width: 768px) {
-      .prop-grid { grid-template-columns: 1fr; }
-      .prop-card.featured .prop-visual { height: 220px; }
-      .why-inner { grid-template-columns: 1fr; gap: 40px; }
-      .cta-box { padding: 36px 28px; }
-      .nav-links { display: none; }
-      .foot-inner { flex-direction: column; text-align: center; }
-    }
-  
-    /* ── MOBILE DRAWER ── */
-    .drawer{position:fixed;inset:0;z-index:9999;display:flex;flex-direction:column;
-      background:#0A1628;transform:translateX(100%);transition:transform .35s cubic-bezier(.4,0,.2,1);overflow-y:auto}
-    .drawer.open{transform:translateX(0)}
-    .drawer-head{display:flex;justify-content:space-between;align-items:center;
-      padding:20px 24px;border-bottom:1px solid rgba(255,255,255,.1)}
-    .drawer-logo{font-size:1.1rem;font-weight:700;color:white;text-decoration:none}
-    .drawer-close{background:none;border:none;cursor:pointer;color:white;
-      width:44px;height:44px;display:flex;align-items:center;justify-content:center;
-      border-radius:50%;transition:background .2s}
-    .drawer-close:hover{background:rgba(255,255,255,.1)}
-    .drawer-nav{display:flex;flex-direction:column;padding:32px 24px;gap:0;flex:1}
-    .drawer-nav a{color:white;text-decoration:none;font-size:1.4rem;font-weight:600;
-      padding:18px 0;border-bottom:1px solid rgba(255,255,255,.1);
-      display:block;transition:color .2s,padding-left .2s}
-    .drawer-nav a:last-child{border-bottom:none}
-    .drawer-nav a:hover{color:#1455A8;padding-left:8px}
-    .drawer-cta-wrap{padding:24px}
-    .drawer-cta-btn{display:block;text-align:center;background:#1455A8;color:white;
-      text-decoration:none;padding:16px 24px;border-radius:8px;font-weight:700;
-      font-size:1rem;transition:filter .2s}
-    .drawer-cta-btn:hover{filter:brightness(1.1)}
-    .drawer-overlay{position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:9998;
-      opacity:0;pointer-events:none;transition:opacity .35s}
-    .drawer-overlay.open{opacity:1;pointer-events:all}
-  </style>
+/* STATS */
+.stats{background:var(--navy);padding:64px 0}
+.stats-grid{display:grid;grid-template-columns:repeat(4,1fr)}
+.sg{text-align:center;padding:0 24px;border-right:1px solid rgba(255,255,255,.15)}
+.sg:last-child{border-right:none}
+.sg-n{font-family:'Unbounded',sans-serif;font-size:2.2rem;font-weight:600;color:white;line-height:1;margin-bottom:6px}
+.sg-l{font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.5)}
+
+/* TESTIMONIALS */
+.testimonials{padding:72px 0;background:var(--bg)}
+.test-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:48px}
+.tc{background:white;border-radius:14px;padding:28px;border:1px solid var(--border)}
+.tc-stars{color:var(--gold);font-size:.9rem;letter-spacing:2px;margin-bottom:12px}
+.tc-text{font-size:.9rem;color:var(--ink);line-height:1.7;margin-bottom:20px;font-style:italic}
+.tc-author{display:flex;gap:10px;align-items:center}
+.tc-av{width:40px;height:40px;border-radius:50%;background:var(--blue);color:white;display:flex;align-items:center;justify-content:center;font-weight:700;flex-shrink:0}
+.tc-name{font-size:.88rem;font-weight:600;color:var(--ink)}
+.tc-meta{font-size:.75rem;color:var(--subtle)}
+
+/* FOOTER */
+footer{background:var(--ink);padding:56px 0 28px}
+.foot-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;margin-bottom:40px}
+.fl{font-family:'Unbounded',sans-serif;font-size:1rem;font-weight:600;color:white;letter-spacing:.02em}
+.fl span{color:#6FB3FF}
+.fbrand p{font-size:.85rem;color:rgba(255,255,255,.45);line-height:1.8;margin-top:12px;max-width:260px}
+.fc h4{font-size:.68rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:14px}
+.fc ul{list-style:none;display:flex;flex-direction:column;gap:9px}
+.fc a{font-size:.88rem;color:rgba(255,255,255,.5);transition:color var(--dur)}
+.fc a:hover{color:#6FB3FF}
+.foot-bottom{border-top:1px solid rgba(255,255,255,.08);padding-top:20px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+.foot-copy{font-size:.75rem;color:rgba(255,255,255,.25)}
+
+.wa-float{position:fixed;bottom:32px;right:32px;z-index:500;width:58px;height:58px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 32px rgba(37,211,102,.4);animation:waPulse 2.5s infinite;transition:transform .2s;cursor:pointer}
+.wa-float:hover{transform:scale(1.1)}
+@keyframes waPulse{0%,100%{box-shadow:0 8px 32px rgba(37,211,102,.4)}50%{box-shadow:0 8px 48px rgba(37,211,102,.6)}}
+
+.drawer{position:fixed;inset:0;z-index:9999;display:flex;flex-direction:column;background:#0A1628;transform:translateX(100%);transition:transform .35s cubic-bezier(.4,0,.2,1);overflow-y:auto}
+.drawer.open{transform:translateX(0)}
+.drawer-head{display:flex;justify-content:space-between;align-items:center;padding:20px 24px;border-bottom:1px solid rgba(255,255,255,.1)}
+.drawer-logo{font-family:'Unbounded',sans-serif;font-size:.95rem;font-weight:600;color:white}
+.drawer-logo span{color:#6FB3FF}
+.drawer-close{background:none;border:none;cursor:pointer;color:white;width:44px;height:44px;display:flex;align-items:center;justify-content:center}
+.drawer-nav{display:flex;flex-direction:column;padding:32px 24px;gap:0;flex:1}
+.drawer-nav a{color:white;text-decoration:none;font-size:1.3rem;padding:18px 0;border-bottom:1px solid rgba(255,255,255,.08);display:block;transition:color .2s}
+.drawer-nav a:hover{color:#6FB3FF}
+.drawer-cta-wrap{padding:24px}
+.drawer-cta-btn{display:block;text-align:center;background:var(--blue);color:white;text-decoration:none;padding:15px;border-radius:8px;font-weight:700;font-size:.95rem}
+.drawer-overlay{position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:9998;opacity:0;pointer-events:none;transition:opacity .35s}
+.drawer-overlay.open{opacity:1;pointer-events:all}
+
+.rv{opacity:0;transform:translateY(24px);transition:opacity .5s var(--ease),transform .5s var(--ease)}
+.rv.in{opacity:1;transform:none}
+[data-d="1"].rv{transition-delay:.08s}[data-d="2"].rv{transition-delay:.16s}[data-d="3"].rv{transition-delay:.24s}
+@media(prefers-reduced-motion:reduce){.rv{transition:none;opacity:1;transform:none}}
+
+@media(max-width:768px){
+  .nav-links,.nav-counter{display:none}.nav-burger{display:flex}
+  h1{font-size:clamp(1.8rem,8vw,2.4rem)}
+  .search-fields{grid-template-columns:1fr}.btn-search{width:100%;justify-content:center}
+  .props-header{flex-direction:column;gap:16px;align-items:flex-start}.ph-filter{flex-wrap:wrap}
+  .props-grid{grid-template-columns:1fr}.pcard.featured{grid-column:span 1}.pcard.featured .pc-img{height:220px}
+  .about-in{grid-template-columns:1fr;gap:36px}.about-img{height:280px}
+  .srv-grid{grid-template-columns:1fr}
+  .stats-grid{grid-template-columns:1fr 1fr}.sg{border-right:none;border-bottom:1px solid rgba(255,255,255,.15);padding:20px}.sg:nth-child(odd){border-right:1px solid rgba(255,255,255,.15)}.sg:nth-last-child(-n+2){border-bottom:none}
+  .test-grid{grid-template-columns:1fr}
+  .foot-grid{grid-template-columns:1fr;gap:28px}
+  .con{padding:0 20px}
+}
+</style>
 </head>
 <body>
 
-<div class="demo-banner">
-  <strong>Proyecto demo</strong> — Sitio de muestra creado por <a href="https://rankeo-nu.vercel.app" target="_blank" rel="noopener">Rankeo</a>. ¿Tu inmobiliaria necesita un sitio así? <a href="https://rankeo-nu.vercel.app/#contacto" target="_blank" rel="noopener">Hablemos →</a>
+<div class="demo-band">
+  <strong>Proyecto demo</strong> — Sitio creado por <a href="https://rankeo-nu.vercel.app">Rankeo</a>. ¿Tu inmobiliaria necesita un sitio así? <a href="https://rankeo-nu.vercel.app/#contacto">Hablemos →</a>
 </div>
 
 <nav>
   <div class="nav-i">
-    <div class="logo">
-      <div class="logo-main">Arenas</div>
-      <div class="logo-sub">Inmobiliaria</div>
+    <div>
+      <div class="nav-logo">ARENAS <span>Inmobiliaria</span></div>
+      <div class="nav-logo-sub">Barranquilla, Colombia</div>
     </div>
-    <div class="nav-links">
-      <a href="#proyectos">Proyectos</a>
-      <a href="#nosotros">Nosotros</a>
-      <a href="#cta">Contacto</a>
-    </div>
-    <a href="#cta" class="nav-cta">Buscar propiedad</a>
+    <div class="nav-counter"><span>143</span> propiedades disponibles</div>
+    <ul class="nav-links">
+      <li><a href="#propiedades">Proyectos</a></li>
+      <li><a href="#nosotros">Nosotros</a></li>
+      <li><a href="https://wa.me/573001234567?text=Hola%2C+quiero+informaci%C3%B3n+sobre+propiedades+en+Barranquilla">Contacto</a></li>
+    </ul>
+    <a href="https://wa.me/573001234567?text=Hola%2C+quiero+ver+propiedades+disponibles+en+Barranquilla" target="_blank" rel="noopener" class="nav-cta">Ver propiedades</a>
+    <button class="nav-burger" id="burger" aria-label="Menú">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+    </button>
   </div>
 </nav>
-  <!-- Mobile Drawer -->
-  <div class="drawer-overlay" id="drawer-overlay"></div>
-  <div class="drawer" id="drawer" role="dialog" aria-modal="true">
-    <div class="drawer-head">
-      <a href="#" class="drawer-logo">Menu</a>
-      <button class="drawer-close" id="drawer-close" aria-label="Cerrar menú">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" d="M18 6L6 18M6 6l12 12"/></svg>
-      </button>
-    </div>
-    <nav class="drawer-nav">
-    </nav>
-    <div class="drawer-cta-wrap">
-      <a href="#cta" class="drawer-cta-btn">Buscar propiedad</a>
-    </div>
-  </div>
 
-<section class="hero" style="position:relative;">
-  <img src="https://images.unsplash.com/photo-1486325212027-8081e485255e?auto=format&fit=crop&w=1600&q=80" alt="Barranquilla – proyectos inmobiliarios premium" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;" loading="eager">
-  <div class="hero-bg" style="z-index:1;position:absolute;inset:0;"></div>
-  <div class="hero-pattern" style="z-index:1;position:absolute;inset:0;"></div>
-  <div class="con hero-inner">
-    <div class="hero-tag">🏙️ Barranquilla, Colombia</div>
-    <h1>Propiedades que<br/>definen el <em>estilo</em><br/>de vivir bien</h1>
-    <p class="hero-sub">Apartamentos nuevos y proyectos en venta en los mejores sectores de Barranquilla. 18 años construyendo hogares en la Costa.</p>
-    <div class="hero-actions">
-      <a href="#proyectos" class="btn-gold">Ver proyectos</a>
-      <a href="#cta" class="btn-outline-w">Asesoría gratuita</a>
-    </div>
-    <div class="hero-metrics">
-      <div class="hm-item"><div class="hm-n">1.400+</div><div class="hm-l">Familias ubicadas</div></div>
-      <div class="hm-item"><div class="hm-n">18 años</div><div class="hm-l">En el mercado</div></div>
-      <div class="hm-item"><div class="hm-n">32</div><div class="hm-l">Proyectos entregados</div></div>
-    </div>
+<div class="drawer-overlay" id="drawer-overlay"></div>
+<div class="drawer" id="drawer" role="dialog" aria-modal="true">
+  <div class="drawer-head">
+    <a href="#" class="drawer-logo">ARENAS <span>Inmobiliaria</span></a>
+    <button class="drawer-close" id="drawer-close" aria-label="Cerrar">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" d="M18 6L6 18M6 6l12 12"/></svg>
+    </button>
   </div>
-</section>
+  <nav class="drawer-nav">
+    <a href="#propiedades">Proyectos</a>
+    <a href="#nosotros">Nosotros</a>
+    <a href="#contacto">Contacto</a>
+  </nav>
+  <div class="drawer-cta-wrap">
+    <a href="https://wa.me/573001234567?text=Quiero+ver+propiedades+en+Barranquilla" target="_blank" rel="noopener" class="drawer-cta-btn">Ver propiedades →</a>
+  </div>
+</div>
 
-<section class="properties" id="proyectos">
+<!-- HERO: SEARCH-FIRST, NO FOTO FULL-BLEED -->
+<section class="hero" id="inicio">
   <div class="con">
-    <div class="sec-label">Portafolio activo</div>
-    <h2 class="sec-h">Proyectos en<br/>Barranquilla</h2>
-    <p class="sec-p">Cada proyecto nace de entender qué necesita cada familia. Desde estudios hasta penthouses frente al mar.</p>
-    <div class="prop-grid">
-      <div class="prop-card featured">
-        <div class="prop-badge">Nuevo</div>
-        <div class="prop-visual pv-1"><img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=700&q=80" alt="Torres del Prado – apartamentos Barranquilla" loading="lazy"></div>
-        <div class="prop-body">
-          <div class="prop-type">Proyecto estrella · En construcción</div>
-          <div class="prop-name">Torres del Prado</div>
-          <div class="prop-loc">📍 El Prado · Barranquilla</div>
-          <div class="prop-specs">🛏 2–4 hab &nbsp;·&nbsp; 🚿 2–3 baños &nbsp;·&nbsp; 📐 85–220 m²</div>
-          <div class="prop-price">Desde $420.000.000</div>
-        </div>
+    <div class="hero-text rv">
+      <div class="hero-label">📍 Barranquilla, Colombia</div>
+      <h1>Tu próxima propiedad<br>en la Costa</h1>
+      <p class="hero-sub">18 años conectando familias barranquilleras con el hogar que merecen. Proyectos nuevos, usados y arrendamiento.</p>
+    </div>
+    <div class="search-box rv" data-d="1">
+      <div class="search-tabs">
+        <button class="stab active" onclick="setTab(this)">Comprar</button>
+        <button class="stab" onclick="setTab(this)">Arrendar</button>
+        <button class="stab" onclick="setTab(this)">Proyectos</button>
+        <button class="stab" onclick="setTab(this)">Vender</button>
       </div>
-      <div class="prop-card">
-        <div class="prop-visual pv-2"><img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=600&q=80" alt="Bello Mar Residencias – frente al mar" loading="lazy"></div>
-        <div class="prop-body">
-          <div class="prop-type">Entrega 2025 · 4 unidades</div>
-          <div class="prop-name">Bello Mar Residencias</div>
-          <div class="prop-loc">📍 Bello Horizonte</div>
-          <div class="prop-price">Desde $680.000.000</div>
+      <div class="search-fields">
+        <div class="sf-group">
+          <label class="sf-label">Sector</label>
+          <select>
+            <option>Cualquier sector</option>
+            <option>El Prado</option>
+            <option>Puerto Colombia</option>
+            <option>Villa Santos</option>
+            <option>La Boquilla</option>
+            <option>Riomar</option>
+            <option>Ciudad Jardín</option>
+          </select>
         </div>
-      </div>
-      <div class="prop-card">
-        <div class="prop-visual pv-3"><img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=600&q=80" alt="Verde Urbano – apartamentos eco" loading="lazy"></div>
-        <div class="prop-body">
-          <div class="prop-type">Preventa abierta</div>
-          <div class="prop-name">Verde Urbano</div>
-          <div class="prop-loc">📍 Los Alpes</div>
-          <div class="prop-price">Desde $290.000.000</div>
+        <div class="sf-group">
+          <label class="sf-label">Tipo</label>
+          <select>
+            <option>Cualquier tipo</option>
+            <option>Apartamento</option>
+            <option>Casa</option>
+            <option>Penthouse</option>
+            <option>Local comercial</option>
+          </select>
         </div>
-      </div>
-      <div class="prop-card">
-        <div class="prop-visual pv-4"><img src="https://images.unsplash.com/photo-1499793983690-e29da59ef1c2?auto=format&fit=crop&w=600&q=80" alt="Puerto Sereno – frente al mar Puerto Colombia" loading="lazy"></div>
-        <div class="prop-body">
-          <div class="prop-type">Frente al mar · 8 unidades</div>
-          <div class="prop-name">Puerto Sereno</div>
-          <div class="prop-loc">📍 Puerto Colombia</div>
-          <div class="prop-price">Desde $850.000.000</div>
+        <div class="sf-group">
+          <label class="sf-label">Presupuesto</label>
+          <select>
+            <option>Cualquier precio</option>
+            <option>Hasta $200M</option>
+            <option>$200M – $400M</option>
+            <option>$400M – $700M</option>
+            <option>+$700M</option>
+          </select>
         </div>
+        <button class="btn-search" onclick="buscar()">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          Buscar
+        </button>
       </div>
-      <div class="prop-card">
-        <div class="prop-visual pv-5"><img src="https://images.unsplash.com/photo-1486325212027-8081e485255e?auto=format&fit=crop&w=600&q=80" alt="Centro Norte 85 – uso mixto" loading="lazy"></div>
-        <div class="prop-body">
-          <div class="prop-type">Uso mixto · Oficinas + Aptos</div>
-          <div class="prop-name">Centro Norte 85</div>
-          <div class="prop-loc">📍 Norte Centro Histórico</div>
-          <div class="prop-price">Desde $195.000.000</div>
-        </div>
-      </div>
+    </div>
+    <div class="hero-stats rv" data-d="2">
+      <div class="hs"><div class="hs-n">143</div><div class="hs-l">Propiedades activas</div></div>
+      <div class="hs"><div class="hs-n">18</div><div class="hs-l">Años de experiencia</div></div>
+      <div class="hs"><div class="hs-n">2.400+</div><div class="hs-l">Familias asesoradas</div></div>
+      <div class="hs"><div class="hs-n">4.8★</div><div class="hs-l">Google Reviews</div></div>
     </div>
   </div>
 </section>
 
-<section class="why" id="nosotros">
+<!-- PROPERTIES -->
+<section class="properties" id="propiedades">
   <div class="con">
-    <div class="why-inner">
-      <div class="why-left">
-        <div class="sec-label" style="color:var(--gold);">Por qué elegirnos</div>
-        <h2>18 años haciendo<br/><em>bien</em> una sola cosa</h2>
-        <p>Arenas nació en Barranquilla y se quedó en Barranquilla. Conocemos cada barrio, cada precio real y cada desarrollador de la ciudad. No somos franquicia.</p>
+    <div class="props-header rv">
+      <div class="ph-left">
+        <div class="section-label">Propiedades destacadas</div>
+        <h2>Las mejores opciones<br>en este momento</h2>
       </div>
-      <div class="why-points">
-        <div class="wp"><div class="wp-num">01</div><div><div class="wp-title">Precios directos de constructor</div><div class="wp-desc">Trabajamos directo con los proyectos. Sin intermediarios extra, sin costos ocultos.</div></div></div>
-        <div class="wp"><div class="wp-num">02</div><div><div class="wp-title">Asesor exclusivo por cliente</div><div class="wp-desc">Un asesor te acompaña desde la búsqueda hasta la escritura. Siempre la misma persona.</div></div></div>
-        <div class="wp"><div class="wp-num">03</div><div><div class="wp-title">Gestión de crédito hipotecario</div><div class="wp-desc">Alianzas con Banco de Bogotá, Davivienda y Bancolombia. Tramitamos tu crédito sin costo.</div></div></div>
-        <div class="wp"><div class="wp-num">04</div><div><div class="wp-title">Postventa real</div><div class="wp-desc">Seguimiento 12 meses después de la entrega. Nuestros clientes vuelven y refieren porque saben que estamos.</div></div></div>
+      <div class="ph-filter">
+        <button class="pf-btn active">Todos</button>
+        <button class="pf-btn">Nuevos</button>
+        <button class="pf-btn">En arriendo</button>
+        <button class="pf-btn">Proyectos</button>
+      </div>
+    </div>
+    <div class="props-grid">
+      <div class="pcard featured rv">
+        <div class="pc-img">
+          <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1100&q=80" alt="Torres del Prado - El Prado Barranquilla">
+          <div class="pc-tag">Proyecto nuevo</div>
+          <div class="pc-status new">Disponible</div>
+        </div>
+        <div class="pc-body">
+          <div class="pc-location">📍 El Prado, Barranquilla</div>
+          <div class="pc-name">Torres del Prado — Apartamentos con vista al mar</div>
+          <div class="pc-specs">
+            <div class="pc-spec">🛏 3 hab</div>
+            <div class="pc-spec">🚿 2 baños</div>
+            <div class="pc-spec">🅿️ 2 garajes</div>
+            <div class="pc-spec">📐 110 m²</div>
+          </div>
+          <div class="pc-price-row">
+            <div class="pc-price">$680.000.000 <small>Precio de lanzamiento</small></div>
+            <a href="https://wa.me/573001234567?text=Quiero+info+sobre+Torres+del+Prado+en+El+Prado" target="_blank" class="pc-cta">Ver más →</a>
+          </div>
+        </div>
+      </div>
+      <div class="pcard rv" data-d="1">
+        <div class="pc-img">
+          <img src="https://images.unsplash.com/photo-1560448204-603b3fc33ddc?auto=format&fit=crop&w=600&q=80" alt="Penthouse Villa Santos">
+          <div class="pc-tag">Penthouse</div>
+          <div class="pc-status limited">Último disponible</div>
+        </div>
+        <div class="pc-body">
+          <div class="pc-location">📍 Villa Santos</div>
+          <div class="pc-name">Penthouse Villa Santos con terraza</div>
+          <div class="pc-specs">
+            <div class="pc-spec">🛏 4 hab</div>
+            <div class="pc-spec">🚿 3 baños</div>
+            <div class="pc-spec">📐 180 m²</div>
+          </div>
+          <div class="pc-price-row">
+            <div class="pc-price">$1.200.000.000 <small>Valor comercial</small></div>
+            <a href="https://wa.me/573001234567" target="_blank" class="pc-cta">Ver →</a>
+          </div>
+        </div>
+      </div>
+      <div class="pcard rv" data-d="2">
+        <div class="pc-img">
+          <img src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?auto=format&fit=crop&w=600&q=80" alt="Arriendo Riomar">
+          <div class="pc-tag">Arriendo</div>
+          <div class="pc-status new">Disponible hoy</div>
+        </div>
+        <div class="pc-body">
+          <div class="pc-location">📍 Riomar</div>
+          <div class="pc-name">Apartamento moderno en Riomar</div>
+          <div class="pc-specs">
+            <div class="pc-spec">🛏 2 hab</div>
+            <div class="pc-spec">🚿 2 baños</div>
+            <div class="pc-spec">📐 75 m²</div>
+          </div>
+          <div class="pc-price-row">
+            <div class="pc-price arriendo">$2.800.000 <small>/ mes</small></div>
+            <a href="https://wa.me/573001234567" target="_blank" class="pc-cta">Ver →</a>
+          </div>
+        </div>
+      </div>
+      <div class="pcard rv" data-d="3">
+        <div class="pc-img">
+          <img src="https://images.unsplash.com/photo-1522708323590-d8be8d4b56b3?auto=format&fit=crop&w=600&q=80" alt="Proyecto La Boquilla">
+          <div class="pc-tag">Sobre planos</div>
+          <div class="pc-status limited">Preventa</div>
+        </div>
+        <div class="pc-body">
+          <div class="pc-location">📍 La Boquilla</div>
+          <div class="pc-name">Proyecto Vista Caribe — La Boquilla</div>
+          <div class="pc-specs">
+            <div class="pc-spec">🛏 2–3 hab</div>
+            <div class="pc-spec">🏊 Piscina</div>
+            <div class="pc-spec">📐 85–120 m²</div>
+          </div>
+          <div class="pc-price-row">
+            <div class="pc-price">Desde $420.000.000 <small>En preventa</small></div>
+            <a href="https://wa.me/573001234567" target="_blank" class="pc-cta">Ver →</a>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<section class="cta-strip" id="cta">
+<!-- ABOUT -->
+<section class="about" id="nosotros">
   <div class="con">
-    <div class="cta-box">
-      <h2>¿Listo para encontrar<br/>tu próxima <em>propiedad</em>?</h2>
-      <a href="tel:+5753456789" class="btn-gold" style="font-size:13px;padding:16px 36px;white-space:nowrap;">Hablar con un asesor →</a>
+    <div class="about-in">
+      <div class="about-img rv">
+        <img src="https://images.unsplash.com/photo-1486325212027-8081e485255e?auto=format&fit=crop&w=800&q=80" alt="Skyline Barranquilla">
+      </div>
+      <div class="about-text rv" data-d="1">
+        <div class="section-label">Sobre Arenas</div>
+        <h2>18 años construyendo<br>hogares en la Costa</h2>
+        <p>Somos la inmobiliaria de referencia en Barranquilla para familias que buscan su primer hogar, inversionistas y empresas que necesitan locales estratégicos.</p>
+        <p>Nuestro equipo de 12 asesores especializados conoce cada barrio, cada proyecto y cada desarrollador de la ciudad. No vendemos inmuebles, conectamos personas con el lugar donde van a vivir su vida.</p>
+        <div class="about-nums">
+          <div class="an"><div class="an-v">2.400+</div><div class="an-l">Familias asesoradas</div></div>
+          <div class="an"><div class="an-v">18</div><div class="an-l">Años en el mercado</div></div>
+          <div class="an"><div class="an-v">143</div><div class="an-l">Propiedades activas</div></div>
+          <div class="an"><div class="an-v">4.8★</div><div class="an-l">Google Reviews</div></div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
+<!-- SERVICES -->
+<section class="services">
+  <div class="con">
+    <div class="rv" style="text-align:center;margin-bottom:16px">
+      <div class="section-label">Servicios</div>
+      <h2>Todo lo que necesitas<br>para tu propiedad</h2>
+    </div>
+    <div class="srv-grid">
+      <div class="sc rv">
+        <div class="sc-icon">🏠</div>
+        <h3>Compra y venta</h3>
+        <p>Asesoría integral en todo el proceso: búsqueda, negociación, trámites notariales y entrega.</p>
+      </div>
+      <div class="sc rv" data-d="1">
+        <div class="sc-icon">🔑</div>
+        <h3>Arrendamiento</h3>
+        <p>Administración de tu propiedad, selección de arrendatarios verificados y gestión de contratos.</p>
+      </div>
+      <div class="sc rv" data-d="2">
+        <div class="sc-icon">📊</div>
+        <h3>Avalúos</h3>
+        <p>Avalúo comercial certificado para trámites bancarios, herencias y fines tributarios.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="stats">
+  <div class="con">
+    <div class="stats-grid">
+      <div class="sg rv"><div class="sg-n" data-count="2400">0</div><div class="sg-l">Familias asesoradas</div></div>
+      <div class="sg rv" data-d="1"><div class="sg-n">18</div><div class="sg-l">Años de experiencia</div></div>
+      <div class="sg rv" data-d="2"><div class="sg-n">143</div><div class="sg-l">Propiedades activas</div></div>
+      <div class="sg rv" data-d="3"><div class="sg-n">4.8★</div><div class="sg-l">Calificación Google</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials" id="testimonios">
+  <div class="con">
+    <div class="rv" style="text-align:center;margin-bottom:48px">
+      <div class="section-label">Testimonios</div>
+      <h2>Familias que confiaron en nosotros</h2>
+    </div>
+    <div class="test-grid">
+      <div class="tc rv">
+        <div class="tc-stars">★★★★★</div>
+        <p class="tc-text">"Gracias a Arenas encontramos nuestro apartamento en El Prado en menos de 3 semanas. El asesor nos guió en todo el proceso, incluso con el banco."</p>
+        <div class="tc-author"><div class="tc-av">F</div><div><div class="tc-name">Felipe y Sara Herrera</div><div class="tc-meta">Compradores · El Prado · Hace 2 meses</div></div></div>
+      </div>
+      <div class="tc rv" data-d="1">
+        <div class="tc-stars">★★★★★</div>
+        <p class="tc-text">"Administran mi apartamento hace 5 años. Siempre con el arriendo a tiempo, seleccionan buenos arrendatarios y resuelven todo sin molestarme."</p>
+        <div class="tc-author"><div class="tc-av">L</div><div><div class="tc-name">Lorena Martínez</div><div class="tc-meta">Arrendadora · Villa Santos · 5 años</div></div></div>
+      </div>
+      <div class="tc rv" data-d="2">
+        <div class="tc-stars">★★★★★</div>
+        <p class="tc-text">"Invertí en el proyecto Vista Caribe durante preventa. Excelente asesoría sobre rentabilidad y valorización. Ya tengo el apartamento y costó mucho menos."</p>
+        <div class="tc-author"><div class="tc-av">R</div><div><div class="tc-name">Ricardo Polo</div><div class="tc-meta">Inversionista · La Boquilla · 2024</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
 <footer>
   <div class="con">
-    <div class="foot-inner">
-      <div class="foot-logo">Arenas Inmobiliaria</div>
-      <div class="foot-copy">Cll. 72 #68-34, El Prado · Barranquilla · Lun–Vie 8am–6pm · Sáb 9am–1pm</div>
-      <div class="foot-powered">Sitio web por <a href="https://rankeo-nu.vercel.app" target="_blank" rel="noopener">Rankeo</a></div>
+    <div class="foot-grid">
+      <div class="fbrand">
+        <div class="fl">ARENAS <span>Inmobiliaria</span></div>
+        <p>Inmobiliaria de referencia en Barranquilla. 18 años construyendo hogares en la Costa Caribe colombiana.</p>
+      </div>
+      <div class="fc">
+        <h4>Propiedades</h4>
+        <ul>
+          <li><a href="#">Comprar</a></li>
+          <li><a href="#">Arrendar</a></li>
+          <li><a href="#">Proyectos</a></li>
+          <li><a href="#">Avalúos</a></li>
+        </ul>
+      </div>
+      <div class="fc">
+        <h4>Sectores</h4>
+        <ul>
+          <li><a href="#">El Prado</a></li>
+          <li><a href="#">Villa Santos</a></li>
+          <li><a href="#">Riomar</a></li>
+          <li><a href="#">La Boquilla</a></li>
+        </ul>
+      </div>
+      <div class="fc">
+        <h4>Contacto</h4>
+        <ul>
+          <li><a href="#">Cra 54 #68-247, Barranquilla</a></li>
+          <li><a href="tel:+5753454567">(5) 345-4567</a></li>
+          <li><a href="https://wa.me/573001234567">WhatsApp directo</a></li>
+          <li><a href="#">Lun–Sáb: 8am – 6pm</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <p class="foot-copy">© <span id="yr"></span> Arenas Inmobiliaria SAS · Barranquilla, Colombia · Todos los derechos reservados</p>
+      <p class="foot-copy">Tratamiento de datos: Ley 1581 de 2012</p>
     </div>
   </div>
 </footer>
 
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"RealEstateAgent","name":"Arenas Inmobiliaria","url":"https://rankeo-nu.vercel.app/demo/inmobiliaria-barranquilla","telephone":"+5753456789","address":{"@type":"PostalAddress","streetAddress":"Cll. 72 #68-34","addressLocality":"Barranquilla","addressRegion":"Atlántico","addressCountry":"CO"},"description":"Inmobiliaria premium en Barranquilla. Apartamentos nuevos y proyectos en venta."}
+<a href="https://wa.me/573001234567?text=Hola%2C+quiero+informaci%C3%B3n+sobre+propiedades+en+Barranquilla" target="_blank" rel="noopener" class="wa-float" aria-label="WhatsApp">
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<script>
+document.getElementById('yr').textContent = new Date().getFullYear();
+function setTab(btn){document.querySelectorAll('.stab').forEach(function(b){b.classList.remove('active');});btn.classList.add('active');}
+function buscar(){window.open('https://wa.me/573001234567?text=Hola%2C+quiero+buscar+propiedades+en+Barranquilla','_blank');}
+document.querySelectorAll('.pf-btn').forEach(function(b){b.addEventListener('click',function(){document.querySelectorAll('.pf-btn').forEach(function(x){x.classList.remove('active');});b.classList.add('active');});});
+var obs=new IntersectionObserver(function(e){e.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');obs.unobserve(x.target);}});},{threshold:.1});
+document.querySelectorAll('.rv').forEach(function(el){obs.observe(el);});
+function animCount(el){
+  var t=parseInt(el.getAttribute('data-count'));if(!t)return;
+  var s=0,d=1600,st=null;
+  function step(ts){if(!st)st=ts;var p=Math.min((ts-st)/d,1),e=1-Math.pow(1-p,3);el.textContent=Math.round(e*t).toLocaleString('es-CO')+'+';if(p<1)requestAnimationFrame(step);}
+  requestAnimationFrame(step);
+}
+var co=new IntersectionObserver(function(e){e.forEach(function(x){if(x.isIntersecting){animCount(x.target);co.unobserve(x.target);}});},{threshold:.5});
+document.querySelectorAll('[data-count]').forEach(function(el){co.observe(el);});
+(function(){
+  var b=document.getElementById('burger'),d=document.getElementById('drawer'),o=document.getElementById('drawer-overlay'),c=document.getElementById('drawer-close');
+  function op(){d.classList.add('open');o.classList.add('open');document.body.style.overflow='hidden';}
+  function cl(){d.classList.remove('open');o.classList.remove('open');document.body.style.overflow='';}
+  if(b)b.addEventListener('click',op);if(c)c.addEventListener('click',cl);if(o)o.addEventListener('click',cl);
+  if(d)d.querySelectorAll('a').forEach(function(a){a.addEventListener('click',cl);});
+})();
 </script>
-
-  // Mobile drawer
-  (function(){
-    var burger=document.getElementById('burger');
-    var drawer=document.getElementById('drawer');
-    var overlay=document.getElementById('drawer-overlay');
-    var closeBtn=document.getElementById('drawer-close');
-    function openD(){drawer.classList.add('open');overlay.classList.add('open');document.body.style.overflow='hidden';}
-    function closeD(){drawer.classList.remove('open');overlay.classList.remove('open');document.body.style.overflow='';}
-    if(burger) burger.addEventListener('click',openD);
-    if(closeBtn) closeBtn.addEventListener('click',closeD);
-    if(overlay) overlay.addEventListener('click',closeD);
-    if(drawer) drawer.querySelectorAll('a').forEach(function(a){a.addEventListener('click',closeD);});
-  })();
-
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"RealEstateAgent","name":"Arenas Inmobiliaria","url":"https://rankeo-nu.vercel.app/demo/inmobiliaria-barranquilla","telephone":"+5753454567","address":{"@type":"PostalAddress","streetAddress":"Cra 54 #68-247","addressLocality":"Barranquilla","addressRegion":"Atlántico","addressCountry":"CO"},"description":"Inmobiliaria en Barranquilla con 18 años de experiencia. Apartamentos nuevos, casas y proyectos en los mejores sectores de la Costa.","aggregateRating":{"@type":"AggregateRating","ratingValue":"4.8","reviewCount":"198"}}
+</script>
 </body>
 </html>
