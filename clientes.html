@@ -167,6 +167,10 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(-
 /* RESPONSIVE */
 @media(max-width:900px){.panel-row{grid-template-columns:1fr}.tips-panel{max-height:none}}
 @media(max-width:768px){.sb{display:none}.dm{padding:16px}.ig{grid-template-columns:1fr}.kpi-row{grid-template-columns:1fr 1fr}.score-cwv{display:grid;grid-template-columns:1fr 1fr}}
+.back-btn{background:none;border:none;cursor:pointer;font-family:inherit;font-size:13px;font-weight:600;color:var(--subtle);padding:0;margin-bottom:16px;display:inline-flex;align-items:center;gap:4px;transition:color .15s}
+.back-btn:hover{color:var(--orange)}
+@keyframes pulse-tip{0%,100%{background:var(--bg)}50%{background:rgba(240,78,35,.12)}}
+.tip-row.pulse{animation:pulse-tip .5s ease 2}
 </style>
 </head>
 <body>
@@ -271,6 +275,7 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(-
 
       <!-- VISTA WEB -->
       <div class="sec" id="sec-web">
+        <button class="back-btn" onclick="nav('res',document.getElementById('btn-res'))">← Resumen</button>
         <p class="pt">Sitio web</p>
         <p class="ps" id="webSubtitle">Vista completa de tu pagina en tiempo real</p>
         <div class="vista-frame-wrap">
@@ -289,6 +294,7 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(-
 
       <!-- PERFORMANCE -->
       <div class="sec" id="sec-perf">
+        <button class="back-btn" onclick="nav('res',document.getElementById('btn-res'))">← Resumen</button>
         <div class="sh"><h2>Analisis de Performance</h2><p>Google PageSpeed Insights &middot; Datos en tiempo real &middot; Movil</p></div>
         <div class="score-row-lg">
           <div class="sc-wrap-lg">
@@ -314,12 +320,14 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(-
 
       <!-- MEJORAS SEO -->
       <div class="sec" id="sec-tips">
+        <button class="back-btn" onclick="nav('res',document.getElementById('btn-res'))">← Resumen</button>
         <div class="sh"><h2>Mejoras SEO recomendadas</h2><p>Lista priorizada de acciones para mejorar el posicionamiento</p></div>
         <div class="tips-full" id="tipsList"></div>
       </div>
 
       <!-- MI PROYECTO -->
       <div class="sec" id="sec-info">
+        <button class="back-btn" onclick="nav('res',document.getElementById('btn-res'))">← Resumen</button>
         <div class="sh"><h2>Mi proyecto con Rankeo</h2><p>Informacion del contrato y canales de soporte</p></div>
         <div class="ig" id="infoGrid"></div>
       </div>
@@ -394,8 +402,7 @@ function activateDash(u){
   }
   document.getElementById('loginScreen').style.display='none';
   document.getElementById('dashScreen').style.display='flex';
-  // Auto-run analysis after 1.8s
-  setTimeout(()=>{ if(!analysisRan) runAnalysis(); }, 1800);
+  // Analysis runs only on user click
 }
 
 function doLogout(){
@@ -505,7 +512,7 @@ function renderTipsPanelAndBadges(){
     badge.dataset.idx=i;
     badge.addEventListener('mouseenter',()=>highlightTip(i,true));
     badge.addEventListener('mouseleave',()=>highlightTip(i,false));
-    badge.addEventListener('click',()=>{ nav('tips',document.getElementById('btn-tips')); });
+    badge.addEventListener('click',()=>{ pulseTip(i); });
     layer.appendChild(badge);
   }
 
@@ -517,7 +524,7 @@ function renderTipsPanelAndBadges(){
   list.innerHTML=sorted.slice(0,max).map((t,i)=>`
     <div class="tip-row" id="tipRow${i}" data-idx="${i}"
       onmouseenter="highlightBadge(${i},true)" onmouseleave="highlightBadge(${i},false)"
-      onclick="nav('tips',document.getElementById('btn-tips'))">
+      onclick="pulseTip(${i})">
       <div class="tip-num">${i+1}</div>
       <div class="tip-body">
         <div class="tip-ttl"><span class="tp ${t.p}" style="font-size:9px;padding:1px 6px;margin-right:4px">${t.p.toUpperCase()}</span>${t.t}</div>
@@ -643,6 +650,16 @@ async function runAnalysis(){
     const kScan=document.getElementById('kScan');if(kScan)kScan.textContent='Error';
   }
   ids.forEach(id=>{const b=document.getElementById(id);if(b){b.disabled=false;const ic=document.getElementById(id.replace('ab','ai'));if(ic)ic.classList.remove('spinning');}});
+}
+
+function pulseTip(idx){
+  const row=document.getElementById('tipRow'+idx);
+  if(!row) return;
+  row.classList.remove('pulse');
+  void row.offsetWidth; // reflow to restart animation
+  row.classList.add('pulse');
+  row.scrollIntoView({behavior:'smooth',block:'nearest'});
+  setTimeout(()=>row.classList.remove('pulse'), 1100);
 }
 
 function nav(id,btn){
