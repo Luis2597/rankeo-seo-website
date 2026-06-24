@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portal de Clientes — Rankeo</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--ink:#0A0908;--orange:#F04E23;--bg:#FAF8F5;--surface:#F2EFE9;--border:#E4E0D9;--subtle:#787370;--white:#fff;--green:#16A34A;--yellow:#CA8A04;--red:#DC2626;}
+body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(--ink);min-height:100vh}
+#loginScreen{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px;background:var(--ink)}
+.login-card{background:var(--white);border-radius:20px;padding:48px 40px;width:100%;max-width:420px;box-shadow:0 24px 80px rgba(0,0,0,.35)}
+.logo{font-family:'Syne',sans-serif;font-weight:800;font-size:28px;letter-spacing:-.03em;color:var(--ink);margin-bottom:6px}
+.logo span{color:var(--orange)}
+.login-sub{color:var(--subtle);font-size:14px;margin-bottom:28px}
+.login-sec{display:flex;align-items:center;gap:6px;font-size:12px;color:var(--subtle);margin-bottom:28px}
+.login-sec-dot{width:6px;height:6px;background:var(--green);border-radius:50%}
+.lbl{display:block;font-size:13px;font-weight:600;color:var(--ink);margin-bottom:6px}
+.inp{width:100%;padding:12px 16px;border:1.5px solid var(--border);border-radius:10px;font-family:inherit;font-size:15px;color:var(--ink);background:var(--bg);transition:border-color .2s;outline:none;margin-bottom:16px}
+.inp:focus{border-color:var(--orange)}
+.login-btn{width:100%;padding:14px;background:var(--orange);color:#fff;border:none;border-radius:10px;font-family:inherit;font-size:15px;font-weight:700;cursor:pointer;transition:opacity .2s}
+.login-btn:hover{opacity:.88}
+.login-err{color:var(--red);font-size:13px;margin-top:10px;display:none;text-align:center}
+#dashScreen{display:none;min-height:100vh;flex-direction:column}
+.dh{background:var(--ink);padding:0 32px;height:64px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100}
+.dh-logo{font-family:'Syne',sans-serif;font-weight:800;font-size:20px;color:#fff;letter-spacing:-.02em}
+.dh-logo span{color:var(--orange)}
+.dh-r{display:flex;align-items:center;gap:16px}
+.dh-name{color:rgba(255,255,255,.6);font-size:13px;font-weight:500}
+.dh-out{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.15);color:#fff;padding:6px 14px;border-radius:8px;font-size:13px;font-weight:600;cursor:pointer;font-family:inherit}
+.dh-out:hover{background:rgba(255,255,255,.2)}
+.db{display:flex;flex:1}
+.sb{width:256px;background:var(--white);border-right:1px solid var(--border);padding:20px 0;flex-shrink:0;position:sticky;top:64px;height:calc(100vh - 64px);overflow-y:auto}
+.sb-lbl{font-size:10px;font-weight:700;color:var(--subtle);text-transform:uppercase;letter-spacing:.08em;padding:0 20px;margin:16px 0 6px;display:block}
+.sb-lbl:first-child{margin-top:4px}
+.sb-btn{display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:10px;cursor:pointer;font-size:14px;font-weight:500;color:var(--subtle);width:calc(100% - 24px);margin:0 12px 2px;border:none;background:none;font-family:inherit;transition:all .15s}
+.sb-btn:hover{background:var(--surface);color:var(--ink)}
+.sb-btn.on{background:var(--orange);color:#fff}
+.sb-btn svg{width:16px;height:16px;flex-shrink:0}
+.sb-div{height:1px;background:var(--border);margin:12px 20px}
+.cl-wrap{padding:0 12px}
+.cl-item{display:flex;align-items:center;gap:10px;padding:8px 10px;border-radius:10px;cursor:pointer;border:none;background:none;width:100%;text-align:left;font-family:inherit;margin-bottom:4px;transition:background .15s}
+.cl-item:hover{background:var(--surface)}
+.cl-item.on{background:rgba(240,78,35,.08);outline:1.5px solid rgba(240,78,35,.4)}
+.cl-av{width:34px;height:34px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-family:'Syne',sans-serif;font-weight:800;font-size:11px;color:#fff;flex-shrink:0}
+.cl-n{font-size:12px;font-weight:600;color:var(--ink);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:140px}
+.cl-p{font-size:11px;color:var(--subtle)}
+.dm{flex:1;padding:32px;overflow-y:auto;min-width:0}
+.sec{display:none}
+.sec.on{display:block}
+.pt{font-family:'Syne',sans-serif;font-weight:800;font-size:26px;letter-spacing:-.03em;margin-bottom:4px}
+.ps{font-size:13px;color:var(--subtle);margin-bottom:28px}
+.sh{margin-bottom:22px}
+.sh h2{font-family:'Syne',sans-serif;font-weight:800;font-size:22px;letter-spacing:-.02em}
+.sh p{color:var(--subtle);font-size:13px;margin-top:3px}
+.kpi-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:14px;margin-bottom:28px}
+.kpi{background:var(--white);border:1px solid var(--border);border-radius:14px;padding:20px}
+.kpi-l{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--subtle);margin-bottom:8px}
+.kpi-v{font-family:'Syne',sans-serif;font-weight:800;font-size:28px;letter-spacing:-.03em;line-height:1}
+.kpi-n{font-size:12px;color:var(--subtle);margin-top:5px}
+.kpi.or{background:var(--orange);border-color:var(--orange)}
+.kpi.or .kpi-l,.kpi.or .kpi-n{color:rgba(255,255,255,.75)}
+.kpi.or .kpi-v{color:#fff}
+.score-row{display:flex;align-items:center;gap:28px;flex-wrap:wrap;margin-bottom:24px;background:var(--white);border:1px solid var(--border);border-radius:16px;padding:28px}
+.sc-wrap{position:relative;width:130px;height:130px;flex-shrink:0}
+.sc-wrap svg{transform:rotate(-90deg)}
+.sc-bg{fill:none;stroke:var(--surface);stroke-width:10}
+.sc-fg{fill:none;stroke-width:10;stroke-linecap:round;transition:stroke-dashoffset .9s cubic-bezier(.4,0,.2,1),stroke .4s}
+.sc-num{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;font-family:'Syne',sans-serif;font-weight:800;font-size:32px;letter-spacing:-.03em;line-height:1}
+.sc-num small{font-size:11px;color:var(--subtle);font-family:'Plus Jakarta Sans',sans-serif;margin-top:2px;font-weight:600}
+.st h3{font-family:'Syne',sans-serif;font-weight:800;font-size:19px;margin-bottom:6px}
+.st p{font-size:13px;color:var(--subtle);line-height:1.55;max-width:340px;margin-bottom:14px}
+.ab{display:inline-flex;align-items:center;gap:7px;background:var(--orange);color:#fff;border:none;border-radius:10px;padding:10px 18px;font-family:inherit;font-size:13px;font-weight:700;cursor:pointer;transition:opacity .2s}
+.ab:hover{opacity:.88}
+.ab:disabled{opacity:.5;cursor:wait}
+@keyframes spin{to{transform:rotate(360deg)}}
+.spinning{animation:spin .7s linear infinite}
+.cwv-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(155px,1fr));gap:12px;margin-bottom:28px}
+.cwv{background:var(--white);border:1px solid var(--border);border-radius:12px;padding:16px 18px}
+.cwv-m{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--subtle);margin-bottom:4px}
+.cwv-v{font-family:'Syne',sans-serif;font-weight:800;font-size:21px;letter-spacing:-.02em}
+.cwv-s{font-size:11px;font-weight:600;margin-top:5px;display:flex;align-items:center;gap:5px}
+.cwv-s::before{content:'';width:6px;height:6px;border-radius:50%;background:currentColor;display:inline-block;flex-shrink:0}
+.good{color:#16A34A}.warn{color:#CA8A04}.bad{color:#DC2626}
+.tips{display:flex;flex-direction:column;gap:10px}
+.tip{background:var(--white);border:1px solid var(--border);border-radius:14px;padding:18px 20px;display:flex;gap:14px;align-items:flex-start}
+.tp{flex-shrink:0;padding:3px 10px;border-radius:6px;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.04em}
+.tp.alta{background:#FEE2E2;color:#DC2626}
+.tp.media{background:#FEF3C7;color:#CA8A04}
+.tp.baja{background:#DCFCE7;color:#16A34A}
+.tip h4{font-size:14px;font-weight:700;margin-bottom:3px}
+.tip p{font-size:13px;color:var(--subtle);line-height:1.5}
+.tag{display:inline-block;background:var(--surface);border:1px solid var(--border);border-radius:4px;padding:2px 8px;font-size:11px;font-weight:600;color:var(--subtle);margin-top:6px}
+.ig{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.ir{background:var(--white);border:1px solid var(--border);border-radius:12px;padding:16px 18px}
+.ir-l{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--subtle);margin-bottom:4px}
+.ir-v{font-size:14px;font-weight:600;color:var(--ink)}
+.ir-v a{color:var(--orange);text-decoration:none}
+.ir-v a:hover{text-decoration:underline}
+.online{display:inline-flex;align-items:center;gap:6px}
+.online::before{content:'';width:8px;height:8px;border-radius:50%;background:#16A34A;box-shadow:0 0 0 2px rgba(22,163,74,.2);display:inline-block}
+.sk{background:linear-gradient(90deg,var(--surface) 25%,var(--border) 50%,var(--surface) 75%);background-size:200% 100%;animation:sk 1.2s infinite;border-radius:6px;height:18px;display:inline-block}
+@keyframes sk{to{background-position:-200% 0}}
+@media(max-width:768px){.sb{display:none}.dm{padding:20px}.ig{grid-template-columns:1fr}.kpi-row{grid-template-columns:1fr 1fr}.score-row{flex-direction:column;align-items:flex-start}}
+</style>
+</head>
+<body>
+
+<div id="loginScreen">
+  <div class="login-card">
+    <div class="logo">Rankeo<span>.</span></div>
+    <p class="login-sub">Portal de Clientes &middot; Acceso privado</p>
+    <div class="login-sec"><span class="login-sec-dot"></span>Acceso seguro &middot; Solo clientes activos</div>
+    <label class="lbl">Correo electr&oacute;nico</label>
+    <input class="inp" id="lEmail" type="email" placeholder="tu@correo.com" autocomplete="email">
+    <label class="lbl">Contrase&ntilde;a</label>
+    <input class="inp" id="lPass" type="password" placeholder="&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;" autocomplete="current-password">
+    <button class="login-btn" onclick="doLogin()">Ingresar al portal</button>
+    <p class="login-err" id="lErr">Correo o contrase&ntilde;a incorrectos.</p>
+  </div>
+</div>
+
+<div id="dashScreen">
+  <header class="dh">
+    <div class="dh-logo">Rankeo<span>.</span></div>
+    <div class="dh-r">
+      <span class="dh-name" id="hName"></span>
+      <button class="dh-out" onclick="doLogout()">Cerrar sesi&oacute;n</button>
+    </div>
+  </header>
+  <div class="db">
+    <aside class="sb">
+      <span class="sb-lbl">Men&uacute;</span>
+      <button class="sb-btn on" onclick="nav('res',this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>Resumen</button>
+      <button class="sb-btn" onclick="nav('perf',this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>Performance</button>
+      <button class="sb-btn" onclick="nav('tips',this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>Mejoras SEO</button>
+      <button class="sb-btn" onclick="nav('info',this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>Mi sitio</button>
+      <div class="sb-div"></div>
+      <div id="adminPanel" style="display:none">
+        <span class="sb-lbl">Clientes</span>
+        <div class="cl-wrap" id="clList"></div>
+      </div>
+    </aside>
+    <main class="dm">
+
+      <div class="sec on" id="sec-res">
+        <p class="pt" id="rTitle">Bienvenido</p>
+        <p class="ps" id="rDate"></p>
+        <div class="kpi-row">
+          <div class="kpi or"><div class="kpi-l">Plan activo</div><div class="kpi-v" id="kPlan">--</div><div class="kpi-n" id="kSince">--</div></div>
+          <div class="kpi"><div class="kpi-l">Estado del sitio</div><div class="kpi-v" style="font-size:17px" id="kSt"><span class="sk" style="width:80px">&nbsp;</span></div><div class="kpi-n" id="kDom">--</div></div>
+          <div class="kpi"><div class="kpi-l">Ultimo analisis</div><div class="kpi-v" style="font-size:17px" id="kScan">Pendiente</div><div class="kpi-n">PageSpeed Insights</div></div>
+          <div class="kpi"><div class="kpi-l">Mejoras SEO</div><div class="kpi-v" id="kTips">--</div><div class="kpi-n">recomendaciones</div></div>
+        </div>
+        <div class="sh"><h2>Performance en tiempo real</h2><p>Google PageSpeed Insights &middot; Dispositivo m&oacute;vil</p></div>
+        <div class="score-row">
+          <div class="sc-wrap">
+            <svg width="130" height="130" viewBox="0 0 130 130"><circle class="sc-bg" cx="65" cy="65" r="53"/><circle class="sc-fg" id="fg1" cx="65" cy="65" r="53" stroke-dasharray="333" stroke-dashoffset="333"/></svg>
+            <div class="sc-num"><span id="sn1">--</span><small>/ 100</small></div>
+          </div>
+          <div class="st">
+            <h3 id="sl1">Sin analizar</h3>
+            <p id="sd1">Presiona el bot&oacute;n para obtener el puntaje real de tu sitio web seg&uacute;n Google.</p>
+            <button class="ab" id="ab1" onclick="runAnalysis()"><svg id="ai1" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 1 0 .49-3.5"/></svg>Analizar ahora</button>
+          </div>
+        </div>
+        <div class="cwv-grid" id="cg1">
+          <div class="cwv"><div class="cwv-m">LCP</div><div class="cwv-v"><span class="sk" style="width:64px">&nbsp;</span></div></div>
+          <div class="cwv"><div class="cwv-m">CLS</div><div class="cwv-v"><span class="sk" style="width:48px">&nbsp;</span></div></div>
+          <div class="cwv"><div class="cwv-m">FCP</div><div class="cwv-v"><span class="sk" style="width:64px">&nbsp;</span></div></div>
+          <div class="cwv"><div class="cwv-m">TBT</div><div class="cwv-v"><span class="sk" style="width:56px">&nbsp;</span></div></div>
+        </div>
+      </div>
+
+      <div class="sec" id="sec-perf">
+        <div class="sh"><h2>An&aacute;lisis de Performance</h2><p>Google PageSpeed Insights &middot; Datos en tiempo real &middot; Dispositivo m&oacute;vil</p></div>
+        <div class="score-row">
+          <div class="sc-wrap">
+            <svg width="130" height="130" viewBox="0 0 130 130"><circle class="sc-bg" cx="65" cy="65" r="53"/><circle class="sc-fg" id="fg2" cx="65" cy="65" r="53" stroke-dasharray="333" stroke-dashoffset="333"/></svg>
+            <div class="sc-num"><span id="sn2">--</span><small>/ 100</small></div>
+          </div>
+          <div class="st">
+            <h3 id="sl2">Puntaje de rendimiento</h3>
+            <p id="sd2">La misma herramienta que usa Google para medir experiencia de usuario en tu sitio.</p>
+            <button class="ab" id="ab2" onclick="runAnalysis()"><svg id="ai2" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 1 0 .49-3.5"/></svg>Analizar ahora</button>
+          </div>
+        </div>
+        <div class="cwv-grid" id="cg2"></div>
+        <div class="sh" style="margin-top:8px"><h2>Que mide cada metrica</h2></div>
+        <div class="tips">
+          <div class="tip"><span class="tp alta">LCP</span><div><h4>Largest Contentful Paint</h4><p>Tiempo que tarda el elemento principal de la pagina en aparecer. Meta: menos de 2.5 s. Afecta directamente el ranking en Google.</p></div></div>
+          <div class="tip"><span class="tp media">CLS</span><div><h4>Cumulative Layout Shift</h4><p>Mide cuanto se mueve el contenido mientras carga. Un CLS alto hace clic en el lugar equivocado. Meta: menos de 0.1.</p></div></div>
+          <div class="tip"><span class="tp baja">FCP</span><div><h4>First Contentful Paint</h4><p>Tiempo hasta que aparece el primer elemento visible. Meta: menos de 1.8 s. Determina la percepcion inicial de velocidad.</p></div></div>
+          <div class="tip"><span class="tp media">TBT</span><div><h4>Total Blocking Time</h4><p>Tiempo que el navegador estuvo ocupado sin responder al usuario. Meta: menos de 200 ms.</p></div></div>
+        </div>
+      </div>
+
+      <div class="sec" id="sec-tips">
+        <div class="sh"><h2>Mejoras SEO recomendadas</h2><p>Lista priorizada de acciones para mejorar el posicionamiento de tu sitio</p></div>
+        <div class="tips" id="tipsList"></div>
+      </div>
+
+      <div class="sec" id="sec-info">
+        <div class="sh"><h2>Mi sitio web</h2><p>Informacion del proyecto con Rankeo</p></div>
+        <div class="ig" id="infoGrid"></div>
+      </div>
+
+    </main>
+  </div>
+</div>
+
+<script>
+const USERS={
+  "admin@rankeo.agency":{password:"Rankeo2026!",role:"admin",name:"Luis Diaz Admin"},
+  "colegio@rankeo.agency":{password:"SMT2026",role:"client",clientId:"colegio_san_martin",name:"Colegio San Martin de Tours"}
+};
+const CLIENTS={
+  colegio_san_martin:{
+    name:"Colegio San Martin de Tours",initials:"CSM",color:"#1D4ED8",
+    url:"https://rankeo-nu.vercel.app/demo/colegio-san-martin-meta",
+    plan:"Web + SEO",price:"$349/mes",since:"Junio 2026",
+    industry:"Educacion Bachillerato adultos",location:"San Martin de los Llanos, Meta",
+    whatsapp:"+525532894890",
+    tips:[
+      {p:"alta",cat:"Local SEO",t:"Crear perfil en Google Business",d:"Registrar el colegio en Google Maps para aparecer en busquedas de bachillerato adultos San Martin Meta. Sin esto Google no los puede posicionar en el mapa."},
+      {p:"alta",cat:"Contenido",t:"Publicar articulo con keyword principal",d:"Crear un blog post optimizado para bachillerato para adultos Meta Colombia. Keyword de alta intencion y baja competencia en la region."},
+      {p:"alta",cat:"Tecnico SEO",t:"Conectar Google Search Console",d:"Verificar el dominio para que Google indexe correctamente y podamos ver los rankings reales desde el panel."},
+      {p:"media",cat:"Performance",t:"Migrar imagenes a CDN",d:"Las fotos embebidas pesan 480KB. Migrarlas a Cloudinary reduciria el tiempo de carga en 40% y mejoraria el puntaje de PageSpeed."},
+      {p:"media",cat:"Conversion",t:"Instalar pixel de Meta Ads",d:"Habilita remarketing para quienes visitaron pero no se matricularon. Ideal para campanas de inicio de semestre en Facebook e Instagram."},
+      {p:"media",cat:"SEO GEO",t:"Agregar schema de institucion educativa",d:"Implementar EducationalOrganization de Schema.org para que Google y las IAs como ChatGPT reconozcan y mencionen el colegio."},
+      {p:"baja",cat:"Branding",t:"Crear og:image personalizada",d:"Imagen 1200x630px con el escudo para que el link se vea profesional cuando se comparte en WhatsApp y redes sociales."},
+      {p:"baja",cat:"Contenido",t:"Agregar testimonios en video",d:"2-3 egresados contando su experiencia. Aumenta tiempo en pagina y genera mas confianza que texto."}
+    ]
+  }
+};
+let cu=null,cc=null;
+function doLogin(){
+  const e=document.getElementById('lEmail').value.trim().toLowerCase();
+  const p=document.getElementById('lPass').value;
+  const err=document.getElementById('lErr');
+  err.style.display='none';
+  const u=USERS[e];
+  if(!u||u.password!==p){err.style.display='block';document.getElementById('lPass').value='';return;}
+  cu={...u,email:e};
+  sessionStorage.setItem('rkU',JSON.stringify(cu));
+  if(u.role==='admin'){loadClient(Object.keys(CLIENTS)[0]);document.getElementById('adminPanel').style.display='block';renderCL();}
+  else loadClient(u.clientId);
+  document.getElementById('loginScreen').style.display='none';
+  document.getElementById('dashScreen').style.display='flex';
+}
+function doLogout(){
+  sessionStorage.removeItem('rkU');cu=null;cc=null;
+  document.getElementById('dashScreen').style.display='none';
+  document.getElementById('loginScreen').style.display='flex';
+  document.getElementById('lEmail').value='';document.getElementById('lPass').value='';
+}
+window.addEventListener('DOMContentLoaded',()=>{
+  const s=sessionStorage.getItem('rkU');
+  if(s){cu=JSON.parse(s);const u=USERS[cu.email];if(u){if(u.role==='admin'){loadClient(Object.keys(CLIENTS)[0]);document.getElementById('adminPanel').style.display='block';renderCL();}else loadClient(u.clientId);document.getElementById('loginScreen').style.display='none';document.getElementById('dashScreen').style.display='flex';}}
+  document.getElementById('lPass').addEventListener('keydown',e=>{if(e.key==='Enter')doLogin();});
+  document.getElementById('lEmail').addEventListener('keydown',e=>{if(e.key==='Enter')document.getElementById('lPass').focus();});
+  document.getElementById('rDate').textContent='Actualizado: '+new Date().toLocaleDateString('es-CO',{weekday:'long',year:'numeric',month:'long',day:'numeric'});
+});
+function loadClient(id){
+  cc=CLIENTS[id];if(!cc)return;
+  const c=cc;
+  document.getElementById('hName').textContent=c.name;
+  document.getElementById('rTitle').textContent='Hola, '+c.name+'!';
+  document.getElementById('kPlan').textContent=c.plan;
+  document.getElementById('kSince').textContent='Desde '+c.since+' - '+c.price;
+  document.getElementById('kTips').textContent=c.tips.length;
+  document.getElementById('kDom').textContent=c.url.replace('https://','').split('/')[0];
+  renderTips();renderInfo();checkStatus();
+  document.querySelectorAll('.cl-item').forEach(el=>el.classList.toggle('on',el.dataset.id===id));
+}
+function checkStatus(){
+  document.getElementById('kSt').innerHTML='<span class="sk" style="width:80px">&nbsp;</span>';
+  fetch(cc.url,{method:'HEAD',mode:'no-cors'}).then(()=>{document.getElementById('kSt').innerHTML='<span class="online">En linea</span>';}).catch(()=>{document.getElementById('kSt').innerHTML='<span style="color:#DC2626">Sin respuesta</span>';});
+}
+async function runAnalysis(){
+  ['ab1','ab2'].forEach(id=>{const b=document.getElementById(id);if(b){b.disabled=true;document.getElementById(id.replace('ab','ai')).classList.add('spinning');}});
+  const url=encodeURIComponent(cc.url);
+  try{
+    const res=await fetch('https://www.googleapis.com/pagespeedonline/v5/runPagespeed?url='+url+'&strategy=mobile');
+    const d=await res.json();
+    const score=Math.round((d.lighthouseResult?.categories?.performance?.score||0)*100);
+    const a=d.lighthouseResult?.audits||{};
+    const mt=[
+      {label:'LCP - Carga principal',val:a['largest-contentful-paint']?.displayValue||'--',s:a['largest-contentful-paint']?.score},
+      {label:'CLS - Estabilidad visual',val:a['cumulative-layout-shift']?.displayValue||'--',s:a['cumulative-layout-shift']?.score},
+      {label:'FCP - Primera carga',val:a['first-contentful-paint']?.displayValue||'--',s:a['first-contentful-paint']?.score},
+      {label:'TBT - Tiempo bloqueado',val:a['total-blocking-time']?.displayValue||'--',s:a['total-blocking-time']?.score},
+    ];
+    const sc=s=>s==null?'':s>=.9?'good':s>=.5?'warn':'bad';
+    const sl=s=>s==null?'':s>=.9?'Bueno':s>=.5?'Mejorable':'Critico';
+    const col=score>=90?'#16A34A':score>=50?'#CA8A04':'#DC2626';
+    const off=333-(score/100)*333;
+    const lbl=score>=90?'Excelente rendimiento':score>=50?'Rendimiento mejorable':'Rendimiento critico';
+    const desc=score>=90?'Tu sitio carga rapido. Google lo valora positivamente.':score>=50?'Hay oportunidades de mejora. Revisa las metricas Core Web Vitals.':'Rendimiento bajo que puede afectar el posicionamiento en Google.';
+    const cwvH=mt.map(m=>'<div class="cwv"><div class="cwv-m">'+m.label+'</div><div class="cwv-v '+sc(m.s)+'">'+m.val+'</div><div class="cwv-s '+sc(m.s)+'">'+sl(m.s)+'</div></div>').join('');
+    ['fg1','fg2'].forEach(id=>{const el=document.getElementById(id);if(el){el.style.stroke=col;el.style.strokeDashoffset=off;}});
+    ['sn1','sn2'].forEach(id=>{const el=document.getElementById(id);if(el){el.textContent=score;el.style.color=col;}});
+    ['sl1','sl2'].forEach(id=>{const el=document.getElementById(id);if(el)el.textContent=lbl;});
+    ['sd1','sd2'].forEach(id=>{const el=document.getElementById(id);if(el)el.textContent=desc;});
+    document.getElementById('cg1').innerHTML=cwvH;
+    document.getElementById('cg2').innerHTML=cwvH;
+    const t=new Date().toLocaleTimeString('es-CO',{hour:'2-digit',minute:'2-digit'});
+    document.getElementById('kScan').textContent='Hoy '+t;
+  }catch(e){['sl1','sl2'].forEach(id=>{const el=document.getElementById(id);if(el)el.textContent='Error al conectar con Google';});}
+  ['ab1','ab2'].forEach(id=>{const b=document.getElementById(id);if(b){b.disabled=false;document.getElementById(id.replace('ab','ai')).classList.remove('spinning');}});
+}
+function renderTips(){
+  const ord={alta:0,media:1,baja:2};
+  const s=[...cc.tips].sort((a,b)=>ord[a.p]-ord[b.p]);
+  document.getElementById('tipsList').innerHTML=s.map(t=>'<div class="tip"><span class="tp '+t.p+'">'+t.p+'</span><div><h4>'+t.t+'</h4><p>'+t.d+'</p><span class="tag">'+t.cat+'</span></div></div>').join('');
+}
+function renderInfo(){
+  const c=cc;
+  document.getElementById('infoGrid').innerHTML='<div class="ir"><div class="ir-l">Cliente</div><div class="ir-v">'+c.name+'</div></div><div class="ir"><div class="ir-l">Industria</div><div class="ir-v">'+c.industry+'</div></div><div class="ir"><div class="ir-l">Ubicacion</div><div class="ir-v">'+c.location+'</div></div><div class="ir"><div class="ir-l">Plan</div><div class="ir-v">'+c.plan+' - '+c.price+'</div></div><div class="ir"><div class="ir-l">Cliente desde</div><div class="ir-v">'+c.since+'</div></div><div class="ir"><div class="ir-l">Soporte Rankeo</div><div class="ir-v"><a href="https://wa.me/'+c.whatsapp.replace(/\D/g,'')+'?text=Hola+tengo+una+consulta" target="_blank">WhatsApp Rankeo</a></div></div><div class="ir" style="grid-column:1/-1"><div class="ir-l">URL del sitio</div><div class="ir-v"><a href="'+c.url+'" target="_blank">'+c.url+'</a></div></div>';
+}
+function renderCL(){
+  document.getElementById('clList').innerHTML=Object.entries(CLIENTS).map(([id,c])=>'<button class="cl-item" data-id="'+id+'" onclick="loadClient(\''+id+'\')"><div class="cl-av" style="background:'+c.color+'">'+c.initials+'</div><div><div class="cl-n">'+c.name+'</div><div class="cl-p">'+c.plan+' - '+c.price+'</div></div></button>').join('');
+}
+function nav(id,btn){
+  document.querySelectorAll('.sec').forEach(s=>s.classList.remove('on'));
+  document.querySelectorAll('.sb-btn').forEach(b=>b.classList.remove('on'));
+  document.getElementById('sec-'+id).classList.add('on');
+  if(btn)btn.classList.add('on');
+}
+</script>
+</body>
+</html>
