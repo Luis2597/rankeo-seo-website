@@ -677,9 +677,12 @@
       .mini-card-2 { display: none; }
       .mini-card   { right: 8px; bottom: 8px; }
     }
+    .nav-portal-mob { display: none; background: var(--c-orange); color: #fff; padding: 7px 14px; border-radius: 8px; font-size: 12px; font-weight: 700; text-decoration: none; white-space: nowrap; transition: opacity .15s; }
+    .nav-portal-mob:hover { opacity: .85; color: #fff; }
     @media (max-width: 768px) {
       .nav-links, .nav-cta { display: none; }
       .burger { display: flex; }
+      .nav-portal-mob { display: inline-flex; align-items: center; }
       .cats { grid-template-columns: 1fr; }
       .rcta { flex-direction: column; }
       .plans { grid-template-columns: 1fr; }
@@ -748,6 +751,7 @@
         Analiza tu web gratis
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg>
       </a>
+      <a href="/clientes.html" class="nav-portal-mob" aria-label="Panel de clientes">Panel →</a>
       <button class="burger" id="burger" aria-label="Abrir menú" aria-expanded="false" aria-controls="drawer">
         <svg id="bico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
           <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
@@ -761,6 +765,7 @@
       <a href="#faq"           class="dl" data-c>Preguntas frecuentes</a>
       <a href="#contacto"      class="dl" data-c>Contacto</a>
       <a href="#auditoria"     class="dcta" data-c>Analiza tu web gratis</a>
+      <a href="/clientes.html" class="dcta" style="background:var(--c-orange);margin-top:6px" data-c>Mi panel de clientes →</a>
     </nav>
   </div>
 </header>
