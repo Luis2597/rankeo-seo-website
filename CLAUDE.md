@@ -36,9 +36,15 @@ seo-company/
 └── CLAUDE.md
 ```
 
-**Último commit funcional (jun 2026):** `1d271421d282e7e12aaddec1291e6a94193045cf`  
+**Último commit funcional (jun 2026):** `e5340cddb971` (portal clientes + fixes overflow footer)
 **El sitio está LIVE en:** `https://rankeo-nu.vercel.app`  
 Vercel redeploya automáticamente en cada push a `master`.
+
+### Archivos adicionales en raíz:
+- `clientes.html` — Portal de clientes con login, dashboard, PageSpeed, tips y preview del sitio
+  - Login: `admin@rankeo.agency` / `Rankeo2026!` (admin) · `colegio@rankeo.agency` / `SMT2026` (cliente)
+  - PageSpeed corre SOLO bajo demanda (no auto). URL del cliente debe tener extensión `.html`
+  - Badges sobre el iframe hacen `pulseTip()` — no navegan a otro tab
 
 ### Precios actuales en el sitio (NO cambiar sin autorización):
 - Plan Local: **$199/mes**
@@ -128,6 +134,35 @@ assert '</html>' in txt, f"ARCHIVO TRUNCADO: {filepath}"
 assert '<script' in txt or 'function' in txt, "FALTA JS"
 ```
 Si el archivo está incompleto → restaurar desde git: `git show ff5f305:demo/<archivo>.html`
+
+### ⛔ scroll reveal (.rv) + translateY crea espacio blanco al final de la página
+**El problema**: elementos con clase `.rv` inician con `transform:translateY(Xpx)`. Los que están dentro del footer o la última sección empujan el área de scroll X píxeles más abajo del footer, mostrando el fondo blanco del body.
+**El fix**: agregar `overflow:hidden` al footer y a la última sección antes del footer:
+```css
+footer { overflow: hidden; }
+.contact { overflow: hidden; } /* o la última sección que tenga .rv */
+```
+**Afecta**: cualquier página con animaciones de scroll reveal. Verificar SIEMPRE después de agregar `.rv` a elementos cerca del footer.
+
+### ⛔ Google PageSpeed API — URL debe incluir extensión .html
+La URL del cliente para PageSpeed debe ser la URL real exacta con extensión:
+```js
+// ❌ MAL — Vercel puede no resolverlo para la API externa
+url: "https://rankeo-nu.vercel.app/demo/colegio-san-martin-meta"
+// ✅ BIEN
+url: "https://rankeo-nu.vercel.app/demo/colegio-san-martin-meta.html"
+```
+La API de Google no sigue redirects de Vercel igual que un browser.
+
+### ⛔ Auto-análisis en portal de clientes consume quota de API gratuita
+El portal `clientes.html` NO debe correr `runAnalysis()` automáticamente al hacer login.
+Solo corre cuando el usuario presiona el botón "Analizar". La API de Google PageSpeed Insights tiene límite diario sin API key.
+**Regla**: análisis bajo demanda siempre, nunca en `DOMContentLoaded` ni `setTimeout` post-login.
+
+### ⛔ Badges/botones en panel de clientes no deben navegar a otro tab
+Si un badge o elemento interactivo de la sección Resumen lleva a otro tab, el usuario queda "atrapado" si no ve el sidebar (móvil) o no lo nota.
+**Solución correcta**: los badges sobre el iframe hacen `pulseTip(idx)` — resaltan/animan el tip en el panel lateral sin cambiar de tab.
+**Regla general**: cualquier tab que no sea Resumen debe tener un botón `← Resumen` visible al inicio del contenido para que el usuario siempre pueda volver.
 
 ### ⛔ Burger menu sin JS = no funciona en móvil
 Agregar siempre el drawer al final antes de `</body>`:
@@ -610,78 +645,4 @@ npx lighthouse https://rankeo-nu.vercel.app --only-categories=performance,seo,ac
 
 ---
 
-## 10. Flujo de trabajo en Claude Code
-
-### Para cada nuevo componente:
-1. Crear en `src/components/[Nombre].tsx`
-2. Tipos TypeScript estrictos (no `any`)
-3. Props con valores default donde aplique
-4. Exportar como default
-5. Si tiene animaciones: `'use client'` + `useReducedMotion()` de Framer Motion
-6. Si tiene estado del servidor: RSC (sin 'use client')
-
-### Para cada nueva página:
-1. Crear `src/app/[slug]/page.tsx`
-2. Exportar `metadata` estático
-3. Agregar JSON-LD schema en `<script>` dentro del JSX
-4. Agregar al sitemap.ts
-5. Lint + build local antes de push: `npm run build`
-
-### Para cambios al diseño:
-1. Verificar que el cambio existe en index.html (fuente de verdad visual)
-2. Aplicar usando SOLO los tokens del sistema de diseño
-3. Screenshot + comparar con index.html antes de push
-4. Checklist $10K → ¿algún criterio falla?
-
----
-
-## 11. Copywriting — reglas de voz
-
-El copy de Rankeo es directo, confiante, sin jerga técnica innecesaria. Le habla a dueños de negocios, no a desarrolladores.
-
-**Voz:** Consultor experto que habla claro. No vendedor. No corporativo.
-
-**Frases que SÍ usar:**
-- "Tus clientes te buscan hoy. ¿Te encuentran?"
-- "Auditoría gratis en 48 horas"
-- "Sin contratos anuales. Sin letra pequeña."
-- "Resultados medibles, no promesas vacías"
-
-**Frases que NUNCA usar:**
-- "Soluciones digitales integrales"
-- "Potenciamos tu presencia online"
-- "Somos líderes en el sector"
-- Cualquier cosa que suene a template de agencia genérica
-
----
-
-## 12. Archivos de referencia
-
-| Archivo | Uso |
-|---|---|
-| `index.html` | **Fuente de verdad visual.** Si algo se ve diferente al migrar, index.html gana. |
-| `preview.png` | og:image (1200×630). Ya existe. No regenerar. |
-| `C:\Users\berna_1oneq3n\Claude\Projects\NEW MULTIBILLIONARE COMPANY\CLAUDE.md` | Instrucciones globales de la agencia Rankeo (modelo de negocio, precios, estrategia) |
-
----
-
-## 13. Comandos frecuentes
-
-```bash
-# Desarrollo local
-npm run dev          # http://localhost:3000
-
-# Verificar antes de push
-npm run build        # build de producción (0 errores = OK para push)
-npm run lint         # ESLint estricto
-
-# Lighthouse local
-npx lighthouse http://localhost:3000 --view
-
-# Push a producción — NUNCA usar git add (falla en NTFS)
-# Usar siempre el script Python de la sección 2B
-```
-
----
-
-*Este archivo es instrucciones para Claude Code. No es documentación pública. Actualizar cuando cambien decisiones de arquite
+## 10. Flujo de
