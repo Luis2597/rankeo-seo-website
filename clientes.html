@@ -37,6 +37,16 @@ body{font-family:"Plus Jakarta Sans",sans-serif;background:var(--ink);color:var(
 .dh-out{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);color:rgba(255,255,255,.75);padding:5px 12px;border-radius:7px;font-size:12px;font-weight:600;cursor:pointer;font-family:inherit}
 .dh-out:hover{background:rgba(255,255,255,.15)}
 .db{display:flex;flex:1}
+
+/* mobile sidebar drawer */
+.sb-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:240}
+.sb-overlay.open{display:block}
+.dh-burger{display:none;background:none;border:none;cursor:pointer;color:#fff;padding:4px;margin-left:-4px}
+@media(max-width:768px){
+  .dh-burger{display:flex;align-items:center;justify-content:center}
+  .sb{display:none;position:fixed;top:58px;left:0;bottom:0;z-index:250;width:240px;overflow-y:auto;box-shadow:4px 0 24px rgba(0,0,0,.2)}
+  .sb.mob-open{display:block}
+}
 .sb{width:232px;background:var(--wh);border-right:1px solid var(--bd);padding:14px 0;flex-shrink:0;position:sticky;top:58px;height:calc(100vh - 58px);overflow-y:auto}
 .sb-lbl{font-size:9px;font-weight:700;color:var(--sub);text-transform:uppercase;letter-spacing:.08em;padding:0 16px;margin:12px 0 4px;display:block}
 .sb-btn{display:flex;align-items:center;gap:9px;padding:8px 10px;border-radius:9px;cursor:pointer;font-size:13px;font-weight:500;color:var(--sub);width:calc(100% - 18px);margin:0 9px 2px;border:none;background:none;font-family:inherit;transition:all .15s}
@@ -248,14 +258,15 @@ body{font-family:"Plus Jakarta Sans",sans-serif;background:var(--ink);color:var(
 <!-- ══ DASHBOARD ══ -->
 <div id="dashScreen">
   <header class="dh">
-    <div class="dh-logo">Rankeo<span>.</span></div>
+    <button class="dh-burger" id="sbBurger" onclick="toggleMobSb()" aria-label="Menú"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button><div class="dh-logo">Rankeo<span>.</span></div>
     <div class="dh-r">
       <span class="dh-name" id="hName"></span>
       <button class="dh-out" onclick="doLogout()">Salir</button>
     </div>
   </header>
   <div class="db">
-    <aside class="sb">
+    <div class="sb-overlay" id="sbOverlay" onclick="toggleMobSb()"></div>
+    <aside class="sb" id="sbAside">
       <span class="sb-lbl">Men&uacute;</span>
       <button class="sb-btn on" id="btn-res" onclick="nav('res',this)">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>Resumen</button>
@@ -644,12 +655,41 @@ async function runAnalysis(){
   if(!cc)return;
   const btns=["abS","abP"];
   btns.forEach(id=>{const b=document.getElementById(id);if(b){b.disabled=true;const ic=document.getElementById(id.replace("ab","ai"));if(ic)ic.classList.add("spinning");}});
+  const PSI_CACHE_KEY="rkPsi_"+(cc.url||"").slice(-30);
+  const PSI_CACHE_TTL=22*3600*1000;
+  const cached=JSON.parse(localStorage.getItem(PSI_CACHE_KEY)||"null");
   try{
-    const apiUrl="https://www.googleapis.com/pagespeedonline/v5/runPagespeed?url="+encodeURIComponent(cc.url)+"&strategy=mobile&category=performance"+(PSI_KEY?"&key="+PSI_KEY:"");
-    let r;
-    try{r=await fetch(apiUrl);}catch(netErr){throw new Error("Sin conexión con Google: "+netErr.message);}
-    if(!r.ok){let det="";try{const j=await r.json();det=j?.error?.message||"";}catch(e){}throw new Error("HTTP "+r.status+(det?" — "+det:""));}
-    const d=await r.json();
+    let d;
+    if(cached&&(Date.now()-cached.ts)<PSI_CACHE_TTL){
+      d=cached.data;
+      const ageMin=Math.round((Date.now()-cached.ts)/60000);
+      document.getElementById("kScan").textContent="Caché "+ageMin+"m";
+    }else{
+      const apiUrl="https://www.googleapis.com/pagespeedonline/v5/runPagespeed?url="+encodeURIComponent(cc.url)+"&strategy=mobile&category=performance"+(PSI_KEY?"&key="+PSI_KEY:"");
+      let r;
+      try{r=await fetch(apiUrl);}catch(netErr){throw new Error("Sin conexión con Google: "+netErr.message);}
+      if(!r.ok){
+        let det="";try{const j=await r.json();det=j?.error?.message||"";}catch(e){}
+        if(r.status===429){
+          if(cached){
+            // serve stale cache with warning
+            d=cached.data;
+            const dias=new Date(cached.ts).toLocaleDateString("es-CO",{day:"2-digit",month:"short"});
+            document.getElementById("kScan").textContent="Análisis del "+dias;
+            const msg=`Límite diario de Google alcanzado. Mostrando resultado del ${dias}. Intenta mañana.`;
+            const slS=document.getElementById("slS");if(slS)slS.textContent="Resultado anterior";
+            const sdS=document.getElementById("sdS");if(sdS)sdS.innerHTML=`<span style="color:var(--sub);font-size:11px">${msg}</span>`;
+          }else{
+            throw new Error("Límite de análisis diario alcanzado. Intenta mañana o agenda el análisis en otro horario.");
+          }
+        }else{
+          throw new Error("HTTP "+r.status+(det?" — "+det:""));
+        }
+      }else{
+        d=await r.json();
+        localStorage.setItem(PSI_CACHE_KEY,JSON.stringify({ts:Date.now(),data:d}));
+      }
+    }
     const score=Math.round((d.lighthouseResult?.categories?.performance?.score||0)*100);
     const a=d.lighthouseResult?.audits||{};
     const metrics=[
@@ -886,6 +926,22 @@ function copyPrompt(idx){
     window.getSelection().removeAllRanges();window.getSelection().addRange(r);
     try{document.execCommand("copy");}catch(e){}
   });
+}
+
+function toggleMobSb(){
+  const sb=document.getElementById("sbAside");
+  const ov=document.getElementById("sbOverlay");
+  if(!sb||!ov)return;
+  const open=sb.classList.toggle("mob-open");
+  ov.classList.toggle("open",open);
+  document.body.style.overflow=open?"hidden":"";
+}
+function closeMobSb(){
+  const sb=document.getElementById("sbAside");
+  const ov=document.getElementById("sbOverlay");
+  if(sb)sb.classList.remove("mob-open");
+  if(ov)ov.classList.remove("open");
+  document.body.style.overflow="";
 }
 
 // ── NAVIGATION ──
