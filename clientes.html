@@ -71,13 +71,12 @@ body{font-family:"Plus Jakarta Sans",sans-serif;background:var(--ink);color:var(
 .browser-dot{width:9px;height:9px;border-radius:50%;display:block}
 .browser-url{flex:1;background:var(--bg);border:1px solid var(--bd);border-radius:5px;padding:4px 9px;font-size:10px;color:var(--sub);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .browser-open{background:var(--or);border:none;color:#fff;border-radius:5px;padding:4px 9px;font-size:10px;font-weight:700;cursor:pointer;font-family:inherit;flex-shrink:0}
-.site-frame-wrap{position:relative;height:390px;background:#f5f5f5;-webkit-transform:translateZ(0);transform:translateZ(0)}
-.site-frame-wrap iframe{width:100%;height:100%;border:none;display:block;pointer-events:none}
-.site-frame-error{position:absolute;inset:0;display:none;flex-direction:column;align-items:center;justify-content:center;gap:8px;background:var(--surf);color:var(--sub);font-size:12px;text-align:center;padding:20px}
-.site-frame-error a{color:var(--or);font-weight:600;text-decoration:none}
-#annLayer{position:absolute;inset:0;pointer-events:none;z-index:15}
-.ann-badge{position:absolute;width:24px;height:24px;border-radius:50%;background:var(--or);color:#fff;font-weight:800;font-size:10px;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(240,78,35,.5);cursor:pointer;z-index:5;border:2px solid #fff;transition:transform .15s;pointer-events:auto;-webkit-transform:translateZ(0);transform:translateZ(0)}
-.ann-badge:hover,.ann-badge.hl{transform:scale(1.25)}
+.site-frame-wrap{position:relative;height:390px;background:var(--surf);overflow:hidden}
+.site-screenshot{width:100%;height:390px;object-fit:cover;object-position:top;display:block}
+.site-loading{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:12px;color:var(--sub)}
+#annLayer{position:absolute;inset:0;pointer-events:none}
+.ann-badge{position:absolute;width:26px;height:26px;border-radius:50%;background:var(--or);color:#fff;font-weight:800;font-size:11px;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 10px rgba(240,78,35,.6);cursor:pointer;border:2px solid #fff;transition:transform .15s;pointer-events:auto}
+.ann-badge:hover,.ann-badge.hl{transform:scale(1.28)}
 .tips-panel{background:var(--wh);border:1px solid var(--bd);border-radius:14px;padding:18px;overflow-y:auto;max-height:450px}
 .tips-panel-hd{font-family:"Syne",sans-serif;font-weight:800;font-size:14px;letter-spacing:-.02em;margin-bottom:2px}
 .tips-panel-sub{font-size:11px;color:var(--sub);margin-bottom:14px}
@@ -236,12 +235,8 @@ body{font-family:"Plus Jakarta Sans",sans-serif;background:var(--ink);color:var(
                 <button class="browser-open" onclick="openSite()">Abrir &nearr;</button>
               </div>
               <div class="site-frame-wrap" id="siteFrameWrap">
-                <iframe id="siteFrame" src="about:blank" title="Vista del sitio" loading="lazy" sandbox="allow-same-origin allow-scripts"></iframe>
-                <div class="site-frame-error" id="siteFrameError">
-                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-                  <span>El sitio no permite vistas integradas.</span>
-                  <a id="siteErrLink" href="#" target="_blank">Abrir en nueva pesta&ntilde;a &rarr;</a>
-                </div>
+                <div class="site-loading" id="siteLoading"><span style="opacity:.5">Cargando vista previa…</span></div>
+                <img id="siteScreenshot" class="site-screenshot" src="" alt="Vista previa del sitio" style="display:none">
                 <div id="annLayer"></div>
               </div>
             </div>
@@ -377,7 +372,7 @@ function doLogin(){
 function doLogout(){
   sessionStorage.removeItem("rkU");
   cu=null;cc=null;
-  document.getElementById("siteFrame").src="about:blank";
+  document.getElementById("siteScreenshot").src="";
   document.getElementById("vistaFrame").src="about:blank";
   document.getElementById("dashScreen").style.display="none";
   document.getElementById("loginScreen").style.display="flex";
@@ -442,17 +437,16 @@ function checkStatus(){
     .catch(()=>document.getElementById("kSt").innerHTML='<span style="color:var(--rd)">Sin respuesta</span>');
 }
 
-// ── IFRAME ──
+// ── SCREENSHOT PREVIEW ──
 function loadSiteFrame(){
-  const frame=document.getElementById("siteFrame");
-  const errDiv=document.getElementById("siteFrameError");
-  document.getElementById("siteErrLink").href=cc.url;
-  errDiv.style.display="none";
-  frame.style.display="block";
-  frame.src=cc.url;
-  const t=setTimeout(()=>{try{if(!frame.contentDocument?.body)showFrameErr();}catch(e){showFrameErr();}},5000);
-  frame.onload=()=>{clearTimeout(t);};
-  function showFrameErr(){frame.style.display="none";errDiv.style.display="flex";}
+  if(!cc)return;
+  const img=document.getElementById("siteScreenshot");
+  const loading=document.getElementById("siteLoading");
+  img.style.display="none";
+  loading.style.display="flex";
+  img.onload=function(){loading.style.display="none";img.style.display="block";};
+  img.onerror=function(){img.style.display="none";loading.innerHTML='<span>Vista no disponible &middot; <a onclick="openSite()" style="color:var(--or);font-weight:700;cursor:pointer">Abrir sitio →</a></span>';};
+  img.src="https://image.thum.io/get/width/800/crop/600/"+cc.url;
 }
 function openSite(){if(cc)window.open(cc.url,"_blank","noopener");}
 
@@ -561,8 +555,8 @@ async function runAnalysis(){
     if(cwvGrid)cwvGrid.innerHTML=metrics.map(m=>`<div class="cwv"><div class="cwv-m">${m.key} \u2014 ${m.label}</div><div class="cwv-v ${sc(a[m.id]?.score)}">${a[m.id]?.displayValue||"--"}</div><div class="cwv-s ${sc(a[m.id]?.score)}">${sl(a[m.id]?.score)}</div></div>`).join("");
     document.getElementById("kScan").textContent="Hoy "+new Date().toLocaleTimeString("es-CO",{hour:"2-digit",minute:"2-digit"});
   }catch(err){
-    const slS=document.getElementById("slS");if(slS)slS.textContent="Error al conectar";
-    const sdS=document.getElementById("sdS");if(sdS)sdS.textContent="Verifica la URL e intenta de nuevo.";
+    const slS=document.getElementById("slS");if(slS)slS.textContent="No disponible ahora";
+    const sdS=document.getElementById("sdS");if(sdS)sdS.textContent="Google PageSpeed a veces tiene límites. Intenta de nuevo en un momento.";
     document.getElementById("kScan").textContent="Error";
   }
   btns.forEach(id=>{const b=document.getElementById(id);if(b){b.disabled=false;const ic=document.getElementById(id.replace("ab","ai"));if(ic)ic.classList.remove("spinning");}});
