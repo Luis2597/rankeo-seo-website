@@ -569,8 +569,9 @@ async function runAnalysis(){
   btns.forEach(id=>{const b=document.getElementById(id);if(b){b.disabled=true;const ic=document.getElementById(id.replace("ab","ai"));if(ic)ic.classList.add("spinning");}});
   try{
     const apiUrl="https://www.googleapis.com/pagespeedonline/v5/runPagespeed?url="+encodeURIComponent(cc.url)+"&strategy=mobile&category=performance"+(PSI_KEY?"&key="+PSI_KEY:"");
-    const r=await fetch(apiUrl);
-    if(!r.ok)throw new Error("API "+r.status);
+    let r;
+    try{r=await fetch(apiUrl);}catch(netErr){throw new Error("Sin conexión con Google: "+netErr.message);}
+    if(!r.ok){let det="";try{const j=await r.json();det=j?.error?.message||"";}catch(e){}throw new Error("HTTP "+r.status+(det?" — "+det:""));}
     const d=await r.json();
     const score=Math.round((d.lighthouseResult?.categories?.performance?.score||0)*100);
     const a=d.lighthouseResult?.audits||{};
@@ -601,8 +602,13 @@ async function runAnalysis(){
     if(cwvGrid)cwvGrid.innerHTML=metrics.map(m=>`<div class="cwv"><div class="cwv-m">${m.key} \u2014 ${m.label}</div><div class="cwv-v ${sc(a[m.id]?.score)}">${a[m.id]?.displayValue||"--"}</div><div class="cwv-s ${sc(a[m.id]?.score)}">${sl(a[m.id]?.score)}</div></div>`).join("");
     document.getElementById("kScan").textContent="Hoy "+new Date().toLocaleTimeString("es-CO",{hour:"2-digit",minute:"2-digit"});
   }catch(err){
-    const slS=document.getElementById("slS");if(slS)slS.textContent="No disponible ahora";
-    const sdS=document.getElementById("sdS");if(sdS)sdS.innerHTML='Google PageSpeed tiene l\u00edmites de uso. <button onclick="runAnalysis()" style="background:none;border:none;color:var(--or);font-weight:700;cursor:pointer;font-family:inherit;font-size:inherit;padding:0">Reintentar →</button>';
+    console.error("PageSpeed:",err);
+    const msg=err.message||"Error desconocido";
+    const errHtml=`<span style="color:var(--rd);font-size:11px;display:block;margin-bottom:8px">${msg}</span><button onclick="runAnalysis()" style="background:none;border:none;color:var(--or);font-weight:700;cursor:pointer;font-family:inherit;font-size:13px;padding:0">Reintentar →</button>`;
+    const slS=document.getElementById("slS");if(slS)slS.textContent="Error al analizar";
+    const sdS=document.getElementById("sdS");if(sdS)sdS.innerHTML=errHtml;
+    const slP=document.getElementById("slP");if(slP)slP.textContent="Error al analizar";
+    const sdP=document.getElementById("sdP");if(sdP)sdP.innerHTML=errHtml;
     document.getElementById("kScan").textContent="Error";
   }
   btns.forEach(id=>{const b=document.getElementById(id);if(b){b.disabled=false;const ic=document.getElementById(id.replace("ab","ai"));if(ic)ic.classList.remove("spinning");}});
