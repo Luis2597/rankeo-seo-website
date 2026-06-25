@@ -153,6 +153,34 @@ body{font-family:"Plus Jakarta Sans",sans-serif;background:var(--ink);color:var(
 /* responsive */
 @media(max-width:960px){.panel-row{grid-template-columns:1fr}.tips-panel{max-height:none}}
 @media(max-width:768px){.sb{display:none}.dm{padding:16px}.ig{grid-template-columns:1fr}.kpi-row{grid-template-columns:1fr 1fr}}
+
+/* ── IMPLEMENTACIONES ── */
+.tip-impl-btn{margin-top:9px;display:inline-flex;align-items:center;gap:5px;background:var(--or);color:#fff;border:none;border-radius:7px;padding:6px 13px;font-size:11px;font-weight:700;cursor:pointer;font-family:inherit;transition:opacity .15s}
+.tip-impl-btn:hover{opacity:.85}
+.tip-impl-btn:disabled{background:var(--surf);color:var(--sub);border:1px solid var(--bd);cursor:not-allowed;opacity:1}
+.tip-impl-done{margin-top:9px;display:inline-flex;align-items:center;gap:5px;color:#16A34A;background:rgba(22,163,74,.08);border:1px solid rgba(22,163,74,.25);border-radius:7px;padding:6px 13px;font-size:11px;font-weight:700}
+.overlay{position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:600;display:none;align-items:center;justify-content:center;padding:20px}
+.overlay.open{display:flex}
+.modal{background:#fff;border-radius:16px;padding:28px;max-width:400px;width:100%;box-shadow:0 24px 60px rgba(0,0,0,.3)}
+.modal h3{font-family:"Syne",sans-serif;font-weight:800;font-size:17px;letter-spacing:-.02em;margin-bottom:8px}
+.modal p{font-size:13px;color:var(--sub);line-height:1.6;margin-bottom:20px}
+.modal-btns{display:flex;gap:10px}
+.btn-s{flex:1;background:var(--surf);border:1px solid var(--bd);color:var(--ink);border-radius:9px;padding:11px;font-family:inherit;font-size:13px;font-weight:600;cursor:pointer}
+.btn-o{flex:2;background:var(--or);border:none;color:#fff;border-radius:9px;padding:11px;font-family:inherit;font-size:13px;font-weight:700;cursor:pointer;transition:opacity .15s}
+.btn-o:hover{opacity:.85}
+.pack-row{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin:16px 0}
+.pack{border:1.5px solid var(--bd);border-radius:12px;padding:14px 10px;text-align:center;background:var(--surf);transition:all .15s}
+.pack.hot{border-color:var(--or);background:rgba(240,78,35,.05)}
+.pack-p{font-family:"Syne",sans-serif;font-weight:800;font-size:19px;letter-spacing:-.03em;margin-bottom:2px}
+.pack-n{font-size:11px;color:var(--sub);font-weight:600;margin-bottom:10px}
+.pack-btn{width:100%;background:var(--or);color:#fff;border:none;border-radius:7px;padding:7px;font-family:inherit;font-size:11px;font-weight:700;cursor:pointer}
+.impl-hd{display:flex;align-items:center;justify-content:space-between;margin-bottom:20px;flex-wrap:wrap;gap:12px}
+.impl-counter{display:flex;align-items:center;gap:12px;background:var(--wh);border:1px solid var(--bd);border-radius:10px;padding:10px 16px}
+.impl-counter-n{font-family:"Syne",sans-serif;font-weight:800;font-size:22px;color:var(--or)}
+.impl-counter-l{font-size:10px;color:var(--sub);line-height:1.5}
+.impl-buy-btn{background:var(--ink);color:#fff;border:none;border-radius:8px;padding:9px 16px;font-family:inherit;font-size:12px;font-weight:700;cursor:pointer;transition:opacity .15s}
+.impl-buy-btn:hover{opacity:.8}
+.sb-badge{margin-left:auto;background:var(--or);color:#fff;border-radius:10px;padding:1px 7px;font-size:9px;font-weight:800}
 </style>
 </head>
 <body>
@@ -197,6 +225,7 @@ body{font-family:"Plus Jakarta Sans",sans-serif;background:var(--ink);color:var(
       <button class="sb-btn" id="btn-info" onclick="nav('info',this)">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>Mi proyecto</button>
       <div class="sb-div"></div>
+      <button class="sb-btn" onclick="showBuy()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>Comprar impl.<span class="sb-badge" id="sbImplCount">--</span></button>
       <div id="adminPanel" style="display:none">
         <span class="sb-lbl">Clientes</span>
         <div class="cl-wrap" id="clList"></div>
@@ -212,7 +241,7 @@ body{font-family:"Plus Jakarta Sans",sans-serif;background:var(--ink);color:var(
           <div class="kpi or"><div class="kpi-l">Plan</div><div class="kpi-v" id="kPlan">--</div><div class="kpi-n" id="kSince">--</div></div>
           <div class="kpi"><div class="kpi-l">Estado</div><div class="kpi-v" style="font-size:14px" id="kSt"><span class="sk" style="width:70px">&nbsp;</span></div><div class="kpi-n" id="kDom">--</div></div>
           <div class="kpi"><div class="kpi-l">&Uacute;ltimo an&aacute;lisis</div><div class="kpi-v" style="font-size:14px" id="kScan">Pendiente</div><div class="kpi-n">PageSpeed</div></div>
-          <div class="kpi"><div class="kpi-l">Mejoras</div><div class="kpi-v" id="kTips">--</div><div class="kpi-n">pendientes</div></div>
+          <div class="kpi or"><div class="kpi-l">Implementaciones</div><div class="kpi-v" id="kImpl">--</div><div class="kpi-n">disponibles este mes</div></div>
         </div>
         <div class="upgrade-strip" id="upgradePending" style="display:none">
           <div class="us-text">
@@ -312,7 +341,13 @@ body{font-family:"Plus Jakarta Sans",sans-serif;background:var(--ink);color:var(
       <!-- MEJORAS SEO -->
       <div class="sec" id="sec-tips">
         <button class="back-btn" onclick="nav('res',document.getElementById('btn-res'))">← Resumen</button>
-        <div class="sh"><h2>Mejoras SEO recomendadas</h2><p>Lista priorizada de acciones para mejorar tu posicionamiento</p></div>
+        <div class="impl-hd">
+          <div class="sh" style="margin:0"><h2>Mejoras SEO</h2><p>Implementa cada mejora con un clic — Rankeo lo aplica en tu sitio</p></div>
+          <div style="display:flex;align-items:center;gap:10px">
+            <div class="impl-counter"><div><div class="impl-counter-n" id="implCountBig">--</div><div class="impl-counter-l">implementaciones<br>disponibles</div></div></div>
+            <button class="impl-buy-btn" onclick="showBuy()">+ Comprar</button>
+          </div>
+        </div>
         <div class="tips-full" id="tipsList"></div>
       </div>
 
@@ -328,6 +363,7 @@ body{font-family:"Plus Jakarta Sans",sans-serif;background:var(--ink);color:var(
 </div>
 
 <script>
+const PSI_KEY=""; // Agrega tu Google PageSpeed API key aquí para consultas ilimitadas
 const BADGE_POSITIONS=[[7,52],[20,25],[38,70],[55,30],[72,60]];
 const USERS={
   "admin@rankeo.agency":{password:"Rankeo2026!",role:"admin",name:"Luis D\u00edaz \u2014 Admin"},
@@ -341,6 +377,7 @@ const CLIENTS={
     industry:"Educaci\u00f3n \u2014 Bachillerato adultos",
     location:"San Mart\u00edn de los Llanos, Meta, Colombia",
     whatsapp:"525532894890",
+    planImp:15,
     tips:[
       {p:"alta",cat:"Local SEO",t:"Crear perfil en Google Business",d:"Registrar el colegio en Google Maps para aparecer en b\u00fasquedas locales. Sin esto Google no los posiciona en el mapa."},
       {p:"alta",cat:"Contenido",t:"Publicar art\u00edculo con keyword principal",d:"Post optimizado para 'bachillerato para adultos Meta Colombia'. Keyword de alta intenci\u00f3n y baja competencia."},
@@ -414,7 +451,7 @@ function loadClient(id){
   document.getElementById("rTitle").textContent="Hola, "+cc.name.split(" ")[0]+"!";
   document.getElementById("kPlan").textContent=cc.plan;
   document.getElementById("kSince").textContent="Desde "+cc.since+" \u00b7 "+cc.price;
-  document.getElementById("kTips").textContent=cc.tips.length;
+  // kImpl updated in updateImplUI()
   const domain=cc.url.replace("https://","").split("/")[0];
   document.getElementById("kDom").textContent=domain;
   document.getElementById("siteUrlLabel").textContent=domain;
@@ -425,6 +462,7 @@ function loadClient(id){
   renderTipsPanelAndBadges();
   renderTipsFull();
   renderInfo();
+  updateImplUI();
   checkStatus();
   document.querySelectorAll(".cl-item").forEach(el=>el.classList.toggle("on",el.dataset.id===id));
 }
@@ -491,9 +529,16 @@ function renderTipsFull(){
   if(!cc)return;
   const ord={alta:0,media:1,baja:2};
   const sorted=[...cc.tips].sort((a,b)=>ord[a.p]-ord[b.p]);
-  document.getElementById("tipsList").innerHTML=sorted.map(t=>`
-    <div class="tip"><span class="tp ${t.p}">${t.p}</span>
-    <div><h4>${t.t}</h4><p>${t.d}</p><span class="tag">${t.cat}</span></div></div>`).join("");
+  const d=getImplData();
+  const rem=getImplRemaining();
+  document.getElementById("tipsList").innerHTML=sorted.map(t=>{
+    const idx=cc.tips.indexOf(t);
+    const done=d.done.includes(idx);
+    const btnHtml=done
+      ?`<span class="tip-impl-done" data-idx="${idx}">✓ Implementado</span>`
+      :`<button class="tip-impl-btn" data-idx="${idx}" onclick="implementTip(${idx})"${rem<=0?" disabled":""}>Implementar →</button>`;
+    return `<div class="tip"><span class="tp ${t.p}">${t.p}</span><div style="flex:1"><h4>${t.t}</h4><p>${t.d}</p><span class="tag">${t.cat}</span>${btnHtml}</div></div>`;
+  }).join("");
 }
 
 // ── INFO ──
@@ -523,7 +568,8 @@ async function runAnalysis(){
   const btns=["abS","abP"];
   btns.forEach(id=>{const b=document.getElementById(id);if(b){b.disabled=true;const ic=document.getElementById(id.replace("ab","ai"));if(ic)ic.classList.add("spinning");}});
   try{
-    const r=await fetch("https://www.googleapis.com/pagespeedonline/v5/runPagespeed?url="+encodeURIComponent(cc.url)+"&strategy=mobile&category=performance");
+    const apiUrl="https://www.googleapis.com/pagespeedonline/v5/runPagespeed?url="+encodeURIComponent(cc.url)+"&strategy=mobile&category=performance"+(PSI_KEY?"&key="+PSI_KEY:"");
+    const r=await fetch(apiUrl);
     if(!r.ok)throw new Error("API "+r.status);
     const d=await r.json();
     const score=Math.round((d.lighthouseResult?.categories?.performance?.score||0)*100);
@@ -556,10 +602,86 @@ async function runAnalysis(){
     document.getElementById("kScan").textContent="Hoy "+new Date().toLocaleTimeString("es-CO",{hour:"2-digit",minute:"2-digit"});
   }catch(err){
     const slS=document.getElementById("slS");if(slS)slS.textContent="No disponible ahora";
-    const sdS=document.getElementById("sdS");if(sdS)sdS.textContent="Google PageSpeed a veces tiene límites. Intenta de nuevo en un momento.";
+    const sdS=document.getElementById("sdS");if(sdS)sdS.innerHTML='Google PageSpeed tiene l\u00edmites de uso. <button onclick="runAnalysis()" style="background:none;border:none;color:var(--or);font-weight:700;cursor:pointer;font-family:inherit;font-size:inherit;padding:0">Reintentar →</button>';
     document.getElementById("kScan").textContent="Error";
   }
   btns.forEach(id=>{const b=document.getElementById(id);if(b){b.disabled=false;const ic=document.getElementById(id.replace("ab","ai"));if(ic)ic.classList.remove("spinning");}});
+}
+
+
+// ── IMPLEMENTACIONES ──
+let implPending=null;
+
+function getImplId(){return Object.keys(CLIENTS).find(k=>CLIENTS[k]===cc)||"";}
+
+function getImplData(){
+  const id=getImplId();if(!id)return{month:"",used:0,extra:0,done:[]};
+  const month=new Date().toISOString().slice(0,7);
+  let d;try{d=JSON.parse(localStorage.getItem("rkImpl_"+id)||"{}");}catch(e){d={};}
+  if(d.month!==month){d.used=0;d.done=[];d.month=month;}
+  if(!d.extra)d.extra=0;if(!d.done)d.done=[];
+  return d;
+}
+
+function saveImplData(d){const id=getImplId();if(!id)return;localStorage.setItem("rkImpl_"+id,JSON.stringify(d));}
+
+function getImplRemaining(){
+  if(!cc)return 0;
+  if(cu&&cu.role==="admin")return 999;
+  const d=getImplData();
+  return Math.max(0,(cc.planImp||0)+d.extra-d.used);
+}
+
+function updateImplUI(){
+  const rem=getImplRemaining();
+  const kImpl=document.getElementById("kImpl");if(kImpl)kImpl.textContent=rem===999?"∞":rem;
+  const sb=document.getElementById("sbImplCount");if(sb)sb.textContent=rem===999?"∞":rem;
+  const big=document.getElementById("implCountBig");if(big)big.textContent=rem===999?"∞":rem;
+  const d=getImplData();
+  document.querySelectorAll("[data-idx]").forEach(el=>{
+    const idx=parseInt(el.dataset.idx);
+    const done=d.done.includes(idx);
+    if(done){el.className="tip-impl-done";el.textContent="✓ Implementado";}
+    else if(el.tagName==="BUTTON"){el.disabled=(rem<=0);el.textContent="Implementar →";}
+  });
+}
+
+function implementTip(idx){
+  if(!cc)return;
+  const d=getImplData();
+  if(d.done.includes(idx))return;
+  const rem=getImplRemaining();
+  if(rem<=0){showBuy();return;}
+  implPending=idx;
+  const tip=cc.tips[idx];
+  const desc=document.getElementById("implModalDesc");
+  if(desc)desc.innerHTML=`<strong>${tip.t}</strong><br><small style="color:var(--sub)">${tip.cat}</small><br><br>Se usará <strong>1 implementación</strong>. Te quedarán <strong>${rem-1}</strong> este mes.`;
+  document.getElementById("implOverlay").classList.add("open");
+}
+
+function closeImpl(){document.getElementById("implOverlay").classList.remove("open");implPending=null;}
+
+function confirmImpl(){
+  if(implPending===null||!cc)return;
+  const d=getImplData();
+  d.used=(d.used||0)+1;
+  if(!d.done.includes(implPending))d.done.push(implPending);
+  saveImplData(d);
+  const tip=cc.tips[implPending];
+  const msg=encodeURIComponent(`Hola Rankeo! Solicitud de implementación:\n\n${tip.t}\nCategoría: ${tip.cat}\nCliente: ${cc.name}\nPlan: ${cc.plan}\n\nFavor aplicar. Gracias!`);
+  window.open(`https://wa.me/525532894890?text=${msg}`,"_blank","noopener");
+  closeImpl();
+  renderTipsFull();
+  updateImplUI();
+}
+
+function showBuy(){document.getElementById("buyOverlay").classList.add("open");}
+function closeBuy(){document.getElementById("buyOverlay").classList.remove("open");}
+
+function buyPack(qty,price){
+  const msg=encodeURIComponent(`Hola! Quiero comprar el pack de ${qty} implementaciones ($${price} USD) para mi cuenta de Rankeo.${cc?" Cliente: "+cc.name:""}`);
+  window.open(`https://wa.me/525532894890?text=${msg}`,"_blank","noopener");
+  closeBuy();
 }
 
 // ── NAVIGATION ──
@@ -582,5 +704,31 @@ window.addEventListener("DOMContentLoaded",()=>{
   document.getElementById("lEmail").addEventListener("keydown",e=>{if(e.key==="Enter")document.getElementById("lPass").focus();});
 });
 </script>
+
+<!-- IMPL CONFIRM MODAL -->
+<div class="overlay" id="implOverlay" onclick="if(event.target===this)closeImpl()">
+  <div class="modal">
+    <h3>¿Confirmar implementación?</h3>
+    <p id="implModalDesc">Esta mejora será enviada a Rankeo para su implementación.</p>
+    <div class="modal-btns">
+      <button class="btn-s" onclick="closeImpl()">Cancelar</button>
+      <button class="btn-o" onclick="confirmImpl()">Confirmar y enviar →</button>
+    </div>
+  </div>
+</div>
+<!-- BUY MODAL -->
+<div class="overlay" id="buyOverlay" onclick="if(event.target===this)closeBuy()">
+  <div class="modal">
+    <h3>Implementaciones extra</h3>
+    <p>Tu plan incluye implementaciones mensuales. Compra un pack adicional cuando necesites más. Se activan en menos de 1 hora.</p>
+    <div class="pack-row">
+      <div class="pack"><div class="pack-p">$29</div><div class="pack-n">10 implementaciones</div><button class="pack-btn" onclick="buyPack(10,29)">Comprar</button></div>
+      <div class="pack hot"><div class="pack-p">$49</div><div class="pack-n">20 implementaciones</div><button class="pack-btn" onclick="buyPack(20,49)">Comprar</button></div>
+      <div class="pack"><div class="pack-p">$89</div><div class="pack-n">50 implementaciones</div><button class="pack-btn" onclick="buyPack(50,89)">Comprar</button></div>
+    </div>
+    <p style="font-size:11px;text-align:center;color:var(--sub);margin:0">Pago por WhatsApp · Sin contratos ni letra pequeña</p>
+  </div>
+</div>
+
 </body>
 </html>
