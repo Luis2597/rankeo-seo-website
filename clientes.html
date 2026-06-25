@@ -71,10 +71,9 @@ body{font-family:"Plus Jakarta Sans",sans-serif;background:var(--ink);color:var(
 .browser-dot{width:9px;height:9px;border-radius:50%;display:block}
 .browser-url{flex:1;background:var(--bg);border:1px solid var(--bd);border-radius:5px;padding:4px 9px;font-size:10px;color:var(--sub);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .browser-open{background:var(--or);border:none;color:#fff;border-radius:5px;padding:4px 9px;font-size:10px;font-weight:700;cursor:pointer;font-family:inherit;flex-shrink:0}
-.site-frame-wrap{position:relative;height:390px;background:var(--surf);overflow:hidden}
-.site-screenshot{width:100%;height:390px;object-fit:cover;object-position:top;display:block}
-.site-loading{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:12px;color:var(--sub)}
-#annLayer{position:absolute;inset:0;pointer-events:none}
+.site-frame-wrap{position:relative;height:390px;background:var(--surf)}
+.site-frame-wrap iframe{width:100%;height:100%;border:none;display:block}
+#annLayer{position:fixed;inset:0;pointer-events:none;z-index:150}
 .ann-badge{position:absolute;width:26px;height:26px;border-radius:50%;background:var(--or);color:#fff;font-weight:800;font-size:11px;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 10px rgba(240,78,35,.6);cursor:pointer;border:2px solid #fff;transition:transform .15s;pointer-events:auto}
 .ann-badge:hover,.ann-badge.hl{transform:scale(1.28)}
 .tips-panel{background:var(--wh);border:1px solid var(--bd);border-radius:14px;padding:18px;overflow-y:auto;max-height:450px}
@@ -264,9 +263,7 @@ body{font-family:"Plus Jakarta Sans",sans-serif;background:var(--ink);color:var(
                 <button class="browser-open" onclick="openSite()">Abrir &nearr;</button>
               </div>
               <div class="site-frame-wrap" id="siteFrameWrap">
-                <div class="site-loading" id="siteLoading"><span style="opacity:.5">Cargando vista previa…</span></div>
-                <img id="siteScreenshot" class="site-screenshot" src="" alt="Vista previa del sitio" style="display:none">
-                <div id="annLayer"></div>
+                <iframe id="siteFrame" src="about:blank" title="Vista del sitio" scrolling="yes" sandbox="allow-same-origin allow-scripts allow-forms"></iframe>
               </div>
             </div>
           </div>
@@ -409,7 +406,7 @@ function doLogin(){
 function doLogout(){
   sessionStorage.removeItem("rkU");
   cu=null;cc=null;
-  document.getElementById("siteScreenshot").src="";
+  document.getElementById("siteFrame").src="about:blank";
   document.getElementById("vistaFrame").src="about:blank";
   document.getElementById("dashScreen").style.display="none";
   document.getElementById("loginScreen").style.display="flex";
@@ -475,18 +472,38 @@ function checkStatus(){
     .catch(()=>document.getElementById("kSt").innerHTML='<span style="color:var(--rd)">Sin respuesta</span>');
 }
 
-// ── SCREENSHOT PREVIEW ──
+// ── IFRAME PREVIEW ──
 function loadSiteFrame(){
   if(!cc)return;
-  const img=document.getElementById("siteScreenshot");
-  const loading=document.getElementById("siteLoading");
-  img.style.display="none";
-  loading.style.display="flex";
-  img.onload=function(){loading.style.display="none";img.style.display="block";};
-  img.onerror=function(){img.style.display="none";loading.innerHTML='<span>Vista no disponible &middot; <a onclick="openSite()" style="color:var(--or);font-weight:700;cursor:pointer">Abrir sitio →</a></span>';};
-  img.src="https://image.thum.io/get/width/800/crop/600/"+cc.url;
+  const frame=document.getElementById("siteFrame");
+  if(frame)frame.src=cc.url;
+  setTimeout(positionBadges,900);
 }
 function openSite(){if(cc)window.open(cc.url,"_blank","noopener");}
+
+
+// ── BADGE POSITIONING — fixed overlay tracks iframe ──
+function positionBadges(){
+  const wrap=document.getElementById("siteFrameWrap");
+  const layer=document.getElementById("annLayer");
+  const sec=document.getElementById("sec-res");
+  if(!wrap||!layer)return;
+  if(!sec||!sec.classList.contains("on")){
+    layer.querySelectorAll(".ann-badge").forEach(b=>b.style.display="none");
+    return;
+  }
+  const rect=wrap.getBoundingClientRect();
+  layer.querySelectorAll(".ann-badge").forEach((b,i)=>{
+    if(i>=BADGE_POSITIONS.length)return;
+    const pos=BADGE_POSITIONS[i];
+    const bTop=rect.top+(rect.height*pos[0]/100);
+    const bLeft=rect.left+(rect.width*pos[1]/100);
+    const inBounds=bTop>rect.top-14&&bTop<rect.bottom-14&&bLeft>rect.left-14&&bLeft<rect.right-14;
+    b.style.top=bTop+"px";
+    b.style.left=bLeft+"px";
+    b.style.display=inBounds?"flex":"none";
+  });
+}
 
 // ── ANNOTATIONS ──
 function renderTipsPanelAndBadges(){
@@ -509,6 +526,7 @@ function renderTipsPanelAndBadges(){
   document.getElementById("tipsPanelHd").textContent=cc.tips.length+" mejoras identificadas";
   const alta=sorted.filter(t=>t.p==="alta").length;
   document.getElementById("tipsPanelSub").textContent=alta+" de alta prioridad";
+  setTimeout(positionBadges,150);
   document.getElementById("tipsPanelList").innerHTML=sorted.slice(0,max).map((t,i)=>`
     <div class="tip-row" id="tipRow${i}" onmouseenter="highlightBadge(${i},true)" onmouseleave="highlightBadge(${i},false)" onclick="pulseTip(${i})">
       <div class="tip-num">${i+1}</div>
@@ -696,6 +714,7 @@ function nav(id,btn){
   document.querySelectorAll(".sb-btn").forEach(b=>b.classList.remove("on"));
   document.getElementById("sec-"+id).classList.add("on");
   if(btn)btn.classList.add("on");
+  setTimeout(positionBadges,50);
   if(id==="web"&&cc){const vf=document.getElementById("vistaFrame");if(vf.src==="about:blank")vf.src=cc.url;}
 }
 
@@ -707,6 +726,10 @@ window.addEventListener("DOMContentLoaded",()=>{
   }
   // Show login
   document.getElementById("lPass").addEventListener("keydown",e=>{if(e.key==="Enter")doLogin();});
+  const dmEl=document.querySelector(".dm");
+  if(dmEl)dmEl.addEventListener("scroll",positionBadges,{passive:true});
+  window.addEventListener("scroll",positionBadges,{passive:true});
+  window.addEventListener("resize",positionBadges);
   document.getElementById("lEmail").addEventListener("keydown",e=>{if(e.key==="Enter")document.getElementById("lPass").focus();});
 });
 </script>
@@ -736,5 +759,6 @@ window.addEventListener("DOMContentLoaded",()=>{
   </div>
 </div>
 
+<div id="annLayer"></div>
 </body>
 </html>
