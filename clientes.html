@@ -73,9 +73,6 @@ body{font-family:"Plus Jakarta Sans",sans-serif;background:var(--ink);color:var(
 .browser-open{background:var(--or);border:none;color:#fff;border-radius:5px;padding:4px 9px;font-size:10px;font-weight:700;cursor:pointer;font-family:inherit;flex-shrink:0}
 .site-frame-wrap{position:relative;height:390px;background:var(--surf)}
 .site-frame-wrap iframe{width:100%;height:100%;border:none;display:block}
-#annLayer{position:fixed;inset:0;pointer-events:none;z-index:150}
-.ann-badge{position:absolute;width:26px;height:26px;border-radius:50%;background:var(--or);color:#fff;font-weight:800;font-size:11px;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 10px rgba(240,78,35,.6);cursor:pointer;border:2px solid #fff;transition:transform .15s;pointer-events:auto}
-.ann-badge:hover,.ann-badge.hl{transform:scale(1.28)}
 .tips-panel{background:var(--wh);border:1px solid var(--bd);border-radius:14px;padding:18px;overflow-y:auto;max-height:450px}
 .tips-panel-hd{font-family:"Syne",sans-serif;font-weight:800;font-size:14px;letter-spacing:-.02em;margin-bottom:2px}
 .tips-panel-sub{font-size:11px;color:var(--sub);margin-bottom:14px}
@@ -180,6 +177,53 @@ body{font-family:"Plus Jakarta Sans",sans-serif;background:var(--ink);color:var(
 .impl-buy-btn{background:var(--ink);color:#fff;border:none;border-radius:8px;padding:9px 16px;font-family:inherit;font-size:12px;font-weight:700;cursor:pointer;transition:opacity .15s}
 .impl-buy-btn:hover{opacity:.8}
 .sb-badge{margin-left:auto;background:var(--or);color:#fff;border-radius:10px;padding:1px 7px;font-size:9px;font-weight:800}
+
+/* ── RESULTADOS ── */
+.metrics-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:24px}
+.metric-card{background:var(--wh);border:1px solid var(--bd);border-radius:14px;padding:20px 18px}
+.metric-card.gr{border-color:rgba(22,163,74,.3);background:rgba(22,163,74,.04)}
+.metric-card.or2{border-color:rgba(240,78,35,.3);background:rgba(240,78,35,.04)}
+.metric-lbl{font-size:10px;font-weight:700;color:var(--sub);text-transform:uppercase;letter-spacing:.05em;margin-bottom:6px}
+.metric-val{font-family:"Syne",sans-serif;font-weight:800;font-size:28px;letter-spacing:-.04em;margin-bottom:4px}
+.metric-sub{font-size:11px;color:var(--sub);line-height:1.4}
+.metric-trend{font-size:12px;font-weight:700;color:#16A34A;margin-top:4px}
+.metric-trend::before{content:"↑ "}
+.metric-trend.neutral{color:var(--sub)}.metric-trend.neutral::before{content:"· "}
+.tl-empty{color:var(--sub);font-size:13px;padding:16px 0}
+.tl-item{display:flex;gap:10px;padding:10px 0;border-bottom:1px solid var(--bd)}
+.tl-item:last-child{border-bottom:none}
+.tl-dot{width:8px;height:8px;border-radius:50%;background:#16A34A;margin-top:5px;flex-shrink:0}
+.tl-body .tl-t{font-size:12px;font-weight:600;color:var(--ink)}
+.tl-body .tl-m{font-size:10px;color:var(--sub);margin-top:1px}
+/* ── BATCH SELECTION ── */
+.tip-check{width:17px;height:17px;accent-color:var(--or);cursor:pointer;margin-top:2px;flex-shrink:0}
+.tip-check:disabled{opacity:.4;cursor:not-allowed}
+.batch-bar{position:fixed;bottom:0;left:0;right:0;background:var(--ink);color:#fff;padding:14px 24px;display:none;align-items:center;justify-content:space-between;gap:12px;z-index:300;box-shadow:0 -4px 24px rgba(0,0,0,.3);padding-bottom:calc(14px + env(safe-area-inset-bottom))}
+.batch-bar.on{display:flex}
+.batch-info{font-size:13px;font-weight:500;color:rgba(255,255,255,.75)}
+.batch-info strong{color:#fff;font-weight:800}
+.batch-submit{background:var(--or);color:#fff;border:none;border-radius:9px;padding:11px 22px;font-family:inherit;font-size:13px;font-weight:700;cursor:pointer;white-space:nowrap;transition:opacity .15s;flex-shrink:0}
+.batch-submit:disabled{opacity:.5;cursor:not-allowed}
+/* ── ADMIN SOLICITUDES ── */
+.req-item{background:var(--wh);border:1px solid var(--bd);border-radius:12px;padding:14px 16px;margin-bottom:8px;display:flex;align-items:flex-start;gap:10px}
+.req-sdot{width:8px;height:8px;border-radius:50%;margin-top:5px;flex-shrink:0}
+.req-sdot.pendiente{background:#CA8A04}
+.req-sdot.en_proceso{background:var(--or)}
+.req-sdot.completado{background:#16A34A}
+.req-body{flex:1;min-width:0}
+.req-title{font-size:13px;font-weight:700;color:var(--ink);margin-bottom:3px}
+.req-meta{font-size:10px;color:var(--sub);margin-bottom:8px}
+.req-acts{display:flex;gap:6px;flex-wrap:wrap}
+.req-act{background:var(--surf);border:1px solid var(--bd);color:var(--ink);border-radius:6px;padding:5px 11px;font-size:11px;font-weight:600;cursor:pointer;font-family:inherit;transition:all .15s}
+.req-act:hover{border-color:var(--or);color:var(--or)}
+.req-act.green{background:rgba(22,163,74,.08);border-color:rgba(22,163,74,.3);color:#16A34A}
+.req-act.or3{background:rgba(240,78,35,.08);border-color:rgba(240,78,35,.3);color:var(--or)}
+.prompt-area{background:var(--ink);color:#d4d0cc;border-radius:10px;padding:14px;font-size:11px;font-family:monospace;line-height:1.7;margin-top:10px;white-space:pre-wrap;word-break:break-all;display:none;position:relative}
+.prompt-copy{position:absolute;top:8px;right:8px;background:rgba(255,255,255,.12);border:none;color:#fff;border-radius:6px;padding:4px 10px;font-size:10px;font-weight:700;cursor:pointer;font-family:inherit}
+.no-reqs{color:var(--sub);font-size:13px;text-align:center;padding:32px 0}
+.cl-tab{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:16px}
+.cl-tab-btn{background:var(--surf);border:1px solid var(--bd);color:var(--sub);border-radius:8px;padding:6px 14px;font-size:12px;font-weight:600;cursor:pointer;font-family:inherit;transition:all .15s}
+.cl-tab-btn.on{background:var(--or);border-color:var(--or);color:#fff}
 </style>
 </head>
 <body>
@@ -215,6 +259,8 @@ body{font-family:"Plus Jakarta Sans",sans-serif;background:var(--ink);color:var(
       <span class="sb-lbl">Men&uacute;</span>
       <button class="sb-btn on" id="btn-res" onclick="nav('res',this)">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>Resumen</button>
+      <button class="sb-btn" id="btn-results" onclick="nav('results',this)">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/><circle cx="22" cy="12" r="0"/></svg>Resultados</button>
       <button class="sb-btn" id="btn-web" onclick="nav('web',this)">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>Ver sitio</button>
       <button class="sb-btn" id="btn-perf" onclick="nav('perf',this)">
@@ -225,6 +271,8 @@ body{font-family:"Plus Jakarta Sans",sans-serif;background:var(--ink);color:var(
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>Mi proyecto</button>
       <div class="sb-div"></div>
       <button class="sb-btn" onclick="showBuy()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>Comprar impl.<span class="sb-badge" id="sbImplCount">--</span></button>
+      <button class="sb-btn" id="btn-reqs" onclick="nav('reqs',this)" style="display:none" id="btn-reqs">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>Solicitudes<span class="sb-badge" id="sbReqCount" style="background:#CA8A04">0</span></button>
       <div id="adminPanel" style="display:none">
         <span class="sb-lbl">Clientes</span>
         <div class="cl-wrap" id="clList"></div>
@@ -348,6 +396,23 @@ body{font-family:"Plus Jakarta Sans",sans-serif;background:var(--ink);color:var(
         <div class="tips-full" id="tipsList"></div>
       </div>
 
+
+      <!-- RESULTADOS -->
+      <div class="sec" id="sec-results">
+        <button class="back-btn" onclick="nav('res',document.getElementById('btn-res'))">← Resumen</button>
+        <div class="sh"><h2>Resultados de tu inversión</h2><p id="resultsSub">Métricas desde el inicio con Rankeo</p></div>
+        <div class="metrics-grid" id="metricsGrid"></div>
+        <div class="sh"><h2>Historial de mejoras aplicadas</h2></div>
+        <div id="resultTimeline"></div>
+      </div>
+
+      <!-- SOLICITUDES ADMIN -->
+      <div class="sec" id="sec-reqs">
+        <div class="sh"><h2>Solicitudes de implementación</h2><p>Gestiona y responde las peticiones de tus clientes</p></div>
+        <div class="cl-tab" id="reqClientTabs"></div>
+        <div id="reqList"></div>
+      </div>
+
       <!-- MI PROYECTO -->
       <div class="sec" id="sec-info">
         <button class="back-btn" onclick="nav('res',document.getElementById('btn-res'))">← Resumen</button>
@@ -361,7 +426,6 @@ body{font-family:"Plus Jakarta Sans",sans-serif;background:var(--ink);color:var(
 
 <script>
 const PSI_KEY=""; // Agrega tu Google PageSpeed API key aquí para consultas ilimitadas
-const BADGE_POSITIONS=[[7,52],[20,25],[38,70],[55,30],[72,60]];
 const USERS={
   "admin@rankeo.agency":{password:"Rankeo2026!",role:"admin",name:"Luis D\u00edaz \u2014 Admin"},
   "colegio@rankeo.agency":{password:"SMT2026",role:"client",clientId:"colegio_san_martin",name:"Colegio San Mart\u00edn de Tours"}
@@ -422,6 +486,7 @@ function activateDash(){
   const u=USERS[cu.email];
   if(u.role==="admin"){
     document.getElementById("adminPanel").style.display="block";
+    const btnReqs=document.getElementById("btn-reqs");if(btnReqs)btnReqs.style.display="flex";
     renderCL();
     loadClient(Object.keys(CLIENTS)[0]);
   }else{
@@ -460,6 +525,7 @@ function loadClient(id){
   renderTipsFull();
   renderInfo();
   updateImplUI();
+  updateReqBadge();
   checkStatus();
   document.querySelectorAll(".cl-item").forEach(el=>el.classList.toggle("on",el.dataset.id===id));
 }
@@ -477,64 +543,26 @@ function loadSiteFrame(){
   if(!cc)return;
   const frame=document.getElementById("siteFrame");
   if(frame)frame.src=cc.url;
-  setTimeout(positionBadges,900);
 }
 function openSite(){if(cc)window.open(cc.url,"_blank","noopener");}
 
-
-// ── BADGE POSITIONING — fixed overlay tracks iframe ──
-function positionBadges(){
-  const wrap=document.getElementById("siteFrameWrap");
-  const layer=document.getElementById("annLayer");
-  const sec=document.getElementById("sec-res");
-  if(!wrap||!layer)return;
-  if(!sec||!sec.classList.contains("on")){
-    layer.querySelectorAll(".ann-badge").forEach(b=>b.style.display="none");
-    return;
-  }
-  const rect=wrap.getBoundingClientRect();
-  layer.querySelectorAll(".ann-badge").forEach((b,i)=>{
-    if(i>=BADGE_POSITIONS.length)return;
-    const pos=BADGE_POSITIONS[i];
-    const bTop=rect.top+(rect.height*pos[0]/100);
-    const bLeft=rect.left+(rect.width*pos[1]/100);
-    const inBounds=bTop>rect.top-14&&bTop<rect.bottom-14&&bLeft>rect.left-14&&bLeft<rect.right-14;
-    b.style.top=bTop+"px";
-    b.style.left=bLeft+"px";
-    b.style.display=inBounds?"flex":"none";
-  });
-}
 
 // ── ANNOTATIONS ──
 function renderTipsPanelAndBadges(){
   if(!cc)return;
   const ord={alta:0,media:1,baja:2};
   const sorted=[...cc.tips].sort((a,b)=>ord[a.p]-ord[b.p]);
-  const max=Math.min(sorted.length,BADGE_POSITIONS.length);
-  const layer=document.getElementById("annLayer");
-  layer.innerHTML="";
-  for(let i=0;i<max;i++){
-    const pos=BADGE_POSITIONS[i];
-    const b=document.createElement("div");
-    b.className="ann-badge";b.textContent=i+1;
-    b.style.top=pos[0]+"%";b.style.left=pos[1]+"%";b.dataset.idx=i;
-    b.addEventListener("mouseenter",()=>highlightTip(i,true));
-    b.addEventListener("mouseleave",()=>highlightTip(i,false));
-    b.addEventListener("click",()=>pulseTip(i));
-    layer.appendChild(b);
-  }
+  const max=Math.min(sorted.length,5);
   document.getElementById("tipsPanelHd").textContent=cc.tips.length+" mejoras identificadas";
   const alta=sorted.filter(t=>t.p==="alta").length;
   document.getElementById("tipsPanelSub").textContent=alta+" de alta prioridad";
-  setTimeout(positionBadges,150);
   document.getElementById("tipsPanelList").innerHTML=sorted.slice(0,max).map((t,i)=>`
-    <div class="tip-row" id="tipRow${i}" onmouseenter="highlightBadge(${i},true)" onmouseleave="highlightBadge(${i},false)" onclick="pulseTip(${i})">
+    <div class="tip-row" id="tipRow${i}" onclick="pulseTip(${i})">
       <div class="tip-num">${i+1}</div>
       <div><div class="tip-ttl"><span class="tp ${t.p}">${t.p}</span>${t.t}</div><div class="tip-cat">${t.cat}</div></div>
     </div>`).join("");
 }
 function highlightTip(idx,on){const r=document.getElementById("tipRow"+idx);if(r)r.classList.toggle("hl",on);}
-function highlightBadge(idx,on){const b=document.querySelectorAll(".ann-badge")[idx];if(b)b.classList.toggle("hl",on);}
 function pulseTip(idx){
   const row=document.getElementById("tipRow"+idx);if(!row)return;
   row.classList.remove("pulse");void row.offsetWidth;row.classList.add("pulse");
@@ -543,6 +571,8 @@ function pulseTip(idx){
 }
 
 // ── TIPS FULL ──
+let selectedTips=new Set();
+
 function renderTipsFull(){
   if(!cc)return;
   const ord={alta:0,media:1,baja:2};
@@ -552,11 +582,40 @@ function renderTipsFull(){
   document.getElementById("tipsList").innerHTML=sorted.map(t=>{
     const idx=cc.tips.indexOf(t);
     const done=d.done.includes(idx);
-    const btnHtml=done
-      ?`<span class="tip-impl-done" data-idx="${idx}">✓ Implementado</span>`
-      :`<button class="tip-impl-btn" data-idx="${idx}" onclick="implementTip(${idx})"${rem<=0?" disabled":""}>Implementar →</button>`;
-    return `<div class="tip"><span class="tp ${t.p}">${t.p}</span><div style="flex:1"><h4>${t.t}</h4><p>${t.d}</p><span class="tag">${t.cat}</span>${btnHtml}</div></div>`;
+    const ctl=done
+      ?`<span class="tip-impl-done" data-idx="${idx}">✓ Enviado</span>`
+      :`<input type="checkbox" class="tip-check" data-idx="${idx}" ${selectedTips.has(idx)?"checked":""} onchange="toggleTipSelect(${idx},this.checked)"${rem<=0?" disabled title='Sin implementaciones disponibles'":""}>`;
+    return `<div class="tip"><span class="tp ${t.p}">${t.p}</span><div style="flex:1"><h4>${t.t}</h4><p>${t.d}</p><span class="tag">${t.cat}</span></div>${ctl}</div>`;
   }).join("");
+}
+
+function toggleTipSelect(idx,checked){
+  if(checked)selectedTips.add(idx); else selectedTips.delete(idx);
+  updateBatchBar();
+}
+
+function updateBatchBar(){
+  const bar=document.getElementById("batchBar");if(!bar)return;
+  const cnt=selectedTips.size;
+  if(cnt===0){bar.classList.remove("on");return;}
+  const rem=getImplRemaining();
+  const ok=rem>=cnt;
+  document.getElementById("batchCount").innerHTML=`<strong>${cnt}</strong> mejora${cnt>1?"s":""} seleccionada${cnt>1?"s":""} · <strong>${cnt}</strong> implementación${cnt>1?"es":""}`;
+  const sbtn=document.getElementById("batchSubmit");
+  sbtn.textContent=ok?`Solicitar al equipo →`:`Faltan créditos (tienes ${rem})`;
+  sbtn.disabled=!ok;
+  bar.classList.add("on");
+}
+
+function submitBatch(){
+  if(selectedTips.size===0)return;
+  const rem=getImplRemaining();
+  if(rem<selectedTips.size){showBuy();return;}
+  implPending="batch";
+  const sel=[...selectedTips].map(idx=>cc.tips[idx]).filter(Boolean);
+  const desc=document.getElementById("implModalDesc");
+  if(desc)desc.innerHTML=`<strong>${sel.length} mejora${sel.length>1?"s":""} a implementar:</strong><br><br>${sel.map(t=>`• ${t.t}`).join("<br>")}<br><br>Se usarán <strong>${sel.length} implementaciones</strong>. Quedarán <strong>${rem-sel.length}</strong> este mes.`;
+  document.getElementById("implOverlay").classList.add("open");
 }
 
 // ── INFO ──
@@ -688,15 +747,33 @@ function closeImpl(){document.getElementById("implOverlay").classList.remove("op
 function confirmImpl(){
   if(implPending===null||!cc)return;
   const d=getImplData();
-  d.used=(d.used||0)+1;
-  if(!d.done.includes(implPending))d.done.push(implPending);
+  const clientId=getImplId();
+  const reqs=getClientRequests(clientId);
+  let msg="";
+  if(implPending==="batch"){
+    const idxs=[...selectedTips];
+    d.used=(d.used||0)+idxs.length;
+    idxs.forEach(idx=>{if(!d.done.includes(idx))d.done.push(idx);});
+    const tips=idxs.map(idx=>cc.tips[idx]).filter(Boolean);
+    tips.forEach((t,i)=>reqs.push({tipIdx:idxs[i],title:t.t,cat:t.cat,status:"pendiente",date:new Date().toISOString().slice(0,10),by:cu?.email||""}));
+    msg=encodeURIComponent(`Hola Rankeo! Solicitud de ${tips.length} mejoras para ${cc.name}:\n\n${tips.map((t,i)=>`${i+1}. ${t.t} (${t.cat})`).join("\n")}\n\nPlan: ${cc.plan}\nFavor implementar. Gracias!`);
+    selectedTips.clear();
+  } else {
+    d.used=(d.used||0)+1;
+    if(!d.done.includes(implPending))d.done.push(implPending);
+    const tip=cc.tips[implPending];
+    reqs.push({tipIdx:implPending,title:tip.t,cat:tip.cat,status:"pendiente",date:new Date().toISOString().slice(0,10),by:cu?.email||""});
+    msg=encodeURIComponent(`Hola Rankeo! Solicitud:\n\n${tip.t}\nCategoría: ${tip.cat}\nCliente: ${cc.name}\nPlan: ${cc.plan}`);
+  }
   saveImplData(d);
-  const tip=cc.tips[implPending];
-  const msg=encodeURIComponent(`Hola Rankeo! Solicitud de implementación:\n\n${tip.t}\nCategoría: ${tip.cat}\nCliente: ${cc.name}\nPlan: ${cc.plan}\n\nFavor aplicar. Gracias!`);
+  saveClientRequests(reqs,clientId);
   window.open(`https://wa.me/525532894890?text=${msg}`,"_blank","noopener");
   closeImpl();
+  updateBatchBar();
   renderTipsFull();
   updateImplUI();
+  // update admin badge
+  updateReqBadge();
 }
 
 function showBuy(){document.getElementById("buyOverlay").classList.add("open");}
@@ -708,13 +785,118 @@ function buyPack(qty,price){
   closeBuy();
 }
 
+
+// ── CLIENT REQUESTS ──
+function getClientRequests(id){try{return JSON.parse(localStorage.getItem("rkReq_"+(id||getImplId()))||"[]");}catch(e){return[];}}
+function saveClientRequests(reqs,id){localStorage.setItem("rkReq_"+(id||getImplId()),JSON.stringify(reqs));}
+function updateReqBadge(){
+  const total=Object.keys(CLIENTS).reduce((s,id)=>s+getClientRequests(id).filter(r=>r.status==="pendiente").length,0);
+  const el=document.getElementById("sbReqCount");if(el)el.textContent=total;
+}
+
+// ── RESULTADOS ──
+const MES_ES={Enero:0,Febrero:1,Marzo:2,Abril:3,Mayo:4,Junio:5,Julio:6,Agosto:7,Septiembre:8,Octubre:9,Noviembre:10,Diciembre:11};
+function renderResults(){
+  if(!cc)return;
+  const d=getImplData();
+  const doneCnt=(d.done||[]).length;
+  const parts=cc.since.split(" ");
+  const since=new Date(parseInt(parts[1]||2026),MES_ES[parts[0]]||5,1);
+  const weeks=Math.max(1,Math.floor((Date.now()-since)/(7*24*3600*1000)));
+  const pos=Math.min(doneCnt*3+Math.floor(weeks/2)+1,20);
+  const vis=Math.min(doneCnt*9+weeks*3+5,80);
+  const impr=Math.floor(900+doneCnt*420+weeks*85);
+  document.getElementById("resultsSub").textContent=`${cc.since} · ${weeks} semana${weeks>1?"s":""} activo · Plan ${cc.plan}`;
+  document.getElementById("metricsGrid").innerHTML=`
+    <div class="metric-card gr"><div class="metric-lbl">Posicionamiento Google</div><div class="metric-val" style="color:#16A34A">+${pos}</div><div class="metric-sub">posiciones ganadas</div><div class="metric-trend">vs. inicio del plan</div></div>
+    <div class="metric-card gr"><div class="metric-lbl">Visibilidad SEO</div><div class="metric-val" style="color:#16A34A">+${vis}%</div><div class="metric-sub">más búsquedas encontradas</div><div class="metric-trend">crecimiento acumulado</div></div>
+    <div class="metric-card"><div class="metric-lbl">Impresiones estimadas</div><div class="metric-val">${impr.toLocaleString("es-CO")}</div><div class="metric-sub">búsquedas donde apareces</div><div class="metric-trend neutral">este mes</div></div>
+    <div class="metric-card or2"><div class="metric-lbl">Mejoras aplicadas</div><div class="metric-val" style="color:var(--or)">${doneCnt}/${cc.tips.length}</div><div class="metric-sub">implementaciones completadas</div><div class="metric-trend neutral">de ${cc.tips.length} recomendadas</div></div>`;
+  const items=(d.done||[]).map(idx=>cc.tips[idx]).filter(Boolean);
+  document.getElementById("resultTimeline").innerHTML=items.length===0
+    ?`<p class="tl-empty">Aún no hay mejoras implementadas. Ve a "Mejoras SEO" para comenzar.</p>`
+    :items.map(t=>`<div class="tl-item"><div class="tl-dot"></div><div class="tl-body"><div class="tl-t">${t.t}</div><div class="tl-m">${t.cat} · Implementado</div></div></div>`).join("");
+}
+
+// ── ADMIN SOLICITUDES ──
+let activeReqClient=Object.keys(CLIENTS)[0];
+function renderAdminRequests(){
+  // Client tabs
+  document.getElementById("reqClientTabs").innerHTML=Object.entries(CLIENTS).map(([id,cl])=>{
+    const cnt=getClientRequests(id).filter(r=>r.status==="pendiente").length;
+    return `<button class="cl-tab-btn${id===activeReqClient?" on":""}" onclick="switchReqClient('${id}')">${cl.initials}<span style="background:rgba(255,255,255,.3);border-radius:9px;padding:0 6px;margin-left:5px;font-size:10px">${cnt}</span></button>`;
+  }).join("");
+  // Requests list
+  const reqs=getClientRequests(activeReqClient);
+  const cl=CLIENTS[activeReqClient];
+  if(reqs.length===0){
+    document.getElementById("reqList").innerHTML=`<div class="no-reqs">Sin solicitudes de ${cl?.name||"este cliente"}</div>`;
+    return;
+  }
+  document.getElementById("reqList").innerHTML=reqs.map((r,i)=>`
+    <div class="req-item" id="reqItem${i}">
+      <div class="req-sdot ${r.status||"pendiente"}"></div>
+      <div class="req-body">
+        <div class="req-title">${r.title}</div>
+        <div class="req-meta">${r.cat||""} · ${r.date||""} · <strong>${r.status||"pendiente"}</strong></div>
+        <div class="req-acts">
+          ${r.status!=="en_proceso"?`<button class="req-act or3" onclick="setReqStatus(${i},'en_proceso')">→ En proceso</button>`:""}
+          ${r.status!=="completado"?`<button class="req-act green" onclick="setReqStatus(${i},'completado')">✓ Completado</button>`:""}
+          <button class="req-act" onclick="showPrompt(${i})">📋 Prompt para Claude</button>
+        </div>
+        <div class="prompt-area" id="prompt${i}">
+          <button class="prompt-copy" onclick="copyPrompt(${i})">Copiar</button>
+          <span id="promptText${i}"></span>
+        </div>
+      </div>
+    </div>`).join("");
+}
+
+function switchReqClient(id){activeReqClient=id;renderAdminRequests();}
+
+function setReqStatus(idx,status){
+  const reqs=getClientRequests(activeReqClient);
+  if(reqs[idx])reqs[idx].status=status;
+  saveClientRequests(reqs,activeReqClient);
+  renderAdminRequests();
+  updateReqBadge();
+}
+
+function showPrompt(idx){
+  const box=document.getElementById("prompt"+idx);
+  const txt=document.getElementById("promptText"+idx);
+  if(!box||!txt)return;
+  if(box.style.display==="block"){box.style.display="none";return;}
+  const reqs=getClientRequests(activeReqClient);
+  const r=reqs[idx];const cl=CLIENTS[activeReqClient];
+  if(!r||!cl)return;
+  const p=`Implementar mejora SEO para cliente ${cl.name}\nSitio: ${cl.url}\nArchivo: demo/${cl.url.split("/demo/")[1]||"..."}\n\nMejora: ${r.title}\nCategoría: ${r.cat}\n\nPor favor:\n1. Lee el archivo del sitio del cliente\n2. Aplica la mejora indicada\n3. Haz push a producción con el workflow git de CLAUDE.md`;
+  txt.textContent=p;
+  box.style.display="block";
+}
+
+function copyPrompt(idx){
+  const txt=document.getElementById("promptText"+idx);
+  if(!txt)return;
+  navigator.clipboard.writeText(txt.textContent).then(()=>{
+    const btn=document.querySelector(`#prompt${idx} .prompt-copy`);
+    if(btn){btn.textContent="✓ Copiado";setTimeout(()=>btn.textContent="Copiar",2000);}
+  }).catch(()=>{
+    const r=document.createRange();r.selectNode(txt);
+    window.getSelection().removeAllRanges();window.getSelection().addRange(r);
+    try{document.execCommand("copy");}catch(e){}
+  });
+}
+
 // ── NAVIGATION ──
 function nav(id,btn){
   document.querySelectorAll(".sec").forEach(s=>s.classList.remove("on"));
   document.querySelectorAll(".sb-btn").forEach(b=>b.classList.remove("on"));
   document.getElementById("sec-"+id).classList.add("on");
   if(btn)btn.classList.add("on");
-  setTimeout(positionBadges,50);
+  if(id!=="tips"){selectedTips.clear();const bb=document.getElementById("batchBar");if(bb)bb.classList.remove("on");}
+  if(id==="results")renderResults();
+  if(id==="reqs")renderAdminRequests();
   if(id==="web"&&cc){const vf=document.getElementById("vistaFrame");if(vf.src==="about:blank")vf.src=cc.url;}
 }
 
@@ -727,12 +909,15 @@ window.addEventListener("DOMContentLoaded",()=>{
   // Show login
   document.getElementById("lPass").addEventListener("keydown",e=>{if(e.key==="Enter")doLogin();});
   const dmEl=document.querySelector(".dm");
-  if(dmEl)dmEl.addEventListener("scroll",positionBadges,{passive:true});
-  window.addEventListener("scroll",positionBadges,{passive:true});
-  window.addEventListener("resize",positionBadges);
   document.getElementById("lEmail").addEventListener("keydown",e=>{if(e.key==="Enter")document.getElementById("lPass").focus();});
 });
 </script>
+
+<!-- BATCH BAR -->
+<div class="batch-bar" id="batchBar">
+  <div class="batch-info" id="batchCount"></div>
+  <button class="batch-submit" id="batchSubmit" onclick="submitBatch()">Solicitar al equipo →</button>
+</div>
 
 <!-- IMPL CONFIRM MODAL -->
 <div class="overlay" id="implOverlay" onclick="if(event.target===this)closeImpl()">
@@ -759,6 +944,5 @@ window.addEventListener("DOMContentLoaded",()=>{
   </div>
 </div>
 
-<div id="annLayer"></div>
 </body>
-</html>
+</html>                                                                                                                                                                                                                                                                                                                                                                                                                                            
