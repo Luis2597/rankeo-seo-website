@@ -44,7 +44,6 @@
   <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1"/>
 
   <!-- Preload critical font -->
-  <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml"/>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap"/>
@@ -594,56 +593,6 @@
     .ck.hidden { display: none; }
 
     /* ━━━━ FOOTER ━━━━ */
-    .nav-portal-btn { background: var(--c-orange) !important; color: #fff !important; padding: 7px 16px !important; border-radius: 8px; font-weight: 700 !important; font-size: 13px; transition: opacity .15s !important; }
-    .nav-portal-btn:hover { opacity: .85; color: #fff !important; }
-    /* PORTAL SECTION */
-    .portal { padding: 120px 0; border-top: 1px solid var(--c-border); background: var(--c-ink); overflow: hidden; }
-    .portal-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
-    .portal-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(240,78,35,.15); border: 1px solid rgba(240,78,35,.3); border-radius: 20px; padding: 6px 14px; font-size: 12px; font-weight: 700; color: var(--c-orange); letter-spacing: .06em; text-transform: uppercase; margin-bottom: 20px; }
-    .portal-badge::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--c-orange); }
-    .portal-h { font-family: 'Syne', sans-serif; font-weight: 800; font-size: clamp(1.8rem,3.2vw,2.8rem); letter-spacing: -.03em; color: #fff; line-height: 1.1; margin-bottom: 16px; }
-    .portal-sub { font-size: 15px; color: rgba(255,255,255,.55); line-height: 1.7; margin-bottom: 28px; max-width: 420px; }
-    .portal-feats { list-style: none; display: flex; flex-direction: column; gap: 10px; margin-bottom: 32px; }
-    .portal-feats li { display: flex; align-items: center; gap: 10px; font-size: 14px; color: rgba(255,255,255,.8); font-weight: 500; }
-    .portal-feats li::before { content: ''; width: 18px; height: 18px; border-radius: 50%; background: rgba(240,78,35,.2); border: 1.5px solid var(--c-orange); flex-shrink: 0; background-image: url("data:image/svg+xml,%3Csvg width='10' height='8' viewBox='0 0 10 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 4L3.5 6.5L9 1' stroke='%23F04E23' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: center; }
-    .portal-ctas { display: flex; gap: 12px; flex-wrap: wrap; }
-    .portal-cta-p { display: inline-flex; align-items: center; gap: 8px; background: var(--c-orange); color: #fff; padding: 14px 24px; border-radius: 10px; font-size: 14px; font-weight: 700; text-decoration: none; transition: opacity .15s; }
-    .portal-cta-p:hover { opacity: .85; }
-    .portal-cta-s { display: inline-flex; align-items: center; gap: 8px; background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.15); color: rgba(255,255,255,.8); padding: 14px 24px; border-radius: 10px; font-size: 14px; font-weight: 600; text-decoration: none; transition: all .15s; }
-    .portal-cta-s:hover { background: rgba(255,255,255,.14); color: #fff; }
-    /* dashboard mockup */
-    .dash-mockup { background: #1a1917; border-radius: 16px; overflow: hidden; box-shadow: 0 32px 80px rgba(0,0,0,.6); border: 1px solid rgba(255,255,255,.08); }
-    .dm-bar { background: #0A0908; padding: 10px 14px; display: flex; align-items: center; gap: 8px; border-bottom: 1px solid rgba(255,255,255,.06); }
-    .dm-dots { display: flex; gap: 5px; }
-    .dm-dot { width: 9px; height: 9px; border-radius: 50%; }
-    .dm-url { flex: 1; background: rgba(255,255,255,.07); border-radius: 4px; height: 20px; margin: 0 8px; }
-    .dm-body { display: flex; height: 280px; }
-    .dm-sb { width: 52px; background: rgba(255,255,255,.04); border-right: 1px solid rgba(255,255,255,.06); padding: 10px 8px; display: flex; flex-direction: column; gap: 6px; }
-    .dm-sb-i { width: 36px; height: 8px; border-radius: 3px; background: rgba(255,255,255,.08); }
-    .dm-sb-i.on { background: var(--c-orange); opacity: .8; }
-    .dm-main { flex: 1; padding: 14px; display: flex; flex-direction: column; gap: 10px; overflow: hidden; }
-    .dm-kpis { display: grid; grid-template-columns: repeat(4,1fr); gap: 6px; }
-    .dm-kpi { background: rgba(255,255,255,.05); border-radius: 6px; padding: 8px; }
-    .dm-kpi-v { height: 14px; width: 60%; background: rgba(255,255,255,.15); border-radius: 3px; margin-bottom: 4px; }
-    .dm-kpi-l { height: 7px; width: 80%; background: rgba(255,255,255,.07); border-radius: 2px; }
-    .dm-kpi.hl .dm-kpi-v { background: var(--c-orange); opacity: .7; }
-    .dm-panel { display: grid; grid-template-columns: 1fr 140px; gap: 8px; flex: 1; }
-    .dm-site { background: rgba(255,255,255,.04); border-radius: 6px; overflow: hidden; }
-    .dm-site-bar { background: rgba(255,255,255,.07); height: 16px; display: flex; align-items: center; padding: 0 6px; gap: 3px; }
-    .dm-site-dot { width: 5px; height: 5px; border-radius: 50%; background: rgba(255,255,255,.25); }
-    .dm-site-url { flex: 1; height: 6px; background: rgba(255,255,255,.1); border-radius: 2px; margin-left: 4px; }
-    .dm-site-body { padding: 6px; display: flex; flex-direction: column; gap: 4px; }
-    .dm-line { height: 5px; border-radius: 2px; background: rgba(255,255,255,.07); }
-    .dm-line.w80 { width: 80%; }
-    .dm-line.w60 { width: 60%; }
-    .dm-line.w90 { width: 90%; }
-    .dm-line.hl { background: rgba(240,78,35,.35); }
-    .dm-tips-col { background: rgba(255,255,255,.04); border-radius: 6px; padding: 8px; display: flex; flex-direction: column; gap: 5px; }
-    .dm-tip { display: flex; align-items: center; gap: 4px; }
-    .dm-tip-dot { width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0; }
-    .dm-tip-line { flex: 1; height: 5px; border-radius: 2px; background: rgba(255,255,255,.1); }
-    @media(max-width:900px){ .portal-grid { grid-template-columns: 1fr; gap: 40px; } .dash-mockup { display: none; } }
-
     footer { border-top: 1px solid var(--c-border); padding: 38px 0; overflow: hidden; }
     .fi { display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
     .flinks { display: flex; gap: 22px; }
@@ -678,12 +627,9 @@
       .mini-card-2 { display: none; }
       .mini-card   { right: 8px; bottom: 8px; }
     }
-    .nav-portal-mob { display: none; background: var(--c-orange); color: #fff; padding: 7px 14px; border-radius: 8px; font-size: 12px; font-weight: 700; text-decoration: none; white-space: nowrap; transition: opacity .15s; }
-    .nav-portal-mob:hover { opacity: .85; color: #fff; }
     @media (max-width: 768px) {
       .nav-links, .nav-cta { display: none; }
       .burger { display: flex; }
-      .nav-portal-mob { display: inline-flex; align-items: center; }
       .cats { grid-template-columns: 1fr; }
       .rcta { flex-direction: column; }
       .plans { grid-template-columns: 1fr; }
@@ -746,13 +692,12 @@
         <li><a href="#precios">Precios</a></li>
         <li><a href="#faq">FAQ</a></li>
         <li><a href="#contacto">Contacto</a></li>
-        <li><a href="/clientes.html" class="nav-portal-btn">Acceder</a></li>
+        <li><a href="/clientes.html" style="color:var(--c-orange);font-weight:600">Portal clientes</a></li>
       </ul>
       <a href="#auditoria" class="nav-cta" aria-label="Analiza tu web gratis">
         Analiza tu web gratis
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg>
       </a>
-      <a href="/clientes.html" class="nav-portal-mob" aria-label="Panel de clientes">Acceder →</a>
       <button class="burger" id="burger" aria-label="Abrir menú" aria-expanded="false" aria-controls="drawer">
         <svg id="bico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
           <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
@@ -766,7 +711,6 @@
       <a href="#faq"           class="dl" data-c>Preguntas frecuentes</a>
       <a href="#contacto"      class="dl" data-c>Contacto</a>
       <a href="#auditoria"     class="dcta" data-c>Analiza tu web gratis</a>
-      <a href="/clientes.html" class="dcta" style="background:var(--c-orange);margin-top:6px" data-c>Mi panel de clientes →</a>
     </nav>
   </div>
 </header>
@@ -1231,84 +1175,6 @@
       </div>
     </div>
     <p class="pricing-note rv">🔒 Si en los primeros 60 días no ves ninguna mejora técnica medible, te devolvemos el pago del primer mes. Sin preguntas.</p>
-  </div>
-</section>
-
-
-<!-- ━━━ PORTAL ━━━ -->
-<section class="portal" id="portal" aria-label="Panel de clientes">
-  <div class="con">
-    <div class="portal-grid">
-      <div class="rv">
-        <div class="portal-badge">Panel de clientes</div>
-        <h2 class="portal-h">Monitorea tu sitio.<br/>Ve qué mejorar.</h2>
-        <p class="portal-sub">Cada cliente tiene su propio panel con métricas reales de Google, análisis SEO automáticos y recomendaciones priorizadas.</p>
-        <ul class="portal-feats">
-          <li>Puntaje PageSpeed en tiempo real</li>
-          <li>Core Web Vitals: LCP, CLS, FCP, TBT</li>
-          <li>Recomendaciones SEO priorizadas</li>
-          <li>Vista en vivo de tu sitio web</li>
-          <li>Historial de mejoras y seguimiento</li>
-        </ul>
-        <div class="portal-ctas">
-          <a href="/clientes.html" class="portal-cta-p">Acceder al panel <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg></a>
-          <a href="https://wa.me/525532894890?text=Hola%2C+quiero+saber+m%C3%A1s+sobre+el+panel+de+clientes" target="_blank" class="portal-cta-s">Hablar con Rankeo →</a>
-        </div>
-      </div>
-      <div class="rv" data-d="1">
-        <div class="dash-mockup">
-          <div class="dm-bar">
-            <div class="dm-dots">
-              <span class="dm-dot" style="background:#FF5F56"></span>
-              <span class="dm-dot" style="background:#FFBD2E"></span>
-              <span class="dm-dot" style="background:#27C93F"></span>
-            </div>
-            <div class="dm-url"></div>
-          </div>
-          <div class="dm-body">
-            <div class="dm-sb">
-              <div class="dm-sb-i on"></div>
-              <div class="dm-sb-i"></div>
-              <div class="dm-sb-i"></div>
-              <div class="dm-sb-i"></div>
-            </div>
-            <div class="dm-main">
-              <div class="dm-kpis">
-                <div class="dm-kpi hl"><div class="dm-kpi-v"></div><div class="dm-kpi-l"></div></div>
-                <div class="dm-kpi"><div class="dm-kpi-v"></div><div class="dm-kpi-l"></div></div>
-                <div class="dm-kpi"><div class="dm-kpi-v"></div><div class="dm-kpi-l"></div></div>
-                <div class="dm-kpi"><div class="dm-kpi-v"></div><div class="dm-kpi-l"></div></div>
-              </div>
-              <div class="dm-panel">
-                <div class="dm-site">
-                  <div class="dm-site-bar"><span class="dm-site-dot"></span><span class="dm-site-dot"></span><span class="dm-site-dot"></span><div class="dm-site-url"></div></div>
-                  <div class="dm-site-body">
-                    <div class="dm-line w90 hl"></div>
-                    <div class="dm-line w80"></div>
-                    <div class="dm-line w60"></div>
-                    <div class="dm-line w90"></div>
-                    <div class="dm-line w80"></div>
-                    <div class="dm-line w60 hl"></div>
-                    <div class="dm-line w80"></div>
-                    <div class="dm-line w90"></div>
-                    <div class="dm-line w60"></div>
-                    <div class="dm-line w80"></div>
-                  </div>
-                </div>
-                <div class="dm-tips-col">
-                  <div class="dm-tip"><div class="dm-tip-dot" style="background:#DC2626"></div><div class="dm-tip-line"></div></div>
-                  <div class="dm-tip"><div class="dm-tip-dot" style="background:#DC2626"></div><div class="dm-tip-line"></div></div>
-                  <div class="dm-tip"><div class="dm-tip-dot" style="background:#CA8A04"></div><div class="dm-tip-line"></div></div>
-                  <div class="dm-tip"><div class="dm-tip-dot" style="background:#CA8A04"></div><div class="dm-tip-line"></div></div>
-                  <div class="dm-tip"><div class="dm-tip-dot" style="background:#16A34A"></div><div class="dm-tip-line"></div></div>
-                  <div class="dm-tip"><div class="dm-tip-dot" style="background:#16A34A"></div><div class="dm-tip-line"></div></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
   </div>
 </section>
 
@@ -1912,35 +1778,5 @@ async function sendContact(e) {
 ]
 </script>
 
-
-<script type="application/ld+json">
-[
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "Rankeo",
-    "url": "https://rankeo.agency",
-    "logo": "https://rankeo-nu.vercel.app/preview.png",
-    "contactPoint": {
-      "@type": "ContactPoint",
-      "telephone": "+52-553-289-4890",
-      "contactType": "customer service",
-      "availableLanguage": ["Spanish"]
-    }
-  },
-  {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "Rankeo",
-    "url": "https://rankeo.agency",
-    "potentialAction": {
-      "@type": "SearchAction",
-      "target": {
-        "@type": "EntryPoint",
-        "urlTemplate": "https://rankeo.agency/?q={search_term_string}"
-      },
-      "query-input": "required name=search_term_string"
-    }
-  }
-]
-</script
+</body>
+</html>
