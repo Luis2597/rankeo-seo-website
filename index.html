@@ -555,7 +555,7 @@
     .cok p { font-size: 14px; color: var(--c-subtle); }
 
     /* ━━━━ FAQ ━━━━ */
-    .faq { padding: 120px 0; border-top: 1px solid var(--c-border); }
+    .faq { padding: 120px 0; border-top: 1px solid var(--c-border); overflow: hidden; }
     .fq-g { display: grid; grid-template-columns: 320px 1fr; gap: 80px; align-items: start; }
     .fq-l { position: sticky; top: 90px; }
     .fq-h { font-family: 'Syne', sans-serif; font-weight: 800; font-size: clamp(1.8rem,3vw,2.6rem); letter-spacing: -.03em; line-height: 1.08; }
@@ -1939,4 +1939,8 @@ async function sendContact(e) {
         "@type": "EntryPoint",
         "urlTemplate": "https://rankeo.agency/?q={search_term_string}"
       },
-    
+      "query-input": "required name=search_term_string"
+    }
+  }
+]
+</script
