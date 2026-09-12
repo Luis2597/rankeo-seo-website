@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Panel de clientes — Rankeo</title>
+<title>Panel de clientes â Rankeo</title>
 <meta name="robots" content="noindex,nofollow">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -12,7 +12,7 @@
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:"Plus Jakarta Sans",sans-serif;background:var(--ink);color:var(--ink);min-height:100vh}
 
-/* ═══ LOGIN SCREEN ═══ */
+/* âââ LOGIN SCREEN âââ */
 #loginScreen{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:24px;background:var(--ink)}
 .form-card{background:var(--wh);border-radius:20px;padding:36px 32px;width:100%;max-width:400px;box-shadow:0 32px 80px rgba(0,0,0,.35)}
 .fc-logo{font-family:"Syne",sans-serif;font-weight:800;font-size:26px;letter-spacing:-.03em;color:var(--ink);margin-bottom:4px}
@@ -27,7 +27,7 @@ body{font-family:"Plus Jakarta Sans",sans-serif;background:var(--ink);color:var(
 .login-footer{margin-top:22px;text-align:center;font-size:13px;color:var(--sub)}
 .login-footer a{color:var(--or);font-weight:700;text-decoration:none}
 
-/* ═══ DASHBOARD ═══ */
+/* âââ DASHBOARD âââ */
 #dashScreen{display:none;min-height:100vh;flex-direction:column;background:var(--bg)}
 .dh{background:var(--ink);padding:0 24px;height:58px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:200;gap:12px}
 .dh-logo{font-family:"Syne",sans-serif;font-weight:800;font-size:19px;color:#fff;letter-spacing:-.02em;flex-shrink:0}
@@ -160,7 +160,7 @@ body{font-family:"Plus Jakarta Sans",sans-serif;background:var(--ink);color:var(
 @media(max-width:960px){.panel-row{grid-template-columns:1fr}.tips-panel{max-height:none}}
 @media(max-width:768px){.sb{display:none}.dm{padding:16px}.ig{grid-template-columns:1fr}.kpi-row{grid-template-columns:1fr 1fr}}
 
-/* ── IMPLEMENTACIONES ── */
+/* ââ IMPLEMENTACIONES ââ */
 .tip-impl-btn{margin-top:9px;display:inline-flex;align-items:center;gap:5px;background:var(--or);color:#fff;border:none;border-radius:7px;padding:6px 13px;font-size:11px;font-weight:700;cursor:pointer;font-family:inherit;transition:opacity .15s}
 .tip-impl-btn:hover{opacity:.85}
 .tip-impl-btn:disabled{background:var(--surf);color:var(--sub);border:1px solid var(--bd);cursor:not-allowed;opacity:1}
@@ -188,7 +188,7 @@ body{font-family:"Plus Jakarta Sans",sans-serif;background:var(--ink);color:var(
 .impl-buy-btn:hover{opacity:.8}
 .sb-badge{margin-left:auto;background:var(--or);color:#fff;border-radius:10px;padding:1px 7px;font-size:9px;font-weight:800}
 
-/* ── RESULTADOS ── */
+/* ââ RESULTADOS ââ */
 .metrics-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:24px}
 .metric-card{background:var(--wh);border:1px solid var(--bd);border-radius:14px;padding:20px 18px}
 .metric-card.gr{border-color:rgba(22,163,74,.3);background:rgba(22,163,74,.04)}
@@ -197,15 +197,15 @@ body{font-family:"Plus Jakarta Sans",sans-serif;background:var(--ink);color:var(
 .metric-val{font-family:"Syne",sans-serif;font-weight:800;font-size:28px;letter-spacing:-.04em;margin-bottom:4px}
 .metric-sub{font-size:11px;color:var(--sub);line-height:1.4}
 .metric-trend{font-size:12px;font-weight:700;color:#16A34A;margin-top:4px}
-.metric-trend::before{content:"↑ "}
-.metric-trend.neutral{color:var(--sub)}.metric-trend.neutral::before{content:"· "}
+.metric-trend::before{content:"â "}
+.metric-trend.neutral{color:var(--sub)}.metric-trend.neutral::before{content:"Â· "}
 .tl-empty{color:var(--sub);font-size:13px;padding:16px 0}
 .tl-item{display:flex;gap:10px;padding:10px 0;border-bottom:1px solid var(--bd)}
 .tl-item:last-child{border-bottom:none}
 .tl-dot{width:8px;height:8px;border-radius:50%;background:#16A34A;margin-top:5px;flex-shrink:0}
 .tl-body .tl-t{font-size:12px;font-weight:600;color:var(--ink)}
 .tl-body .tl-m{font-size:10px;color:var(--sub);margin-top:1px}
-/* ── BATCH SELECTION ── */
+/* ââ BATCH SELECTION ââ */
 .tip-check{width:17px;height:17px;accent-color:var(--or);cursor:pointer;margin-top:2px;flex-shrink:0}
 .tip-check:disabled{opacity:.4;cursor:not-allowed}
 .batch-bar{position:fixed;bottom:0;left:0;right:0;background:var(--ink);color:#fff;padding:14px 24px;display:none;align-items:center;justify-content:space-between;gap:12px;z-index:300;box-shadow:0 -4px 24px rgba(0,0,0,.3);padding-bottom:calc(14px + env(safe-area-inset-bottom))}
@@ -214,7 +214,7 @@ body{font-family:"Plus Jakarta Sans",sans-serif;background:var(--ink);color:var(
 .batch-info strong{color:#fff;font-weight:800}
 .batch-submit{background:var(--or);color:#fff;border:none;border-radius:9px;padding:11px 22px;font-family:inherit;font-size:13px;font-weight:700;cursor:pointer;white-space:nowrap;transition:opacity .15s;flex-shrink:0}
 .batch-submit:disabled{opacity:.5;cursor:not-allowed}
-/* ── ADMIN SOLICITUDES ── */
+/* ââ ADMIN SOLICITUDES ââ */
 .req-item{background:var(--wh);border:1px solid var(--bd);border-radius:12px;padding:14px 16px;margin-bottom:8px;display:flex;align-items:flex-start;gap:10px}
 .req-sdot{width:8px;height:8px;border-radius:50%;margin-top:5px;flex-shrink:0}
 .req-sdot.pendiente{background:#CA8A04}
@@ -238,27 +238,27 @@ body{font-family:"Plus Jakarta Sans",sans-serif;background:var(--ink);color:var(
 </head>
 <body>
 
-<!-- ══ LOGIN ══ -->
+<!-- ââ LOGIN ââ -->
 <div id="loginScreen">
   <div class="form-card">
     <div class="fc-logo">Rankeo<span>.</span></div>
     <p class="fc-sub">Panel de clientes &middot; Acceso con tus credenciales</p>
-    <label class="lbl" for="lEmail">Correo electrónico</label>
+    <label class="lbl" for="lEmail">Correo electrÃ³nico</label>
     <input class="inp" id="lEmail" type="email" placeholder="tu@correo.com" autocomplete="email">
-    <label class="lbl" for="lPass">Contraseña</label>
+    <label class="lbl" for="lPass">ContraseÃ±a</label>
     <input class="inp" id="lPass" type="password" placeholder="&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;" autocomplete="current-password">
-    <button class="btn-p" onclick="doLogin()">Entrar al panel &rarr;</button>
+    <button class="btn-p" id="loginBtn" onclick="this.disabled=true;this.textContent='Verificando...';doLogin().finally(()=>{this.disabled=false;this.textContent='Entrar al panel →'})">Entrar al panel &rarr;</button>
     <p class="form-err" id="lErr">Correo o contrase&ntilde;a incorrectos. Verifica tus datos o cont&aacute;ctanos.</p>
     <div class="login-footer">
-      &iquest;No tienes cuenta? <a href="https://wa.me/525532894890?text=Hola%2C+quiero+informaci%C3%B3n+sobre+el+panel+de+clientes+de+Rankeo" target="_blank">Hab&eacute;mos por WhatsApp &rarr;</a>
+      &iquest;No tienes cuenta? <a href="https://wa.me/525532894890?text=Hola%2C+quiero+informaci%C3%B3n+sobre+el+panel+de+clientes+de+Rankeo" target="_blank" rel="noopener noreferrer">Hab&eacute;mos por WhatsApp &rarr;</a>
     </div>
   </div>
 </div>
 
-<!-- ══ DASHBOARD ══ -->
+<!-- ââ DASHBOARD ââ -->
 <div id="dashScreen">
   <header class="dh">
-    <button class="dh-burger" id="sbBurger" onclick="toggleMobSb()" aria-label="Menú"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button><div class="dh-logo">Rankeo<span>.</span></div>
+    <button class="dh-burger" id="sbBurger" onclick="toggleMobSb()" aria-label="MenÃº"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button><div class="dh-logo">Rankeo<span>.</span></div>
     <div class="dh-r">
       <span class="dh-name" id="hName"></span>
       <button class="dh-out" onclick="doLogout()">Salir</button>
@@ -306,7 +306,7 @@ body{font-family:"Plus Jakarta Sans",sans-serif;background:var(--ink);color:var(
             <div class="us-t">Tu sitio est&aacute; siendo configurado</div>
             <div class="us-d">En menos de 48 horas activa tu panel completo con an&aacute;lisis, m&eacute;tricas y mejoras SEO.</div>
           </div>
-          <a href="https://wa.me/525532894890?text=Hola%2C+acabo+de+iniciar+sesi%C3%B3n+en+el+panel" target="_blank" class="us-cta">Contactar a Rankeo &rarr;</a>
+          <a href="https://wa.me/525532894890?text=Hola%2C+acabo+de+iniciar+sesi%C3%B3n+en+el+panel" target="_blank" rel="noopener noreferrer" class="us-cta">Contactar a Rankeo &rarr;</a>
         </div>
         <div class="panel-row">
           <div>
@@ -352,7 +352,7 @@ body{font-family:"Plus Jakarta Sans",sans-serif;background:var(--ink);color:var(
 
       <!-- VER SITIO -->
       <div class="sec" id="sec-web">
-        <button class="back-btn" onclick="nav('res',document.getElementById('btn-res'))">← Resumen</button>
+        <button class="back-btn" onclick="nav('res',document.getElementById('btn-res'))">â Resumen</button>
         <div class="sh"><h2>Sitio web</h2><p id="vistaSubtitle">Vista completa</p></div>
         <div class="vista-box">
           <div class="vista-bar">
@@ -370,7 +370,7 @@ body{font-family:"Plus Jakarta Sans",sans-serif;background:var(--ink);color:var(
 
       <!-- PERFORMANCE -->
       <div class="sec" id="sec-perf">
-        <button class="back-btn" onclick="nav('res',document.getElementById('btn-res'))">← Resumen</button>
+        <button class="back-btn" onclick="nav('res',document.getElementById('btn-res'))">â Resumen</button>
         <div class="sh"><h2>An&aacute;lisis de Performance</h2><p>Google PageSpeed Insights &middot; M&oacute;vil</p></div>
         <div class="score-row-lg">
           <div class="sc-wrap-lg">
@@ -396,9 +396,9 @@ body{font-family:"Plus Jakarta Sans",sans-serif;background:var(--ink);color:var(
 
       <!-- MEJORAS SEO -->
       <div class="sec" id="sec-tips">
-        <button class="back-btn" onclick="nav('res',document.getElementById('btn-res'))">← Resumen</button>
+        <button class="back-btn" onclick="nav('res',document.getElementById('btn-res'))">â Resumen</button>
         <div class="impl-hd">
-          <div class="sh" style="margin:0"><h2>Mejoras SEO</h2><p>Implementa cada mejora con un clic — Rankeo lo aplica en tu sitio</p></div>
+          <div class="sh" style="margin:0"><h2>Mejoras SEO</h2><p>Implementa cada mejora con un clic â Rankeo lo aplica en tu sitio</p></div>
           <div style="display:flex;align-items:center;gap:10px">
             <div class="impl-counter"><div><div class="impl-counter-n" id="implCountBig">--</div><div class="impl-counter-l">implementaciones<br>disponibles</div></div></div>
             <button class="impl-buy-btn" onclick="showBuy()">+ Comprar</button>
@@ -410,8 +410,8 @@ body{font-family:"Plus Jakarta Sans",sans-serif;background:var(--ink);color:var(
 
       <!-- RESULTADOS -->
       <div class="sec" id="sec-results">
-        <button class="back-btn" onclick="nav('res',document.getElementById('btn-res'))">← Resumen</button>
-        <div class="sh"><h2>Resultados de tu inversión</h2><p id="resultsSub">Métricas desde el inicio con Rankeo</p></div>
+        <button class="back-btn" onclick="nav('res',document.getElementById('btn-res'))">â Resumen</button>
+        <div class="sh"><h2>Resultados de tu inversiÃ³n</h2><p id="resultsSub">MÃ©tricas desde el inicio con Rankeo</p></div>
         <div class="metrics-grid" id="metricsGrid"></div>
         <div class="sh"><h2>Historial de mejoras aplicadas</h2></div>
         <div id="resultTimeline"></div>
@@ -419,14 +419,14 @@ body{font-family:"Plus Jakarta Sans",sans-serif;background:var(--ink);color:var(
 
       <!-- SOLICITUDES ADMIN -->
       <div class="sec" id="sec-reqs">
-        <div class="sh"><h2>Solicitudes de implementación</h2><p>Gestiona y responde las peticiones de tus clientes</p></div>
+        <div class="sh"><h2>Solicitudes de implementaciÃ³n</h2><p>Gestiona y responde las peticiones de tus clientes</p></div>
         <div class="cl-tab" id="reqClientTabs"></div>
         <div id="reqList"></div>
       </div>
 
       <!-- MI PROYECTO -->
       <div class="sec" id="sec-info">
-        <button class="back-btn" onclick="nav('res',document.getElementById('btn-res'))">← Resumen</button>
+        <button class="back-btn" onclick="nav('res',document.getElementById('btn-res'))">â Resumen</button>
         <div class="sh"><h2>Mi proyecto</h2><p>Informaci&oacute;n de tu cuenta Rankeo</p></div>
         <div class="ig" id="infoGrid"></div>
       </div>
@@ -436,10 +436,10 @@ body{font-family:"Plus Jakarta Sans",sans-serif;background:var(--ink);color:var(
 </div>
 
 <script>
-const PSI_KEY=""; // Agrega tu Google PageSpeed API key aquí para consultas ilimitadas
+const PSI_KEY=""; // Agrega tu Google PageSpeed API key aquÃ­ para consultas ilimitadas
 const USERS={
-  "admin@rankeo.agency":{password:"Rankeo2026!",role:"admin",name:"Luis D\u00edaz \u2014 Admin"},
-  "colegio@rankeo.agency":{password:"SMT2026",role:"client",clientId:"colegio_san_martin",name:"Colegio San Mart\u00edn de Tours"}
+  "admin@rankeo.agency":{hash:"20a79dd4bea86a36d0ac8b32106273184e9b8c5fe1a18839bd6a19b69f3d71c5",role:"admin",name:"Luis D\u00edaz \u2014 Admin"},
+  "colegio@rankeo.agency":{hash:"e0fdef14fba35a48cd580f9c86291ebaa6eb17ecd63db13efe5118bb054a5566",role:"client",clientId:"colegio_san_martin",name:"Colegio San Mart\u00edn de Tours"}
 };
 const CLIENTS={
   colegio_san_martin:{
@@ -465,15 +465,21 @@ const CLIENTS={
 
 let cu=null,cc=null;
 
-// ── AUTH ──
-function doLogin(){
+// ââ AUTH ââ
+async function sha256hex(str){
+  const buf=await crypto.subtle.digest("SHA-256",new TextEncoder().encode(str));
+  return Array.from(new Uint8Array(buf)).map(b=>b.toString(16).padStart(2,"0")).join("");
+}
+async function doLogin(){
   const e=document.getElementById("lEmail").value.trim().toLowerCase();
   const p=document.getElementById("lPass").value;
   const err=document.getElementById("lErr");
   err.style.display="none";
   const u=USERS[e];
-  if(!u||u.password!==p){err.style.display="block";document.getElementById("lPass").value="";return;}
-  cu={...u,email:e};
+  if(!u){err.style.display="block";document.getElementById("lPass").value="";return;}
+  const inputHash=await sha256hex(p);
+  if(inputHash!==u.hash){err.style.display="block";document.getElementById("lPass").value="";return;}
+  cu={email:e,role:u.role,name:u.name,clientId:u.clientId||null};
   sessionStorage.setItem("rkU",JSON.stringify(cu));
   activateDash();
 }
@@ -490,25 +496,23 @@ function doLogout(){
   document.getElementById("lErr").style.display="none";
 }
 
-// ── ACTIVATE DASH ──
+// ââ ACTIVATE DASH ââ
 function activateDash(){
   document.getElementById("loginScreen").style.display="none";
   document.getElementById("dashScreen").style.display="flex";
-  const u=USERS[cu.email];
-  if(u.role==="admin"){
+  if(cu.role==="admin"){
     document.getElementById("adminPanel").style.display="block";
     const btnReqs=document.getElementById("btn-reqs");if(btnReqs)btnReqs.style.display="flex";
     renderCL();
     loadClient(Object.keys(CLIENTS)[0]);
   }else{
     document.getElementById("adminPanel").style.display="none";
-    const cid=u.clientId;
+    const cid=cu.clientId;
     if(cid&&CLIENTS[cid]){
       loadClient(cid);
     }else{
-      // User in system but no client data yet
-      document.getElementById("hName").textContent=u.name;
-      document.getElementById("rTitle").textContent="Hola, "+u.name.split(" ")[0]+"!";
+      document.getElementById("hName").textContent=cu.name;
+      document.getElementById("rTitle").textContent="Hola, "+cu.name.split(" ")[0]+"!";
       document.getElementById("kPlan").textContent="Pendiente";
       document.getElementById("kSince").textContent="En configuraci\u00f3n";
       document.getElementById("upgradePending").style.display="flex";
@@ -517,7 +521,7 @@ function activateDash(){
   document.getElementById("rDate").textContent="Actualizado: "+new Date().toLocaleDateString("es-CO",{weekday:"long",year:"numeric",month:"long",day:"numeric"});
 }
 
-// ── CLIENT LOAD ──
+// ââ CLIENT LOAD ââ
 function loadClient(id){
   cc=CLIENTS[id];if(!cc)return;
   document.getElementById("hName").textContent=cc.name;
@@ -549,7 +553,7 @@ function checkStatus(){
     .catch(()=>document.getElementById("kSt").innerHTML='<span style="color:var(--rd)">Sin respuesta</span>');
 }
 
-// ── IFRAME PREVIEW ──
+// ââ IFRAME PREVIEW ââ
 function loadSiteFrame(){
   if(!cc)return;
   const frame=document.getElementById("siteFrame");
@@ -558,7 +562,7 @@ function loadSiteFrame(){
 function openSite(){if(cc)window.open(cc.url,"_blank","noopener");}
 
 
-// ── ANNOTATIONS ──
+// ââ ANNOTATIONS ââ
 function renderTipsPanelAndBadges(){
   if(!cc)return;
   const ord={alta:0,media:1,baja:2};
@@ -581,7 +585,7 @@ function pulseTip(idx){
   setTimeout(()=>row.classList.remove("pulse"),1100);
 }
 
-// ── TIPS FULL ──
+// ââ TIPS FULL ââ
 let selectedTips=new Set();
 
 function renderTipsFull(){
@@ -594,7 +598,7 @@ function renderTipsFull(){
     const idx=cc.tips.indexOf(t);
     const done=d.done.includes(idx);
     const ctl=done
-      ?`<span class="tip-impl-done" data-idx="${idx}">✓ Enviado</span>`
+      ?`<span class="tip-impl-done" data-idx="${idx}">â Enviado</span>`
       :`<input type="checkbox" class="tip-check" data-idx="${idx}" ${selectedTips.has(idx)?"checked":""} onchange="toggleTipSelect(${idx},this.checked)"${rem<=0?" disabled title='Sin implementaciones disponibles'":""}>`;
     return `<div class="tip"><span class="tp ${t.p}">${t.p}</span><div style="flex:1"><h4>${t.t}</h4><p>${t.d}</p><span class="tag">${t.cat}</span></div>${ctl}</div>`;
   }).join("");
@@ -611,9 +615,9 @@ function updateBatchBar(){
   if(cnt===0){bar.classList.remove("on");return;}
   const rem=getImplRemaining();
   const ok=rem>=cnt;
-  document.getElementById("batchCount").innerHTML=`<strong>${cnt}</strong> mejora${cnt>1?"s":""} seleccionada${cnt>1?"s":""} · <strong>${cnt}</strong> implementación${cnt>1?"es":""}`;
+  document.getElementById("batchCount").innerHTML=`<strong>${cnt}</strong> mejora${cnt>1?"s":""} seleccionada${cnt>1?"s":""} Â· <strong>${cnt}</strong> implementaciÃ³n${cnt>1?"es":""}`;
   const sbtn=document.getElementById("batchSubmit");
-  sbtn.textContent=ok?`Solicitar al equipo →`:`Faltan créditos (tienes ${rem})`;
+  sbtn.textContent=ok?`Solicitar al equipo â`:`Faltan crÃ©ditos (tienes ${rem})`;
   sbtn.disabled=!ok;
   bar.classList.add("on");
 }
@@ -625,11 +629,11 @@ function submitBatch(){
   implPending="batch";
   const sel=[...selectedTips].map(idx=>cc.tips[idx]).filter(Boolean);
   const desc=document.getElementById("implModalDesc");
-  if(desc)desc.innerHTML=`<strong>${sel.length} mejora${sel.length>1?"s":""} a implementar:</strong><br><br>${sel.map(t=>`• ${t.t}`).join("<br>")}<br><br>Se usarán <strong>${sel.length} implementaciones</strong>. Quedarán <strong>${rem-sel.length}</strong> este mes.`;
+  if(desc)desc.innerHTML=`<strong>${sel.length} mejora${sel.length>1?"s":""} a implementar:</strong><br><br>${sel.map(t=>`â¢ ${t.t}`).join("<br>")}<br><br>Se usarÃ¡n <strong>${sel.length} implementaciones</strong>. QuedarÃ¡n <strong>${rem-sel.length}</strong> este mes.`;
   document.getElementById("implOverlay").classList.add("open");
 }
 
-// ── INFO ──
+// ââ INFO ââ
 function renderInfo(){
   if(!cc)return;
   document.getElementById("infoGrid").innerHTML=`
@@ -650,7 +654,7 @@ function renderCL(){
     </button>`).join("");
 }
 
-// ── PAGESPEED ──
+// ââ PAGESPEED ââ
 async function runAnalysis(){
   if(!cc)return;
   const btns=["abS","abP"];
@@ -663,11 +667,11 @@ async function runAnalysis(){
     if(cached&&(Date.now()-cached.ts)<PSI_CACHE_TTL){
       d=cached.data;
       const ageMin=Math.round((Date.now()-cached.ts)/60000);
-      document.getElementById("kScan").textContent="Caché "+ageMin+"m";
+      document.getElementById("kScan").textContent="CachÃ© "+ageMin+"m";
     }else{
       const apiUrl="https://www.googleapis.com/pagespeedonline/v5/runPagespeed?url="+encodeURIComponent(cc.url)+"&strategy=mobile&category=performance"+(PSI_KEY?"&key="+PSI_KEY:"");
       let r;
-      try{r=await fetch(apiUrl);}catch(netErr){throw new Error("Sin conexión con Google: "+netErr.message);}
+      try{r=await fetch(apiUrl);}catch(netErr){throw new Error("Sin conexiÃ³n con Google: "+netErr.message);}
       if(!r.ok){
         let det="";try{const j=await r.json();det=j?.error?.message||"";}catch(e){}
         if(r.status===429){
@@ -675,15 +679,15 @@ async function runAnalysis(){
             // serve stale cache with warning
             d=cached.data;
             const dias=new Date(cached.ts).toLocaleDateString("es-CO",{day:"2-digit",month:"short"});
-            document.getElementById("kScan").textContent="Análisis del "+dias;
-            const msg=`Límite diario de Google alcanzado. Mostrando resultado del ${dias}. Intenta mañana.`;
+            document.getElementById("kScan").textContent="AnÃ¡lisis del "+dias;
+            const msg=`LÃ­mite diario de Google alcanzado. Mostrando resultado del ${dias}. Intenta maÃ±ana.`;
             const slS=document.getElementById("slS");if(slS)slS.textContent="Resultado anterior";
             const sdS=document.getElementById("sdS");if(sdS)sdS.innerHTML=`<span style="color:var(--sub);font-size:11px">${msg}</span>`;
           }else{
-            throw new Error("Límite de análisis diario alcanzado. Intenta mañana o agenda el análisis en otro horario.");
+            throw new Error("LÃ­mite de anÃ¡lisis diario alcanzado. Intenta maÃ±ana o agenda el anÃ¡lisis en otro horario.");
           }
         }else{
-          throw new Error("HTTP "+r.status+(det?" — "+det:""));
+          throw new Error("HTTP "+r.status+(det?" â "+det:""));
         }
       }else{
         d=await r.json();
@@ -721,7 +725,7 @@ async function runAnalysis(){
   }catch(err){
     console.error("PageSpeed:",err);
     const msg=err.message||"Error desconocido";
-    const errHtml=`<span style="color:var(--rd);font-size:11px;display:block;margin-bottom:8px">${msg}</span><button onclick="runAnalysis()" style="background:none;border:none;color:var(--or);font-weight:700;cursor:pointer;font-family:inherit;font-size:13px;padding:0">Reintentar →</button>`;
+    const errHtml=`<span style="color:var(--rd);font-size:11px;display:block;margin-bottom:8px">${msg}</span><button onclick="runAnalysis()" style="background:none;border:none;color:var(--or);font-weight:700;cursor:pointer;font-family:inherit;font-size:13px;padding:0">Reintentar â</button>`;
     const slS=document.getElementById("slS");if(slS)slS.textContent="Error al analizar";
     const sdS=document.getElementById("sdS");if(sdS)sdS.innerHTML=errHtml;
     const slP=document.getElementById("slP");if(slP)slP.textContent="Error al analizar";
@@ -732,7 +736,7 @@ async function runAnalysis(){
 }
 
 
-// ── IMPLEMENTACIONES ──
+// ââ IMPLEMENTACIONES ââ
 let implPending=null;
 
 function getImplId(){return Object.keys(CLIENTS).find(k=>CLIENTS[k]===cc)||"";}
@@ -757,15 +761,15 @@ function getImplRemaining(){
 
 function updateImplUI(){
   const rem=getImplRemaining();
-  const kImpl=document.getElementById("kImpl");if(kImpl)kImpl.textContent=rem===999?"∞":rem;
-  const sb=document.getElementById("sbImplCount");if(sb)sb.textContent=rem===999?"∞":rem;
-  const big=document.getElementById("implCountBig");if(big)big.textContent=rem===999?"∞":rem;
+  const kImpl=document.getElementById("kImpl");if(kImpl)kImpl.textContent=rem===999?"â":rem;
+  const sb=document.getElementById("sbImplCount");if(sb)sb.textContent=rem===999?"â":rem;
+  const big=document.getElementById("implCountBig");if(big)big.textContent=rem===999?"â":rem;
   const d=getImplData();
   document.querySelectorAll("[data-idx]").forEach(el=>{
     const idx=parseInt(el.dataset.idx);
     const done=d.done.includes(idx);
-    if(done){el.className="tip-impl-done";el.textContent="✓ Implementado";}
-    else if(el.tagName==="BUTTON"){el.disabled=(rem<=0);el.textContent="Implementar →";}
+    if(done){el.className="tip-impl-done";el.textContent="â Implementado";}
+    else if(el.tagName==="BUTTON"){el.disabled=(rem<=0);el.textContent="Implementar â";}
   });
 }
 
@@ -778,7 +782,7 @@ function implementTip(idx){
   implPending=idx;
   const tip=cc.tips[idx];
   const desc=document.getElementById("implModalDesc");
-  if(desc)desc.innerHTML=`<strong>${tip.t}</strong><br><small style="color:var(--sub)">${tip.cat}</small><br><br>Se usará <strong>1 implementación</strong>. Te quedarán <strong>${rem-1}</strong> este mes.`;
+  if(desc)desc.innerHTML=`<strong>${tip.t}</strong><br><small style="color:var(--sub)">${tip.cat}</small><br><br>Se usarÃ¡ <strong>1 implementaciÃ³n</strong>. Te quedarÃ¡n <strong>${rem-1}</strong> este mes.`;
   document.getElementById("implOverlay").classList.add("open");
 }
 
@@ -803,7 +807,7 @@ function confirmImpl(){
     if(!d.done.includes(implPending))d.done.push(implPending);
     const tip=cc.tips[implPending];
     reqs.push({tipIdx:implPending,title:tip.t,cat:tip.cat,status:"pendiente",date:new Date().toISOString().slice(0,10),by:cu?.email||""});
-    msg=encodeURIComponent(`Hola Rankeo! Solicitud:\n\n${tip.t}\nCategoría: ${tip.cat}\nCliente: ${cc.name}\nPlan: ${cc.plan}`);
+    msg=encodeURIComponent(`Hola Rankeo! Solicitud:\n\n${tip.t}\nCategorÃ­a: ${tip.cat}\nCliente: ${cc.name}\nPlan: ${cc.plan}`);
   }
   saveImplData(d);
   saveClientRequests(reqs,clientId);
@@ -826,7 +830,7 @@ function buyPack(qty,price){
 }
 
 
-// ── CLIENT REQUESTS ──
+// ââ CLIENT REQUESTS ââ
 function getClientRequests(id){try{return JSON.parse(localStorage.getItem("rkReq_"+(id||getImplId()))||"[]");}catch(e){return[];}}
 function saveClientRequests(reqs,id){localStorage.setItem("rkReq_"+(id||getImplId()),JSON.stringify(reqs));}
 function updateReqBadge(){
@@ -834,7 +838,7 @@ function updateReqBadge(){
   const el=document.getElementById("sbReqCount");if(el)el.textContent=total;
 }
 
-// ── RESULTADOS ──
+// ââ RESULTADOS ââ
 const MES_ES={Enero:0,Febrero:1,Marzo:2,Abril:3,Mayo:4,Junio:5,Julio:6,Agosto:7,Septiembre:8,Octubre:9,Noviembre:10,Diciembre:11};
 function renderResults(){
   if(!cc)return;
@@ -846,19 +850,19 @@ function renderResults(){
   const pos=Math.min(doneCnt*3+Math.floor(weeks/2)+1,20);
   const vis=Math.min(doneCnt*9+weeks*3+5,80);
   const impr=Math.floor(900+doneCnt*420+weeks*85);
-  document.getElementById("resultsSub").textContent=`${cc.since} · ${weeks} semana${weeks>1?"s":""} activo · Plan ${cc.plan}`;
+  document.getElementById("resultsSub").textContent=`${cc.since} Â· ${weeks} semana${weeks>1?"s":""} activo Â· Plan ${cc.plan}`;
   document.getElementById("metricsGrid").innerHTML=`
     <div class="metric-card gr"><div class="metric-lbl">Posicionamiento Google</div><div class="metric-val" style="color:#16A34A">+${pos}</div><div class="metric-sub">posiciones ganadas</div><div class="metric-trend">vs. inicio del plan</div></div>
-    <div class="metric-card gr"><div class="metric-lbl">Visibilidad SEO</div><div class="metric-val" style="color:#16A34A">+${vis}%</div><div class="metric-sub">más búsquedas encontradas</div><div class="metric-trend">crecimiento acumulado</div></div>
-    <div class="metric-card"><div class="metric-lbl">Impresiones estimadas</div><div class="metric-val">${impr.toLocaleString("es-CO")}</div><div class="metric-sub">búsquedas donde apareces</div><div class="metric-trend neutral">este mes</div></div>
+    <div class="metric-card gr"><div class="metric-lbl">Visibilidad SEO</div><div class="metric-val" style="color:#16A34A">+${vis}%</div><div class="metric-sub">mÃ¡s bÃºsquedas encontradas</div><div class="metric-trend">crecimiento acumulado</div></div>
+    <div class="metric-card"><div class="metric-lbl">Impresiones estimadas</div><div class="metric-val">${impr.toLocaleString("es-CO")}</div><div class="metric-sub">bÃºsquedas donde apareces</div><div class="metric-trend neutral">este mes</div></div>
     <div class="metric-card or2"><div class="metric-lbl">Mejoras aplicadas</div><div class="metric-val" style="color:var(--or)">${doneCnt}/${cc.tips.length}</div><div class="metric-sub">implementaciones completadas</div><div class="metric-trend neutral">de ${cc.tips.length} recomendadas</div></div>`;
   const items=(d.done||[]).map(idx=>cc.tips[idx]).filter(Boolean);
   document.getElementById("resultTimeline").innerHTML=items.length===0
-    ?`<p class="tl-empty">Aún no hay mejoras implementadas. Ve a "Mejoras SEO" para comenzar.</p>`
-    :items.map(t=>`<div class="tl-item"><div class="tl-dot"></div><div class="tl-body"><div class="tl-t">${t.t}</div><div class="tl-m">${t.cat} · Implementado</div></div></div>`).join("");
+    ?`<p class="tl-empty">AÃºn no hay mejoras implementadas. Ve a "Mejoras SEO" para comenzar.</p>`
+    :items.map(t=>`<div class="tl-item"><div class="tl-dot"></div><div class="tl-body"><div class="tl-t">${t.t}</div><div class="tl-m">${t.cat} Â· Implementado</div></div></div>`).join("");
 }
 
-// ── ADMIN SOLICITUDES ──
+// ââ ADMIN SOLICITUDES ââ
 let activeReqClient=Object.keys(CLIENTS)[0];
 function renderAdminRequests(){
   // Client tabs
@@ -878,11 +882,11 @@ function renderAdminRequests(){
       <div class="req-sdot ${r.status||"pendiente"}"></div>
       <div class="req-body">
         <div class="req-title">${r.title}</div>
-        <div class="req-meta">${r.cat||""} · ${r.date||""} · <strong>${r.status||"pendiente"}</strong></div>
+        <div class="req-meta">${r.cat||""} Â· ${r.date||""} Â· <strong>${r.status||"pendiente"}</strong></div>
         <div class="req-acts">
-          ${r.status!=="en_proceso"?`<button class="req-act or3" onclick="setReqStatus(${i},'en_proceso')">→ En proceso</button>`:""}
-          ${r.status!=="completado"?`<button class="req-act green" onclick="setReqStatus(${i},'completado')">✓ Completado</button>`:""}
-          <button class="req-act" onclick="showPrompt(${i})">📋 Prompt para Claude</button>
+          ${r.status!=="en_proceso"?`<button class="req-act or3" onclick="setReqStatus(${i},'en_proceso')">â En proceso</button>`:""}
+          ${r.status!=="completado"?`<button class="req-act green" onclick="setReqStatus(${i},'completado')">â Completado</button>`:""}
+          <button class="req-act" onclick="showPrompt(${i})">ð Prompt para Claude</button>
         </div>
         <div class="prompt-area" id="prompt${i}">
           <button class="prompt-copy" onclick="copyPrompt(${i})">Copiar</button>
@@ -910,7 +914,7 @@ function showPrompt(idx){
   const reqs=getClientRequests(activeReqClient);
   const r=reqs[idx];const cl=CLIENTS[activeReqClient];
   if(!r||!cl)return;
-  const p=`Implementar mejora SEO para cliente ${cl.name}\nSitio: ${cl.url}\nArchivo: demo/${cl.url.split("/demo/")[1]||"..."}\n\nMejora: ${r.title}\nCategoría: ${r.cat}\n\nPor favor:\n1. Lee el archivo del sitio del cliente\n2. Aplica la mejora indicada\n3. Haz push a producción con el workflow git de CLAUDE.md`;
+  const p=`Implementar mejora SEO para cliente ${cl.name}\nSitio: ${cl.url}\nArchivo: demo/${cl.url.split("/demo/")[1]||"..."}\n\nMejora: ${r.title}\nCategorÃ­a: ${r.cat}\n\nPor favor:\n1. Lee el archivo del sitio del cliente\n2. Aplica la mejora indicada\n3. Haz push a producciÃ³n con el workflow git de CLAUDE.md`;
   txt.textContent=p;
   box.style.display="block";
 }
@@ -920,7 +924,7 @@ function copyPrompt(idx){
   if(!txt)return;
   navigator.clipboard.writeText(txt.textContent).then(()=>{
     const btn=document.querySelector(`#prompt${idx} .prompt-copy`);
-    if(btn){btn.textContent="✓ Copiado";setTimeout(()=>btn.textContent="Copiar",2000);}
+    if(btn){btn.textContent="â Copiado";setTimeout(()=>btn.textContent="Copiar",2000);}
   }).catch(()=>{
     const r=document.createRange();r.selectNode(txt);
     window.getSelection().removeAllRanges();window.getSelection().addRange(r);
@@ -944,7 +948,7 @@ function closeMobSb(){
   document.body.style.overflow="";
 }
 
-// ── NAVIGATION ──
+// ââ NAVIGATION ââ
 function nav(id,btn){
   document.querySelectorAll(".sec").forEach(s=>s.classList.remove("on"));
   document.querySelectorAll(".sb-btn").forEach(b=>b.classList.remove("on"));
@@ -956,7 +960,7 @@ function nav(id,btn){
   if(id==="web"&&cc){const vf=document.getElementById("vistaFrame");if(vf.src==="about:blank")vf.src=cc.url;}
 }
 
-// ── INIT ──
+// ââ INIT ââ
 window.addEventListener("DOMContentLoaded",()=>{
   const s=sessionStorage.getItem("rkU");
   if(s){
@@ -972,17 +976,17 @@ window.addEventListener("DOMContentLoaded",()=>{
 <!-- BATCH BAR -->
 <div class="batch-bar" id="batchBar">
   <div class="batch-info" id="batchCount"></div>
-  <button class="batch-submit" id="batchSubmit" onclick="submitBatch()">Solicitar al equipo →</button>
+  <button class="batch-submit" id="batchSubmit" onclick="submitBatch()">Solicitar al equipo â</button>
 </div>
 
 <!-- IMPL CONFIRM MODAL -->
 <div class="overlay" id="implOverlay" onclick="if(event.target===this)closeImpl()">
   <div class="modal">
-    <h3>¿Confirmar implementación?</h3>
-    <p id="implModalDesc">Esta mejora será enviada a Rankeo para su implementación.</p>
+    <h3>Â¿Confirmar implementaciÃ³n?</h3>
+    <p id="implModalDesc">Esta mejora serÃ¡ enviada a Rankeo para su implementaciÃ³n.</p>
     <div class="modal-btns">
       <button class="btn-s" onclick="closeImpl()">Cancelar</button>
-      <button class="btn-o" onclick="confirmImpl()">Confirmar y enviar →</button>
+      <button class="btn-o" onclick="confirmImpl()">Confirmar y enviar â</button>
     </div>
   </div>
 </div>
@@ -990,13 +994,13 @@ window.addEventListener("DOMContentLoaded",()=>{
 <div class="overlay" id="buyOverlay" onclick="if(event.target===this)closeBuy()">
   <div class="modal">
     <h3>Implementaciones extra</h3>
-    <p>Tu plan incluye implementaciones mensuales. Compra un pack adicional cuando necesites más. Se activan en menos de 1 hora.</p>
+    <p>Tu plan incluye implementaciones mensuales. Compra un pack adicional cuando necesites mÃ¡s. Se activan en menos de 1 hora.</p>
     <div class="pack-row">
       <div class="pack"><div class="pack-p">$29</div><div class="pack-n">10 implementaciones</div><button class="pack-btn" onclick="buyPack(10,29)">Comprar</button></div>
       <div class="pack hot"><div class="pack-p">$49</div><div class="pack-n">20 implementaciones</div><button class="pack-btn" onclick="buyPack(20,49)">Comprar</button></div>
       <div class="pack"><div class="pack-p">$89</div><div class="pack-n">50 implementaciones</div><button class="pack-btn" onclick="buyPack(50,89)">Comprar</button></div>
     </div>
-    <p style="font-size:11px;text-align:center;color:var(--sub);margin:0">Pago por WhatsApp · Sin contratos ni letra pequeña</p>
+    <p style="font-size:11px;text-align:center;color:var(--sub);margin:0">Pago por WhatsApp Â· Sin contratos ni letra pequeÃ±a</p>
   </div>
 </div>
 
