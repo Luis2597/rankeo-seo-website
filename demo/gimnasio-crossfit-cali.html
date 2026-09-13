@@ -92,7 +92,8 @@
     .coaches { padding: 96px 0; background: var(--dark); }
     .coa-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; }
     .coa-card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 28px; }
-    .coa-av { width: 56px; height: 56px; border-radius: 8px; background: var(--red); display: flex; align-items: center; justify-content: center; font-family: 'Bebas Neue', sans-serif; font-size: 22px; letter-spacing: .06em; margin-bottom: 14px; }
+    .coa-av { width: 72px; height: 72px; border-radius: 8px; overflow: hidden; margin-bottom: 14px; }
+    .coa-av img { width: 100%; height: 100%; object-fit: cover; object-position: top; display: block; filter: grayscale(20%); }
     .coa-name { font-family: 'Bebas Neue', sans-serif; font-size: 1.4rem; letter-spacing: .06em; }
     .coa-cert { font-size: 11.5px; color: var(--red); font-weight: 600; text-transform: uppercase; letter-spacing: .08em; margin-bottom: 10px; }
     .coa-card p { font-size: 13px; color: var(--muted); line-height: 1.65; }
@@ -284,19 +285,19 @@
     <h2 class="section-title">Te guían los mejores</h2>
     <div class="coa-grid">
       <div class="coa-card">
-        <div class="coa-av">SF</div>
+        <div class="coa-av"><img src="https://images.unsplash.com/photo-1534438327-0e82f658b3fc?auto=format&fit=crop&w=200&q=80" alt="Santiago Fierro — Head Coach CrossFit Valle" loading="lazy"></div>
         <div class="coa-name">Santiago Fierro</div>
         <div class="coa-cert">Head Coach · CF-L3</div>
         <p>CrossFit Level 3 Trainer. Competidor CrossFit Games Open. 8 años de experiencia entrenando en Colombia y Chile.</p>
       </div>
       <div class="coa-card">
-        <div class="coa-av">VM</div>
+        <div class="coa-av"><img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=200&q=80" alt="Valentina Muñoz — Coach CrossFit Valle" loading="lazy"></div>
         <div class="coa-name">Valentina Muñoz</div>
         <div class="coa-cert">Coach CrossFit · CF-L2</div>
         <p>CrossFit Level 2. Especialista en gymnastics y movilidad. Ex-gimnasta artística de selección Valle del Cauca.</p>
       </div>
       <div class="coa-card">
-        <div class="coa-av">DO</div>
+        <div class="coa-av"><img src="https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?auto=format&fit=crop&w=200&q=80" alt="David Ortega — Weightlifting Coach CrossFit Valle" loading="lazy"></div>
         <div class="coa-name">David Ortega</div>
         <div class="coa-cert">Weightlifting Coach</div>
         <p>Entrenador certificado USA Weightlifting. Medallista en Campeonato Nacional de Halterofilia 2022. CF-L1.</p>
