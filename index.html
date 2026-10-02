@@ -1447,20 +1447,28 @@ const STEPS = [
   'Calculando puntuación final...',
 ];
 // ── Real SEO analyzer: fetches the actual page HTML and inspects it ──
-async function analyzeSEO(rawUrl) {
-  const proxy = 'https://api.allorigins.win/get?url=';
-  const ctrl = new AbortController();
-  const tid = setTimeout(() => ctrl.abort(), 30000);
-  let html = '';
-  try {
-    const r = await fetch(proxy + encodeURIComponent(rawUrl), { signal: ctrl.signal });
-    clearTimeout(tid);
-    const j = await r.json();
-    html = j.contents || '';
-  } catch(e) {
-    clearTimeout(tid);
-    throw new Error(e.name === 'AbortError' ? 'Tiempo de espera agotado. Intenta de nuevo.' : 'No se pudo obtener el sitio: ' + e.message);
+async function fetchHtml(rawUrl) {
+  const proxies = [
+    async (u) => {
+      const r = await fetch('https://api.allorigins.win/get?url=' + encodeURIComponent(u), {signal: AbortSignal.timeout(20000)});
+      const j = await r.json(); return j.contents || '';
+    },
+    async (u) => {
+      const r = await fetch('https://corsproxy.io/?' + encodeURIComponent(u), {signal: AbortSignal.timeout(20000)});
+      return r.text();
+    },
+  ];
+  let lastErr = '';
+  for (const proxy of proxies) {
+    try { const h = await proxy(rawUrl); if (h && h.length > 200) return h; }
+    catch(e) { lastErr = e.message; }
   }
+  throw new Error('No se pudo obtener el sitio. Verifica que la URL sea correcta.');
+}
+async function analyzeSEO(rawUrl) {
+  let html = '';
+  try { html = await fetchHtml(rawUrl); }
+  catch(e) { throw e; }
   if (!html) throw new Error('El sitio no respondió o bloqueó la solicitud.');
 
   const dp = new DOMParser();
@@ -1589,8 +1597,8 @@ async function doAudit(e) {
       <span class="lt">${s}</span>
     </div>`).join('');
 
-  // Run animation and API call in parallel
-  let normalUrl = url;
+  // Normalize URL — strip extra https:// prefix (e.g. https://https://...)
+  let normalUrl = url.replace(/^(https?:\/\/)+/i, '').replace(/^/, 'https://');
   if (!normalUrl.startsWith('http')) normalUrl = 'https://' + normalUrl;
 
   const delays = [400, 900, 1500, 2200, 3100, 3900];
