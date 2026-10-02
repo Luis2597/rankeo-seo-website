@@ -1448,22 +1448,13 @@ const STEPS = [
 ];
 // ── Real SEO analyzer: fetches the actual page HTML and inspects it ──
 async function fetchHtml(rawUrl) {
-  const proxies = [
-    async (u) => {
-      const r = await fetch('https://api.allorigins.win/get?url=' + encodeURIComponent(u), {signal: AbortSignal.timeout(20000)});
-      const j = await r.json(); return j.contents || '';
-    },
-    async (u) => {
-      const r = await fetch('https://corsproxy.io/?' + encodeURIComponent(u), {signal: AbortSignal.timeout(20000)});
-      return r.text();
-    },
-  ];
-  let lastErr = '';
-  for (const proxy of proxies) {
-    try { const h = await proxy(rawUrl); if (h && h.length > 200) return h; }
-    catch(e) { lastErr = e.message; }
-  }
-  throw new Error('No se pudo obtener el sitio. Verifica que la URL sea correcta.');
+  // Use our own Vercel serverless function — no CORS, no quota
+  const endpoint = '/api/fetch-page?url=' + encodeURIComponent(rawUrl);
+  const r = await fetch(endpoint, { signal: AbortSignal.timeout(25000) });
+  const j = await r.json();
+  if (j.error) throw new Error(j.error);
+  if (!j.html || j.html.length < 100) throw new Error('El sitio no devolvió contenido HTML.');
+  return j.html;
 }
 async function analyzeSEO(rawUrl) {
   let html = '';
