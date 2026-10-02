@@ -1446,45 +1446,116 @@ const STEPS = [
   'Revisando SEO local...',
   'Calculando puntuación final...',
 ];
-const PSI_KEY = 'AIzaSyC9PLACEHOLDER_REPLACE_WITH_YOUR_KEY'; // Google PageSpeed API key (free)
-async function fetchPageSpeed(url) {
-  const api = 'https://www.googleapis.com/pagespeedonline/v5/runPagespeed';
-  const keyParam = PSI_KEY.includes('PLACEHOLDER') ? '' : `&key=${PSI_KEY}`;
-  const params = `?url=${encodeURIComponent(url)}&strategy=mobile&category=performance&category=seo&category=accessibility&category=best-practices${keyParam}`;
+// ── Real SEO analyzer: fetches the actual page HTML and inspects it ──
+async function analyzeSEO(rawUrl) {
+  const proxy = 'https://api.allorigins.win/get?url=';
   const ctrl = new AbortController();
-  const tid = setTimeout(() => ctrl.abort(), 45000); // 45s timeout
+  const tid = setTimeout(() => ctrl.abort(), 30000);
+  let html = '';
   try {
-    const r = await fetch(api + params, { signal: ctrl.signal });
+    const r = await fetch(proxy + encodeURIComponent(rawUrl), { signal: ctrl.signal });
     clearTimeout(tid);
-    const json = await r.json();
-    if (json.error) throw new Error(json.error.message || 'Error de API');
-    if (!json.lighthouseResult) throw new Error('Respuesta incompleta de Google');
-    return json;
+    const j = await r.json();
+    html = j.contents || '';
   } catch(e) {
     clearTimeout(tid);
-    if (e.name === 'AbortError') throw new Error('La análisis tardó demasiado (>45s). Intenta de nuevo.');
-    throw e;
+    throw new Error(e.name === 'AbortError' ? 'Tiempo de espera agotado. Intenta de nuevo.' : 'No se pudo obtener el sitio: ' + e.message);
   }
-}
-function parseResults(data, url) {
-  const lh = data.lighthouseResult;
-  const cats = lh.categories;
-  const audits = lh.audits;
-  const perf = Math.round((cats.performance?.score || 0) * 100);
-  const seo  = Math.round((cats.seo?.score || 0) * 100);
-  const a11y = Math.round((cats.accessibility?.score || 0) * 100);
-  const bp   = Math.round((cats['best-practices']?.score || 0) * 100);
-  const overall = Math.round(perf * 0.35 + seo * 0.35 + a11y * 0.15 + bp * 0.15);
-  function issues(ids) {
-    return ids.map(id => audits[id]).filter(a => a && a.score !== null && a.score < 0.9 && a.title)
-      .slice(0,4).map(a => a.title + (a.displayValue ? ': ' + a.displayValue : ''));
-  }
-  const fb = (arr, def) => arr.length ? arr : def;
-  return { url, overall, cats: [
-    { name:'SEO Técnico', score:seo, issues: fb(issues(['meta-description','document-title','robots-txt','canonical','link-text','crawlable-anchors','is-crawlable','hreflang']), ['Meta description ausente o muy corta','Sin sitemap.xml accesible','Links sin texto descriptivo','Canonical no configurado']) },
-    { name:'Velocidad', score:perf, issues: fb(issues(['largest-contentful-paint','total-blocking-time','cumulative-layout-shift','speed-index','first-contentful-paint','render-blocking-resources','uses-optimized-images','unused-css-rules']), ['LCP elevado (carga lenta del elemento principal)','Recursos bloqueando el render','Imágenes sin optimizar','CSS no utilizado incrementa peso de página']) },
-    { name:'Accesibilidad', score:a11y, issues: fb(issues(['image-alt','color-contrast','heading-order','label','button-name','link-name','list','document-title']), ['Imágenes sin atributo alt','Contraste insuficiente en textos','Jerarquía de encabezados incorrecta','Botones sin etiqueta accesible']) },
-    { name:'Buenas Prácticas', score:bp, issues: fb(issues(['uses-https','errors-in-console','doctype','charset','no-vulnerable-libraries','csp-xss','geolocation-on-start','notification-on-start']), ['Librerías JS con vulnerabilidades conocidas','Errores en consola del navegador','Sin política de seguridad de contenido','Solicitudes de geolocalización al cargar']) },
+  if (!html) throw new Error('El sitio no respondió o bloqueó la solicitud.');
+
+  const dp = new DOMParser();
+  const doc = dp.parseFromString(html, 'text/html');
+
+  // ── helpers ──
+  const $ = s => doc.querySelector(s);
+  const $$ = s => [...doc.querySelectorAll(s)];
+
+  // ── extract data ──
+  const title        = $('title')?.textContent?.trim() || '';
+  const metaDesc     = $('meta[name="description"]')?.getAttribute('content')?.trim() || '';
+  const metaRobots   = $('meta[name="robots"]')?.getAttribute('content') || '';
+  const canonical    = $('link[rel="canonical"]')?.getAttribute('href') || '';
+  const viewport     = $('meta[name="viewport"]') ? true : false;
+  const h1s          = $$('h1');
+  const h2s          = $$('h2');
+  const imgs         = $$('img');
+  const imgsNoAlt    = imgs.filter(i => !i.getAttribute('alt')?.trim());
+  const imgsEmptyAlt = imgs.filter(i => i.hasAttribute('alt') && !i.getAttribute('alt').trim());
+  const jsonLd       = $$('script[type="application/ld+json"]');
+  const ogTitle      = $('meta[property="og:title"]') ? true : false;
+  const ogDesc       = $('meta[property="og:description"]') ? true : false;
+  const ogImg        = $('meta[property="og:image"]') ? true : false;
+  const links        = $$('a[href]');
+  const extLinks     = links.filter(a => { try { return new URL(a.href).hostname !== new URL(rawUrl).hostname; } catch(e){return false;} });
+  const nofollow     = extLinks.filter(a => (a.getAttribute('rel')||'').includes('nofollow'));
+  const isHttps      = rawUrl.startsWith('https');
+  const hasH1        = h1s.length > 0;
+  const multiH1      = h1s.length > 1;
+  const titleLen     = title.length;
+  const descLen      = metaDesc.length;
+  const bodyText     = doc.body?.innerText || doc.body?.textContent || '';
+  const wordCount    = bodyText.split(/\s+/).filter(Boolean).length;
+
+  // ── score helpers ──
+  const pen = (cond, pts) => cond ? pts : 0; // penalty if true
+
+  // SEO Técnico (title, meta, h1, canonical, robots, sitemap-hint)
+  let seoScore = 100;
+  const seoIssues = [];
+  if (!title) { seoScore -= 20; seoIssues.push('Sin etiqueta <title> — crítico para Google'); }
+  else if (titleLen < 30) { seoScore -= 10; seoIssues.push(`Title muy corto (${titleLen} chars, recomendado 50-60)`); }
+  else if (titleLen > 65) { seoScore -= 8; seoIssues.push(`Title demasiado largo (${titleLen} chars), Google lo recortará`); }
+  if (!metaDesc) { seoScore -= 18; seoIssues.push('Sin meta description — Google genera una automática (poco atractiva)'); }
+  else if (descLen < 80) { seoScore -= 8; seoIssues.push(`Meta description muy corta (${descLen} chars, recomendado 150-160)`); }
+  else if (descLen > 170) { seoScore -= 5; seoIssues.push(`Meta description muy larga (${descLen} chars), se recortará`); }
+  if (!hasH1) { seoScore -= 15; seoIssues.push('Sin etiqueta H1 — Google no identifica el tema principal'); }
+  if (multiH1) { seoScore -= 8; seoIssues.push(`${h1s.length} etiquetas H1 en la misma página (debe ser solo 1)`); }
+  if (!canonical) { seoScore -= 10; seoIssues.push('Sin canonical tag — riesgo de contenido duplicado'); }
+  if (metaRobots.includes('noindex')) { seoScore -= 25; seoIssues.push('¡CRÍTICO! Página bloqueada con noindex — Google no la indexa'); }
+  if (jsonLd.length === 0) { seoScore -= 12; seoIssues.push('Sin datos estructurados (JSON-LD) — sin rich snippets en Google'); }
+  seoScore = Math.max(5, seoScore);
+
+  // Contenido On-Page (h2s, word count, images with alt, OG)
+  let contScore = 100;
+  const contIssues = [];
+  if (wordCount < 300) { contScore -= 20; contIssues.push(`Contenido escaso (${wordCount} palabras) — Google prefiere páginas con más texto`); }
+  if (h2s.length === 0) { contScore -= 12; contIssues.push('Sin subtítulos H2 — estructura de contenido pobre'); }
+  if (imgsNoAlt.length > 0) { contScore -= Math.min(20, imgsNoAlt.length * 4); contIssues.push(`${imgsNoAlt.length} imagen(es) sin atributo alt — invisibles para Google`); }
+  if (!ogTitle || !ogDesc || !ogImg) { contScore -= 10; contIssues.push('Open Graph incompleto — previsualización pobre en redes sociales'); }
+  if (imgs.length === 0) { contScore -= 8; contIssues.push('Sin imágenes en la página — contenido visual recomendado'); }
+  contScore = Math.max(5, contScore);
+
+  // SEO Local (Google Business, NAP, schema LocalBusiness)
+  let localScore = 100;
+  const localIssues = [];
+  const bodyLow = (doc.body?.textContent || '').toLowerCase();
+  const hasPhone = /\+?\d[\d\s\-\.]{7,}\d/.test(bodyLow);
+  const hasAddress = /calle|av\.|avenida|col\.|colonia|ciudad|cdmx|bogot|medell|barranquilla|cartagena|guadalajara|monterrey|street|blvd/i.test(bodyLow);
+  const hasLocalSchema = jsonLd.some(s => (s.textContent||'').includes('LocalBusiness'));
+  if (!hasLocalSchema) { localScore -= 25; localIssues.push('Sin schema LocalBusiness — Google no muestra info local en resultados'); }
+  if (!hasPhone) { localScore -= 20; localIssues.push('Teléfono no detectado en la página — reduce confianza y conversiones'); }
+  if (!hasAddress) { localScore -= 15; localIssues.push('Dirección física no detectada — necesaria para SEO local'); }
+  const hasGBP = bodyLow.includes('google.com/maps') || bodyLow.includes('goo.gl/maps');
+  if (!hasGBP) { localScore -= 15; localIssues.push('Sin enlace a Google Maps / Google Business Profile'); }
+  localScore = Math.max(5, localScore);
+
+  // Experiencia UX (mobile, HTTPS, navegación)
+  let uxScore = 100;
+  const uxIssues = [];
+  if (!isHttps) { uxScore -= 30; uxIssues.push('Sitio sin HTTPS — Google penaliza y Chrome muestra advertencia'); }
+  if (!viewport) { uxScore -= 25; uxIssues.push('Sin meta viewport — el sitio NO es mobile-friendly'); }
+  if (links.length < 3) { uxScore -= 15; uxIssues.push('Muy pocos enlaces internos — dificulta la navegación y el crawl'); }
+  const hasSkipNav = $$('[href="#main"],[href="#content"],[href="#maincontent"]').length > 0;
+  if (!hasSkipNav && links.length > 10) { uxScore -= 5; uxIssues.push('Sin enlace "saltar al contenido" — accesibilidad mejorable'); }
+  uxScore = Math.max(5, uxScore);
+
+  const overall = Math.round(seoScore * 0.35 + contScore * 0.25 + localScore * 0.2 + uxScore * 0.2);
+
+  return { url: rawUrl, overall, cats: [
+    { name: 'SEO Técnico',      score: seoScore,   issues: seoIssues.slice(0,4) },
+    { name: 'Contenido',        score: contScore,  issues: contIssues.slice(0,4) },
+    { name: 'SEO Local',        score: localScore, issues: localIssues.slice(0,4) },
+    { name: 'Experiencia UX',   score: uxScore,    issues: uxIssues.slice(0,4) },
   ]};
 }
 const sc = s => s>=70 ? 'var(--c-ok)' : s>=50 ? 'var(--c-warn)' : 'var(--c-error)';
@@ -1531,9 +1602,9 @@ async function doAudit(e) {
     r();
   }, delay)));
 
-  let apiResult = null, apiErr = null;
+  let d = null, apiErr = null;
   try {
-    apiResult = await fetchPageSpeed(normalUrl);
+    d = await analyzeSEO(normalUrl);
   } catch(ex) { apiErr = ex.message; }
 
   await Promise.all(anim);
@@ -1541,18 +1612,15 @@ async function doAudit(e) {
 
   load.style.display = 'none';
 
-  if (!apiResult || !apiResult.lighthouseResult) {
+  if (!d) {
     const msg = apiErr || 'Verifica que la URL sea correcta y el sitio esté publicado.';
     res.innerHTML = `<div style="text-align:center;padding:48px 24px;color:var(--c-subtle)">
       <p style="font-size:1.1rem;font-weight:600;margin-bottom:8px">No pudimos analizar ese sitio</p>
       <p style="font-size:.9rem;max-width:380px;margin:0 auto">${msg}</p>
-      <p style="font-size:.8rem;margin-top:16px;opacity:.6">También puedes usar directamente: <a href="https://pagespeed.web.dev/" target="_blank" rel="noopener" style="color:var(--c-orange)">pagespeed.web.dev</a></p>
     </div>`;
     btn.disabled = false; btn.textContent = 'Intentar de nuevo';
     return;
   }
-
-  const d = parseResults(apiResult, normalUrl);
   const C = 2 * Math.PI * 40, dash = (d.overall / 100) * C;
 
   res.innerHTML = `
