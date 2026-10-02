@@ -1446,9 +1446,11 @@ const STEPS = [
   'Revisando SEO local...',
   'Calculando puntuación final...',
 ];
+const PSI_KEY = 'AIzaSyC9PLACEHOLDER_REPLACE_WITH_YOUR_KEY'; // Google PageSpeed API key (free)
 async function fetchPageSpeed(url) {
   const api = 'https://www.googleapis.com/pagespeedonline/v5/runPagespeed';
-  const params = `?url=${encodeURIComponent(url)}&strategy=mobile&category=performance&category=seo&category=accessibility&category=best-practices`;
+  const keyParam = PSI_KEY.includes('PLACEHOLDER') ? '' : `&key=${PSI_KEY}`;
+  const params = `?url=${encodeURIComponent(url)}&strategy=mobile&category=performance&category=seo&category=accessibility&category=best-practices${keyParam}`;
   const ctrl = new AbortController();
   const tid = setTimeout(() => ctrl.abort(), 45000); // 45s timeout
   try {
