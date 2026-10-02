@@ -145,11 +145,17 @@ nav.scrolled{background:rgba(12,11,9,.95);backdrop-filter:blur(20px);border-bott
 .action-hdr{max-width:1160px;margin:0 auto 44px;padding:0 52px;text-align:center}
 .action-hdr h2{font-family:'Barlow Condensed',sans-serif;font-size:clamp(28px,4vw,48px);font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--cream);margin-bottom:10px}
 .action-hdr p{font-size:13px;color:rgba(245,240,232,.4);font-weight:300;max-width:560px;margin:0 auto;line-height:1.8}
-.action-grid{display:grid;grid-template-columns:2fr 1fr 1fr;grid-template-rows:240px 240px;gap:3px;max-width:1400px;margin:0 auto}
-.ag2{overflow:hidden;cursor:pointer}
-.ag2:first-child{grid-row:span 2}
-.ag2-bg{width:100%;height:100%;background-size:cover;background-position:center;transition:transform .65s;filter:brightness(.82)}
-.ag2:hover .ag2-bg{transform:scale(1.06);filter:brightness(.95)}
+/* CAROUSEL */
+.carousel-wrap{position:relative;overflow:hidden;width:100%}
+.carousel-track{display:flex;gap:4px;animation:cscroll 28s linear infinite;width:max-content}
+.carousel-track:hover{animation-play-state:paused}
+@keyframes cscroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.cs{flex-shrink:0;width:380px;height:300px;overflow:hidden;cursor:pointer;position:relative}
+.cs-bg{width:100%;height:100%;background-size:cover;background-position:center;transition:transform .6s,filter .4s;filter:brightness(.78)}
+.cs:hover .cs-bg{transform:scale(1.06);filter:brightness(.95)}
+/* legacy — keep refs */
+.action-grid{display:none}
+.ag2{display:none}.ag2-bg{}
 
 /* ── DESTINATIONS ── */
 .dest-section{background:#0d0c0a;padding:96px 0}
@@ -254,8 +260,7 @@ footer{background:rgba(8,7,5,1);padding:68px 52px 24px;border-top:1px solid rgba
   .aircraft-select{padding:52px 0 68px}.as-hdr{padding:0 20px}.cat-tabs{padding:0 20px}.aircraft-grid{padding:0 20px}
   .ag-inner{grid-template-columns:1fr 1fr}
   .dest-grid{grid-template-columns:1fr 1fr}
-  .action-grid{grid-template-columns:1fr 1fr;grid-template-rows:200px 200px 200px}
-  .action-grid .ag2:first-child{grid-row:span 1;grid-column:span 2}
+  .cs{width:280px;height:220px}
   .certif{padding:28px 20px}.certif-in{gap:20px}
   .ft-top{grid-template-columns:1fr 1fr;gap:24px;padding:0 20px}
   footer{padding:48px 20px 20px}
@@ -342,7 +347,7 @@ footer{background:rgba(8,7,5,1);padding:68px 52px 24px;border-top:1px solid rgba
       <h2>Selecciona tu Aeronave Perfecta</h2>
       <p>Explora nuestra flota completa, compara especificaciones o navega por categoría para encontrar el vuelo ideal.</p>
       <div class="as-banner-btns">
-        <a href="#contacto" class="btn-cream">Guía de Aeronaves</a>
+        <a href="#flota" class="btn-cream">Guía de Aeronaves</a>
         <a href="#contacto" class="btn-outline">Comparador</a>
       </div>
     </div>
@@ -413,12 +418,25 @@ footer{background:rgba(8,7,5,1);padding:68px 52px 24px;border-top:1px solid rgba
     <h2>JETCAB EN ACCIÓN</h2>
     <p>JETCAB es más que una aeronave. Es sobre las personas, las experiencias y los pequeños detalles que hacen memorable cada vuelo.</p>
   </div>
-  <div class="action-grid">
-    <div class="ag2"><div class="ag2-bg" style="background-image:url('https://images.unsplash.com/photo-1464037866556-6812c9d1c72e?auto=format&fit=crop&w=1000&q=80')"></div></div>
-    <div class="ag2"><div class="ag2-bg" style="background-image:url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=600&q=80')"></div></div>
-    <div class="ag2"><div class="ag2-bg" style="background-image:url('https://images.unsplash.com/photo-1474302770737-173ee21bab63?auto=format&fit=crop&w=600&q=80')"></div></div>
-    <div class="ag2"><div class="ag2-bg" style="background-image:url('https://images.unsplash.com/photo-1540962351504-03099e0a754b?auto=format&fit=crop&w=600&q=80')"></div></div>
-    <div class="ag2"><div class="ag2-bg" style="background-image:url('https://images.unsplash.com/photo-1556388158-158ea5ccacbd?auto=format&fit=crop&w=600&q=80')"></div></div>
+  <div class="carousel-wrap">
+    <div class="carousel-track">
+      <!-- Set 1 -->
+      <div class="cs"><div class="cs-bg" style="background-image:url('https://images.unsplash.com/photo-1464037866556-6812c9d1c72e?auto=format&fit=crop&w=600&q=80')"></div></div>
+      <div class="cs"><div class="cs-bg" style="background-image:url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=600&q=80')"></div></div>
+      <div class="cs"><div class="cs-bg" style="background-image:url('https://images.unsplash.com/photo-1474302770737-173ee21bab63?auto=format&fit=crop&w=600&q=80')"></div></div>
+      <div class="cs"><div class="cs-bg" style="background-image:url('https://images.unsplash.com/photo-1540962351504-03099e0a754b?auto=format&fit=crop&w=600&q=80')"></div></div>
+      <div class="cs"><div class="cs-bg" style="background-image:url('https://images.unsplash.com/photo-1556388158-158ea5ccacbd?auto=format&fit=crop&w=600&q=80')"></div></div>
+      <div class="cs"><div class="cs-bg" style="background-image:url('https://images.unsplash.com/photo-1436891678271-9c672565d8f6?auto=format&fit=crop&w=600&q=80')"></div></div>
+      <div class="cs"><div class="cs-bg" style="background-image:url('https://images.unsplash.com/photo-1583416750470-965b2707b355?auto=format&fit=crop&w=600&q=80')"></div></div>
+      <!-- Set 2 (duplicate for infinite loop) -->
+      <div class="cs"><div class="cs-bg" style="background-image:url('https://images.unsplash.com/photo-1464037866556-6812c9d1c72e?auto=format&fit=crop&w=600&q=80')"></div></div>
+      <div class="cs"><div class="cs-bg" style="background-image:url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=600&q=80')"></div></div>
+      <div class="cs"><div class="cs-bg" style="background-image:url('https://images.unsplash.com/photo-1474302770737-173ee21bab63?auto=format&fit=crop&w=600&q=80')"></div></div>
+      <div class="cs"><div class="cs-bg" style="background-image:url('https://images.unsplash.com/photo-1540962351504-03099e0a754b?auto=format&fit=crop&w=600&q=80')"></div></div>
+      <div class="cs"><div class="cs-bg" style="background-image:url('https://images.unsplash.com/photo-1556388158-158ea5ccacbd?auto=format&fit=crop&w=600&q=80')"></div></div>
+      <div class="cs"><div class="cs-bg" style="background-image:url('https://images.unsplash.com/photo-1436891678271-9c672565d8f6?auto=format&fit=crop&w=600&q=80')"></div></div>
+      <div class="cs"><div class="cs-bg" style="background-image:url('https://images.unsplash.com/photo-1583416750470-965b2707b355?auto=format&fit=crop&w=600&q=80')"></div></div>
+    </div>
   </div>
 </section>
 
