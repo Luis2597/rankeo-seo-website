@@ -1446,13 +1446,32 @@ const STEPS = [
   'Revisando SEO local...',
   'Calculando puntuación final...',
 ];
-function mockData(url) {
-  const b = Math.floor(Math.random() * 26) + 22;
-  return { url, overall: b, cats: [
-    { name:'SEO Técnico',       score: b + Math.floor(Math.random()*12), issues: ['Velocidad de carga: 7.2s (debe ser < 2.5s)', 'Sin sitemap.xml detectado', 'Meta description ausente en 4 páginas'] },
-    { name:'Contenido On-Page', score: b + Math.floor(Math.random()*16), issues: ['H1 duplicado en 3 páginas', '12 imágenes sin atributo alt', 'Palabras clave sin optimizar'] },
-    { name:'SEO Local',         score: Math.max(8, b - Math.floor(Math.random()*14)), issues: ['Google Business Profile no vinculado', 'NAP inconsistente en directorios', 'Sin reseñas gestionadas'] },
-    { name:'Experiencia UX',    score: b + Math.floor(Math.random()*18), issues: ['No es 100% mobile-friendly', 'CLS por encima del límite', 'Sin HTTPS en todas las rutas'] },
+async function fetchPageSpeed(url) {
+  const api = 'https://www.googleapis.com/pagespeedonline/v5/runPagespeed';
+  const params = `?url=${encodeURIComponent(url)}&strategy=mobile&category=performance&category=seo&category=accessibility&category=best-practices`;
+  const r = await fetch(api + params);
+  if (!r.ok) throw new Error('API error ' + r.status);
+  return r.json();
+}
+function parseResults(data, url) {
+  const lh = data.lighthouseResult;
+  const cats = lh.categories;
+  const audits = lh.audits;
+  const perf = Math.round((cats.performance?.score || 0) * 100);
+  const seo  = Math.round((cats.seo?.score || 0) * 100);
+  const a11y = Math.round((cats.accessibility?.score || 0) * 100);
+  const bp   = Math.round((cats['best-practices']?.score || 0) * 100);
+  const overall = Math.round(perf * 0.35 + seo * 0.35 + a11y * 0.15 + bp * 0.15);
+  function issues(ids) {
+    return ids.map(id => audits[id]).filter(a => a && a.score !== null && a.score < 0.9 && a.title)
+      .slice(0,4).map(a => a.title + (a.displayValue ? ': ' + a.displayValue : ''));
+  }
+  const fb = (arr, def) => arr.length ? arr : def;
+  return { url, overall, cats: [
+    { name:'SEO Técnico', score:seo, issues: fb(issues(['meta-description','document-title','robots-txt','canonical','link-text','crawlable-anchors','is-crawlable','hreflang']), ['Meta description ausente o muy corta','Sin sitemap.xml accesible','Links sin texto descriptivo','Canonical no configurado']) },
+    { name:'Velocidad', score:perf, issues: fb(issues(['largest-contentful-paint','total-blocking-time','cumulative-layout-shift','speed-index','first-contentful-paint','render-blocking-resources','uses-optimized-images','unused-css-rules']), ['LCP elevado (carga lenta del elemento principal)','Recursos bloqueando el render','Imágenes sin optimizar','CSS no utilizado incrementa peso de página']) },
+    { name:'Accesibilidad', score:a11y, issues: fb(issues(['image-alt','color-contrast','heading-order','label','button-name','link-name','list','document-title']), ['Imágenes sin atributo alt','Contraste insuficiente en textos','Jerarquía de encabezados incorrecta','Botones sin etiqueta accesible']) },
+    { name:'Buenas Prácticas', score:bp, issues: fb(issues(['uses-https','errors-in-console','doctype','charset','no-vulnerable-libraries','csp-xss','geolocation-on-start','notification-on-start']), ['Librerías JS con vulnerabilidades conocidas','Errores en consola del navegador','Sin política de seguridad de contenido','Solicitudes de geolocalización al cargar']) },
   ]};
 }
 const sc = s => s>=70 ? 'var(--c-ok)' : s>=50 ? 'var(--c-warn)' : 'var(--c-error)';
@@ -1486,15 +1505,39 @@ async function doAudit(e) {
       <span class="lt">${s}</span>
     </div>`).join('');
 
-  for (let i = 0; i < STEPS.length; i++) {
-    await new Promise(r => setTimeout(r, 800));
-    document.getElementById(`ls${i}`).classList.remove('dim');
-    document.getElementById(`lc${i}`).classList.add('done');
-  }
-  await new Promise(r => setTimeout(r, 350));
+  // Run animation and API call in parallel
+  let normalUrl = url;
+  if (!normalUrl.startsWith('http')) normalUrl = 'https://' + normalUrl;
 
-  const d = mockData(url);
+  const delays = [400, 900, 1500, 2200, 3100, 3900];
+  const anim = delays.map((delay, i) => new Promise(r => setTimeout(() => {
+    const ls = document.getElementById(`ls${i}`);
+    const lc = document.getElementById(`lc${i}`);
+    if (ls) ls.classList.remove('dim');
+    if (lc) lc.classList.add('done');
+    r();
+  }, delay)));
+
+  let apiResult = null, apiErr = null;
+  try {
+    apiResult = await fetchPageSpeed(normalUrl);
+  } catch(ex) { apiErr = ex.message; }
+
+  await Promise.all(anim);
+  await new Promise(r => setTimeout(r, 300));
+
   load.style.display = 'none';
+
+  if (!apiResult || !apiResult.lighthouseResult) {
+    res.innerHTML = `<div style="text-align:center;padding:48px 24px;color:var(--c-subtle)">
+      <p style="font-size:1.1rem;font-weight:600;margin-bottom:8px;color:var(--c-text)">No pudimos analizar ese sitio</p>
+      <p style="font-size:.9rem">Verifica que la URL esté correcta y el sitio esté publicado en internet.</p>
+    </div>`;
+    btn.disabled = false; btn.textContent = 'Intentar de nuevo';
+    return;
+  }
+
+  const d = parseResults(apiResult, normalUrl);
   const C = 2 * Math.PI * 40, dash = (d.overall / 100) * C;
 
   res.innerHTML = `
