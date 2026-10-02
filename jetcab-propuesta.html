@@ -1,302 +1,300 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es-MX">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>JETCAB — Private Jet Charter · México</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;400;500;600;700;800&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;400;600;700;800&family=Barlow:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 :root{
-  --ink:#0c0b09;--ink2:#1a1916;
-  --orange:#f07828;--orangelt:#f59340;
-  --gold:#c8a97e;--goldlt:#dfc090;
-  --cream:#f5f0e8;
-  --white:#fff;--gray:#888884;
-  --border:rgba(255,255,255,.1);--border-d:rgba(0,0,0,.08);
+  --bg:#0a0908;
+  --bg2:#111009;
+  --bg3:#161410;
+  --orange:#f07828;
+  --orangedk:#c85e1a;
+  --white:#fff;
+  --cream:rgba(255,255,255,.88);
+  --muted:rgba(255,255,255,.52);
+  --faint:rgba(255,255,255,.18);
+  --border:rgba(255,255,255,.08);
 }
 html{scroll-behavior:smooth}
-body{background:var(--ink);color:var(--cream);font-family:'Barlow',sans-serif;font-size:16px;line-height:1.65;font-weight:400;overflow-x:hidden}
-a{text-decoration:none;color:inherit}img{display:block;max-width:100%}
+body{background:var(--bg);color:var(--cream);font-family:'Barlow',sans-serif;font-weight:400;font-size:16px;line-height:1.65;overflow-x:hidden}
+a{text-decoration:none;color:inherit}
+img{display:block;max-width:100%}
 
-/* ── NAV ── */
-nav{position:fixed;top:0;left:0;right:0;z-index:300;height:68px;display:flex;align-items:center;justify-content:space-between;padding:0 52px;transition:background .4s,border-color .4s}
-nav.scrolled{background:rgba(12,11,9,.95);backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,.06)}
-.nl{display:flex;flex-direction:column;align-items:center}
-.nl-name{font-family:'Barlow Condensed',sans-serif;font-size:17px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#fff}
-.nl-tag{font-size:8px;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-top:1px}
-.nc{display:flex;gap:36px}
-.nc a{font-size:10.5px;letter-spacing:.26em;text-transform:uppercase;color:rgba(255,255,255,.62);font-weight:300;transition:color .2s}
-.nc a:hover{color:#fff}
-.nr{display:flex;align-items:center;gap:20px}
-.nr-ph{font-size:11px;letter-spacing:.1em;color:rgba(255,255,255,.35)}
-.btn-outline{border:1px solid rgba(255,255,255,.28);color:#fff;padding:9px 22px;font-size:10px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;display:inline-block;transition:all .25s;cursor:pointer;background:none}
-.btn-outline:hover{background:#fff;color:var(--ink);border-color:#fff}
-.btn-dark{background:var(--ink);color:#fff;padding:9px 22px;font-size:10px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;display:inline-block;transition:background .2s;cursor:pointer;border:none;white-space:nowrap}
-.btn-dark:hover{background:#2d2c29}
-.btn-cream{background:var(--orange);color:#fff;padding:10px 24px;font-size:10px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;display:inline-block;transition:background .2s;cursor:pointer;border:none;white-space:nowrap}
-.btn-cream:hover{background:var(--orangelt)}
+/* ─── SCROLL REVEAL ─── */
+.rv{opacity:0;transform:translateY(40px);transition:opacity .65s ease,transform .65s ease}
+.rv.vis{opacity:1;transform:none}
+.rv-l{opacity:0;transform:translateX(-40px);transition:opacity .65s ease,transform .65s ease}
+.rv-l.vis{opacity:1;transform:none}
+.rv-r{opacity:0;transform:translateX(40px);transition:opacity .65s ease,transform .65s ease}
+.rv-r.vis{opacity:1;transform:none}
+.rv-d1{transition-delay:.1s}.rv-d2{transition-delay:.2s}.rv-d3{transition-delay:.3s}
+.rv-d4{transition-delay:.4s}.rv-d5{transition-delay:.5s}
 
-/* ── HERO ── */
-.hero{position:relative;height:100vh;min-height:640px;display:flex;flex-direction:column;align-items:center;justify-content:center;overflow:hidden}
-.hero-bg{position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1540962351504-03099e0a754b?auto=format&fit=crop&w=2000&q=85') center 40%/cover;transform:scale(1.05);animation:hz 18s ease-out forwards}
-@keyframes hz{from{transform:scale(1.05)}to{transform:scale(1)}}
-.hero-ol{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(12,11,9,.55) 0%,rgba(12,11,9,.2) 40%,rgba(12,11,9,.7) 85%,rgba(12,11,9,1) 100%)}
-.hero-c{position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;text-align:center;padding:0 24px;width:100%;max-width:860px}
-.hero-ey{font-size:10px;font-weight:500;letter-spacing:.38em;text-transform:uppercase;color:rgba(255,255,255,.42);margin-bottom:18px}
-.hero-brand{font-family:'Barlow Condensed',sans-serif;font-size:clamp(52px,10vw,110px);font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:#fff;line-height:1;margin-bottom:8px}
-.hero-tagline{font-family:'Barlow Condensed',sans-serif;font-size:clamp(14px,2vw,20px);font-weight:400;font-style:normal;letter-spacing:.28em;color:rgba(255,255,255,.5);margin-bottom:44px}
-/* BOOKING */
-.bform{width:100%;max-width:800px;background:rgba(255,255,255,.97);display:flex;align-items:stretch;box-shadow:0 20px 80px rgba(0,0,0,.45)}
-.bf-f{flex:1;display:flex;flex-direction:column;justify-content:center;padding:17px 20px;border-right:1px solid rgba(0,0,0,.07);cursor:text}
-.bf-f:hover{background:rgba(0,0,0,.015)}
-.bf-l{font-size:9px;font-weight:700;letter-spacing:.28em;text-transform:uppercase;color:#888;display:block;margin-bottom:5px}
-.bf-i{background:none;border:none;outline:none;width:100%;font-size:14px;color:var(--ink);font-family:'Barlow',sans-serif;font-weight:400}
-.bf-i::placeholder{color:#ccc;font-size:13px}
-.bf-cta{background:var(--ink);color:#fff;padding:0 30px;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:2px;cursor:pointer;min-width:138px;flex-shrink:0;border:none;transition:background .2s}
-.bf-cta:hover{background:#2a2822}
-.bf-cta span{font-size:10px;font-weight:600;letter-spacing:.28em;text-transform:uppercase;color:#fff;white-space:nowrap}
-.bf-cta small{font-size:9px;letter-spacing:.1em;color:rgba(255,255,255,.4);text-transform:uppercase}
-.hero-sub{display:flex;gap:16px;margin-top:16px}
-.hsb{display:flex;align-items:center;gap:8px;font-size:10px;font-weight:400;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.45);cursor:pointer;background:none;border:1px solid rgba(255,255,255,.15);padding:9px 20px;transition:all .25s}
-.hsb:hover{color:#fff;border-color:rgba(255,255,255,.4)}
-.scroll-i{position:absolute;bottom:32px;left:50%;transform:translateX(-50%);z-index:2;display:flex;flex-direction:column;align-items:center;gap:8px;cursor:pointer}
-.scroll-i span{font-size:9px;letter-spacing:.3em;text-transform:uppercase;color:rgba(255,255,255,.28)}
-.scroll-line{width:1px;height:48px;background:linear-gradient(to bottom,rgba(255,255,255,.4),transparent);animation:sp 2.2s ease-in-out infinite}
-@keyframes sp{0%,100%{opacity:.4}50%{opacity:1;transform:scaleY(.7)}}
+/* ─── NAV ─── */
+nav{position:fixed;top:0;left:0;right:0;z-index:200;height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 48px;transition:background .3s,backdrop-filter .3s}
+nav.solid{background:rgba(10,9,8,.96);backdrop-filter:blur(16px);border-bottom:1px solid var(--border)}
+.n-logo{display:flex;align-items:center;gap:10px}
+.n-logo-icon{width:32px;height:32px}
+.n-logo-text{font-family:'Barlow Condensed',sans-serif;font-size:20px;font-weight:700;letter-spacing:.16em;color:var(--white);text-transform:uppercase}
+.n-links{display:flex;gap:32px}
+.n-links a{font-size:11px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);transition:color .2s}
+.n-links a:hover{color:var(--white)}
+.n-cta{background:var(--orange);color:#fff;padding:9px 22px;font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;border:none;cursor:pointer;transition:background .2s}
+.n-cta:hover{background:var(--orangedk)}
+.burger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px}
+.burger span{display:block;width:22px;height:1.5px;background:var(--white)}
 
-/* ── MARQUEE ── */
-.mq{background:#111009;padding:15px 0;border-bottom:1px solid rgba(255,255,255,.06);overflow:hidden}
-.mq-t{display:flex;gap:0;animation:mq 30s linear infinite;width:max-content}
+/* ─── HERO ─── */
+.hero{position:relative;height:100vh;min-height:660px;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.hero-bg{position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1540962351504-03099e0a754b?auto=format&fit=crop&w=2000&q=85') center 40%/cover;animation:hzoom 20s ease-out forwards}
+@keyframes hzoom{from{transform:scale(1.06)}to{transform:scale(1)}}
+.hero-ol{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(10,9,8,.6) 0%,rgba(10,9,8,.25) 35%,rgba(10,9,8,.65) 75%,rgba(10,9,8,1) 100%)}
+.hero-c{position:relative;z-index:1;width:100%;max-width:860px;padding:0 24px;text-align:center}
+.hero-eyebrow{font-size:10px;font-weight:600;letter-spacing:.4em;text-transform:uppercase;color:var(--orange);margin-bottom:20px;display:block}
+.hero-title{font-family:'Barlow Condensed',sans-serif;font-size:clamp(64px,12vw,130px);font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--white);line-height:.88;margin-bottom:10px}
+.hero-sub{font-family:'Barlow Condensed',sans-serif;font-size:clamp(13px,2vw,17px);font-weight:400;letter-spacing:.3em;text-transform:uppercase;color:var(--muted);margin-bottom:44px}
+/* booking form */
+.bform{display:flex;align-items:stretch;background:rgba(255,255,255,.97);width:100%}
+.bf{flex:1;padding:14px 18px;border-right:1px solid rgba(0,0,0,.06);cursor:text;transition:background .15s}
+.bf:hover{background:rgba(0,0,0,.015)}
+.bf-l{font-size:8.5px;font-weight:700;letter-spacing:.28em;text-transform:uppercase;color:#999;display:block;margin-bottom:5px}
+.bf input,.bf select{background:none;border:none;outline:none;width:100%;font-size:14px;color:#111;font-family:'Barlow',sans-serif;font-weight:400;cursor:pointer}
+.bf input::placeholder{color:#bbb}
+.bf select option{background:#fff}
+.bf-btn{background:var(--orange);color:#fff;padding:0 28px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;cursor:pointer;min-width:130px;border:none;transition:background .2s;flex-shrink:0}
+.bf-btn:hover{background:var(--orangedk)}
+.bf-btn span{font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:700;letter-spacing:.2em;text-transform:uppercase}
+.bf-btn small{font-size:9px;letter-spacing:.1em;text-transform:uppercase;opacity:.55}
+.hero-actions{display:flex;gap:12px;margin-top:14px;justify-content:center}
+.ha{background:none;border:1px solid rgba(255,255,255,.22);color:rgba(255,255,255,.6);padding:9px 20px;font-size:10px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;cursor:pointer;transition:all .2s}
+.ha:hover{border-color:rgba(255,255,255,.5);color:#fff}
+
+/* ─── MARQUEE ─── */
+.mqbar{background:var(--orange);padding:12px 0;overflow:hidden}
+.mq-track{display:flex;width:max-content;animation:mq 24s linear infinite}
 @keyframes mq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
-.mq-i{white-space:nowrap;padding:0 30px;font-size:10px;font-weight:500;letter-spacing:.36em;text-transform:uppercase;color:rgba(245,240,232,.5);display:flex;align-items:center;gap:30px}
-.mq-i::after{content:'·';color:var(--orange)}
+.mq-item{padding:0 28px;font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:700;letter-spacing:.28em;text-transform:uppercase;color:rgba(0,0,0,.7);white-space:nowrap}
+.mq-dot{color:rgba(0,0,0,.4);padding:0 4px}
 
-/* ── SECTION COMMONS ── */
-.sec{padding:96px 52px}
+/* ─── SECTION BASE ─── */
+.sec{padding:96px 48px}
 .wrap{max-width:1160px;margin:0 auto}
-.kicker{font-size:10px;font-weight:600;letter-spacing:.32em;text-transform:uppercase;color:var(--orange);display:block;margin-bottom:14px}
-.sh{font-family:'Barlow Condensed',sans-serif;font-size:clamp(36px,5vw,58px);font-weight:700;line-height:.92;letter-spacing:.04em;text-transform:uppercase;color:var(--orange)}
-.sh em{font-style:normal;color:var(--orange)}
-.sh.dark{color:var(--ink)}
-.sh.dark em{color:rgba(12,11,9,.35)}
-.slead{font-size:15px;color:rgba(245,240,232,.82);line-height:1.85;font-weight:300;max-width:520px}
-.slead.dark{color:rgba(245,240,232,.78)}
+.sec-tag{font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:700;letter-spacing:.38em;text-transform:uppercase;color:var(--orange);display:block;margin-bottom:12px}
+.sec-h{font-family:'Barlow Condensed',sans-serif;font-size:clamp(36px,5vw,60px);font-weight:800;letter-spacing:.04em;text-transform:uppercase;color:var(--orange);line-height:.92}
+.sec-p{font-size:15px;color:var(--muted);font-weight:400;max-width:480px;line-height:1.75;margin-top:14px}
 
-/* ── AIRCRAFT SELECT ── */
-.aircraft-select{background:var(--ink2);padding:72px 0 88px;border-top:1px solid rgba(255,255,255,.06)}
-.as-hdr{padding:0 52px;max-width:1160px;margin:0 auto 36px;display:flex;align-items:flex-end;justify-content:space-between;gap:20px;flex-wrap:wrap}
-.as-banner{
-  position:relative;height:260px;margin-bottom:0;overflow:hidden;
-  background:url('https://images.unsplash.com/photo-1474302770737-173ee21bab63?auto=format&fit=crop&w=1800&q=80') center/cover;
-  display:flex;flex-direction:column;align-items:center;justify-content:center;
-  text-align:center;
-}
-.as-banner::after{content:'';position:absolute;inset:0;background:rgba(12,11,9,.62)}
-.as-banner-c{position:relative;z-index:1;padding:32px}
-.as-banner-c h2{font-family:'Barlow Condensed',sans-serif;font-size:clamp(28px,4vw,46px);font-weight:700;letter-spacing:.1em;color:var(--orange);text-transform:uppercase;color:#fff;margin-bottom:10px}
-.as-banner-c p{font-size:14px;color:rgba(255,255,255,.82);font-weight:300;max-width:500px;margin:0 auto 24px}
-.as-banner-btns{display:flex;gap:12px;justify-content:center}
+/* ─── AIRCRAFT SELECT ─── */
+.fleet{padding:0 0 96px}
+.fleet-banner{position:relative;height:280px;overflow:hidden;background:url('https://images.unsplash.com/photo-1474302770737-173ee21bab63?auto=format&fit=crop&w=1800&q=80') center/cover;display:flex;align-items:center;justify-content:center}
+.fleet-banner::after{content:'';position:absolute;inset:0;background:rgba(10,9,8,.68)}
+.fb-c{position:relative;z-index:1;text-align:center;padding:0 24px}
+.fb-c h2{font-family:'Barlow Condensed',sans-serif;font-size:clamp(28px,5vw,52px);font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--orange);margin-bottom:10px}
+.fb-c p{font-size:14px;color:rgba(255,255,255,.62);max-width:500px;margin:0 auto 22px}
+.fb-btns{display:flex;gap:12px;justify-content:center}
+.btn-o{background:var(--orange);color:#fff;padding:10px 24px;font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;border:none;cursor:pointer;transition:background .2s}
+.btn-o:hover{background:var(--orangedk)}
+.btn-ghost{background:none;border:1px solid rgba(255,255,255,.3);color:rgba(255,255,255,.7);padding:10px 24px;font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;cursor:pointer;transition:all .2s}
+.btn-ghost:hover{border-color:#fff;color:#fff}
+/* tabs */
+.fleet-tabs{display:flex;border-bottom:1px solid var(--border);padding:0 48px;max-width:1400px;margin:0 auto;overflow-x:auto;-webkit-overflow-scrolling:touch}
+.ftab{font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);padding:16px 22px;border-bottom:2px solid transparent;cursor:pointer;background:none;border-top:none;border-left:none;border-right:none;white-space:nowrap;transition:all .2s}
+.ftab.on{color:var(--orange);border-bottom-color:var(--orange)}
+.ftab:hover{color:rgba(255,255,255,.8)}
+/* grid */
+.fleet-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);max-width:1400px;margin:1px auto 0}
+.fc{background:var(--bg2);overflow:hidden;cursor:pointer;transition:background .25s;display:block}
+.fc:hover{background:var(--bg3)}
+.fc-img{height:210px;overflow:hidden;position:relative}
+.fc-img img{height:100%;width:100%;object-fit:cover;transition:transform .6s;filter:brightness(.7)}
+.fc:hover .fc-img img{transform:scale(1.07);filter:brightness(.88)}
+.fc-cat{position:absolute;top:14px;left:14px;font-family:'Barlow Condensed',sans-serif;font-size:9px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;background:var(--orange);color:#fff;padding:4px 10px}
+.fc-body{padding:20px 22px 24px}
+.fc-name{font-family:'Barlow Condensed',sans-serif;font-size:24px;font-weight:800;color:var(--orange);text-transform:uppercase;margin-bottom:4px}
+.fc-desc{font-size:13px;color:var(--muted);margin-bottom:16px}
+.fc-specs{display:flex;gap:0;border-top:1px solid var(--border);padding-top:14px;margin-bottom:14px}
+.fc-spec{flex:1}
+.fc-sl{font-size:8.5px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--faint);display:block;margin-bottom:3px}
+.fc-sv{font-size:13px;color:var(--cream)}
+.fc-foot{display:flex;justify-content:space-between;align-items:center}
+.fc-price{font-family:'Barlow Condensed',sans-serif;font-size:16px;color:var(--orange);font-weight:600}
+.fc-link{font-size:10px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--faint);transition:color .2s}
+.fc:hover .fc-link{color:var(--orange)}
 
-/* CATEGORY TABS */
-.cat-tabs{padding:0 52px;max-width:1160px;margin:28px auto 0;display:flex;gap:0;border-bottom:1px solid rgba(255,255,255,.08)}
-.cat-tab{font-size:11px;font-weight:400;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.4);padding:12px 22px;cursor:pointer;border-bottom:2px solid transparent;transition:all .25s;background:none;border-top:none;border-left:none;border-right:none;white-space:nowrap}
-.cat-tab.active{color:var(--cream);border-bottom-color:var(--orange)}
-.cat-tab:hover{color:rgba(255,255,255,.75)}
-/* AIRCRAFT GRID */
-.aircraft-grid{padding:0 52px;max-width:1160px;margin:0 auto;margin-top:0}
-.ag-inner{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,.05);margin-top:1px}
-.ag-card{background:var(--ink2);overflow:hidden;display:block;cursor:pointer;transition:background .25s}
-.ag-card:hover{background:#1e1d1a}
-.ag-img{height:200px;overflow:hidden;position:relative}
-.ag-img img{height:100%;width:100%;object-fit:cover;transition:transform .65s;filter:brightness(.75)}
-.ag-card:hover .ag-img img{transform:scale(1.07);filter:brightness(.9)}
-.ag-cat{position:absolute;bottom:12px;left:12px;font-size:9px;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.7);background:rgba(12,11,9,.6);padding:4px 10px;backdrop-filter:blur(6px)}
-.ag-body{padding:20px 22px 24px}
-.ag-name{font-family:'Barlow Condensed',sans-serif;font-size:22px;font-weight:700;color:var(--orange);color:var(--cream);margin-bottom:4px;letter-spacing:.02em}
-.ag-sub{font-size:13px;color:rgba(245,240,232,.72);margin-bottom:14px;font-weight:300}
-.ag-specs{display:flex;gap:0;margin-bottom:14px}
-.ag-spec{flex:1}
-.ag-spec-l{font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:rgba(245,240,232,.28);display:block;margin-bottom:3px}
-.ag-spec-v{font-size:13px;color:rgba(245,240,232,.7)}
-.ag-foot{display:flex;justify-content:space-between;align-items:center;border-top:1px solid rgba(255,255,255,.06);padding-top:14px}
-.ag-price{font-family:'Barlow Condensed',sans-serif;font-size:16px;color:var(--orange);font-style:italic}
-.ag-view{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:rgba(245,240,232,.28);transition:color .2s}
-.ag-card:hover .ag-view{color:var(--orange)}
-
-/* ── DIFFERENCE ── */
-.diff-section{background:#111009}
-.diff-inner{max-width:1160px;margin:0 auto;padding:96px 52px;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
-.diff-kicker{font-size:10px;font-weight:600;letter-spacing:.32em;text-transform:uppercase;color:var(--orange);display:block;margin-bottom:14px}
-.diff-h{font-family:'Barlow Condensed',sans-serif;font-size:clamp(32px,4vw,50px);font-weight:700;line-height:.95;text-transform:uppercase;color:var(--orange);margin-bottom:10px}
-.diff-sub{font-size:14px;color:rgba(245,240,232,.82);font-weight:300;line-height:1.75;margin-bottom:28px}
-.diff-items{display:flex;flex-direction:column;gap:0}
-.di{padding:18px 0;border-bottom:1px solid rgba(255,255,255,.07);display:flex;gap:16px}
-.di:first-child{border-top:1px solid rgba(255,255,255,.07)}
-.di-dot{width:6px;height:6px;border-radius:50%;background:var(--orange);margin-top:6px;flex-shrink:0}
-.di-title{font-size:12.5px;font-weight:500;letter-spacing:.06em;color:var(--cream);margin-bottom:4px}
-.di-desc{font-size:14px;color:rgba(245,240,232,.78);line-height:1.7;font-weight:300}
+/* ─── DIFFERENCE ─── */
+.diff{background:var(--bg2)}
+.diff-in{max-width:1160px;margin:0 auto;padding:96px 48px;display:grid;grid-template-columns:1fr 1fr;gap:88px;align-items:center}
+.diff-items{margin-top:28px;display:flex;flex-direction:column}
+.di{display:flex;gap:16px;padding:18px 0;border-bottom:1px solid var(--border)}
+.di:first-child{border-top:1px solid var(--border)}
+.di-bar{width:3px;background:var(--orange);flex-shrink:0;min-height:100%}
+.di-h{font-family:'Barlow Condensed',sans-serif;font-size:15px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--white);margin-bottom:4px}
+.di-p{font-size:14px;color:var(--muted);line-height:1.65}
 .diff-photo{height:520px;overflow:hidden}
-.diff-photo img{height:100%;width:100%;object-fit:cover}
+.diff-photo img{width:100%;height:100%;object-fit:cover}
 
-/* ── IN ACTION ── */
-.action-section{padding:88px 0}
-.action-hdr{max-width:1160px;margin:0 auto 44px;padding:0 52px;text-align:center}
-.action-hdr h2{font-family:'Barlow Condensed',sans-serif;font-size:clamp(28px,4vw,48px);font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--orange);margin-bottom:10px}
-.action-hdr p{font-size:14px;color:rgba(245,240,232,.78);font-weight:300;max-width:560px;margin:0 auto;line-height:1.8}
-/* CAROUSEL */
-.carousel-wrap{position:relative;overflow:hidden;width:100%}
-.carousel-track{display:flex;gap:4px;animation:cscroll 28s linear infinite;width:max-content}
-.carousel-track:hover{animation-play-state:paused}
-@keyframes cscroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
-.cs{flex-shrink:0;width:380px;height:300px;overflow:hidden;cursor:pointer;position:relative}
-.cs-bg{width:100%;height:100%;background-size:cover;background-position:center;transition:transform .6s,filter .4s;filter:brightness(.78)}
-.cs:hover .cs-bg{transform:scale(1.06);filter:brightness(.95)}
-/* legacy — keep refs */
-.action-grid{display:none}
-.ag2{display:none}.ag2-bg{}
+/* ─── CAROUSEL ─── */
+.carousel{padding:96px 0;overflow:hidden}
+.car-hdr{max-width:1160px;margin:0 auto 44px;padding:0 48px;display:flex;align-items:flex-end;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.car-track{display:flex;gap:4px;animation:carscroll 30s linear infinite;width:max-content}
+.car-track:hover{animation-play-state:paused}
+@keyframes carscroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.car-slide{flex-shrink:0;width:400px;height:310px;overflow:hidden;position:relative}
+.car-slide-bg{width:100%;height:100%;background-size:cover;background-position:center;transition:transform .6s,filter .4s;filter:brightness(.75)}
+.car-slide:hover .car-slide-bg{transform:scale(1.07);filter:brightness(.95)}
 
-/* ── DESTINATIONS ── */
-.dest-section{background:#0d0c0a;padding:96px 0}
-.dest-hdr{max-width:1160px;margin:0 auto 52px;padding:0 52px;display:flex;align-items:flex-end;justify-content:space-between;gap:20px;flex-wrap:wrap}
-.dest-title p{font-size:14px;color:rgba(245,240,232,.78);max-width:420px;line-height:1.8;font-weight:300;margin-top:10px}
-.dest-grid{max-width:1400px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:3px}
-.dc{position:relative;height:260px;overflow:hidden;cursor:pointer}
-.dc-bg{width:100%;height:100%;background-size:cover;background-position:center;transition:transform .6s;filter:brightness(.72)}
-.dc:hover .dc-bg{transform:scale(1.06);filter:brightness(.88)}
-.dc-ol{position:absolute;inset:0;background:linear-gradient(to top,rgba(12,11,9,.75) 0%,transparent 60%)}
-.dc-info{position:absolute;bottom:18px;left:18px;z-index:1}
-.dc-city{font-family:'Barlow Condensed',sans-serif;font-size:20px;font-weight:700;letter-spacing:.06em;color:#fff;display:block;line-height:1.1}
-.dc-ctry{font-size:9px;font-weight:600;letter-spacing:.24em;text-transform:uppercase;color:rgba(255,255,255,.65);display:block;margin-top:4px}
-.dest-more{display:flex;align-items:center;justify-content:center;flex-direction:column;gap:10px;background:#111009;padding:28px;text-align:center;height:260px}
-.dest-more p{font-family:'Barlow Condensed',sans-serif;font-size:28px;color:var(--orange);font-style:italic}
-.dest-more span{font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:rgba(255,255,255,.3)}
+/* ─── DESTINATIONS ─── */
+.dests{padding:0 0 96px}
+.dest-hdr{max-width:1160px;margin:0 auto 48px;padding:0 48px;display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:16px}
+.dest-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:3px;max-width:1400px;margin:0 auto}
+.dc{position:relative;height:280px;overflow:hidden;cursor:pointer}
+.dc-bg{width:100%;height:100%;background-size:cover;background-position:center;transition:transform .6s;filter:brightness(.65)}
+.dc:hover .dc-bg{transform:scale(1.07);filter:brightness(.85)}
+.dc-ol{position:absolute;inset:0;background:linear-gradient(to top,rgba(10,9,8,.82) 0%,transparent 55%)}
+.dc-info{position:absolute;bottom:18px;left:18px}
+.dc-city{font-family:'Barlow Condensed',sans-serif;font-size:22px;font-weight:800;letter-spacing:.04em;text-transform:uppercase;color:var(--orange);display:block;line-height:1}
+.dc-ctry{font-size:10px;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.6);margin-top:5px;display:block}
+.dest-more{display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px;background:var(--orange);height:280px;cursor:pointer;transition:background .2s}
+.dest-more:hover{background:var(--orangedk)}
+.dest-more-n{font-family:'Barlow Condensed',sans-serif;font-size:48px;font-weight:800;color:#fff;line-height:1}
+.dest-more-l{font-size:11px;font-weight:600;letter-spacing:.28em;text-transform:uppercase;color:rgba(255,255,255,.7)}
 
-/* ── TESTIMONIALS ── */
-.test-section{padding:88px 52px}
-.test-inner{max-width:1160px;margin:0 auto}
-.test-hdr{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:end;margin-bottom:52px}
-.test-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(255,255,255,.06)}
-.tc{background:var(--ink);padding:40px 36px}
-.tc-stars{color:var(--gold);letter-spacing:4px;font-size:12px;margin-bottom:18px}
-.tc-q{font-family:'Barlow',sans-serif;font-size:16px;font-weight:400;font-style:italic;color:rgba(245,240,232,.88);line-height:1.7;margin-bottom:24px}
-.tc-hr{border:none;border-top:1px solid rgba(255,255,255,.07);margin-bottom:16px}
-.tc-name{font-size:12px;font-weight:500;letter-spacing:.1em;text-transform:uppercase}
-.tc-detail{font-size:11px;color:rgba(245,240,232,.32);margin-top:3px}
+/* ─── TESTIMONIALS ─── */
+.test{padding:96px 48px;background:var(--bg2)}
+.test-in{max-width:1160px;margin:0 auto}
+.test-hdr{margin-bottom:52px;display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:end}
+.test-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border)}
+.tc{background:var(--bg);padding:36px 32px}
+.tc-stars{color:var(--orange);letter-spacing:4px;font-size:13px;margin-bottom:16px}
+.tc-q{font-size:16px;color:rgba(255,255,255,.8);line-height:1.72;margin-bottom:22px;font-style:italic;font-weight:300}
+.tc-sep{border:none;border-top:1px solid var(--border);margin-bottom:16px}
+.tc-name{font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--white)}
+.tc-sub{font-size:11px;color:var(--muted);margin-top:3px}
 
-/* ── CONTACT ── */
-.contact-section{padding:96px 52px;background:var(--ink)}
-.ci-inner{max-width:1160px;margin:0 auto;display:grid;grid-template-columns:1fr 420px;gap:88px;align-items:start}
-.ch{font-family:'Barlow Condensed',sans-serif;font-size:clamp(46px,7vw,88px);font-weight:800;line-height:.88;text-transform:uppercase;color:var(--orange);margin-bottom:22px}
-.ch em{font-style:normal;color:var(--orange)}
-.cdesc{font-size:15px;color:rgba(245,240,232,.82);max-width:360px;line-height:1.9;font-weight:300;margin-bottom:32px}
-.cinfo{display:flex;flex-direction:column;gap:14px}
-.cir{display:flex;align-items:baseline;gap:14px}
-.cil{font-size:9px;letter-spacing:.26em;text-transform:uppercase;color:rgba(245,240,232,.28);min-width:76px}
-.civ{font-size:14px;color:rgba(245,240,232,.85)}
-.cf{border:1px solid rgba(255,255,255,.09)}
-.cf-hdr{padding:22px 26px;border-bottom:1px solid rgba(255,255,255,.07)}
-.cf-hdr h3{font-family:'Barlow Condensed',sans-serif;font-size:21px;font-weight:400}
-.cf-hdr p{font-size:11px;color:rgba(245,240,232,.32);margin-top:3px}
-.cf-body{padding:22px 26px}
-.cfl{font-size:9px;font-weight:500;letter-spacing:.26em;text-transform:uppercase;color:rgba(245,240,232,.38);display:block;margin-bottom:6px}
-.cfi,.cfs{width:100%;background:transparent;border:none;border-bottom:1px solid rgba(255,255,255,.09);padding:9px 0;font-size:14px;color:var(--cream);font-family:'Barlow',sans-serif;margin-bottom:18px;outline:none;transition:border-color .2s}
-.cfi:focus,.cfs:focus{border-bottom-color:rgba(245,240,232,.3)}
-.cfi::placeholder{color:rgba(245,240,232,.18)}
-.cfs option{background:#1a1917}
-.cf-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-.cfsub{width:100%;background:var(--orange);color:#fff;border:none;padding:14px;font-size:11px;font-weight:700;letter-spacing:.26em;text-transform:uppercase;cursor:pointer;transition:background .2s;margin-top:4px}
-.cfsub:hover{background:var(--orangelt)}
-.cf-note{font-size:11px;color:rgba(245,240,232,.22);text-align:center;margin-top:8px}
+/* ─── CONTACT ─── */
+.contact{padding:96px 48px}
+.contact-in{max-width:1160px;margin:0 auto;display:grid;grid-template-columns:1fr 420px;gap:88px;align-items:start}
+.ch{font-family:'Barlow Condensed',sans-serif;font-size:clamp(52px,8vw,96px);font-weight:800;letter-spacing:.04em;text-transform:uppercase;color:var(--orange);line-height:.86;margin-bottom:20px}
+.cp{font-size:15px;color:var(--muted);max-width:340px;line-height:1.8;margin-bottom:32px}
+.cinfo{display:flex;flex-direction:column;gap:12px}
+.cir{display:flex;gap:16px;align-items:baseline}
+.cil{font-size:9px;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:var(--faint);min-width:72px}
+.civ{font-size:14px;color:rgba(255,255,255,.8)}
+/* form */
+.cform{border:1px solid var(--border)}
+.cf-head{padding:20px 24px;border-bottom:1px solid var(--border)}
+.cf-head h3{font-family:'Barlow Condensed',sans-serif;font-size:20px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--orange)}
+.cf-head p{font-size:11px;color:var(--muted);margin-top:2px}
+.cf-body{padding:20px 24px}
+.cfl{font-size:9px;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:5px}
+.cfi,.cfs{width:100%;background:transparent;border:none;border-bottom:1px solid var(--border);padding:8px 0;font-size:14px;color:var(--white);font-family:'Barlow',sans-serif;outline:none;transition:border-color .2s;margin-bottom:16px}
+.cfi:focus,.cfs:focus{border-bottom-color:var(--orange)}
+.cfi::placeholder{color:var(--faint)}
+.cfs option{background:var(--bg2)}
+.cf-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.cf-sub{width:100%;background:var(--orange);color:#fff;border:none;padding:13px;font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:700;letter-spacing:.24em;text-transform:uppercase;cursor:pointer;margin-top:4px;transition:background .2s}
+.cf-sub:hover{background:var(--orangedk)}
+.cf-note{font-size:11px;color:var(--faint);text-align:center;margin-top:8px}
 
-/* ── CERTIF ── */
-.certif{padding:36px 52px;border-top:1px solid rgba(255,255,255,.06);border-bottom:1px solid rgba(255,255,255,.06)}
-.certif-in{max-width:1160px;margin:0 auto;display:flex;align-items:center;gap:36px;flex-wrap:wrap}
-.cl-lbl{font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:rgba(245,240,232,.28);white-space:nowrap}
-.cl-sep{width:1px;height:16px;background:rgba(255,255,255,.08)}
-.cl-logos{display:flex;gap:0;flex-wrap:wrap}
-.cl{padding:7px 18px;border-right:1px solid rgba(255,255,255,.06);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:rgba(245,240,232,.3)}
-.cl:last-child{border-right:none}
+/* ─── CERTS ─── */
+.certs{border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:28px 48px}
+.certs-in{max-width:1160px;margin:0 auto;display:flex;align-items:center;gap:28px;flex-wrap:wrap}
+.cert-lbl{font-size:9px;font-weight:700;letter-spacing:.28em;text-transform:uppercase;color:var(--faint);white-space:nowrap}
+.cert-sep{width:1px;height:14px;background:var(--border)}
+.cert-list{display:flex;flex-wrap:wrap}
+.cert-i{font-size:10px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.32);padding:5px 16px;border-right:1px solid var(--border)}
+.cert-i:last-child{border-right:none}
 
-/* ── FOOTER ── */
-footer{background:rgba(8,7,5,1);padding:68px 52px 24px;border-top:1px solid rgba(255,255,255,.05)}
-.ft-top{max-width:1160px;margin:0 auto;display:grid;grid-template-columns:1.8fr 1fr 1fr 1fr;gap:52px;margin-bottom:56px}
-.ft-brand{font-family:'Barlow Condensed',sans-serif;font-size:20px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--cream);display:block;margin-bottom:8px}
-.ft-about{font-size:13px;color:rgba(245,240,232,.65);line-height:1.75;max-width:200px;font-weight:300}
-.ft-h{font-size:9px;font-weight:600;letter-spacing:.3em;text-transform:uppercase;color:rgba(245,240,232,.32);margin-bottom:16px;display:block}
+/* ─── FOOTER ─── */
+footer{background:rgba(5,4,3,1);padding:64px 48px 20px}
+.ft-grid{max-width:1160px;margin:0 auto;display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:48px;margin-bottom:48px}
+.ft-brand{font-family:'Barlow Condensed',sans-serif;font-size:22px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:var(--orange);display:block;margin-bottom:8px}
+.ft-about{font-size:13px;color:rgba(255,255,255,.38);line-height:1.7;max-width:190px}
+.ft-h{font-size:9px;font-weight:700;letter-spacing:.28em;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:14px}
 .ft-ul{list-style:none}
-.ft-ul li{margin-bottom:9px}
-.ft-ul a{font-size:13px;color:rgba(245,240,232,.38);font-weight:300;transition:color .2s}
-.ft-ul a:hover{color:rgba(245,240,232,.82)}
-.ft-bot{max-width:1160px;margin:0 auto;border-top:1px solid rgba(255,255,255,.04);padding-top:18px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
-.ft-copy{font-size:11px;color:rgba(245,240,232,.2);letter-spacing:.05em}
-.ft-rankeo a{color:rgba(245,240,232,.14)}
+.ft-ul li{margin-bottom:8px}
+.ft-ul a{font-size:13px;color:rgba(255,255,255,.35);transition:color .2s}
+.ft-ul a:hover{color:var(--orange)}
+.ft-bot{max-width:1160px;margin:0 auto;border-top:1px solid var(--border);padding-top:16px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+.ft-copy{font-size:11px;color:rgba(255,255,255,.18)}
 
-/* ── WA ── */
-.wa{position:fixed;bottom:26px;right:26px;z-index:500;width:50px;height:50px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 24px rgba(37,211,102,.35);transition:transform .2s}
-.wa:hover{transform:scale(1.1)}
+/* ─── WA ─── */
+.wa{position:fixed;bottom:24px;right:24px;z-index:500;width:52px;height:52px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,.4);transition:transform .2s}
+.wa:hover{transform:scale(1.12)}
 
-/* ── BURGER ── */
-.burger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px}
-.burger span{display:block;width:22px;height:1px;background:rgba(255,255,255,.7)}
-.drawer{position:fixed;top:0;right:-300px;width:280px;height:100vh;background:#0e0d0b;z-index:400;padding:80px 30px 40px;transition:right .35s;overflow-y:auto;border-left:1px solid rgba(255,255,255,.06)}
-.drawer.open{right:0}
-.dov{position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:350;display:none}
+/* ─── DRAWER ─── */
+.dov{position:fixed;inset:0;background:rgba(0,0,0,.65);z-index:300;display:none}
 .dov.open{display:block}
-.dc2{position:absolute;top:22px;right:22px;background:none;border:1px solid rgba(255,255,255,.14);color:#fff;width:34px;height:34px;cursor:pointer;font-size:16px}
-.drawer a{display:block;font-size:13px;font-weight:400;letter-spacing:.18em;text-transform:uppercase;color:rgba(245,240,232,.48);padding:14px 0;border-bottom:1px solid rgba(255,255,255,.06);transition:color .2s}
-.drawer a:hover{color:var(--cream)}
+.drawer{position:fixed;top:0;right:-290px;width:270px;height:100vh;background:#0e0d0b;z-index:400;padding:72px 28px 36px;transition:right .32s;border-left:1px solid var(--border);overflow-y:auto}
+.drawer.open{right:0}
+.drawer-x{position:absolute;top:20px;right:20px;background:none;border:1px solid var(--border);color:#fff;width:32px;height:32px;cursor:pointer;font-size:16px}
+.drawer a{display:block;font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);padding:13px 0;border-bottom:1px solid var(--border);transition:color .2s}
+.drawer a:hover{color:var(--orange)}
 
-/* ── RESPONSIVE ── */
-@media(max-width:960px){
-  nav{padding:0 20px}.nc,.nr-ph{display:none}.burger{display:flex}
-  .bform{flex-direction:column}.bf-f{border-right:none;border-bottom:1px solid rgba(0,0,0,.07)}
-  .bf-cta{min-height:52px;width:100%}
-  .sec,.action-section,.test-section,.contact-section{padding:64px 20px}
-  .diff-inner,.ci-inner,.test-hdr{grid-template-columns:1fr;gap:40px;padding:64px 20px}
+/* ─── RESPONSIVE ─── */
+@media(max-width:1024px){
+  .fleet-grid{grid-template-columns:1fr 1fr}
+  .dest-grid{grid-template-columns:repeat(2,1fr)}
+  .diff-in,.contact-in,.test-hdr{grid-template-columns:1fr;gap:40px}
   .diff-photo{height:280px}
-  .dest-section{padding:64px 0}.dest-hdr{padding:0 20px}
-  .aircraft-select{padding:52px 0 68px}.as-hdr{padding:0 20px}.cat-tabs{padding:0 20px}.aircraft-grid{padding:0 20px}
-  .ag-inner{grid-template-columns:1fr 1fr}
-  .dest-grid{grid-template-columns:1fr 1fr}
-  .cs{width:280px;height:220px}
-  .certif{padding:28px 20px}.certif-in{gap:20px}
-  .ft-top{grid-template-columns:1fr 1fr;gap:24px;padding:0 20px}
-  footer{padding:48px 20px 20px}
-  .as-banner{height:200px}
 }
-@media(max-width:580px){
-  .ag-inner{grid-template-columns:1fr}
+@media(max-width:768px){
+  nav{padding:0 18px}.n-links,.n-cta{display:none}.burger{display:flex}
+  .sec{padding:64px 18px}
+  .bform{flex-direction:column}.bf{border-right:none;border-bottom:1px solid rgba(0,0,0,.06)}
+  .bf-btn{min-height:50px;width:100%;padding:14px}
+  .hero-actions{flex-direction:column;align-items:center}
+  .fleet-tabs{padding:0 18px}.fleet-grid{grid-template-columns:1fr;padding:0}
+  .fleet-banner{height:200px}.fb-btns{flex-direction:column;align-items:center}
+  .diff-in{padding:64px 18px}.diff-photo{height:240px}
+  .dest-grid{grid-template-columns:1fr 1fr}
+  .test{padding:64px 18px}.test-grid{grid-template-columns:1fr}
+  .contact{padding:64px 18px}.contact-in{grid-template-columns:1fr;gap:40px}
+  .certs{padding:24px 18px}
+  .ft-grid{grid-template-columns:1fr 1fr;gap:24px}
+  footer{padding:48px 18px 18px}
+  .car-slide{width:280px;height:220px}
+  .car-hdr{padding:0 18px}
+  .dest-hdr{padding:0 18px}
+}
+@media(max-width:480px){
   .dest-grid{grid-template-columns:1fr}
-  .hero-sub{flex-direction:column;gap:10px;align-items:center}
-  .cat-tabs{overflow-x:auto;-webkit-overflow-scrolling:touch}
+  .fleet-grid{grid-template-columns:1fr}
+  .ft-grid{grid-template-columns:1fr}
 }
 </style>
 </head>
 <body>
 
-<nav id="mn">
-  <a href="#" class="nl"><span class="nl-name">JETCAB</span><span class="nl-tag">Private Aviation · Mexico</span></a>
-  <div class="nc">
+<!-- NAV -->
+<nav id="nav">
+  <div class="n-logo">
+    <svg class="n-logo-icon" viewBox="0 0 40 40" fill="none">
+      <polygon points="20,4 36,32 4,32" fill="#f07828"/>
+    </svg>
+    <span class="n-logo-text">JETCAB</span>
+  </div>
+  <div class="n-links">
     <a href="#flota">Charter</a>
     <a href="#diferencia">Nosotros</a>
     <a href="#accion">Experiencia</a>
     <a href="#destinos">Destinos</a>
     <a href="#contacto">Contacto</a>
   </div>
-  <div class="nr">
-    <span class="nr-ph">+52 (729) 108-1200</span>
-    <a href="#contacto" class="btn-outline">Contacto</a>
-  </div>
+  <a href="#contacto" class="n-cta">Cotizar</a>
   <div class="burger" id="burger"><span></span><span></span><span></span></div>
 </nav>
 <div class="dov" id="dov"></div>
 <div class="drawer" id="drawer">
-  <button class="dc2" id="dc2">✕</button>
-  <a href="#flota">Charter</a><a href="#diferencia">Nosotros</a><a href="#accion">Experiencia</a>
-  <a href="#destinos">Destinos</a><a href="#contacto">Contacto</a>
-  <a href="tel:7291081200" style="color:var(--gold);margin-top:14px">+52 (729) 108-1200</a>
+  <button class="drawer-x" id="drawer-x">✕</button>
+  <a href="#flota">Charter</a><a href="#diferencia">Nosotros</a>
+  <a href="#accion">Experiencia</a><a href="#destinos">Destinos</a>
+  <a href="#contacto">Cotizar</a>
+  <a href="tel:7291081200" style="color:var(--orange);margin-top:14px">+52 (729) 108-1200</a>
   <a href="https://wa.link/rbmftv" target="_blank">WhatsApp 24/7</a>
 </div>
 
@@ -305,238 +303,208 @@ footer{background:rgba(8,7,5,1);padding:68px 52px 24px;border-top:1px solid rgba
   <div class="hero-bg"></div>
   <div class="hero-ol"></div>
   <div class="hero-c">
-    <span class="hero-ey">Aviación Ejecutiva · México y el Mundo</span>
-    <h1 class="hero-brand">JETCAB</h1>
-    <p class="hero-tagline">PRIVATE JET CHARTER · MÉXICO Y EL MUNDO</p>
+    <span class="hero-eyebrow">Aviación Ejecutiva · México y el Mundo</span>
+    <h1 class="hero-title">JETCAB</h1>
+    <p class="hero-sub">Private Jet Charter · Charter de Helicópteros · Ambulancia Aérea</p>
     <div class="bform">
-      <div class="bf-f"><span class="bf-l">Desde</span><input class="bf-i" type="text" placeholder="Ciudad o aeropuerto"></div>
-      <div class="bf-f"><span class="bf-l">Hacia</span><input class="bf-i" type="text" placeholder="Ciudad o aeropuerto"></div>
-      <div class="bf-f" style="max-width:128px">
-        <span class="bf-l">Fecha</span>
-        <input class="bf-i" type="date" style="color-scheme:light">
-      </div>
-      <div class="bf-f" style="max-width:110px">
-        <span class="bf-l">Pasajeros</span>
-        <select class="bf-i" style="cursor:pointer"><option value="">—</option><option>1–3</option><option>4–7</option><option>8–12</option><option>13+</option></select>
-      </div>
-      <button class="bf-cta"><span>Cotización</span><small>Instantánea</small></button>
+      <div class="bf"><span class="bf-l">Desde</span><input type="text" placeholder="Ciudad o aeropuerto"></div>
+      <div class="bf"><span class="bf-l">Hacia</span><input type="text" placeholder="Ciudad o aeropuerto"></div>
+      <div class="bf" style="max-width:130px"><span class="bf-l">Fecha</span><input type="date" style="color-scheme:light"></div>
+      <div class="bf" style="max-width:115px"><span class="bf-l">Pasajeros</span><select><option>—</option><option>1–3</option><option>4–7</option><option>8–12</option><option>13+</option></select></div>
+      <button class="bf-btn"><span>Cotizar</span><small>Respuesta en 30 min</small></button>
     </div>
-    <div class="hero-sub">
-      <button class="hsb">+ Agregar vuelo</button>
-      <button class="hsb">⇄ Vuelta y regreso</button>
+    <div class="hero-actions">
+      <button class="ha">+ Agregar vuelo</button>
+      <button class="ha">⇄ Vuelta y regreso</button>
     </div>
-  </div>
-  <div class="scroll-i" onclick="document.getElementById('flota').scrollIntoView({behavior:'smooth'})">
-    <span>Explorar</span><div class="scroll-line"></div>
   </div>
 </section>
 
 <!-- MARQUEE -->
-<div class="mq">
-  <div class="mq-t">
-    <span class="mq-i">Jets Privados</span><span class="mq-i">Helicópteros Ejecutivos</span><span class="mq-i">Ambulancia Aérea</span><span class="mq-i">Charter Internacional</span><span class="mq-i">24 · 7 Disponible</span><span class="mq-i">Catering Incluido</span><span class="mq-i">Certificado DGAC</span><span class="mq-i">+200 Destinos</span>
-    <span class="mq-i">Jets Privados</span><span class="mq-i">Helicópteros Ejecutivos</span><span class="mq-i">Ambulancia Aérea</span><span class="mq-i">Charter Internacional</span><span class="mq-i">24 · 7 Disponible</span><span class="mq-i">Catering Incluido</span><span class="mq-i">Certificado DGAC</span><span class="mq-i">+200 Destinos</span>
+<div class="mqbar">
+  <div class="mq-track">
+    <span class="mq-item">Jets Privados</span><span class="mq-dot">·</span>
+    <span class="mq-item">Helicópteros Ejecutivos</span><span class="mq-dot">·</span>
+    <span class="mq-item">Ambulancia Aérea</span><span class="mq-dot">·</span>
+    <span class="mq-item">Charter Internacional</span><span class="mq-dot">·</span>
+    <span class="mq-item">Disponible 24/7</span><span class="mq-dot">·</span>
+    <span class="mq-item">Catering Incluido</span><span class="mq-dot">·</span>
+    <span class="mq-item">Certificado DGAC</span><span class="mq-dot">·</span>
+    <span class="mq-item">+200 Destinos</span><span class="mq-dot">·</span>
+    <span class="mq-item">Jets Privados</span><span class="mq-dot">·</span>
+    <span class="mq-item">Helicópteros Ejecutivos</span><span class="mq-dot">·</span>
+    <span class="mq-item">Ambulancia Aérea</span><span class="mq-dot">·</span>
+    <span class="mq-item">Charter Internacional</span><span class="mq-dot">·</span>
+    <span class="mq-item">Disponible 24/7</span><span class="mq-dot">·</span>
+    <span class="mq-item">Catering Incluido</span><span class="mq-dot">·</span>
+    <span class="mq-item">Certificado DGAC</span><span class="mq-dot">·</span>
+    <span class="mq-item">+200 Destinos</span><span class="mq-dot">·</span>
   </div>
 </div>
 
-<!-- SELECT YOUR AIRCRAFT -->
-<section class="aircraft-select" id="flota">
-  <!-- Banner -->
-  <div class="as-banner">
-    <div class="as-banner-c">
+<!-- FLOTA -->
+<section class="fleet" id="flota">
+  <div class="fleet-banner rv">
+    <div class="fb-c">
       <h2>Selecciona tu Aeronave Perfecta</h2>
-      <p>Explora nuestra flota completa, compara especificaciones o navega por categoría para encontrar el vuelo ideal.</p>
-      <div class="as-banner-btns">
-        <a href="#flota" class="btn-cream">Guía de Aeronaves</a>
-        <a href="#contacto" class="btn-outline">Comparador</a>
+      <p>Flota disponible en México para vuelos nacionales e internacionales. Respuesta en menos de 30 minutos.</p>
+      <div class="fb-btns">
+        <a href="#flota" class="btn-o">Guía de Aeronaves</a>
+        <a href="#contacto" class="btn-ghost">Comparador</a>
       </div>
     </div>
   </div>
-  <!-- Category Tabs -->
-  <div class="cat-tabs" id="catTabs">
-    <button class="cat-tab active" data-cat="all">Todos</button>
-    <button class="cat-tab" data-cat="corto">Corto Alcance</button>
-    <button class="cat-tab" data-cat="medio">Medio Alcance</button>
-    <button class="cat-tab" data-cat="largo">Largo Alcance</button>
-    <button class="cat-tab" data-cat="heli">Helicóptero</button>
-    <button class="cat-tab" data-cat="medico">Médico</button>
+  <div class="fleet-tabs" id="ftabs">
+    <button class="ftab on" data-cat="all">Todos</button>
+    <button class="ftab" data-cat="corto">Corto Alcance</button>
+    <button class="ftab" data-cat="medio">Medio Alcance</button>
+    <button class="ftab" data-cat="largo">Largo Alcance</button>
+    <button class="ftab" data-cat="heli">Helicóptero</button>
+    <button class="ftab" data-cat="med">Médico</button>
   </div>
-  <!-- Aircraft Grid -->
-  <div class="aircraft-grid">
-    <div class="ag-inner" id="agGrid">
-      <a href="/jetcab-learjet35.html" class="ag-card" data-cat="corto">
-        <div class="ag-img"><img src="https://images.unsplash.com/photo-1556388158-158ea5ccacbd?auto=format&fit=crop&w=700&q=80" alt="Learjet 35"><span class="ag-cat">Corto Alcance</span></div>
-        <div class="ag-body"><p class="ag-name">Learjet 35</p><p class="ag-sub">El jet ejecutivo regional de México</p><div class="ag-specs"><div class="ag-spec"><span class="ag-spec-l">Pasajeros</span><span class="ag-spec-v">4–7</span></div><div class="ag-spec"><span class="ag-spec-l">Alcance</span><span class="ag-spec-v">~3,500 km</span></div><div class="ag-spec"><span class="ag-spec-l">Catering</span><span class="ag-spec-v">Incluido</span></div></div><div class="ag-foot"><span class="ag-price">Desde $1,700 USD/hr</span><span class="ag-view">Ver aeronave →</span></div></div>
-      </a>
-      <a href="/jetcab-challenger605.html" class="ag-card" data-cat="medio">
-        <div class="ag-img"><img src="https://images.unsplash.com/photo-1474302770737-173ee21bab63?auto=format&fit=crop&w=700&q=80" alt="Challenger 605"><span class="ag-cat">Medio Alcance</span></div>
-        <div class="ag-body"><p class="ag-name">Challenger 605</p><p class="ag-sub">Intercontinental con confort premium</p><div class="ag-specs"><div class="ag-spec"><span class="ag-spec-l">Pasajeros</span><span class="ag-spec-v">6–9</span></div><div class="ag-spec"><span class="ag-spec-l">Alcance</span><span class="ag-spec-v">~6,500 km</span></div><div class="ag-spec"><span class="ag-spec-l">Baño</span><span class="ag-spec-v">Incluido</span></div></div><div class="ag-foot"><span class="ag-price">Desde $2,700 USD/hr</span><span class="ag-view">Ver aeronave →</span></div></div>
-      </a>
-      <a href="/jetcab-gulfstreamgv.html" class="ag-card" data-cat="largo">
-        <div class="ag-img"><img src="https://images.unsplash.com/photo-1464037866556-6812c9d1c72e?auto=format&fit=crop&w=700&q=80" alt="Gulfstream GV"><span class="ag-cat">Largo Alcance</span></div>
-        <div class="ag-body"><p class="ag-name">Gulfstream GV</p><p class="ag-sub">La cúspide de la aviación ejecutiva</p><div class="ag-specs"><div class="ag-spec"><span class="ag-spec-l">Pasajeros</span><span class="ag-spec-v">8–16</span></div><div class="ag-spec"><span class="ag-spec-l">Alcance</span><span class="ag-spec-v">~12,000 km</span></div><div class="ag-spec"><span class="ag-spec-l">Suite</span><span class="ag-spec-v">Privada</span></div></div><div class="ag-foot"><span class="ag-price">Desde $5,400 USD/hr</span><span class="ag-view">Ver aeronave →</span></div></div>
-      </a>
-      <a href="/jetcab-bell206.html" class="ag-card" data-cat="heli">
-        <div class="ag-img"><img src="https://images.unsplash.com/photo-1436891678271-9c672565d8f6?auto=format&fit=crop&w=700&q=80" alt="Bell 206"><span class="ag-cat">Helicóptero Monomotor</span></div>
-        <div class="ag-body"><p class="ag-name">Bell 206</p><p class="ag-sub">Traslados urbanos y destinos remotos</p><div class="ag-specs"><div class="ag-spec"><span class="ag-spec-l">Pasajeros</span><span class="ag-spec-v">3–5</span></div><div class="ag-spec"><span class="ag-spec-l">Autonomía</span><span class="ag-spec-v">~600 km</span></div><div class="ag-spec"><span class="ag-spec-l">Permisos</span><span class="ag-spec-v">Incluidos</span></div></div><div class="ag-foot"><span class="ag-price">Desde $1,500 USD/hr</span><span class="ag-view">Ver aeronave →</span></div></div>
-      </a>
-      <a href="/jetcab-aw139.html" class="ag-card" data-cat="heli">
-        <div class="ag-img"><img src="https://images.unsplash.com/photo-1540962351504-03099e0a754b?auto=format&fit=crop&w=700&q=80" alt="AW139"><span class="ag-cat">Helicóptero Bimotor Premium</span></div>
-        <div class="ag-body"><p class="ag-name">AW139</p><p class="ag-sub">El helicóptero ejecutivo más avanzado</p><div class="ag-specs"><div class="ag-spec"><span class="ag-spec-l">Pasajeros</span><span class="ag-spec-v">hasta 15</span></div><div class="ag-spec"><span class="ag-spec-l">Autonomía</span><span class="ag-spec-v">~1,000 km</span></div><div class="ag-spec"><span class="ag-spec-l">Motores</span><span class="ag-spec-v">Doble P&W</span></div></div><div class="ag-foot"><span class="ag-price">Desde $3,500 USD/hr</span><span class="ag-view">Ver aeronave →</span></div></div>
-      </a>
-      <a href="/jetcab-ambulancia-aerea.html" class="ag-card" data-cat="medico">
-        <div class="ag-img"><img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=700&q=80" alt="Ambulancia Aérea"><span class="ag-cat">Traslado Médico</span></div>
-        <div class="ag-body"><p class="ag-name">Ambulancia Aérea</p><p class="ag-sub">UCI voladora · Personal médico a bordo</p><div class="ag-specs"><div class="ag-spec"><span class="ag-spec-l">UCI</span><span class="ag-spec-v">Completa</span></div><div class="ag-spec"><span class="ag-spec-l">Respuesta</span><span class="ag-spec-v">&lt; 2 hrs</span></div><div class="ag-spec"><span class="ag-spec-l">Disponible</span><span class="ag-spec-v">24/7</span></div></div><div class="ag-foot"><span class="ag-price">Desde $2,700 USD/hr</span><span class="ag-view">Ver servicio →</span></div></div>
-      </a>
-    </div>
+  <div class="fleet-grid" id="fgrid">
+    <a href="/jetcab-learjet35.html" class="fc rv rv-d1" data-cat="corto">
+      <div class="fc-img"><img src="https://images.unsplash.com/photo-1556388158-158ea5ccacbd?auto=format&fit=crop&w=700&q=80" alt="Learjet 35 JETCAB"><span class="fc-cat">Corto Alcance</span></div>
+      <div class="fc-body"><p class="fc-name">Learjet 35</p><p class="fc-desc">El jet ejecutivo regional por excelencia</p><div class="fc-specs"><div class="fc-spec"><span class="fc-sl">Pasajeros</span><span class="fc-sv">4 – 7</span></div><div class="fc-spec"><span class="fc-sl">Alcance</span><span class="fc-sv">~3,500 km</span></div><div class="fc-spec"><span class="fc-sl">Catering</span><span class="fc-sv">Incluido</span></div></div><div class="fc-foot"><span class="fc-price">Desde $1,700 USD/hr</span><span class="fc-link">Ver aeronave →</span></div></div>
+    </a>
+    <a href="/jetcab-challenger605.html" class="fc rv rv-d2" data-cat="medio">
+      <div class="fc-img"><img src="https://images.unsplash.com/photo-1474302770737-173ee21bab63?auto=format&fit=crop&w=700&q=80" alt="Challenger 605 JETCAB"><span class="fc-cat">Medio Alcance</span></div>
+      <div class="fc-body"><p class="fc-name">Challenger 605</p><p class="fc-desc">Confort premium para vuelos intercontinentales</p><div class="fc-specs"><div class="fc-spec"><span class="fc-sl">Pasajeros</span><span class="fc-sv">6 – 9</span></div><div class="fc-spec"><span class="fc-sl">Alcance</span><span class="fc-sv">~6,500 km</span></div><div class="fc-spec"><span class="fc-sl">Baño</span><span class="fc-sv">Completo</span></div></div><div class="fc-foot"><span class="fc-price">Desde $2,700 USD/hr</span><span class="fc-link">Ver aeronave →</span></div></div>
+    </a>
+    <a href="/jetcab-gulfstreamgv.html" class="fc rv rv-d3" data-cat="largo">
+      <div class="fc-img"><img src="https://images.unsplash.com/photo-1464037866556-6812c9d1c72e?auto=format&fit=crop&w=700&q=80" alt="Gulfstream GV JETCAB"><span class="fc-cat">Largo Alcance</span></div>
+      <div class="fc-body"><p class="fc-name">Gulfstream GV</p><p class="fc-desc">La cúspide de la aviación ejecutiva global</p><div class="fc-specs"><div class="fc-spec"><span class="fc-sl">Pasajeros</span><span class="fc-sv">8 – 16</span></div><div class="fc-spec"><span class="fc-sl">Alcance</span><span class="fc-sv">~12,000 km</span></div><div class="fc-spec"><span class="fc-sl">Suite</span><span class="fc-sv">Privada</span></div></div><div class="fc-foot"><span class="fc-price">Desde $5,400 USD/hr</span><span class="fc-link">Ver aeronave →</span></div></div>
+    </a>
+    <a href="/jetcab-bell206.html" class="fc rv rv-d1" data-cat="heli">
+      <div class="fc-img"><img src="https://images.unsplash.com/photo-1436891678271-9c672565d8f6?auto=format&fit=crop&w=700&q=80" alt="Bell 206 JETCAB"><span class="fc-cat">Helicóptero</span></div>
+      <div class="fc-body"><p class="fc-name">Bell 206</p><p class="fc-desc">Traslados urbanos y acceso a zonas remotas</p><div class="fc-specs"><div class="fc-spec"><span class="fc-sl">Pasajeros</span><span class="fc-sv">3 – 5</span></div><div class="fc-spec"><span class="fc-sl">Autonomía</span><span class="fc-sv">~600 km</span></div><div class="fc-spec"><span class="fc-sl">Permisos</span><span class="fc-sv">Incluidos</span></div></div><div class="fc-foot"><span class="fc-price">Desde $1,500 USD/hr</span><span class="fc-link">Ver aeronave →</span></div></div>
+    </a>
+    <a href="/jetcab-aw139.html" class="fc rv rv-d2" data-cat="heli">
+      <div class="fc-img"><img src="https://images.unsplash.com/photo-1540962351504-03099e0a754b?auto=format&fit=crop&w=700&q=80" alt="AW139 JETCAB"><span class="fc-cat">Helicóptero Premium</span></div>
+      <div class="fc-body"><p class="fc-name">AW139</p><p class="fc-desc">El helicóptero ejecutivo más avanzado del mundo</p><div class="fc-specs"><div class="fc-spec"><span class="fc-sl">Pasajeros</span><span class="fc-sv">hasta 15</span></div><div class="fc-spec"><span class="fc-sl">Autonomía</span><span class="fc-sv">~1,000 km</span></div><div class="fc-spec"><span class="fc-sl">Motores</span><span class="fc-sv">Doble P&W</span></div></div><div class="fc-foot"><span class="fc-price">Desde $3,500 USD/hr</span><span class="fc-link">Ver aeronave →</span></div></div>
+    </a>
+    <a href="/jetcab-ambulancia-aerea.html" class="fc rv rv-d3" data-cat="med">
+      <div class="fc-img"><img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=700&q=80" alt="Ambulancia Aérea JETCAB"><span class="fc-cat">Médico</span></div>
+      <div class="fc-body"><p class="fc-name">Ambulancia Aérea</p><p class="fc-desc">UCI voladora · Personal médico especializado</p><div class="fc-specs"><div class="fc-spec"><span class="fc-sl">UCI</span><span class="fc-sv">Completa</span></div><div class="fc-spec"><span class="fc-sl">Respuesta</span><span class="fc-sv">&lt; 2 hrs</span></div><div class="fc-spec"><span class="fc-sl">Disp.</span><span class="fc-sv">24/7</span></div></div><div class="fc-foot"><span class="fc-price">Desde $2,700 USD/hr</span><span class="fc-link">Ver servicio →</span></div></div>
+    </a>
   </div>
 </section>
 
-<!-- THE JETCAB DIFFERENCE -->
-<section class="diff-section" id="diferencia">
-  <div class="diff-inner">
-    <div>
-      <span class="diff-kicker">Por qué elegirnos</span>
-      <h2 class="diff-h">La Diferencia<br>JETCAB</h2>
-      <p class="diff-sub">Nuestra reputación como empresa líder de aviación ejecutiva en México se construye sobre pilares que ningún competidor puede igualar.</p>
+<!-- DIFFERENCE -->
+<section class="diff" id="diferencia">
+  <div class="diff-in">
+    <div class="rv-l">
+      <span class="sec-tag">Por qué elegirnos</span>
+      <h2 class="sec-h">La Diferencia<br>JETCAB</h2>
+      <p class="sec-p">Más de 10 años y 500 vuelos completados. Nuestra reputación se construye sobre pilares que ningún competidor puede igualar.</p>
       <div class="diff-items">
-        <div class="di"><div class="di-dot"></div><div><p class="di-title">Alcance Global, Conocimiento Local</p><p class="di-desc">Acceso a aeronaves en todo el mundo combinado con un conocimiento profundo del mercado mexicano y latinoamericano.</p></div></div>
-        <div class="di"><div class="di-dot"></div><div><p class="di-title">Todo Incluido, Sin Sorpresas</p><p class="di-desc">Catering gourmet, permisos de vuelo, sobrecargo de cabina y coordinación logística completa. Una cotización. Sin cargos ocultos.</p></div></div>
-        <div class="di"><div class="di-dot"></div><div><p class="di-title">Equipo Experimentado</p><p class="di-desc">Más de 10 años y 500 vuelos completados. Pilotos certificados DGAC, IATA e IS-BAO con miles de horas de experiencia.</p></div></div>
-        <div class="di"><div class="di-dot"></div><div><p class="di-title">Respuesta en 30 Minutos</p><p class="di-desc">Precio, aeronave y ruta confirmados en tiempo récord. Disponibilidad 24/7 los 365 días del año sin excepciones.</p></div></div>
+        <div class="di"><div class="di-bar"></div><div><p class="di-h">Alcance Global, Operación Local</p><p class="di-p">Acceso a aeronaves en todo el mundo con conocimiento profundo del espacio aéreo mexicano y latinoamericano.</p></div></div>
+        <div class="di"><div class="di-bar"></div><div><p class="di-h">Todo Incluido, Sin Sorpresas</p><p class="di-p">Catering, permisos, sobrecargo y logística completa en una cotización. Sin cargos ocultos ni letra pequeña.</p></div></div>
+        <div class="di"><div class="di-bar"></div><div><p class="di-h">Equipo Certificado y Experimentado</p><p class="di-p">Pilotos DGAC, IATA e IS-BAO. Más de 10,000 horas de vuelo acumuladas. Seguridad que no se negocia.</p></div></div>
+        <div class="di"><div class="di-bar"></div><div><p class="di-h">Respuesta en 30 Minutos</p><p class="di-p">Aeronave, precio y ruta confirmados en tiempo récord. Disponibles los 365 días del año, a cualquier hora.</p></div></div>
       </div>
     </div>
-    <div class="diff-photo">
-      <img src="https://images.unsplash.com/photo-1474302770737-173ee21bab63?auto=format&fit=crop&w=900&q=80" alt="Interior jet ejecutivo JETCAB — La diferencia">
+    <div class="diff-photo rv-r">
+      <img src="https://images.unsplash.com/photo-1474302770737-173ee21bab63?auto=format&fit=crop&w=900&q=80" alt="Jet ejecutivo JETCAB — La diferencia">
     </div>
   </div>
 </section>
 
 <!-- JETCAB EN ACCIÓN -->
-<section class="action-section" id="accion">
-  <div class="action-hdr">
-    <h2>JETCAB EN ACCIÓN</h2>
-    <p>JETCAB es más que una aeronave. Es sobre las personas, las experiencias y los pequeños detalles que hacen memorable cada vuelo.</p>
+<section class="carousel" id="accion">
+  <div class="car-hdr rv">
+    <div>
+      <span class="sec-tag">Experiencia real</span>
+      <h2 class="sec-h">JETCAB en Acción</h2>
+    </div>
+    <p style="font-size:14px;color:var(--muted);max-width:360px;text-align:right">JETCAB es más que una aeronave. Son las personas, las experiencias y los detalles que hacen memorable cada vuelo.</p>
   </div>
-  <div class="carousel-wrap">
-    <div class="carousel-track">
-      <!-- Set 1 -->
-      <div class="cs"><div class="cs-bg" style="background-image:url('https://images.unsplash.com/photo-1464037866556-6812c9d1c72e?auto=format&fit=crop&w=600&q=80')"></div></div>
-      <div class="cs"><div class="cs-bg" style="background-image:url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=600&q=80')"></div></div>
-      <div class="cs"><div class="cs-bg" style="background-image:url('https://images.unsplash.com/photo-1474302770737-173ee21bab63?auto=format&fit=crop&w=600&q=80')"></div></div>
-      <div class="cs"><div class="cs-bg" style="background-image:url('https://images.unsplash.com/photo-1540962351504-03099e0a754b?auto=format&fit=crop&w=600&q=80')"></div></div>
-      <div class="cs"><div class="cs-bg" style="background-image:url('https://images.unsplash.com/photo-1556388158-158ea5ccacbd?auto=format&fit=crop&w=600&q=80')"></div></div>
-      <div class="cs"><div class="cs-bg" style="background-image:url('https://images.unsplash.com/photo-1436891678271-9c672565d8f6?auto=format&fit=crop&w=600&q=80')"></div></div>
-      <div class="cs"><div class="cs-bg" style="background-image:url('https://images.unsplash.com/photo-1583416750470-965b2707b355?auto=format&fit=crop&w=600&q=80')"></div></div>
-      <!-- Set 2 (duplicate for infinite loop) -->
-      <div class="cs"><div class="cs-bg" style="background-image:url('https://images.unsplash.com/photo-1464037866556-6812c9d1c72e?auto=format&fit=crop&w=600&q=80')"></div></div>
-      <div class="cs"><div class="cs-bg" style="background-image:url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=600&q=80')"></div></div>
-      <div class="cs"><div class="cs-bg" style="background-image:url('https://images.unsplash.com/photo-1474302770737-173ee21bab63?auto=format&fit=crop&w=600&q=80')"></div></div>
-      <div class="cs"><div class="cs-bg" style="background-image:url('https://images.unsplash.com/photo-1540962351504-03099e0a754b?auto=format&fit=crop&w=600&q=80')"></div></div>
-      <div class="cs"><div class="cs-bg" style="background-image:url('https://images.unsplash.com/photo-1556388158-158ea5ccacbd?auto=format&fit=crop&w=600&q=80')"></div></div>
-      <div class="cs"><div class="cs-bg" style="background-image:url('https://images.unsplash.com/photo-1436891678271-9c672565d8f6?auto=format&fit=crop&w=600&q=80')"></div></div>
-      <div class="cs"><div class="cs-bg" style="background-image:url('https://images.unsplash.com/photo-1583416750470-965b2707b355?auto=format&fit=crop&w=600&q=80')"></div></div>
+  <div style="overflow:hidden">
+    <div class="car-track">
+      <div class="car-slide"><div class="car-slide-bg" style="background-image:url('https://images.unsplash.com/photo-1464037866556-6812c9d1c72e?auto=format&fit=crop&w=600&q=80')"></div></div>
+      <div class="car-slide"><div class="car-slide-bg" style="background-image:url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=600&q=80')"></div></div>
+      <div class="car-slide"><div class="car-slide-bg" style="background-image:url('https://images.unsplash.com/photo-1474302770737-173ee21bab63?auto=format&fit=crop&w=600&q=80')"></div></div>
+      <div class="car-slide"><div class="car-slide-bg" style="background-image:url('https://images.unsplash.com/photo-1540962351504-03099e0a754b?auto=format&fit=crop&w=600&q=80')"></div></div>
+      <div class="car-slide"><div class="car-slide-bg" style="background-image:url('https://images.unsplash.com/photo-1556388158-158ea5ccacbd?auto=format&fit=crop&w=600&q=80')"></div></div>
+      <div class="car-slide"><div class="car-slide-bg" style="background-image:url('https://images.unsplash.com/photo-1436891678271-9c672565d8f6?auto=format&fit=crop&w=600&q=80')"></div></div>
+      <div class="car-slide"><div class="car-slide-bg" style="background-image:url('https://images.unsplash.com/photo-1583416750470-965b2707b355?auto=format&fit=crop&w=600&q=80')"></div></div>
+      <!-- duplicado para loop -->
+      <div class="car-slide"><div class="car-slide-bg" style="background-image:url('https://images.unsplash.com/photo-1464037866556-6812c9d1c72e?auto=format&fit=crop&w=600&q=80')"></div></div>
+      <div class="car-slide"><div class="car-slide-bg" style="background-image:url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=600&q=80')"></div></div>
+      <div class="car-slide"><div class="car-slide-bg" style="background-image:url('https://images.unsplash.com/photo-1474302770737-173ee21bab63?auto=format&fit=crop&w=600&q=80')"></div></div>
+      <div class="car-slide"><div class="car-slide-bg" style="background-image:url('https://images.unsplash.com/photo-1540962351504-03099e0a754b?auto=format&fit=crop&w=600&q=80')"></div></div>
+      <div class="car-slide"><div class="car-slide-bg" style="background-image:url('https://images.unsplash.com/photo-1556388158-158ea5ccacbd?auto=format&fit=crop&w=600&q=80')"></div></div>
+      <div class="car-slide"><div class="car-slide-bg" style="background-image:url('https://images.unsplash.com/photo-1436891678271-9c672565d8f6?auto=format&fit=crop&w=600&q=80')"></div></div>
+      <div class="car-slide"><div class="car-slide-bg" style="background-image:url('https://images.unsplash.com/photo-1583416750470-965b2707b355?auto=format&fit=crop&w=600&q=80')"></div></div>
     </div>
   </div>
 </section>
 
-<!-- DESTINOS CON FOTOS -->
-<section class="dest-section" id="destinos">
-  <div class="dest-hdr">
-    <div class="dest-title">
-      <span class="kicker" style="color:var(--gold)">Destinos populares</span>
-      <h2 class="sh dark">Destinos<br><em>Populares</em></h2>
-      <p class="dest-title p">Nuestros clientes nos llevan a todas partes. Algunos destinos se repiten una y otra vez — la eficiencia del vuelo privado en su máxima expresión.</p>
+<!-- DESTINOS -->
+<section class="dests" id="destinos">
+  <div class="dest-hdr rv">
+    <div>
+      <span class="sec-tag">Destinos Populares</span>
+      <h2 class="sec-h">A Donde Quieras,<br>Cuando Quieras</h2>
     </div>
-    <a href="#contacto" class="btn-outline" style="align-self:flex-end">Ver todos →</a>
+    <a href="#contacto" class="btn-ghost">Ver todos los destinos →</a>
   </div>
   <div class="dest-grid">
-    <div class="dc">
-      <div class="dc-bg" style="background-image:url('https://images.unsplash.com/photo-1518638150340-f706e86654de?auto=format&fit=crop&w=700&q=80')"></div>
-      <div class="dc-ol"></div>
-      <div class="dc-info"><span class="dc-city">Cancún</span><span class="dc-ctry">México</span></div>
-    </div>
-    <div class="dc">
-      <div class="dc-bg" style="background-image:url('https://images.unsplash.com/photo-1512813389649-acbd9b470f9e?auto=format&fit=crop&w=700&q=80')"></div>
-      <div class="dc-ol"></div>
-      <div class="dc-info"><span class="dc-city">Los Cabos</span><span class="dc-ctry">México</span></div>
-    </div>
-    <div class="dc">
-      <div class="dc-bg" style="background-image:url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=700&q=80')"></div>
-      <div class="dc-ol"></div>
-      <div class="dc-info"><span class="dc-city">Puerto Vallarta</span><span class="dc-ctry">México</span></div>
-    </div>
-    <div class="dc">
-      <div class="dc-bg" style="background-image:url('https://images.unsplash.com/photo-1533929736458-ca588d08c8be?auto=format&fit=crop&w=700&q=80')"></div>
-      <div class="dc-ol"></div>
-      <div class="dc-info"><span class="dc-city">Miami</span><span class="dc-ctry">Estados Unidos</span></div>
-    </div>
-    <div class="dc">
-      <div class="dc-bg" style="background-image:url('https://images.unsplash.com/photo-1490644658840-3f2e3f8c5625?auto=format&fit=crop&w=700&q=80')"></div>
-      <div class="dc-ol"></div>
-      <div class="dc-info"><span class="dc-city">Nueva York</span><span class="dc-ctry">Estados Unidos</span></div>
-    </div>
-    <div class="dc">
-      <div class="dc-bg" style="background-image:url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=700&q=80')"></div>
-      <div class="dc-ol"></div>
-      <div class="dc-info"><span class="dc-city">Las Vegas</span><span class="dc-ctry">Estados Unidos</span></div>
-    </div>
-    <div class="dc">
-      <div class="dc-bg" style="background-image:url('https://images.unsplash.com/photo-1544531586-fcd08b3d8f36?auto=format&fit=crop&w=700&q=80')"></div>
-      <div class="dc-ol"></div>
-      <div class="dc-info"><span class="dc-city">Ciudad de México</span><span class="dc-ctry">México</span></div>
-    </div>
-    <div class="dest-more">
-      <p>+200<br>destinos</p>
-      <span>Consultar →</span>
-    </div>
+    <div class="dc rv rv-d1"><div class="dc-bg" style="background-image:url('https://images.unsplash.com/photo-1518638150340-f706e86654de?auto=format&fit=crop&w=700&q=80')"></div><div class="dc-ol"></div><div class="dc-info"><span class="dc-city">Cancún</span><span class="dc-ctry">México</span></div></div>
+    <div class="dc rv rv-d2"><div class="dc-bg" style="background-image:url('https://images.unsplash.com/photo-1512813389649-acbd9b470f9e?auto=format&fit=crop&w=700&q=80')"></div><div class="dc-ol"></div><div class="dc-info"><span class="dc-city">Los Cabos</span><span class="dc-ctry">México</span></div></div>
+    <div class="dc rv rv-d3"><div class="dc-bg" style="background-image:url('https://images.unsplash.com/photo-1533929736458-ca588d08c8be?auto=format&fit=crop&w=700&q=80')"></div><div class="dc-ol"></div><div class="dc-info"><span class="dc-city">Miami</span><span class="dc-ctry">Estados Unidos</span></div></div>
+    <div class="dc rv rv-d4"><div class="dc-bg" style="background-image:url('https://images.unsplash.com/photo-1490644658840-3f2e3f8c5625?auto=format&fit=crop&w=700&q=80')"></div><div class="dc-ol"></div><div class="dc-info"><span class="dc-city">Nueva York</span><span class="dc-ctry">Estados Unidos</span></div></div>
+    <div class="dc rv rv-d1"><div class="dc-bg" style="background-image:url('https://images.unsplash.com/photo-1544531586-fcd08b3d8f36?auto=format&fit=crop&w=700&q=80')"></div><div class="dc-ol"></div><div class="dc-info"><span class="dc-city">Ciudad de México</span><span class="dc-ctry">México</span></div></div>
+    <div class="dc rv rv-d2"><div class="dc-bg" style="background-image:url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=700&q=80')"></div><div class="dc-ol"></div><div class="dc-info"><span class="dc-city">Las Vegas</span><span class="dc-ctry">Estados Unidos</span></div></div>
+    <div class="dc rv rv-d3"><div class="dc-bg" style="background-image:url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=700&q=80')"></div><div class="dc-ol"></div><div class="dc-info"><span class="dc-city">Puerto Vallarta</span><span class="dc-ctry">México</span></div></div>
+    <div class="dest-more rv rv-d4" onclick="location='#contacto'"><p class="dest-more-n">+200</p><span class="dest-more-l">Destinos disponibles</span></div>
   </div>
 </section>
 
-<!-- CERTIF -->
-<div class="certif">
-  <div class="certif-in">
-    <span class="cl-lbl">Certificados por</span>
-    <div class="cl-sep"></div>
-    <div class="cl-logos">
-      <span class="cl">DGAC México</span><span class="cl">IATA</span><span class="cl">IS-BAO</span><span class="cl">ARGUS Certified</span><span class="cl">Wyvern Approved</span><span class="cl">NBAA Member</span>
+<!-- CERTS -->
+<div class="certs">
+  <div class="certs-in">
+    <span class="cert-lbl">Certificados por</span>
+    <div class="cert-sep"></div>
+    <div class="cert-list">
+      <span class="cert-i">DGAC México</span><span class="cert-i">IATA</span><span class="cert-i">IS-BAO</span><span class="cert-i">ARGUS</span><span class="cert-i">Wyvern</span><span class="cert-i">NBAA</span>
     </div>
   </div>
 </div>
 
 <!-- TESTIMONIALS -->
-<section class="test-section">
-  <div class="test-inner">
-    <div class="test-hdr">
-      <h2 class="sh">Lo que dicen<br>quienes nos <em>eligen</em></h2>
-      <p class="slead">Más de 500 vuelos completados. La confianza de quienes exigen lo mejor en cada trayecto.</p>
+<section class="test">
+  <div class="test-in">
+    <div class="test-hdr rv">
+      <h2 class="sec-h">Lo que Dicen<br>Nuestros Clientes</h2>
+      <p class="sec-p">Más de 500 vuelos completados. La confianza de quienes exigen lo mejor en cada trayecto.</p>
     </div>
     <div class="test-grid">
-      <div class="tc">
+      <div class="tc rv rv-d1">
         <div class="tc-stars">★★★★★</div>
         <p class="tc-q">"Realicé un viaje con JETCAB a Punta Cana y cada detalle fue inmejorable. La atención, puntualidad y el nivel de lujo. Una experiencia que volvería a repetir sin dudarlo."</p>
-        <hr class="tc-hr">
+        <hr class="tc-sep">
         <p class="tc-name">Amparo Rangel Mendoza</p>
-        <p class="tc-detail">Vuelo CDMX – Punta Cana · 2022</p>
+        <p class="tc-sub">Vuelo CDMX – Punta Cana · 2022</p>
       </div>
-      <div class="tc">
+      <div class="tc rv rv-d2">
         <div class="tc-stars">★★★★★</div>
-        <p class="tc-q">"He volado con otras compañías y sin duda JETCAB destaca en todo. La seguridad, el servicio personalizado y la atención son de un nivel que no encontrarás en ninguna otra empresa."</p>
-        <hr class="tc-hr">
+        <p class="tc-q">"He volado con otras compañías y sin duda JETCAB destaca en todo. La seguridad, el servicio personalizado y la atención son de un nivel que no encontrarás en otra empresa."</p>
+        <hr class="tc-sep">
         <p class="tc-name">Miguel Palma Sepúlveda</p>
-        <p class="tc-detail">Cliente recurrente · Vuelos ejecutivos nacionales</p>
+        <p class="tc-sub">Cliente recurrente · Vuelos ejecutivos nacionales</p>
       </div>
     </div>
   </div>
 </section>
 
 <!-- CONTACTO -->
-<section class="contact-section" id="contacto">
-  <div class="ci-inner">
-    <div>
-      <span class="kicker">Cotización gratuita</span>
-      <h2 class="ch">¿Listo<br>para<br><em>volar?</em></h2>
-      <p class="cdesc">Respuesta personalizada en menos de 30 minutos. Sin compromisos. Atención directa 24/7 los 365 días del año.</p>
+<section class="contact" id="contacto">
+  <div class="contact-in">
+    <div class="rv-l">
+      <span class="sec-tag">Cotización gratuita</span>
+      <h2 class="ch">¿Listo<br>Para<br>Volar?</h2>
+      <p class="cp">Respuesta personalizada en menos de 30 minutos. Sin compromisos. Atención directa 24/7 los 365 días del año.</p>
       <div class="cinfo">
         <div class="cir"><span class="cil">Teléfono</span><span class="civ">+52 (729) 108-1200</span></div>
         <div class="cir"><span class="cil">WhatsApp</span><span class="civ">wa.link/rbmftv · 24/7</span></div>
@@ -544,20 +512,17 @@ footer{background:rgba(8,7,5,1);padding:68px 52px 24px;border-top:1px solid rgba
         <div class="cir"><span class="cil">Cobertura</span><span class="civ">México e Internacional</span></div>
       </div>
     </div>
-    <div class="cf">
-      <div class="cf-hdr"><h3>Solicitar Cotización</h3><p>Respuesta garantizada en menos de 30 minutos</p></div>
+    <div class="cform rv-r">
+      <div class="cf-head"><h3>Solicitar Cotización</h3><p>Respuesta garantizada en menos de 30 minutos</p></div>
       <div class="cf-body">
         <label class="cfl">Origen</label><input class="cfi" type="text" placeholder="Ciudad o aeropuerto">
         <label class="cfl">Destino</label><input class="cfi" type="text" placeholder="Ciudad o aeropuerto">
-        <div class="cf-row" style="margin-bottom:0">
-          <div><label class="cfl">Fecha</label><input class="cfi" type="date" style="color-scheme:dark"></div>
-          <div><label class="cfl">Pasajeros</label><select class="cfs" style="padding-left:0"><option>1–3</option><option>4–7</option><option>8–12</option><option>13+</option></select></div>
-        </div>
-        <label class="cfl">Aeronave preferida</label>
+        <div class="cf-row"><div><label class="cfl">Fecha</label><input class="cfi" type="date" style="color-scheme:dark"></div><div><label class="cfl">Pasajeros</label><select class="cfs"><option>1–3</option><option>4–7</option><option>8–12</option><option>13+</option></select></div></div>
+        <label class="cfl" style="margin-top:4px">Aeronave</label>
         <select class="cfs"><option>Sin preferencia</option><option>Jet corto alcance</option><option>Jet medio alcance</option><option>Jet largo alcance</option><option>Helicóptero</option><option>Ambulancia aérea</option></select>
-        <label class="cfl">Nombre completo</label><input class="cfi" type="text" placeholder="Tu nombre">
-        <label class="cfl">WhatsApp / Teléfono</label><input class="cfi" type="tel" placeholder="+52 ...">
-        <button class="cfsub">Solicitar Cotización</button>
+        <label class="cfl">Nombre</label><input class="cfi" type="text" placeholder="Tu nombre completo">
+        <label class="cfl">WhatsApp</label><input class="cfi" type="tel" placeholder="+52 ...">
+        <button class="cf-sub">Solicitar Cotización</button>
         <p class="cf-note">100% confidencial · Sin compromiso · Gratuito</p>
       </div>
     </div>
@@ -566,44 +531,51 @@ footer{background:rgba(8,7,5,1);padding:68px 52px 24px;border-top:1px solid rgba
 
 <!-- FOOTER -->
 <footer>
-  <div class="ft-top">
-    <div>
-      <span class="ft-brand">JETCAB</span>
-      <p class="ft-about">Aviación ejecutiva privada. Más de 10 años conectando México con el mundo.</p>
-    </div>
-    <div><span class="ft-h">Jets Privados</span><ul class="ft-ul"><li><a href="/jetcab-learjet35.html">Learjet 35 — Corto alcance</a></li><li><a href="/jetcab-challenger605.html">Challenger 605 — Medio</a></li><li><a href="/jetcab-gulfstreamgv.html">Gulfstream GV — Largo</a></li></ul></div>
-    <div><span class="ft-h">Helicópteros</span><ul class="ft-ul"><li><a href="/jetcab-bell206.html">Bell 206 — Monomotor</a></li><li><a href="/jetcab-aw139.html">AW139 — Bimotor Premium</a></li><li><a href="/jetcab-ambulancia-aerea.html">Ambulancia Aérea</a></li></ul></div>
+  <div class="ft-grid">
+    <div><span class="ft-brand">JETCAB</span><p class="ft-about">Aviación ejecutiva privada. Más de 10 años conectando México con el mundo.</p></div>
+    <div><span class="ft-h">Jets Privados</span><ul class="ft-ul"><li><a href="/jetcab-learjet35.html">Learjet 35</a></li><li><a href="/jetcab-challenger605.html">Challenger 605</a></li><li><a href="/jetcab-gulfstreamgv.html">Gulfstream GV</a></li></ul></div>
+    <div><span class="ft-h">Helicópteros</span><ul class="ft-ul"><li><a href="/jetcab-bell206.html">Bell 206</a></li><li><a href="/jetcab-aw139.html">AW139</a></li><li><a href="/jetcab-ambulancia-aerea.html">Ambulancia Aérea</a></li></ul></div>
     <div><span class="ft-h">Contacto</span><ul class="ft-ul"><li><a href="tel:7291081200">+52 (729) 108-1200</a></li><li><a href="https://wa.link/rbmftv" target="_blank">WhatsApp 24/7</a></li><li><a href="#contacto">Cotizar vuelo</a></li></ul></div>
   </div>
   <div class="ft-bot">
     <span class="ft-copy">©2025 JETCAB · Todos los derechos reservados</span>
-    <span class="ft-copy ft-rankeo"><a href="https://rankeo.agency" target="_blank">Diseño: Rankeo</a></span>
+    <span class="ft-copy"><a href="https://rankeo.agency" target="_blank" style="color:rgba(255,255,255,.12)">Diseño: Rankeo</a></span>
   </div>
 </footer>
 
 <a href="https://wa.link/rbmftv" target="_blank" class="wa" aria-label="WhatsApp">
-  <svg viewBox="0 0 24 24" width="24" height="24" fill="#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.122 1.532 5.848L.057 23.25a.75.75 0 00.916.905l5.565-1.457A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.75a9.722 9.722 0 01-4.964-1.362l-.356-.211-3.683.965.983-3.588-.232-.369A9.722 9.722 0 012.25 12C2.25 6.615 6.615 2.25 12 2.25S21.75 6.615 21.75 12 17.385 21.75 12 21.75z"/></svg>
+  <svg viewBox="0 0 24 24" width="26" height="26" fill="#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.122 1.532 5.848L.057 23.25a.75.75 0 00.916.905l5.565-1.457A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.75a9.722 9.722 0 01-4.964-1.362l-.356-.211-3.683.965.983-3.588-.232-.369A9.722 9.722 0 012.25 12C2.25 6.615 6.615 2.25 12 2.25S21.75 6.615 21.75 12 17.385 21.75 12 21.75z"/></svg>
 </a>
 
 <script>
-// Nav scroll
-var nav=document.getElementById('mn');
-window.addEventListener('scroll',function(){nav.classList.toggle('scrolled',window.scrollY>60)});
+// Nav
+var nav=document.getElementById('nav');
+window.addEventListener('scroll',function(){nav.classList.toggle('solid',scrollY>60)},{passive:true});
+
 // Burger
 (function(){
-  var b=document.getElementById('burger'),d=document.getElementById('drawer'),o=document.getElementById('dov'),c=document.getElementById('dc2');
-  function op(){d.classList.add('open');o.classList.add('open');document.body.style.overflow='hidden';}
-  function cl(){d.classList.remove('open');o.classList.remove('open');document.body.style.overflow='';}
-  if(b)b.addEventListener('click',op);if(c)c.addEventListener('click',cl);if(o)o.addEventListener('click',cl);
-  if(d)d.querySelectorAll('a').forEach(function(a){a.addEventListener('click',cl);});
+  var b=document.getElementById('burger'),d=document.getElementById('drawer'),o=document.getElementById('dov'),x=document.getElementById('drawer-x');
+  function op(){d.classList.add('open');o.classList.add('open');document.body.style.overflow='hidden'}
+  function cl(){d.classList.remove('open');o.classList.remove('open');document.body.style.overflow=''}
+  b.addEventListener('click',op);x.addEventListener('click',cl);o.addEventListener('click',cl);
+  d.querySelectorAll('a').forEach(function(a){a.addEventListener('click',cl)});
 })();
-// Category filter
-document.getElementById('catTabs').addEventListener('click',function(e){
-  var tab=e.target.closest('.cat-tab');if(!tab)return;
-  document.querySelectorAll('.cat-tab').forEach(function(t){t.classList.remove('active')});
-  tab.classList.add('active');
-  var cat=tab.dataset.cat;
-  document.querySelectorAll('.ag-card').forEach(function(c){
+
+// Scroll reveal
+(function(){
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){if(e.isIntersecting)e.target.classList.add('vis')});
+  },{threshold:.12});
+  document.querySelectorAll('.rv,.rv-l,.rv-r').forEach(function(el){io.observe(el)});
+})();
+
+// Fleet filter
+document.getElementById('ftabs').addEventListener('click',function(e){
+  var t=e.target.closest('.ftab');if(!t)return;
+  document.querySelectorAll('.ftab').forEach(function(x){x.classList.remove('on')});
+  t.classList.add('on');
+  var cat=t.dataset.cat;
+  document.querySelectorAll('.fc').forEach(function(c){
     c.style.display=(cat==='all'||c.dataset.cat===cat)?'block':'none';
   });
 });
