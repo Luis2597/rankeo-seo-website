@@ -1495,58 +1495,85 @@ async function analyzeSEO(rawUrl) {
   const bodyText     = doc.body?.innerText || doc.body?.textContent || '';
   const wordCount    = bodyText.split(/\s+/).filter(Boolean).length;
 
-  // ── score helpers ──
-  const pen = (cond, pts) => cond ? pts : 0; // penalty if true
-
-  // SEO Técnico (title, meta, h1, canonical, robots, sitemap-hint)
-  let seoScore = 100;
-  const seoIssues = [];
-  if (!title) { seoScore -= 20; seoIssues.push('Sin etiqueta <title> — crítico para Google'); }
-  else if (titleLen < 30) { seoScore -= 10; seoIssues.push(`Title muy corto (${titleLen} chars, recomendado 50-60)`); }
-  else if (titleLen > 65) { seoScore -= 8; seoIssues.push(`Title demasiado largo (${titleLen} chars), Google lo recortará`); }
-  if (!metaDesc) { seoScore -= 18; seoIssues.push('Sin meta description — Google genera una automática (poco atractiva)'); }
-  else if (descLen < 80) { seoScore -= 8; seoIssues.push(`Meta description muy corta (${descLen} chars, recomendado 150-160)`); }
-  else if (descLen > 170) { seoScore -= 5; seoIssues.push(`Meta description muy larga (${descLen} chars), se recortará`); }
-  if (!hasH1) { seoScore -= 15; seoIssues.push('Sin etiqueta H1 — Google no identifica el tema principal'); }
-  if (multiH1) { seoScore -= 8; seoIssues.push(`${h1s.length} etiquetas H1 en la misma página (debe ser solo 1)`); }
-  if (!canonical) { seoScore -= 10; seoIssues.push('Sin canonical tag — riesgo de contenido duplicado'); }
-  if (metaRobots.includes('noindex')) { seoScore -= 25; seoIssues.push('¡CRÍTICO! Página bloqueada con noindex — Google no la indexa'); }
-  if (jsonLd.length === 0) { seoScore -= 12; seoIssues.push('Sin datos estructurados (JSON-LD) — sin rich snippets en Google'); }
-  seoScore = Math.max(5, seoScore);
-
-  // Contenido On-Page (h2s, word count, images with alt, OG)
-  let contScore = 100;
-  const contIssues = [];
-  if (wordCount < 300) { contScore -= 20; contIssues.push(`Contenido escaso (${wordCount} palabras) — Google prefiere páginas con más texto`); }
-  if (h2s.length === 0) { contScore -= 12; contIssues.push('Sin subtítulos H2 — estructura de contenido pobre'); }
-  if (imgsNoAlt.length > 0) { contScore -= Math.min(20, imgsNoAlt.length * 4); contIssues.push(`${imgsNoAlt.length} imagen(es) sin atributo alt — invisibles para Google`); }
-  if (!ogTitle || !ogDesc || !ogImg) { contScore -= 10; contIssues.push('Open Graph incompleto — previsualización pobre en redes sociales'); }
-  if (imgs.length === 0) { contScore -= 8; contIssues.push('Sin imágenes en la página — contenido visual recomendado'); }
-  contScore = Math.max(5, contScore);
-
-  // SEO Local (Google Business, NAP, schema LocalBusiness)
-  let localScore = 100;
-  const localIssues = [];
   const bodyLow = (doc.body?.textContent || '').toLowerCase();
+
+  // ── SEO Técnico ──
+  // Sites must EARN a good score. Start at 55, add for good practices, penalize for failures.
+  let seoScore = 55;
+  const seoIssues = [];
+  const titleHasEmoji = /[\u{1F300}-\u{1FAFF}]/u.test(title);
+  if (!title) { seoIssues.push('Sin etiqueta <title> — crítico para Google'); }
+  else {
+    if (titleLen >= 45 && titleLen <= 60 && !titleHasEmoji) seoScore += 15;
+    else {
+      if (titleLen < 30) { seoScore -= 8; seoIssues.push(`Title muy corto (${titleLen} chars, recomendado 50-60)`); }
+      else if (titleLen > 65) { seoScore -= 6; seoIssues.push(`Title demasiado largo (${titleLen} chars), Google lo recortará`); }
+      if (titleHasEmoji) { seoScore -= 8; seoIssues.push('Emojis en el title — Google los ignora o penaliza'); }
+    }
+  }
+  if (!metaDesc) { seoScore -= 15; seoIssues.push('Sin meta description — Google genera una automática poco atractiva'); }
+  else if (descLen >= 130 && descLen <= 160) seoScore += 10;
+  else if (descLen < 80) { seoScore -= 6; seoIssues.push(`Meta description muy corta (${descLen} chars)`); }
+  else if (descLen > 170) { seoScore -= 4; seoIssues.push(`Meta description muy larga (${descLen} chars), se recortará`); }
+  if (!hasH1) { seoScore -= 12; seoIssues.push('Sin H1 — Google no identifica el tema principal de la página'); }
+  else if (!multiH1) seoScore += 5;
+  if (multiH1) { seoScore -= 8; seoIssues.push(`${h1s.length} H1 en la misma página — debe ser solo 1`); }
+  if (!canonical) { seoScore -= 10; seoIssues.push('Sin canonical tag — riesgo de contenido duplicado'); }
+  else seoScore += 5;
+  if (jsonLd.length === 0) { seoScore -= 15; seoIssues.push('Sin datos estructurados JSON-LD — sin rich snippets en Google'); }
+  else seoScore += 10;
+  if (metaRobots.includes('noindex')) { seoScore -= 30; seoIssues.push('¡CRÍTICO! noindex activo — Google no indexa esta página'); }
+  const htmlEl = doc.documentElement;
+  if (!htmlEl.getAttribute('lang')) { seoScore -= 5; seoIssues.push('Sin atributo lang en <html> — afecta SEO internacional'); }
+  seoScore = Math.min(97, Math.max(5, seoScore));
+
+  // ── Contenido ──
+  let contScore = 50;
+  const contIssues = [];
+  if (wordCount >= 600) contScore += 20;
+  else if (wordCount >= 300) contScore += 10;
+  else { seoScore -= 5; contIssues.push(`Texto escaso (${wordCount} palabras) — Google prefiere páginas con más contenido`); }
+  if (h2s.length >= 2) contScore += 10;
+  else if (h2s.length === 0) { contScore -= 10; contIssues.push('Sin subtítulos H2 — estructura pobre para Google y usuarios'); }
+  if (imgsNoAlt.length === 0 && imgs.length > 0) contScore += 10;
+  else if (imgsNoAlt.length > 0) { contScore -= Math.min(18, imgsNoAlt.length * 5); contIssues.push(`${imgsNoAlt.length} imagen(es) sin alt — Google no puede indexar esas imágenes`); }
+  if (ogTitle && ogDesc && ogImg) contScore += 10;
+  else { contScore -= 8; contIssues.push('Open Graph incompleto — previsualización pobre al compartir en redes'); }
+  const scriptCount = $$('script:not([type="application/ld+json"])').length;
+  if (scriptCount > 10) { contScore -= 8; contIssues.push(`${scriptCount} scripts JS — demasiados ralentizan la carga`); }
+  const inlineStyles = $$('[style]').length;
+  if (inlineStyles > 15) { contScore -= 5; contIssues.push('Exceso de estilos inline — código difícil de mantener y más lento'); }
+  contScore = Math.min(97, Math.max(5, contScore));
+
+  // ── SEO Local ──
+  let localScore = 45;
+  const localIssues = [];
   const hasPhone = /\+?\d[\d\s\-\.]{7,}\d/.test(bodyLow);
   const hasAddress = /calle|av\.|avenida|col\.|colonia|ciudad|cdmx|bogot|medell|barranquilla|cartagena|guadalajara|monterrey|street|blvd/i.test(bodyLow);
   const hasLocalSchema = jsonLd.some(s => (s.textContent||'').includes('LocalBusiness'));
-  if (!hasLocalSchema) { localScore -= 25; localIssues.push('Sin schema LocalBusiness — Google no muestra info local en resultados'); }
-  if (!hasPhone) { localScore -= 20; localIssues.push('Teléfono no detectado en la página — reduce confianza y conversiones'); }
-  if (!hasAddress) { localScore -= 15; localIssues.push('Dirección física no detectada — necesaria para SEO local'); }
+  if (hasLocalSchema) contScore += 15; else { localScore -= 20; localIssues.push('Sin schema LocalBusiness — Google no muestra info en panel de conocimiento'); }
+  if (hasPhone) localScore += 15; else { localScore -= 15; localIssues.push('Teléfono no detectado — reduce confianza y conversiones'); }
+  if (hasAddress) localScore += 15; else { localScore -= 10; localIssues.push('Dirección no detectada — necesaria para SEO local'); }
   const hasGBP = bodyLow.includes('google.com/maps') || bodyLow.includes('goo.gl/maps');
-  if (!hasGBP) { localScore -= 15; localIssues.push('Sin enlace a Google Maps / Google Business Profile'); }
-  localScore = Math.max(5, localScore);
+  if (hasGBP) localScore += 15; else { localScore -= 10; localIssues.push('Sin enlace a Google Maps / Google Business Profile'); }
+  const hasReviews = bodyLow.includes('reseñas') || bodyLow.includes('opiniones') || bodyLow.includes('reviews') || bodyLow.includes('estrellas');
+  if (!hasReviews) { localScore -= 5; localIssues.push('Sin sección de reseñas o testimonios — afecta confianza y CTR'); }
+  localScore = Math.min(97, Math.max(5, localScore));
 
-  // Experiencia UX (mobile, HTTPS, navegación)
-  let uxScore = 100;
+  // ── Experiencia UX ──
+  let uxScore = 50;
   const uxIssues = [];
-  if (!isHttps) { uxScore -= 30; uxIssues.push('Sitio sin HTTPS — Google penaliza y Chrome muestra advertencia'); }
-  if (!viewport) { uxScore -= 25; uxIssues.push('Sin meta viewport — el sitio NO es mobile-friendly'); }
-  if (links.length < 3) { uxScore -= 15; uxIssues.push('Muy pocos enlaces internos — dificulta la navegación y el crawl'); }
-  const hasSkipNav = $$('[href="#main"],[href="#content"],[href="#maincontent"]').length > 0;
-  if (!hasSkipNav && links.length > 10) { uxScore -= 5; uxIssues.push('Sin enlace "saltar al contenido" — accesibilidad mejorable'); }
-  uxScore = Math.max(5, uxScore);
+  if (isHttps) uxScore += 15; else { uxScore -= 25; uxIssues.push('Sin HTTPS — Google penaliza y Chrome muestra "No seguro"'); }
+  if (viewport) uxScore += 15; else { uxScore -= 20; uxIssues.push('Sin meta viewport — el sitio NO es mobile-friendly'); }
+  const imgsNoSize = imgs.filter(i => !i.getAttribute('width') && !i.getAttribute('height'));
+  if (imgsNoSize.length > 0) { uxScore -= Math.min(15, imgsNoSize.length * 3); uxIssues.push(`${imgsNoSize.length} imágenes sin dimensiones definidas — causa saltos de layout (CLS)`); }
+  const imgsNoLazy = imgs.filter(i => !i.getAttribute('loading') && !i.getAttribute('data-src')).length;
+  if (imgsNoLazy > 3) { uxScore -= 8; uxIssues.push(`${imgsNoLazy} imágenes sin lazy-load — ralentizan la carga inicial`); }
+  if (links.length < 3) { uxScore -= 12; uxIssues.push('Muy pocos enlaces de navegación — dificulta el crawl de Google'); }
+  else if (links.length >= 5) uxScore += 10;
+  const hasFavicon = $$('link[rel*="icon"]').length > 0;
+  if (!hasFavicon) { uxScore -= 5; uxIssues.push('Sin favicon — afecta identidad de marca en el navegador'); }
+  uxScore = Math.min(97, Math.max(5, uxScore));
 
   const overall = Math.round(seoScore * 0.35 + contScore * 0.25 + localScore * 0.2 + uxScore * 0.2);
 
