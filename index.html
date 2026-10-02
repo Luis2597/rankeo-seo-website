@@ -1449,9 +1449,20 @@ const STEPS = [
 async function fetchPageSpeed(url) {
   const api = 'https://www.googleapis.com/pagespeedonline/v5/runPagespeed';
   const params = `?url=${encodeURIComponent(url)}&strategy=mobile&category=performance&category=seo&category=accessibility&category=best-practices`;
-  const r = await fetch(api + params);
-  if (!r.ok) throw new Error('API error ' + r.status);
-  return r.json();
+  const ctrl = new AbortController();
+  const tid = setTimeout(() => ctrl.abort(), 45000); // 45s timeout
+  try {
+    const r = await fetch(api + params, { signal: ctrl.signal });
+    clearTimeout(tid);
+    const json = await r.json();
+    if (json.error) throw new Error(json.error.message || 'Error de API');
+    if (!json.lighthouseResult) throw new Error('Respuesta incompleta de Google');
+    return json;
+  } catch(e) {
+    clearTimeout(tid);
+    if (e.name === 'AbortError') throw new Error('La análisis tardó demasiado (>45s). Intenta de nuevo.');
+    throw e;
+  }
 }
 function parseResults(data, url) {
   const lh = data.lighthouseResult;
@@ -1529,9 +1540,11 @@ async function doAudit(e) {
   load.style.display = 'none';
 
   if (!apiResult || !apiResult.lighthouseResult) {
+    const msg = apiErr || 'Verifica que la URL sea correcta y el sitio esté publicado.';
     res.innerHTML = `<div style="text-align:center;padding:48px 24px;color:var(--c-subtle)">
-      <p style="font-size:1.1rem;font-weight:600;margin-bottom:8px;color:var(--c-text)">No pudimos analizar ese sitio</p>
-      <p style="font-size:.9rem">Verifica que la URL esté correcta y el sitio esté publicado en internet.</p>
+      <p style="font-size:1.1rem;font-weight:600;margin-bottom:8px">No pudimos analizar ese sitio</p>
+      <p style="font-size:.9rem;max-width:380px;margin:0 auto">${msg}</p>
+      <p style="font-size:.8rem;margin-top:16px;opacity:.6">También puedes usar directamente: <a href="https://pagespeed.web.dev/" target="_blank" rel="noopener" style="color:var(--c-orange)">pagespeed.web.dev</a></p>
     </div>`;
     btn.disabled = false; btn.textContent = 'Intentar de nuevo';
     return;
