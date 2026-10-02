@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>JETCAB — Propuesta Digital</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#0a0908;--bg2:#111009;--bg3:#1a1715;--orange:#f07828;--orangedk:#c85e1a;--white:#fff;--cream:rgba(255,255,255,.88);--muted:rgba(255,255,255,.55);--faint:rgba(255,255,255,.18);--border:rgba(255,255,255,.08)}
+html,body{height:100%;background:var(--bg);color:var(--white);font-family:'Barlow',sans-serif;overflow:hidden}
+
+/* DECK CONTAINER */
+.deck{width:100vw;height:100vh;position:relative}
+.slide{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;padding:80px 100px;opacity:0;pointer-events:none;transition:opacity .5s ease,transform .5s ease;transform:translateY(30px)}
+.slide.active{opacity:1;pointer-events:auto;transform:translateY(0)}
+.slide.out{opacity:0;transform:translateY(-30px)}
+
+/* NAV */
+.nav{position:fixed;bottom:36px;left:50%;transform:translateX(-50%);display:flex;align-items:center;gap:20px;z-index:100;background:rgba(0,0,0,.6);backdrop-filter:blur(12px);padding:10px 20px;border:1px solid var(--border)}
+.nav-btn{background:none;border:none;cursor:pointer;color:var(--muted);font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;padding:6px 14px;transition:color .2s}
+.nav-btn:hover{color:var(--orange)}
+.nav-dots{display:flex;gap:7px;align-items:center}
+.dot{width:6px;height:6px;border-radius:50%;background:var(--faint);cursor:pointer;transition:background .2s,transform .2s}
+.dot.on{background:var(--orange);transform:scale(1.4)}
+.slide-counter{font-family:'Barlow Condensed',sans-serif;font-size:11px;color:var(--faint);letter-spacing:.1em;min-width:40px;text-align:center}
+
+/* LOGO MARK */
+.logo-mark{display:flex;align-items:center;gap:10px;margin-bottom:20px}
+.logo-mark svg{flex-shrink:0}
+.logo-mark span{font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:800;letter-spacing:.28em;text-transform:uppercase;color:var(--muted)}
+
+/* SLIDE 1 — COVER */
+.s1{background:var(--bg);justify-content:space-between;padding:80px 100px}
+.s1-top{display:flex;align-items:center;gap:12px}
+.s1-brand{font-family:'Barlow Condensed',sans-serif;font-size:16px;font-weight:800;letter-spacing:.3em;text-transform:uppercase;color:var(--orange)}
+.s1-divider{width:1px;height:24px;background:var(--border)}
+.s1-sub{font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+.s1-center{flex:1;display:flex;flex-direction:column;justify-content:center}
+.s1-tag{font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:700;letter-spacing:.38em;text-transform:uppercase;color:var(--orange);margin-bottom:18px}
+.s1-h1{font-family:'Barlow Condensed',sans-serif;font-size:clamp(72px,10vw,130px);font-weight:900;text-transform:uppercase;line-height:.88;color:var(--white);margin-bottom:22px}
+.s1-h1 em{font-style:normal;color:var(--orange)}
+.s1-desc{font-size:16px;color:var(--muted);font-weight:300;max-width:500px;line-height:1.7}
+.s1-bottom{display:flex;align-items:center;justify-content:space-between}
+.s1-date{font-family:'Barlow Condensed',sans-serif;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--faint)}
+.s1-presenter{font-family:'Barlow Condensed',sans-serif;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--faint)}
+
+/* SLIDE 2 — PROBLEMA */
+.s2{background:var(--bg)}
+.s2-tag{font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:.38em;text-transform:uppercase;color:var(--orange);margin-bottom:14px}
+.s2-h{font-family:'Barlow Condensed',sans-serif;font-size:clamp(44px,6vw,76px);font-weight:900;text-transform:uppercase;color:var(--white);line-height:.9;margin-bottom:48px}
+.problems{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border)}
+.prob{background:var(--bg2);padding:28px 24px;position:relative;overflow:hidden}
+.prob::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--orange)}
+.prob-num{font-family:'Barlow Condensed',sans-serif;font-size:48px;font-weight:900;color:var(--faint);line-height:1;margin-bottom:10px}
+.prob-h{font-family:'Barlow Condensed',sans-serif;font-size:16px;font-weight:800;text-transform:uppercase;color:var(--orange);margin-bottom:8px;letter-spacing:.04em}
+.prob-p{font-size:13px;color:rgba(255,255,255,.6);line-height:1.65}
+
+/* SLIDE 3 — OPORTUNIDAD */
+.s3{background:var(--bg)}
+.opp-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;margin-top:40px}
+.opp-left{}
+.opp-stat{margin-bottom:32px}
+.opp-n{font-family:'Barlow Condensed',sans-serif;font-size:clamp(64px,9vw,110px);font-weight:900;color:var(--orange);line-height:1;margin-bottom:4px}
+.opp-l{font-size:14px;color:var(--muted);font-weight:300}
+.opp-right{display:flex;flex-direction:column;gap:16px}
+.opp-item{display:flex;gap:16px;align-items:flex-start;padding:20px;background:var(--bg2);border-left:3px solid var(--orange)}
+.opp-icon{font-size:22px;flex-shrink:0;margin-top:2px}
+.opp-item-h{font-family:'Barlow Condensed',sans-serif;font-size:15px;font-weight:800;text-transform:uppercase;color:var(--white);margin-bottom:4px}
+.opp-item-p{font-size:13px;color:rgba(255,255,255,.58);line-height:1.55}
+
+/* SLIDE 4 — SOLUCIÓN */
+.s4{background:var(--bg)}
+.phases{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);margin-top:40px}
+.phase{background:var(--bg2);padding:28px 22px;position:relative}
+.phase.highlight{background:var(--orange)}
+.phase.highlight .ph-n,.phase.highlight .ph-h,.phase.highlight .ph-p,.phase.highlight .ph-price{color:rgba(0,0,0,.85)!important}
+.phase.highlight .ph-tag{color:rgba(0,0,0,.5)!important}
+.ph-n{font-family:'Barlow Condensed',sans-serif;font-size:56px;font-weight:900;color:var(--faint);line-height:1;margin-bottom:10px}
+.ph-tag{font-size:9px;font-weight:700;letter-spacing:.28em;text-transform:uppercase;color:var(--orange);font-family:'Barlow Condensed',sans-serif;margin-bottom:6px}
+.ph-h{font-family:'Barlow Condensed',sans-serif;font-size:17px;font-weight:800;text-transform:uppercase;color:var(--white);margin-bottom:10px;line-height:1.1}
+.ph-p{font-size:12px;color:rgba(255,255,255,.55);line-height:1.65;margin-bottom:16px}
+.ph-price{font-family:'Barlow Condensed',sans-serif;font-size:20px;font-weight:900;color:var(--orange)}
+
+/* SLIDE 5 — RESULTADOS */
+.s5{background:var(--bg)}
+.results{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);margin-top:40px}
+.result{background:var(--bg2);padding:32px 26px}
+.res-time{font-size:9px;font-weight:700;letter-spacing:.28em;text-transform:uppercase;color:var(--orange);font-family:'Barlow Condensed',sans-serif;margin-bottom:10px}
+.res-h{font-family:'Barlow Condensed',sans-serif;font-size:20px;font-weight:800;text-transform:uppercase;color:var(--white);margin-bottom:14px;line-height:1.1}
+.res-items{display:flex;flex-direction:column;gap:9px}
+.res-item{display:flex;gap:10px;align-items:baseline;font-size:13px;color:rgba(255,255,255,.65)}
+.res-item::before{content:'→';color:var(--orange);flex-shrink:0;font-family:'Barlow Condensed',sans-serif;font-weight:700}
+
+/* SLIDE 6 — INVERSIÓN */
+.s6{background:var(--bg)}
+.inv-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);margin-top:40px}
+.inv-card{background:var(--bg2);padding:32px 28px}
+.inv-card.featured{background:var(--bg3);border:1px solid var(--orange)}
+.inv-tag{font-size:9px;font-weight:700;letter-spacing:.28em;text-transform:uppercase;color:var(--orange);font-family:'Barlow Condensed',sans-serif;margin-bottom:10px}
+.inv-h{font-family:'Barlow Condensed',sans-serif;font-size:22px;font-weight:800;text-transform:uppercase;color:var(--white);margin-bottom:16px}
+.inv-price{font-family:'Barlow Condensed',sans-serif;font-size:clamp(36px,5vw,58px);font-weight:900;color:var(--orange);line-height:1;margin-bottom:6px}
+.inv-price span{font-size:16px;color:var(--muted);font-weight:400}
+.inv-includes{font-size:13px;color:rgba(255,255,255,.55);line-height:1.8;margin-top:14px}
+.inv-includes li{list-style:none;padding-left:16px;position:relative}
+.inv-includes li::before{content:'✓';position:absolute;left:0;color:var(--orange);font-size:11px}
+.inv-note{font-size:11px;color:var(--faint);margin-top:12px;font-style:italic}
+
+/* SLIDE 7 — CIERRE */
+.s7{background:var(--bg);justify-content:center;align-items:center;text-align:center}
+.s7-tag{font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:.38em;text-transform:uppercase;color:var(--orange);margin-bottom:18px}
+.s7-h{font-family:'Barlow Condensed',sans-serif;font-size:clamp(56px,9vw,110px);font-weight:900;text-transform:uppercase;line-height:.88;margin-bottom:28px}
+.s7-h em{font-style:normal;color:var(--orange)}
+.s7-sub{font-size:16px;color:var(--muted);max-width:560px;font-weight:300;line-height:1.75;margin:0 auto 40px}
+.s7-actions{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+.s7-btn{font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:800;letter-spacing:.22em;text-transform:uppercase;padding:14px 32px;border:none;cursor:pointer;transition:background .2s}
+.s7-btn.primary{background:var(--orange);color:#fff}
+.s7-btn.primary:hover{background:var(--orangedk)}
+.s7-btn.ghost{background:transparent;color:var(--white);border:1px solid var(--border)}
+.s7-btn.ghost:hover{border-color:var(--orange);color:var(--orange)}
+.s7-contact{margin-top:40px;display:flex;gap:36px;justify-content:center}
+.s7-ci{display:flex;flex-direction:column;gap:3px;align-items:center}
+.s7-ci-l{font-size:9px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--faint);font-family:'Barlow Condensed',sans-serif}
+.s7-ci-v{font-size:14px;color:rgba(255,255,255,.75)}
+
+/* SLIDE BG ACCENT */
+.bg-accent{position:absolute;bottom:-120px;right:-80px;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(240,120,40,.06) 0%,transparent 70%);pointer-events:none}
+</style>
+</head>
+<body>
+
+<div class="deck" id="deck">
+
+  <!-- SLIDE 1: COVER -->
+  <div class="slide s1 active" data-slide="0">
+    <div class="bg-accent"></div>
+    <div class="s1-top">
+      <svg width="22" height="22" viewBox="0 0 40 40"><polygon points="20,4 36,32 4,32" fill="#f07828"/></svg>
+      <span class="s1-brand">JETCAB</span>
+      <div class="s1-divider"></div>
+      <span class="s1-sub">Propuesta de Consultoría Digital</span>
+    </div>
+    <div class="s1-center">
+      <span class="s1-tag">Estrategia · SEO · GEO · Diseño</span>
+      <h1 class="s1-h1">TU MARCA<br>EN <em>TODOS</em><br>LOS RADARES</h1>
+      <p class="s1-desc">Google, ChatGPT, Perplexity, AI Overviews. Tus clientes de alto perfil buscan en todos lados. Hoy no apareces en todos.</p>
+    </div>
+    <div class="s1-bottom">
+      <span class="s1-date">Octubre 2025</span>
+      <span class="s1-presenter">Preparado por Luis Eduardo Díaz · Ex Ford Motor Company</span>
+    </div>
+  </div>
+
+  <!-- SLIDE 2: DIAGNÓSTICO -->
+  <div class="slide s2" data-slide="1">
+    <div class="bg-accent"></div>
+    <span class="s2-tag">Lo que encontré en jetcab.mx</span>
+    <h2 class="s2-h">5 PROBLEMAS<br>QUE HOY TE<br>CUESTAN CLIENTES</h2>
+    <div class="problems">
+      <div class="prob">
+        <div class="prob-num">01</div>
+        <div class="prob-h">Links de cotizar rotos</div>
+        <p class="prob-p">La URL dice "jetcab.mx/jetcab.mx/cotizar". En móvil llega a error 404. Pierdes cotizaciones hoy mismo.</p>
+      </div>
+      <div class="prob">
+        <div class="prob-num">02</div>
+        <div class="prob-h">Publicidad de competidores</div>
+        <p class="prob-p">Google AdSense activo en tu sitio. Un competidor puede pagar para aparecer cuando alguien visita JETCAB.</p>
+      </div>
+      <div class="prob">
+        <div class="prob-num">03</div>
+        <div class="prob-h">Emojis en Google</div>
+        <p class="prob-p">Tu título en Google tiene ✈️. Reduce credibilidad con clientes corporativos y de alto ticket.</p>
+      </div>
+      <div class="prob">
+        <div class="prob-num">04</div>
+        <div class="prob-h">Sitio sin actualizar</div>
+        <p class="prob-p">Último cambio: noviembre 2024. Google penaliza la inactividad. Tus competidores suben posiciones.</p>
+      </div>
+      <div class="prob">
+        <div class="prob-num">05</div>
+        <div class="prob-h">Invisible en IA</div>
+        <p class="prob-p">Sin schema markup. Cuando alguien pregunta a ChatGPT "mejor jet privado México", JETCAB no aparece.</p>
+      </div>
+      <div class="prob" style="background:var(--orange)">
+        <div class="prob-num" style="color:rgba(0,0,0,.2)">→</div>
+        <div class="prob-h" style="color:#000">Resultado</div>
+        <p class="prob-p" style="color:rgba(0,0,0,.65)">Clientes que te buscan no te encuentran. Los que llegan no sienten confianza. Las cotizaciones se pierden antes de llegar.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDE 3: OPORTUNIDAD -->
+  <div class="slide s3" data-slide="2">
+    <div class="bg-accent"></div>
+    <span class="s2-tag">El mercado que no estás capturando</span>
+    <h2 class="s2-h">LA OPORTUNIDAD<br>ES REAL</h2>
+    <div class="opp-grid">
+      <div class="opp-left">
+        <div class="opp-stat">
+          <div class="opp-n">+200</div>
+          <div class="opp-l">búsquedas mensuales de "jet privado México" solo en Google</div>
+        </div>
+        <div class="opp-stat">
+          <div class="opp-n">0%</div>
+          <div class="opp-l">de presencia actual en ChatGPT, Perplexity y AI Overviews</div>
+        </div>
+      </div>
+      <div class="opp-right">
+        <div class="opp-item">
+          <div class="opp-icon">🔍</div>
+          <div>
+            <div class="opp-item-h">Búsquedas de alto intent</div>
+            <p class="opp-item-p">"vuelo privado cancún", "helicóptero ejecutivo cdmx", "avión privado los cabos" — clientes listos para reservar, buscando ahora.</p>
+          </div>
+        </div>
+        <div class="opp-item">
+          <div class="opp-icon">🤖</div>
+          <div>
+            <div class="opp-item-h">IA como canal de ventas nuevo</div>
+            <p class="opp-item-p">El perfil ejecutivo que es tu cliente usa ChatGPT para tomar decisiones. Si no apareces ahí, no existes para ellos.</p>
+          </div>
+        </div>
+        <div class="opp-item">
+          <div class="opp-icon">📱</div>
+          <div>
+            <div class="opp-item-h">Mobile como primer contacto</div>
+            <p class="opp-item-p">70%+ del tráfico es móvil. Hoy tu sitio tiene errores en móvil. Cada error es una cotización perdida.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDE 4: SOLUCIÓN -->
+  <div class="slide s4" data-slide="3">
+    <div class="bg-accent"></div>
+    <span class="s2-tag">Plan de trabajo</span>
+    <h2 class="s2-h">4 FASES.<br>UN OBJETIVO.</h2>
+    <div class="phases">
+      <div class="phase highlight">
+        <div class="ph-n">01</div>
+        <div class="ph-tag">Comenzamos aquí</div>
+        <div class="ph-h">SEO + GEO<br>Técnico</div>
+        <p class="ph-p">Corrección de errores críticos, schema markup, datos estructurados para Google e IAs.</p>
+        <div class="ph-price">$8,000–$12,000 MXN</div>
+      </div>
+      <div class="phase">
+        <div class="ph-n">02</div>
+        <div class="ph-tag">Fase 2</div>
+        <div class="ph-h">Rediseño<br>Visual</div>
+        <p class="ph-p">Nuevo diseño premium a la altura de tu servicio. Páginas de aeronaves con galería e interiores.</p>
+        <div class="ph-price">$15,000–$22,000 MXN</div>
+      </div>
+      <div class="phase">
+        <div class="ph-n">03</div>
+        <div class="ph-tag">Fase 3</div>
+        <div class="ph-h">Funcionalidad<br>y Velocidad</div>
+        <p class="ph-p">Cotizador funcional conectado a WhatsApp, velocidad optimizada, dominio propio configurado.</p>
+        <div class="ph-price">$8,000–$12,000 MXN</div>
+      </div>
+      <div class="phase">
+        <div class="ph-n">04</div>
+        <div class="ph-tag">Fase 4 — Recurrente</div>
+        <div class="ph-h">SEO Activo +<br>Mantenimiento</div>
+        <p class="ph-p">Contenido mensual, monitoreo de posicionamiento, actualizaciones y reportes de tráfico.</p>
+        <div class="ph-price">$4,500 MXN/mes</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDE 5: RESULTADOS -->
+  <div class="slide s5" data-slide="4">
+    <div class="bg-accent"></div>
+    <span class="s2-tag">¿Qué puedes esperar?</span>
+    <h2 class="s2-h">RESULTADOS<br>MEDIBLES</h2>
+    <div class="results">
+      <div class="result">
+        <div class="res-time">Inmediato — Semana 1</div>
+        <div class="res-h">Errores<br>Corregidos</div>
+        <div class="res-items">
+          <div class="res-item">Links de cotizar funcionando en móvil</div>
+          <div class="res-item">AdSense eliminado del sitio</div>
+          <div class="res-item">URLs limpias y sin duplicados</div>
+          <div class="res-item">Títulos sin emojis, optimizados</div>
+        </div>
+      </div>
+      <div class="result">
+        <div class="res-time">Mes 1 — 2</div>
+        <div class="res-h">Visibilidad<br>en Google</div>
+        <div class="res-items">
+          <div class="res-item">Aparición en resultados enriquecidos</div>
+          <div class="res-item">Teléfono y calificación visibles en búsqueda</div>
+          <div class="res-item">Posiciones mejoradas en keywords clave</div>
+          <div class="res-item">Reporte mensual de tráfico y posición</div>
+        </div>
+      </div>
+      <div class="result">
+        <div class="res-time">Mes 2 — 6</div>
+        <div class="res-h">Presencia<br>en IA</div>
+        <div class="res-items">
+          <div class="res-item">JETCAB en respuestas de ChatGPT</div>
+          <div class="res-item">Aparición en Perplexity y AI Overviews</div>
+          <div class="res-item">Tráfico orgánico creciente y medible</div>
+          <div class="res-item">Posicionamiento en destinos específicos</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDE 6: INVERSIÓN -->
+  <div class="slide s6" data-slide="5">
+    <div class="bg-accent"></div>
+    <span class="s2-tag">Inversión</span>
+    <h2 class="s2-h">TRANSPARENTE<br>Y SIN SORPRESAS</h2>
+    <div class="inv-grid">
+      <div class="inv-card featured">
+        <div class="inv-tag">Recomendado para empezar</div>
+        <div class="inv-h">Fase 1 — SEO + GEO Técnico</div>
+        <div class="inv-price">$10,000 <span>MXN</span></div>
+        <ul class="inv-includes">
+          <li>Auditoría completa del sitio</li>
+          <li>Corrección de todos los errores técnicos</li>
+          <li>Schema markup para Google e IAs</li>
+          <li>Optimización de títulos y meta descripciones</li>
+          <li>Eliminación de AdSense</li>
+          <li>Reporte final con resultados esperados</li>
+          <li>1 mes de soporte incluido</li>
+        </ul>
+        <p class="inv-note">50% al inicio · 50% al entregar</p>
+      </div>
+      <div class="inv-card">
+        <div class="inv-tag">Proyecto completo — Fases 1 a 4</div>
+        <div class="inv-h">Transformación Digital Total</div>
+        <div class="inv-price">$43,000 <span>MXN + $4,500/mes</span></div>
+        <ul class="inv-includes">
+          <li>Todo lo de Fase 1</li>
+          <li>Rediseño visual premium completo</li>
+          <li>Páginas de aeronaves con galería</li>
+          <li>Cotizador conectado a WhatsApp</li>
+          <li>Dominio propio configurado</li>
+          <li>SEO activo y mantenimiento mensual</li>
+          <li>Reportes mensuales de posicionamiento</li>
+        </ul>
+        <p class="inv-note">Pagado en fases conforme avanza el proyecto</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDE 7: CIERRE -->
+  <div class="slide s7" data-slide="6">
+    <div class="bg-accent"></div>
+    <span class="s7-tag">Próximo paso</span>
+    <h2 class="s7-h">¿EMPEZAMOS<br>CON LA <em>FASE 1</em>?</h2>
+    <p class="s7-sub">Con un solo vuelo adicional que genere tu nuevo sitio, recuperas la inversión. El sitio trabaja 24/7 los 365 días del año.</p>
+    <div class="s7-actions">
+      <button class="s7-btn primary">Sí, iniciamos con Fase 1</button>
+      <button class="s7-btn ghost">Ver demo del nuevo diseño</button>
+    </div>
+    <div class="s7-contact">
+      <div class="s7-ci">
+        <span class="s7-ci-l">WhatsApp</span>
+        <span class="s7-ci-v">+52 55 3289 4890</span>
+      </div>
+      <div class="s7-ci">
+        <span class="s7-ci-l">Email</span>
+        <span class="s7-ci-v">bernalluisdiaz@gmail.com</span>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- NAVIGATION -->
+<div class="nav">
+  <button class="nav-btn" id="prev">← Anterior</button>
+  <div class="nav-dots" id="dots"></div>
+  <span class="slide-counter" id="counter">1 / 7</span>
+  <button class="nav-btn" id="next">Siguiente →</button>
+</div>
+
+<script>
+const slides = document.querySelectorAll('.slide');
+const dots = document.getElementById('dots');
+const counter = document.getElementById('counter');
+let current = 0;
+
+// Build dots
+slides.forEach((_,i) => {
+  const d = document.createElement('div');
+  d.className = 'dot' + (i===0?' on':'');
+  d.onclick = () => goTo(i);
+  dots.appendChild(d);
+});
+
+function goTo(n) {
+  slides[current].classList.remove('active');
+  slides[current].classList.add('out');
+  setTimeout(() => slides[current].classList.remove('out'), 500);
+  current = (n + slides.length) % slides.length;
+  slides[current].classList.add('active');
+  document.querySelectorAll('.dot').forEach((d,i) => d.classList.toggle('on', i===current));
+  counter.textContent = (current+1) + ' / ' + slides.length;
+}
+
+document.getElementById('next').onclick = () => goTo(current+1);
+document.getElementById('prev').onclick = () => goTo(current-1);
+
+document.addEventListener('keydown', e => {
+  if(e.key==='ArrowRight'||e.key===' ') goTo(current+1);
+  if(e.key==='ArrowLeft') goTo(current-1);
+});
+</script>
+</body>
+</html>
