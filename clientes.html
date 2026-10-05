@@ -464,7 +464,8 @@ const PSI_KEY=""; // Agrega tu Google PageSpeed API key aquí para consultas ili
 const USERS={
   "admin@rankeo.agency":{hash:"20a79dd4bea86a36d0ac8b32106273184e9b8c5fe1a18839bd6a19b69f3d71c5",role:"admin",name:"Luis D\u00edaz \u2014 Admin"},
   "colegio@rankeo.agency":{hash:"e0fdef14fba35a48cd580f9c86291ebaa6eb17ecd63db13efe5118bb054a5566",role:"client",clientId:"colegio_san_martin",name:"Colegio San Mart\u00edn de Tours"},
-  "contacto@jetcab.mx":{hash:"9cd10017f904a70335bca18a496ae2a86115525a5a6984dd7cc9742acd174a1f",role:"client",clientId:"jetcab",name:"JETCAB \u2014 Aviaci\u00f3n Privada"}
+  "contacto@jetcab.mx":{hash:"9cd10017f904a70335bca18a496ae2a86115525a5a6984dd7cc9742acd174a1f",role:"client",clientId:"jetcab",name:"JETCAB \u2014 Aviaci\u00f3n Privada"},
+  "jetcab@rankeo.agency":{hash:"5b59bc47e2988e158b263c1eaef87abb5db5292ac7f9c6da0d3be6ef379ee2aa",role:"client",clientId:"jetcab",name:"JETCAB \u2014 Aviaci\u00f3n Privada"}
 };
 const CLIENTS={
   jetcab:{
@@ -479,14 +480,11 @@ const CLIENTS={
       {title:"Diagnóstico GEO + SEO — Octubre 2026",date:"Oct 2026",url:"https://rankeo-nu.vercel.app/jetcab-reporte-cliente.html",desc:"Análisis completo de los 8 problemas críticos encontrados en jetcab.mx y el plan de acción para aparecer en Google, ChatGPT y Perplexity."}
     ],
     tips:[
-      {p:"alta",cat:"GEO / IA",t:"Implementar JSON-LD en homepage",d:"Sin datos estructurados, ChatGPT y Perplexity no pueden citar a JETCAB. El código está listo para pegar en WordPress (Insert Headers and Footers)."},
-      {p:"alta",cat:"Marca",t:"Desactivar Google AdSense",d:"AdSense activo permite que competidores directos aparezcan dentro de jetcab.mx. Desactivar en Site Kit → AdSense en 5 minutos."},
-      {p:"alta",cat:"Conversión",t:"Reparar botones de cotizar",d:"La URL jetcab.mx/jetcab.mx/cotizar da error 404. Clientes listos para contratar llegan a una página vacía. Fix de 10 minutos en WordPress."},
-      {p:"alta",cat:"Confianza",t:"Unificar precios entre páginas",d:"La misma ruta muestra $4,950 y $1,500 en páginas distintas. Genera desconfianza inmediata en clientes UHNWI que investigan antes de contratar."},
-      {p:"media",cat:"E-E-A-T",t:"Agregar certificaciones DGAC y SCT",d:"25 años de operación sin incidentes es el mayor activo de JETCAB. Debe aparecer en /sobre-nosotros/ con mención explícita a la DGAC y SCT."},
-      {p:"media",cat:"SEO técnico",t:"Marcar WooCommerce como noindex",d:"/cart/, /checkout/, /my-account/ están indexadas. Páginas sin valor que consumen presupuesto de rastreo de Google."},
-      {p:"media",cat:"SEO local",t:"Corregir og:locale a es_MX",d:"El sitio está configurado como es_ES (España) en lugar de es_MX. Afecta señales geográficas y distribución en redes sociales."},
-      {p:"baja",cat:"Redes sociales",t:"Crear og:image 1200×630",d:"La imagen de redes sociales es un logo cuadrado 1024×1024. Debe ser 1200×630px horizontal para previa correcta en WhatsApp, LinkedIn y X."}
+      {p:"alta",cat:"Técnico",t:"Meta AdSense de plataforma activa",d:"Hay un <meta name=\"google-adsense-platform-account\"> en el head que permite que Google muestre anuncios de competidores dentro de jetcab.mx. Eliminar del header.php en WordPress (Apariencia → Editor de temas, o con el plugin Insert Headers and Footers)."},
+      {p:"alta",cat:"Conversión",t:"Links CTA rotos — Cotizar da 404",d:"Los botones \"Cotizar\" apuntan a jetcab.mx/jetcab.mx/cotizar (dominio duplicado = error 404). Corregir la URL a /cotizar en el panel de WordPress. Fix de 10 minutos."},
+      {p:"alta",cat:"GEO / IA",t:"Sin datos estructurados (JSON-LD)",d:"Google y las IAs (ChatGPT, Perplexity) no tienen información estructurada de JETCAB. Agregar schema LocalBusiness + Service en el homepage con Insert Headers and Footers."},
+      {p:"media",cat:"SEO técnico",t:"og:locale incorrecto — es_ES en vez de es_MX",d:"El sitio está configurado como es_ES (España) en vez de es_MX (México). Cambiarlo en la configuración de Yoast SEO o RankMath. Afecta señales geográficas y distribución en redes."},
+      {p:"media",cat:"SEO técnico",t:"Páginas de WooCommerce indexadas",d:"/cart/, /checkout/ y /my-account/ aparecen en el sitemap y Google las rastrea. Agregar noindex a esas páginas en Yoast SEO para liberar presupuesto de rastreo."}
     ]
   },
   colegio_san_martin:{

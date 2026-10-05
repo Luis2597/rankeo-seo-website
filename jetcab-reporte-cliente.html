@@ -840,6 +840,7 @@
   <button class="nav-dot" onclick="scrollToSlide(5)" title="Impacto"></button>
   <button class="nav-dot" onclick="scrollToSlide(6)" title="Plan"></button>
   <button class="nav-dot" onclick="scrollToSlide(7)" title="Siguiente paso"></button>
+  <button class="nav-dot" onclick="scrollToSlide(8)" title="Plan de Acción"></button>
 </nav>
 
 <div class="page-indicator" id="pageIndicator">1 / 8</div>
@@ -1281,6 +1282,106 @@
       <div style="font-size:11px;letter-spacing:0.15em;text-transform:uppercase;color:var(--subtle);margin-bottom:4px;">Para</div>
       <div style="font-family:'Barlow Condensed',sans-serif;font-size:20px;font-weight:800;color:var(--white);letter-spacing:0.05em;">JETCAB</div>
     </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     SLIDE 9 — PLAN DE ACCIÓN
+═══════════════════════════════════════════ -->
+<section class="slide" id="slide-8" style="background:var(--surface);">
+  <div class="section-label">
+    <span class="section-num">09</span>
+    <span class="section-line"></span>
+    <span class="section-title-text">Plan de Acción</span>
+  </div>
+
+  <h2 class="slide-h2">Cinco fixes.<br><em>Menos de 30 min cada uno.</em></h2>
+
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:40px;width:100%;max-width:900px;">
+
+    <!-- Fix 1 -->
+    <div style="background:var(--surface2);border:1px solid var(--border);border-left:3px solid var(--danger);border-radius:10px;padding:22px 20px;">
+      <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px;margin-bottom:10px;">
+        <div style="font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:17px;letter-spacing:0.02em;color:var(--white);">Meta AdSense de plataforma</div>
+        <span style="background:rgba(229,62,62,0.15);color:var(--danger);border-radius:4px;padding:2px 8px;font-size:10px;font-weight:700;letter-spacing:0.06em;white-space:nowrap;flex-shrink:0;">ALTA</span>
+      </div>
+      <div style="font-size:13px;color:rgba(255,255,255,0.65);line-height:1.6;margin-bottom:14px;">Eliminar <code style="background:rgba(255,255,255,0.08);padding:1px 5px;border-radius:3px;font-size:11px;">&lt;meta name="google-adsense-platform-account"&gt;</code> del <strong style="color:var(--white);">header.php</strong> en WordPress (Apariencia → Editor de temas o Insert Headers and Footers).</div>
+      <div style="display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap;">
+        <span style="font-size:11px;color:var(--gold);">⏱ &lt; 5 minutos</span>
+        <span style="font-size:11px;color:rgba(255,255,255,0.45);">Impacto: <span style="color:var(--success);">Competidores desaparecen del sitio · Marca premium restaurada</span></span>
+      </div>
+    </div>
+
+    <!-- Fix 2 -->
+    <div style="background:var(--surface2);border:1px solid var(--border);border-left:3px solid var(--danger);border-radius:10px;padding:22px 20px;">
+      <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px;margin-bottom:10px;">
+        <div style="font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:17px;letter-spacing:0.02em;color:var(--white);">Links CTA rotos — Cotizar 404</div>
+        <span style="background:rgba(229,62,62,0.15);color:var(--danger);border-radius:4px;padding:2px 8px;font-size:10px;font-weight:700;letter-spacing:0.06em;white-space:nowrap;flex-shrink:0;">ALTA</span>
+      </div>
+      <div style="font-size:13px;color:rgba(255,255,255,0.65);line-height:1.6;margin-bottom:14px;">Corregir la URL de todos los botones "Cotizar" de <code style="background:rgba(255,255,255,0.08);padding:1px 5px;border-radius:3px;font-size:11px;">jetcab.mx/jetcab.mx/cotizar</code> a <code style="background:rgba(255,255,255,0.08);padding:1px 5px;border-radius:3px;font-size:11px;">/cotizar</code> en WordPress.</div>
+      <div style="display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap;">
+        <span style="font-size:11px;color:var(--gold);">⏱ &lt; 10 minutos</span>
+        <span style="font-size:11px;color:rgba(255,255,255,0.45);">Impacto: <span style="color:var(--success);">Conversiones recuperadas de inmediato</span></span>
+      </div>
+    </div>
+
+    <!-- Fix 3 -->
+    <div style="background:var(--surface2);border:1px solid var(--border);border-left:3px solid var(--danger);border-radius:10px;padding:22px 20px;">
+      <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px;margin-bottom:10px;">
+        <div style="font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:17px;letter-spacing:0.02em;color:var(--white);">Sin datos estructurados (JSON-LD)</div>
+        <span style="background:rgba(229,62,62,0.15);color:var(--danger);border-radius:4px;padding:2px 8px;font-size:10px;font-weight:700;letter-spacing:0.06em;white-space:nowrap;flex-shrink:0;">ALTA</span>
+      </div>
+      <div style="font-size:13px;color:rgba(255,255,255,0.65);line-height:1.6;margin-bottom:14px;">Agregar schema <strong style="color:var(--white);">LocalBusiness + Service</strong> en el homepage vía Insert Headers and Footers. El código ya está preparado — solo pegar y guardar.</div>
+      <div style="display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap;">
+        <span style="font-size:11px;color:var(--gold);">⏱ &lt; 15 minutos</span>
+        <span style="font-size:11px;color:rgba(255,255,255,0.45);">Impacto: <span style="color:var(--success);">ChatGPT, Perplexity y Google AI citan a JETCAB</span></span>
+      </div>
+    </div>
+
+    <!-- Fix 4 -->
+    <div style="background:var(--surface2);border:1px solid var(--border);border-left:3px solid var(--warn);border-radius:10px;padding:22px 20px;">
+      <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px;margin-bottom:10px;">
+        <div style="font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:17px;letter-spacing:0.02em;color:var(--white);">og:locale incorrecto</div>
+        <span style="background:rgba(214,158,46,0.15);color:var(--warn);border-radius:4px;padding:2px 8px;font-size:10px;font-weight:700;letter-spacing:0.06em;white-space:nowrap;flex-shrink:0;">MEDIA</span>
+      </div>
+      <div style="font-size:13px;color:rgba(255,255,255,0.65);line-height:1.6;margin-bottom:14px;">Cambiar <code style="background:rgba(255,255,255,0.08);padding:1px 5px;border-radius:3px;font-size:11px;">es_ES</code> → <code style="background:rgba(255,255,255,0.08);padding:1px 5px;border-radius:3px;font-size:11px;">es_MX</code> en la configuración de <strong style="color:var(--white);">Yoast SEO o RankMath</strong> (Configuración → Redes sociales → Open Graph).</div>
+      <div style="display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap;">
+        <span style="font-size:11px;color:var(--gold);">⏱ &lt; 5 minutos</span>
+        <span style="font-size:11px;color:rgba(255,255,255,0.45);">Impacto: <span style="color:var(--success);">Señales geográficas MX correctas · Mejor distribución en redes</span></span>
+      </div>
+    </div>
+
+    <!-- Fix 5 — spans both columns -->
+    <div style="background:var(--surface2);border:1px solid var(--border);border-left:3px solid var(--warn);border-radius:10px;padding:22px 20px;grid-column:1/-1;">
+      <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px;margin-bottom:10px;">
+        <div style="font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:17px;letter-spacing:0.02em;color:var(--white);">Páginas de WooCommerce indexadas</div>
+        <span style="background:rgba(214,158,46,0.15);color:var(--warn);border-radius:4px;padding:2px 8px;font-size:10px;font-weight:700;letter-spacing:0.06em;white-space:nowrap;flex-shrink:0;">MEDIA</span>
+      </div>
+      <div style="font-size:13px;color:rgba(255,255,255,0.65);line-height:1.6;margin-bottom:14px;">Marcar <code style="background:rgba(255,255,255,0.08);padding:1px 5px;border-radius:3px;font-size:11px;">/cart/</code>, <code style="background:rgba(255,255,255,0.08);padding:1px 5px;border-radius:3px;font-size:11px;">/checkout/</code> y <code style="background:rgba(255,255,255,0.08);padding:1px 5px;border-radius:3px;font-size:11px;">/my-account/</code> como <strong style="color:var(--white);">noindex</strong> en Yoast SEO. Estas páginas aparecen en el sitemap y Google desperdicia presupuesto de rastreo en ellas.</div>
+      <div style="display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap;">
+        <span style="font-size:11px;color:var(--gold);">⏱ &lt; 15 minutos</span>
+        <span style="font-size:11px;color:rgba(255,255,255,0.45);">Impacto: <span style="color:var(--success);">Google prioriza las páginas de destino · Mejor indexación de la flota</span></span>
+      </div>
+    </div>
+
+  </div>
+
+  <div style="margin-top:40px;display:flex;align-items:center;gap:20px;flex-wrap:wrap;">
+    <div style="background:rgba(201,168,76,0.1);border:1px solid rgba(201,168,76,0.3);border-radius:8px;padding:12px 20px;display:flex;align-items:center;gap:10px;">
+      <span style="font-size:20px;">⏱</span>
+      <div>
+        <div style="font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:22px;color:var(--gold);">≤ 50 min en total</div>
+        <div style="font-size:11px;color:rgba(255,255,255,0.5);">para aplicar los 5 fixes</div>
+      </div>
+    </div>
+    <div style="background:rgba(56,161,105,0.1);border:1px solid rgba(56,161,105,0.3);border-radius:8px;padding:12px 20px;display:flex;align-items:center;gap:10px;">
+      <span style="font-size:20px;">📈</span>
+      <div>
+        <div style="font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:22px;color:var(--success);">Impacto inmediato</div>
+        <div style="font-size:11px;color:rgba(255,255,255,0.5);">visibilidad + conversión desde el día 1</div>
+      </div>
+    </div>
+    <a href="https://wa.me/525532894890?text=Hola%2C+quiero+arrancar+con+los+5+fixes+de+Jetcab+ahora" target="_blank" style="background:var(--gold);color:var(--ink);border:none;border-radius:8px;padding:14px 28px;font-family:'Barlow Condensed',sans-serif;font-size:16px;font-weight:800;letter-spacing:0.05em;text-decoration:none;display:inline-block;">ARRANCAR AHORA →</a>
   </div>
 </section>
 
