@@ -247,6 +247,65 @@ body{font-family:"Plus Jakarta Sans",sans-serif;background:var(--ink);color:var(
 .report-btn:hover{opacity:.85}
 .report-btn.ghost{background:var(--surf);color:var(--ink);border:1px solid var(--bd)}
 
+/* ── GEO SECTION ── */
+.geo-score-wrap{background:var(--ink);border-radius:16px;padding:24px;margin-bottom:18px;display:flex;align-items:center;gap:24px;flex-wrap:wrap}
+.geo-score-circle{position:relative;width:90px;height:90px;flex-shrink:0}
+.geo-score-circle svg{transform:rotate(-90deg)}
+.geo-sc-bg{fill:none;stroke:rgba(255,255,255,.1);stroke-width:8}
+.geo-sc-fg{fill:none;stroke:#F04E23;stroke-width:8;stroke-linecap:round;transition:stroke-dashoffset 1.4s cubic-bezier(.4,0,.2,1)}
+.geo-sc-num{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;font-family:"Syne",sans-serif;font-weight:800;font-size:22px;color:#fff;line-height:1}
+.geo-sc-num small{font-size:9px;color:rgba(255,255,255,.4);font-weight:600}
+.geo-score-info{flex:1;min-width:180px}
+.geo-score-info h3{font-family:"Syne",sans-serif;font-weight:800;font-size:16px;color:#fff;margin-bottom:5px}
+.geo-score-info p{font-size:12px;color:rgba(255,255,255,.5);line-height:1.6;margin-bottom:10px}
+.geo-cta-btn{display:inline-flex;align-items:center;gap:6px;background:var(--or);color:#fff;border:none;border-radius:8px;padding:8px 16px;font-family:inherit;font-size:12px;font-weight:700;cursor:pointer;text-decoration:none}
+.geo-plat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-bottom:18px}
+.geo-plat-card{background:var(--wh);border:1px solid var(--bd);border-radius:12px;padding:16px 18px}
+.geo-plat-head{display:flex;align-items:center;gap:10px;margin-bottom:8px}
+.geo-plat-icon{width:34px;height:34px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0}
+.geo-plat-name{font-family:"Syne",sans-serif;font-weight:700;font-size:13px;color:var(--ink)}
+.geo-plat-status{display:inline-flex;align-items:center;gap:5px;font-size:10px;font-weight:700;padding:2px 8px;border-radius:5px;margin-bottom:6px}
+.geo-plat-status.ausente{background:rgba(220,38,38,.1);color:#DC2626}
+.geo-plat-status.parcial{background:rgba(202,138,4,.1);color:#CA8A04}
+.geo-plat-status.activo{background:rgba(22,163,74,.1);color:#16A34A}
+.geo-plat-detail{font-size:11px;color:var(--sub);line-height:1.5}
+.geo-pending{background:var(--wh);border:1px solid var(--bd);border-radius:12px;padding:18px 20px}
+.geo-pending-title{font-family:"Syne",sans-serif;font-weight:800;font-size:13px;margin-bottom:12px}
+.geo-step{display:flex;align-items:center;gap:10px;padding:8px 0;border-bottom:1px solid var(--bd)}
+.geo-step:last-child{border-bottom:none}
+.geo-step-dot{width:20px;height:20px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:9px;font-weight:700}
+.geo-step-dot.done{background:rgba(22,163,74,.15);color:#16A34A}
+.geo-step-dot.pending{background:var(--surf);border:1.5px dashed var(--bd);color:var(--sub)}
+.geo-step-text{font-size:12px;font-weight:500;color:var(--ink)}
+/* ── LEADS SECTION ── */
+.leads-kpi-row{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:18px}
+.leads-kpi{background:var(--wh);border:1px solid var(--bd);border-radius:12px;padding:16px;text-align:center}
+.leads-kpi-val{font-family:"Syne",sans-serif;font-weight:800;font-size:28px;color:var(--ink);margin-bottom:2px}
+.leads-kpi-val.or{color:var(--or)}
+.leads-kpi-lbl{font-size:11px;color:var(--sub);font-weight:500}
+.lead-item{background:var(--wh);border:1px solid var(--bd);border-radius:10px;padding:14px 16px;display:flex;align-items:flex-start;gap:12px;margin-bottom:8px}
+.lead-canal{font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;padding:3px 8px;border-radius:4px;flex-shrink:0;margin-top:2px}
+.lead-canal.wa{background:rgba(22,163,74,.12);color:#16A34A}
+.lead-canal.form{background:rgba(59,130,246,.12);color:#2563EB}
+.lead-canal.call{background:rgba(202,138,4,.12);color:#CA8A04}
+.lead-msg{font-size:12px;font-weight:600;color:var(--ink);margin-bottom:3px}
+.lead-meta{font-size:10px;color:var(--sub)}
+.lead-estado{font-size:10px;font-weight:700;padding:2px 7px;border-radius:4px;flex-shrink:0;align-self:flex-start}
+.lead-estado.nuevo{background:rgba(240,78,35,.1);color:var(--or)}
+.lead-estado.contactado{background:rgba(202,138,4,.1);color:#CA8A04}
+.lead-estado.en_proceso{background:rgba(22,163,74,.1);color:#16A34A}
+/* ── ACTIVIDAD ── */
+.act-feed{display:flex;flex-direction:column;gap:0}
+.act-item{display:flex;gap:14px;padding:14px 0;border-bottom:1px solid var(--bd)}
+.act-item:last-child{border-bottom:none}
+.act-icon{width:34px;height:34px;border-radius:9px;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}
+.act-icon.auditoria{background:rgba(240,78,35,.12);color:var(--or)}
+.act-icon.entregable{background:rgba(22,163,74,.12);color:#16A34A}
+.act-icon.inicio{background:rgba(59,130,246,.12);color:#2563EB}
+.act-icon.mejora{background:rgba(202,138,4,.12);color:#CA8A04}
+.act-fecha{font-size:10px;color:var(--sub);margin-bottom:3px}
+.act-titulo{font-size:13px;font-weight:700;color:var(--ink);margin-bottom:3px}
+.act-desc{font-size:11px;color:var(--sub);line-height:1.5}
 /* ── PAGOS SECTION ── */
 .pagos-section{margin-top:20px}
 .pagos-section .sh{margin-bottom:14px}
@@ -314,6 +373,10 @@ body{font-family:"Plus Jakarta Sans",sans-serif;background:var(--ink);color:var(
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>Ver sitio</button>
       <button class="sb-btn" id="btn-perf" onclick="nav('perf',this)">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>Performance</button>
+      <button class="sb-btn" id="btn-geo" onclick="nav('geo',this)">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 1 0 20M12 2a14.5 14.5 0 0 0 0 20M2 12h20"/></svg>GEO / IAs</button>
+      <button class="sb-btn" id="btn-leads" onclick="nav('leads',this)">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>Leads</button>
       <button class="sb-btn" id="btn-tips" onclick="nav('tips',this)">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>Mejoras SEO</button>
       <button class="sb-btn" id="btn-info" onclick="nav('info',this)">
@@ -440,6 +503,27 @@ body{font-family:"Plus Jakarta Sans",sans-serif;background:var(--ink);color:var(
         </div>
       </div>
 
+      <!-- GEO / IAs -->
+      <div class="sec" id="sec-geo">
+        <button class="back-btn" onclick="nav('res',document.getElementById('btn-res'))">← Resumen</button>
+        <div class="sh"><h2>Visibilidad en IAs — GEO</h2><p>Generative Engine Optimization · ChatGPT, Perplexity, AI Overviews</p></div>
+        <div id="geoScoreWrap"></div>
+        <div class="sh"><h2>Estado por plataforma</h2></div>
+        <div class="geo-plat-grid" id="geoPlatGrid"></div>
+        <div class="geo-pending" id="geoPending"></div>
+      </div>
+
+      <!-- LEADS -->
+      <div class="sec" id="sec-leads">
+        <button class="back-btn" onclick="nav('res',document.getElementById('btn-res'))">← Resumen</button>
+        <div class="sh"><h2>Leads y contactos</h2><p id="leadsMesSub">Clientes potenciales captados</p></div>
+        <div class="leads-kpi-row" id="leadsKpiRow"></div>
+        <div class="sh"><h2>Leads recientes</h2><p>Contactos entrantes desde tu sitio y canales digitales</p></div>
+        <div id="leadsList"></div>
+        <div class="sh" style="margin-top:20px"><h2>Actividad del proyecto</h2><p>Acciones realizadas por Rankeo en tu proyecto</p></div>
+        <div class="act-feed" id="actFeed"></div>
+      </div>
+
       <!-- MEJORAS SEO -->
       <div class="sec" id="sec-tips">
         <button class="back-btn" onclick="nav('res',document.getElementById('btn-res'))">← Resumen</button>
@@ -530,6 +614,39 @@ const CLIENTS={
       {lbl:"Errores críticos",val:"5",sub:"identificados en auditoría",estado:"critico"},
       {lbl:"JSON-LD schemas",val:"0",sub:"pendiente implementar",estado:"critico"},
       {lbl:"GEO Score",val:"0/10",sub:"sin datos estructurados para IAs",estado:"critico"}
+    ],
+    geo:{
+      score:0,maxScore:10,
+      resumen:"JETCAB aún no aparece en ChatGPT, Perplexity ni AI Overviews. El paso crítico es implementar JSON-LD para que las IAs puedan leer y citar tu negocio.",
+      plataformas:[
+        {nombre:"ChatGPT",bg:"#10A37F",estado:"ausente",detalle:"JETCAB no aparece al preguntar por jets privados o vuelos ejecutivos en México."},
+        {nombre:"Perplexity",bg:"#6B4FBB",estado:"ausente",detalle:"Sin presencia en búsquedas de aviación privada en Perplexity AI."},
+        {nombre:"AI Overviews",bg:"#4285F4",estado:"ausente",detalle:"Google AI Overviews no incluye JETCAB en respuestas sobre vuelos ejecutivos CDMX."},
+        {nombre:"Google Search",bg:"#EA4335",estado:"parcial",detalle:"28 páginas indexadas, pero sin schema que las IAs puedan procesar correctamente."}
+      ],
+      pendiente:[
+        {done:false,item:"JSON-LD LocalBusiness + AirCharter Service"},
+        {done:false,item:"FAQ schema con preguntas de jets privados MX"},
+        {done:false,item:"Contenido GEO-optimizado para IAs"},
+        {done:false,item:"Menciones en directorios especializados de aviación"}
+      ]
+    },
+    leads:{
+      mes:"Octubre 2026",
+      total:3,
+      whaClicks:12,
+      llamadas:5,
+      formEnvios:3,
+      lista:[
+        {fecha:"03 Oct",canal:"wa",msg:"Cotización vuelo privado CDMX–Cancún",estado:"nuevo"},
+        {fecha:"01 Oct",canal:"form",msg:"Renta helicóptero ejecutivo fin de semana",estado:"contactado"},
+        {fecha:"28 Sep",canal:"call",msg:"Traslado aeropuerto Toluca – AICM ejecutivo",estado:"en_proceso"}
+      ]
+    },
+    actividad:[
+      {fecha:"05 Oct 2026",tipo:"entregable",titulo:"Reporte GEO + SEO entregado",desc:"Auditoría completa con 8 problemas críticos, GEO score inicial y plan de acción Q4 2026."},
+      {fecha:"03 Oct 2026",tipo:"auditoria",titulo:"Auditoría técnica completada",desc:"Revisión de velocidad, indexación, schema, presencia en IAs y errores críticos de conversión."},
+      {fecha:"01 Oct 2026",tipo:"inicio",titulo:"Proyecto iniciado",desc:"Onboarding completado. Accesos a WordPress y Google Search Console recibidos. Auditoría iniciada."}
     ]
   },
   colegio_san_martin:{
@@ -658,6 +775,8 @@ function loadClient(id){
   updateImplUI();
   updateReqBadge();
   checkStatus();
+  renderGEO();
+  renderLeads();
   document.querySelectorAll(".cl-item").forEach(el=>el.classList.toggle("on",el.dataset.id===id));
   // Mostrar/ocultar pestaña Reportes según si el cliente tiene reportes
   const btnReports=document.getElementById("btn-reports");
@@ -1018,6 +1137,90 @@ function renderResults(){
     :items.map(t=>`<div class="tl-item"><div class="tl-dot"></div><div class="tl-body"><div class="tl-t">${t.t}</div><div class="tl-m">${t.cat} · Implementado</div></div></div>`).join("");
 }
 
+// ── GEO ──
+function renderGEO(){
+  if(!cc||!cc.geo)return;
+  const g=cc.geo;
+  const pct=g.score/g.maxScore;
+  const circ=Math.PI*2*40;
+  const offset=circ-(pct*circ);
+  document.getElementById("geoScoreWrap").innerHTML=`
+    <div class="geo-score-wrap">
+      <div class="geo-score-circle">
+        <svg width="90" height="90" viewBox="0 0 90 90">
+          <circle class="geo-sc-bg" cx="45" cy="45" r="40" stroke-width="8"/>
+          <circle class="geo-sc-fg" cx="45" cy="45" r="40" stroke-dasharray="${circ.toFixed(1)}" stroke-dashoffset="${circ.toFixed(1)}" id="geoCircle"/>
+        </svg>
+        <div class="geo-sc-num">${g.score}<small>/${g.maxScore}</small></div>
+      </div>
+      <div class="geo-score-info">
+        <h3>GEO Score — Visibilidad en IAs</h3>
+        <p>${g.resumen}</p>
+        <a href="https://wa.me/525532894890?text=Hola%2C+quiero+mejorar+mi+GEO+score+en+las+IAs" target="_blank" rel="noopener" class="geo-cta-btn">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20"/><polyline points="12 6 12 12 16 14"/></svg>
+          Implementar GEO →
+        </a>
+      </div>
+    </div>`;
+  setTimeout(()=>{const c=document.getElementById("geoCircle");if(c)c.style.strokeDashoffset=offset.toFixed(1);},80);
+  document.getElementById("geoPlatGrid").innerHTML=g.plataformas.map(p=>`
+    <div class="geo-plat-card">
+      <div class="geo-plat-head">
+        <div class="geo-plat-icon" style="background:${p.bg}20;color:${p.bg}">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 1 0 20M12 2a14.5 14.5 0 0 0 0 20M2 12h20"/></svg>
+        </div>
+        <span class="geo-plat-name">${p.nombre}</span>
+      </div>
+      <div class="geo-plat-status ${p.estado}">${p.estado==="ausente"?"✗ No aparece":p.estado==="parcial"?"⚡ Parcial":"✓ Visible"}</div>
+      <div class="geo-plat-detail">${p.detalle}</div>
+    </div>`).join("");
+  document.getElementById("geoPending").innerHTML=`
+    <div class="geo-pending-title">Pasos para llegar a GEO Score 10/10</div>
+    ${g.pendiente.map(s=>`
+      <div class="geo-step">
+        <div class="geo-step-dot ${s.done?"done":"pending"}">${s.done?"✓":"○"}</div>
+        <div class="geo-step-text">${s.item}</div>
+      </div>`).join("")}`;
+}
+
+// ── LEADS ──
+const CANAL_LABEL={wa:"WhatsApp",form:"Formulario",call:"Llamada"};
+function renderLeads(){
+  if(!cc||!cc.leads)return;
+  const l=cc.leads;
+  document.getElementById("leadsMesSub").textContent=`${l.mes} · Leads registrados este período`;
+  document.getElementById("leadsKpiRow").innerHTML=`
+    <div class="leads-kpi"><div class="leads-kpi-val or">${l.total}</div><div class="leads-kpi-lbl">Leads este mes</div></div>
+    <div class="leads-kpi"><div class="leads-kpi-val">${l.whaClicks}</div><div class="leads-kpi-lbl">Clics WhatsApp</div></div>
+    <div class="leads-kpi"><div class="leads-kpi-val">${l.llamadas+l.formEnvios}</div><div class="leads-kpi-lbl">Llamadas + formularios</div></div>`;
+  document.getElementById("leadsList").innerHTML=l.lista.map(ld=>`
+    <div class="lead-item">
+      <span class="lead-canal ${ld.canal}">${CANAL_LABEL[ld.canal]||ld.canal}</span>
+      <div style="flex:1">
+        <div class="lead-msg">${ld.msg}</div>
+        <div class="lead-meta">${ld.fecha}</div>
+      </div>
+      <span class="lead-estado ${ld.estado}">${ld.estado==="nuevo"?"Nuevo":ld.estado==="contactado"?"Contactado":"En proceso"}</span>
+    </div>`).join("")||`<p style="font-size:12px;color:var(--sub)">Aún no hay leads registrados este período.</p>`;
+  if(cc.actividad){
+    const ICONS={
+      auditoria:`<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>`,
+      entregable:`<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>`,
+      inicio:`<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>`,
+      mejora:`<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>`
+    };
+    document.getElementById("actFeed").innerHTML=cc.actividad.map(a=>`
+      <div class="act-item">
+        <div class="act-icon ${a.tipo}">${ICONS[a.tipo]||ICONS.mejora}</div>
+        <div>
+          <div class="act-fecha">${a.fecha}</div>
+          <div class="act-titulo">${a.titulo}</div>
+          <div class="act-desc">${a.desc}</div>
+        </div>
+      </div>`).join("");
+  }
+}
+
 // ── ADMIN SOLICITUDES ──
 let activeReqClient=Object.keys(CLIENTS)[0];
 function renderAdminRequests(){
@@ -1112,6 +1315,8 @@ function nav(id,btn){
   if(btn)btn.classList.add("on");
   if(id!=="tips"){selectedTips.clear();const bb=document.getElementById("batchBar");if(bb)bb.classList.remove("on");}
   if(id==="results")renderResults();
+  if(id==="geo")renderGEO();
+  if(id==="leads")renderLeads();
   if(id==="reqs")renderAdminRequests();
   if(id==="reports")renderReports();
   if(id==="web"&&cc){const vf=document.getElementById("vistaFrame");if(vf.src==="about:blank")vf.src=cc.url;}
