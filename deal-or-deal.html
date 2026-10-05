@@ -1,0 +1,1079 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Deal or Deal | Consultoría Estratégica, IA y Marca Personal de Alto Nivel</title>
+<meta name="description" content="Transformamos negocios con inteligencia artificial, optimización de procesos y estrategias de cierre de ventas de alto ticket. Eleva tu marca personal al siguiente nivel. Agenda tu consulta.">
+<meta name="keywords" content="consultoría estratégica, optimización de procesos con IA, cierre de ventas alto ticket, marca personal, reingeniería empresarial, capacitación empresarial">
+<meta property="og:title" content="Deal or Deal | Consultoría Estratégica & IA">
+<meta property="og:description" content="Transformamos negocios con IA, optimización de procesos y cierre de ventas de alto ticket.">
+<meta property="og:type" content="website">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://dealordeal.tech/">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://dealordeal.com/#organization",
+      "name": "Deal or Deal",
+      "description": "Consultoría estratégica especializada en optimización de procesos con IA, cierre de ventas de alto ticket y prestigio de marca personal.",
+      "url": "https://dealordeal.tech",
+      "serviceArea": {"@type": "Place", "name": "México, Colombia, Latinoamérica"},
+      "knowsAbout": ["Inteligencia Artificial", "Optimización de Procesos", "Ventas de Alto Ticket", "Marca Personal", "Reingeniería Estratégica"]
+    },
+    {
+      "@type": "LocalBusiness",
+      "@id": "https://dealordeal.com/#business",
+      "name": "Deal or Deal Consultoría",
+      "description": "Consultoría de alto nivel en IA, procesos y marca personal",
+      "priceRange": "$$$"
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "¿Qué es la optimización de procesos con IA?",
+          "acceptedAnswer": {"@type": "Answer", "text": "Es la implementación de sistemas de inteligencia artificial para automatizar, analizar y mejorar los procesos clave de tu empresa, reduciendo costos y aumentando la eficiencia operativa."}
+        },
+        {
+          "@type": "Question",
+          "name": "¿Qué es una venta de alto ticket?",
+          "acceptedAnswer": {"@type": "Answer", "text": "Son ventas de productos o servicios con precios elevados (generalmente $5,000 USD o más) que requieren estrategias específicas de cierre, confianza y posicionamiento de marca."}
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cómo funciona la consultoría de marca personal?",
+          "acceptedAnswer": {"@type": "Answer", "text": "Desarrollamos tu identidad profesional, posicionamiento digital y estrategia de contenido para que seas reconocido como referente en tu industria y atraigas clientes de alto valor."}
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --navy:    #071525;
+    --navy-2:  #0D2040;
+    --navy-3:  #122850;
+    --gold:    #C9A84C;
+    --gold-2:  #E2C97A;
+    --gold-3:  #A8873A;
+    --cream:   #F5F0E8;
+    --white:   #FFFFFF;
+    --subtle:  rgba(255,255,255,0.55);
+    --border:  rgba(201,168,76,0.25);
+    --dur:     300ms;
+    --ease:    cubic-bezier(0.0,0.0,0.2,1);
+  }
+
+  html { scroll-behavior: smooth; font-size: 16px; }
+
+  body {
+    background: var(--navy);
+    color: var(--cream);
+    font-family: 'Inter', sans-serif;
+    font-weight: 300;
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+  }
+
+  .gold { color: var(--gold); }
+  .italic { font-style: italic; }
+
+  /* ─── NAV ─── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    padding: 20px 48px;
+    display: flex; align-items: center; justify-content: space-between;
+    transition: background var(--dur) var(--ease), padding var(--dur) var(--ease);
+  }
+  nav.scrolled {
+    background: rgba(7,21,37,0.95);
+    backdrop-filter: blur(12px);
+    padding: 14px 48px;
+    border-bottom: 1px solid var(--border);
+  }
+  .nav-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--gold);
+    text-decoration: none;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+  .nav-links { display: flex; gap: 36px; align-items: center; list-style: none; }
+  .nav-links a {
+    color: rgba(245,240,232,0.75);
+    text-decoration: none;
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    transition: color var(--dur);
+  }
+  .nav-links a:hover { color: var(--gold); }
+  .nav-cta {
+    background: transparent;
+    border: 1px solid var(--gold);
+    color: var(--gold) !important;
+    padding: 10px 24px;
+    border-radius: 2px;
+    transition: background var(--dur), color var(--dur) !important;
+  }
+  .nav-cta:hover { background: var(--gold) !important; color: var(--navy) !important; }
+
+  /* Burger */
+  .burger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; }
+  .burger span { display: block; width: 24px; height: 1.5px; background: var(--gold); transition: var(--dur); }
+
+  /* Drawer */
+  .drawer {
+    position: fixed; top: 0; right: -100%; width: 280px; height: 100vh;
+    background: var(--navy-2); border-left: 1px solid var(--border);
+    z-index: 200; padding: 80px 32px 40px;
+    transition: right var(--dur) var(--ease);
+    display: flex; flex-direction: column; gap: 24px;
+  }
+  .drawer.open { right: 0; }
+  .drawer a {
+    color: var(--cream); text-decoration: none;
+    font-size: 1.1rem; font-family: 'Cormorant Garamond', serif; font-weight: 600;
+    border-bottom: 1px solid var(--border); padding-bottom: 16px;
+    transition: color var(--dur);
+  }
+  .drawer a:hover { color: var(--gold); }
+  .drawer-close {
+    position: absolute; top: 24px; right: 24px;
+    background: none; border: none; color: var(--cream);
+    font-size: 1.5rem; cursor: pointer;
+  }
+  .drawer-overlay {
+    position: fixed; inset: 0; background: rgba(7,21,37,0.7);
+    z-index: 199; opacity: 0; pointer-events: none; transition: opacity var(--dur);
+  }
+  .drawer-overlay.open { opacity: 1; pointer-events: all; }
+
+  /* ─── HERO ─── */
+  .hero {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #071525 0%, #0D2040 50%, #071525 100%);
+    position: relative; overflow: hidden;
+    display: flex; align-items: center;
+    padding: 120px 48px 80px;
+  }
+  .hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse 60% 60% at 70% 50%, rgba(201,168,76,0.08) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .hero-grid {
+    position: absolute; inset: 0; pointer-events: none;
+    background-image:
+      linear-gradient(rgba(201,168,76,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(201,168,76,0.04) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+  .hero-content { max-width: 1200px; margin: 0 auto; position: relative; z-index: 1; }
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: 10px;
+    border: 1px solid var(--border);
+    padding: 8px 20px; border-radius: 2px;
+    font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 32px;
+  }
+  .hero-badge::before {
+    content: ''; width: 6px; height: 6px; border-radius: 50%;
+    background: var(--gold); animation: pulse 2s infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+  }
+  .hero h1 {
+    font-size: clamp(3rem, 7vw, 6.5rem);
+    color: var(--white);
+    margin-bottom: 16px;
+    max-width: 900px;
+  }
+  .hero h1 em {
+    font-style: italic; color: var(--gold);
+    display: block;
+  }
+  .hero-sub {
+    font-size: clamp(1rem, 1.8vw, 1.2rem);
+    color: var(--subtle);
+    max-width: 560px;
+    margin-bottom: 48px;
+    font-weight: 300;
+    line-height: 1.8;
+  }
+  .hero-ctas { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 72px; }
+  .btn-primary {
+    background: var(--gold);
+    color: var(--navy);
+    padding: 16px 36px;
+    border: none; border-radius: 2px;
+    font-size: 0.8rem; font-weight: 600;
+    letter-spacing: 0.12em; text-transform: uppercase;
+    text-decoration: none; cursor: pointer;
+    transition: background var(--dur), transform var(--dur);
+    display: inline-flex; align-items: center; gap: 10px;
+  }
+  .btn-primary:hover { background: var(--gold-2); transform: translateY(-2px); }
+  .btn-ghost {
+    background: transparent;
+    color: var(--cream);
+    padding: 16px 36px;
+    border: 1px solid rgba(245,240,232,0.3);
+    border-radius: 2px;
+    font-size: 0.8rem; font-weight: 500;
+    letter-spacing: 0.12em; text-transform: uppercase;
+    text-decoration: none; cursor: pointer;
+    transition: border-color var(--dur), color var(--dur);
+    display: inline-flex; align-items: center; gap: 10px;
+  }
+  .btn-ghost:hover { border-color: var(--gold); color: var(--gold); }
+
+  .hero-stats {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 1px; max-width: 600px;
+    border: 1px solid var(--border); border-radius: 2px;
+    overflow: hidden;
+  }
+  .stat {
+    padding: 24px 28px;
+    background: rgba(255,255,255,0.02);
+    border-right: 1px solid var(--border);
+  }
+  .stat:last-child { border-right: none; }
+  .stat-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.2rem; font-weight: 700;
+    color: var(--gold); line-height: 1;
+    margin-bottom: 4px;
+  }
+  .stat-label {
+    font-size: 0.7rem; letter-spacing: 0.1em;
+    text-transform: uppercase; color: var(--subtle);
+  }
+
+  /* ─── SECTION BASE ─── */
+  section { padding: 100px 48px; }
+  .container { max-width: 1200px; margin: 0 auto; }
+  .section-tag {
+    font-size: 0.65rem; letter-spacing: 0.25em; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 16px;
+    display: flex; align-items: center; gap: 12px;
+  }
+  .section-tag::before {
+    content: ''; flex: 0 0 32px; height: 1px; background: var(--gold);
+  }
+  .section-title {
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    color: var(--white); margin-bottom: 20px;
+  }
+  .section-sub {
+    font-size: 1rem; color: var(--subtle);
+    max-width: 520px; line-height: 1.8;
+  }
+
+  /* ─── MARQUEE ─── */
+  .marquee-section {
+    padding: 0; overflow: hidden;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    background: var(--navy-2);
+  }
+  .marquee-track {
+    display: flex; width: max-content;
+    animation: marquee 28s linear infinite;
+    padding: 18px 0;
+  }
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+  .marquee-item {
+    white-space: nowrap; padding: 0 40px;
+    font-size: 0.7rem; letter-spacing: 0.25em; text-transform: uppercase;
+    color: var(--gold); opacity: 0.7;
+    display: flex; align-items: center; gap: 40px;
+  }
+  .marquee-item::after {
+    content: '◆'; font-size: 0.4rem; opacity: 0.5;
+  }
+
+  /* ─── SERVICIOS ─── */
+  .servicios { background: var(--navy); }
+  .servicios-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 1px; margin-top: 64px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    border-radius: 4px; overflow: hidden;
+  }
+  .servicio-card {
+    background: var(--navy);
+    padding: 48px 40px;
+    position: relative; overflow: hidden;
+    transition: background var(--dur);
+  }
+  .servicio-card:hover { background: var(--navy-2); }
+  .servicio-card::after {
+    content: '';
+    position: absolute; bottom: 0; left: 0; right: 0;
+    height: 2px; background: var(--gold);
+    transform: scaleX(0); transform-origin: left;
+    transition: transform var(--dur) var(--ease);
+  }
+  .servicio-card:hover::after { transform: scaleX(1); }
+  .servicio-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3.5rem; font-weight: 700;
+    color: rgba(201,168,76,0.12);
+    position: absolute; top: 24px; right: 32px;
+    line-height: 1;
+  }
+  .servicio-icon {
+    width: 48px; height: 48px;
+    border: 1px solid var(--border);
+    border-radius: 2px;
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 28px;
+    font-size: 1.2rem;
+  }
+  .servicio-title {
+    font-size: 1.5rem; color: var(--white);
+    margin-bottom: 16px;
+  }
+  .servicio-desc {
+    font-size: 0.875rem; color: var(--subtle);
+    line-height: 1.8; margin-bottom: 28px;
+  }
+  .servicio-list { list-style: none; }
+  .servicio-list li {
+    font-size: 0.8rem; color: var(--subtle);
+    padding: 6px 0; border-bottom: 1px solid rgba(201,168,76,0.08);
+    display: flex; align-items: center; gap: 10px;
+  }
+  .servicio-list li::before {
+    content: '→'; color: var(--gold); flex-shrink: 0;
+  }
+
+  /* ─── MÉTODO ─── */
+  .metodo { background: var(--navy-2); }
+  .metodo-grid {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 80px; align-items: center; margin-top: 64px;
+  }
+  .metodo-steps { display: flex; flex-direction: column; gap: 0; }
+  .step {
+    display: grid; grid-template-columns: 64px 1fr;
+    gap: 24px; padding: 32px 0;
+    border-bottom: 1px solid var(--border);
+    position: relative;
+  }
+  .step:last-child { border-bottom: none; }
+  .step-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2rem; font-weight: 700; color: var(--gold);
+    line-height: 1; padding-top: 4px;
+  }
+  .step-title {
+    font-size: 1.1rem; color: var(--white); margin-bottom: 8px;
+    font-family: 'Cormorant Garamond', serif; font-weight: 600;
+  }
+  .step-desc { font-size: 0.85rem; color: var(--subtle); line-height: 1.7; }
+  .metodo-visual {
+    background: var(--navy-3);
+    border: 1px solid var(--border);
+    border-radius: 4px; padding: 48px;
+    text-align: center;
+  }
+  .metodo-quote {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2rem; font-style: italic;
+    color: var(--white); line-height: 1.4;
+    margin-bottom: 32px;
+  }
+  .metodo-quote span { color: var(--gold); }
+  .metodo-metrics {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 16px; margin-top: 32px;
+  }
+  .metric-box {
+    background: rgba(201,168,76,0.06);
+    border: 1px solid var(--border);
+    border-radius: 2px; padding: 20px 16px;
+  }
+  .metric-val {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2rem; font-weight: 700; color: var(--gold);
+    line-height: 1;
+  }
+  .metric-lbl { font-size: 0.7rem; color: var(--subtle); letter-spacing: 0.08em; margin-top: 4px; }
+
+  /* ─── PARA QUIÉN ─── */
+  .para-quien { background: var(--navy); }
+  .perfiles-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 24px; margin-top: 64px;
+  }
+  .perfil-card {
+    border: 1px solid var(--border);
+    border-radius: 4px; padding: 40px 32px;
+    transition: border-color var(--dur), transform var(--dur);
+  }
+  .perfil-card:hover { border-color: var(--gold); transform: translateY(-4px); }
+  .perfil-icon { font-size: 2rem; margin-bottom: 20px; }
+  .perfil-title {
+    font-size: 1.3rem; color: var(--white);
+    margin-bottom: 12px;
+    font-family: 'Cormorant Garamond', serif; font-weight: 600;
+  }
+  .perfil-desc { font-size: 0.85rem; color: var(--subtle); line-height: 1.8; }
+
+  /* ─── RESULTADOS ─── */
+  .resultados { background: linear-gradient(180deg, var(--navy-2) 0%, var(--navy) 100%); }
+  .resultados-header {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 64px; align-items: end; margin-bottom: 64px;
+  }
+  .testimonials-grid {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+  .testimonial {
+    background: var(--navy-3);
+    border: 1px solid var(--border);
+    border-radius: 4px; padding: 36px;
+  }
+  .testimonial:first-child {
+    grid-column: 1 / -1;
+    background: rgba(201,168,76,0.06);
+    border-color: rgba(201,168,76,0.4);
+  }
+  .t-quote {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem; font-style: italic;
+    color: var(--cream); line-height: 1.6; margin-bottom: 24px;
+  }
+  .t-author { display: flex; align-items: center; gap: 16px; }
+  .t-avatar {
+    width: 44px; height: 44px; border-radius: 50%;
+    background: linear-gradient(135deg, var(--gold-3), var(--gold));
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 700; color: var(--navy); font-size: 1rem;
+    flex-shrink: 0;
+  }
+  .t-name { font-size: 0.85rem; color: var(--white); font-weight: 500; }
+  .t-role { font-size: 0.75rem; color: var(--subtle); }
+  .t-stars { color: var(--gold); font-size: 0.8rem; margin-bottom: 6px; }
+
+  /* ─── CTA FINAL ─── */
+  .cta-final {
+    background: linear-gradient(135deg, var(--navy-2) 0%, #091E3A 100%);
+    border-top: 1px solid var(--border);
+    text-align: center; position: relative; overflow: hidden;
+  }
+  .cta-final::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse 50% 80% at 50% 0%, rgba(201,168,76,0.1) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .cta-final .container { position: relative; z-index: 1; }
+  .cta-eyebrow {
+    font-size: 0.65rem; letter-spacing: 0.25em; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 24px;
+  }
+  .cta-title {
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    color: var(--white); margin-bottom: 20px;
+  }
+  .cta-sub {
+    font-size: 1rem; color: var(--subtle);
+    max-width: 480px; margin: 0 auto 48px;
+    line-height: 1.8;
+  }
+  .cta-buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+  .whatsapp-btn {
+    background: #25D366;
+    color: #fff !important;
+    padding: 18px 40px;
+    border-radius: 2px;
+    font-size: 0.85rem; font-weight: 600;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    text-decoration: none;
+    display: inline-flex; align-items: center; gap: 12px;
+    transition: background var(--dur), transform var(--dur);
+  }
+  .whatsapp-btn:hover { background: #20BD5A; transform: translateY(-2px); }
+
+  /* ─── FAQ ─── */
+  .faq { background: var(--navy-2); }
+  .faq-grid {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 24px; margin-top: 64px;
+  }
+  .faq-item {
+    border: 1px solid var(--border);
+    border-radius: 2px; overflow: hidden;
+  }
+  .faq-q {
+    padding: 24px 28px;
+    display: flex; justify-content: space-between; align-items: center;
+    cursor: pointer; gap: 16px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.05rem; color: var(--white); font-weight: 600;
+    transition: background var(--dur);
+  }
+  .faq-q:hover { background: rgba(201,168,76,0.05); }
+  .faq-icon { color: var(--gold); flex-shrink: 0; font-size: 1.2rem; }
+  .faq-a {
+    padding: 0 28px;
+    max-height: 0; overflow: hidden;
+    transition: max-height 0.35s ease, padding 0.35s ease;
+    font-size: 0.875rem; color: var(--subtle); line-height: 1.8;
+    border-top: 0px solid var(--border);
+  }
+  .faq-item.open .faq-a {
+    max-height: 200px; padding: 20px 28px 28px;
+    border-top: 1px solid var(--border);
+  }
+  .faq-item.open .faq-icon { transform: rotate(45deg); }
+  .faq-icon { transition: transform var(--dur); }
+
+  /* ─── FOOTER ─── */
+  footer {
+    background: #050F1C;
+    border-top: 1px solid var(--border);
+    padding: 64px 48px 32px;
+    overflow: hidden;
+  }
+  .footer-grid {
+    display: grid; grid-template-columns: 1.5fr 1fr 1fr;
+    gap: 48px; margin-bottom: 48px;
+  }
+  .footer-brand {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.4rem; font-weight: 700;
+    color: var(--gold); letter-spacing: 0.08em;
+    text-transform: uppercase; margin-bottom: 16px;
+  }
+  .footer-desc { font-size: 0.8rem; color: var(--subtle); line-height: 1.8; max-width: 280px; }
+  .footer-col h4 {
+    font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 20px;
+    font-family: 'Inter', sans-serif; font-weight: 600;
+  }
+  .footer-links { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+  .footer-links a {
+    color: var(--subtle); text-decoration: none; font-size: 0.8rem;
+    transition: color var(--dur);
+  }
+  .footer-links a:hover { color: var(--gold); }
+  .footer-bottom {
+    padding-top: 32px; border-top: 1px solid var(--border);
+    display: flex; justify-content: space-between; align-items: center;
+    font-size: 0.75rem; color: rgba(255,255,255,0.3);
+    flex-wrap: wrap; gap: 12px;
+  }
+
+  /* WhatsApp float */
+  .wa-float {
+    position: fixed; bottom: 28px; right: 28px; z-index: 90;
+    width: 56px; height: 56px; border-radius: 50%;
+    background: #25D366;
+    display: flex; align-items: center; justify-content: center;
+    text-decoration: none; box-shadow: 0 4px 20px rgba(37,211,102,0.4);
+    animation: waPulse 3s ease infinite;
+    transition: transform var(--dur);
+  }
+  .wa-float:hover { transform: scale(1.1); }
+  .wa-float svg { width: 28px; height: 28px; fill: white; }
+  @keyframes waPulse {
+    0%, 100% { box-shadow: 0 4px 20px rgba(37,211,102,0.4); }
+    50% { box-shadow: 0 4px 32px rgba(37,211,102,0.7); }
+  }
+
+  /* ─── RESPONSIVE ─── */
+  @media (max-width: 1024px) {
+    .servicios-grid { grid-template-columns: 1fr; }
+    .metodo-grid { grid-template-columns: 1fr; gap: 48px; }
+    .perfiles-grid { grid-template-columns: 1fr 1fr; }
+    .resultados-header { grid-template-columns: 1fr; gap: 32px; }
+    .faq-grid { grid-template-columns: 1fr; }
+    .footer-grid { grid-template-columns: 1fr 1fr; }
+  }
+
+  @media (max-width: 768px) {
+    nav { padding: 16px 24px; }
+    nav.scrolled { padding: 12px 24px; }
+    .nav-links { display: none; }
+    .burger { display: flex; }
+    section { padding: 72px 24px; }
+    .hero { padding: 100px 24px 64px; }
+    .hero-stats { grid-template-columns: 1fr; max-width: 100%; }
+    .stat { border-right: none; border-bottom: 1px solid var(--border); }
+    .stat:last-child { border-bottom: none; }
+    .perfiles-grid { grid-template-columns: 1fr; }
+    .testimonials-grid { grid-template-columns: 1fr; }
+    .testimonial:first-child { grid-column: auto; }
+    .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+    footer { padding: 48px 24px 24px; }
+    .footer-bottom { flex-direction: column; text-align: center; }
+    .metodo-metrics { grid-template-columns: 1fr 1fr; }
+  }
+
+  /* Scroll reveal */
+  .rv { opacity: 0; transform: translateY(32px); transition: opacity 0.5s var(--ease), transform 0.5s var(--ease); }
+  .rv.visible { opacity: 1; transform: translateY(0); }
+
+  @media (prefers-reduced-motion: reduce) {
+    .rv { opacity: 1; transform: none; transition: none; }
+    .marquee-track { animation: none; }
+    .wa-float { animation: none; }
+    .hero::before { animation: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+  <a href="#inicio" class="nav-logo">Deal or Deal</a>
+  <ul class="nav-links">
+    <li><a href="#servicios">Servicios</a></li>
+    <li><a href="#metodo">Método</a></li>
+    <li><a href="#resultados">Resultados</a></li>
+    <li><a href="#faq">FAQ</a></li>
+    <li><a href="https://wa.me/52XXXXXXXXXX?text=Hola%2C%20quiero%20agendar%20una%20consulta%20con%20Deal%20or%20Deal" class="nav-cta" target="_blank" rel="noopener">Agenda tu cita</a></li>
+  </ul>
+  <button class="burger" id="burger" aria-label="Menú">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="drawer-overlay" id="drawer-overlay"></div>
+<nav class="drawer" id="drawer">
+  <button class="drawer-close" id="drawer-close">✕</button>
+  <a href="#servicios">Servicios</a>
+  <a href="#metodo">Método</a>
+  <a href="#resultados">Resultados</a>
+  <a href="#faq">Preguntas frecuentes</a>
+  <a href="https://wa.me/52XXXXXXXXXX?text=Hola%2C%20quiero%20agendar%20una%20consulta" target="_blank" rel="noopener" style="color:var(--gold)">→ Agenda tu cita</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="inicio">
+  <div class="hero-grid"></div>
+  <div class="hero-content">
+    <div class="hero-badge">Consultoría Estratégica de Alto Nivel</div>
+    <h1>
+      Transforma tu negocio.<br>
+      <em>Domina tu mercado.</em>
+    </h1>
+    <p class="hero-sub">Optimización de procesos con IA, cierre de ventas de alto ticket y posicionamiento de marca personal para líderes que juegan en otro nivel.</p>
+    <div class="hero-ctas">
+      <a href="https://wa.me/52XXXXXXXXXX?text=Hola%2C%20quiero%20agendar%20una%20consulta%20con%20Deal%20or%20Deal" class="btn-primary" target="_blank" rel="noopener">
+        Agenda tu consulta gratuita
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+      <a href="#servicios" class="btn-ghost">Ver servicios</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat">
+        <div class="stat-num">10x</div>
+        <div class="stat-label">ROI promedio en procesos</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">+85%</div>
+        <div class="stat-label">Tasa de cierre en alto ticket</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">90d</div>
+        <div class="stat-label">Resultados visibles</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-section">
+  <div class="marquee-track">
+    <span class="marquee-item">Inteligencia Artificial</span>
+    <span class="marquee-item">Optimización de Procesos</span>
+    <span class="marquee-item">Ventas Alto Ticket</span>
+    <span class="marquee-item">Marca Personal</span>
+    <span class="marquee-item">Reingeniería Estratégica</span>
+    <span class="marquee-item">Capacitación Ejecutiva</span>
+    <span class="marquee-item">Automatización Empresarial</span>
+    <span class="marquee-item">Inteligencia Artificial</span>
+    <span class="marquee-item">Optimización de Procesos</span>
+    <span class="marquee-item">Ventas Alto Ticket</span>
+    <span class="marquee-item">Marca Personal</span>
+    <span class="marquee-item">Reingeniería Estratégica</span>
+    <span class="marquee-item">Capacitación Ejecutiva</span>
+    <span class="marquee-item">Automatización Empresarial</span>
+  </div>
+</div>
+
+<!-- SERVICIOS -->
+<section class="servicios" id="servicios">
+  <div class="container">
+    <div class="section-tag">Lo que hacemos</div>
+    <h2 class="section-title rv">Tres pilares que<br><em class="gold italic">redefinen tu negocio</em></h2>
+    <p class="section-sub rv">Cada servicio está diseñado para generar resultados medibles, no promesas.</p>
+
+    <div class="servicios-grid">
+
+      <div class="servicio-card rv">
+        <span class="servicio-num">01</span>
+        <div class="servicio-icon">⚡</div>
+        <h3 class="servicio-title">IA y Optimización de Procesos</h3>
+        <p class="servicio-desc">Implementamos sistemas de inteligencia artificial que automatizan, optimizan y escalan los procesos clave de tu empresa. Menos fricción, más resultados.</p>
+        <ul class="servicio-list">
+          <li>Diagnóstico y mapeo de procesos actuales</li>
+          <li>Implementación de sistemas IA a medida</li>
+          <li>Automatización de flujos operativos</li>
+          <li>Dashboards y métricas en tiempo real</li>
+          <li>Reducción de costos operativos hasta 60%</li>
+        </ul>
+      </div>
+
+      <div class="servicio-card rv">
+        <span class="servicio-num">02</span>
+        <div class="servicio-icon">🎯</div>
+        <h3 class="servicio-title">Cierre de Ventas Alto Ticket</h3>
+        <p class="servicio-desc">Desarrollamos la estrategia, los scripts y la mentalidad necesarios para cerrar ventas de alto valor con consistencia y autoridad.</p>
+        <ul class="servicio-list">
+          <li>Framework de conversación de alto ticket</li>
+          <li>Manejo de objeciones de alto nivel</li>
+          <li>Posicionamiento de valor y precio</li>
+          <li>Entrenamiento individualizado de cierre</li>
+          <li>Métricas y seguimiento de conversión</li>
+        </ul>
+      </div>
+
+      <div class="servicio-card rv">
+        <span class="servicio-num">03</span>
+        <div class="servicio-icon">👑</div>
+        <h3 class="servicio-title">Prestigio de Marca Personal</h3>
+        <p class="servicio-desc">Construimos la marca personal que te posiciona como el referente indiscutible de tu industria, atrayendo clientes de alto valor de forma orgánica.</p>
+        <ul class="servicio-list">
+          <li>Estrategia de identidad y diferenciación</li>
+          <li>Arquitectura de contenido de autoridad</li>
+          <li>Posicionamiento digital premium</li>
+          <li>Estrategia de visibilidad ejecutiva</li>
+          <li>Gestión de reputación y presencia</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- MÉTODO -->
+<section class="metodo" id="metodo">
+  <div class="container">
+    <div class="section-tag">Nuestro enfoque</div>
+    <h2 class="section-title rv">El método <em class="gold italic">Deal or Deal</em></h2>
+
+    <div class="metodo-grid">
+      <div class="metodo-steps">
+        <div class="step rv">
+          <div class="step-num">01</div>
+          <div>
+            <div class="step-title">Diagnóstico Estratégico</div>
+            <p class="step-desc">Radiografía completa de tu negocio, procesos, equipo y mercado. Identificamos las palancas de mayor impacto antes de tocar nada.</p>
+          </div>
+        </div>
+        <div class="step rv">
+          <div class="step-num">02</div>
+          <div>
+            <div class="step-title">Diseño del Sistema</div>
+            <p class="step-desc">Creamos el roadmap personalizado con las soluciones de IA, las estrategias de venta y el plan de marca que se alinean a tus objetivos.</p>
+          </div>
+        </div>
+        <div class="step rv">
+          <div class="step-num">03</div>
+          <div>
+            <div class="step-title">Implementación Guiada</div>
+            <p class="step-desc">Ejecutamos contigo, no solo te enseñamos. Acompañamos cada paso de la implementación para garantizar que funcione en tu contexto real.</p>
+          </div>
+        </div>
+        <div class="step rv">
+          <div class="step-num">04</div>
+          <div>
+            <div class="step-title">Escalamiento y Dominio</div>
+            <p class="step-desc">Con la base sólida, escalamos resultados. Más ventas, procesos más eficientes y una marca que se consolida como líder de mercado.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="metodo-visual rv">
+        <p class="metodo-quote">"No transformamos negocios. Transformamos a las personas que los lideran — y el negocio <span>cambia solo.</span>"</p>
+        <div class="metodo-metrics">
+          <div class="metric-box">
+            <div class="metric-val">3x</div>
+            <div class="metric-lbl">Velocidad de implementación</div>
+          </div>
+          <div class="metric-box">
+            <div class="metric-val">90d</div>
+            <div class="metric-lbl">Primeros resultados</div>
+          </div>
+          <div class="metric-box">
+            <div class="metric-val">100%</div>
+            <div class="metric-lbl">Acompañamiento personalizado</div>
+          </div>
+          <div class="metric-box">
+            <div class="metric-val">$$$</div>
+            <div class="metric-lbl">ROI garantizado o seguimos</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PARA QUIÉN -->
+<section class="para-quien" id="para-quien">
+  <div class="container">
+    <div class="section-tag">¿Es para ti?</div>
+    <h2 class="section-title rv">Trabajamos con líderes<br><em class="gold italic">que van en serio</em></h2>
+    <p class="section-sub rv">No somos para todos. Somos para quienes están listos para jugar en el siguiente nivel.</p>
+
+    <div class="perfiles-grid">
+      <div class="perfil-card rv">
+        <div class="perfil-icon">🏢</div>
+        <h3 class="perfil-title">Empresarios y Directivos</h3>
+        <p class="perfil-desc">Tienes una empresa que funciona pero sabes que puede ser más eficiente. Quieres implementar IA sin perder el control ni el equipo humano.</p>
+      </div>
+      <div class="perfil-card rv">
+        <div class="perfil-icon">💼</div>
+        <h3 class="perfil-title">Consultores y Coaches</h3>
+        <p class="perfil-desc">Ya cobras bien, pero quieres llegar al alto ticket real. Necesitas el posicionamiento, el sistema de ventas y la marca que lo justifiquen.</p>
+      </div>
+      <div class="perfil-card rv">
+        <div class="perfil-icon">🚀</div>
+        <h3 class="perfil-title">Emprendedores en Escala</h3>
+        <p class="perfil-desc">Tu negocio creció y tus procesos no aguantan el ritmo. Es momento de sistematizar, automatizar y construir para escalar sin caos.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RESULTADOS -->
+<section class="resultados" id="resultados">
+  <div class="container">
+    <div class="resultados-header">
+      <div>
+        <div class="section-tag">Resultados reales</div>
+        <h2 class="section-title rv">Lo que dicen<br>quienes ya dieron<br><em class="gold italic">el siguiente paso</em></h2>
+      </div>
+      <div class="rv">
+        <p style="color:var(--subtle);font-size:0.9rem;line-height:1.8">Cada caso es único. Estos son ejemplos de lo que es posible cuando la estrategia correcta encuentra la ejecución correcta.</p>
+      </div>
+    </div>
+
+    <div class="testimonials-grid">
+      <div class="testimonial rv">
+        <div class="t-stars">★★★★★</div>
+        <p class="t-quote">"En 60 días implementamos un sistema de IA que redujo nuestros tiempos operativos en un 65%. Lo que antes tardaba 4 horas ahora tarda 20 minutos. El ROI fue evidente desde el primer mes."</p>
+        <div class="t-author">
+          <div class="t-avatar">MR</div>
+          <div>
+            <div class="t-name">Miguel R.</div>
+            <div class="t-role">Director de Operaciones — Empresa de Logística</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial rv">
+        <div class="t-stars">★★★★★</div>
+        <p class="t-quote">"Pasé de cerrar ventas de $2,000 a cerrar contratos de $25,000. El método de Deal or Deal es diferente a todo lo que había visto."</p>
+        <div class="t-author">
+          <div class="t-avatar">AL</div>
+          <div>
+            <div class="t-name">Andrea L.</div>
+            <div class="t-role">Consultora de RRHH</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial rv">
+        <div class="t-stars">★★★★★</div>
+        <p class="t-quote">"Mi marca personal pasó de ser invisible a generar inbound. Ahora los clientes me buscan a mí."</p>
+        <div class="t-author">
+          <div class="t-avatar">CS</div>
+          <div>
+            <div class="t-name">Carlos S.</div>
+            <div class="t-role">Executive Coach</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq" id="faq">
+  <div class="container">
+    <div class="section-tag">Preguntas frecuentes</div>
+    <h2 class="section-title rv">Todo lo que necesitas<br><em class="gold italic">saber antes de empezar</em></h2>
+
+    <div class="faq-grid" style="margin-top:64px">
+      <div class="faq-item rv">
+        <div class="faq-q">¿Cuánto tiempo tardan en verse resultados? <span class="faq-icon">+</span></div>
+        <div class="faq-a">Los primeros resultados medibles aparecen dentro de los primeros 30 a 90 días dependiendo del servicio. La optimización de procesos con IA puede mostrar eficiencias desde la primera semana de implementación.</div>
+      </div>
+      <div class="faq-item rv">
+        <div class="faq-q">¿Necesito conocimientos de IA para trabajar con ustedes? <span class="faq-icon">+</span></div>
+        <div class="faq-a">No. Nuestro equipo se encarga de toda la parte técnica. Tu rol es entender el proceso y tomar decisiones estratégicas. Nosotros traducimos la tecnología a resultados de negocio.</div>
+      </div>
+      <div class="faq-item rv">
+        <div class="faq-q">¿Cómo funciona el servicio de alto ticket? <span class="faq-icon">+</span></div>
+        <div class="faq-a">Combinamos entrenamiento práctico, roleplay de ventas, revisión de conversaciones reales y acompañamiento en cierres en vivo. No es teoría — es práctica con feedback inmediato.</div>
+      </div>
+      <div class="faq-item rv">
+        <div class="faq-q">¿Trabajan con empresas de cualquier tamaño? <span class="faq-icon">+</span></div>
+        <div class="faq-a">Trabajamos principalmente con empresas de 5 a 200 colaboradores y con consultores o coaches independientes que quieren escalar a alto ticket. Si tienes dudas sobre si aplicas, agenda una llamada de diagnóstico sin costo.</div>
+      </div>
+      <div class="faq-item rv">
+        <div class="faq-q">¿Cuál es la inversión para trabajar con Deal or Deal? <span class="faq-icon">+</span></div>
+        <div class="faq-a">Nuestros programas son de alto nivel y de inversión acorde. El rango varía según el servicio y el alcance. En la consulta gratuita evaluamos tu situación y te presentamos la opción más adecuada.</div>
+      </div>
+      <div class="faq-item rv">
+        <div class="faq-q">¿Hacen consultoría presencial o solo virtual? <span class="faq-icon">+</span></div>
+        <div class="faq-a">Trabajamos en formato híbrido. La mayoría del trabajo se realiza de manera virtual para maximizar la eficiencia, con sesiones presenciales estratégicas cuando el proyecto lo requiere.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="cta-final" id="contacto">
+  <div class="container" style="padding: 120px 0">
+    <p class="cta-eyebrow">El siguiente paso es tuyo</p>
+    <h2 class="cta-title rv">¿Listo para jugar<br><em class="gold italic">en otro nivel?</em></h2>
+    <p class="cta-sub rv">Agenda una consulta estratégica gratuita de 30 minutos. Sin compromiso, sin ventas agresivas — solo claridad sobre cómo transformar tu negocio.</p>
+    <div class="cta-buttons rv">
+      <a href="https://wa.me/52XXXXXXXXXX?text=Hola%2C%20quiero%20agendar%20mi%20consulta%20estrat%C3%A9gica%20con%20Deal%20or%20Deal" class="whatsapp-btn" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.570-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Agenda tu consulta gratuita
+      </a>
+      <a href="mailto:comercial@dealordeal.tech" class="btn-ghost">Enviar email</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">Deal or Deal</div>
+        <p class="footer-desc">Consultoría estratégica de alto nivel en IA, optimización de procesos, ventas de alto ticket y prestigio de marca personal.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Servicios</h4>
+        <ul class="footer-links">
+          <li><a href="#servicios">IA y Optimización de Procesos</a></li>
+          <li><a href="#servicios">Cierre de Ventas Alto Ticket</a></li>
+          <li><a href="#servicios">Prestigio de Marca Personal</a></li>
+          <li><a href="#metodo">Metodología</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contacto</h4>
+        <ul class="footer-links">
+          <li><a href="https://wa.me/52XXXXXXXXXX" target="_blank">WhatsApp</a></li>
+          <li><a href="mailto:comercial@dealordeal.tech">Email</a></li>
+          <li><a href="#faq">Preguntas frecuentes</a></li>
+          <li><a href="#inicio">Inicio</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span id="yr"></span> Deal or Deal. Todos los derechos reservados.</span>
+      <span>Consultoría Estratégica · IA · Marca Personal</span>
+    </div>
+  </div>
+</footer>
+
+<!-- WhatsApp Float -->
+<a href="https://wa.me/52XXXXXXXXXX?text=Hola%2C%20quiero%20agendar%20una%20consulta%20con%20Deal%20or%20Deal" class="wa-float" target="_blank" rel="noopener" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.570-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<script>
+// Copyright year
+document.getElementById('yr').textContent = new Date().getFullYear();
+
+// Nav scroll
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 40);
+}, { passive: true });
+
+// Burger drawer
+(function(){
+  var b=document.getElementById('burger'),
+      d=document.getElementById('drawer'),
+      o=document.getElementById('drawer-overlay'),
+      c=document.getElementById('drawer-close');
+  function op(){d.classList.add('open');o.classList.add('open');document.body.style.overflow='hidden';}
+  function cl(){d.classList.remove('open');o.classList.remove('open');document.body.style.overflow='';}
+  if(b)b.addEventListener('click',op);
+  if(c)c.addEventListener('click',cl);
+  if(o)o.addEventListener('click',cl);
+  if(d)d.querySelectorAll('a').forEach(function(a){a.addEventListener('click',cl);});
+})();
+
+// Scroll reveal
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((e, i) => {
+    if (e.isIntersecting) {
+      setTimeout(() => e.target.classList.add('visible'), i * 60);
+      observer.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.12 });
+document.querySelectorAll('.rv').forEach(el => observer.observe(el));
+
+// FAQ accordion
+document.querySelectorAll('.faq-q').forEach(q => {
+  q.addEventListener('click', () => {
+    const item = q.parentElement;
+    const wasOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!wasOpen) item.classList.add('open');
+  });
+});
+</script>
+
+</body>
+</html>
