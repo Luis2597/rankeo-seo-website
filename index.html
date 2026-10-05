@@ -80,6 +80,26 @@
       --sp-12: 48px; --sp-16: 64px; --sp-20: 80px; --sp-24: 96px;
     }
 
+    /* ━━━━ BROWSER SURFACES — cheapest signal a page was built, not assembled ━━━━ */
+    ::selection        { background: var(--c-orange); color: #fff; }
+    ::-moz-selection   { background: var(--c-orange); color: #fff; }
+
+    /* Custom scrollbar — thin, ink track, orange on hover */
+    html { scrollbar-width: thin; scrollbar-color: var(--c-border) transparent; }
+    ::-webkit-scrollbar              { width: 5px; height: 5px; }
+    ::-webkit-scrollbar-track        { background: transparent; }
+    ::-webkit-scrollbar-thumb        { background: var(--c-border); border-radius: 3px; }
+    ::-webkit-scrollbar-thumb:hover  { background: var(--c-orange); }
+
+    /* Caret color in all inputs */
+    input, textarea, [contenteditable] { caret-color: var(--c-orange); }
+
+    /* Global focus ring — replaces browser default blue */
+    :focus-visible {
+      outline: 2px solid var(--c-orange);
+      outline-offset: 3px;
+    }
+
     /* ━━━━ RESET ━━━━ */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html {
@@ -125,8 +145,34 @@
     .rv[data-d="4"] { transition-delay: 160ms; }
     .rv[data-d="5"] { transition-delay: 200ms; }
 
+    /* Motion diversity — horizontal reveals for side panels */
+    .rv-l {
+      opacity: 0; transform: translateX(-28px);
+      transition:
+        opacity var(--dur-slow) var(--ease-out),
+        transform var(--dur-slow) var(--ease-out);
+    }
+    .rv-l.in { opacity: 1; transform: translateX(0); }
+
+    .rv-r {
+      opacity: 0; transform: translateX(28px);
+      transition:
+        opacity var(--dur-slow) 80ms var(--ease-out),
+        transform var(--dur-slow) 80ms var(--ease-out);
+    }
+    .rv-r.in { opacity: 1; transform: translateX(0); }
+
+    /* Scale-in for feature callout areas */
+    .rv-z {
+      opacity: 0; transform: scale(0.97);
+      transition:
+        opacity var(--dur-slow) var(--ease-out),
+        transform var(--dur-slow) var(--ease-out);
+    }
+    .rv-z.in { opacity: 1; transform: scale(1); }
+
     @media (prefers-reduced-motion: reduce) {
-      .rv { transition: none; opacity: 1; transform: none; }
+      .rv, .rv-l, .rv-r, .rv-z { transition: none; opacity: 1; transform: none; }
     }
 
     /* ━━━━ KEYFRAMES ━━━━ */
@@ -170,8 +216,8 @@
     .logo { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 21px; letter-spacing: -.025em; }
     .logo em { color: var(--c-orange); font-style: normal; }
     .nav-links { display: flex; align-items: center; gap: 28px; list-style: none; font-size: 13.5px; font-weight: 500; color: rgba(10,9,8,.5); }
-    .nav-links a { transition: color var(--dur-fast); }
-    .nav-links a:hover { color: var(--c-ink); }
+    .nav-links a { transition: color var(--dur-fast); text-underline-offset: 4px; }
+    .nav-links a:hover { color: var(--c-ink); text-decoration: underline; text-decoration-color: var(--c-orange); text-decoration-thickness: 1.5px; }
     .nav-cta {
       display: inline-flex; align-items: center; gap: 6px;
       background: var(--c-ink); color: var(--c-white);
@@ -216,15 +262,13 @@
 
     /* Left: text */
     .hero-text { flex: 1; min-width: 0; }
-    .eyebrow { display: inline-flex; align-items: center; gap: 10px; margin-bottom: 28px; flex-wrap: wrap; max-width: 100%; }
-    .eyebrow-d { width: 22px; height: 1px; background: var(--c-orange); }
-    .eyebrow-t { font-size: 10.5px; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; color: var(--c-orange); }
+    /* .eyebrow removed — kicker above heading is banned (craft-floor §refuse) */
 
     h1.ht { font-family: 'Syne', sans-serif; letter-spacing: -.03em; margin-bottom: 24px; overflow-wrap: break-word; word-break: break-word; }
     h1.ht .tl { display: block; font-weight: 700; font-size: clamp(2.4rem,7vw,6rem); line-height: 1; color: rgba(10,9,8,.32); }
     h1.ht .th { display: block; font-weight: 800; font-size: clamp(2.8rem,8.5vw,7.5rem); line-height: .95; color: var(--c-ink); }
     h1.ht .ta { display: block; font-weight: 800; font-size: clamp(2.8rem,8.5vw,7.5rem); line-height: .95; color: var(--c-orange); }
-    h1.ht .tg { display: block; font-weight: 500; font-size: clamp(.85rem,1.4vw,1rem); letter-spacing: .15em; text-transform: uppercase; color: rgba(10,9,8,.38); margin-top: 20px; font-family: 'Plus Jakarta Sans', sans-serif; }
+    /* .tg removed — secondary label below heading (eyebrow-below variant, banned) */
     @media (max-width: 480px) {
       h1.ht .tl { font-size: clamp(1.75rem,10vw,2.4rem); }
       h1.ht .th { font-size: clamp(2rem,12vw,2.8rem); }
@@ -353,18 +397,40 @@
     .bi { display: flex; align-items: center; gap: 12px; font-size: 11.5px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: rgba(255,255,255,.38); white-space: nowrap; }
     .bd { width: 4px; height: 4px; border-radius: 50%; background: var(--c-orange); flex-shrink: 0; }
 
-    /* ━━━━ MANIFESTO ━━━━ */
-    .manifesto { border-top: 1px solid var(--c-border); padding: 60px 0; }
-    .mf-inner { display: flex; align-items: center; gap: 48px; }
-    .mf-q { font-family: 'Syne', sans-serif; font-weight: 800; font-size: clamp(1.5rem,3vw,2.2rem); letter-spacing: -.025em; line-height: 1.15; flex: 1; }
+    /* ━━━━ MANIFESTO — editorial dark strip ━━━━ */
+    .manifesto {
+      background: var(--c-ink);
+      padding: 96px 0;
+      position: relative;
+      overflow: hidden;
+    }
+    /* Subtle orange accent line at top */
+    .manifesto::before {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent 0%, var(--c-orange) 35%, transparent 100%);
+    }
+    .mf-inner { display: grid; grid-template-columns: 1fr auto; align-items: start; gap: 64px; }
+    .mf-q {
+      font-family: 'Syne', sans-serif; font-weight: 800;
+      font-size: clamp(2rem,4.5vw,3.8rem);
+      letter-spacing: -.035em; line-height: 1.05;
+      color: rgba(255,255,255,.92);
+    }
     .mf-q em { color: var(--c-orange); font-style: normal; }
-    .mf-rule { width: 1px; height: 64px; background: var(--c-border); flex-shrink: 0; }
-    .mf-txt { font-size: 15px; color: var(--c-subtle); line-height: 1.75; max-width: 340px; }
+    .mf-rule { display: none; }
+    .mf-txt {
+      font-size: 15px; color: rgba(255,255,255,.38);
+      line-height: 1.8; max-width: 300px;
+      padding-top: 10px;
+    }
+    @media (max-width: 900px) {
+      .mf-inner { grid-template-columns: 1fr; gap: 28px; }
+      .mf-txt { max-width: none; }
+    }
 
-    /* ━━━━ SECTION LABEL ━━━━ */
-    .sl { display: flex; align-items: center; gap: 12px; margin-bottom: 18px; flex-wrap: wrap; }
-    .sl-d { width: 26px; height: 1px; background: var(--c-orange); flex-shrink: 0; }
-    .sl-t { font-size: 10.5px; font-weight: 700; letter-spacing: .15em; text-transform: uppercase; color: var(--c-orange); }
+    /* .sl section labels removed — kicker above heading is banned (craft-floor §refuse) */
 
     /* ━━━━ HOW IT WORKS ━━━━ */
     .hiw { padding: 120px 0; border-top: 1px solid var(--c-border); }
@@ -444,10 +510,11 @@
     .pc {
       border-radius: 18px; border: 1.5px solid var(--c-border);
       overflow: hidden; cursor: default;
+      box-shadow: 0 1px 3px rgba(0,0,0,.05), 0 1px 2px rgba(0,0,0,.03);
       transition: transform var(--dur-base) var(--ease-spring), box-shadow var(--dur-base);
       background: var(--c-white);
     }
-    .pc:hover { transform: translateY(-5px); box-shadow: 0 16px 48px rgba(0,0,0,.09); }
+    .pc:hover { transform: translateY(-5px); box-shadow: 0 20px 56px rgba(0,0,0,.10), 0 4px 16px rgba(0,0,0,.04); }
     /* Mini browser mockup */
     .pc-browser { background: var(--c-surface); padding: 10px 12px; display: flex; align-items: center; gap: 6px; border-bottom: 1px solid var(--c-border); }
     .pc-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--c-border); }
@@ -475,9 +542,10 @@
     .pcp-img { padding: 0; position: relative; overflow: hidden; }
     .pcp-img img { width: 100%; height: 155px; object-fit: cover; display: block; transition: transform var(--dur-slow) var(--ease-out); }
     .pc:hover .pcp-img img { transform: scale(1.05); }
-    .pcp-ov { position: absolute; inset: 0; background: linear-gradient(to top, rgba(10,9,8,.9) 0%, rgba(10,9,8,.12) 65%, transparent 100%); display: flex; flex-direction: column; justify-content: flex-end; padding: 14px 16px; }
+    .pcp-ov { position: absolute; inset: 0; background: linear-gradient(to top, rgba(10,9,8,.88) 0%, rgba(10,9,8,.08) 60%, transparent 100%); display: flex; flex-direction: column; justify-content: flex-end; padding: 14px 16px; transition: background var(--dur-base); }
+    .pc:hover .pcp-ov { background: linear-gradient(to top, rgba(10,9,8,.95) 0%, rgba(10,9,8,.20) 60%, transparent 100%); }
     .pcp-m { font-size: 9.5px; font-weight: 700; color: rgba(255,255,255,.55); text-transform: uppercase; letter-spacing: .12em; }
-    .pcp-n { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 1.75rem; color: var(--c-orange); line-height: 1; margin: 3px 0 2px; }
+    .pcp-n { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 2.1rem; color: var(--c-orange); line-height: 1; margin: 4px 0 3px; letter-spacing: -.035em; }
     .pcp-s { font-size: 10.5px; color: rgba(255,255,255,.72); line-height: 1.35; }
 
     /* ━━━━ VIDEO SECTION ━━━━ */
@@ -496,8 +564,9 @@
     .testi { padding: 120px 0; border-top: 1px solid var(--c-border); background: var(--c-bg); }
     .testi-h { font-family: 'Syne', sans-serif; font-weight: 800; font-size: clamp(2rem,4vw,3.4rem); letter-spacing: -.03em; line-height: 1.05; margin-bottom: 52px; }
     .tgrid { display: grid; grid-template-columns: repeat(3,1fr); gap: 14px; }
-    .tcard { background: white; border: 1.5px solid var(--c-border); border-radius: 20px; padding: 32px 28px; display: flex; flex-direction: column; gap: 12px; }
-    .tcard-metric { font-family: 'Syne', sans-serif; font-weight: 800; font-size: clamp(2.4rem,4vw,3.2rem); letter-spacing: -.03em; color: var(--c-ink); line-height: 1; }
+    .tcard { background: white; border: 1.5px solid var(--c-border); border-radius: 20px; padding: 32px 28px; display: flex; flex-direction: column; gap: 12px; box-shadow: 0 1px 3px rgba(0,0,0,.05); transition: box-shadow var(--dur-base), transform var(--dur-base) var(--ease-spring); }
+    .tcard:hover { box-shadow: 0 12px 40px rgba(0,0,0,.08); transform: translateY(-3px); }
+    .tcard-metric { font-family: 'Syne', sans-serif; font-weight: 800; font-size: clamp(2.8rem,4.5vw,3.8rem); letter-spacing: -.04em; color: var(--c-ink); line-height: .95; }
     .tcard-metric span { color: var(--c-orange); }
     .tcard-label { font-size: 13px; font-weight: 600; color: var(--c-ink); text-transform: uppercase; letter-spacing: .08em; }
     .tcard-desc { font-size: 13.5px; color: var(--c-subtle); line-height: 1.65; flex: 1; }
@@ -507,13 +576,14 @@
     .pricing { padding: 120px 0; border-top: 1px solid var(--c-border); background: var(--c-surface); }
     .pricing-h { font-family: 'Syne', sans-serif; font-weight: 800; font-size: clamp(2rem,4vw,3.4rem); letter-spacing: -.03em; margin-bottom: 52px; }
     .plans { display: grid; grid-template-columns: repeat(3,1fr); gap: 14px; }
-    .plan { background: var(--c-bg); border: 1.5px solid var(--c-border); border-radius: 20px; padding: 30px; display: flex; flex-direction: column; position: relative; transition: transform var(--dur-base) var(--ease-spring), box-shadow var(--dur-base); }
+    .plan { background: var(--c-bg); border: 1.5px solid var(--c-border); border-radius: 20px; padding: 30px; display: flex; flex-direction: column; position: relative; transition: transform var(--dur-base) var(--ease-spring), box-shadow var(--dur-base); box-shadow: 0 1px 3px rgba(0,0,0,.04); }
     .plan:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,0,0,.07); }
-    .plan.hot { background: var(--c-ink); border-color: var(--c-ink); }
+    .plan.hot { background: var(--c-ink); border-color: var(--c-ink); box-shadow: 0 0 0 1px rgba(240,78,35,.18), 0 24px 64px rgba(0,0,0,.22), 0 4px 16px rgba(240,78,35,.08); }
+    .plan.hot:hover { box-shadow: 0 0 0 1px rgba(240,78,35,.28), 0 32px 80px rgba(0,0,0,.28), 0 4px 20px rgba(240,78,35,.12); }
     .ptag { position: absolute; top: -1px; right: 24px; background: var(--c-orange); color: white; font-size: 10px; font-weight: 700; padding: 5px 11px; border-radius: 0 0 8px 8px; text-transform: uppercase; letter-spacing: .1em; }
     .pname { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .15em; color: var(--c-subtle); margin-bottom: 22px; }
     .plan.hot .pname { color: rgba(255,255,255,.4); }
-    .pprice { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 46px; letter-spacing: -.04em; line-height: 1; margin-bottom: 4px; }
+    .pprice { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 52px; letter-spacing: -.045em; line-height: 1; margin-bottom: 4px; }
     .plan.hot .pprice { color: white; }
     .pper { font-size: 12px; color: var(--c-subtle); margin-bottom: 6px; }
     .plan.hot .pper { color: rgba(255,255,255,.4); }
@@ -730,12 +800,7 @@
 
     <!-- Text side -->
     <div class="hero-text">
-      <div class="eyebrow anim-down" style="animation-delay:60ms">
-        <div class="eyebrow-d" aria-hidden="true"></div>
-        <span class="eyebrow-t">Auditoría SEO + GEO gratis · Sin tarjeta</span>
-        <div class="eyebrow-d" aria-hidden="true"></div>
-      </div>
-      <div class="geo-badge anim-down" style="animation-delay:90ms; margin-bottom: 16px; margin-top: -8px;" title="Optimizado para Google AI Overviews, ChatGPT y Perplexity">
+      <div class="geo-badge anim-down" style="animation-delay:60ms; margin-bottom: 24px;" title="Optimizado para Google AI Overviews, ChatGPT y Perplexity">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09z"/></svg>
         SEO + GEO · Google · ChatGPT · Perplexity · AI Overviews
       </div>
@@ -744,7 +809,6 @@
         <span class="tl">Agencia SEO + GEO</span>
         <span class="th">Colombia, México</span>
         <span class="ta">y USA</span>
-        <span class="tg">Visibles en Google · ChatGPT · Perplexity</span>
       </h1>
 
       <p class="hero-desc anim-up" style="animation-delay:220ms">
@@ -894,8 +958,7 @@
 <section class="hiw" id="como-funciona" aria-labelledby="hiw-title">
   <div class="con">
     <div class="hiw-g">
-      <div class="hiw-l rv">
-        <div class="sl"><div class="sl-d" aria-hidden="true"></div><span class="sl-t">El proceso</span></div>
+      <div class="hiw-l rv-l">
         <h2 class="hiw-h" id="hiw-title">Tres pasos.<br/><em>Resultados</em><br/>reales.</h2>
         <p class="hiw-s">Sin contratos largos. Sin letra pequeña. Visibilidad medible en Google y en las IAs.</p>
       </div>
@@ -930,7 +993,6 @@
 <section class="audit" id="auditoria" aria-labelledby="audit-title">
   <div class="con">
     <div class="aw">
-      <div class="sl rv"><div class="sl-d" aria-hidden="true"></div><span class="sl-t">Herramienta gratuita</span></div>
       <h2 class="ah rv" id="audit-title">Descubre por qué<br/>Google te ignora.</h2>
       <p class="asb rv">Analiza tu sitio en segundos. Sin registrarte. Sin tarjeta. Solo la verdad.</p>
       <form onsubmit="doAudit(event)" id="auditForm" class="rv" novalidate>
@@ -958,7 +1020,6 @@
 <!-- ━━━ PORTFOLIO ━━━ -->
 <section class="portfolio" id="portafolio" aria-labelledby="port-title">
   <div class="con">
-    <div class="sl rv"><div class="sl-d" aria-hidden="true"></div><span class="sl-t">Resultados</span></div>
     <h2 class="ph rv" id="port-title">Resultados que<br/>hablan solos.</h2>
     <p class="ps rv">Proyectos demo que muestran lo que hacemos: diseño web + posicionamiento SEO para negocios en Colombia y México.</p>
 
@@ -1061,7 +1122,6 @@
   <div class="con">
     <div class="vid-top rv">
       <div>
-        <div class="sl"><div class="sl-d" style="background:rgba(255,255,255,.3)"></div><span class="sl-t" style="color:rgba(255,255,255,.4)">Educación gratuita</span></div>
         <h2 class="vid-h">¿Qué es el SEO y por qué<br/><em>tu negocio lo necesita?</em></h2>
       </div>
       <p class="vid-sub">En menos de 10 minutos entenderás por qué tus clientes no te encuentran en Google — y exactamente cómo lo solucionamos para negocios en Colombia y México.</p>
@@ -1081,7 +1141,6 @@
 <!-- ━━━ RESULTADOS ━━━ -->
 <section class="testi" aria-label="Resultados típicos">
   <div class="con">
-    <div class="sl rv"><div class="sl-d" aria-hidden="true"></div><span class="sl-t">Resultados</span></div>
     <h2 class="testi-h rv">Lo que ocurre cuando<br/>el SEO se hace bien.</h2>
     <div class="tgrid rv" data-d="1">
       <div class="tcard">
@@ -1109,7 +1168,6 @@
 <!-- ━━━ PRICING ━━━ -->
 <section class="pricing" id="precios" aria-labelledby="pricing-title">
   <div class="con">
-    <div class="sl rv"><div class="sl-d" aria-hidden="true"></div><span class="sl-t">Planes</span></div>
     <h2 class="pricing-h rv" id="pricing-title">Inversión real.<br/>Sin sorpresas.</h2>
     <div class="plans" role="list">
       <div class="plan rv" data-d="1" role="listitem">
@@ -1165,8 +1223,7 @@
 <section class="faq" id="faq" aria-labelledby="faq-title">
   <div class="con">
     <div class="fq-g">
-      <div class="fq-l rv">
-        <div class="sl"><div class="sl-d" aria-hidden="true"></div><span class="sl-t">Preguntas frecuentes</span></div>
+      <div class="fq-l rv-l">
         <h2 class="fq-h" id="faq-title">Todo lo que<br/>necesitas<br/><em>saber.</em></h2>
         <p class="fq-s">Si tienes otra pregunta, escríbenos por WhatsApp y te respondemos en menos de 1 hora.</p>
       </div>
@@ -1245,8 +1302,7 @@
 <section class="contact" id="contacto" aria-labelledby="contact-title">
   <div class="con">
     <div class="cg">
-      <div class="rv">
-        <div class="sl"><div class="sl-d" aria-hidden="true"></div><span class="sl-t">Contacto</span></div>
+      <div class="rv-l">
         <h2 class="ch" id="contact-title">¿Listo para subir<br/>en Google?</h2>
         <p class="cd">Cuéntanos sobre tu negocio y te preparamos una auditoría gratuita personalizada. Sin presión, sin compromiso.</p>
         <ul class="perks">
@@ -1256,7 +1312,7 @@
           <li class="perk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>Garantía de devolución de 60 días</li>
         </ul>
       </div>
-      <div id="cwrap" class="rv" data-d="2">
+      <div id="cwrap" class="rv-r" data-d="2">
         <form class="cform" onsubmit="sendContact(event)" novalidate>
           <div class="cf">
             <label for="cnom">Nombre</label>
@@ -1352,8 +1408,8 @@ drawer.querySelectorAll('[data-c]').forEach(el => el.addEventListener('click', (
   bico.innerHTML = BARS;
 }));
 
-/* ── Scroll reveal with IntersectionObserver ── */
-const rvEls = document.querySelectorAll('.rv');
+/* ── Scroll reveal with IntersectionObserver (handles .rv, .rv-l, .rv-r, .rv-z) ── */
+const rvEls = document.querySelectorAll('.rv, .rv-l, .rv-r, .rv-z');
 const rvObs = new IntersectionObserver(entries => {
   entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); rvObs.unobserve(e.target); } });
 }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
