@@ -600,7 +600,11 @@ const CLIENTS={
       {p:"alta",cat:"Conversión",t:"Links CTA rotos — Cotizar da 404",d:"Los botones \"Cotizar\" apuntan a jetcab.mx/jetcab.mx/cotizar (dominio duplicado = error 404). Corregir la URL a /cotizar en el panel de WordPress. Fix de 10 minutos."},
       {p:"alta",cat:"GEO / IA",t:"Sin datos estructurados (JSON-LD)",d:"Google y las IAs (ChatGPT, Perplexity) no tienen información estructurada de JETCAB. Agregar schema LocalBusiness + Service en el homepage con Insert Headers and Footers."},
       {p:"media",cat:"SEO técnico",t:"og:locale incorrecto — es_ES en vez de es_MX",d:"El sitio está configurado como es_ES (España) en vez de es_MX (México). Cambiarlo en la configuración de Yoast SEO o RankMath. Afecta señales geográficas y distribución en redes."},
-      {p:"media",cat:"SEO técnico",t:"Páginas de WooCommerce indexadas",d:"/cart/, /checkout/ y /my-account/ aparecen en el sitemap y Google las rastrea. Agregar noindex a esas páginas en Yoast SEO para liberar presupuesto de rastreo."}
+      {p:"media",cat:"SEO técnico",t:"Páginas de WooCommerce indexadas",d:"/cart/, /checkout/ y /my-account/ aparecen en el sitemap y Google las rastrea. Agregar noindex a esas páginas en Yoast SEO para liberar presupuesto de rastreo."},
+      {p:"alta",cat:"Performance",t:"21 scripts JS activos — sobrecarga en móvil",d:"El sitio carga 21 archivos JavaScript separados. Google penaliza la velocidad en móvil. Instalar WP Rocket o Perfmatters para combinar y diferir scripts no críticos. Verificado 05 Oct."},
+      {p:"alta",cat:"SEO técnico",t:"6 imágenes sin dimensiones width/height",d:"6 de 8 imágenes del homepage no tienen width/height declarados. Esto causa Cumulative Layout Shift (CLS) — el sitio 'brinca' al cargar, lo que Google penaliza. Agregar dimensiones en el editor de WordPress."},
+      {p:"media",cat:"SEO técnico",t:"H2 vacíos en el homepage",d:"Hay 2 etiquetas H2 sin texto visible. Esto confunde a Google al indexar la jerarquía de contenido. Revisarlos en el constructor de páginas (Elementor/Divi) y eliminar o completar su contenido."},
+      {p:"media",cat:"SEO técnico",t:"OG image es un logo cuadrado 1024×1024",d:"La imagen que aparece al compartir en WhatsApp o LinkedIn es el logo en formato cuadrado. Crear una imagen 1200×630px con foto de avión + nombre JETCAB para que los enlaces se vean profesionales."}
     ],
     pagos:{total:5,monto:2500,moneda:"MXN",realizados:1,cuotas:[
       {n:1,mes:"1ª quincena Oct 2026",monto:"$2,500 MXN",estado:"pagado"},
@@ -610,37 +614,39 @@ const CLIENTS={
       {n:5,mes:"1ª quincena Dic 2026",monto:"$2,500 MXN",estado:"pendiente"}
     ]},
     metrics:[
-      {lbl:"Usuarios activos (7 días)",val:"111",sub:"↑70.8% vs semana anterior · Google Analytics",estado:"neutral"},
-      {lbl:"Sesiones orgánicas Google",val:"99",sub:"↑153.8% · SEO funcionando",estado:"neutral"},
+      {lbl:"Usuarios activos (7 días)",val:"111",sub:"↑70.8% vs sem. anterior · Google Analytics",estado:"neutral"},
+      {lbl:"Sesiones orgánicas Google",val:"99",sub:"↑153.8% · SEO en crecimiento",estado:"neutral"},
       {lbl:"Páginas vistas",val:"229",sub:"↑70.9% vs semana anterior",estado:"neutral"},
-      {lbl:"Ciudad principal",val:"CDMX",sub:"40 usuarios activos · ↑207%",estado:"neutral"},
-      {lbl:"Errores críticos",val:"5",sub:"identificados en auditoría técnica",estado:"critico"},
-      {lbl:"JSON-LD schemas",val:"0",sub:"pendiente implementar — urgente",estado:"critico"},
-      {lbl:"GEO Score",val:"0/10",sub:"sin datos estructurados para IAs",estado:"critico"},
-      {lbl:"Páginas indexadas",val:"28",sub:"site:jetcab.mx en Google",estado:"neutral"}
+      {lbl:"Tiempo de carga real",val:"1.5s",sub:"Medido 05 Oct · TTFB 294ms · Desktop",estado:"neutral"},
+      {lbl:"Scripts JS activos",val:"21",sub:"Crítico: sobrecarga el sitio en móvil",estado:"critico"},
+      {lbl:"JSON-LD LocalBusiness",val:"Ausente",sub:"IAs (ChatGPT/Perplexity) no pueden citar JETCAB",estado:"critico"},
+      {lbl:"GEO Score",val:"0/10",sub:"Sin schema AirCharter ni LocalBusiness",estado:"critico"},
+      {lbl:"Páginas indexadas",val:"28",sub:"site:jetcab.mx · Google Search",estado:"neutral"}
     ],
     geo:{
       score:0,maxScore:10,
-      resumen:"JETCAB aún no aparece en ChatGPT, Perplexity ni AI Overviews. El paso crítico es implementar JSON-LD para que las IAs puedan leer y citar tu negocio.",
+      resumen:"JETCAB no aparece cuando un CEO busca en ChatGPT 'jet privado CDMX en 2 horas' ni cuando una familia busca en Perplexity 'vuelo privado navidad México'. El paso 1 es implementar JSON-LD AirCharter + FAQ con las preguntas de sus 3 avatares.",
       plataformas:[
-        {nombre:"ChatGPT",bg:"#10A37F",estado:"ausente",detalle:"JETCAB no aparece al preguntar por jets privados o vuelos ejecutivos en México."},
-        {nombre:"Perplexity",bg:"#6B4FBB",estado:"ausente",detalle:"Sin presencia en búsquedas de aviación privada en Perplexity AI."},
-        {nombre:"AI Overviews",bg:"#4285F4",estado:"ausente",detalle:"Google AI Overviews no incluye JETCAB en respuestas sobre vuelos ejecutivos CDMX."},
-        {nombre:"Google Search",bg:"#EA4335",estado:"parcial",detalle:"28 páginas indexadas, pero sin schema que las IAs puedan procesar correctamente."}
+        {nombre:"ChatGPT",bg:"#10A37F",estado:"ausente",detalle:"'Jet privado en 2 horas CDMX', 'renta avión privado México CEO' — JETCAB no aparece en ninguna de estas búsquedas de alto ticket."},
+        {nombre:"Perplexity",bg:"#6B4FBB",estado:"ausente",detalle:"Sin schema AirCharter ni contenido GEO. Las IAs citan a competidores con datos estructurados."},
+        {nombre:"AI Overviews",bg:"#4285F4",estado:"ausente",detalle:"Para aparecer en AI Overviews de Google se necesita FAQ schema con preguntas como '¿Cuánto cuesta rentar un jet CDMX-Miami?'"},
+        {nombre:"Google Search",bg:"#EA4335",estado:"parcial",detalle:"28 páginas indexadas y +154% orgánico. Base sólida — falta schema para convertir tráfico en citas de IAs."}
       ],
       pendiente:[
-        {done:false,item:"JSON-LD LocalBusiness + AirCharter Service"},
-        {done:false,item:"FAQ schema con preguntas de jets privados MX"},
-        {done:false,item:"Contenido GEO-optimizado para IAs"},
-        {done:false,item:"Menciones en directorios especializados de aviación"}
+        {done:false,item:"JSON-LD AirCharter + LocalBusiness (hubs: CDMX, Toluca, MTY, GDL)"},
+        {done:false,item:"FAQ schema: '¿Jet listo en 2 horas?', '¿Cuánto cuesta CDMX–Miami?', '¿Vuelo privado con mascotas?'"},
+        {done:false,item:"Página GEO: 'Vuelos privados navidad México 2026' (Avatar C · Dic)"},
+        {done:false,item:"Página GEO: 'Jet privado CDMX–Miami para negocios' (Avatar A+B · Oct)"},
+        {done:false,item:"Menciones en directorios de aviación privada (NBAA, Private Jet Card Comparisons)"}
       ]
     },
     leads:{
       mes:"Octubre 2026",
-      total:3,
-      whaClicks:12,
-      llamadas:5,
-      formEnvios:3,
+      total:null,
+      whaClicks:null,
+      llamadas:null,
+      formEnvios:null,
+      pendingIntegration:true,
       trafico:{
         usuarios:111,
         crecimiento:"+70.8%",
@@ -651,16 +657,13 @@ const CLIENTS={
         topPagina:"Aviones Privados y Helicópteros en Renta",
         topPaginaVistas:98
       },
-      lista:[
-        {fecha:"03 Oct",canal:"wa",msg:"Cotización vuelo privado CDMX–Cancún",estado:"nuevo"},
-        {fecha:"01 Oct",canal:"form",msg:"Renta helicóptero ejecutivo fin de semana",estado:"contactado"},
-        {fecha:"28 Sep",canal:"call",msg:"Traslado aeropuerto Toluca – AICM ejecutivo",estado:"en_proceso"}
-      ]
+      lista:[]
     },
     actividad:[
-      {fecha:"05 Oct 2026",tipo:"entregable",titulo:"Reporte GEO + SEO entregado",desc:"Auditoría completa con 8 problemas críticos, GEO score inicial y plan de acción Q4 2026."},
-      {fecha:"03 Oct 2026",tipo:"auditoria",titulo:"Auditoría técnica completada",desc:"Revisión de velocidad, indexación, schema, presencia en IAs y errores críticos de conversión."},
-      {fecha:"01 Oct 2026",tipo:"inicio",titulo:"Proyecto iniciado",desc:"Onboarding completado. Accesos a WordPress y Google Search Console recibidos. Auditoría iniciada."}
+      {fecha:"05 Oct 2026",tipo:"entregable",titulo:"Reporte GEO + SEO entregado",desc:"Auditoría completa de jetcab.mx: 8 problemas verificados, métricas reales de Analytics, plan Q4 alineado a campaña 25 años y avatares UHNWI."},
+      {fecha:"05 Oct 2026",tipo:"auditoria",titulo:"Auditoría técnica directa de jetcab.mx",desc:"Análisis real del sitio: 21 scripts JS, 6 imágenes sin dimensiones, 0 schema AirCharter, tiempo de carga 1.5s (TTFB 294ms). Datos verificados 05 Oct."},
+      {fecha:"03 Oct 2026",tipo:"auditoria",titulo:"Revisión estrategia Q4 — Brief 25 Años",desc:"Lectura del Master Brief JETCAB: avatares A/B/C identificados, tickets $680K MXN, hubs CDMX/Toluca/MTY/GDL. Plan GEO alineado a campaña Cierre de Año."},
+      {fecha:"01 Oct 2026",tipo:"inicio",titulo:"Proyecto iniciado",desc:"Onboarding completado. Analytics conectado. Auditoría iniciada."}
     ]
   },
   colegio_san_martin:{
@@ -1218,15 +1221,24 @@ function renderLeads(){
         </div>`);
     }
   }
-  document.getElementById("leadsList").innerHTML=l.lista.map(ld=>`
-    <div class="lead-item">
-      <span class="lead-canal ${ld.canal}">${CANAL_LABEL[ld.canal]||ld.canal}</span>
-      <div style="flex:1">
-        <div class="lead-msg">${ld.msg}</div>
-        <div class="lead-meta">${ld.fecha}</div>
-      </div>
-      <span class="lead-estado ${ld.estado}">${ld.estado==="nuevo"?"Nuevo":ld.estado==="contactado"?"Contactado":"En proceso"}</span>
-    </div>`).join("")||`<p style="font-size:12px;color:var(--sub)">Aún no hay leads registrados este período.</p>`;
+  const leadsListEl=document.getElementById("leadsList");
+  if(l.pendingIntegration){
+    leadsListEl.innerHTML=`<div style="background:var(--surf);border:1px solid var(--bd);border-radius:12px;padding:20px 18px;text-align:center">
+      <div style="font-size:28px;margin-bottom:10px">📲</div>
+      <div style="font-weight:700;font-size:14px;color:var(--ink);margin-bottom:6px">Rastreo de leads en configuración</div>
+      <div style="font-size:12px;color:var(--sub);line-height:1.6;max-width:340px;margin:0 auto">Para ver tus leads reales (WhatsApp, formularios, llamadas) necesitamos conectar WhatsApp Business API o revisar los envíos en WordPress. Rankeo lo configura en la próxima quincena.</div>
+    </div>`;
+  } else {
+    leadsListEl.innerHTML=l.lista.map(ld=>`
+      <div class="lead-item">
+        <span class="lead-canal ${ld.canal}">${CANAL_LABEL[ld.canal]||ld.canal}</span>
+        <div style="flex:1">
+          <div class="lead-msg">${ld.msg}</div>
+          <div class="lead-meta">${ld.fecha}</div>
+        </div>
+        <span class="lead-estado ${ld.estado}">${ld.estado==="nuevo"?"Nuevo":ld.estado==="contactado"?"Contactado":"En proceso"}</span>
+      </div>`).join("")||`<p style="font-size:12px;color:var(--sub)">Aún no hay leads registrados este período.</p>`;
+  }
   if(cc.actividad){
     const ICONS={
       auditoria:`<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>`,

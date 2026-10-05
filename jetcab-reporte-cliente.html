@@ -2,1678 +2,489 @@
 <html lang="es-MX">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Diagnóstico Digital — JETCAB × Rankeo</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Diagnóstico SEO + GEO — JETCAB | Rankeo</title>
+<meta name="robots" content="noindex,nofollow">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-  :root {
-    --ink: #0A0908;
-    --gold: #C9A84C;
-    --gold-light: #F0D080;
-    --orange: #F04E23;
-    --bg: #0D0D0D;
-    --surface: #161616;
-    --surface2: #1E1E1E;
-    --border: #2A2A2A;
-    --subtle: #666;
-    --white: #FFFFFF;
-    --danger: #E53E3E;
-    --success: #38A169;
-    --warn: #D69E2E;
-  }
-
-  html { scroll-behavior: smooth; }
-
-  body {
-    font-family: 'Inter', sans-serif;
-    background: var(--bg);
-    color: var(--white);
-    line-height: 1.6;
-    font-size: 16px;
-  }
-
-  /* ── SLIDE LAYOUT ── */
-  .slide {
-    min-height: 100vh;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 80px 120px;
-    position: relative;
-    overflow: hidden;
-    border-bottom: 1px solid var(--border);
-  }
-
-  @media (max-width: 900px) {
-    .slide { padding: 60px 40px; }
-  }
-  @media (max-width: 600px) {
-    .slide { padding: 48px 24px; }
-  }
-
-  /* ── SLIDE 1: COVER ── */
-  .slide-cover {
-    background: var(--bg);
-    justify-content: space-between;
-  }
-
-  .slide-cover::before {
-    content: '';
-    position: absolute;
-    top: -200px; right: -200px;
-    width: 700px; height: 700px;
-    background: radial-gradient(circle, rgba(201,168,76,0.12) 0%, transparent 70%);
-    pointer-events: none;
-  }
-
-  .cover-top {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    margin-bottom: auto;
-    padding-top: 0;
-  }
-
-  .brand-badge {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-  }
-
-  .brand-dot {
-    width: 8px; height: 8px;
-    border-radius: 50%;
-    background: var(--gold);
-  }
-
-  .brand-name {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-weight: 700;
-    font-size: 15px;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: var(--gold);
-  }
-
-  .date-tag {
-    font-size: 13px;
-    color: var(--subtle);
-    letter-spacing: 0.08em;
-  }
-
-  .cover-center {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 80px 0 60px;
-  }
-
-  .cover-eyebrow {
-    font-size: 12px;
-    letter-spacing: 0.25em;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 24px;
-    font-weight: 500;
-  }
-
-  .cover-h1 {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-weight: 900;
-    font-size: clamp(64px, 8vw, 120px);
-    line-height: 0.9;
-    letter-spacing: -0.02em;
-    text-transform: uppercase;
-    color: var(--white);
-    margin-bottom: 40px;
-  }
-
-  .cover-h1 span { color: var(--gold); }
-
-  .cover-sub {
-    font-size: 18px;
-    color: rgba(255,255,255,0.55);
-    max-width: 560px;
-    line-height: 1.7;
-    font-weight: 300;
-  }
-
-  .cover-bottom {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    border-top: 1px solid var(--border);
-    padding-top: 32px;
-  }
-
-  .cover-stats {
-    display: flex;
-    gap: 48px;
-  }
-
-  .cover-stat {
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-  }
-
-  .cover-stat-number {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-weight: 800;
-    font-size: 36px;
-    color: var(--white);
-    line-height: 1;
-  }
-
-  .cover-stat-label {
-    font-size: 11px;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--subtle);
-  }
-
-  .cover-cta {
-    font-size: 13px;
-    color: var(--gold);
-    display: flex;
-    align-items: center;
-    gap: 8px;
-  }
-
-  /* ── SECTION HEADER ── */
-  .section-label {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 56px;
-  }
-
-  .section-num {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 13px;
-    font-weight: 700;
-    letter-spacing: 0.2em;
-    color: var(--gold);
-  }
-
-  .section-line {
-    width: 48px;
-    height: 1px;
-    background: var(--gold);
-    opacity: 0.5;
-  }
-
-  .section-title-text {
-    font-size: 12px;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--subtle);
-  }
-
-  /* ── SLIDE TITLES ── */
-  .slide-h2 {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-weight: 900;
-    font-size: clamp(42px, 5vw, 72px);
-    text-transform: uppercase;
-    letter-spacing: -0.01em;
-    line-height: 0.95;
-    margin-bottom: 48px;
-    color: var(--white);
-  }
-
-  .slide-h2 em {
-    font-style: normal;
-    color: var(--gold);
-  }
-
-  /* ── SLIDE 2: RESUMEN EJECUTIVO ── */
-  .slide-exec { background: var(--bg); }
-
-  .exec-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 32px;
-    margin-top: 0;
-  }
-
-  @media (max-width: 768px) {
-    .exec-grid { grid-template-columns: 1fr; }
-  }
-
-  .exec-card {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 4px;
-    padding: 36px;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .exec-card::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0;
-    width: 3px; height: 100%;
-    background: var(--gold);
-  }
-
-  .exec-card-icon {
-    font-size: 28px;
-    margin-bottom: 20px;
-    display: block;
-  }
-
-  .exec-card-title {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 22px;
-    font-weight: 700;
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
-    color: var(--white);
-    margin-bottom: 12px;
-  }
-
-  .exec-card-body {
-    font-size: 14px;
-    color: rgba(255,255,255,0.6);
-    line-height: 1.7;
-  }
-
-  /* ── SLIDE 3: PROBLEMAS ── */
-  .slide-problems { background: var(--surface); }
-
-  .problems-list {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-  }
-
-  .problem-row {
-    display: grid;
-    grid-template-columns: auto 1fr auto auto;
-    align-items: center;
-    gap: 24px;
-    padding: 24px 28px;
-    background: var(--bg);
-    border: 1px solid var(--border);
-    border-radius: 4px;
-    transition: border-color 0.2s;
-  }
-
-  .problem-row:hover {
-    border-color: rgba(201,168,76,0.4);
-  }
-
-  .problem-num {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 36px;
-    font-weight: 900;
-    color: var(--border);
-    line-height: 1;
-    min-width: 40px;
-  }
-
-  .problem-content {}
-
-  .problem-title {
-    font-weight: 600;
-    font-size: 15px;
-    color: var(--white);
-    margin-bottom: 4px;
-  }
-
-  .problem-desc {
-    font-size: 13px;
-    color: rgba(255,255,255,0.45);
-    line-height: 1.5;
-  }
-
-  .problem-impact {
-    text-align: right;
-  }
-
-  .impact-badge {
-    display: inline-block;
-    padding: 4px 12px;
-    border-radius: 2px;
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    white-space: nowrap;
-  }
-
-  .impact-critical {
-    background: rgba(229,62,62,0.15);
-    color: #FC8181;
-    border: 1px solid rgba(229,62,62,0.3);
-  }
-
-  .impact-high {
-    background: rgba(214,158,46,0.15);
-    color: #F6E05E;
-    border: 1px solid rgba(214,158,46,0.3);
-  }
-
-  .impact-medium {
-    background: rgba(56,161,105,0.15);
-    color: #68D391;
-    border: 1px solid rgba(56,161,105,0.3);
-  }
-
-  .problem-area {
-    font-size: 11px;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--subtle);
-    white-space: nowrap;
-  }
-
-  @media (max-width: 768px) {
-    .problem-row {
-      grid-template-columns: auto 1fr;
-      gap: 16px;
-    }
-    .problem-impact, .problem-area { display: none; }
-  }
-
-  /* ── SLIDE 4: EL PROBLEMA PRINCIPAL ── */
-  .slide-geo {
-    background: var(--bg);
-  }
-
-  .geo-split {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 64px;
-    align-items: center;
-  }
-
-  @media (max-width: 768px) {
-    .geo-split { grid-template-columns: 1fr; gap: 40px; }
-  }
-
-  .geo-text {}
-
-  .geo-p {
-    font-size: 16px;
-    color: rgba(255,255,255,0.6);
-    line-height: 1.8;
-    margin-bottom: 24px;
-  }
-
-  .geo-highlight {
-    background: var(--surface);
-    border-left: 3px solid var(--gold);
-    padding: 20px 24px;
-    margin: 32px 0;
-    font-size: 15px;
-    color: rgba(255,255,255,0.8);
-    font-style: italic;
-    line-height: 1.7;
-  }
-
-  .geo-visual {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 4px;
-    padding: 40px;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-  }
-
-  .geo-engine {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 16px 20px;
-    border-radius: 3px;
-    border: 1px solid var(--border);
-  }
-
-  .geo-engine-name {
-    font-weight: 600;
-    font-size: 14px;
-  }
-
-  .geo-engine-status {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    font-size: 12px;
-  }
-
-  .status-dot {
-    width: 8px; height: 8px;
-    border-radius: 50%;
-  }
-
-  .status-no { background: var(--danger); }
-  .status-yes { background: var(--success); }
-
-  .geo-cta {
-    margin-top: 8px;
-    padding: 16px 20px;
-    background: rgba(201,168,76,0.1);
-    border: 1px solid var(--gold);
-    border-radius: 3px;
-    font-size: 13px;
-    color: var(--gold);
-    text-align: center;
-    font-weight: 500;
-    letter-spacing: 0.05em;
-  }
-
-  /* ── SLIDE 5: FIXES ── */
-  .slide-fixes { background: var(--surface); }
-
-  .fixes-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 24px;
-  }
-
-  @media (max-width: 768px) {
-    .fixes-grid { grid-template-columns: 1fr; }
-  }
-
-  .fix-card {
-    background: var(--bg);
-    border: 1px solid var(--border);
-    border-radius: 4px;
-    padding: 28px;
-    position: relative;
-  }
-
-  .fix-card.priority-1 { border-top: 2px solid var(--danger); }
-  .fix-card.priority-2 { border-top: 2px solid var(--gold); }
-  .fix-card.priority-3 { border-top: 2px solid var(--success); }
-
-  .fix-priority {
-    font-size: 11px;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    font-weight: 600;
-    margin-bottom: 12px;
-  }
-  .fix-card.priority-1 .fix-priority { color: #FC8181; }
-  .fix-card.priority-2 .fix-priority { color: #F6E05E; }
-  .fix-card.priority-3 .fix-priority { color: #68D391; }
-
-  .fix-title {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 20px;
-    font-weight: 700;
-    text-transform: uppercase;
-    color: var(--white);
-    margin-bottom: 10px;
-    letter-spacing: 0.04em;
-  }
-
-  .fix-body {
-    font-size: 13px;
-    color: rgba(255,255,255,0.5);
-    line-height: 1.65;
-    margin-bottom: 16px;
-  }
-
-  .fix-time {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    font-size: 11px;
-    color: var(--subtle);
-    letter-spacing: 0.08em;
-  }
-
-  /* ── SLIDE 6: IMPACTO ── */
-  .slide-impact { background: var(--bg); }
-
-  .impact-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 32px;
-    margin-bottom: 56px;
-  }
-
-  @media (max-width: 768px) {
-    .impact-grid { grid-template-columns: 1fr; }
-  }
-
-  .impact-card {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 4px;
-    padding: 40px 32px;
-    text-align: center;
-    position: relative;
-  }
-
-  .impact-icon {
-    font-size: 40px;
-    margin-bottom: 20px;
-    display: block;
-  }
-
-  .impact-number {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 64px;
-    font-weight: 900;
-    color: var(--gold);
-    line-height: 1;
-    margin-bottom: 8px;
-  }
-
-  .impact-label {
-    font-size: 13px;
-    color: rgba(255,255,255,0.5);
-    text-transform: uppercase;
-    letter-spacing: 0.12em;
-    line-height: 1.5;
-  }
-
-  .impact-separator {
-    border-top: 1px solid var(--border);
-    padding-top: 40px;
-  }
-
-  .impact-quote {
-    font-size: 22px;
-    font-weight: 300;
-    color: rgba(255,255,255,0.7);
-    line-height: 1.6;
-    text-align: center;
-    max-width: 700px;
-    margin: 0 auto;
-  }
-
-  .impact-quote strong {
-    color: var(--white);
-    font-weight: 600;
-  }
-
-  /* ── SLIDE 7: TIMELINE ── */
-  .slide-timeline { background: var(--surface); }
-
-  .timeline {
-    display: flex;
-    flex-direction: column;
-    gap: 0;
-    position: relative;
-  }
-
-  .timeline::before {
-    content: '';
-    position: absolute;
-    left: 20px; top: 28px; bottom: 28px;
-    width: 1px;
-    background: var(--border);
-  }
-
-  .timeline-item {
-    display: grid;
-    grid-template-columns: auto 1fr;
-    gap: 32px;
-    padding: 28px 0;
-    position: relative;
-  }
-
-  .timeline-dot-wrapper {
-    position: relative;
-    z-index: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .timeline-dot {
-    width: 40px; height: 40px;
-    border-radius: 50%;
-    background: var(--bg);
-    border: 2px solid var(--gold);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: 'Barlow Condensed', sans-serif;
-    font-weight: 800;
-    font-size: 16px;
-    color: var(--gold);
-    flex-shrink: 0;
-  }
-
-  .timeline-content {
-    padding-top: 8px;
-  }
-
-  .timeline-phase {
-    font-size: 11px;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 6px;
-    font-weight: 600;
-  }
-
-  .timeline-title {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 24px;
-    font-weight: 800;
-    text-transform: uppercase;
-    color: var(--white);
-    margin-bottom: 8px;
-    letter-spacing: 0.03em;
-  }
-
-  .timeline-desc {
-    font-size: 14px;
-    color: rgba(255,255,255,0.5);
-    line-height: 1.65;
-  }
-
-  .timeline-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin-top: 14px;
-  }
-
-  .timeline-tag {
-    padding: 3px 10px;
-    border: 1px solid var(--border);
-    border-radius: 2px;
-    font-size: 11px;
-    color: rgba(255,255,255,0.45);
-    letter-spacing: 0.08em;
-  }
-
-  /* ── SLIDE PAGOS ── */
-  .slide-pagos { background: var(--surface); }
-
-  .pagos-total {
-    display: inline-flex;
-    align-items: baseline;
-    gap: 16px;
-    margin-bottom: 56px;
-    padding: 28px 40px;
-    background: var(--bg);
-    border: 1px solid rgba(201,168,76,0.3);
-    border-radius: 4px;
-  }
-
-  .pagos-total-amount {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-weight: 900;
-    font-size: clamp(48px, 6vw, 80px);
-    color: var(--gold);
-    line-height: 1;
-    letter-spacing: -0.02em;
-  }
-
-  .pagos-total-label {
-    font-size: 14px;
-    color: rgba(255,255,255,0.45);
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-  }
-
-  .pagos-cuota-badge {
-    margin-left: 24px;
-    display: flex;
-    flex-direction: column;
-    gap: 2px;
-  }
-
-  .pagos-cuota-num {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 28px;
-    font-weight: 800;
-    color: var(--white);
-    line-height: 1;
-  }
-
-  .pagos-cuota-lbl {
-    font-size: 11px;
-    color: rgba(255,255,255,0.4);
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-  }
-
-  .pagos-grid {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 12px;
-    margin-bottom: 40px;
-  }
-
-  @media (max-width: 900px) {
-    .pagos-grid { grid-template-columns: 1fr 1fr; }
-  }
-
-  @media (max-width: 480px) {
-    .pagos-grid { grid-template-columns: 1fr; }
-  }
-
-  .pago-card {
-    background: var(--bg);
-    border: 1px solid var(--border);
-    border-radius: 4px;
-    padding: 24px 20px;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .pago-card.pagado {
-    border-color: rgba(56,161,105,0.5);
-    background: rgba(56,161,105,0.05);
-  }
-
-  .pago-card.pagado::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0;
-    width: 100%; height: 3px;
-    background: var(--success);
-    border-radius: 4px 4px 0 0;
-  }
-
-  .pago-card.pendiente::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0;
-    width: 100%; height: 3px;
-    background: var(--border);
-    border-radius: 4px 4px 0 0;
-  }
-
-  .pago-num {
-    font-size: 11px;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--subtle);
-    font-weight: 600;
-  }
-
-  .pago-mes {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 20px;
-    font-weight: 800;
-    color: var(--white);
-    letter-spacing: 0.03em;
-    text-transform: uppercase;
-  }
-
-  .pago-amount {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 30px;
-    font-weight: 900;
-    color: var(--gold);
-    line-height: 1;
-  }
-
-  .pago-status {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    margin-top: 4px;
-  }
-
-  .pago-status.ok { color: var(--success); }
-  .pago-status.pending { color: rgba(255,255,255,0.3); }
-
-  .pagos-note {
-    font-size: 13px;
-    color: rgba(255,255,255,0.35);
-    font-style: italic;
-    letter-spacing: 0.03em;
-    text-align: center;
-    padding-top: 24px;
-    border-top: 1px solid var(--border);
-  }
-
-  /* ── SLIDE FASES ── */
-  .slide-fases { background: var(--bg); }
-
-  .fases-grid {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-  }
-
-  .fase-card {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 4px;
-    padding: 28px 32px;
-    display: grid;
-    grid-template-columns: 280px 1fr;
-    gap: 40px;
-    align-items: start;
-  }
-
-  @media (max-width: 900px) {
-    .fase-card { grid-template-columns: 1fr; gap: 20px; }
-  }
-
-  .fase-card.en-curso {
-    border-color: rgba(201,168,76,0.5);
-    background: rgba(201,168,76,0.04);
-  }
-
-  .fase-left {}
-
-  .fase-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    padding: 4px 12px;
-    border-radius: 2px;
-    font-size: 10px;
-    font-weight: 700;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    margin-bottom: 14px;
-  }
-
-  .fase-badge.active {
-    background: rgba(201,168,76,0.15);
-    color: var(--gold);
-    border: 1px solid rgba(201,168,76,0.4);
-  }
-
-  .fase-badge.upcoming {
-    background: rgba(255,255,255,0.06);
-    color: rgba(255,255,255,0.35);
-    border: 1px solid var(--border);
-  }
-
-  .fase-num {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 13px;
-    font-weight: 700;
-    letter-spacing: 0.2em;
-    color: var(--subtle);
-    text-transform: uppercase;
-    margin-bottom: 6px;
-  }
-
-  .fase-title {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: clamp(20px, 2.5vw, 26px);
-    font-weight: 800;
-    text-transform: uppercase;
-    color: var(--white);
-    letter-spacing: 0.02em;
-    line-height: 1.1;
-    margin-bottom: 6px;
-  }
-
-  .fase-date {
-    font-size: 13px;
-    color: var(--gold);
-    font-weight: 500;
-    letter-spacing: 0.05em;
-  }
-
-  .fase-items {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-  }
-
-  .fase-item {
-    display: flex;
-    align-items: flex-start;
-    gap: 10px;
-    font-size: 13px;
-    color: rgba(255,255,255,0.6);
-    line-height: 1.5;
-  }
-
-  .fase-item-dot {
-    width: 5px; height: 5px;
-    border-radius: 50%;
-    background: var(--gold);
-    opacity: 0.6;
-    flex-shrink: 0;
-    margin-top: 6px;
-  }
-
-  .fase-item.highlight {
-    color: rgba(255,255,255,0.85);
-    font-weight: 500;
-  }
-
-  .fase-item.highlight .fase-item-dot {
-    opacity: 1;
-  }
-
-  .fase-metrics {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin-top: 16px;
-    padding-top: 16px;
-    border-top: 1px solid var(--border);
-  }
-
-  .fase-metric {
-    padding: 4px 12px;
-    background: rgba(229,62,62,0.1);
-    border: 1px solid rgba(229,62,62,0.25);
-    border-radius: 2px;
-    font-size: 11px;
-    color: #FC8181;
-    letter-spacing: 0.06em;
-  }
-
-  /* ── SLIDE 8: CIERRE ── */
-  .slide-close {
-    background: var(--bg);
-    text-align: center;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .slide-close::before {
-    content: '';
-    position: absolute;
-    bottom: -200px; left: 50%;
-    transform: translateX(-50%);
-    width: 800px; height: 500px;
-    background: radial-gradient(ellipse, rgba(201,168,76,0.1) 0%, transparent 70%);
-    pointer-events: none;
-  }
-
-  .close-eyebrow {
-    font-size: 11px;
-    letter-spacing: 0.3em;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 32px;
-  }
-
-  .close-h1 {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-weight: 900;
-    font-size: clamp(48px, 6vw, 96px);
-    text-transform: uppercase;
-    line-height: 0.95;
-    letter-spacing: -0.02em;
-    color: var(--white);
-    margin-bottom: 40px;
-  }
-
-  .close-h1 em {
-    font-style: normal;
-    color: var(--gold);
-  }
-
-  .close-sub {
-    font-size: 17px;
-    color: rgba(255,255,255,0.45);
-    max-width: 500px;
-    line-height: 1.7;
-    margin: 0 auto 56px;
-    font-weight: 300;
-  }
-
-  .close-actions {
-    display: flex;
-    gap: 16px;
-    justify-content: center;
-    flex-wrap: wrap;
-  }
-
-  .btn-primary {
-    padding: 16px 40px;
-    background: var(--gold);
-    color: var(--bg);
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 15px;
-    font-weight: 700;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    border: none;
-    cursor: pointer;
-    border-radius: 2px;
-    text-decoration: none;
-    display: inline-block;
-  }
-
-  .btn-ghost {
-    padding: 16px 40px;
-    background: transparent;
-    color: var(--white);
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 15px;
-    font-weight: 700;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    border: 1px solid var(--border);
-    cursor: pointer;
-    border-radius: 2px;
-    text-decoration: none;
-    display: inline-block;
-  }
-
-  /* ── NAV DOTS ── */
-  .nav-dots {
-    position: fixed;
-    right: 32px;
-    top: 50%;
-    transform: translateY(-50%);
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    z-index: 100;
-  }
-
-  .nav-dot {
-    width: 6px; height: 6px;
-    border-radius: 50%;
-    background: var(--border);
-    cursor: pointer;
-    transition: all 0.25s;
-    border: none;
-    padding: 0;
-  }
-
-  .nav-dot.active {
-    background: var(--gold);
-    transform: scale(1.4);
-  }
-
-  @media (max-width: 600px) {
-    .nav-dots { display: none; }
-  }
-
-  /* ── PAGE INDICATOR ── */
-  .page-indicator {
-    position: fixed;
-    bottom: 32px;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 11px;
-    letter-spacing: 0.15em;
-    color: var(--subtle);
-    z-index: 100;
-  }
+:root{--or:#F04E23;--ink:#0A0908;--bg:#FAF8F5;--surf:#F2EFE9;--bd:#E4E0D9;--sub:#787370;--tl:#087E72;--rd:#DC2626;--gn:#16A34A;--gd:#CA8A04}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:"Plus Jakarta Sans",sans-serif;background:var(--bg);color:var(--ink);line-height:1.6}
+a{color:var(--or);text-decoration:none}
+/* HEADER */
+.hdr{background:var(--ink);padding:0;position:sticky;top:0;z-index:100}
+.hdr-inner{max-width:900px;margin:0 auto;padding:0 24px;height:56px;display:flex;align-items:center;justify-content:space-between}
+.hdr-logo{font-family:"Syne",sans-serif;font-weight:800;font-size:20px;color:#fff;letter-spacing:-.02em}
+.hdr-logo span{color:var(--or)}
+.hdr-meta{font-size:12px;color:rgba(255,255,255,.45);text-align:right}
+/* HERO */
+.hero{background:var(--ink);padding:48px 24px 40px}
+.hero-inner{max-width:900px;margin:0 auto}
+.hero-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(240,78,35,.15);border:1px solid rgba(240,78,35,.3);color:var(--or);padding:5px 12px;border-radius:20px;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;margin-bottom:16px}
+.hero h1{font-family:"Syne",sans-serif;font-weight:800;font-size:clamp(28px,5vw,44px);color:#fff;letter-spacing:-.03em;line-height:1.15;margin-bottom:10px}
+.hero-sub{color:rgba(255,255,255,.55);font-size:15px;margin-bottom:28px;max-width:540px}
+.hero-stats{display:flex;gap:24px;flex-wrap:wrap}
+.hs{border-left:2px solid var(--or);padding-left:12px}
+.hs-val{font-family:"Syne",sans-serif;font-weight:800;font-size:22px;color:#fff;letter-spacing:-.02em}
+.hs-lbl{font-size:11px;color:rgba(255,255,255,.45);margin-top:1px}
+/* LAYOUT */
+.wrap{max-width:900px;margin:0 auto;padding:0 24px 80px}
+.section{margin-top:48px}
+.section-hd{display:flex;align-items:center;gap:10px;margin-bottom:20px}
+.section-hd h2{font-family:"Syne",sans-serif;font-weight:800;font-size:20px;letter-spacing:-.02em}
+.tag{display:inline-flex;align-items:center;padding:3px 9px;border-radius:5px;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.05em}
+.tag.crit{background:rgba(220,38,38,.1);color:var(--rd)}
+.tag.warn{background:rgba(202,138,4,.1);color:var(--gd)}
+.tag.ok{background:rgba(22,163,74,.1);color:var(--gn)}
+/* SCORE CARD */
+.score-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:12px}
+.score-card{background:var(--wh,#fff);border:1.5px solid var(--bd);border-radius:14px;padding:18px 16px;text-align:center}
+.score-card.crit{border-color:rgba(220,38,38,.3)}
+.score-card.warn{border-color:rgba(202,138,4,.3)}
+.score-card.ok{border-color:rgba(22,163,74,.3)}
+.sc-num{font-family:"Syne",sans-serif;font-weight:800;font-size:36px;letter-spacing:-.03em;line-height:1}
+.sc-num.crit{color:var(--rd)}
+.sc-num.warn{color:var(--gd)}
+.sc-num.ok{color:var(--gn)}
+.sc-lbl{font-size:11px;font-weight:600;color:var(--sub);margin-top:4px;text-transform:uppercase;letter-spacing:.04em}
+.sc-sub{font-size:10px;color:var(--sub);margin-top:2px}
+/* METRIC ROW */
+.metric-table{background:#fff;border:1px solid var(--bd);border-radius:14px;overflow:hidden;margin-bottom:16px}
+.mt-row{display:grid;grid-template-columns:1fr auto;align-items:center;padding:12px 18px;border-bottom:1px solid var(--bd);gap:12px}
+.mt-row:last-child{border-bottom:none}
+.mt-label{font-size:13px;font-weight:600;color:var(--ink)}
+.mt-desc{font-size:11px;color:var(--sub);margin-top:2px}
+.mt-val{font-family:"Syne",sans-serif;font-weight:800;font-size:14px;text-align:right;white-space:nowrap}
+.mt-val.crit{color:var(--rd)}
+.mt-val.warn{color:var(--gd)}
+.mt-val.ok{color:var(--gn)}
+/* ISSUES */
+.issue-list{display:flex;flex-direction:column;gap:10px}
+.issue{background:#fff;border:1px solid var(--bd);border-left:4px solid var(--bd);border-radius:0 12px 12px 0;padding:14px 18px}
+.issue.alta{border-left-color:var(--rd)}
+.issue.media{border-left-color:var(--gd)}
+.issue.baja{border-left-color:var(--gn)}
+.issue-top{display:flex;align-items:center;gap:8px;margin-bottom:4px}
+.issue-prio{font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;padding:2px 7px;border-radius:4px}
+.alta .issue-prio{background:rgba(220,38,38,.1);color:var(--rd)}
+.media .issue-prio{background:rgba(202,138,4,.1);color:var(--gd)}
+.baja .issue-prio{background:rgba(22,163,74,.1);color:var(--gn)}
+.issue-cat{font-size:10px;color:var(--sub);font-weight:600}
+.issue h3{font-size:14px;font-weight:700;color:var(--ink);margin-bottom:4px}
+.issue p{font-size:12px;color:var(--sub);line-height:1.5}
+.issue-fix{margin-top:8px;font-size:11px;font-weight:600;color:var(--or)}
+/* TIMELINE */
+.timeline{display:flex;flex-direction:column;gap:0}
+.tl-item{display:flex;gap:16px;position:relative}
+.tl-item::before{content:"";position:absolute;left:15px;top:32px;bottom:-10px;width:2px;background:var(--bd)}
+.tl-item:last-child::before{display:none}
+.tl-dot{width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:13px;flex-shrink:0;margin-top:4px;position:relative;z-index:1}
+.tl-dot.done{background:var(--gn);color:#fff}
+.tl-dot.act{background:var(--or);color:#fff}
+.tl-dot.next{background:var(--surf);border:2px solid var(--bd);color:var(--sub)}
+.tl-body{padding-bottom:24px}
+.tl-month{font-size:10px;font-weight:700;color:var(--sub);text-transform:uppercase;letter-spacing:.06em;margin-bottom:3px}
+.tl-title{font-size:14px;font-weight:700;color:var(--ink);margin-bottom:2px}
+.tl-desc{font-size:12px;color:var(--sub)}
+.tl-result{display:inline-flex;align-items:center;gap:4px;margin-top:6px;background:rgba(22,163,74,.1);color:var(--gn);padding:3px 9px;border-radius:5px;font-size:11px;font-weight:700}
+/* GEO */
+.geo-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.geo-card{background:#fff;border:1px solid var(--bd);border-radius:14px;padding:16px}
+.geo-card-top{display:flex;align-items:center;gap:10px;margin-bottom:10px}
+.geo-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0}
+.geo-plat{font-weight:700;font-size:14px}
+.geo-estado{font-size:10px;font-weight:700;padding:2px 8px;border-radius:4px}
+.geo-estado.ausente{background:rgba(220,38,38,.1);color:var(--rd)}
+.geo-estado.parcial{background:rgba(202,138,4,.1);color:var(--gd)}
+.geo-estado.ok{background:rgba(22,163,74,.1);color:var(--gn)}
+.geo-desc{font-size:12px;color:var(--sub);line-height:1.5}
+/* ANALYTICS CALLOUT */
+.analytics-box{background:linear-gradient(135deg,#0A0908 0%,#1a1a1a 100%);border-radius:16px;padding:24px;color:#fff;margin-bottom:12px}
+.analytics-box h3{font-family:"Syne",sans-serif;font-weight:800;font-size:16px;margin-bottom:4px}
+.analytics-box p{font-size:12px;color:rgba(255,255,255,.55);margin-bottom:18px}
+.analytics-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.ag-item{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:10px;padding:12px}
+.ag-val{font-family:"Syne",sans-serif;font-weight:800;font-size:20px;color:#fff}
+.ag-gr{font-size:11px;color:#16A34A;font-weight:700}
+.ag-lbl{font-size:10px;color:rgba(255,255,255,.45);margin-top:2px}
+/* CTA */
+.cta-box{background:var(--or);border-radius:16px;padding:28px;text-align:center;margin-top:48px}
+.cta-box h2{font-family:"Syne",sans-serif;font-weight:800;font-size:22px;color:#fff;margin-bottom:8px;letter-spacing:-.02em}
+.cta-box p{font-size:14px;color:rgba(255,255,255,.8);margin-bottom:20px}
+.cta-btn{display:inline-flex;align-items:center;gap:8px;background:#fff;color:var(--or);padding:12px 24px;border-radius:10px;font-weight:700;font-size:15px;text-decoration:none}
+/* FOOTER */
+.rpt-footer{margin-top:48px;padding-top:24px;border-top:1px solid var(--bd);display:flex;justify-content:space-between;align-items:center;flex-wrap:gap}
+.rpt-footer-l{font-family:"Syne",sans-serif;font-weight:800;font-size:15px}
+.rpt-footer-l span{color:var(--or)}
+.rpt-footer-r{font-size:11px;color:var(--sub);text-align:right}
+@media(max-width:680px){
+  .score-grid{grid-template-columns:repeat(2,1fr)}
+  .geo-grid{grid-template-columns:1fr}
+  .analytics-grid{grid-template-columns:repeat(2,1fr)}
+  .hero-stats{gap:16px}
+}
 </style>
 </head>
 <body>
 
-<!-- NAV DOTS -->
-<nav class="nav-dots">
-  <button class="nav-dot active" onclick="scrollToSlide(0)" title="Portada"></button>
-  <button class="nav-dot" onclick="scrollToSlide(1)" title="Resumen"></button>
-  <button class="nav-dot" onclick="scrollToSlide(2)" title="Problemas"></button>
-  <button class="nav-dot" onclick="scrollToSlide(3)" title="Visibilidad IA"></button>
-  <button class="nav-dot" onclick="scrollToSlide(4)" title="Soluciones"></button>
-  <button class="nav-dot" onclick="scrollToSlide(5)" title="Impacto"></button>
-  <button class="nav-dot" onclick="scrollToSlide(6)" title="Inversión a Plazos"></button>
-  <button class="nav-dot" onclick="scrollToSlide(7)" title="Siguiente paso"></button>
-  <button class="nav-dot" onclick="scrollToSlide(8)" title="Fases del proyecto"></button>
-</nav>
-
-<div class="page-indicator" id="pageIndicator">1 / 8</div>
-
-<!-- ══════════════════════════════════════════
-     SLIDE 1 — COVER
-═══════════════════════════════════════════ -->
-<section class="slide slide-cover" id="slide-0">
-  <div class="cover-top">
-    <div class="brand-badge">
-      <div class="brand-dot"></div>
-      <span class="brand-name">Rankeo × JETCAB</span>
-    </div>
-    <span class="date-tag">Octubre 2026</span>
+<header class="hdr">
+  <div class="hdr-inner">
+    <div class="hdr-logo">Ran<span>k</span>eo</div>
+    <div class="hdr-meta">Diagnóstico JETCAB · Octubre 2026</div>
   </div>
+</header>
 
-  <div class="cover-center">
-    <div class="cover-eyebrow">Diagnóstico Digital · Reporte Ejecutivo</div>
-    <h1 class="cover-h1">
-      Lo que frena<br>
-      a <em>JETCAB</em><br>
-      en línea.
-    </h1>
-    <p class="cover-sub">
-      Encontramos 8 problemas críticos en jetcab.mx que impiden que su empresa aparezca en Google, ChatGPT y Perplexity — y el plan exacto para resolverlos.
-    </p>
-  </div>
-
-  <div class="cover-bottom">
-    <div class="cover-stats">
-      <div class="cover-stat">
-        <span class="cover-stat-number">5</span>
-        <span class="cover-stat-label">Errores críticos</span>
-      </div>
-      <div class="cover-stat">
-        <span class="cover-stat-number">28</span>
-        <span class="cover-stat-label">Páginas auditadas</span>
-      </div>
-      <div class="cover-stat">
-        <span class="cover-stat-number">0</span>
-        <span class="cover-stat-label">JSON-LD instalados</span>
-      </div>
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-badge">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+      Reporte Verificado · Datos Reales
     </div>
-    <div class="cover-cta">
-      Desliza para continuar ↓
+    <h1>Diagnóstico SEO + GEO<br>JETCAB — Aviación Privada</h1>
+    <p class="hero-sub">Análisis técnico completo de jetcab.mx — lo que está frenando tu crecimiento y el plan exacto para arreglarlo.</p>
+    <div class="hero-stats">
+      <div class="hs"><div class="hs-val">8</div><div class="hs-lbl">Problemas encontrados</div></div>
+      <div class="hs"><div class="hs-val">0/10</div><div class="hs-lbl">GEO Score actual</div></div>
+      <div class="hs"><div class="hs-val">+154%</div><div class="hs-lbl">Crecimiento orgánico</div></div>
+      <div class="hs"><div class="hs-val">3 meses</div><div class="hs-lbl">Para ver resultados</div></div>
     </div>
   </div>
-</section>
+</div>
 
-<!-- ══════════════════════════════════════════
-     SLIDE 2 — RESUMEN EJECUTIVO
-═══════════════════════════════════════════ -->
-<section class="slide slide-exec" id="slide-1">
-  <div class="section-label">
-    <span class="section-num">01</span>
-    <span class="section-line"></span>
-    <span class="section-title-text">Resumen ejecutivo</span>
-  </div>
+<div class="wrap">
 
-  <h2 class="slide-h2">El sitio funciona.<br><em>Pero no trabaja.</em></h2>
-
-  <div class="exec-grid">
-    <div class="exec-card">
-      <span class="exec-card-icon">🔍</span>
-      <div class="exec-card-title">Invisible para las IAs</div>
-      <div class="exec-card-body">
-        jetcab.mx no tiene datos estructurados (JSON-LD). Cuando alguien le pregunta a ChatGPT o Perplexity "mejor empresa de jets privados en México", JETCAB no existe en la respuesta. Sus competidores sí.
-      </div>
+  <!-- ── TRÁFICO REAL ── -->
+  <div class="section">
+    <div class="section-hd">
+      <h2>📊 Tu tráfico esta semana</h2>
+      <span class="tag ok">Google Analytics · Real</span>
     </div>
-    <div class="exec-card">
-      <span class="exec-card-icon">🚫</span>
-      <div class="exec-card-title">AdSense en sitio de lujo</div>
-      <div class="exec-card-body">
-        El sitio tiene Google AdSense activo. Eso significa que competidores directos pueden pagar para aparecer dentro de jetcab.mx. Un cliente que llega al sitio puede ver un anuncio de otra aerolínea privada.
-      </div>
-    </div>
-    <div class="exec-card">
-      <span class="exec-card-icon">🔗</span>
-      <div class="exec-card-title">Botones de cotización rotos</div>
-      <div class="exec-card-body">
-        Múltiples botones de "Cotizar" llevan a URLs duplicadas (<code style="font-size:11px;background:rgba(255,255,255,0.1);padding:2px 6px;border-radius:2px;">jetcab.mx/jetcab.mx/cotizar</code>) que dan error 404. Clientes listos para comprar llegan a una página vacía.
-      </div>
-    </div>
-    <div class="exec-card">
-      <span class="exec-card-icon">📍</span>
-      <div class="exec-card-title">og:locale incorrecto + sitio sin actualizar</div>
-      <div class="exec-card-body">
-        El sitio dice ser de España (es_ES) cuando opera en México. Las páginas de flota no se actualizan desde noviembre 2024 — hace casi dos años. Señales que Google y las IAs penalizan silenciosamente.
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ══════════════════════════════════════════
-     SLIDE 3 — LOS 8 PROBLEMAS
-═══════════════════════════════════════════ -->
-<section class="slide slide-problems" id="slide-2">
-  <div class="section-label">
-    <span class="section-num">02</span>
-    <span class="section-line"></span>
-    <span class="section-title-text">Auditoría completa</span>
-  </div>
-
-  <h2 class="slide-h2">Los 5 errores<br><em>críticos.</em></h2>
-
-  <div class="problems-list">
-    <div class="problem-row">
-      <span class="problem-num">01</span>
-      <div class="problem-content">
-        <div class="problem-title">0 schemas JSON-LD — 28 páginas sin datos estructurados</div>
-        <div class="problem-desc">Sin schema markup en ninguna de las 28 páginas analizadas. ChatGPT, Perplexity y Google AI Overviews no pueden extraer ni citar información de JETCAB. Sus competidores sí aparecen.</div>
-      </div>
-      <div class="problem-impact"><span class="impact-badge impact-critical">Crítico</span></div>
-      <div class="problem-area">GEO / IA</div>
-    </div>
-    <div class="problem-row">
-      <span class="problem-num">02</span>
-      <div class="problem-content">
-        <div class="problem-title">CTAs de cotización rotos — URL duplicada genera error 404</div>
-        <div class="problem-desc">Múltiples botones "Cotizar" apuntan a <code style="font-size:11px;background:rgba(255,255,255,0.1);padding:2px 6px;border-radius:2px;">jetcab.mx/jetcab.mx/cotizar</code>. Clientes listos para comprar llegan a una página vacía. Conversiones perdidas directamente.</div>
-      </div>
-      <div class="problem-impact"><span class="impact-badge impact-critical">Crítico</span></div>
-      <div class="problem-area">Conversión</div>
-    </div>
-    <div class="problem-row">
-      <span class="problem-num">03</span>
-      <div class="problem-content">
-        <div class="problem-title">3 páginas de WooCommerce indexadas innecesariamente</div>
-        <div class="problem-desc">/cart/, /checkout/ y /my-account/ aparecen en Google y en el sitemap. Páginas sin valor de negocio que consumen presupuesto de rastreo y envían señales confusas al algoritmo.</div>
-      </div>
-      <div class="problem-impact"><span class="impact-badge impact-critical">Crítico</span></div>
-      <div class="problem-area">SEO técnico</div>
-    </div>
-    <div class="problem-row">
-      <span class="problem-num">04</span>
-      <div class="problem-content">
-        <div class="problem-title">Meta AdSense de plataforma activa en el sitio</div>
-        <div class="problem-desc">Etiqueta <code style="font-size:11px;background:rgba(255,255,255,0.1);padding:2px 6px;border-radius:2px;">ca-host-pub-2644536267352236</code> detectada. Google puede colocar anuncios de competidores dentro de jetcab.mx. Incompatible con posicionamiento de marca de lujo.</div>
-      </div>
-      <div class="problem-impact"><span class="impact-badge impact-critical">Crítico</span></div>
-      <div class="problem-area">Marca</div>
-    </div>
-    <div class="problem-row">
-      <span class="problem-num">05</span>
-      <div class="problem-content">
-        <div class="problem-title">og:locale configurado como es_ES — mercado es México, no España</div>
-        <div class="problem-desc">Meta dato geográfico incorrecto en las 28 páginas. Afecta señales de localización, distribución en redes sociales y relevancia para búsquedas mexicanas. og:image además mide 1024×1024 en lugar del estándar 1200×630.</div>
-      </div>
-      <div class="problem-impact"><span class="impact-badge impact-critical">Crítico</span></div>
-      <div class="problem-area">SEO local</div>
-    </div>
-  </div>
-</section>
-
-<!-- ══════════════════════════════════════════
-     SLIDE 4 — VISIBILIDAD EN IAs
-═══════════════════════════════════════════ -->
-<section class="slide slide-geo" id="slide-3">
-  <div class="section-label">
-    <span class="section-num">03</span>
-    <span class="section-line"></span>
-    <span class="section-title-text">El problema más urgente</span>
-  </div>
-
-  <div class="geo-split">
-    <div class="geo-text">
-      <h2 class="slide-h2">Sus clientes<br>preguntan<br>a <em>ChatGPT.</em><br>No aparecen.</h2>
-
-      <p class="geo-p">
-        El comportamiento de búsqueda cambió. Los ejecutivos de alto nivel que son su mercado — CEOs, directores, empresarios UHNWI — utilizan ChatGPT, Perplexity y Google AI Overviews para investigar antes de contratar.
-      </p>
-
-      <div class="geo-highlight">
-        "¿Cuál es la mejor empresa de jets privados en México?" — esta pregunta en ChatGPT hoy no menciona a JETCAB. Sus competidores sí aparecen.
-      </div>
-
-      <p class="geo-p">
-        La razón técnica es simple: sin datos estructurados (JSON-LD), las IAs no pueden identificar qué hace JETCAB, cuánto cuesta, ni por qué es confiable. El contenido existe, pero las IAs no lo entienden.
-      </p>
-    </div>
-
-    <div class="geo-visual">
-      <div style="font-size:13px;letter-spacing:0.15em;text-transform:uppercase;color:var(--subtle);margin-bottom:20px;font-weight:600;">Estado actual de visibilidad</div>
-
-      <div class="geo-engine">
-        <span class="geo-engine-name">Google (SEO orgánico)</span>
-        <span class="geo-engine-status">
-          <span class="status-dot status-yes"></span>
-          <span style="color:#68D391;font-size:12px;">Parcial</span>
-        </span>
-      </div>
-      <div class="geo-engine">
-        <span class="geo-engine-name">Google AI Overviews</span>
-        <span class="geo-engine-status">
-          <span class="status-dot status-no"></span>
-          <span style="color:#FC8181;font-size:12px;">No aparece</span>
-        </span>
-      </div>
-      <div class="geo-engine">
-        <span class="geo-engine-name">ChatGPT</span>
-        <span class="geo-engine-status">
-          <span class="status-dot status-no"></span>
-          <span style="color:#FC8181;font-size:12px;">No aparece</span>
-        </span>
-      </div>
-      <div class="geo-engine">
-        <span class="geo-engine-name">Perplexity</span>
-        <span class="geo-engine-status">
-          <span class="status-dot status-no"></span>
-          <span style="color:#FC8181;font-size:12px;">No aparece</span>
-        </span>
-      </div>
-      <div class="geo-engine">
-        <span class="geo-engine-name">Microsoft Copilot</span>
-        <span class="geo-engine-status">
-          <span class="status-dot status-no"></span>
-          <span style="color:#FC8181;font-size:12px;">No aparece</span>
-        </span>
-      </div>
-
-      <div class="geo-cta">
-        Con los fixes de este plan → aparece en los 5
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ══════════════════════════════════════════
-     SLIDE 5 — LAS SOLUCIONES
-═══════════════════════════════════════════ -->
-<section class="slide slide-fixes" id="slide-4">
-  <div class="section-label">
-    <span class="section-num">04</span>
-    <span class="section-line"></span>
-    <span class="section-title-text">Plan de acción</span>
-  </div>
-
-  <h2 class="slide-h2">Las soluciones,<br><em>en orden.</em></h2>
-
-  <div class="fixes-grid">
-    <div class="fix-card priority-1">
-      <div class="fix-priority">Prioridad 1 — Esta semana</div>
-      <div class="fix-title">Desactivar AdSense</div>
-      <div class="fix-body">Eliminar Google AdSense del sitio. Un jet privado de lujo no puede convivir con banners de otras marcas. Afecta percepción de marca directamente.</div>
-      <span class="fix-time">⏱ 5 minutos en Site Kit</span>
-    </div>
-
-    <div class="fix-card priority-1">
-      <div class="fix-priority">Prioridad 1 — Esta semana</div>
-      <div class="fix-title">Reparar botones de cotizar</div>
-      <div class="fix-body">Corregir la URL duplicada <code style="font-size:11px;background:rgba(255,255,255,0.08);padding:2px 5px;">jetcab.mx/jetcab.mx/cotizar</code> que genera error 404. Recuperación inmediata de conversiones perdidas.</div>
-      <span class="fix-time">⏱ 10 minutos en WordPress</span>
-    </div>
-
-    <div class="fix-card priority-1">
-      <div class="fix-priority">Prioridad 1 — Esta semana</div>
-      <div class="fix-title">Implementar JSON-LD completo</div>
-      <div class="fix-body">Código de datos estructurados para homepage, 17 páginas de destino y 9 páginas de flota. Esto activa la visibilidad en ChatGPT, Perplexity y Google AI Overviews.</div>
-      <span class="fix-time">⏱ 30 minutos — código ya listo</span>
-    </div>
-
-    <div class="fix-card priority-1">
-      <div class="fix-priority">Prioridad 1 — Esta semana</div>
-      <div class="fix-title">Unificar precios en el sitio</div>
-      <div class="fix-body">Auditar y homologar todos los precios mostrados en páginas de destino. Un cliente que ve $1,500 y $4,950 para el mismo vuelo, no contrata.</div>
-      <span class="fix-time">⏱ 1 hora — revisión de 17 páginas</span>
-    </div>
-
-    <div class="fix-card priority-2">
-      <div class="fix-priority">Prioridad 2 — Esta semana</div>
-      <div class="fix-title">Agregar autoridad regulatoria</div>
-      <div class="fix-body">Incluir en /sobre-nosotros/ y en el footer: licencia DGAC, certificación SCT, cumplimiento OACI. 25 años de operación sin incidentes es su mayor activo — debe estar visible.</div>
-      <span class="fix-time">⏱ 1 hora de redacción</span>
-    </div>
-
-    <div class="fix-card priority-2">
-      <div class="fix-priority">Prioridad 2 — Esta semana</div>
-      <div class="fix-title">Configuración técnica de SEO local</div>
-      <div class="fix-body">Cambiar og:locale de es_ES a es_MX. Crear imagen 1200×630 para redes sociales. Marcar páginas de WooCommerce como noindex. Tres fixes rápidos de alto impacto.</div>
-      <span class="fix-time">⏱ 20 minutos en Yoast SEO</span>
-    </div>
-  </div>
-</section>
-
-<!-- ══════════════════════════════════════════
-     SLIDE 6 — IMPACTO ESPERADO
-═══════════════════════════════════════════ -->
-<section class="slide slide-impact" id="slide-5">
-  <div class="section-label">
-    <span class="section-num">05</span>
-    <span class="section-line"></span>
-    <span class="section-title-text">¿Qué cambia?</span>
-  </div>
-
-  <h2 class="slide-h2">El impacto de<br><em>hacer esto.</em></h2>
-
-  <div class="impact-grid">
-    <div class="impact-card">
-      <span class="impact-icon">🤖</span>
-      <div class="impact-number">5</div>
-      <div class="impact-label">Motores de IA donde<br>aparecerán después del fix</div>
-    </div>
-    <div class="impact-card">
-      <span class="impact-icon">📈</span>
-      <div class="impact-number">+40%</div>
-      <div class="impact-label">Incremento estimado en<br>solicitudes de cotización</div>
-    </div>
-    <div class="impact-card">
-      <span class="impact-icon">⚡</span>
-      <div class="impact-number">< 1 sem</div>
-      <div class="impact-label">Tiempo para implementar<br>todos los fixes críticos</div>
-    </div>
-  </div>
-
-  <div class="impact-separator">
-    <p class="impact-quote">
-      JETCAB tiene <strong>25 años de experiencia</strong>, más de <strong>2,000 vuelos</strong> y operación en <strong>50+ países</strong>. Ninguno de esos activos está trabajando para atraer clientes en línea. Este plan los activa.
-    </p>
-  </div>
-</section>
-
-<!-- ══════════════════════════════════════════
-     SLIDE 7 — INVERSIÓN A PLAZOS
-═══════════════════════════════════════════ -->
-<section class="slide slide-pagos" id="slide-6">
-  <div class="section-label">
-    <span class="section-num">06</span>
-    <span class="section-line"></span>
-    <span class="section-title-text">Inversión</span>
-  </div>
-
-  <h2 class="slide-h2">Inversión<br><em>a plazos.</em></h2>
-
-  <div class="pagos-total">
-    <div>
-      <div class="pagos-total-label">Total del proyecto</div>
-      <div class="pagos-total-amount">$12,500 <span style="font-size:0.4em;color:rgba(255,255,255,0.5);font-weight:400;">MXN</span></div>
-    </div>
-    <div style="width:1px;height:60px;background:var(--border);margin:0 16px;"></div>
-    <div class="pagos-cuota-badge">
-      <div class="pagos-cuota-num">5 pagos</div>
-      <div class="pagos-cuota-lbl">de $2,500 MXN cada uno</div>
-    </div>
-  </div>
-
-  <div class="pagos-grid">
-    <!-- Pago 1 — PAGADO -->
-    <div class="pago-card pagado">
-      <div class="pago-num">Pago 1 de 5</div>
-      <div class="pago-mes">Octubre 2026</div>
-      <div class="pago-amount">$2,500</div>
-      <div class="pago-status ok">✅ Pagado</div>
-    </div>
-    <!-- Pago 2 -->
-    <div class="pago-card pendiente">
-      <div class="pago-num">Pago 2 de 5</div>
-      <div class="pago-mes">Noviembre 2026</div>
-      <div class="pago-amount">$2,500</div>
-      <div class="pago-status pending">⬜ Pendiente</div>
-    </div>
-    <!-- Pago 3 -->
-    <div class="pago-card pendiente">
-      <div class="pago-num">Pago 3 de 5</div>
-      <div class="pago-mes">Diciembre 2026</div>
-      <div class="pago-amount">$2,500</div>
-      <div class="pago-status pending">⬜ Pendiente</div>
-    </div>
-    <!-- Pago 4 -->
-    <div class="pago-card pendiente">
-      <div class="pago-num">Pago 4 de 5</div>
-      <div class="pago-mes">Enero 2027</div>
-      <div class="pago-amount">$2,500</div>
-      <div class="pago-status pending">⬜ Pendiente</div>
-    </div>
-    <!-- Pago 5 -->
-    <div class="pago-card pendiente">
-      <div class="pago-num">Pago 5 de 5</div>
-      <div class="pago-mes">Febrero 2027</div>
-      <div class="pago-amount">$2,500</div>
-      <div class="pago-status pending">⬜ Pendiente</div>
-    </div>
-  </div>
-
-  <div class="pagos-note">Sin contratos anuales. Sin letra pequeña. Cancela cuando quieras.</div>
-</section>
-
-<!-- ══════════════════════════════════════════
-     SLIDE 8 — CIERRE
-═══════════════════════════════════════════ -->
-<section class="slide slide-close" id="slide-7">
-  <div class="close-eyebrow">Siguiente paso</div>
-
-  <h1 class="close-h1">
-    El código<br>está listo.<br><em>¿Cuándo<br>arrancamos?</em>
-  </h1>
-
-  <p class="close-sub">
-    Todos los fixes críticos tienen código listo para implementar esta semana. Solo se necesita acceso a WordPress.
-  </p>
-
-  <div class="close-actions">
-    <a href="https://wa.me/525532894890?text=Hola%2C%20quiero%20arrancar%20con%20los%20fixes%20de%20Jetcab" class="btn-primary" target="_blank">Confirmar inicio →</a>
-    <a href="#slide-2" class="btn-ghost">Ver problemas de nuevo</a>
-  </div>
-
-  <div style="margin-top: 64px; padding-top: 40px; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; width: 100%; max-width: 600px;">
-    <div style="text-align: left;">
-      <div style="font-size:11px;letter-spacing:0.15em;text-transform:uppercase;color:var(--subtle);margin-bottom:4px;">Preparado por</div>
-      <div style="font-family:'Barlow Condensed',sans-serif;font-size:20px;font-weight:800;color:var(--gold);letter-spacing:0.05em;">RANKEO</div>
-    </div>
-    <div style="text-align: right;">
-      <div style="font-size:11px;letter-spacing:0.15em;text-transform:uppercase;color:var(--subtle);margin-bottom:4px;">Para</div>
-      <div style="font-family:'Barlow Condensed',sans-serif;font-size:20px;font-weight:800;color:var(--white);letter-spacing:0.05em;">JETCAB</div>
-    </div>
-  </div>
-</section>
-
-<!-- ══════════════════════════════════════════
-     SLIDE 9 — FASES DEL PROYECTO
-═══════════════════════════════════════════ -->
-<section class="slide slide-fases" id="slide-8">
-  <div class="section-label">
-    <span class="section-num">09</span>
-    <span class="section-line"></span>
-    <span class="section-title-text">Fases del proyecto</span>
-  </div>
-
-  <h2 class="slide-h2">El plan,<br><em>fase a fase.</em></h2>
-
-  <div class="fases-grid">
-
-    <!-- FASE 1 -->
-    <div class="fase-card en-curso">
-      <div class="fase-left">
-        <div class="fase-badge active">✅ En curso</div>
-        <div class="fase-num">Fase 1 de 4</div>
-        <div class="fase-title">Fundamentos</div>
-        <div class="fase-date">Octubre 2026</div>
-        <div class="fase-metrics">
-          <span class="fase-metric">0 JSON-LD / 28 páginas</span>
-          <span class="fase-metric">CTAs rotos → 404</span>
-          <span class="fase-metric">WooCommerce indexado</span>
-          <span class="fase-metric">og:locale es_ES</span>
-          <span class="fase-metric">AdSense activo</span>
+    <div class="analytics-box">
+      <h3>Semana del 29 Sep – 05 Oct 2026</h3>
+      <p>Datos reales de Google Analytics — sin estimaciones</p>
+      <div class="analytics-grid">
+        <div class="ag-item">
+          <div class="ag-val">111</div>
+          <div class="ag-gr">↑70.8% vs sem. anterior</div>
+          <div class="ag-lbl">Usuarios activos (7 días)</div>
+        </div>
+        <div class="ag-item">
+          <div class="ag-val">99</div>
+          <div class="ag-gr">↑153.8% orgánico</div>
+          <div class="ag-lbl">Sesiones desde Google</div>
+        </div>
+        <div class="ag-item">
+          <div class="ag-val">229</div>
+          <div class="ag-gr">↑70.9% vs sem. anterior</div>
+          <div class="ag-lbl">Páginas vistas totales</div>
         </div>
       </div>
-      <div class="fase-items">
-        <div class="fase-item highlight"><span class="fase-item-dot"></span>Auditoría SEO+GEO completa: 28 páginas analizadas</div>
-        <div class="fase-item highlight"><span class="fase-item-dot"></span>5 errores críticos documentados con solución exacta</div>
-        <div class="fase-item highlight"><span class="fase-item-dot"></span>Portal de cliente configurado con métricas en vivo</div>
-        <div class="fase-item highlight"><span class="fase-item-dot"></span>Informe ejecutivo con plan de acción por implementar</div>
-        <div class="fase-item" style="color:rgba(201,168,76,0.7);"><span class="fase-item-dot" style="background:var(--gold);"></span>Correcciones pendientes de acceso WordPress — en proceso</div>
+    </div>
+    <div class="metric-table">
+      <div class="mt-row">
+        <div><div class="mt-label">Ciudad principal</div><div class="mt-desc">Mercado más activo esta semana</div></div>
+        <div class="mt-val ok">CDMX · 40 usuarios (↑207%)</div>
+      </div>
+      <div class="mt-row">
+        <div><div class="mt-label">Página más visitada</div><div class="mt-desc">Mayor tráfico de toda la semana</div></div>
+        <div class="mt-val ok">Aviones Privados y Helicópteros · 98 vistas</div>
+      </div>
+      <div class="mt-row">
+        <div><div class="mt-label">Páginas indexadas por Google</div><div class="mt-desc">site:jetcab.mx · verificado</div></div>
+        <div class="mt-val ok">28 páginas</div>
       </div>
     </div>
-
-    <!-- FASE 2 -->
-    <div class="fase-card">
-      <div class="fase-left">
-        <div class="fase-badge upcoming">⬜ Próxima</div>
-        <div class="fase-num">Fase 2 de 4</div>
-        <div class="fase-title">SEO On-Page<br>+ GEO Schema</div>
-        <div class="fase-date">Noviembre 2026</div>
-      </div>
-      <div class="fase-items">
-        <div class="fase-item"><span class="fase-item-dot"></span>Implementación JSON-LD en homepage + 10 páginas de destino</div>
-        <div class="fase-item"><span class="fase-item-dot"></span>Fix og:locale es_ES → es_MX · og:image 1024×1024 → 1200×630</div>
-        <div class="fase-item"><span class="fase-item-dot"></span>Corrección de todos los CTAs rotos (<code style="font-size:11px;background:rgba(255,255,255,0.08);padding:1px 5px;border-radius:2px;">/cotizar</code> sin URL duplicada)</div>
-        <div class="fase-item"><span class="fase-item-dot"></span>Eliminación de AdSense y páginas WooCommerce del sitemap</div>
-        <div class="fase-item"><span class="fase-item-dot"></span>Optimización de meta descriptions (actualmente 113 chars sin CTA)</div>
-      </div>
-    </div>
-
-    <!-- FASE 3 -->
-    <div class="fase-card">
-      <div class="fase-left">
-        <div class="fase-badge upcoming">⬜ Programada</div>
-        <div class="fase-num">Fase 3 de 4</div>
-        <div class="fase-title">Contenido<br>+ Autoridad</div>
-        <div class="fase-date">Diciembre 2026 – Enero 2027</div>
-      </div>
-      <div class="fase-items">
-        <div class="fase-item"><span class="fase-item-dot"></span>Actualización de páginas de flota (sin actualizar desde Nov 2024)</div>
-        <div class="fase-item"><span class="fase-item-dot"></span>Contenido optimizado por destino: CDMX, Toluca, Monterrey, GDL, Cancún, Los Cabos</div>
-        <div class="fase-item"><span class="fase-item-dot"></span>Señales de autoridad: certificaciones DGAC/SCT, 25 años de experiencia, cumplimiento OACI</div>
-        <div class="fase-item"><span class="fase-item-dot"></span>Estrategia de empty legs — WhatsApp y email a clientes cautivos</div>
-      </div>
-    </div>
-
-    <!-- FASE 4 -->
-    <div class="fase-card">
-      <div class="fase-left">
-        <div class="fase-badge upcoming">⬜ Programada</div>
-        <div class="fase-num">Fase 4 de 4</div>
-        <div class="fase-title">Expansión<br>+ Campaña Q1</div>
-        <div class="fase-date">Febrero 2027</div>
-      </div>
-      <div class="fase-items">
-        <div class="fase-item"><span class="fase-item-dot"></span>Expansión a mercado USA Hispanic: Houston, Dallas, Miami, NYC</div>
-        <div class="fase-item"><span class="fase-item-dot"></span>Campaña "25 Años Jetcab — El Dueño del Tiempo"</div>
-        <div class="fase-item"><span class="fase-item-dot"></span>Link building en medios de aviación y lujo</div>
-        <div class="fase-item highlight"><span class="fase-item-dot"></span>Objetivo: aparecer en ChatGPT/Perplexity cuando buscan "vuelos privados México"</div>
-      </div>
-    </div>
-
+    <p style="font-size:11px;color:var(--sub)">⚠️ El crecimiento orgánico de +154% confirma que el SEO está funcionando. El reto ahora es convertir ese tráfico en cotizaciones — para eso se necesita resolver los problemas de conversión de abajo.</p>
   </div>
-</section>
 
-<script>
-  const slides = document.querySelectorAll('.slide');
-  const dots = document.querySelectorAll('.nav-dot');
-  const indicator = document.getElementById('pageIndicator');
+  <!-- ── PERFORMANCE TÉCNICA ── -->
+  <div class="section">
+    <div class="section-hd">
+      <h2>⚡ Performance técnica</h2>
+      <span class="tag warn">Auditado 05 Oct 2026</span>
+    </div>
+    <p style="font-size:13px;color:var(--sub);margin-bottom:18px">Medición directa de jetcab.mx — velocidad, estructura de recursos y señales de Core Web Vitals.</p>
+    <div class="score-grid">
+      <div class="score-card ok">
+        <div class="sc-num ok">1.5s</div>
+        <div class="sc-lbl">Tiempo de carga</div>
+        <div class="sc-sub">Desktop · medido real</div>
+      </div>
+      <div class="score-card ok">
+        <div class="sc-num ok">294ms</div>
+        <div class="sc-lbl">TTFB</div>
+        <div class="sc-sub">Servidor responde rápido ✓</div>
+      </div>
+      <div class="score-card crit">
+        <div class="sc-num crit">21</div>
+        <div class="sc-lbl">Scripts JS activos</div>
+        <div class="sc-sub">Límite recomendado: 8</div>
+      </div>
+      <div class="score-card warn">
+        <div class="sc-num warn">620KB</div>
+        <div class="sc-lbl">Peso total página</div>
+        <div class="sc-sub">Desktop · mobile es peor</div>
+      </div>
+    </div>
+    <div class="metric-table">
+      <div class="mt-row">
+        <div><div class="mt-label">Archivos CSS cargados</div><div class="mt-desc">Cada archivo es una petición extra al servidor</div></div>
+        <div class="mt-val warn">14 archivos</div>
+      </div>
+      <div class="mt-row">
+        <div><div class="mt-label">Imágenes sin dimensiones</div><div class="mt-desc">Causa "saltos" visuales (CLS) — penaliza en Google</div></div>
+        <div class="mt-val warn">6 de 8 imágenes</div>
+      </div>
+      <div class="mt-row">
+        <div><div class="mt-label">Preload de fuentes</div><div class="mt-desc">Las fuentes bloquean el renderizado si no se precargan</div></div>
+        <div class="mt-val crit">0 fuentes precargadas</div>
+      </div>
+      <div class="mt-row">
+        <div><div class="mt-label">Tags H2 vacíos</div><div class="mt-desc">2 etiquetas H2 sin contenido — confunden a Google</div></div>
+        <div class="mt-val warn">2 H2 vacíos</div>
+      </div>
+    </div>
+    <div style="background:rgba(220,38,38,.06);border:1px solid rgba(220,38,38,.2);border-radius:12px;padding:14px 16px;font-size:12px;color:var(--ink)">
+      <strong style="color:var(--rd)">¿Qué significa esto en la práctica?</strong><br>
+      Con 21 scripts JS activos, cada visitante desde su celular tiene que esperar a que se descarguen 21 archivos antes de poder usar el sitio. Google mide eso y baja el ranking móvil. El fix es WP Rocket (plugin de WordPress, ~$49/año) que los combina en 2-3 archivos.
+    </div>
+  </div>
 
-  function scrollToSlide(idx) {
-    slides[idx].scrollIntoView({ behavior: 'smooth' });
-  }
+  <!-- ── SEO ON-PAGE ── -->
+  <div class="section">
+    <div class="section-hd">
+      <h2>🔍 SEO On-Page</h2>
+      <span class="tag warn">Revisión manual · 05 Oct</span>
+    </div>
+    <div class="metric-table">
+      <div class="mt-row">
+        <div><div class="mt-label">Título de página (Title Tag)</div><div class="mt-desc">"Aviones Privados y Helicópteros en Renta - Jetcab ✈️" — emoji puede causar problemas en algunos buscadores</div></div>
+        <div class="mt-val warn">Mejorable</div>
+      </div>
+      <div class="mt-row">
+        <div><div class="mt-label">Meta descripción</div><div class="mt-desc">"JETCAB - Somos tu mejor opción... ✈️ 🚁" — corta, con emojis, no tiene llamada a la acción</div></div>
+        <div class="mt-val warn">Mejorable</div>
+      </div>
+      <div class="mt-row">
+        <div><div class="mt-label">H1 único</div><div class="mt-desc">"AVIONES PRIVADOS EN RENTA" — está en mayúsculas (mejor en minúsculas + keyword ciudad)</div></div>
+        <div class="mt-val warn">Presente pero mejorable</div>
+      </div>
+      <div class="mt-row">
+        <div><div class="mt-label">Canonical URL</div><div class="mt-desc">https://jetcab.mx/ — correcto</div></div>
+        <div class="mt-val ok">✓ Correcto</div>
+      </div>
+      <div class="mt-row">
+        <div><div class="mt-label">Viewport mobile</div><div class="mt-desc">width=device-width, initial-scale=1 — correcto</div></div>
+        <div class="mt-val ok">✓ Correcto</div>
+      </div>
+      <div class="mt-row">
+        <div><div class="mt-label">Open Graph Image</div><div class="mt-desc">La imagen que aparece al compartir en WhatsApp es el logo cuadrado 1024×1024 — no 1200×630px</div></div>
+        <div class="mt-val warn">Logo cuadrado · No óptimo</div>
+      </div>
+      <div class="mt-row">
+        <div><div class="mt-label">og:locale</div><div class="mt-desc">Configurado como es_ES (España) en lugar de es_MX (México) — afecta señales geográficas</div></div>
+        <div class="mt-val crit">es_ES → debe ser es_MX</div>
+      </div>
+      <div class="mt-row">
+        <div><div class="mt-label">Páginas WooCommerce indexadas</div><div class="mt-desc">/cart/, /checkout/, /my-account/ aparecen en el sitemap — Google rastrea páginas vacías</div></div>
+        <div class="mt-val warn">Agregar noindex</div>
+      </div>
+    </div>
+  </div>
 
-  function updateActiveSlide() {
-    let activeIdx = 0;
-    slides.forEach((slide, i) => {
-      const rect = slide.getBoundingClientRect();
-      if (rect.top <= window.innerHeight / 2 && rect.bottom >= window.innerHeight / 2) {
-        activeIdx = i;
-      }
-    });
-    dots.forEach((dot, i) => dot.classList.toggle('active', i === activeIdx));
-    indicator.textContent = (activeIdx + 1) + ' / ' + slides.length;
-  }
+  <!-- ── DATOS ESTRUCTURADOS ── -->
+  <div class="section">
+    <div class="section-hd">
+      <h2>🤖 Datos estructurados (Schema)</h2>
+      <span class="tag crit">Crítico para GEO e IAs</span>
+    </div>
+    <p style="font-size:13px;color:var(--sub);margin-bottom:18px">Los datos estructurados son el "idioma" que usan Google, ChatGPT y Perplexity para entender de qué trata tu negocio. Sin ellos, las IAs no pueden citarte.</p>
+    <div class="metric-table">
+      <div class="mt-row">
+        <div><div class="mt-label">Schema actual instalado</div><div class="mt-desc">WebPage + WebSite + Organization — básico de WordPress/Yoast</div></div>
+        <div class="mt-val warn">Solo básico (Yoast default)</div>
+      </div>
+      <div class="mt-row">
+        <div><div class="mt-label">LocalBusiness schema</div><div class="mt-desc">Necesario para que Google Maps y las IAs te reconozcan como negocio local</div></div>
+        <div class="mt-val crit">⚠ AUSENTE</div>
+      </div>
+      <div class="mt-row">
+        <div><div class="mt-label">Service / AirCharter schema</div><div class="mt-desc">Le dice a ChatGPT y Perplexity exactamente qué servicios ofreces y en qué zonas</div></div>
+        <div class="mt-val crit">⚠ AUSENTE</div>
+      </div>
+      <div class="mt-row">
+        <div><div class="mt-label">FAQ schema</div><div class="mt-desc">Permite aparecer en "Preguntas relacionadas" en Google y ser citado en respuestas de IA</div></div>
+        <div class="mt-val crit">⚠ AUSENTE</div>
+      </div>
+    </div>
+    <div style="background:rgba(8,126,114,.06);border:1px solid rgba(8,126,114,.2);border-radius:12px;padding:14px 16px;font-size:12px;color:var(--ink)">
+      <strong style="color:var(--tl)">Por qué importa esto:</strong><br>
+      Cuando alguien le pregunta a ChatGPT "¿dónde rentar un jet privado en México?" — la IA busca sitios con schema <code>AirCharter</code> o <code>LocalBusiness</code> que le digan explícitamente "somos un servicio de aviación privada en CDMX". Sin ese schema, JETCAB es invisible para las IAs aunque tenga 28 páginas indexadas.
+    </div>
+  </div>
 
-  window.addEventListener('scroll', updateActiveSlide, { passive: true });
-  updateActiveSlide();
+  <!-- ── GEO SCORE ── -->
+  <div class="section">
+    <div class="section-hd">
+      <h2>🌐 Visibilidad en IAs (GEO Score)</h2>
+      <span class="tag crit">Score actual: 0/10</span>
+    </div>
+    <p style="font-size:13px;color:var(--sub);margin-bottom:18px">GEO = Generative Engine Optimization. Qué tan visible es JETCAB en ChatGPT, Perplexity, Google AI Overviews.</p>
+    <div class="geo-grid">
+      <div class="geo-card">
+        <div class="geo-card-top">
+          <div class="geo-dot" style="background:#10A37F"></div>
+          <span class="geo-plat">ChatGPT</span>
+          <span class="geo-estado ausente">Ausente</span>
+        </div>
+        <p class="geo-desc">Al preguntar "¿dónde rentar un jet privado en México?" JETCAB no aparece. Sin schema LocalBusiness ni AirCharter, las IAs no tienen datos para citar el negocio.</p>
+      </div>
+      <div class="geo-card">
+        <div class="geo-card-top">
+          <div class="geo-dot" style="background:#6B4FBB"></div>
+          <span class="geo-plat">Perplexity</span>
+          <span class="geo-estado ausente">Ausente</span>
+        </div>
+        <p class="geo-desc">Perplexity prioriza sitios con datos estructurados y menciones en directorios especializados de aviación. JETCAB no tiene ninguno de los dos actualmente.</p>
+      </div>
+      <div class="geo-card">
+        <div class="geo-card-top">
+          <div class="geo-dot" style="background:#4285F4"></div>
+          <span class="geo-plat">Google AI Overviews</span>
+          <span class="geo-estado ausente">Ausente</span>
+        </div>
+        <p class="geo-desc">El nuevo "Resumen de IA" de Google que aparece arriba de los resultados. Para incluirte necesita FAQ schema y contenido orientado a responder preguntas específicas.</p>
+      </div>
+      <div class="geo-card">
+        <div class="geo-card-top">
+          <div class="geo-dot" style="background:#EA4335"></div>
+          <span class="geo-plat">Google Search</span>
+          <span class="geo-estado parcial">Parcial</span>
+        </div>
+        <p class="geo-desc">28 páginas indexadas y crecimiento orgánico de +154%. La base está. El siguiente paso es mejorar los datos estructurados para que Google las ranquee más alto.</p>
+      </div>
+    </div>
+  </div>
 
-  // Keyboard navigation
-  document.addEventListener('keydown', (e) => {
-    let current = 0;
-    slides.forEach((s, i) => {
-      const rect = s.getBoundingClientRect();
-      if (rect.top <= 100) current = i;
-    });
-    if (e.key === 'ArrowDown' || e.key === ' ') {
-      e.preventDefault();
-      if (current < slides.length - 1) scrollToSlide(current + 1);
-    }
-    if (e.key === 'ArrowUp') {
-      e.preventDefault();
-      if (current > 0) scrollToSlide(current - 1);
-    }
-  });
-</script>
+  <!-- ── PROBLEMAS PRIORIZADOS ── -->
+  <div class="section">
+    <div class="section-hd">
+      <h2>🔧 Los 8 problemas por resolver</h2>
+    </div>
+    <div class="issue-list">
+      <div class="issue alta">
+        <div class="issue-top"><span class="issue-prio">Prioridad Alta</span><span class="issue-cat">GEO / IA</span></div>
+        <h3>Sin datos estructurados para IAs (JSON-LD)</h3>
+        <p>Google y las IAs (ChatGPT, Perplexity) no tienen información estructurada de JETCAB. Necesitas agregar schema <code>LocalBusiness + AirCharter + FAQ</code> en el homepage.</p>
+        <p class="issue-fix">→ Fix: Plugin "Insert Headers and Footers" en WordPress. Tiempo: 2 horas. Responsable: Rankeo.</p>
+      </div>
+      <div class="issue alta">
+        <div class="issue-top"><span class="issue-prio">Prioridad Alta</span><span class="issue-cat">Conversión</span></div>
+        <h3>Links "Cotizar" dan error 404</h3>
+        <p>Los botones de cotización apuntan a jetcab.mx/jetcab.mx/cotizar (dominio duplicado). Todo visitante que quiere cotizar choca con un error. Pérdida directa de ventas.</p>
+        <p class="issue-fix">→ Fix: Corregir URL en el panel de WordPress. Tiempo: 10 minutos. Responsable: JETCAB o Rankeo.</p>
+      </div>
+      <div class="issue alta">
+        <div class="issue-top"><span class="issue-prio">Prioridad Alta</span><span class="issue-cat">Performance</span></div>
+        <h3>21 scripts JavaScript activos</h3>
+        <p>El sitio carga 21 archivos JS separados. Cada uno es una petición al servidor. En móvil esto aumenta el tiempo de carga 2–3x y Google penaliza el ranking.</p>
+        <p class="issue-fix">→ Fix: Instalar WP Rocket (~$49/año). Los combina automáticamente. Tiempo: 30 minutos.</p>
+      </div>
+      <div class="issue alta">
+        <div class="issue-top"><span class="issue-prio">Prioridad Alta</span><span class="issue-cat">SEO técnico</span></div>
+        <h3>Meta AdSense activa — competidores pueden aparecer en tu sitio</h3>
+        <p>Hay un tag <code>&lt;meta name="google-adsense-platform-account"&gt;</code> que permite a Google mostrar anuncios de tus competidores dentro de jetcab.mx.</p>
+        <p class="issue-fix">→ Fix: Eliminar del header.php en WordPress. Tiempo: 5 minutos.</p>
+      </div>
+      <div class="issue media">
+        <div class="issue-top"><span class="issue-prio">Prioridad Media</span><span class="issue-cat">SEO técnico</span></div>
+        <h3>og:locale incorrecto — es_ES en lugar de es_MX</h3>
+        <p>El sitio está configurado geográficamente para España en lugar de México. Afecta las señales de relevancia local y la distribución en redes sociales.</p>
+        <p class="issue-fix">→ Fix: Cambiar en Yoast SEO → Avanzado → Configuración local. Tiempo: 5 minutos.</p>
+      </div>
+      <div class="issue media">
+        <div class="issue-top"><span class="issue-prio">Prioridad Media</span><span class="issue-cat">SEO técnico</span></div>
+        <h3>6 imágenes sin dimensiones width/height</h3>
+        <p>Causa Cumulative Layout Shift (CLS) — el sitio "brinca" visualmente al cargar. Google lo detecta y penaliza el ranking. El visitante tiene mala experiencia.</p>
+        <p class="issue-fix">→ Fix: Agregar dimensiones en el editor de WordPress o en el código. Tiempo: 1 hora. Responsable: Rankeo.</p>
+      </div>
+      <div class="issue media">
+        <div class="issue-top"><span class="issue-prio">Prioridad Media</span><span class="issue-cat">SEO técnico</span></div>
+        <h3>Páginas de WooCommerce indexadas por Google</h3>
+        <p>/cart/, /checkout/ y /my-account/ aparecen en el sitemap. Google rastrea estas páginas vacías, desperdiciando presupuesto de rastreo que podría usarse en tus páginas de destino.</p>
+        <p class="issue-fix">→ Fix: Agregar noindex en Yoast SEO para esas páginas. Tiempo: 15 minutos.</p>
+      </div>
+      <div class="issue media">
+        <div class="issue-top"><span class="issue-prio">Prioridad Media</span><span class="issue-cat">Conversión</span></div>
+        <h3>OG image es logo cuadrado — no visual al compartir</h3>
+        <p>Al compartir jetcab.mx en WhatsApp o LinkedIn aparece el logo en formato cuadrado 1024×1024. Debería ser una foto de avión impactante en formato 1200×630px.</p>
+        <p class="issue-fix">→ Fix: Crear imagen con Canva y configurar en Yoast SEO. Tiempo: 30 minutos.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── PLAN DE ACCIÓN ── -->
+  <div class="section">
+    <div class="section-hd">
+      <h2>📅 Plan de acción Q4 2026</h2>
+      <span class="tag ok">3 meses · Resultados medibles</span>
+    </div>
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-dot done">1</div>
+        <div class="tl-body">
+          <div class="tl-month">✅ Completado — Oct 2026</div>
+          <div class="tl-title">Auditoría técnica completa</div>
+          <div class="tl-desc">Identificados 8 problemas críticos. Datos de Analytics conectados. Baseline establecido: 111 usuarios/semana, +154% orgánico.</div>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot act">2</div>
+        <div class="tl-body">
+          <div class="tl-month">🔥 En curso — Oct 2026</div>
+          <div class="tl-title">Fixes críticos de conversión + GEO</div>
+          <div class="tl-desc">Corregir links 404, eliminar AdSense, implementar JSON-LD LocalBusiness + AirCharter + FAQ, corregir og:locale.</div>
+          <div class="tl-result">Resultado esperado: +20% en tasa de contacto</div>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot next">3</div>
+        <div class="tl-body">
+          <div class="tl-month">Nov 2026</div>
+          <div class="tl-title">Optimización de performance</div>
+          <div class="tl-desc">Instalar WP Rocket, corregir CLS en imágenes, preload de fuentes, noindex en páginas WooCommerce.</div>
+          <div class="tl-result">Resultado esperado: Velocidad mobile +40%, mejor ranking Google</div>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot next">4</div>
+        <div class="tl-body">
+          <div class="tl-month">Dic 2026</div>
+          <div class="tl-title">Contenido GEO + primera aparición en IAs</div>
+          <div class="tl-desc">Publicar páginas de destino por ruta (CDMX–Cancún, CDMX–Los Cabos, etc.) con contenido optimizado para IAs. Primera verificación de presencia en ChatGPT/Perplexity.</div>
+          <div class="tl-result">Resultado esperado: JETCAB empieza a aparecer en IAs</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── CTA ── -->
+  <div class="cta-box">
+    <h2>¿Alguna duda sobre el diagnóstico?</h2>
+    <p>Escríbenos por WhatsApp — te explicamos cualquier punto del reporte en menos de 24 horas.</p>
+    <a class="cta-btn" href="https://wa.me/525532894890?text=Hola%20Rankeo%2C%20tengo%20una%20duda%20sobre%20el%20diagn%C3%B3stico%20de%20JETCAB">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      Hablar con Rankeo
+    </a>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="rpt-footer" style="margin-top:48px;padding-top:24px;border-top:1px solid var(--bd);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px">
+    <div style="font-family:'Syne',sans-serif;font-weight:800;font-size:15px">Ran<span style="color:var(--or)">k</span>eo</div>
+    <div style="font-size:11px;color:var(--sub);text-align:right">Diagnóstico GEO + SEO · JETCAB México · Octubre 2026<br>Datos verificados el 05 Oct 2026 · rankeo.agency</div>
+  </div>
+
+</div>
 </body>
 </html>
