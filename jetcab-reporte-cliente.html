@@ -118,6 +118,19 @@ a{color:var(--or);text-decoration:none}
 .rpt-footer-l{font-family:"Syne",sans-serif;font-weight:800;font-size:15px}
 .rpt-footer-l span{color:var(--or)}
 .rpt-footer-r{font-size:11px;color:var(--sub);text-align:right}
+@media print{
+  .hdr{position:static;background:#0A0908 !important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .hero{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .analytics-box{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .cta-box{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .tl-dot{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  button{display:none !important}
+  .tl-item::before{display:none}
+  body{font-size:11px}
+  .score-grid,.geo-grid,.analytics-grid{break-inside:avoid}
+  .section{break-inside:avoid;margin-top:28px}
+  .issue{break-inside:avoid}
+}
 @media(max-width:680px){
   .score-grid{grid-template-columns:repeat(2,1fr)}
   .geo-grid{grid-template-columns:1fr}
@@ -131,7 +144,13 @@ a{color:var(--or);text-decoration:none}
 <header class="hdr">
   <div class="hdr-inner">
     <div class="hdr-logo">Ran<span>k</span>eo</div>
-    <div class="hdr-meta">Diagnóstico JETCAB · Octubre 2026</div>
+    <div class="hdr-r" style="display:flex;align-items:center;gap:10px">
+      <div class="hdr-meta" style="font-size:12px;color:rgba(255,255,255,.45)">Diagnóstico JETCAB · Octubre 2026</div>
+      <button onclick="window.print()" style="background:var(--or);border:none;color:#fff;padding:6px 13px;border-radius:7px;font-size:12px;font-weight:700;cursor:pointer;font-family:inherit;display:flex;align-items:center;gap:5px">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Descargar PDF
+      </button>
+    </div>
   </div>
 </header>
 
@@ -432,38 +451,38 @@ a{color:var(--or);text-decoration:none}
     </div>
     <div class="timeline">
       <div class="tl-item">
-        <div class="tl-dot done">1</div>
+        <div class="tl-dot done">✓</div>
         <div class="tl-body">
-          <div class="tl-month">✅ Completado — Oct 2026</div>
+          <div class="tl-month">✅ Completado — 1ª Quincena Oct 2026</div>
           <div class="tl-title">Auditoría técnica completa</div>
-          <div class="tl-desc">Identificados 8 problemas críticos. Datos de Analytics conectados. Baseline establecido: 111 usuarios/semana, +154% orgánico.</div>
+          <div class="tl-desc">Identificados 8 problemas críticos. Analytics conectado. Baseline: 111 usuarios/semana, +154% orgánico. Brief estratégico Q4 revisado y alineado.</div>
         </div>
       </div>
       <div class="tl-item">
         <div class="tl-dot act">2</div>
         <div class="tl-body">
-          <div class="tl-month">🔥 En curso — Oct 2026</div>
-          <div class="tl-title">Fixes críticos de conversión + GEO</div>
-          <div class="tl-desc">Corregir links 404, eliminar AdSense, implementar JSON-LD LocalBusiness + AirCharter + FAQ, corregir og:locale.</div>
-          <div class="tl-result">Resultado esperado: +20% en tasa de contacto</div>
+          <div class="tl-month">🔥 En curso — 2ª Quincena Oct 2026</div>
+          <div class="tl-title">Fixes críticos + JSON-LD AirCharter (campaña "Cierre desde la Cima")</div>
+          <div class="tl-desc">Corregir links 404, eliminar AdSense meta, implementar JSON-LD LocalBusiness + AirCharter + FAQ schema. Hubs: CDMX, Toluca, MTY, GDL. Corrección og:locale a es_MX.</div>
+          <div class="tl-result">Resultado esperado: Cotizaciones +20% · JETCAB empieza a indexarse para IAs</div>
         </div>
       </div>
       <div class="tl-item">
         <div class="tl-dot next">3</div>
         <div class="tl-body">
-          <div class="tl-month">Nov 2026</div>
-          <div class="tl-title">Optimización de performance</div>
-          <div class="tl-desc">Instalar WP Rocket, corregir CLS en imágenes, preload de fuentes, noindex en páginas WooCommerce.</div>
-          <div class="tl-result">Resultado esperado: Velocidad mobile +40%, mejor ranking Google</div>
+          <div class="tl-month">1ª Quincena Nov 2026 — "La Transición del Poder"</div>
+          <div class="tl-title">Performance + página GEO negocios</div>
+          <div class="tl-desc">Instalar WP Rocket (combinar 21 scripts → máx 4), corregir 6 imágenes sin dimensiones, noindex en WooCommerce. Página de destino: "Jet privado CDMX–Miami para negocios" (Avatar A + B).</div>
+          <div class="tl-result">Resultado esperado: Velocidad mobile +40% · Primeras citas en Perplexity</div>
         </div>
       </div>
       <div class="tl-item">
         <div class="tl-dot next">4</div>
         <div class="tl-body">
-          <div class="tl-month">Dic 2026</div>
-          <div class="tl-title">Contenido GEO + primera aparición en IAs</div>
-          <div class="tl-desc">Publicar páginas de destino por ruta (CDMX–Cancún, CDMX–Los Cabos, etc.) con contenido optimizado para IAs. Primera verificación de presencia en ChatGPT/Perplexity.</div>
-          <div class="tl-result">Resultado esperado: JETCAB empieza a aparecer en IAs</div>
+          <div class="tl-month">2ª Quincena Nov – 1ª Quincena Dic 2026 — "El Santuario Familiar"</div>
+          <div class="tl-title">Contenido GEO navidad + rastreo de leads</div>
+          <div class="tl-desc">Página: "Vuelos privados navidad México 2026 — mascotas bienvenidas" (Avatar C). Integración de rastreo de cotizaciones (formulario → CRM). Verificación de presencia en ChatGPT/Perplexity.</div>
+          <div class="tl-result">Resultado esperado: JETCAB aparece en IAs · Leads trazables</div>
         </div>
       </div>
     </div>
