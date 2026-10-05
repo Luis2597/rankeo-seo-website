@@ -519,11 +519,11 @@ const CLIENTS={
       {p:"media",cat:"SEO técnico",t:"Páginas de WooCommerce indexadas",d:"/cart/, /checkout/ y /my-account/ aparecen en el sitemap y Google las rastrea. Agregar noindex a esas páginas en Yoast SEO para liberar presupuesto de rastreo."}
     ],
     pagos:{total:5,monto:2500,moneda:"MXN",realizados:1,cuotas:[
-      {n:1,mes:"Octubre 2026",monto:"$2,500 MXN",estado:"pagado"},
-      {n:2,mes:"Noviembre 2026",monto:"$2,500 MXN",estado:"pendiente"},
-      {n:3,mes:"Diciembre 2026",monto:"$2,500 MXN",estado:"pendiente"},
-      {n:4,mes:"Enero 2027",monto:"$2,500 MXN",estado:"pendiente"},
-      {n:5,mes:"Febrero 2027",monto:"$2,500 MXN",estado:"pendiente"}
+      {n:1,mes:"1ª quincena Oct 2026",monto:"$2,500 MXN",estado:"pagado"},
+      {n:2,mes:"2ª quincena Oct 2026",monto:"$2,500 MXN",estado:"pendiente"},
+      {n:3,mes:"1ª quincena Nov 2026",monto:"$2,500 MXN",estado:"pendiente"},
+      {n:4,mes:"2ª quincena Nov 2026",monto:"$2,500 MXN",estado:"pendiente"},
+      {n:5,mes:"1ª quincena Dic 2026",monto:"$2,500 MXN",estado:"pendiente"}
     ]},
     metrics:[
       {lbl:"Páginas indexadas",val:"28",sub:"site:jetcab.mx verificado",estado:"neutral"},
@@ -801,7 +801,7 @@ async function runAnalysis(){
   const btns=["abS","abP"];
   btns.forEach(id=>{const b=document.getElementById(id);if(b){b.disabled=true;const ic=document.getElementById(id.replace("ab","ai"));if(ic)ic.classList.add("spinning");}});
   const PSI_CACHE_KEY="rkPsi_"+(cc.url||"").slice(-30);
-  const PSI_CACHE_TTL=22*3600*1000;
+  const PSI_CACHE_TTL=7*24*3600*1000; // 7 días de caché
   const cached=JSON.parse(localStorage.getItem(PSI_CACHE_KEY)||"null");
   try{
     let d;
@@ -825,7 +825,8 @@ async function runAnalysis(){
             const slS=document.getElementById("slS");if(slS)slS.textContent="Resultado anterior";
             const sdS=document.getElementById("sdS");if(sdS)sdS.innerHTML=`<span style="color:var(--sub);font-size:11px">${msg}</span>`;
           }else{
-            throw new Error("API de Google temporalmente no disponible. Los resultados anteriores son los más recientes. Intenta de nuevo mañana.");
+            const psiUrl="https://pagespeed.web.dev/report?url="+encodeURIComponent(cc.url)+"&form_factor=mobile";
+            throw new Error(`__PSI_LIMIT__${psiUrl}`);
           }
         }else{
           throw new Error("HTTP "+r.status+(det?" — "+det:""));
@@ -865,8 +866,14 @@ async function runAnalysis(){
     document.getElementById("kScan").textContent="Hoy "+new Date().toLocaleTimeString("es-CO",{hour:"2-digit",minute:"2-digit"});
   }catch(err){
     console.error("PageSpeed:",err);
-    const msg=err.message||"Error desconocido";
-    const errHtml=`<span style="color:var(--rd);font-size:11px;display:block;margin-bottom:8px">${msg}</span><button onclick="runAnalysis()" style="background:none;border:none;color:var(--or);font-weight:700;cursor:pointer;font-family:inherit;font-size:13px;padding:0">Reintentar →</button>`;
+    const rawMsg=err.message||"Error desconocido";
+    let errHtml;
+    if(rawMsg.startsWith("__PSI_LIMIT__")){
+      const psiUrl=rawMsg.replace("__PSI_LIMIT__","");
+      errHtml=`<span style="color:var(--sub);font-size:11px;display:block;margin-bottom:10px">Límite diario de análisis alcanzado. Consulta el reporte completo directamente en Google:</span><a href="${psiUrl}" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;background:var(--or);color:#fff;padding:8px 14px;border-radius:8px;font-size:13px;font-weight:700;text-decoration:none">Ver en PageSpeed Insights →</a>`;
+    }else{
+      errHtml=`<span style="color:var(--rd);font-size:11px;display:block;margin-bottom:8px">${rawMsg}</span><button onclick="runAnalysis()" style="background:none;border:none;color:var(--or);font-weight:700;cursor:pointer;font-family:inherit;font-size:13px;padding:0">Reintentar →</button>`;
+    }
     const slS=document.getElementById("slS");if(slS)slS.textContent="Error al analizar";
     const sdS=document.getElementById("sdS");if(sdS)sdS.innerHTML=errHtml;
     const slP=document.getElementById("slP");if(slP)slP.textContent="Error al analizar";
