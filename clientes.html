@@ -610,10 +610,14 @@ const CLIENTS={
       {n:5,mes:"1ª quincena Dic 2026",monto:"$2,500 MXN",estado:"pendiente"}
     ]},
     metrics:[
-      {lbl:"Páginas indexadas",val:"28",sub:"site:jetcab.mx verificado",estado:"neutral"},
-      {lbl:"Errores críticos",val:"5",sub:"identificados en auditoría",estado:"critico"},
-      {lbl:"JSON-LD schemas",val:"0",sub:"pendiente implementar",estado:"critico"},
-      {lbl:"GEO Score",val:"0/10",sub:"sin datos estructurados para IAs",estado:"critico"}
+      {lbl:"Usuarios activos (7 días)",val:"111",sub:"↑70.8% vs semana anterior · Google Analytics",estado:"neutral"},
+      {lbl:"Sesiones orgánicas Google",val:"99",sub:"↑153.8% · SEO funcionando",estado:"neutral"},
+      {lbl:"Páginas vistas",val:"229",sub:"↑70.9% vs semana anterior",estado:"neutral"},
+      {lbl:"Ciudad principal",val:"CDMX",sub:"40 usuarios activos · ↑207%",estado:"neutral"},
+      {lbl:"Errores críticos",val:"5",sub:"identificados en auditoría técnica",estado:"critico"},
+      {lbl:"JSON-LD schemas",val:"0",sub:"pendiente implementar — urgente",estado:"critico"},
+      {lbl:"GEO Score",val:"0/10",sub:"sin datos estructurados para IAs",estado:"critico"},
+      {lbl:"Páginas indexadas",val:"28",sub:"site:jetcab.mx en Google",estado:"neutral"}
     ],
     geo:{
       score:0,maxScore:10,
@@ -637,6 +641,16 @@ const CLIENTS={
       whaClicks:12,
       llamadas:5,
       formEnvios:3,
+      trafico:{
+        usuarios:111,
+        crecimiento:"+70.8%",
+        organico:99,
+        orgCrecimiento:"+153.8%",
+        vistas:229,
+        topCiudad:"Ciudad de México (40 usuarios)",
+        topPagina:"Aviones Privados y Helicópteros en Renta",
+        topPaginaVistas:98
+      },
       lista:[
         {fecha:"03 Oct",canal:"wa",msg:"Cotización vuelo privado CDMX–Cancún",estado:"nuevo"},
         {fecha:"01 Oct",canal:"form",msg:"Renta helicóptero ejecutivo fin de semana",estado:"contactado"},
@@ -1188,11 +1202,22 @@ const CANAL_LABEL={wa:"WhatsApp",form:"Formulario",call:"Llamada"};
 function renderLeads(){
   if(!cc||!cc.leads)return;
   const l=cc.leads;
-  document.getElementById("leadsMesSub").textContent=`${l.mes} · Leads registrados este período`;
+  document.getElementById("leadsMesSub").textContent=`${l.mes} · Datos reales desde Google Analytics`;
+  const t=l.trafico||{};
   document.getElementById("leadsKpiRow").innerHTML=`
-    <div class="leads-kpi"><div class="leads-kpi-val or">${l.total}</div><div class="leads-kpi-lbl">Leads este mes</div></div>
-    <div class="leads-kpi"><div class="leads-kpi-val">${l.whaClicks}</div><div class="leads-kpi-lbl">Clics WhatsApp</div></div>
-    <div class="leads-kpi"><div class="leads-kpi-val">${l.llamadas+l.formEnvios}</div><div class="leads-kpi-lbl">Llamadas + formularios</div></div>`;
+    <div class="leads-kpi"><div class="leads-kpi-val or">${t.usuarios||l.total}</div><div class="leads-kpi-lbl">Usuarios activos (7 días)<br><small style="color:#16A34A;font-weight:700">${t.crecimiento||""}</small></div></div>
+    <div class="leads-kpi"><div class="leads-kpi-val">${t.organico||l.whaClicks}</div><div class="leads-kpi-lbl">Sesiones desde Google<br><small style="color:#16A34A;font-weight:700">${t.orgCrecimiento||""}</small></div></div>
+    <div class="leads-kpi"><div class="leads-kpi-val">${t.vistas||l.llamadas+l.formEnvios}</div><div class="leads-kpi-lbl">Páginas vistas</div></div>`;
+  if(t.topCiudad){
+    const traficoBanner=document.getElementById("leadsKpiRow");
+    if(traficoBanner){
+      traficoBanner.insertAdjacentHTML("afterend",`
+        <div style="background:var(--wh);border:1px solid var(--bd);border-radius:12px;padding:16px 18px;margin-bottom:18px;display:grid;grid-template-columns:1fr 1fr;gap:12px">
+          <div><div style="font-size:10px;font-weight:600;color:var(--sub);text-transform:uppercase;letter-spacing:.04em;margin-bottom:4px">Ciudad principal</div><div style="font-size:14px;font-weight:700;color:var(--ink)">${t.topCiudad}</div></div>
+          <div><div style="font-size:10px;font-weight:600;color:var(--sub);text-transform:uppercase;letter-spacing:.04em;margin-bottom:4px">Página más visitada</div><div style="font-size:12px;font-weight:700;color:var(--ink)">${t.topPagina} <span style="color:var(--sub);font-weight:400">(${t.topPaginaVistas} vistas)</span></div></div>
+        </div>`);
+    }
+  }
   document.getElementById("leadsList").innerHTML=l.lista.map(ld=>`
     <div class="lead-item">
       <span class="lead-canal ${ld.canal}">${CANAL_LABEL[ld.canal]||ld.canal}</span>
