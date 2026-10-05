@@ -269,10 +269,10 @@
     .hero-text { flex: 1; min-width: 0; }
     /* .eyebrow removed — kicker above heading is banned (craft-floor §refuse) */
 
-    h1.ht { font-family: 'Syne', sans-serif; letter-spacing: -.03em; margin-bottom: 24px; overflow-wrap: break-word; word-break: break-word; }
-    h1.ht .tl { display: block; font-weight: 700; font-size: clamp(2.4rem,7vw,6rem); line-height: 1; color: rgba(10,9,8,.32); }
-    h1.ht .th { display: block; font-weight: 800; font-size: clamp(2.8rem,8.5vw,7.5rem); line-height: .95; color: var(--c-ink); }
-    h1.ht .ta { display: block; font-weight: 800; font-size: clamp(2.8rem,8.5vw,7.5rem); line-height: .95; color: var(--c-orange); }
+    h1.ht { font-family: 'Syne', sans-serif; letter-spacing: -.03em; margin-bottom: 24px; overflow-wrap: normal; word-break: normal; }
+    h1.ht .tl { display: block; font-weight: 700; font-size: clamp(1.3rem,2.2vw,1.75rem); line-height: 1.1; color: rgba(10,9,8,.32); }
+    h1.ht .th { display: block; font-weight: 800; font-size: clamp(2.5rem,4.8vw,5rem); line-height: .95; color: var(--c-ink); }
+    h1.ht .ta { display: block; font-weight: 800; font-size: clamp(2.5rem,4.8vw,5rem); line-height: .95; color: var(--c-orange); }
     /* .tg removed — secondary label below heading (eyebrow-below variant, banned) */
     @media (max-width: 480px) {
       h1.ht .tl { font-size: clamp(1.75rem,10vw,2.4rem); }
@@ -422,7 +422,7 @@
       content: '"';
       position: absolute; top: -0.1em; right: 5%;
       font-family: 'Syne', sans-serif; font-weight: 800;
-      font-size: clamp(12rem, 20vw, 22rem); line-height: 1;
+      font-size: clamp(8rem, 14vw, 14rem); line-height: 1;
       color: rgba(240,78,35,.06);
       pointer-events: none; user-select: none;
       letter-spacing: -0.05em;
@@ -430,7 +430,7 @@
     .mf-inner { display: grid; grid-template-columns: 1fr auto; align-items: start; gap: 64px; }
     .mf-q {
       font-family: 'Syne', sans-serif; font-weight: 800;
-      font-size: clamp(2rem,4.5vw,3.8rem);
+      font-size: clamp(1.6rem,2.8vw,2.4rem);
       letter-spacing: -.035em; line-height: 1.05;
       color: rgba(255,255,255,.92);
     }
