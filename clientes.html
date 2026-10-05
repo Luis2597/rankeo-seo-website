@@ -1033,6 +1033,7 @@ function nav(id,btn){
   if(id!=="tips"){selectedTips.clear();const bb=document.getElementById("batchBar");if(bb)bb.classList.remove("on");}
   if(id==="results")renderResults();
   if(id==="reqs")renderAdminRequests();
+  if(id==="reports")renderReports();
   if(id==="web"&&cc){const vf=document.getElementById("vistaFrame");if(vf.src==="about:blank")vf.src=cc.url;}
 }
 
