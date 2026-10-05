@@ -694,6 +694,292 @@
     letter-spacing: 0.08em;
   }
 
+  /* ── SLIDE PAGOS ── */
+  .slide-pagos { background: var(--surface); }
+
+  .pagos-total {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 16px;
+    margin-bottom: 56px;
+    padding: 28px 40px;
+    background: var(--bg);
+    border: 1px solid rgba(201,168,76,0.3);
+    border-radius: 4px;
+  }
+
+  .pagos-total-amount {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 900;
+    font-size: clamp(48px, 6vw, 80px);
+    color: var(--gold);
+    line-height: 1;
+    letter-spacing: -0.02em;
+  }
+
+  .pagos-total-label {
+    font-size: 14px;
+    color: rgba(255,255,255,0.45);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  .pagos-cuota-badge {
+    margin-left: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .pagos-cuota-num {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--white);
+    line-height: 1;
+  }
+
+  .pagos-cuota-lbl {
+    font-size: 11px;
+    color: rgba(255,255,255,0.4);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  .pagos-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 12px;
+    margin-bottom: 40px;
+  }
+
+  @media (max-width: 900px) {
+    .pagos-grid { grid-template-columns: 1fr 1fr; }
+  }
+
+  @media (max-width: 480px) {
+    .pagos-grid { grid-template-columns: 1fr; }
+  }
+
+  .pago-card {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 24px 20px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .pago-card.pagado {
+    border-color: rgba(56,161,105,0.5);
+    background: rgba(56,161,105,0.05);
+  }
+
+  .pago-card.pagado::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 3px;
+    background: var(--success);
+    border-radius: 4px 4px 0 0;
+  }
+
+  .pago-card.pendiente::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 3px;
+    background: var(--border);
+    border-radius: 4px 4px 0 0;
+  }
+
+  .pago-num {
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--subtle);
+    font-weight: 600;
+  }
+
+  .pago-mes {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 20px;
+    font-weight: 800;
+    color: var(--white);
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+  }
+
+  .pago-amount {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 30px;
+    font-weight: 900;
+    color: var(--gold);
+    line-height: 1;
+  }
+
+  .pago-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-top: 4px;
+  }
+
+  .pago-status.ok { color: var(--success); }
+  .pago-status.pending { color: rgba(255,255,255,0.3); }
+
+  .pagos-note {
+    font-size: 13px;
+    color: rgba(255,255,255,0.35);
+    font-style: italic;
+    letter-spacing: 0.03em;
+    text-align: center;
+    padding-top: 24px;
+    border-top: 1px solid var(--border);
+  }
+
+  /* ── SLIDE FASES ── */
+  .slide-fases { background: var(--bg); }
+
+  .fases-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .fase-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 28px 32px;
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 40px;
+    align-items: start;
+  }
+
+  @media (max-width: 900px) {
+    .fase-card { grid-template-columns: 1fr; gap: 20px; }
+  }
+
+  .fase-card.en-curso {
+    border-color: rgba(201,168,76,0.5);
+    background: rgba(201,168,76,0.04);
+  }
+
+  .fase-left {}
+
+  .fase-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 4px 12px;
+    border-radius: 2px;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+  }
+
+  .fase-badge.active {
+    background: rgba(201,168,76,0.15);
+    color: var(--gold);
+    border: 1px solid rgba(201,168,76,0.4);
+  }
+
+  .fase-badge.upcoming {
+    background: rgba(255,255,255,0.06);
+    color: rgba(255,255,255,0.35);
+    border: 1px solid var(--border);
+  }
+
+  .fase-num {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    color: var(--subtle);
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+
+  .fase-title {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: clamp(20px, 2.5vw, 26px);
+    font-weight: 800;
+    text-transform: uppercase;
+    color: var(--white);
+    letter-spacing: 0.02em;
+    line-height: 1.1;
+    margin-bottom: 6px;
+  }
+
+  .fase-date {
+    font-size: 13px;
+    color: var(--gold);
+    font-weight: 500;
+    letter-spacing: 0.05em;
+  }
+
+  .fase-items {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .fase-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 13px;
+    color: rgba(255,255,255,0.6);
+    line-height: 1.5;
+  }
+
+  .fase-item-dot {
+    width: 5px; height: 5px;
+    border-radius: 50%;
+    background: var(--gold);
+    opacity: 0.6;
+    flex-shrink: 0;
+    margin-top: 6px;
+  }
+
+  .fase-item.highlight {
+    color: rgba(255,255,255,0.85);
+    font-weight: 500;
+  }
+
+  .fase-item.highlight .fase-item-dot {
+    opacity: 1;
+  }
+
+  .fase-metrics {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 16px;
+    padding-top: 16px;
+    border-top: 1px solid var(--border);
+  }
+
+  .fase-metric {
+    padding: 4px 12px;
+    background: rgba(229,62,62,0.1);
+    border: 1px solid rgba(229,62,62,0.25);
+    border-radius: 2px;
+    font-size: 11px;
+    color: #FC8181;
+    letter-spacing: 0.06em;
+  }
+
   /* ── SLIDE 8: CIERRE ── */
   .slide-close {
     background: var(--bg);
@@ -838,9 +1124,9 @@
   <button class="nav-dot" onclick="scrollToSlide(3)" title="Visibilidad IA"></button>
   <button class="nav-dot" onclick="scrollToSlide(4)" title="Soluciones"></button>
   <button class="nav-dot" onclick="scrollToSlide(5)" title="Impacto"></button>
-  <button class="nav-dot" onclick="scrollToSlide(6)" title="Plan"></button>
+  <button class="nav-dot" onclick="scrollToSlide(6)" title="Inversión a Plazos"></button>
   <button class="nav-dot" onclick="scrollToSlide(7)" title="Siguiente paso"></button>
-  <button class="nav-dot" onclick="scrollToSlide(8)" title="Plan de Acción"></button>
+  <button class="nav-dot" onclick="scrollToSlide(8)" title="Fases del proyecto"></button>
 </nav>
 
 <div class="page-indicator" id="pageIndicator">1 / 8</div>
@@ -872,16 +1158,16 @@
   <div class="cover-bottom">
     <div class="cover-stats">
       <div class="cover-stat">
-        <span class="cover-stat-number">8</span>
-        <span class="cover-stat-label">Problemas críticos</span>
+        <span class="cover-stat-number">5</span>
+        <span class="cover-stat-label">Errores críticos</span>
       </div>
       <div class="cover-stat">
         <span class="cover-stat-number">28</span>
         <span class="cover-stat-label">Páginas auditadas</span>
       </div>
       <div class="cover-stat">
-        <span class="cover-stat-number">< 2h</span>
-        <span class="cover-stat-label">Para los quick wins</span>
+        <span class="cover-stat-number">0</span>
+        <span class="cover-stat-label">JSON-LD instalados</span>
       </div>
     </div>
     <div class="cover-cta">
@@ -925,10 +1211,10 @@
       </div>
     </div>
     <div class="exec-card">
-      <span class="exec-card-icon">💰</span>
-      <div class="exec-card-title">Precios contradictorios</div>
+      <span class="exec-card-icon">📍</span>
+      <div class="exec-card-title">og:locale incorrecto + sitio sin actualizar</div>
       <div class="exec-card-body">
-        La misma ruta a Cancún muestra $4,950 USD y $1,500 USD en páginas diferentes. Esto genera desconfianza inmediata en clientes UHNWI que investigan antes de contratar.
+        El sitio dice ser de España (es_ES) cuando opera en México. Las páginas de flota no se actualizan desde noviembre 2024 — hace casi dos años. Señales que Google y las IAs penalizan silenciosamente.
       </div>
     </div>
   </div>
@@ -944,80 +1230,53 @@
     <span class="section-title-text">Auditoría completa</span>
   </div>
 
-  <h2 class="slide-h2">Los 8 problemas<br><em>encontrados.</em></h2>
+  <h2 class="slide-h2">Los 5 errores<br><em>críticos.</em></h2>
 
   <div class="problems-list">
     <div class="problem-row">
       <span class="problem-num">01</span>
       <div class="problem-content">
-        <div class="problem-title">AdSense activo — competidores en su propio sitio</div>
-        <div class="problem-desc">Google coloca anuncios de terceros (posibles competidores) dentro de jetcab.mx. Incompatible con marca de lujo.</div>
-      </div>
-      <div class="problem-impact"><span class="impact-badge impact-critical">Crítico</span></div>
-      <div class="problem-area">Marca</div>
-    </div>
-    <div class="problem-row">
-      <span class="problem-num">02</span>
-      <div class="problem-content">
-        <div class="problem-title">Cero datos estructurados (JSON-LD)</div>
-        <div class="problem-desc">Sin schema markup, ChatGPT, Perplexity y Google AI Overviews no pueden extraer ni citar información de JETCAB.</div>
+        <div class="problem-title">0 schemas JSON-LD — 28 páginas sin datos estructurados</div>
+        <div class="problem-desc">Sin schema markup en ninguna de las 28 páginas analizadas. ChatGPT, Perplexity y Google AI Overviews no pueden extraer ni citar información de JETCAB. Sus competidores sí aparecen.</div>
       </div>
       <div class="problem-impact"><span class="impact-badge impact-critical">Crítico</span></div>
       <div class="problem-area">GEO / IA</div>
     </div>
     <div class="problem-row">
-      <span class="problem-num">03</span>
+      <span class="problem-num">02</span>
       <div class="problem-content">
-        <div class="problem-title">Botones de cotizar con URL duplicada → 404</div>
-        <div class="problem-desc">CTA principal en múltiples páginas lleva a error. Conversiones perdidas directamente.</div>
+        <div class="problem-title">CTAs de cotización rotos — URL duplicada genera error 404</div>
+        <div class="problem-desc">Múltiples botones "Cotizar" apuntan a <code style="font-size:11px;background:rgba(255,255,255,0.1);padding:2px 6px;border-radius:2px;">jetcab.mx/jetcab.mx/cotizar</code>. Clientes listos para comprar llegan a una página vacía. Conversiones perdidas directamente.</div>
       </div>
       <div class="problem-impact"><span class="impact-badge impact-critical">Crítico</span></div>
       <div class="problem-area">Conversión</div>
     </div>
     <div class="problem-row">
-      <span class="problem-num">04</span>
+      <span class="problem-num">03</span>
       <div class="problem-content">
-        <div class="problem-title">Precios contradictorios entre páginas</div>
-        <div class="problem-desc">Misma ruta con dos precios diferentes genera desconfianza en el proceso de compra.</div>
+        <div class="problem-title">3 páginas de WooCommerce indexadas innecesariamente</div>
+        <div class="problem-desc">/cart/, /checkout/ y /my-account/ aparecen en Google y en el sitemap. Páginas sin valor de negocio que consumen presupuesto de rastreo y envían señales confusas al algoritmo.</div>
       </div>
       <div class="problem-impact"><span class="impact-badge impact-critical">Crítico</span></div>
-      <div class="problem-area">Confianza</div>
+      <div class="problem-area">SEO técnico</div>
+    </div>
+    <div class="problem-row">
+      <span class="problem-num">04</span>
+      <div class="problem-content">
+        <div class="problem-title">Meta AdSense de plataforma activa en el sitio</div>
+        <div class="problem-desc">Etiqueta <code style="font-size:11px;background:rgba(255,255,255,0.1);padding:2px 6px;border-radius:2px;">ca-host-pub-2644536267352236</code> detectada. Google puede colocar anuncios de competidores dentro de jetcab.mx. Incompatible con posicionamiento de marca de lujo.</div>
+      </div>
+      <div class="problem-impact"><span class="impact-badge impact-critical">Crítico</span></div>
+      <div class="problem-area">Marca</div>
     </div>
     <div class="problem-row">
       <span class="problem-num">05</span>
       <div class="problem-content">
-        <div class="problem-title">Sin mencionar DGAC, SCT ni certificaciones</div>
-        <div class="problem-desc">Los competidores posicionados en IA siempre citan autoridades regulatorias. JETCAB con 25 años no lo hace.</div>
+        <div class="problem-title">og:locale configurado como es_ES — mercado es México, no España</div>
+        <div class="problem-desc">Meta dato geográfico incorrecto en las 28 páginas. Afecta señales de localización, distribución en redes sociales y relevancia para búsquedas mexicanas. og:image además mide 1024×1024 en lugar del estándar 1200×630.</div>
       </div>
-      <div class="problem-impact"><span class="impact-badge impact-high">Alto</span></div>
-      <div class="problem-area">E-E-A-T</div>
-    </div>
-    <div class="problem-row">
-      <span class="problem-num">06</span>
-      <div class="problem-content">
-        <div class="problem-title">Páginas de carrito de WooCommerce indexadas</div>
-        <div class="problem-desc">/cart/, /checkout/, /my-account/ aparecen en Google. Páginas sin valor que dañan el presupuesto de rastreo.</div>
-      </div>
-      <div class="problem-impact"><span class="impact-badge impact-high">Alto</span></div>
-      <div class="problem-area">SEO técnico</div>
-    </div>
-    <div class="problem-row">
-      <span class="problem-num">07</span>
-      <div class="problem-content">
-        <div class="problem-title">og:locale configurado como es_ES en lugar de es_MX</div>
-        <div class="problem-desc">Meta dato incorrecto para mercado mexicano. Afecta distribución en redes sociales y señales geográficas.</div>
-      </div>
-      <div class="problem-impact"><span class="impact-badge impact-medium">Medio</span></div>
+      <div class="problem-impact"><span class="impact-badge impact-critical">Crítico</span></div>
       <div class="problem-area">SEO local</div>
-    </div>
-    <div class="problem-row">
-      <span class="problem-num">08</span>
-      <div class="problem-content">
-        <div class="problem-title">Imagen de redes sociales mal dimensionada</div>
-        <div class="problem-desc">og:image es logo cuadrado 1024×1024. Debe ser 1200×630 horizontal para preview correcto en WhatsApp, LinkedIn, etc.</div>
-      </div>
-      <div class="problem-impact"><span class="impact-badge impact-medium">Medio</span></div>
-      <div class="problem-area">Redes sociales</div>
     </div>
   </div>
 </section>
@@ -1190,68 +1449,68 @@
 </section>
 
 <!-- ══════════════════════════════════════════
-     SLIDE 7 — TIMELINE
+     SLIDE 7 — INVERSIÓN A PLAZOS
 ═══════════════════════════════════════════ -->
-<section class="slide slide-timeline" id="slide-6">
+<section class="slide slide-pagos" id="slide-6">
   <div class="section-label">
     <span class="section-num">06</span>
     <span class="section-line"></span>
-    <span class="section-title-text">Cronograma</span>
+    <span class="section-title-text">Inversión</span>
   </div>
 
-  <h2 class="slide-h2">El plan,<br><em>semana a semana.</em></h2>
+  <h2 class="slide-h2">Inversión<br><em>a plazos.</em></h2>
 
-  <div class="timeline">
-    <div class="timeline-item">
-      <div class="timeline-dot-wrapper">
-        <div class="timeline-dot">1</div>
-      </div>
-      <div class="timeline-content">
-        <div class="timeline-phase">Semana 1 — Quick Wins</div>
-        <div class="timeline-title">Fixes críticos de conversión y marca</div>
-        <div class="timeline-desc">Desactivar AdSense · Reparar botones de cotizar · Implementar JSON-LD en homepage · Configurar og:locale y og:image · Noindex WooCommerce</div>
-        <div class="timeline-tags">
-          <span class="timeline-tag">AdSense off</span>
-          <span class="timeline-tag">Cotizar funcional</span>
-          <span class="timeline-tag">JSON-LD homepage</span>
-          <span class="timeline-tag">og:locale es_MX</span>
-        </div>
-      </div>
+  <div class="pagos-total">
+    <div>
+      <div class="pagos-total-label">Total del proyecto</div>
+      <div class="pagos-total-amount">$12,500 <span style="font-size:0.4em;color:rgba(255,255,255,0.5);font-weight:400;">USD</span></div>
     </div>
-
-    <div class="timeline-item">
-      <div class="timeline-dot-wrapper">
-        <div class="timeline-dot">2</div>
-      </div>
-      <div class="timeline-content">
-        <div class="timeline-phase">Semana 2 — Contenido y precios</div>
-        <div class="timeline-title">Autoridad y coherencia de información</div>
-        <div class="timeline-desc">Unificar precios en las 17 páginas de destino · Agregar certificaciones DGAC/SCT/OACI en /sobre-nosotros/ · JSON-LD en páginas de flota y destinos</div>
-        <div class="timeline-tags">
-          <span class="timeline-tag">Precios unificados</span>
-          <span class="timeline-tag">Autoridad regulatoria</span>
-          <span class="timeline-tag">JSON-LD flota</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="timeline-item">
-      <div class="timeline-dot-wrapper">
-        <div class="timeline-dot">3</div>
-      </div>
-      <div class="timeline-content">
-        <div class="timeline-phase">Semanas 3–4 — Campaña Q4</div>
-        <div class="timeline-title">Contenido GEO por avatar y campaña "25 Años"</div>
-        <div class="timeline-desc">Contenido optimizado para los 3 perfiles de cliente (Poder Silencioso · New Power Elite · Luxury Families) · Mensajes de octubre B2B + diciembre familia</div>
-        <div class="timeline-tags">
-          <span class="timeline-tag">Avatar A: discreción</span>
-          <span class="timeline-tag">Avatar B: wow factor</span>
-          <span class="timeline-tag">Avatar C: familia</span>
-          <span class="timeline-tag">Q4 2026</span>
-        </div>
-      </div>
+    <div style="width:1px;height:60px;background:var(--border);margin:0 16px;"></div>
+    <div class="pagos-cuota-badge">
+      <div class="pagos-cuota-num">5 pagos</div>
+      <div class="pagos-cuota-lbl">de $2,500 USD cada uno</div>
     </div>
   </div>
+
+  <div class="pagos-grid">
+    <!-- Pago 1 — PAGADO -->
+    <div class="pago-card pagado">
+      <div class="pago-num">Pago 1 de 5</div>
+      <div class="pago-mes">Octubre 2026</div>
+      <div class="pago-amount">$2,500</div>
+      <div class="pago-status ok">✅ Pagado</div>
+    </div>
+    <!-- Pago 2 -->
+    <div class="pago-card pendiente">
+      <div class="pago-num">Pago 2 de 5</div>
+      <div class="pago-mes">Noviembre 2026</div>
+      <div class="pago-amount">$2,500</div>
+      <div class="pago-status pending">⬜ Pendiente</div>
+    </div>
+    <!-- Pago 3 -->
+    <div class="pago-card pendiente">
+      <div class="pago-num">Pago 3 de 5</div>
+      <div class="pago-mes">Diciembre 2026</div>
+      <div class="pago-amount">$2,500</div>
+      <div class="pago-status pending">⬜ Pendiente</div>
+    </div>
+    <!-- Pago 4 -->
+    <div class="pago-card pendiente">
+      <div class="pago-num">Pago 4 de 5</div>
+      <div class="pago-mes">Enero 2027</div>
+      <div class="pago-amount">$2,500</div>
+      <div class="pago-status pending">⬜ Pendiente</div>
+    </div>
+    <!-- Pago 5 -->
+    <div class="pago-card pendiente">
+      <div class="pago-num">Pago 5 de 5</div>
+      <div class="pago-mes">Febrero 2027</div>
+      <div class="pago-amount">$2,500</div>
+      <div class="pago-status pending">⬜ Pendiente</div>
+    </div>
+  </div>
+
+  <div class="pagos-note">Sin contratos anuales. Sin letra pequeña. Cancela cuando quieras.</div>
 </section>
 
 <!-- ══════════════════════════════════════════
@@ -1286,102 +1545,92 @@
 </section>
 
 <!-- ══════════════════════════════════════════
-     SLIDE 9 — PLAN DE ACCIÓN
+     SLIDE 9 — FASES DEL PROYECTO
 ═══════════════════════════════════════════ -->
-<section class="slide" id="slide-8" style="background:var(--surface);">
+<section class="slide slide-fases" id="slide-8">
   <div class="section-label">
     <span class="section-num">09</span>
     <span class="section-line"></span>
-    <span class="section-title-text">Plan de Acción</span>
+    <span class="section-title-text">Fases del proyecto</span>
   </div>
 
-  <h2 class="slide-h2">Cinco fixes.<br><em>Menos de 30 min cada uno.</em></h2>
+  <h2 class="slide-h2">El plan,<br><em>fase a fase.</em></h2>
 
-  <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:40px;width:100%;max-width:900px;">
+  <div class="fases-grid">
 
-    <!-- Fix 1 -->
-    <div style="background:var(--surface2);border:1px solid var(--border);border-left:3px solid var(--danger);border-radius:10px;padding:22px 20px;">
-      <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px;margin-bottom:10px;">
-        <div style="font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:17px;letter-spacing:0.02em;color:var(--white);">Meta AdSense de plataforma</div>
-        <span style="background:rgba(229,62,62,0.15);color:var(--danger);border-radius:4px;padding:2px 8px;font-size:10px;font-weight:700;letter-spacing:0.06em;white-space:nowrap;flex-shrink:0;">ALTA</span>
+    <!-- FASE 1 -->
+    <div class="fase-card en-curso">
+      <div class="fase-left">
+        <div class="fase-badge active">✅ En curso</div>
+        <div class="fase-num">Fase 1 de 4</div>
+        <div class="fase-title">Fundamentos</div>
+        <div class="fase-date">Octubre 2026</div>
+        <div class="fase-metrics">
+          <span class="fase-metric">0 JSON-LD / 28 páginas</span>
+          <span class="fase-metric">CTAs rotos → 404</span>
+          <span class="fase-metric">WooCommerce indexado</span>
+          <span class="fase-metric">og:locale es_ES</span>
+          <span class="fase-metric">AdSense activo</span>
+        </div>
       </div>
-      <div style="font-size:13px;color:rgba(255,255,255,0.65);line-height:1.6;margin-bottom:14px;">Eliminar <code style="background:rgba(255,255,255,0.08);padding:1px 5px;border-radius:3px;font-size:11px;">&lt;meta name="google-adsense-platform-account"&gt;</code> del <strong style="color:var(--white);">header.php</strong> en WordPress (Apariencia → Editor de temas o Insert Headers and Footers).</div>
-      <div style="display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap;">
-        <span style="font-size:11px;color:var(--gold);">⏱ &lt; 5 minutos</span>
-        <span style="font-size:11px;color:rgba(255,255,255,0.45);">Impacto: <span style="color:var(--success);">Competidores desaparecen del sitio · Marca premium restaurada</span></span>
+      <div class="fase-items">
+        <div class="fase-item highlight"><span class="fase-item-dot"></span>Auditoría SEO+GEO completa: 28 páginas analizadas</div>
+        <div class="fase-item highlight"><span class="fase-item-dot"></span>5 errores críticos documentados con solución exacta</div>
+        <div class="fase-item highlight"><span class="fase-item-dot"></span>Portal de cliente configurado con métricas en vivo</div>
+        <div class="fase-item highlight"><span class="fase-item-dot"></span>Informe ejecutivo con plan de acción por implementar</div>
+        <div class="fase-item" style="color:rgba(201,168,76,0.7);"><span class="fase-item-dot" style="background:var(--gold);"></span>Correcciones pendientes de acceso WordPress — en proceso</div>
       </div>
     </div>
 
-    <!-- Fix 2 -->
-    <div style="background:var(--surface2);border:1px solid var(--border);border-left:3px solid var(--danger);border-radius:10px;padding:22px 20px;">
-      <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px;margin-bottom:10px;">
-        <div style="font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:17px;letter-spacing:0.02em;color:var(--white);">Links CTA rotos — Cotizar 404</div>
-        <span style="background:rgba(229,62,62,0.15);color:var(--danger);border-radius:4px;padding:2px 8px;font-size:10px;font-weight:700;letter-spacing:0.06em;white-space:nowrap;flex-shrink:0;">ALTA</span>
+    <!-- FASE 2 -->
+    <div class="fase-card">
+      <div class="fase-left">
+        <div class="fase-badge upcoming">⬜ Próxima</div>
+        <div class="fase-num">Fase 2 de 4</div>
+        <div class="fase-title">SEO On-Page<br>+ GEO Schema</div>
+        <div class="fase-date">Noviembre 2026</div>
       </div>
-      <div style="font-size:13px;color:rgba(255,255,255,0.65);line-height:1.6;margin-bottom:14px;">Corregir la URL de todos los botones "Cotizar" de <code style="background:rgba(255,255,255,0.08);padding:1px 5px;border-radius:3px;font-size:11px;">jetcab.mx/jetcab.mx/cotizar</code> a <code style="background:rgba(255,255,255,0.08);padding:1px 5px;border-radius:3px;font-size:11px;">/cotizar</code> en WordPress.</div>
-      <div style="display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap;">
-        <span style="font-size:11px;color:var(--gold);">⏱ &lt; 10 minutos</span>
-        <span style="font-size:11px;color:rgba(255,255,255,0.45);">Impacto: <span style="color:var(--success);">Conversiones recuperadas de inmediato</span></span>
-      </div>
-    </div>
-
-    <!-- Fix 3 -->
-    <div style="background:var(--surface2);border:1px solid var(--border);border-left:3px solid var(--danger);border-radius:10px;padding:22px 20px;">
-      <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px;margin-bottom:10px;">
-        <div style="font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:17px;letter-spacing:0.02em;color:var(--white);">Sin datos estructurados (JSON-LD)</div>
-        <span style="background:rgba(229,62,62,0.15);color:var(--danger);border-radius:4px;padding:2px 8px;font-size:10px;font-weight:700;letter-spacing:0.06em;white-space:nowrap;flex-shrink:0;">ALTA</span>
-      </div>
-      <div style="font-size:13px;color:rgba(255,255,255,0.65);line-height:1.6;margin-bottom:14px;">Agregar schema <strong style="color:var(--white);">LocalBusiness + Service</strong> en el homepage vía Insert Headers and Footers. El código ya está preparado — solo pegar y guardar.</div>
-      <div style="display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap;">
-        <span style="font-size:11px;color:var(--gold);">⏱ &lt; 15 minutos</span>
-        <span style="font-size:11px;color:rgba(255,255,255,0.45);">Impacto: <span style="color:var(--success);">ChatGPT, Perplexity y Google AI citan a JETCAB</span></span>
+      <div class="fase-items">
+        <div class="fase-item"><span class="fase-item-dot"></span>Implementación JSON-LD en homepage + 10 páginas de destino</div>
+        <div class="fase-item"><span class="fase-item-dot"></span>Fix og:locale es_ES → es_MX · og:image 1024×1024 → 1200×630</div>
+        <div class="fase-item"><span class="fase-item-dot"></span>Corrección de todos los CTAs rotos (<code style="font-size:11px;background:rgba(255,255,255,0.08);padding:1px 5px;border-radius:2px;">/cotizar</code> sin URL duplicada)</div>
+        <div class="fase-item"><span class="fase-item-dot"></span>Eliminación de AdSense y páginas WooCommerce del sitemap</div>
+        <div class="fase-item"><span class="fase-item-dot"></span>Optimización de meta descriptions (actualmente 113 chars sin CTA)</div>
       </div>
     </div>
 
-    <!-- Fix 4 -->
-    <div style="background:var(--surface2);border:1px solid var(--border);border-left:3px solid var(--warn);border-radius:10px;padding:22px 20px;">
-      <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px;margin-bottom:10px;">
-        <div style="font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:17px;letter-spacing:0.02em;color:var(--white);">og:locale incorrecto</div>
-        <span style="background:rgba(214,158,46,0.15);color:var(--warn);border-radius:4px;padding:2px 8px;font-size:10px;font-weight:700;letter-spacing:0.06em;white-space:nowrap;flex-shrink:0;">MEDIA</span>
+    <!-- FASE 3 -->
+    <div class="fase-card">
+      <div class="fase-left">
+        <div class="fase-badge upcoming">⬜ Programada</div>
+        <div class="fase-num">Fase 3 de 4</div>
+        <div class="fase-title">Contenido<br>+ Autoridad</div>
+        <div class="fase-date">Diciembre 2026 – Enero 2027</div>
       </div>
-      <div style="font-size:13px;color:rgba(255,255,255,0.65);line-height:1.6;margin-bottom:14px;">Cambiar <code style="background:rgba(255,255,255,0.08);padding:1px 5px;border-radius:3px;font-size:11px;">es_ES</code> → <code style="background:rgba(255,255,255,0.08);padding:1px 5px;border-radius:3px;font-size:11px;">es_MX</code> en la configuración de <strong style="color:var(--white);">Yoast SEO o RankMath</strong> (Configuración → Redes sociales → Open Graph).</div>
-      <div style="display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap;">
-        <span style="font-size:11px;color:var(--gold);">⏱ &lt; 5 minutos</span>
-        <span style="font-size:11px;color:rgba(255,255,255,0.45);">Impacto: <span style="color:var(--success);">Señales geográficas MX correctas · Mejor distribución en redes</span></span>
-      </div>
-    </div>
-
-    <!-- Fix 5 — spans both columns -->
-    <div style="background:var(--surface2);border:1px solid var(--border);border-left:3px solid var(--warn);border-radius:10px;padding:22px 20px;grid-column:1/-1;">
-      <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px;margin-bottom:10px;">
-        <div style="font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:17px;letter-spacing:0.02em;color:var(--white);">Páginas de WooCommerce indexadas</div>
-        <span style="background:rgba(214,158,46,0.15);color:var(--warn);border-radius:4px;padding:2px 8px;font-size:10px;font-weight:700;letter-spacing:0.06em;white-space:nowrap;flex-shrink:0;">MEDIA</span>
-      </div>
-      <div style="font-size:13px;color:rgba(255,255,255,0.65);line-height:1.6;margin-bottom:14px;">Marcar <code style="background:rgba(255,255,255,0.08);padding:1px 5px;border-radius:3px;font-size:11px;">/cart/</code>, <code style="background:rgba(255,255,255,0.08);padding:1px 5px;border-radius:3px;font-size:11px;">/checkout/</code> y <code style="background:rgba(255,255,255,0.08);padding:1px 5px;border-radius:3px;font-size:11px;">/my-account/</code> como <strong style="color:var(--white);">noindex</strong> en Yoast SEO. Estas páginas aparecen en el sitemap y Google desperdicia presupuesto de rastreo en ellas.</div>
-      <div style="display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap;">
-        <span style="font-size:11px;color:var(--gold);">⏱ &lt; 15 minutos</span>
-        <span style="font-size:11px;color:rgba(255,255,255,0.45);">Impacto: <span style="color:var(--success);">Google prioriza las páginas de destino · Mejor indexación de la flota</span></span>
+      <div class="fase-items">
+        <div class="fase-item"><span class="fase-item-dot"></span>Actualización de páginas de flota (sin actualizar desde Nov 2024)</div>
+        <div class="fase-item"><span class="fase-item-dot"></span>Contenido optimizado por destino: CDMX, Toluca, Monterrey, GDL, Cancún, Los Cabos</div>
+        <div class="fase-item"><span class="fase-item-dot"></span>Señales de autoridad: certificaciones DGAC/SCT, 25 años de experiencia, cumplimiento OACI</div>
+        <div class="fase-item"><span class="fase-item-dot"></span>Estrategia de empty legs — WhatsApp y email a clientes cautivos</div>
       </div>
     </div>
 
-  </div>
+    <!-- FASE 4 -->
+    <div class="fase-card">
+      <div class="fase-left">
+        <div class="fase-badge upcoming">⬜ Programada</div>
+        <div class="fase-num">Fase 4 de 4</div>
+        <div class="fase-title">Expansión<br>+ Campaña Q1</div>
+        <div class="fase-date">Febrero 2027</div>
+      </div>
+      <div class="fase-items">
+        <div class="fase-item"><span class="fase-item-dot"></span>Expansión a mercado USA Hispanic: Houston, Dallas, Miami, NYC</div>
+        <div class="fase-item"><span class="fase-item-dot"></span>Campaña "25 Años Jetcab — El Dueño del Tiempo"</div>
+        <div class="fase-item"><span class="fase-item-dot"></span>Link building en medios de aviación y lujo</div>
+        <div class="fase-item highlight"><span class="fase-item-dot"></span>Objetivo: aparecer en ChatGPT/Perplexity cuando buscan "vuelos privados México"</div>
+      </div>
+    </div>
 
-  <div style="margin-top:40px;display:flex;align-items:center;gap:20px;flex-wrap:wrap;">
-    <div style="background:rgba(201,168,76,0.1);border:1px solid rgba(201,168,76,0.3);border-radius:8px;padding:12px 20px;display:flex;align-items:center;gap:10px;">
-      <span style="font-size:20px;">⏱</span>
-      <div>
-        <div style="font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:22px;color:var(--gold);">≤ 50 min en total</div>
-        <div style="font-size:11px;color:rgba(255,255,255,0.5);">para aplicar los 5 fixes</div>
-      </div>
-    </div>
-    <div style="background:rgba(56,161,105,0.1);border:1px solid rgba(56,161,105,0.3);border-radius:8px;padding:12px 20px;display:flex;align-items:center;gap:10px;">
-      <span style="font-size:20px;">📈</span>
-      <div>
-        <div style="font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:22px;color:var(--success);">Impacto inmediato</div>
-        <div style="font-size:11px;color:rgba(255,255,255,0.5);">visibilidad + conversión desde el día 1</div>
-      </div>
-    </div>
-    <a href="https://wa.me/525532894890?text=Hola%2C+quiero+arrancar+con+los+5+fixes+de+Jetcab+ahora" target="_blank" style="background:var(--gold);color:var(--ink);border:none;border-radius:8px;padding:14px 28px;font-family:'Barlow Condensed',sans-serif;font-size:16px;font-weight:800;letter-spacing:0.05em;text-decoration:none;display:inline-block;">ARRANCAR AHORA →</a>
   </div>
 </section>
 
