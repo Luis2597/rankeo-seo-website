@@ -147,8 +147,10 @@ nav.solid{background:rgba(10,9,8,.96);backdrop-filter:blur(16px);border-bottom:1
 .n-links{display:flex;gap:32px}
 .n-links a{font-size:11px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);transition:color .2s}
 .n-links a:hover{color:var(--white)}
-.n-lang{font-size:10px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);border:1px solid var(--border);padding:5px 10px;transition:all .2s}
-.n-lang:hover{color:var(--white);border-color:rgba(255,255,255,.25)}
+.n-lang-switch{display:flex;align-items:center;gap:2px;border:1px solid var(--border);padding:2px;border-radius:4px}
+.n-lang{font-size:10px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);padding:4px 9px;transition:all .2s;border-radius:2px;border:none}
+.n-lang:hover{color:var(--white);background:rgba(255,255,255,.08)}
+.n-lang.active{color:var(--white);background:rgba(255,255,255,.15)}
 .n-cta{background:var(--orange);color:#fff;padding:9px 22px;font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;border:none;cursor:pointer;transition:background .2s,transform .15s cubic-bezier(0.4,0,0.2,1);border-radius:100px}
 .n-cta:hover{background:var(--orangedk)}
 .n-cta:active{transform:scale(0.96)}
@@ -417,7 +419,7 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:64px 48p
 }
 @media(max-width:768px){
   nav{padding:0 20px}
-  .n-links,.n-lang,.n-cta{display:none}
+  .n-links,.n-lang-switch,.n-cta{display:none}
   .burger{display:flex}
   .hero-title{font-size:clamp(44px,13vw,64px)}
   .hero-c{padding:88px 16px 40px}
@@ -519,7 +521,10 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:64px 48p
     <a href="#contact">Contact</a>
   </div>
   <div style="display:flex;align-items:center;gap:12px">
-    <a class="n-lang" href="/" onclick="document.cookie='jetcab_lang=es;path=/;max-age=2592000;SameSite=Lax'">ES</a>
+    <div class="n-lang-switch">
+      <a class="n-lang" href="/" onclick="document.cookie='jetcab_lang=es;path=/;max-age=2592000;SameSite=Lax'" aria-label="Versión en Español">ES</a>
+      <a class="n-lang active" href="/en/" aria-label="English version">EN</a>
+    </div>
     <a class="n-cta" href="#contact">Get a Quote</a>
     <button class="burger" id="burger"><span></span><span></span><span></span></button>
   </div>
