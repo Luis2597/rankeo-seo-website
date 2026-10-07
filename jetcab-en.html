@@ -517,7 +517,7 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:64px 48p
     <a href="#contact">Contact</a>
   </div>
   <div style="display:flex;align-items:center;gap:12px">
-    <a class="n-lang" href="/">ES</a>
+    <a class="n-lang" href="/" onclick="document.cookie='jetcab_lang=es;path=/;max-age=2592000;SameSite=Lax'">ES</a>
     <a class="n-cta" href="#contact">Get a Quote</a>
     <button class="burger" id="burger"><span></span><span></span><span></span></button>
   </div>
@@ -1079,7 +1079,7 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:64px 48p
           <li><a href="tel:+527291081200">+52 (729) 108-1200</a></li>
           <li><a href="https://wa.link/rbmftv" target="_blank" rel="noopener noreferrer">WhatsApp 24/7</a></li>
           <li><a href="mailto:contacto@jetcab.mx">contacto@jetcab.mx</a></li>
-          <li><a href="/">Versión en Español</a></li>
+          <li><a href="/" onclick="document.cookie='jetcab_lang=es;path=/;max-age=2592000;SameSite=Lax'">Versión en Español</a></li>
         </ul>
       </div>
     </div>
@@ -1105,7 +1105,7 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:64px 48p
   <a href="#destinations">Destinations</a>
   <a href="#why">Why JETCAB</a>
   <a href="#contact">Contact</a>
-  <a href="/">Versión en Español</a>
+  <a href="/" onclick="document.cookie='jetcab_lang=es;path=/;max-age=2592000;SameSite=Lax'">Versión en Español</a>
   <a href="#contact" class="d-cta">Get a Free Quote</a>
 </div>
 
@@ -2153,6 +2153,10 @@ document.querySelectorAll('.fc[tabindex]').forEach(function(el){
     </div>
   </div>
 </div>
+<script>
+// Remember that user chose English (prevents auto-redirect back if they later visit Spanish)
+document.cookie = 'jetcab_lang=en;path=/;max-age=2592000;SameSite=Lax';
+</script>
 <script>
 // Intercept ALL internal anchor clicks to prevent history entries from being pushed.
 // Without this, every click on #fleet / #contact / #why etc. adds an entry so
