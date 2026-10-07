@@ -558,7 +558,7 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:64px 48p
         <span class="bf-l">Passengers</span>
         <select><option>1–3</option><option>4–7</option><option>8–12</option><option>13+</option></select>
       </div>
-      <button class="bf-btn" onclick="location='#contact'">
+      <button class="bf-btn" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
         <span>Get Quote</span>
         <small>Free · 30 min</small>
       </button>
@@ -901,7 +901,7 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:64px 48p
     <div class="dc rv rv-d4" style="cursor:pointer" onclick="openDest('cuba')" role="button" tabindex="0" aria-label="Explore Cuba destination"><div class="dc-bg" style="background-image:url('https://jetcab.mx/wp-content/uploads/2024/10/vuelosprivadosacuba-scaled.jpg')"></div><div class="dc-ol"></div><span class="dc-urgency">● International</span><span class="dc-flytime">2h 30m from CDMX</span><div class="dc-info"><span class="dc-city">Cuba</span><span class="dc-ctry">Caribbean</span></div></div>
     <div class="dc rv rv-d1" style="cursor:pointer" onclick="openDest('espana')" role="button" tabindex="0" aria-label="Explore Spain destination"><div class="dc-bg" style="background-image:url('https://jetcab.mx/wp-content/uploads/2024/10/vuelos-privados-a-espana-scaled.jpg')"></div><div class="dc-ol"></div><span class="dc-urgency">● Transatlantic</span><span class="dc-flytime">11h from CDMX</span><div class="dc-info"><span class="dc-city">España</span><span class="dc-ctry">Europe</span></div></div>
     <div class="dc rv rv-d2" style="cursor:pointer" onclick="openDest('europa')" role="button" tabindex="0" aria-label="Explore Europe destination"><div class="dc-bg" style="background-image:url('https://jetcab.mx/wp-content/uploads/2024/10/Vuelos-privados-a-europa-scaled.jpg')"></div><div class="dc-ol"></div><span class="dc-urgency">● Transatlantic</span><span class="dc-flytime">Europe routes</span><div class="dc-info"><span class="dc-city">Europe</span><span class="dc-ctry">International</span></div></div>
-    <div class="dest-more rv rv-d3" onclick="location='#contact'">
+    <div class="dest-more rv rv-d3" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
       <p class="dest-more-n">+200</p>
       <span class="dest-more-l">Available destinations</span>
     </div>
@@ -2153,5 +2153,23 @@ document.querySelectorAll('.fc[tabindex]').forEach(function(el){
     </div>
   </div>
 </div>
+<script>
+// Intercept ALL internal anchor clicks to prevent history entries from being pushed.
+// Without this, every click on #fleet / #contact / #why etc. adds an entry so
+// "back" cycles through all those states before leaving the English page.
+document.addEventListener('click', function(e) {
+  var a = e.target.closest('a[href^="#"]');
+  if (!a) return;
+  var id = a.getAttribute('href').slice(1);
+  if (!id) return;  // bare "#" links (e.g. WA button placeholders) — ignore
+  var el = document.getElementById(id);
+  if (el) {
+    e.preventDefault();
+    el.scrollIntoView({behavior: 'smooth'});
+    // Replace URL without pushing a new history entry
+    history.replaceState(null, '', '#' + id);
+  }
+});
+</script>
 </body>
 </html>
