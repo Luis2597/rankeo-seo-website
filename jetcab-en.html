@@ -121,7 +121,7 @@
   --faint:rgba(255,255,255,.18);
   --border:rgba(255,255,255,.08);
 }
-html{scroll-behavior:smooth}
+html{scroll-behavior:smooth;overflow-x:hidden}
 body{background:var(--bg);color:var(--cream);font-family:'Barlow',sans-serif;font-weight:400;font-size:16px;line-height:1.65;overflow-x:hidden}
 a{text-decoration:none;color:inherit}
 img{display:block;max-width:100%;border-radius:8px}
@@ -437,6 +437,21 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:64px 48p
   footer{padding:48px 20px 32px}
   .diff-photo img{height:280px}
   .fleet-tabs{padding:0 20px}
+}
+
+@media(max-width:768px){
+  .dest-grid{grid-template-columns:repeat(2,1fr);padding:0 16px}
+  .car-track{padding:0 16px 60px}
+  .sec{padding:64px 20px}
+  .statsbar-in,.certs-in{padding:0 20px}
+  .dest-hdr,.car-hdr{padding:48px 20px 28px}
+  .diff-in,.contact-in{padding:64px 20px}
+  .footer-in{padding:0 20px}
+  .footer-top{padding-bottom:40px}
+}
+@media(max-width:480px){
+  .dest-grid{grid-template-columns:1fr 1fr}
+  .statsbar-in{grid-template-columns:repeat(2,1fr)}
 }
 </style>
 <script type="application/ld+json">
