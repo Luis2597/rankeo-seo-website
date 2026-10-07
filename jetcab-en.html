@@ -1600,8 +1600,12 @@ function openJet(id){
   var gg=document.getElementById('jm-gallery');
   if(j.gallery&&j.gallery.length){
     gg.innerHTML=j.gallery.map(function(u,i){
-      return '<img class="jm-gthumb'+(i===0?' jm-active':'')+'" src="'+u+'" alt="'+j.name+' interior '+(i+1)+'" loading="lazy" width="160" height="100" onclick="swapJetHero(this,''+u+'')">';
+      var cls='jm-gthumb'+(i===0?' jm-active':'');
+      return '<img class="'+cls+'" src="'+u+'" alt="'+j.name+' interior '+(i+1)+'" loading="lazy" width="160" height="100">';
     }).join('');
+    Array.from(gg.querySelectorAll('.jm-gthumb')).forEach(function(img,i){
+      (function(url){ img.addEventListener('click',function(){swapJetHero(this,url);}); })(j.gallery[i]);
+    });
   } else { gg.innerHTML=''; }
   // Specs
   var sg=document.getElementById('jm-specs');
@@ -1634,10 +1638,10 @@ var DESTS={
   cancun:{
     city:'Cancún',country:'Mexico',tag:'Caribbean Coast',
     flytime:'✈ 2h 10m from CDMX',
-    fomo:'Two hours in the air. The moment the door opens, you feel it — salt, warmth, that unmistakable Caribbean light. Your villa is waiting, breakfast already set on the terrace facing the turquoise sea. You brought the family. <em>They're already in the water.</em>',
+    fomo:'Two hours in the air. The moment the door opens, you feel it — salt, warmth, that unmistakable Caribbean light. Your villa is waiting, breakfast already set on the terrace facing the turquoise sea. You brought the family. <em>They\'re already in the water.</em>',
     ideal:'Ideal for: Families · Couples · Executive Retreats',
     imgs:['https://images.unsplash.com/photo-1518638150340-f706e86654de?auto=format&fit=crop&w=900&q=85','https://images.unsplash.com/photo-1510525009877-b28be21e7a23?auto=format&fit=crop&w=700&q=80'],
-    wa:'Hi JETCAB, I'd like to charter a private flight to Cancún.'
+    wa:'Hi JETCAB, I\'d like to charter a private flight to Cancún.'
   },
   loscabos:{
     city:'Los Cabos',country:'Mexico',tag:'Pacific Baja',
@@ -1645,15 +1649,15 @@ var DESTS={
     fomo:'Where the desert meets the Pacific. Whale season. A cliff-top suite at Las Ventanas. A yacht waiting at the marina. You close deals from the terrace and call it rest. <em>Some people work in an office. You work better here.</em>',
     ideal:'Ideal for: Power Couples · Deal Closings · Family Villas',
     imgs:['https://images.unsplash.com/photo-1512813389649-acbd9b470f9e?auto=format&fit=crop&w=900&q=85','https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=700&q=80'],
-    wa:'Hi JETCAB, I'd like to charter a private flight to Los Cabos.'
+    wa:'Hi JETCAB, I\'d like to charter a private flight to Los Cabos.'
   },
   miami:{
     city:'Miami',country:'United States',tag:'South Florida',
     flytime:'✈ 3h 20m from CDMX',
-    fomo:'Art Basel. Super Bowl week. A rooftop table that took six months to book. You're there in three and a half hours — rested, pressed, ready. The car is waiting on the tarmac. <em>Miami doesn't wait. But it will for you.</em>',
+    fomo:'Art Basel. Super Bowl week. A rooftop table that took six months to book. You\'re there in three and a half hours — rested, pressed, ready. The car is waiting on the tarmac. <em>Miami doesn\'t wait. But it will for you.</em>',
     ideal:'Ideal for: Business · Entertainment · Weekend Escapes',
     imgs:['https://images.unsplash.com/photo-1533929736458-ca588d08c8be?auto=format&fit=crop&w=900&q=85','https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=700&q=80'],
-    wa:'Hi JETCAB, I'd like to charter a private flight to Miami.'
+    wa:'Hi JETCAB, I\'d like to charter a private flight to Miami.'
   },
   newyork:{
     city:'New York',country:'United States',tag:'East Coast',
@@ -1661,15 +1665,15 @@ var DESTS={
     fomo:'The meeting is Thursday at 9am. You fly in Wednesday night, sleep in your suite, and arrive sharp. No red-eye. No middle seat. No shared armrest. When the deal closes, <em>JETCAB brings you home. Same day.</em>',
     ideal:'Ideal for: Executives · Deal Closings · Board Meetings',
     imgs:['https://images.unsplash.com/photo-1490644658840-3f2e3f8c5625?auto=format&fit=crop&w=900&q=85','https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?auto=format&fit=crop&w=700&q=80'],
-    wa:'Hi JETCAB, I'd like to charter a private flight to New York.'
+    wa:'Hi JETCAB, I\'d like to charter a private flight to New York.'
   },
   lasvegas:{
     city:'Las Vegas',country:'United States',tag:'Nevada Desert',
     flytime:'✈ 3h 50m from CDMX',
-    fomo:'What happens in Vegas stays in Vegas. Including the fact that you arrived by private jet. A suite at the Wynn. Dinner reserved. The table knows your name. <em>You're already home by Sunday noon. Nobody knows you were there.</em>',
+    fomo:'What happens in Vegas stays in Vegas. Including the fact that you arrived by private jet. A suite at the Wynn. Dinner reserved. The table knows your name. <em>You\'re already home by Sunday noon. Nobody knows you were there.</em>',
     ideal:'Ideal for: VIP Groups · Celebrations · High Rollers',
     imgs:['https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=900&q=85','https://images.unsplash.com/photo-1581351721010-8cf859cb14a4?auto=format&fit=crop&w=700&q=80'],
-    wa:'Hi JETCAB, I'd like to charter a private flight to Las Vegas.'
+    wa:'Hi JETCAB, I\'d like to charter a private flight to Las Vegas.'
   },
   puertovallarta:{
     city:'Puerto Vallarta',country:'Mexico',tag:'Pacific Coast',
@@ -1677,15 +1681,15 @@ var DESTS={
     fomo:'School ends Friday at 3pm. By 5pm your family is airborne. By sunset, the kids are in the pool at a villa on the Pacific. No connections. No terminals. <em>Ninety minutes and a new world. This is what time freedom looks like.</em>',
     ideal:'Ideal for: Families · Weekend Escapes · Pacific Retreats',
     imgs:['https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=900&q=85','https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=700&q=80'],
-    wa:'Hi JETCAB, I'd like to charter a private flight to Puerto Vallarta.'
+    wa:'Hi JETCAB, I\'d like to charter a private flight to Puerto Vallarta.'
   },
   cdmx:{
     city:'Mexico City',country:'Mexico',tag:'Hub · AIFA · AIT Toluca',
     flytime:'✈ Departs from AIT Toluca',
-    fomo:'All journeys begin here. JETCAB operates from Toluca International Airport — 25 minutes by helicopter from the capital's financial district. Skip the terminal. Skip the traffic. <em>The aircraft waits. You don't.</em>',
+    fomo:'All journeys begin here. JETCAB operates from Toluca International Airport — 25 minutes by helicopter from the capital\'s financial district. Skip the terminal. Skip the traffic. <em>The aircraft waits. You don\'t.</em>',
     ideal:'Ideal for: All Routes · Same-Day Return · CDMX-Based Clients',
     imgs:['https://images.unsplash.com/photo-1544531586-fcd08b3d8f36?auto=format&fit=crop&w=900&q=85','https://images.unsplash.com/photo-1543385426-191664295b58?auto=format&fit=crop&w=700&q=80'],
-    wa:'Hi JETCAB, I'd like to book a flight departing from Mexico City.'
+    wa:'Hi JETCAB, I\'d like to book a flight departing from Mexico City.'
   }
 };
 
