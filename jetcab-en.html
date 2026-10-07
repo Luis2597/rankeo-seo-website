@@ -147,10 +147,12 @@ nav.solid{background:rgba(10,9,8,.96);backdrop-filter:blur(16px);border-bottom:1
 .n-links{display:flex;gap:32px}
 .n-links a{font-size:11px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);transition:color .2s}
 .n-links a:hover{color:var(--white)}
-.n-lang-switch{display:flex;align-items:center;gap:2px;border:1px solid var(--border);padding:2px;border-radius:4px}
-.n-lang{font-size:10px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);padding:4px 9px;transition:all .2s;border-radius:2px;border:none}
-.n-lang:hover{color:var(--white);background:rgba(255,255,255,.08)}
-.n-lang.active{color:var(--white);background:rgba(255,255,255,.15)}
+.jc-lang-switch{position:fixed;top:72px;right:18px;z-index:10000;display:flex;border-radius:20px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,.25)}
+.jc-lang-switch a{display:block;padding:6px 14px;font-size:12px;font-weight:700;letter-spacing:.06em;text-decoration:none;transition:background 150ms,color 150ms;color:#fff;font-family:'Barlow Condensed',sans-serif}
+.jc-l-es{background:rgba(255,255,255,.12);border-right:1px solid rgba(255,255,255,.2);backdrop-filter:blur(6px)}
+.jc-l-es:hover{background:rgba(255,255,255,.25)}
+.jc-l-en{background:#E8A020}
+.jc-l-en:hover{background:#C88018}
 .n-cta{background:var(--orange);color:#fff;padding:9px 22px;font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;border:none;cursor:pointer;transition:background .2s,transform .15s cubic-bezier(0.4,0,0.2,1);border-radius:100px}
 .n-cta:hover{background:var(--orangedk)}
 .n-cta:active{transform:scale(0.96)}
@@ -390,10 +392,6 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:64px 48p
 .drawer-close{background:none;border:none;color:var(--muted);font-size:22px;cursor:pointer;align-self:flex-end;margin-bottom:16px;line-height:1}
 .drawer a{display:block;padding:12px 8px;font-family:'Barlow Condensed',sans-serif;font-size:15px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--cream);border-bottom:1px solid var(--border);transition:color .2s}
 .drawer a:hover{color:var(--orange)}
-.drawer .d-lang{display:flex;align-items:center;gap:8px;padding:12px 8px;border-bottom:1px solid var(--border)}
-.drawer .d-lang a{display:inline-flex;align-items:center;justify-content:center;padding:5px 12px;font-size:11px;font-weight:700;letter-spacing:.15em;border-radius:4px;border:1px solid var(--border);color:var(--muted);text-transform:uppercase;transition:all .2s}
-.drawer .d-lang a.active{background:rgba(255,255,255,.12);color:var(--white);border-color:rgba(255,255,255,.25)}
-.drawer .d-lang span{font-size:10px;color:var(--muted);letter-spacing:.1em;text-transform:uppercase;margin-right:4px}
 .drawer .d-cta{background:var(--orange);color:#fff;text-align:center;margin-top:16px;border:none;padding:14px;border-radius:100px}
 .drawer .d-cta:hover{background:var(--orangedk)}
 
@@ -423,7 +421,7 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:64px 48p
 }
 @media(max-width:768px){
   nav{padding:0 20px}
-  .n-links,.n-lang-switch,.n-cta{display:none}
+  .n-links,.n-cta{display:none}
   .burger{display:flex}
   .hero-title{font-size:clamp(44px,13vw,64px)}
   .hero-c{padding:88px 16px 40px}
@@ -525,10 +523,6 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:64px 48p
     <a href="#contact">Contact</a>
   </div>
   <div style="display:flex;align-items:center;gap:12px">
-    <div class="n-lang-switch">
-      <a class="n-lang" href="/" onclick="document.cookie='jetcab_lang=es;path=/;max-age=2592000;SameSite=Lax'" aria-label="Versión en Español">ES</a>
-      <a class="n-lang active" href="/en/" aria-label="English version">EN</a>
-    </div>
     <a class="n-cta" href="#contact">Get a Quote</a>
     <button class="burger" id="burger"><span></span><span></span><span></span></button>
   </div>
@@ -1116,12 +1110,14 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:64px 48p
   <a href="#destinations">Destinations</a>
   <a href="#why">Why JETCAB</a>
   <a href="#contact">Contact</a>
-  <div class="d-lang">
-    <span>Lang:</span>
-    <a href="/" onclick="document.cookie='jetcab_lang=es;path=/;max-age=2592000;SameSite=Lax'" aria-label="Versión en Español">ES</a>
-    <a href="/en/" class="active" aria-label="English version">EN</a>
-  </div>
+  <a href="/" onclick="document.cookie='jetcab_lang=es;path=/;max-age=2592000;SameSite=Lax'">Versión en Español</a>
   <a href="#contact" class="d-cta">Get a Free Quote</a>
+</div>
+
+<!-- LANGUAGE TOGGLE -->
+<div class="jc-lang-switch">
+  <a class="jc-l-es" href="/" onclick="document.cookie='jetcab_lang=es;path=/;max-age=2592000;SameSite=Lax'" aria-label="Versión en Español">ES</a>
+  <a class="jc-l-en" href="/en/" aria-label="English version">EN</a>
 </div>
 
 <!-- WHATSAPP FLOAT -->
