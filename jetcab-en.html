@@ -121,8 +121,8 @@
   --faint:rgba(255,255,255,.18);
   --border:rgba(255,255,255,.08);
 }
-html{scroll-behavior:smooth;overflow-x:hidden}
-body{background:var(--bg);color:var(--cream);font-family:'Barlow',sans-serif;font-weight:400;font-size:16px;line-height:1.65;overflow-x:hidden}
+html{scroll-behavior:smooth;overflow-x:hidden;max-width:100%}
+body{background:var(--bg);color:var(--cream);font-family:'Barlow',sans-serif;font-weight:400;font-size:16px;line-height:1.65;overflow-x:hidden;max-width:100%;position:relative}
 a{text-decoration:none;color:inherit}
 img{display:block;max-width:100%;border-radius:8px}
 
@@ -205,7 +205,7 @@ nav.solid{background:rgba(10,9,8,.96);backdrop-filter:blur(16px);border-bottom:1
 .hud-sep{width:1px;background:rgba(255,255,255,.08);flex-shrink:0;align-self:stretch}
 
 /* MARQUEE */
-.mqbar{background:var(--orange);padding:12px 0;overflow:hidden}
+.mqbar{background:var(--orange);padding:12px 0;overflow:hidden;contain:paint}
 .mq-track{display:flex;width:max-content;animation:mq 28s linear infinite}
 @keyframes mq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 .mq-item{padding:0 28px;font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:700;letter-spacing:.28em;text-transform:uppercase;color:rgba(0,0,0,.7);white-space:nowrap}
@@ -273,7 +273,7 @@ nav.solid{background:rgba(10,9,8,.96);backdrop-filter:blur(16px);border-bottom:1
 .diff-photo img{width:100%;height:480px;object-fit:cover;border-radius:0}
 
 /* CAROUSEL */
-.carousel{padding:0 0 0;overflow:hidden;border-top:1px solid var(--border)}
+.carousel{padding:0 0 0;overflow:hidden;contain:paint;border-top:1px solid var(--border)}
 .car-hdr{display:flex;justify-content:space-between;align-items:flex-end;padding:80px 48px 40px;max-width:1160px;margin:0 auto}
 .car-track{display:flex;gap:16px;padding:0 48px 80px;animation:carscroll 32s linear infinite}
 @keyframes carscroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
@@ -492,6 +492,7 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:64px 48p
 </script>
 </head>
 <body>
+<div id="page-wrap" style="overflow-x:hidden;max-width:100vw;width:100%;position:relative">
 
 <!-- CINEMATIC INTRO OVERLAY -->
 <div id="page-intro" aria-hidden="true" role="presentation">
@@ -853,7 +854,7 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:64px 48p
     </div>
     <p style="font-size:14px;color:rgba(255,255,255,.72);max-width:360px;text-align:right">JETCAB is more than an aircraft — it's the people, the experiences and the details that make every flight unforgettable.</p>
   </div>
-  <div style="overflow:hidden">
+  <div style="overflow:hidden;contain:paint;max-width:100vw">
     <div class="car-track">
       <div class="car-slide"><div class="car-slide-bg" style="background-image:url('https://images.unsplash.com/photo-1464037866556-6812c9d1c72e?auto=format&fit=crop&w=600&q=80')"></div></div>
       <div class="car-slide"><div class="car-slide-bg" style="background-image:url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=600&q=80')"></div></div>
@@ -2152,6 +2153,7 @@ document.querySelectorAll('.fc[tabindex]').forEach(function(el){
       </a>
     </div>
   </div>
+</div>
 </div>
 </body>
 </html>
