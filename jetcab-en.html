@@ -390,11 +390,11 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:64px 48p
 .drawer .d-cta:hover{background:var(--orangedk)}
 
 /* CINEMATIC INTRO */
-#page-intro{position:fixed;inset:0;background:#000;z-index:9999;display:flex;align-items:center;justify-content:center;animation:pi-exit .7s ease-in 2.4s forwards;will-change:opacity}
+#page-intro{position:fixed;inset:0;background:#000;z-index:9999;display:flex;align-items:center;justify-content:center;animation:pi-exit .7s ease-in 2.4s forwards;will-change:opacity;overflow:hidden}
 @keyframes pi-exit{0%{opacity:1;pointer-events:all}100%{opacity:0;pointer-events:none}}
 .pi-inner{text-align:center;padding:20px}
 .pi-word{font-family:'Barlow Condensed',sans-serif;font-size:clamp(48px,10vw,112px);font-weight:800;letter-spacing:.4em;text-transform:uppercase;color:#fff;opacity:0;animation:pi-word-in .9s cubic-bezier(0,0,.2,1) .1s forwards}
-@keyframes pi-word-in{from{opacity:0;letter-spacing:1.2em}to{opacity:1;letter-spacing:.4em}}
+@keyframes pi-word-in{from{opacity:0;letter-spacing:.6em}to{opacity:1;letter-spacing:.4em}}
 .pi-sub{font-size:11px;letter-spacing:.38em;text-transform:uppercase;color:rgba(255,255,255,.35);margin-top:20px;opacity:0;animation:pi-fade-up .6s ease-out .5s forwards}
 @keyframes pi-fade-up{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
 .pi-bar{width:160px;height:1px;background:rgba(255,255,255,.08);margin:36px auto 0;overflow:hidden}
