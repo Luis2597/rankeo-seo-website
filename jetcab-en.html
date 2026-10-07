@@ -124,8 +124,9 @@ nav.solid{background:rgba(10,9,8,.96);backdrop-filter:blur(16px);border-bottom:1
 .n-links a:hover{color:var(--white)}
 .n-lang{font-size:10px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);border:1px solid var(--border);padding:5px 10px;transition:all .2s}
 .n-lang:hover{color:var(--white);border-color:rgba(255,255,255,.25)}
-.n-cta{background:var(--orange);color:#fff;padding:9px 22px;font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;border:none;cursor:pointer;transition:background .2s;border-radius:100px}
+.n-cta{background:var(--orange);color:#fff;padding:9px 22px;font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;border:none;cursor:pointer;transition:background .2s,transform .15s cubic-bezier(0.4,0,0.2,1);border-radius:100px}
 .n-cta:hover{background:var(--orangedk)}
+.n-cta:active{transform:scale(0.96)}
 .burger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px}
 .burger span{display:block;width:22px;height:1.5px;background:var(--white)}
 
@@ -150,17 +151,19 @@ nav.solid{background:rgba(10,9,8,.96);backdrop-filter:blur(16px);border-bottom:1
 .bform:hover,.bform:focus-within{box-shadow:0 32px 80px rgba(0,0,0,.6),0 8px 28px rgba(240,120,40,.12)}
 .bf{flex:1;padding:14px 18px;border-right:1px solid rgba(0,0,0,.06);cursor:text;transition:background .15s}
 .bf:hover{background:rgba(0,0,0,.015)}
-.bf-l{font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#999;display:block;margin-bottom:5px}
+.bf-l{font-size:14px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:#888;display:block;margin-bottom:6px}
 .bf input,.bf select{background:none;border:none;outline:none;width:100%;font-size:14px;color:#111;font-family:'Barlow',sans-serif;font-weight:400;cursor:pointer}
 .bf input::placeholder{color:#bbb}
 .bf select option{background:#fff}
-.bf-btn{background:var(--orange);color:#fff;padding:0 28px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;cursor:pointer;min-width:130px;border:none;transition:background .2s;flex-shrink:0}
+.bf-btn{background:var(--orange);color:#fff;padding:0 28px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;cursor:pointer;min-width:130px;border:none;transition:background .2s,transform .15s cubic-bezier(0.4,0,0.2,1);flex-shrink:0}
 .bf-btn:hover{background:var(--orangedk)}
+.bf-btn:active{transform:scale(0.97)}
 .bf-btn span{font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:700;letter-spacing:.2em;text-transform:uppercase}
 .bf-btn small{font-size:9px;letter-spacing:.1em;text-transform:uppercase;opacity:.55}
 .hero-actions{display:flex;gap:12px;margin-top:14px;justify-content:center}
-.ha{background:none;border:1px solid rgba(255,255,255,.22);color:rgba(255,255,255,.6);padding:9px 20px;font-size:10px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;cursor:pointer;transition:all .2s;border-radius:100px}
+.ha{background:none;border:1px solid rgba(255,255,255,.22);color:rgba(255,255,255,.6);padding:9px 20px;font-size:10px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;cursor:pointer;transition:border-color .2s,color .2s,transform .15s cubic-bezier(0.4,0,0.2,1);border-radius:100px;display:inline-flex;align-items:center}
 .ha:hover{border-color:rgba(255,255,255,.5);color:#fff}
+.ha:active{transform:scale(0.97)}
 
 /* HERO FOMO STRIP */
 .hero-fomo{display:flex;align-items:center;gap:10px;margin-top:18px;padding:10px 16px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);backdrop-filter:blur(8px);width:fit-content;margin-left:auto;margin-right:auto;max-width:100%}
@@ -207,10 +210,12 @@ nav.solid{background:rgba(10,9,8,.96);backdrop-filter:blur(16px);border-bottom:1
 .fb-c h2{font-family:'Barlow Condensed',sans-serif;font-size:clamp(28px,5vw,52px);font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--orange);margin-bottom:10px}
 .fb-c p{font-size:14px;color:rgba(255,255,255,.75);max-width:500px;margin:0 auto 22px}
 .fb-btns{display:flex;gap:12px;justify-content:center}
-.btn-o{background:var(--orange);color:#fff;padding:12px 26px;min-height:44px;font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;border:none;cursor:pointer;transition:background .2s;border-radius:100px}
+.btn-o{background:var(--orange);color:#fff;padding:12px 26px;min-height:44px;font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;border:none;cursor:pointer;transition:background .2s,transform .15s cubic-bezier(0.4,0,0.2,1);border-radius:100px;display:inline-flex;align-items:center;justify-content:center}
 .btn-o:hover{background:var(--orangedk)}
-.btn-ghost{background:none;border:1px solid rgba(255,255,255,.22);color:rgba(255,255,255,.7);padding:12px 26px;min-height:44px;font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;cursor:pointer;transition:all .2s;border-radius:100px}
+.btn-o:active{transform:scale(0.97)}
+.btn-ghost{background:none;border:1px solid rgba(255,255,255,.22);color:rgba(255,255,255,.7);padding:12px 26px;min-height:44px;font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;cursor:pointer;transition:border-color .2s,color .2s,transform .15s cubic-bezier(0.4,0,0.2,1);border-radius:100px;display:inline-flex;align-items:center;justify-content:center}
 .btn-ghost:hover{border-color:rgba(255,255,255,.5);color:#fff}
+.btn-ghost:active{transform:scale(0.97)}
 .fleet-tabs{display:flex;gap:0;padding:0 48px;max-width:1208px;margin:0 auto;border-bottom:1px solid var(--border);overflow-x:auto}
 .ftab{background:none;border:none;border-bottom:2px solid transparent;padding:16px 24px;font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);cursor:pointer;transition:all .2s;white-space:nowrap}
 .ftab.on,.ftab:hover{color:var(--orange);border-bottom-color:var(--orange)}
@@ -236,7 +241,7 @@ nav.solid{background:rgba(10,9,8,.96);backdrop-filter:blur(16px);border-bottom:1
 
 /* WHY JETCAB */
 .diff{background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
-.diff-in{max-width:1160px;margin:0 auto;padding:96px 48px;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+.diff-in{max-width:1160px;margin:0 auto;padding:96px 48px;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
 .diff-items{margin-top:36px;display:flex;flex-direction:column;gap:24px}
 .di{display:flex;gap:18px;align-items:flex-start}
 .di-bar{width:2px;min-height:44px;background:var(--orange);flex-shrink:0;margin-top:4px}
@@ -311,14 +316,15 @@ nav.solid{background:rgba(10,9,8,.96);backdrop-filter:blur(16px);border-bottom:1
 .cf-head h3{font-family:'Barlow Condensed',sans-serif;font-size:22px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#fff;margin-bottom:4px}
 .cf-head p{font-size:12px;color:var(--muted)}
 .cf-body{display:flex;flex-direction:column;gap:14px}
-.cfl{font-size:9px;font-weight:700;letter-spacing:.28em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:5px;display:block}
+.cfl{font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.45);margin-bottom:6px;display:block}
 .cfi{background:rgba(255,255,255,.04);border:1px solid var(--border);padding:11px 14px;font-family:'Barlow',sans-serif;font-size:14px;color:var(--white);outline:none;transition:border-color .2s;width:100%;color-scheme:dark}
 .cfi:focus{border-color:rgba(240,120,40,.5)}
 .cfi::placeholder{color:rgba(255,255,255,.2)}
 .cfs{background:rgba(255,255,255,.04);border:1px solid var(--border);padding:11px 14px;font-family:'Barlow',sans-serif;font-size:14px;color:var(--cream);outline:none;width:100%;color-scheme:dark;cursor:pointer}
 .cf-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-.cf-sub{background:var(--orange);color:#fff;border:none;padding:14px 24px;font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:700;letter-spacing:.25em;text-transform:uppercase;cursor:pointer;transition:background .2s;width:100%;margin-top:6px;min-height:48px;border-radius:100px}
+.cf-sub{background:var(--orange);color:#fff;border:none;padding:14px 24px;font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:700;letter-spacing:.25em;text-transform:uppercase;cursor:pointer;transition:background .2s,transform .15s cubic-bezier(0.4,0,0.2,1);width:100%;margin-top:6px;min-height:48px;border-radius:100px}
 .cf-sub:hover{background:var(--orangedk)}
+.cf-sub:active{transform:scale(0.98)}
 .cf-note{font-size:11px;color:var(--muted);text-align:center;letter-spacing:.06em}
 
 /* FAQ */
@@ -722,6 +728,10 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:64px 48p
             <p class="di-p">A real quote — aircraft, price, route — in under 30 minutes. Cleared and boarding within 2 hours. Your agenda controls the flight, not the other way around. 365 days a year.</p>
           </div>
         </div>
+      </div>
+      <div style="display:flex;gap:12px;margin-top:40px;flex-wrap:wrap">
+        <a href="#contact" class="btn-o">Get a Free Quote</a>
+        <a href="#fleet" class="btn-ghost">See Our Fleet</a>
       </div>
     </div>
     <div class="diff-photo rv-r">
