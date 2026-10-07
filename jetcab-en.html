@@ -144,13 +144,13 @@ nav.solid{background:rgba(10,9,8,.96);backdrop-filter:blur(16px);border-bottom:1
 .hero-ol{position:absolute;inset:0;z-index:2;background:linear-gradient(to bottom,rgba(10,9,8,.55) 0%,rgba(10,9,8,.18) 35%,rgba(10,9,8,.6) 75%,rgba(10,9,8,1) 100%)}
 .hero-c{position:relative;z-index:3;width:100%;max-width:860px;padding:0 24px 80px;text-align:center}
 .hero-eyebrow{font-size:10px;font-weight:600;letter-spacing:.4em;text-transform:uppercase;color:var(--orange);margin-bottom:20px;display:block}
-.hero-title{font-family:'Barlow Condensed',sans-serif;font-size:clamp(64px,12vw,130px);font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--white);line-height:.88;margin-bottom:10px}
+.hero-title{font-family:'Barlow Condensed',sans-serif;font-size:clamp(54px,12vw,130px);font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--white);line-height:.88;margin-bottom:10px}
 .hero-sub{font-family:'Barlow Condensed',sans-serif;font-size:clamp(13px,2vw,17px);font-weight:400;letter-spacing:.3em;text-transform:uppercase;color:var(--muted);margin-bottom:44px}
 .bform{display:flex;align-items:stretch;background:rgba(255,255,255,.97);width:100%;box-shadow:0 24px 64px rgba(0,0,0,.55),0 6px 20px rgba(0,0,0,.3);border-radius:4px;transition:box-shadow .4s ease;transform:translateZ(0)}
 .bform:hover,.bform:focus-within{box-shadow:0 32px 80px rgba(0,0,0,.6),0 8px 28px rgba(240,120,40,.12)}
 .bf{flex:1;padding:14px 18px;border-right:1px solid rgba(0,0,0,.06);cursor:text;transition:background .15s}
 .bf:hover{background:rgba(0,0,0,.015)}
-.bf-l{font-size:8.5px;font-weight:700;letter-spacing:.28em;text-transform:uppercase;color:#999;display:block;margin-bottom:5px}
+.bf-l{font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#999;display:block;margin-bottom:5px}
 .bf input,.bf select{background:none;border:none;outline:none;width:100%;font-size:14px;color:#111;font-family:'Barlow',sans-serif;font-weight:400;cursor:pointer}
 .bf input::placeholder{color:#bbb}
 .bf select option{background:#fff}
@@ -386,9 +386,10 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:64px 48p
 }
 @media(max-width:768px){
   nav{padding:0 20px}
-  .n-links,.n-lang{display:none}
+  .n-links,.n-lang,.n-cta{display:none}
   .burger{display:flex}
-  .hero-c{padding:0 16px}
+  .hero-title{font-size:clamp(44px,13vw,64px)}
+  .hero-c{padding:88px 16px 40px}
   .bform{flex-direction:column}
   .bf{border-right:none;border-bottom:1px solid rgba(0,0,0,.06)}
   .bf-btn{min-height:52px;width:100%}
@@ -521,12 +522,6 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:64px 48p
       <a class="ha" href="https://wa.link/rbmftv" target="_blank" rel="noopener noreferrer">WhatsApp 24/7</a>
       <a class="ha" href="tel:+527291081200">+52 (729) 108-1200</a>
     </div>
-    <!-- FOMO strip -->
-    <div class="hero-fomo">
-      <div class="hf-dot"></div>
-      <span class="hf-text" id="fomo-text">Loading activity…</span>
-      <span class="hf-viewers"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg> <span id="viewer-count">4</span> people viewing now</span>
-    </div>
   </div>
   <!-- FLIGHT HUD (ambient, decorative) -->
   <div class="hero-hud" aria-hidden="true">
@@ -538,11 +533,6 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:64px 48p
     <div class="hud-block">
       <span class="hud-label">AIRSPEED</span>
       <span class="hud-val">480 KTS</span>
-    </div>
-    <div class="hud-sep"></div>
-    <div class="hud-block">
-      <span class="hud-label">AVAIL. TODAY</span>
-      <span class="hud-val hud-avail"><span id="avail-count">4</span> Aircraft</span>
     </div>
     <div class="hud-sep"></div>
     <div class="hud-block">
@@ -616,7 +606,7 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:64px 48p
   </div>
   <div class="fleet-grid" id="fgrid" style="scroll-margin-top:64px">
     <div class="fc rv rv-d1" data-cat="corto" onclick="openJet('learjet35')" style="cursor:pointer" role="button" tabindex="0" aria-label="View Learjet 35 details">
-      <div class="fc-img"><img src="https://images.unsplash.com/https://jetcab.mx/wp-content/uploads/2024/11/Learjet35enrenta.jpeg" alt="Learjet 35 private jet charter Mexico" loading="lazy" width="700" height="394"><span class="fc-cat">Short Range</span><span class="fc-avail">● Available</span></div>
+      <div class="fc-img"><img src="https://jetcab.mx/wp-content/uploads/2024/11/Learjet35enrenta.jpeg" alt="Learjet 35 private jet charter Mexico" loading="lazy" width="700" height="394"><span class="fc-cat">Short Range</span><span class="fc-avail">● Available</span></div>
       <div class="fc-body">
         <p class="fc-name">Learjet 35</p>
         <p class="fc-desc">The definitive regional executive jet</p>
@@ -629,7 +619,7 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:64px 48p
       </div>
     </div>
     <div class="fc rv rv-d2" data-cat="medio" onclick="openJet('challenger605')" style="cursor:pointer" role="button" tabindex="0" aria-label="View Challenger 605 details">
-      <div class="fc-img"><img src="https://images.unsplash.com/https://jetcab.mx/wp-content/uploads/2024/11/Challenger-605-en-renta.jpeg" alt="Challenger 605 private jet Mexico" loading="lazy" width="700" height="394"><span class="fc-cat">Mid Range</span></div>
+      <div class="fc-img"><img src="https://jetcab.mx/wp-content/uploads/2024/11/Challenger-605-en-renta.jpeg" alt="Challenger 605 private jet Mexico" loading="lazy" width="700" height="394"><span class="fc-cat">Mid Range</span></div>
       <div class="fc-body">
         <p class="fc-name">Challenger 605</p>
         <p class="fc-desc">Premium comfort for intercontinental travel</p>
@@ -642,7 +632,7 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:64px 48p
       </div>
     </div>
     <div class="fc rv rv-d3" data-cat="largo" onclick="openJet('gulfstreamgv')" style="cursor:pointer" role="button" tabindex="0" aria-label="View Gulfstream GV details">
-      <div class="fc-img"><img src="https://images.unsplash.com/https://jetcab.mx/wp-content/uploads/2024/11/Gulfstream-Gv-en-Renta.jpeg" alt="Gulfstream GV luxury jet charter" loading="lazy" width="700" height="394"><span class="fc-cat">Long Range</span><span class="fc-avail">2 Left</span></div>
+      <div class="fc-img"><img src="https://jetcab.mx/wp-content/uploads/2024/11/Gulfstream-Gv-en-Renta.jpeg" alt="Gulfstream GV luxury jet charter" loading="lazy" width="700" height="394"><span class="fc-cat">Long Range</span><span class="fc-avail">2 Left</span></div>
       <div class="fc-body">
         <p class="fc-name">Gulfstream GV</p>
         <p class="fc-desc">The pinnacle of global executive aviation</p>
@@ -655,7 +645,7 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:64px 48p
       </div>
     </div>
     <div class="fc rv rv-d1" data-cat="heli" onclick="openJet('bell206')" style="cursor:pointer" role="button" tabindex="0" aria-label="View Bell 206 details">
-      <div class="fc-img"><img src="https://images.unsplash.com/https://jetcab.mx/wp-content/uploads/2024/11/Bel-206-en-renta.jpeg" alt="Bell 206 helicopter charter Mexico" loading="lazy" width="700" height="394"><span class="fc-cat">Helicopter</span></div>
+      <div class="fc-img"><img src="https://jetcab.mx/wp-content/uploads/2024/11/Bel-206-en-renta.jpeg" alt="Bell 206 helicopter charter Mexico" loading="lazy" width="700" height="394"><span class="fc-cat">Helicopter</span></div>
       <div class="fc-body">
         <p class="fc-name">Bell 206</p>
         <p class="fc-desc">Urban transfers and remote area access</p>
@@ -668,7 +658,7 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:64px 48p
       </div>
     </div>
     <div class="fc rv rv-d2" data-cat="heli" onclick="openJet('aw139')" style="cursor:pointer" role="button" tabindex="0" aria-label="View AW139 details">
-      <div class="fc-img"><img src="https://images.unsplash.com/https://jetcab.mx/wp-content/uploads/2024/11/Renta-de-Helicopteros-Mex.jpeg" alt="AW139 executive helicopter Mexico" loading="lazy" width="700" height="394"><span class="fc-cat">Premium Helicopter</span></div>
+      <div class="fc-img"><img src="https://jetcab.mx/wp-content/uploads/2024/11/Renta-de-Helicopteros-Mex.jpeg" alt="AW139 executive helicopter Mexico" loading="lazy" width="700" height="394"><span class="fc-cat">Premium Helicopter</span></div>
       <div class="fc-body">
         <p class="fc-name">AgustaWestland AW139</p>
         <p class="fc-desc">The world's most advanced executive helicopter</p>
@@ -681,7 +671,7 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:64px 48p
       </div>
     </div>
     <div class="fc rv rv-d3" data-cat="med" onclick="openJet('ambulancia')" style="cursor:pointer" role="button" tabindex="0" aria-label="View Air Ambulance details">
-      <div class="fc-img"><img src="https://images.unsplash.com/https://jetcab.mx/wp-content/uploads/2024/11/Ambulancia-aerea-Mexico.jpeg" alt="Air ambulance Mexico JETCAB" loading="lazy" width="700" height="394"><span class="fc-cat">Medical</span></div>
+      <div class="fc-img"><img src="https://jetcab.mx/wp-content/uploads/2024/11/Ambulancia-aerea-Mexico.jpeg" alt="Air ambulance Mexico JETCAB" loading="lazy" width="700" height="394"><span class="fc-cat">Medical</span></div>
       <div class="fc-body">
         <p class="fc-name">Air Ambulance</p>
         <p class="fc-desc">Flying ICU · Specialized medical crew</p>
