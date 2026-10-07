@@ -13,7 +13,7 @@
     why-jetcab  → 4 UVP pillars (split layout)
     carousel    → Auto-scrolling image strip
     destinations→ 8-destination grid + "200+ more" CTA
-    certs       → DGAC · IATA · IS-BAO · ARGUS · Wyvern · NBAA
+    certs       → DGAC · IATA · IS-BAO · 25+ Years
     testimonials→ 2 verified testimonials
     faq         → 6 FAQs (also in FAQPage schema)
     contact     → Split layout: info + quote form → WhatsApp
@@ -64,7 +64,7 @@
   "serviceType":["Private Jet Charter","Helicopter Charter","Air Ambulance"],
   "foundingDate":"1999",
   "numberOfEmployees":{"@type":"QuantitativeValue","minValue":20},
-  "award":["DGAC Certified","IATA Member","IS-BAO Certified","ARGUS Rated","Wyvern Certified"],
+  "award":["DGAC Certified","IATA Member","IS-BAO Certified","25+ Years Experience"],
   "aggregateRating":{"@type":"AggregateRating","ratingValue":"5","reviewCount":"500+"},
   "@id":"https://jetcab.mx/en/#organization"
 }
@@ -76,7 +76,7 @@
   "mainEntity":[
     {"@type":"Question","name":"How quickly can JETCAB arrange a private jet in Mexico?","acceptedAnswer":{"@type":"Answer","text":"JETCAB provides confirmed quotes with aircraft, price, and route within 30 minutes. The aircraft is ready for departure within 2 hours of booking confirmation, 365 days a year, 24/7."}},
     {"@type":"Question","name":"How much does a private jet charter in Mexico cost?","acceptedAnswer":{"@type":"Answer","text":"Private jet charter in Mexico starts from $1,500 USD/hour for a light jet (Learjet 35) up to $5,400 USD/hour for a long-range jet (Gulfstream GV). Helicopter charters start from $1,500 USD/hour. All prices include catering, permits, and full crew."}},
-    {"@type":"Question","name":"Is JETCAB certified to operate private jets in Mexico?","acceptedAnswer":{"@type":"Answer","text":"Yes. JETCAB holds DGAC (Dirección General de Aeronáutica Civil) certification, IATA membership, IS-BAO certification, and ARGUS and Wyvern ratings — the highest safety standards in the aviation industry."}},
+    {"@type":"Question","name":"Is JETCAB certified to operate private jets in Mexico?","acceptedAnswer":{"@type":"Answer","text":"Yes. JETCAB holds DGAC (Dirección General de Aeronáutica Civil) certification, IATA membership and IS-BAO certification — the highest international aviation safety standards. Over 25 years of operations and more than 2,000 flights completed without a single safety incident."}},
     {"@type":"Question","name":"What destinations does JETCAB serve from Mexico?","acceptedAnswer":{"@type":"Answer","text":"JETCAB serves 200+ destinations from Mexico, including national routes (Cancún, Los Cabos, Puerto Vallarta, Monterrey) and international routes to Miami, New York, Los Angeles, Las Vegas, Houston, Dallas, London, and beyond."}},
     {"@type":"Question","name":"Does JETCAB operate helicopter charter services?","acceptedAnswer":{"@type":"Answer","text":"Yes. JETCAB operates Bell 206 and AW139 executive helicopters for urban transfers, remote area access, and VIP tours. The AW139 accommodates up to 15 passengers."}},
     {"@type":"Question","name":"Does JETCAB offer air ambulance services?","acceptedAnswer":{"@type":"Answer","text":"Yes. JETCAB's air ambulance is a fully equipped flying ICU with specialized medical personnel, available 24/7 with a response time of under 2 hours for medical emergency transport."}},
@@ -130,7 +130,7 @@ nav.solid{background:rgba(10,9,8,.96);backdrop-filter:blur(16px);border-bottom:1
 .burger span{display:block;width:22px;height:1.5px;background:var(--white)}
 
 /* HERO */
-.hero{position:relative;height:100vh;min-height:660px;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.hero{position:relative;height:100vh;min-height:720px;display:flex;align-items:center;justify-content:center;overflow:hidden;transform:translateZ(0);isolation:isolate}
 .hero-bg{position:absolute;inset:0;overflow:hidden;background:#0a0908}
 .hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 1.2s ease;will-change:opacity}
 .hero-video.loaded{opacity:1}
@@ -142,12 +142,12 @@ nav.solid{background:rgba(10,9,8,.96);backdrop-filter:blur(16px);border-bottom:1
 /* Canvas particle network */
 #hero-canvas{position:absolute;inset:0;z-index:1;pointer-events:none;opacity:.35;width:100%;height:100%}
 .hero-ol{position:absolute;inset:0;z-index:2;background:linear-gradient(to bottom,rgba(10,9,8,.55) 0%,rgba(10,9,8,.18) 35%,rgba(10,9,8,.6) 75%,rgba(10,9,8,1) 100%)}
-.hero-c{position:relative;z-index:3;width:100%;max-width:860px;padding:0 24px;text-align:center}
+.hero-c{position:relative;z-index:3;width:100%;max-width:860px;padding:0 24px 80px;text-align:center}
 .hero-eyebrow{font-size:10px;font-weight:600;letter-spacing:.4em;text-transform:uppercase;color:var(--orange);margin-bottom:20px;display:block}
 .hero-title{font-family:'Barlow Condensed',sans-serif;font-size:clamp(64px,12vw,130px);font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--white);line-height:.88;margin-bottom:10px}
 .hero-sub{font-family:'Barlow Condensed',sans-serif;font-size:clamp(13px,2vw,17px);font-weight:400;letter-spacing:.3em;text-transform:uppercase;color:var(--muted);margin-bottom:44px}
-.bform{display:flex;align-items:stretch;background:rgba(255,255,255,.97);width:100%;box-shadow:0 32px 80px rgba(0,0,0,.55),0 8px 24px rgba(0,0,0,.3),0 0 0 1px rgba(255,255,255,.08);transform:perspective(1200px) rotateX(1.5deg);transform-origin:top center;transition:transform .4s ease,box-shadow .4s ease}
-.bform:hover,.bform:focus-within{transform:perspective(1200px) rotateX(0deg);box-shadow:0 40px 100px rgba(0,0,0,.6),0 12px 32px rgba(240,120,40,.12),0 0 0 1px rgba(255,255,255,.12)}
+.bform{display:flex;align-items:stretch;background:rgba(255,255,255,.97);width:100%;box-shadow:0 24px 64px rgba(0,0,0,.55),0 6px 20px rgba(0,0,0,.3);border-radius:4px;transition:box-shadow .4s ease;transform:translateZ(0)}
+.bform:hover,.bform:focus-within{box-shadow:0 32px 80px rgba(0,0,0,.6),0 8px 28px rgba(240,120,40,.12)}
 .bf{flex:1;padding:14px 18px;border-right:1px solid rgba(0,0,0,.06);cursor:text;transition:background .15s}
 .bf:hover{background:rgba(0,0,0,.015)}
 .bf-l{font-size:8.5px;font-weight:700;letter-spacing:.28em;text-transform:uppercase;color:#999;display:block;margin-bottom:5px}
@@ -461,7 +461,7 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:64px 48p
 <a href="#main-content" style="position:absolute;top:-100px;left:8px;z-index:9999;background:var(--orange);color:#fff;padding:8px 14px;font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;border-radius:4px;transition:top .2s" onfocus="this.style.top='8px'" onblur="this.style.top='-100px'">Skip to content</a>
 <nav id="nav">
   <a class="n-logo" href="/en/">
-    <svg class="n-logo-icon" viewBox="0 0 32 32" fill="none"><polygon points="4,28 16,4 28,28" fill="#f07828" opacity=".9"/><polygon points="16,4 28,28 16,22" fill="#c85e1a" opacity=".6"/></svg>
+    <img class="n-logo-icon" src="https://jetcab.mx/wp-content/uploads/2023/03/cropped-1024-LOGO-JETCAB-TRANSPARENTE-1-96x96.png" alt="JETCAB" width="40" height="40" style="object-fit:contain;filter:brightness(1.1)">
     <span class="n-logo-text">JETCAB</span>
   </a>
   <div class="n-links">
@@ -483,8 +483,8 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:64px 48p
     <!-- Aerial private aviation video — muted autoplay loop -->
     <video class="hero-video" id="hero-video" autoplay muted loop playsinline preload="auto"
       poster="https://images.unsplash.com/photo-1540962351504-03099e0a754b?auto=format&fit=crop&w=2000&q=85">
-      <source src="https://videos.pexels.com/video-files/3195394/3195394-uhd_2560_1440_25fps.mp4" type="video/mp4">
-      <source src="https://videos.pexels.com/video-files/854601/854601-hd_1920_1080_30fps.mp4" type="video/mp4">
+      <source src="https://videos.pexels.com/video-files/4167481/4167481-uhd_2560_1440_30fps.mp4" type="video/mp4">
+      <source src="https://videos.pexels.com/video-files/4167481/4167481-hd_1920_1080_30fps.mp4" type="video/mp4">
     </video>
   </div>
   <div class="hero-grain" aria-hidden="true"></div>
@@ -614,7 +614,7 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:64px 48p
     <button class="ftab" data-cat="med">Medical</button>
   </div>
   <div class="fleet-grid" id="fgrid" style="scroll-margin-top:64px">
-    <a href="/jetcab-learjet35.html" class="fc rv rv-d1" data-cat="corto">
+    <div class="fc rv rv-d1" data-cat="corto" onclick="openJet('learjet35')" style="cursor:pointer" role="button" tabindex="0" aria-label="View Learjet 35 details">
       <div class="fc-img"><img src="https://images.unsplash.com/photo-1556388158-158ea5ccacbd?auto=format&fit=crop&w=700&q=80" alt="Learjet 35 private jet charter Mexico" loading="lazy" width="700" height="394"><span class="fc-cat">Short Range</span><span class="fc-avail">● Available</span></div>
       <div class="fc-body">
         <p class="fc-name">Learjet 35</p>
@@ -626,8 +626,8 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:64px 48p
         </div>
         <div class="fc-foot"><span class="fc-price">From $1,700 USD/hr</span><span class="fc-link">View aircraft →</span></div>
       </div>
-    </a>
-    <a href="/jetcab-challenger605.html" class="fc rv rv-d2" data-cat="medio">
+    </div>
+    <div class="fc rv rv-d2" data-cat="medio" onclick="openJet('challenger605')" style="cursor:pointer" role="button" tabindex="0" aria-label="View Challenger 605 details">
       <div class="fc-img"><img src="https://images.unsplash.com/photo-1474302770737-173ee21bab63?auto=format&fit=crop&w=700&q=80" alt="Challenger 605 private jet Mexico" loading="lazy" width="700" height="394"><span class="fc-cat">Mid Range</span></div>
       <div class="fc-body">
         <p class="fc-name">Challenger 605</p>
@@ -639,8 +639,8 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:64px 48p
         </div>
         <div class="fc-foot"><span class="fc-price">From $2,700 USD/hr</span><span class="fc-link">View aircraft →</span></div>
       </div>
-    </a>
-    <a href="/jetcab-gulfstreamgv.html" class="fc rv rv-d3" data-cat="largo">
+    </div>
+    <div class="fc rv rv-d3" data-cat="largo" onclick="openJet('gulfstreamgv')" style="cursor:pointer" role="button" tabindex="0" aria-label="View Gulfstream GV details">
       <div class="fc-img"><img src="https://images.unsplash.com/photo-1464037866556-6812c9d1c72e?auto=format&fit=crop&w=700&q=80" alt="Gulfstream GV luxury jet charter" loading="lazy" width="700" height="394"><span class="fc-cat">Long Range</span><span class="fc-avail">2 Left</span></div>
       <div class="fc-body">
         <p class="fc-name">Gulfstream GV</p>
@@ -652,8 +652,8 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:64px 48p
         </div>
         <div class="fc-foot"><span class="fc-price">From $5,400 USD/hr</span><span class="fc-link">View aircraft →</span></div>
       </div>
-    </a>
-    <a href="/jetcab-bell206.html" class="fc rv rv-d1" data-cat="heli">
+    </div>
+    <div class="fc rv rv-d1" data-cat="heli" onclick="openJet('bell206')" style="cursor:pointer" role="button" tabindex="0" aria-label="View Bell 206 details">
       <div class="fc-img"><img src="https://images.unsplash.com/photo-1436891678271-9c672565d8f6?auto=format&fit=crop&w=700&q=80" alt="Bell 206 helicopter charter Mexico" loading="lazy" width="700" height="394"><span class="fc-cat">Helicopter</span></div>
       <div class="fc-body">
         <p class="fc-name">Bell 206</p>
@@ -665,8 +665,8 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:64px 48p
         </div>
         <div class="fc-foot"><span class="fc-price">From $1,500 USD/hr</span><span class="fc-link">View aircraft →</span></div>
       </div>
-    </a>
-    <a href="/jetcab-aw139.html" class="fc rv rv-d2" data-cat="heli">
+    </div>
+    <div class="fc rv rv-d2" data-cat="heli" onclick="openJet('aw139')" style="cursor:pointer" role="button" tabindex="0" aria-label="View AW139 details">
       <div class="fc-img"><img src="https://images.unsplash.com/photo-1540962351504-03099e0a754b?auto=format&fit=crop&w=700&q=80" alt="AW139 executive helicopter Mexico" loading="lazy" width="700" height="394"><span class="fc-cat">Premium Helicopter</span></div>
       <div class="fc-body">
         <p class="fc-name">AgustaWestland AW139</p>
@@ -678,8 +678,8 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:64px 48p
         </div>
         <div class="fc-foot"><span class="fc-price">From $3,500 USD/hr</span><span class="fc-link">View aircraft →</span></div>
       </div>
-    </a>
-    <a href="/jetcab-ambulancia-aerea.html" class="fc rv rv-d3" data-cat="med">
+    </div>
+    <div class="fc rv rv-d3" data-cat="med" onclick="openJet('ambulancia')" style="cursor:pointer" role="button" tabindex="0" aria-label="View Air Ambulance details">
       <div class="fc-img"><img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=700&q=80" alt="Air ambulance Mexico JETCAB" loading="lazy" width="700" height="394"><span class="fc-cat">Medical</span></div>
       <div class="fc-body">
         <p class="fc-name">Air Ambulance</p>
@@ -691,7 +691,7 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:64px 48p
         </div>
         <div class="fc-foot"><span class="fc-price">From $2,700 USD/hr</span><span class="fc-link">View service →</span></div>
       </div>
-    </a>
+    </div>
   </div>
 </section>
 
@@ -801,9 +801,8 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:64px 48p
       <span class="cert-i">DGAC México</span>
       <span class="cert-i">IATA</span>
       <span class="cert-i">IS-BAO</span>
-      <span class="cert-i">ARGUS</span>
-      <span class="cert-i">Wyvern</span>
-      <span class="cert-i">NBAA</span>
+      <span class="cert-i">25+ Years</span>
+      <span class="cert-i">2,000+ Flights</span>
     </div>
   </div>
 </div>
@@ -852,7 +851,7 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:64px 48p
     </div>
     <div class="faq-item rv">
       <div class="faq-q"><span class="faq-q-text">Is JETCAB certified to operate in Mexico?</span><span class="faq-icon">+</span></div>
-      <div class="faq-a"><p>Yes. JETCAB holds DGAC certification (Mexico's aviation authority), IATA membership, IS-BAO, ARGUS and Wyvern ratings — the highest safety standards in the aviation industry.</p></div>
+      <div class="faq-a"><p>Yes. JETCAB holds DGAC certification (Mexico's Dirección General de Aeronáutica Civil), IATA membership and IS-BAO certification — the highest international aviation safety standards. 25+ years of operations without a single incident.</p></div>
     </div>
     <div class="faq-item rv">
       <div class="faq-q"><span class="faq-q-text">What destinations can JETCAB fly to from Mexico?</span><span class="faq-icon">+</span></div>
@@ -865,6 +864,10 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:64px 48p
     <div class="faq-item rv">
       <div class="faq-q"><span class="faq-q-text">Does JETCAB offer air ambulance services?</span><span class="faq-icon">+</span></div>
       <div class="faq-a"><p>Yes. JETCAB's air ambulance is a fully equipped flying ICU with specialized medical personnel, available 24/7 with response under 2 hours for medical emergencies anywhere in Mexico.</p></div>
+    </div>
+    <div class="faq-item rv">
+      <div class="faq-q"><span class="faq-q-text">How long has JETCAB been operating?</span><span class="faq-icon">+</span></div>
+      <div class="faq-a"><p>JETCAB has 25+ years of private aviation experience, with over 2,000 flights completed, 500+ satisfied clients and routes to 50+ countries. Our main base of operations is the Aeropuerto Internacional de Toluca (AIT), near Mexico City — offering faster access and fewer delays than the main international airport.</p></div>
     </div>
   </div>
 </section>
@@ -1253,6 +1256,328 @@ document.querySelectorAll('.faq-q').forEach(function(q){
     window.open(url, '_blank', 'noopener,noreferrer');
   });
 })();
+</script>
+
+<!-- ═══════════════════════════════════════════════════════════
+     AIRCRAFT DETAIL MODAL — IMMERSIVE FULL-SCREEN EXPERIENCE
+     ═══════════════════════════════════════════════════════════ -->
+<style>
+/* MODAL BASE */
+#jc-modal{position:fixed;inset:0;z-index:9000;display:none;background:#000;overflow-y:auto}
+#jc-modal.open{display:block}
+.jm-hero{position:relative;height:70vh;min-height:420px;overflow:hidden;background:#111}
+.jm-hero-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 8s ease}
+.jm-hero.loaded .jm-hero-img{transform:scale(1.04)}
+.jm-hero-grad{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(0,0,0,.18) 0%,rgba(0,0,0,.08) 40%,rgba(0,0,0,.85) 80%,#000 100%)}
+.jm-close{position:fixed;top:20px;right:24px;z-index:9100;width:44px;height:44px;background:rgba(255,255,255,.12);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.18);border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s}
+.jm-close:hover{background:rgba(255,255,255,.24)}
+.jm-close svg{width:18px;height:18px;stroke:#fff;stroke-width:2;fill:none}
+.jm-hero-info{position:absolute;bottom:40px;left:60px;right:60px}
+.jm-cat{font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:.38em;text-transform:uppercase;color:var(--orange);margin-bottom:12px;display:block}
+.jm-name{font-family:'Barlow Condensed',sans-serif;font-size:clamp(42px,7vw,88px);font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:#fff;line-height:.9;margin-bottom:16px}
+.jm-tagline{font-family:'Barlow Condensed',sans-serif;font-size:clamp(15px,2vw,20px);font-weight:400;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.65)}
+/* BODY */
+.jm-body{background:#0a0908;padding:0 60px 80px}
+.jm-specs-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(255,255,255,.08);margin-bottom:64px;padding-top:1px}
+.jm-spec{background:#0a0908;padding:28px 24px}
+.jm-spec-l{font-size:9px;font-weight:700;letter-spacing:.38em;text-transform:uppercase;color:rgba(255,255,255,.38);display:block;margin-bottom:10px}
+.jm-spec-v{font-family:'Barlow Condensed',sans-serif;font-size:28px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#fff}
+.jm-section{margin-bottom:56px}
+.jm-section-title{font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:.38em;text-transform:uppercase;color:var(--orange);margin-bottom:28px;display:block;border-bottom:1px solid rgba(255,255,255,.08);padding-bottom:16px}
+.jm-cabin-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.jm-cabin-item{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);padding:20px}
+.jm-cabin-item strong{font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:#fff;display:block;margin-bottom:6px}
+.jm-cabin-item span{font-size:13px;color:rgba(255,255,255,.55);line-height:1.5}
+.jm-routes{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:rgba(255,255,255,.08)}
+.jm-route{background:#0a0908;padding:20px 24px;display:flex;align-items:center;gap:16px}
+.jm-route-cities{font-family:'Barlow Condensed',sans-serif;font-size:16px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#fff;flex:1}
+.jm-route-time{font-size:12px;color:var(--orange);font-weight:600;letter-spacing:.1em;white-space:nowrap}
+.jm-cta-bar{display:flex;align-items:center;justify-content:space-between;background:rgba(240,120,40,.08);border:1px solid rgba(240,120,40,.2);padding:28px 32px;gap:24px;flex-wrap:wrap}
+.jm-price-label{font-size:9px;font-weight:700;letter-spacing:.38em;text-transform:uppercase;color:rgba(255,255,255,.38);display:block;margin-bottom:6px}
+.jm-price-val{font-family:'Barlow Condensed',sans-serif;font-size:32px;font-weight:800;letter-spacing:.08em;color:var(--orange)}
+.jm-cta-btns{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+.jm-btn-wa{display:inline-flex;align-items:center;gap:8px;background:#25D366;color:#fff;padding:13px 26px;font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;border-radius:100px;text-decoration:none;transition:background .2s}
+.jm-btn-wa:hover{background:#1ebd5a}
+.jm-btn-wa svg{width:16px;height:16px;fill:#fff;flex-shrink:0}
+.jm-btn-quote{background:var(--orange);color:#fff;padding:13px 26px;font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;border:none;border-radius:100px;cursor:pointer;transition:background .2s}
+.jm-btn-quote:hover{background:#c8631a}
+@media(max-width:768px){
+  .jm-hero-info{left:20px;right:20px;bottom:28px}
+  .jm-body{padding:0 20px 60px}
+  .jm-specs-grid{grid-template-columns:repeat(2,1fr)}
+  .jm-cabin-grid{grid-template-columns:1fr}
+  .jm-routes{grid-template-columns:1fr}
+  .jm-cta-bar{flex-direction:column;align-items:flex-start}
+  .jm-close{top:12px;right:12px}
+}
+</style>
+
+<div id="jc-modal" role="dialog" aria-modal="true" aria-label="Aircraft details">
+  <button class="jm-close" onclick="closeJet()" aria-label="Close">
+    <svg viewBox="0 0 18 18"><line x1="1" y1="1" x2="17" y2="17"/><line x1="17" y1="1" x2="1" y2="17"/></svg>
+  </button>
+  <div class="jm-hero" id="jm-hero">
+    <img class="jm-hero-img" id="jm-hero-img" src="" alt="" width="1800" height="900" loading="eager">
+    <div class="jm-hero-grad"></div>
+    <div class="jm-hero-info">
+      <span class="jm-cat" id="jm-cat"></span>
+      <div class="jm-name" id="jm-name"></div>
+      <div class="jm-tagline" id="jm-tagline"></div>
+    </div>
+  </div>
+  <div class="jm-body">
+    <!-- Specs bar -->
+    <div class="jm-specs-grid" id="jm-specs"></div>
+    <!-- Cabin details -->
+    <div class="jm-section">
+      <span class="jm-section-title">Cabin & Equipment</span>
+      <div class="jm-cabin-grid" id="jm-cabin"></div>
+    </div>
+    <!-- Sample routes -->
+    <div class="jm-section">
+      <span class="jm-section-title">Sample Routes</span>
+      <div class="jm-routes" id="jm-routes"></div>
+    </div>
+    <!-- CTA -->
+    <div class="jm-cta-bar">
+      <div>
+        <span class="jm-price-label">Starting from</span>
+        <div class="jm-price-val" id="jm-price"></div>
+      </div>
+      <div class="jm-cta-btns">
+        <a class="jm-btn-wa" id="jm-wa-btn" href="#" target="_blank" rel="noopener noreferrer">
+          <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.122.548 4.11 1.504 5.844L0 24l6.336-1.479A11.946 11.946 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.807 9.807 0 01-5.001-1.373l-.36-.214-3.725.869.937-3.43-.235-.374A9.784 9.784 0 012.182 12C2.182 6.57 6.57 2.182 12 2.182S21.818 6.57 21.818 12 17.43 21.818 12 21.818z"/></svg>
+          Request via WhatsApp
+        </a>
+        <button class="jm-btn-quote" onclick="closeJet();document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Get a Quote</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+// ─── AIRCRAFT DATABASE ────────────────────────────────────────────────────────
+var JETS = {
+  learjet35:{
+    name:'Learjet 35',
+    cat:'Short Range Jet · 4 to 7 Passengers',
+    tagline:'The definitive executive jet for Mexico & US border routes',
+    img:'https://images.unsplash.com/photo-1556388158-158ea5ccacbd?auto=format&fit=crop&w=1800&q=90',
+    price:'From $1,700 USD / hr',
+    waText:'Hi JETCAB, I\'d like to inquire about the Learjet 35 charter.',
+    specs:[
+      {l:'Passengers',v:'4 – 7'},
+      {l:'Range',v:'2,100 mi'},
+      {l:'Max Speed',v:'500 mph'},
+      {l:'Ceiling',v:'45,000 ft'}
+    ],
+    cabin:[
+      {h:'Seating',b:'Individual reclining leather seats with fold-out tables and reading lights at every position'},
+      {h:'Galley',b:'Forward galley with catering, hot beverages and premium bar service included'},
+      {h:'Connectivity',b:'Satellite phone, cabin WiFi optional, noise-canceling audio system'},
+      {h:'Luggage',b:'Up to 50 lbs / 23 kg per passenger in heated rear baggage compartment'},
+      {h:'Privacy',b:'Pressurized executive cabin sealed from external noise — NDA-ready environment'},
+      {h:'Crew',b:'Captain + First Officer, DGAC certified, over 5,000 hours combined flight time'}
+    ],
+    routes:[
+      {from:'CDMX → Cancún',t:'2h 10m'},
+      {from:'CDMX → Monterrey',t:'1h 15m'},
+      {from:'CDMX → Los Cabos',t:'2h 40m'},
+      {from:'Cancún → Houston',t:'2h 20m'},
+      {from:'CDMX → Miami',t:'3h 20m'},
+      {from:'CDMX → Las Vegas',t:'3h 50m'}
+    ]
+  },
+  challenger605:{
+    name:'Challenger 605',
+    cat:'Mid-Size Jet · 6 to 9 Passengers',
+    tagline:'Stand-up cabin, full galley, intercontinental range',
+    img:'https://images.unsplash.com/photo-1474302770737-173ee21bab63?auto=format&fit=crop&w=1800&q=90',
+    price:'From $2,700 USD / hr',
+    waText:'Hi JETCAB, I\'d like to inquire about the Challenger 605 charter.',
+    specs:[
+      {l:'Passengers',v:'6 – 9'},
+      {l:'Range',v:'4,000 mi'},
+      {l:'Max Speed',v:'540 mph'},
+      {l:'Ceiling',v:'41,000 ft'}
+    ],
+    cabin:[
+      {h:'Stand-Up Cabin',b:'Full stand-up height throughout the cabin — the most spacious mid-size jet available'},
+      {h:'Seating',b:'Dual club configuration, forward-facing and side-divan options, converts to 2 flat beds'},
+      {h:'Full Galley',b:'Aft full galley with chef-quality catering, premium spirits and sommelier selection'},
+      {h:'Lavatory',b:'Private enclosed lavatory with vanity — not a curtain, an actual door'},
+      {h:'Entertainment',b:'Honeywell Ovation system, individual screens, Bose surround audio, satellite TV'},
+      {h:'Connectivity',b:'High-speed cabin WiFi, USB-C at every seat, international satellite phone'}
+    ],
+    routes:[
+      {from:'CDMX → Miami',t:'3h 20m'},
+      {from:'CDMX → New York',t:'4h 45m'},
+      {from:'CDMX → Houston',t:'1h 30m'},
+      {from:'Cancún → Chicago',t:'3h 40m'},
+      {from:'CDMX → Los Angeles',t:'3h 10m'},
+      {from:'CDMX → Las Vegas',t:'3h 50m'}
+    ]
+  },
+  gulfstreamgv:{
+    name:'Gulfstream GV',
+    cat:'Long Range Jet · 8 to 16 Passengers',
+    tagline:'Mexico City to London. Non-stop. The pinnacle of global aviation.',
+    img:'https://images.unsplash.com/photo-1464037866556-6812c9d1c72e?auto=format&fit=crop&w=1800&q=90',
+    price:'From $5,400 USD / hr',
+    waText:'Hi JETCAB, I\'d like to inquire about the Gulfstream GV charter.',
+    specs:[
+      {l:'Passengers',v:'8 – 16'},
+      {l:'Range',v:'7,400 mi'},
+      {l:'Max Speed',v:'590 mph'},
+      {l:'Ceiling',v:'51,000 ft'}
+    ],
+    cabin:[
+      {h:'Conference Suite',b:'Full forward conference room with satellite uplink, 4K screen and secure line options'},
+      {h:'Private Suite',b:'Aft private bedroom with queen bed, wardrobe and dedicated lavatory with shower'},
+      {h:'Dual Galley',b:'Forward and aft galleys — full hot meal service for 16 passengers simultaneously'},
+      {h:'14 Oval Windows',b:'The iconic Gulfstream panoramic oval windows flood the cabin with natural light'},
+      {h:'Starlink WiFi',b:'High-bandwidth satellite internet throughout the entire flight, anywhere in the world'},
+      {h:'Crew',b:'2 pilots + dedicated cabin attendant. Ultra-long-range ETOPS certified route capability'}
+    ],
+    routes:[
+      {from:'CDMX → London',t:'10h 30m'},
+      {from:'CDMX → New York',t:'4h 45m'},
+      {from:'CDMX → Miami',t:'3h 20m'},
+      {from:'CDMX → Madrid',t:'11h 20m'},
+      {from:'CDMX → Paris',t:'11h 00m'},
+      {from:'CDMX → Tokyo',t:'14h 50m'}
+    ]
+  },
+  bell206:{
+    name:'Bell 206',
+    cat:'Light Helicopter · 3 to 5 Passengers',
+    tagline:'Urban transfers, yacht access and remote landing zones — no runway needed',
+    img:'https://images.unsplash.com/photo-1436891678271-9c672565d8f6?auto=format&fit=crop&w=1800&q=90',
+    price:'From $1,500 USD / hr',
+    waText:'Hi JETCAB, I\'d like to inquire about Bell 206 helicopter charter.',
+    specs:[
+      {l:'Passengers',v:'3 – 5'},
+      {l:'Range',v:'370 mi'},
+      {l:'Max Speed',v:'130 mph'},
+      {l:'Ceiling',v:'13,500 ft'}
+    ],
+    cabin:[
+      {h:'Corporate Interior',b:'Fully refurbished executive interior, leather seats, sound insulation package'},
+      {h:'Headsets',b:'Noise-canceling aviation headsets at every seat — comfortable conversation throughout'},
+      {h:'Access Points',b:'Lands anywhere a 50m circle exists: rooftops, yacht decks, mountain estates, golf courses'},
+      {h:'Permits & Filing',b:'All flight permits, NOTAMs and airspace authorizations filed by JETCAB operations'},
+      {h:'City Transfers',b:'CDMX center to AIT Toluca in 25 minutes. Skip 2-3 hours of city traffic'},
+      {h:'Crew',b:'Certified commercial pilot, 2,000+ helicopter hours, local airspace expert'}
+    ],
+    routes:[
+      {from:'CDMX → AIT Toluca',t:'25 min'},
+      {from:'Cancún City → Isla Mujeres',t:'15 min'},
+      {from:'Puerto Vallarta → Punta Mita',t:'10 min'},
+      {from:'Acapulco → Las Brisas',t:'8 min'},
+      {from:'CDMX → Teotihuacán',t:'20 min'},
+      {from:'Los Cabos → Desert Transfer',t:'On request'}
+    ]
+  },
+  aw139:{
+    name:'AgustaWestland AW139',
+    cat:'Premium Helicopter · Up to 15 Passengers',
+    tagline:'The world\'s most advanced executive helicopter — for groups who refuse compromise',
+    img:'https://images.unsplash.com/photo-1540962351504-03099e0a754b?auto=format&fit=crop&w=1800&q=90',
+    price:'From $3,500 USD / hr',
+    waText:'Hi JETCAB, I\'d like to inquire about the AW139 helicopter charter.',
+    specs:[
+      {l:'Passengers',v:'Up to 15'},
+      {l:'Range',v:'620 mi'},
+      {l:'Max Speed',v:'193 mph'},
+      {l:'Ceiling',v:'20,000 ft'}
+    ],
+    cabin:[
+      {h:'VIP Executive Cabin',b:'Hand-stitched leather throughout, individual climate control, fold-out tables'},
+      {h:'Dual Engines',b:'Twin Pratt & Whitney PT6C-67C turboshaft — redundant power, maximum safety margin'},
+      {h:'Night Vision',b:'FLIR camera system, night vision compatible cockpit for all-weather operations'},
+      {h:'Range',b:'1,000 km range makes it suitable for offshore platforms, remote resorts and border hops'},
+      {h:'Load',b:'VIP passenger configuration or combined pax + cargo — configurable for each mission'},
+      {h:'Certifications',b:'DGAC Mexico, FAA, EASA. Offshore and mountain operations certified crew'}
+    ],
+    routes:[
+      {from:'CDMX → Cuernavaca',t:'20 min'},
+      {from:'Cancún → Holbox Island',t:'25 min'},
+      {from:'Guadalajara → Puerto Vallarta',t:'45 min'},
+      {from:'Monterrey → Saltillo',t:'30 min'},
+      {from:'Offshore platform → Tampico',t:'On request'},
+      {from:'CDMX → Toluca (group)',t:'25 min'}
+    ]
+  },
+  ambulancia:{
+    name:'Air Ambulance',
+    cat:'Flying ICU · Critical Care Transport',
+    tagline:'A flying intensive care unit. Every minute saved is what matters.',
+    img:'https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=1800&q=90',
+    price:'From $2,700 USD / hr',
+    waText:'Hi JETCAB, I need to arrange an air ambulance — it\'s urgent.',
+    specs:[
+      {l:'Response',v:'< 2 Hours'},
+      {l:'Availability',v:'24 / 7 / 365'},
+      {l:'Range',v:'2,100+ mi'},
+      {l:'ICU Setup',v:'Full'}
+    ],
+    cabin:[
+      {h:'Full ICU Equipment',b:'Ventilator, cardiac monitor, defibrillator, infusion pumps, portable ultrasound'},
+      {h:'Medical Crew',b:'Critical care physician + specialized flight nurse, ACLS and ATLS certified'},
+      {h:'Patient Capacity',b:'1 critical patient on stretcher + 1-2 family members or medical companions'},
+      {h:'Medications',b:'Full pharmacological kit — vasopressors, sedatives, advanced airway management'},
+      {h:'Communication',b:'Direct line to receiving hospital during flight — zero handoff delay on landing'},
+      {h:'DGAC Certified',b:'Mexico\'s only DGAC-certified flying ICU service operating from AIT Toluca'}
+    ],
+    routes:[
+      {from:'CDMX → Houston Medical Center',t:'1h 30m'},
+      {from:'CDMX → Miami (Jackson Memorial)',t:'3h 20m'},
+      {from:'Cancún → CDMX',t:'2h 10m'},
+      {from:'Monterrey → Mérida',t:'2h 00m'},
+      {from:'CDMX → New York (Cornell)',t:'4h 45m'},
+      {from:'Any Mexican city → USA',t:'On request'}
+    ]
+  }
+};
+
+function openJet(id){
+  var j=JETS[id]; if(!j) return;
+  document.getElementById('jm-cat').textContent=j.cat;
+  document.getElementById('jm-name').textContent=j.name;
+  document.getElementById('jm-tagline').textContent=j.tagline;
+  document.getElementById('jm-price').textContent=j.price;
+  var img=document.getElementById('jm-hero-img');
+  img.src=j.img; img.alt=j.name+' private charter Mexico';
+  var hero=document.getElementById('jm-hero');
+  hero.classList.remove('loaded');
+  img.onload=function(){hero.classList.add('loaded');};
+  // Specs
+  var sg=document.getElementById('jm-specs');
+  sg.innerHTML=j.specs.map(function(s){return'<div class="jm-spec"><span class="jm-spec-l">'+s.l+'</span><div class="jm-spec-v">'+s.v+'</div></div>';}).join('');
+  // Cabin
+  var cg=document.getElementById('jm-cabin');
+  cg.innerHTML=j.cabin.map(function(c){return'<div class="jm-cabin-item"><strong>'+c.h+'</strong><span>'+c.b+'</span></div>';}).join('');
+  // Routes
+  var rg=document.getElementById('jm-routes');
+  rg.innerHTML=j.routes.map(function(r){return'<div class="jm-route"><span class="jm-route-cities">'+r.from+'</span><span class="jm-route-time">'+r.t+'</span></div>';}).join('');
+  // WA button
+  document.getElementById('jm-wa-btn').href='https://wa.me/527291081200?text='+encodeURIComponent(j.waText);
+  // Open modal
+  var m=document.getElementById('jc-modal');
+  m.classList.add('open');
+  document.body.style.overflow='hidden';
+  m.scrollTop=0;
+}
+function closeJet(){
+  document.getElementById('jc-modal').classList.remove('open');
+  document.body.style.overflow='';
+}
+// Close on Escape
+document.addEventListener('keydown',function(e){if(e.key==='Escape')closeJet();});
+// Keyboard accessibility for fleet cards
+document.querySelectorAll('.fc[tabindex]').forEach(function(el){
+  el.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();el.click();}});
+});
 </script>
 </body>
 </html>
