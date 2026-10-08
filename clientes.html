@@ -331,6 +331,20 @@ body{font-family:"Plus Jakarta Sans",sans-serif;background:var(--ink);color:var(
 .real-metric-val.critico{color:#DC2626}
 .real-metric-lbl{font-size:12px;font-weight:600;color:var(--ink)}
 .real-metric-sub{font-size:11px;color:var(--sub)}
+/* ── ACTIVITY TYPES ── */
+.act-icon.implementacion{background:rgba(22,163,74,.12);color:#16A34A}
+.act-icon.seo{background:rgba(37,99,235,.12);color:#2563EB}
+.act-icon.geo{background:rgba(139,92,246,.12);color:#7C3AED}
+/* ── NOTIFICATIONS ── */
+.notif-card{background:var(--wh);border:1px solid var(--bd);border-radius:12px;padding:16px 18px;display:flex;gap:14px;align-items:flex-start;transition:border-color .15s}
+.notif-card.unread{border-left:3px solid var(--or);background:rgba(240,78,35,.03)}
+.notif-card.unread .notif-title{color:var(--or)}
+.notif-ico{font-size:24px;line-height:1;flex-shrink:0;margin-top:2px}
+.notif-body{flex:1}
+.notif-meta{font-size:10px;color:var(--sub);margin-bottom:4px;display:flex;gap:8px}
+.notif-title{font-size:13px;font-weight:700;color:var(--ink);margin-bottom:4px}
+.notif-msg{font-size:12px;color:var(--sub);line-height:1.55}
+.notif-badge-new{display:inline-block;background:var(--or);color:#fff;font-size:9px;font-weight:800;padding:1px 6px;border-radius:4px;margin-left:6px;text-transform:uppercase;letter-spacing:.04em;vertical-align:middle}
 </style>
 </head>
 <body>
@@ -383,6 +397,8 @@ body{font-family:"Plus Jakarta Sans",sans-serif;background:var(--ink);color:var(
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>Mi proyecto</button>
       <button class="sb-btn" id="btn-reports" onclick="nav('reports',this)" style="display:none">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>Reportes</button>
+      <button class="sb-btn" id="btn-notifs" onclick="nav('notifs',this);markNotifsRead()" style="display:none">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>Notificaciones<span class="sb-badge" id="sbNotifCount" style="background:#DC2626;display:none">0</span></button>
       <div class="sb-div"></div>
       <button class="sb-btn" onclick="openChangePwd()">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>Mi acceso</button>
@@ -570,6 +586,13 @@ body{font-family:"Plus Jakarta Sans",sans-serif;background:var(--ink);color:var(
         <div id="reportsGrid" style="display:flex;flex-direction:column;gap:14px;margin-top:4px"></div>
       </div>
 
+      <!-- NOTIFICACIONES -->
+      <div class="sec" id="sec-notifs">
+        <button class="back-btn" onclick="nav('res',document.getElementById('btn-res'))">← Resumen</button>
+        <div class="sh"><h2>Notificaciones</h2><p>Actualizaciones de Rankeo sobre tu proyecto</p></div>
+        <div id="notifsList" style="display:flex;flex-direction:column;gap:10px;margin-top:4px"></div>
+      </div>
+
     </main>
   </div>
 </div>
@@ -583,6 +606,7 @@ const USERS={
   "admin@rankeo.agency":{hash:"20a79dd4bea86a36d0ac8b32106273184e9b8c5fe1a18839bd6a19b69f3d71c5",role:"admin",name:"Luis D\u00edaz \u2014 Admin"},
   "colegio@rankeo.agency":{hash:"e0fdef14fba35a48cd580f9c86291ebaa6eb17ecd63db13efe5118bb054a5566",role:"client",clientId:"colegio_san_martin",name:"Colegio San Mart\u00edn de Tours"},
   "contacto@jetcab.mx":{hash:"9cd10017f904a70335bca18a496ae2a86115525a5a6984dd7cc9742acd174a1f",role:"client",clientId:"jetcab",name:"JETCAB \u2014 Aviaci\u00f3n Privada"},
+  "fly@jetcab.mx":{hash:"9cd10017f904a70335bca18a496ae2a86115525a5a6984dd7cc9742acd174a1f",role:"client",clientId:"jetcab",name:"JETCAB \u2014 Aviaci\u00f3n Privada"},
   "jetcab@rankeo.agency":{hash:"5b59bc47e2988e158b263c1eaef87abb5db5292ac7f9c6da0d3be6ef379ee2aa",role:"client",clientId:"jetcab",name:"JETCAB \u2014 Aviaci\u00f3n Privada"}
 };
 const CLIENTS={
@@ -595,7 +619,8 @@ const CLIENTS={
     whatsapp:"525532894890",
     planImp:25,
     reports:[
-      {title:"Diagnóstico GEO + SEO — Octubre 2026",date:"Oct 2026",url:"https://rankeo-nu.vercel.app/jetcab-reporte-cliente.html",desc:"Análisis completo de los 8 problemas críticos encontrados en jetcab.mx y el plan de acción para aparecer en Google, ChatGPT y Perplexity."}
+      {title:"Diagnóstico GEO + SEO — Octubre 2026",date:"05 Oct 2026",url:"https://rankeo-nu.vercel.app/jetcab-reporte-cliente.html",desc:"Análisis completo de los 8 problemas críticos encontrados en jetcab.mx y el plan de acción para aparecer en Google, ChatGPT y Perplexity."},
+      {title:"Reporte #2 — Implementaciones Técnicas Oct 2026",date:"07 Oct 2026",url:"https://rankeo-nu.vercel.app/jetcab-reporte-cliente.html",desc:"10 mejoras implementadas en jetcab.mx: fix CLS (6 imágenes), luxury polish UX, rediseño /cotizar, botón WhatsApp, speakable schema para IAs, og:image landscape, FAQPage 7 preguntas, versión en inglés jetcab.mx/en/ con hreflang, language switcher y sitemap enviado a GSC. Incluye próximos pasos Q4 y resultados esperados."}
     ],
     tips:[
       {p:"alta",cat:"Técnico",t:"Meta AdSense de plataforma activa",d:"Hay un <meta name=\"google-adsense-platform-account\"> en el head que permite que Google muestre anuncios de competidores dentro de jetcab.mx. Eliminar del header.php en WordPress (Apariencia → Editor de temas, o con el plugin Insert Headers and Footers)."},
@@ -620,14 +645,15 @@ const CLIENTS={
       {lbl:"Sesiones orgánicas Google",val:"99",sub:"↑153.8% · SEO en crecimiento",estado:"neutral"},
       {lbl:"Páginas vistas",val:"229",sub:"↑70.9% vs semana anterior",estado:"neutral"},
       {lbl:"Tiempo de carga real",val:"1.5s",sub:"Medido 05 Oct · TTFB 294ms · Desktop",estado:"neutral"},
-      {lbl:"Scripts JS activos",val:"21",sub:"Crítico: sobrecarga el sitio en móvil",estado:"critico"},
-      {lbl:"JSON-LD LocalBusiness",val:"Ausente",sub:"IAs (ChatGPT/Perplexity) no pueden citar JETCAB",estado:"critico"},
-      {lbl:"GEO Score",val:"0/10",sub:"Sin schema AirCharter ni LocalBusiness",estado:"critico"},
-      {lbl:"Páginas indexadas",val:"28",sub:"site:jetcab.mx · Google Search",estado:"neutral"}
+      {lbl:"Scripts JS activos",val:"21",sub:"Pendiente optimización JS — WP Rocket o Perfmatters",estado:"advertencia"},
+      {lbl:"Schema FAQ / Speakable",val:"Activo",sub:"7 preguntas FAQPage + Speakable via Yoast — 07 Oct",estado:"neutral"},
+      {lbl:"GEO Score",val:"2/10",sub:"FAQPage + Speakable implementados · Falta AirCharter JSON-LD",estado:"advertencia"},
+      {lbl:"Versión en inglés",val:"Live ✓",sub:"jetcab.mx/en/ · hreflang · Language switcher — 07 Oct",estado:"neutral"},
+      {lbl:"Páginas indexadas",val:"28+",sub:"Sitemap enviado a GSC 07 Oct · Reindexación en curso",estado:"neutral"}
     ],
     geo:{
-      score:0,maxScore:10,
-      resumen:"JETCAB no aparece cuando un CEO busca en ChatGPT 'jet privado CDMX en 2 horas' ni cuando una familia busca en Perplexity 'vuelo privado navidad México'. El paso 1 es implementar JSON-LD AirCharter + FAQ con las preguntas de sus 3 avatares.",
+      score:2,maxScore:10,
+      resumen:"FAQ schema (7 preguntas) y Speakable implementados el 07 Oct via Yoast. JETCAB ya tiene señales iniciales para IAs. Siguiente paso crítico: JSON-LD AirCharter + LocalBusiness para aparecer en ChatGPT y Perplexity cuando un CEO busca 'jet privado CDMX en 2 horas'.",
       plataformas:[
         {nombre:"ChatGPT",bg:"#10A37F",estado:"ausente",detalle:"'Jet privado en 2 horas CDMX', 'renta avión privado México CEO' — JETCAB no aparece en ninguna de estas búsquedas de alto ticket."},
         {nombre:"Perplexity",bg:"#6B4FBB",estado:"ausente",detalle:"Sin schema AirCharter ni contenido GEO. Las IAs citan a competidores con datos estructurados."},
@@ -636,7 +662,7 @@ const CLIENTS={
       ],
       pendiente:[
         {done:false,item:"JSON-LD AirCharter + LocalBusiness (hubs: CDMX, Toluca, MTY, GDL)"},
-        {done:false,item:"FAQ schema: '¿Jet listo en 2 horas?', '¿Cuánto cuesta CDMX–Miami?', '¿Vuelo privado con mascotas?'"},
+        {done:true,item:"FAQ schema (7 preguntas) + Speakable via Yoast — implementado 07 Oct ✓"},
         {done:false,item:"Página GEO: 'Vuelos privados navidad México 2026' (Avatar C · Dic)"},
         {done:false,item:"Página GEO: 'Jet privado CDMX–Miami para negocios' (Avatar A+B · Oct)"},
         {done:false,item:"Menciones en directorios de aviación privada (NBAA, Private Jet Card Comparisons)"}
@@ -662,10 +688,25 @@ const CLIENTS={
       lista:[]
     },
     actividad:[
+      {fecha:"07 Oct 2026",tipo:"implementacion",titulo:"Backup completo del sitio — UpdraftPlus",desc:"Respaldo manual creado antes de cualquier cambio técnico. Seguridad garantizada para todos los ajustes del sprint Oct."},
+      {fecha:"07 Oct 2026",tipo:"implementacion",titulo:"Fix CLS: 6 imágenes con dimensiones explícitas (WPCode)",desc:"Las 6 imágenes sin width/height causaban saltos visuales (CLS) al cargar. Snippet WPCode añade dimensiones via JavaScript para estabilizar el layout. Impacto esperado: CLS < 0.1 en Core Web Vitals."},
+      {fecha:"07 Oct 2026",tipo:"implementacion",titulo:"Luxury Polish UX — micro-mejoras visuales",desc:"Refinamientos de presentación premium: animaciones de hover en botones, transiciones suaves, ajustes de padding y tipografía para elevar percepción de marca UHNWI."},
+      {fecha:"07 Oct 2026",tipo:"implementacion",titulo:"Rediseño página /cotizar — formulario premium",desc:"La página de cotización rediseñada con UX optimizada para conversión de tickets altos ($680K MXN). Campos más claros, menos fricción, mejor jerarquía visual."},
+      {fecha:"07 Oct 2026",tipo:"implementacion",titulo:"Botón WhatsApp flotante activado en sitio",desc:"Botón de contacto directo vía WhatsApp visible en todas las páginas. Facilita conversiones inmediatas desde dispositivos móviles (80%+ del tráfico JETCAB)."},
+      {fecha:"07 Oct 2026",tipo:"seo",titulo:"OG image landscape 1200×630 + og:image:alt (Yoast)",desc:"La imagen al compartir en WhatsApp/LinkedIn ahora muestra foto de avión en formato horizontal profesional. Mejora percepción de marca en redes sociales."},
+      {fecha:"07 Oct 2026",tipo:"geo",titulo:"FAQPage 7 preguntas + Speakable schema (Yoast)",desc:"Implementados via Yoast SEO. 7 preguntas FAQ del tipo que usan ChatGPT y Perplexity para citar fuentes: costos, tiempos, rutas. GEO Score sube de 0 → 2/10."},
+      {fecha:"07 Oct 2026",tipo:"implementacion",titulo:"Versión en inglés jetcab.mx/en/ + hreflang",desc:"Landing completa en inglés para capturar búsquedas de clientes internacionales ('private jet charter Mexico', 'private jet CDMX'). Hreflang configurado correctamente para evitar duplicate content."},
+      {fecha:"07 Oct 2026",tipo:"implementacion",titulo:"Language switcher ES/EN activado en todo el sitio",desc:"Los visitantes pueden cambiar entre español e inglés desde el header. Detecta idioma del navegador automáticamente."},
+      {fecha:"07 Oct 2026",tipo:"seo",titulo:"Sitemap XML enviado a Google Search Console",desc:"Sitemap actualizado con la versión /en/ enviado manualmente a GSC. Reindexación en curso — Google procesará las nuevas URLs en los próximos días."},
       {fecha:"05 Oct 2026",tipo:"entregable",titulo:"Reporte GEO + SEO entregado",desc:"Auditoría completa de jetcab.mx: 8 problemas verificados, métricas reales de Analytics, plan Q4 alineado a campaña 25 años y avatares UHNWI."},
       {fecha:"05 Oct 2026",tipo:"auditoria",titulo:"Auditoría técnica directa de jetcab.mx",desc:"Análisis real del sitio: 21 scripts JS, 6 imágenes sin dimensiones, 0 schema AirCharter, tiempo de carga 1.5s (TTFB 294ms). Datos verificados 05 Oct."},
       {fecha:"03 Oct 2026",tipo:"auditoria",titulo:"Revisión estrategia Q4 — Brief 25 Años",desc:"Lectura del Master Brief JETCAB: avatares A/B/C identificados, tickets $680K MXN, hubs CDMX/Toluca/MTY/GDL. Plan GEO alineado a campaña Cierre de Año."},
       {fecha:"01 Oct 2026",tipo:"inicio",titulo:"Proyecto iniciado",desc:"Onboarding completado. Analytics conectado. Auditoría iniciada."}
+    ],
+    notificaciones:[
+      {id:"n3",fecha:"07 Oct 2026",hora:"18:45",icono:"🚀",titulo:"10 mejoras implementadas en jetcab.mx",mensaje:"Hoy completamos el sprint técnico de octubre: fix CLS en 6 imágenes, FAQ + Speakable schema para IAs, versión en inglés /en/, language switcher, rediseño /cotizar, botón WhatsApp, OG image landscape y sitemap enviado a GSC. Tu GEO Score subió de 0 → 2/10. Reporte #2 disponible en la sección Reportes.",leido:false},
+      {id:"n2",fecha:"07 Oct 2026",hora:"10:00",icono:"📋",titulo:"Reporte #2 disponible — Implementaciones Oct 2026",mensaje:"El Reporte #2 con todos los detalles técnicos, próximos pasos y resultados esperados ya está disponible en tu panel. Incluye métricas actualizadas y el plan para las próximas 4 semanas.",leido:false},
+      {id:"n1",fecha:"05 Oct 2026",hora:"16:30",icono:"📊",titulo:"Reporte #1 entregado — Diagnóstico GEO + SEO",mensaje:"Tu primer diagnóstico completo está listo: 8 problemas críticos identificados, métricas reales de Analytics y plan de acción Q4 alineado a campaña 25 años JETCAB.",leido:true}
     ]
   },
   colegio_san_martin:{
@@ -867,6 +908,10 @@ function loadClient(id){
   const btnReports=document.getElementById("btn-reports");
   if(btnReports){btnReports.style.display=(cc.reports&&cc.reports.length>0)?"flex":"none";}
   renderReports();
+  // Mostrar/ocultar pestaña Notificaciones y actualizar badge
+  const btnNotifs=document.getElementById("btn-notifs");
+  if(btnNotifs&&cc.notificaciones&&cc.notificaciones.length>0)btnNotifs.style.display="flex";
+  updateNotifBadge();
 }
 
 function checkStatus(){
@@ -1424,7 +1469,51 @@ function nav(id,btn){
   if(id==="leads")renderLeads();
   if(id==="reqs")renderAdminRequests();
   if(id==="reports")renderReports();
+  if(id==="notifs")renderNotifs();
   if(id==="web"&&cc){const vf=document.getElementById("vistaFrame");if(vf.src==="about:blank")vf.src=cc.url;}
+}
+
+// ── NOTIFICATIONS ──
+function renderNotifs(){
+  const el=document.getElementById("notifsList");
+  if(!el||!cc||!cc.notificaciones||cc.notificaciones.length===0){
+    if(el)el.innerHTML='<p style="color:var(--sub);font-size:13px">No hay notificaciones aún.</p>';return;
+  }
+  el.innerHTML=cc.notificaciones.map(n=>`
+    <div class="notif-card${n.leido?"":" unread"}">
+      <div class="notif-ico">${n.icono||"📌"}</div>
+      <div class="notif-body">
+        <div class="notif-meta"><span>${n.fecha}</span><span>${n.hora}</span></div>
+        <div class="notif-title">${n.titulo}${!n.leido?'<span class="notif-badge-new">Nuevo</span>':''}</div>
+        <div class="notif-msg">${n.mensaje}</div>
+      </div>
+    </div>`).join("");
+}
+
+function countUnreadNotifs(){
+  if(!cc||!cc.notificaciones)return 0;
+  const readKey="rkNotifsRead_"+(Object.keys(CLIENTS).find(k=>CLIENTS[k]===cc)||"");
+  const readIds=JSON.parse(localStorage.getItem(readKey)||"[]");
+  return cc.notificaciones.filter(n=>!n.leido&&!readIds.includes(n.id)).length;
+}
+
+function updateNotifBadge(){
+  const cnt=countUnreadNotifs();
+  const badge=document.getElementById("sbNotifCount");
+  const btn=document.getElementById("btn-notifs");
+  if(!badge||!btn)return;
+  if(cnt>0){badge.textContent=cnt;badge.style.display="inline-flex";btn.style.display="flex";}
+  else{badge.style.display="none";}
+}
+
+function markNotifsRead(){
+  if(!cc||!cc.notificaciones)return;
+  const cid=Object.keys(CLIENTS).find(k=>CLIENTS[k]===cc)||"";
+  const readKey="rkNotifsRead_"+cid;
+  const ids=cc.notificaciones.map(n=>n.id);
+  localStorage.setItem(readKey,JSON.stringify(ids));
+  updateNotifBadge();
+  renderNotifs();
 }
 
 // ── INIT ──
