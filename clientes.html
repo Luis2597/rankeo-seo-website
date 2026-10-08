@@ -384,7 +384,9 @@ body{font-family:"Plus Jakarta Sans",sans-serif;background:var(--ink);color:var(
       <button class="sb-btn" id="btn-reports" onclick="nav('reports',this)" style="display:none">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>Reportes</button>
       <div class="sb-div"></div>
-      
+      <button class="sb-btn" onclick="openChangePwd()">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>Cambiar contraseña</button>
+
       <button class="sb-btn" id="btn-reqs" onclick="nav('reqs',this)" style="display:none" id="btn-reqs">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>Solicitudes<span class="sb-badge" id="sbReqCount" style="background:#CA8A04">0</span></button>
       <div id="adminPanel" style="display:none">
@@ -702,11 +704,48 @@ async function doLogin(){
   const u=USERS[e];
   if(!u){err.style.display="block";document.getElementById("lPass").value="";return;}
   const inputHash=await sha256hex(p);
-  if(inputHash!==u.hash){err.style.display="block";document.getElementById("lPass").value="";return;}
+  const storedHash=localStorage.getItem("pwd_"+e)||u.hash;
+  if(inputHash!==storedHash){err.style.display="block";document.getElementById("lPass").value="";return;}
   // Guardamos solo datos de sesión — NUNCA contraseña ni hash
   cu={email:e,role:u.role,name:u.name,clientId:u.clientId||null};
   sessionStorage.setItem("rkU",JSON.stringify(cu));
   activateDash();
+}
+
+// ── CAMBIAR CONTRASEÑA ──
+function openChangePwd(){
+  document.getElementById("pwdCurrent").value="";
+  document.getElementById("pwdNew").value="";
+  document.getElementById("pwdConfirm").value="";
+  document.getElementById("pwdErr").style.display="none";
+  document.getElementById("pwdOk").style.display="none";
+  document.getElementById("pwdOverlay").classList.add("open");
+}
+function closeChangePwd(){
+  document.getElementById("pwdOverlay").classList.remove("open");
+}
+async function doChangePwd(){
+  const errEl=document.getElementById("pwdErr");
+  const okEl=document.getElementById("pwdOk");
+  errEl.style.display="none";okEl.style.display="none";
+  const cur=document.getElementById("pwdCurrent").value;
+  const nw=document.getElementById("pwdNew").value;
+  const cf=document.getElementById("pwdConfirm").value;
+  if(!cur||!nw||!cf){errEl.textContent="Completa todos los campos.";errEl.style.display="block";return;}
+  if(nw.length<8){errEl.textContent="La nueva contraseña debe tener al menos 8 caracteres.";errEl.style.display="block";return;}
+  if(nw!==cf){errEl.textContent="Las contraseñas no coinciden.";errEl.style.display="block";return;}
+  const curHash=await sha256hex(cur);
+  const u=USERS[cu.email];
+  const storedHash=localStorage.getItem("pwd_"+cu.email)||u.hash;
+  if(curHash!==storedHash){errEl.textContent="La contraseña actual es incorrecta.";errEl.style.display="block";document.getElementById("pwdCurrent").value="";return;}
+  if(nw===cur){errEl.textContent="La nueva contraseña debe ser diferente a la actual.";errEl.style.display="block";return;}
+  const newHash=await sha256hex(nw);
+  localStorage.setItem("pwd_"+cu.email,newHash);
+  document.getElementById("pwdCurrent").value="";
+  document.getElementById("pwdNew").value="";
+  document.getElementById("pwdConfirm").value="";
+  okEl.style.display="block";
+  setTimeout(closeChangePwd,2000);
 }
 
 function doLogout(){
@@ -1400,6 +1439,26 @@ window.addEventListener("DOMContentLoaded",()=>{
       <div class="pack"><div class="pack-p">$89</div><div class="pack-n">50 implementaciones</div><button class="pack-btn" onclick="buyPack(50,89)">Comprar</button></div>
     </div>
     <p style="font-size:11px;text-align:center;color:var(--sub);margin:0">Pago por WhatsApp · Sin contratos ni letra pequeña</p>
+  </div>
+</div>
+
+<!-- ── MODAL CAMBIAR CONTRASEÑA ── -->
+<div class="overlay" id="pwdOverlay" onclick="if(event.target===this)closeChangePwd()">
+  <div class="modal" style="max-width:380px">
+    <h3>Cambiar contraseña</h3>
+    <p style="margin-bottom:18px">Elige una contraseña segura de al menos 8 caracteres.</p>
+    <label class="lbl" for="pwdCurrent">Contraseña actual</label>
+    <input class="inp" id="pwdCurrent" type="password" placeholder="Tu contraseña actual" autocomplete="current-password">
+    <label class="lbl" for="pwdNew">Nueva contraseña</label>
+    <input class="inp" id="pwdNew" type="password" placeholder="Mínimo 8 caracteres" autocomplete="new-password">
+    <label class="lbl" for="pwdConfirm">Confirmar nueva contraseña</label>
+    <input class="inp" id="pwdConfirm" type="password" placeholder="Repite la nueva contraseña" autocomplete="new-password">
+    <div id="pwdErr" style="color:var(--rd);font-size:12px;font-weight:600;margin-bottom:12px;display:none"></div>
+    <div id="pwdOk" style="color:#16A34A;font-size:12px;font-weight:600;margin-bottom:12px;display:none">✓ Contraseña actualizada correctamente</div>
+    <div class="modal-btns">
+      <button class="btn-s" onclick="closeChangePwd()">Cancelar</button>
+      <button class="btn-o" onclick="doChangePwd()">Guardar cambios</button>
+    </div>
   </div>
 </div>
 
