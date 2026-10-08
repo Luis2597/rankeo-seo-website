@@ -2186,5 +2186,67 @@ document.addEventListener('click', function(e) {
   }
 });
 </script>
+<script>
+/* Destination card links — injected by Rankeo */
+(function(){
+var path=window.location.pathname;
+var isEN=path.indexOf('/en/')===0||path==='/en';
+var enMap={
+  'newyork':'/private-jet-mexico-city-new-york/',
+  'estadosunidos':'/private-jet-mexico-city-miami/',
+  'houston':'/private-jet-mexico-city-houston/',
+  'loscabos':'/private-jet-mexico-city-los-angeles/'
+};
+var esMap={
+  'newyork':'/vuelo-privado-cdmx-nueva-york/',
+  'estadosunidos':'/vuelo-privado-cdmx-miami/',
+  'houston':'/vuelo-privado-cdmx-houston/',
+  'loscabos':'/vuelo-privado-cdmx-los-angeles/'
+};
+var map=isEN?enMap:esMap;
+function bindCards(){
+  document.querySelectorAll('[onclick*="openDest"]').forEach(function(el){
+    var m=(el.getAttribute('onclick')||'').match(/openDest\('([^']+)'\)/);
+    if(!m)return;
+    var slug=m[1];
+    if(!map[slug])return;
+    el.removeAttribute('onclick');
+    el.style.cursor='pointer';
+    el.addEventListener('click',function(e){e.preventDefault();window.location.href=map[slug];});
+  });
+  var grid=document.querySelector('.dest-grid');
+  if(!grid||grid.querySelector('[data-injected="1"]'))return;
+  var dests=isEN?[
+    {l:'Miami',t:'3h 30m',b:'High demand',u:'/private-jet-mexico-city-miami/',i:'1540962351504-03099e0a754b'},
+    {l:'Houston',t:'2h 45m',b:'Available today',u:'/private-jet-mexico-city-houston/',i:'1451187580459-43490279c0fa'},
+    {l:'Los Angeles',t:'3h 45m',b:'Popular route',u:'/private-jet-mexico-city-los-angeles/',i:'1501594907352-04cda38ebc29'}
+  ]:[
+    {l:'Miami',t:'3h 30m',b:'Alta demanda',u:'/vuelo-privado-cdmx-miami/',i:'1540962351504-03099e0a754b'},
+    {l:'Houston',t:'2h 45m',b:'Disponible hoy',u:'/vuelo-privado-cdmx-houston/',i:'1451187580459-43490279c0fa'},
+    {l:'Los Angeles',t:'3h 45m',b:'Ruta popular',u:'/vuelo-privado-cdmx-los-angeles/',i:'1501594907352-04cda38ebc29'}
+  ];
+  dests.forEach(function(d){
+    var c=document.createElement('div');
+    c.className='dc';
+    c.setAttribute('data-injected','1');
+    c.setAttribute('role','button');
+    c.setAttribute('tabindex','0');
+    c.style.cssText='cursor:pointer;position:relative;overflow:hidden;';
+    var bg='https://images.unsplash.com/photo-'+d.i+'?auto=format&fit=crop&w=800&q=70';
+    c.innerHTML='<div style="background-image:url('+bg+');background-size:cover;background-position:center;position:absolute;inset:0;opacity:.45;border-radius:inherit;"></div>'
+      +'<div style="position:relative;z-index:1;padding:1.25rem 1.5rem;">'
+      +'<span style="font-size:.7rem;font-weight:700;letter-spacing:.12em;color:#22c55e;">&#9679; '+d.b+'</span>'
+      +'<div style="font-size:.78rem;color:#bbb;margin:.25rem 0;">'+d.t+' from CDMX</div>'
+      +'<div style="font-family:Montserrat,sans-serif;font-size:1.5rem;font-weight:800;color:#fff;line-height:1.1;">'+d.l.toUpperCase()+'</div>'
+      +'<div style="font-size:.7rem;letter-spacing:.15em;color:#aaa;margin-top:.2rem;">UNITED STATES</div>'
+      +'</div>';
+    c.addEventListener('click',function(){window.location.href=d.u;});
+    grid.appendChild(c);
+  });
+}
+if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',bindCards);}
+else{bindCards();}
+})();
+</script>
 </body>
 </html>
