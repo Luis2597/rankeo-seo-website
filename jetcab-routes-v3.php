@@ -5,7 +5,7 @@
  */
 
 add_action("init", function() {
-    add_rewrite_rule("^private-jet-mexico-city-(miami|houston|new-york|los-angeles)/?$", "index.php?jetcab_route=$matches[1]", "top");
+    add_rewrite_rule("^private-jet-mexico-city-(miami|houston|new-york|los-angeles)/?$", 'index.php?jetcab_route=$matches[1]', "top");
 });
 add_filter("query_vars", function($vars) { $vars[] = "jetcab_route"; return $vars; });
 add_action("template_redirect", function() {
@@ -38,6 +38,9 @@ add_action("template_redirect", function() {
             "detail_title" => "What changes when you fly private to Miami",
             "detail_body"  => "Opa-locka Executive Airport is 20 minutes from Miami Beach. MIA is 40. Your afternoon meetings in Brickell can start the same day you left CDMX. And if your schedule changes, the flight adjusts - not the other way around.",
             "hero_img"     => "1540962351504-03099e0a754b",
+            "dest_img"     => "1533680834271-61bba76cf10a",
+            "dest_label"   => "Miami, Florida — 20 minutes from South Beach.",
+            "dest_sub"     => "Land at Opa-locka Executive. Step off and the driver is already waiting.",
         ],
         "houston" => [
             "title"        => "Private Jet Mexico City to Houston | Charter Flights - JETCAB",
@@ -65,6 +68,9 @@ add_action("template_redirect", function() {
             "detail_title" => "Why Houston by private jet makes financial sense",
             "detail_body"  => "If the trip includes two or more people from the same team, the per-person cost of a Learjet 35 is comparable to business class in high season. With the difference that the aircraft runs on your schedule, catering is what you order, and there\'s no risk of a last-minute cancellation.",
             "hero_img"     => "1486325212027-8081e485255e",
+            "dest_img"     => "1548504769-57e9bd53e42c",
+            "dest_label"   => "Houston, Texas — Energy Capital of the World.",
+            "dest_sub"     => "Wheels down at Hobby or Bush Intercontinental. Meetings start the same afternoon.",
         ],
         "new-york" => [
             "title"        => "Private Jet Mexico City to New York | Charter Flights - JETCAB",
@@ -92,6 +98,9 @@ add_action("template_redirect", function() {
             "detail_title" => "Teterboro versus JFK",
             "detail_body"  => "JFK is 45 minutes from Midtown by taxi, more during peak hours. Teterboro is 12. If you have meetings in the Financial District the same day you arrive, the airport difference can matter more than the aircraft difference.",
             "hero_img"     => "1485871900405-a6fc37cb82e0",
+            "dest_img"     => "1534430480872-e9a62c0c8d96",
+            "dest_label"   => "New York, New York — 12 minutes from Teterboro to Midtown.",
+            "dest_sub"     => "Skip JFK. Your car meets you at the FBO steps.",
         ],
         "los-angeles" => [
             "title"        => "Private Jet Mexico City to Los Angeles | Charter Flights - JETCAB",
@@ -119,6 +128,9 @@ add_action("template_redirect", function() {
             "detail_title" => "Van Nuys: the airport commercial flyers never see",
             "detail_body"  => "Van Nuys (VNY) is the busiest general aviation airport in California. No commercial flights, no international terminal, no lines. Just private jets and their passengers. You land, step off, and you\'re in the car in under 5 minutes.",
             "hero_img"     => "1501594907352-04cda38ebc29",
+            "dest_img"     => "1504941812617-26c6e088459a",
+            "dest_label"   => "Los Angeles, California — 15 minutes from Van Nuys to Beverly Hills.",
+            "dest_sub"     => "No LAX. No Inglewood traffic. You arrive where your meeting is.",
         ],
     ];
     if (!isset($routes[$route])) return;
@@ -167,9 +179,22 @@ html{scroll-behavior:smooth}body{background:var(--dark);color:var(--text);font-f
 .jc-nav-cta{background:var(--orange);color:#fff!important;padding:0.5rem 1.25rem;border-radius:4px;font-size:0.875rem;font-weight:600;text-decoration:none}
 .jc-nav-cta:hover{background:#ff6a2f}.jc-lang{color:var(--muted)!important;font-size:0.75rem;border:1px solid var(--border);padding:0.3rem 0.6rem;border-radius:3px}
 @media(max-width:768px){.jc-nav-links{display:none}}
-.jc-hero{min-height:100vh;display:flex;align-items:center;background:linear-gradient(135deg,#0D0D0D,#141414,#0a0a0a);padding:7rem 2rem 4rem;position:relative;overflow:hidden}
-.jc-hero::before{content:'';position:absolute;inset:0;background:url('https://images.unsplash.com/photo-<?php echo esc_attr($r['hero_img']); ?>?auto=format&fit=crop&w=1600&q=60') center/cover no-repeat;opacity:0.12}
-.jc-hero-inner{max-width:900px;margin:0 auto;position:relative;z-index:1}
+.jc-hero{min-height:100vh;display:flex;align-items:center;padding:7rem 2rem 4rem;position:relative;overflow:hidden}
+.jc-hero::before{content:'';position:absolute;inset:0;background:url('https://images.unsplash.com/photo-<?php echo esc_attr($r['hero_img']); ?>?auto=format&fit=crop&w=1600&q=85') center/cover no-repeat;opacity:0.6}
+.jc-hero::after{content:'';position:absolute;inset:0;background:linear-gradient(105deg,rgba(13,13,13,0.93) 40%,rgba(13,13,13,0.6) 70%,rgba(13,13,13,0.25) 100%)}
+.jc-hero-inner{max-width:900px;margin:0 auto;position:relative;z-index:2}
+.jc-vista{position:relative;height:56vh;min-height:300px;overflow:hidden}
+.jc-vista img{width:100%;height:100%;object-fit:cover;display:block}
+.jc-vista-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(13,13,13,0.88) 0%,rgba(13,13,13,0.25) 55%,transparent 100%)}
+.jc-vista-text{position:absolute;bottom:2.5rem;left:50%;transform:translateX(-50%);text-align:center;width:100%;padding:0 2rem}
+.jc-vista-text h3{font-family:var(--ff-head);font-size:clamp(1.5rem,3.5vw,2.4rem);font-weight:800;color:#fff;letter-spacing:-0.01em;text-transform:uppercase;margin-bottom:0.5rem}
+.jc-vista-text p{font-size:0.9rem;color:rgba(255,255,255,0.62);max-width:520px;margin:0 auto}
+.jc-intro-split{display:grid;grid-template-columns:1.1fr 0.9fr;gap:4rem;align-items:start}
+.jc-cabin-photo{position:relative;border-radius:10px;overflow:hidden}
+.jc-cabin-photo img{width:100%;display:block;object-fit:cover;aspect-ratio:4/5}
+.jc-cabin-caption{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(to top,rgba(0,0,0,0.85) 0%,transparent 100%);padding:2rem 1.5rem 1.25rem}
+.jc-cabin-caption p{font-size:0.82rem;color:rgba(255,255,255,0.75);line-height:1.5}
+.jc-cabin-caption strong{display:block;font-family:var(--ff-head);font-size:0.72rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--orange);margin-bottom:0.25rem}
 .jc-route-badge{display:inline-flex;align-items:center;background:rgba(232,90,30,0.15);border:1px solid rgba(232,90,30,0.4);color:var(--orange);padding:0.4rem 1rem;border-radius:2px;font-family:var(--ff-head);font-size:0.85rem;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:1.5rem}
 .jc-hero h1{font-family:var(--ff-head);font-size:clamp(2.5rem,6vw,4.5rem);font-weight:800;line-height:1.05;color:#fff;margin-bottom:1.25rem}
 .jc-hero-sub{font-size:1.15rem;color:#bbb;max-width:600px;margin-bottom:0.5rem;line-height:1.7}
@@ -245,6 +270,7 @@ html{scroll-behavior:smooth}body{background:var(--dark);color:var(--text);font-f
 .jc-footer-bottom{text-align:center;font-size:0.75rem;color:#555;padding-top:2rem;margin-top:2rem;border-top:1px solid var(--border);max-width:900px;margin-left:auto;margin-right:auto}
 @keyframes pulse-wa{0%,100%{box-shadow:0 4px 16px rgba(37,211,102,0.4)}50%{box-shadow:0 4px 24px rgba(37,211,102,0.65)}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
+@media(max-width:768px){.jc-intro-split{grid-template-columns:1fr!important;gap:2rem}.jc-cabin-photo{display:none}}
 @media(max-width:640px){.jc-intro-grid{grid-template-columns:1fr}.jc-route-bar-inner{flex-direction:column;text-align:center;gap:0.5rem}.jc-route-line{width:100%;justify-content:center}.jc-hero-ctas{flex-direction:column}.btn-primary,.btn-ghost{text-align:center}}
 </style>
 </head>
@@ -285,15 +311,34 @@ html{scroll-behavior:smooth}body{background:var(--dark);color:var(--text);font-f
     <div class="jc-port"><div class="jc-port-iata"><?php echo esc_html($r['to_iata']); ?></div><div class="jc-port-name"><?php echo esc_html($r['dest']); ?></div></div>
   </div>
 </div>
+<div class="jc-vista">
+  <img src="https://images.unsplash.com/photo-<?php echo esc_attr($r['dest_img']); ?>?auto=format&fit=crop&w=1600&q=85" alt="<?php echo esc_attr($r['dest_full']); ?> private jet arrival" loading="lazy">
+  <div class="jc-vista-overlay"></div>
+  <div class="jc-vista-text">
+    <h3><?php echo esc_html($r['dest_label']); ?></h3>
+    <p><?php echo esc_html($r['dest_sub']); ?></p>
+  </div>
+</div>
 <section class="jc-section" style="background:var(--dark2)">
   <div class="jc-section-inner">
-    <div class="jc-section-label">Why this route</div>
-    <h2><?php echo esc_html($r['detail_title']); ?></h2>
-    <div class="jc-intro-grid">
-      <div class="jc-intro-card"><h3>The real difference</h3><p><?php echo esc_html($r['intro_p1']); ?></p></div>
-      <div class="jc-intro-card"><h3>In practical terms</h3><p><?php echo esc_html($r['intro_p2']); ?></p></div>
+    <div class="jc-intro-split">
+      <div>
+        <div class="jc-section-label">Why this route</div>
+        <h2><?php echo esc_html($r['detail_title']); ?></h2>
+        <div class="jc-intro-grid" style="margin-top:1.5rem">
+          <div class="jc-intro-card"><h3>The real difference</h3><p><?php echo esc_html($r['intro_p1']); ?></p></div>
+          <div class="jc-intro-card"><h3>In practical terms</h3><p><?php echo esc_html($r['intro_p2']); ?></p></div>
+        </div>
+        <p style="margin-top:2rem"><?php echo esc_html($r['detail_body']); ?></p>
+      </div>
+      <div class="jc-cabin-photo">
+        <img src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=800&q=85" alt="Private jet cabin interior luxury" loading="lazy">
+        <div class="jc-cabin-caption">
+          <strong>On board</strong>
+          <p>Full leather cabin. Crew briefed on your preferences before departure. Catering loaded to order.</p>
+        </div>
+      </div>
     </div>
-    <p style="margin-top:2rem"><?php echo esc_html($r['detail_body']); ?></p>
   </div>
 </section>
 <section class="jc-section">
@@ -320,7 +365,10 @@ html{scroll-behavior:smooth}body{background:var(--dark);color:var(--text);font-f
         </div>
       </div>
       <div class="jc-fleet-card">
-        <div class="jc-fleet-txt-top"><div class="jc-fleet-txt-name">CHALLENGER</div><div class="jc-fleet-txt-sub">Midsize jet &middot; Stand-up cabin</div></div>
+        <div class="jc-fleet-img">
+          <img src="https://images.unsplash.com/photo-1581093806997-124204d9fa9d?auto=format&fit=crop&w=800&q=75" alt="Midsize private jet Challenger cabin" loading="lazy">
+          <span class="jc-fleet-badge">Midsize Jet</span>
+        </div>
         <div class="jc-fleet-body">
           <div class="jc-fleet-class">Midsize Jet</div><div class="jc-fleet-name">Challenger 605</div>
           <p class="jc-fleet-desc">The cabin stands 6 feet tall. You can walk through it without ducking. Seats 12, full-size galley, windows twice the size of most jets in this class. For family trips or board-level meetings, this is the right call.</p>
