@@ -469,6 +469,12 @@ body{font-family:"Plus Jakarta Sans",sans-serif;background:var(--ink);color:var(
             </div>
           </div>
         </div>
+        <!-- ÚLTIMAS IMPLEMENTACIONES EN RESUMEN -->
+        <div id="recentActSection" style="display:none;margin-top:20px">
+          <div class="sh"><h2>Últimas mejoras aplicadas</h2><p id="recentActSub">Lo que Rankeo implementó recientemente en tu sitio</p></div>
+          <div id="recentActFeed" style="display:flex;flex-direction:column;gap:8px"></div>
+          <button onclick="nav('leads',document.getElementById('btn-leads'))" style="margin-top:12px;background:none;border:1px solid var(--bd);border-radius:8px;padding:7px 14px;font-size:12px;font-weight:600;color:var(--sub);cursor:pointer;font-family:inherit">Ver toda la actividad →</button>
+        </div>
         <!-- PAGOS SECTION (rendered by renderPagos() if cc.pagos) -->
         <div id="pagosSection" class="pagos-section" style="display:none">
           <div class="sh"><h2>Pagos del proyecto</h2><p id="pagosSub">Estado de pagos a plazos</p></div>
@@ -620,7 +626,7 @@ const CLIENTS={
     planImp:25,
     reports:[
       {title:"Diagnóstico GEO + SEO — Octubre 2026",date:"05 Oct 2026",url:"https://rankeo-nu.vercel.app/jetcab-reporte-cliente.html",desc:"Análisis completo de los 8 problemas críticos encontrados en jetcab.mx y el plan de acción para aparecer en Google, ChatGPT y Perplexity."},
-      {title:"Reporte #2 — Implementaciones Técnicas Oct 2026",date:"07 Oct 2026",url:"https://rankeo-nu.vercel.app/jetcab-reporte-cliente.html",desc:"10 mejoras implementadas en jetcab.mx: fix CLS (6 imágenes), luxury polish UX, rediseño /cotizar, botón WhatsApp, speakable schema para IAs, og:image landscape, FAQPage 7 preguntas, versión en inglés jetcab.mx/en/ con hreflang, language switcher y sitemap enviado a GSC. Incluye próximos pasos Q4 y resultados esperados."}
+      {title:"Reporte #2 — Implementaciones Técnicas Oct 2026",date:"07 Oct 2026",url:"https://rankeo-nu.vercel.app/jetcab-reporte2.html",desc:"10 mejoras implementadas en jetcab.mx: fix CLS (6 imágenes), luxury polish UX, rediseño /cotizar, botón WhatsApp, speakable schema para IAs, og:image landscape, FAQPage 7 preguntas, versión en inglés jetcab.mx/en/ con hreflang, language switcher y sitemap enviado a GSC. Incluye próximos pasos Q4 y resultados esperados."}
     ],
     tips:[
       {p:"alta",cat:"Técnico",t:"Meta AdSense de plataforma activa",d:"Hay un <meta name=\"google-adsense-platform-account\"> en el head que permite que Google muestre anuncios de competidores dentro de jetcab.mx. Eliminar del header.php en WordPress (Apariencia → Editor de temas, o con el plugin Insert Headers and Footers)."},
@@ -705,7 +711,7 @@ const CLIENTS={
     ],
     notificaciones:[
       {id:"n3",fecha:"07 Oct 2026",hora:"18:45",icono:"🚀",titulo:"10 mejoras implementadas en jetcab.mx",mensaje:"Hoy completamos el sprint técnico de octubre: fix CLS en 6 imágenes, FAQ + Speakable schema para IAs, versión en inglés /en/, language switcher, rediseño /cotizar, botón WhatsApp, OG image landscape y sitemap enviado a GSC. Tu GEO Score subió de 0 → 2/10. Reporte #2 disponible en la sección Reportes.",leido:false},
-      {id:"n2",fecha:"07 Oct 2026",hora:"10:00",icono:"📋",titulo:"Reporte #2 disponible — Implementaciones Oct 2026",mensaje:"El Reporte #2 con todos los detalles técnicos, próximos pasos y resultados esperados ya está disponible en tu panel. Incluye métricas actualizadas y el plan para las próximas 4 semanas.",leido:false},
+      {id:"n2",fecha:"07 Oct 2026",hora:"10:00",icono:"📋",titulo:"Reporte #2 disponible — Implementaciones Oct 2026",mensaje:"El Reporte #2 con todos los detalles de las 10 mejoras implementadas, próximos pasos Q4 y resultados esperados ya está disponible. Ábrelo desde la sección Reportes en tu panel.",leido:false},
       {id:"n1",fecha:"05 Oct 2026",hora:"16:30",icono:"📊",titulo:"Reporte #1 entregado — Diagnóstico GEO + SEO",mensaje:"Tu primer diagnóstico completo está listo: 8 problemas críticos identificados, métricas reales de Analytics y plan de acción Q4 alineado a campaña 25 años JETCAB.",leido:true}
     ]
   },
@@ -908,6 +914,8 @@ function loadClient(id){
   const btnReports=document.getElementById("btn-reports");
   if(btnReports){btnReports.style.display=(cc.reports&&cc.reports.length>0)?"flex":"none";}
   renderReports();
+  // Actividad reciente en el Resumen
+  renderRecentActivity();
   // Mostrar/ocultar pestaña Notificaciones y actualizar badge
   const btnNotifs=document.getElementById("btn-notifs");
   if(btnNotifs&&cc.notificaciones&&cc.notificaciones.length>0)btnNotifs.style.display="flex";
@@ -1471,6 +1479,32 @@ function nav(id,btn){
   if(id==="reports")renderReports();
   if(id==="notifs")renderNotifs();
   if(id==="web"&&cc){const vf=document.getElementById("vistaFrame");if(vf.src==="about:blank")vf.src=cc.url;}
+}
+
+// ── RECENT ACTIVITY IN RESUMEN ──
+function renderRecentActivity(){
+  const section=document.getElementById("recentActSection");
+  const feed=document.getElementById("recentActFeed");
+  const sub=document.getElementById("recentActSub");
+  if(!section||!feed||!cc||!cc.actividad||cc.actividad.length===0){if(section)section.style.display="none";return;}
+  section.style.display="block";
+  const TIPO_ICONS={
+    implementacion:"✅",seo:"🔍",geo:"🤖",entregable:"📋",auditoria:"🔎",inicio:"⚡",mejora:"🛠️"
+  };
+  const TIPO_LABELS={
+    implementacion:"Implementación",seo:"SEO",geo:"GEO / IAs",entregable:"Entregable",auditoria:"Auditoría",inicio:"Inicio",mejora:"Mejora"
+  };
+  const recent=cc.actividad.slice(0,5);
+  sub.textContent=`Últimas ${recent.length} acciones · Ver todo en Actividad`;
+  feed.innerHTML=recent.map(a=>`
+    <div style="background:#fff;border:1px solid var(--bd);border-radius:10px;padding:12px 14px;display:flex;gap:10px;align-items:flex-start">
+      <div style="font-size:18px;flex-shrink:0;margin-top:1px">${TIPO_ICONS[a.tipo]||"🛠️"}</div>
+      <div style="flex:1">
+        <div style="font-size:10px;color:var(--sub);margin-bottom:2px">${a.fecha} · <span style="font-weight:600;color:var(--ink)">${TIPO_LABELS[a.tipo]||a.tipo}</span></div>
+        <div style="font-size:13px;font-weight:700;color:var(--ink)">${a.titulo}</div>
+        <div style="font-size:11px;color:var(--sub);margin-top:3px;line-height:1.5">${a.desc}</div>
+      </div>
+    </div>`).join("");
 }
 
 // ── NOTIFICATIONS ──

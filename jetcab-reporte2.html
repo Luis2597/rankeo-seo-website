@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Reporte #2 — Implementaciones Técnicas Oct 2026 · JETCAB | Rankeo</title>
+<meta name="robots" content="noindex,nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--or:#F04E23;--ink:#0A0908;--bg:#FAF8F5;--surf:#F2EFE9;--bd:#E4E0D9;--sub:#787370;--tl:#087E72;--rd:#DC2626;--gn:#16A34A;--gd:#CA8A04}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:"Plus Jakarta Sans",sans-serif;background:var(--bg);color:var(--ink);line-height:1.6}
+a{color:var(--or);text-decoration:none}
+.hdr{background:var(--ink);position:sticky;top:0;z-index:100}
+.hdr-inner{max-width:900px;margin:0 auto;padding:0 24px;height:56px;display:flex;align-items:center;justify-content:space-between}
+.hdr-logo{font-family:"Syne",sans-serif;font-weight:800;font-size:20px;color:#fff;letter-spacing:-.02em}
+.hdr-logo span{color:var(--or)}
+.hdr-meta{font-size:12px;color:rgba(255,255,255,.45);text-align:right}
+.hero{background:var(--ink);padding:48px 24px 40px}
+.hero-inner{max-width:900px;margin:0 auto}
+.hero-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(240,78,35,.15);border:1px solid rgba(240,78,35,.3);color:var(--or);padding:5px 12px;border-radius:20px;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;margin-bottom:16px}
+.hero h1{font-family:"Syne",sans-serif;font-weight:800;font-size:clamp(26px,5vw,42px);color:#fff;letter-spacing:-.03em;line-height:1.15;margin-bottom:10px}
+.hero-sub{color:rgba(255,255,255,.55);font-size:15px;margin-bottom:28px;max-width:580px}
+.hero-stats{display:flex;gap:24px;flex-wrap:wrap}
+.hs{border-left:2px solid var(--or);padding-left:12px}
+.hs-val{font-family:"Syne",sans-serif;font-weight:800;font-size:22px;color:#fff;letter-spacing:-.02em}
+.hs-lbl{font-size:11px;color:rgba(255,255,255,.45);margin-top:1px}
+.wrap{max-width:900px;margin:0 auto;padding:0 24px 80px}
+.section{margin-top:48px}
+.section-hd{display:flex;align-items:center;gap:10px;margin-bottom:20px}
+.section-hd h2{font-family:"Syne",sans-serif;font-weight:800;font-size:20px;letter-spacing:-.02em}
+.tag{display:inline-flex;align-items:center;padding:3px 9px;border-radius:5px;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.05em}
+.tag.done{background:rgba(22,163,74,.1);color:var(--gn)}
+.tag.next{background:rgba(202,138,4,.1);color:var(--gd)}
+.tag.geo{background:rgba(139,92,246,.1);color:#7C3AED}
+.tag.seo{background:rgba(37,99,235,.1);color:#2563EB}
+/* IMPL CARDS */
+.impl-grid{display:flex;flex-direction:column;gap:12px}
+.impl-card{background:#fff;border:1px solid var(--bd);border-radius:14px;padding:20px;display:flex;gap:16px;align-items:flex-start}
+.impl-card.done{border-left:4px solid var(--gn)}
+.impl-num{width:36px;height:36px;border-radius:10px;background:rgba(22,163,74,.1);color:var(--gn);display:flex;align-items:center;justify-content:center;font-family:"Syne",sans-serif;font-weight:800;font-size:14px;flex-shrink:0}
+.impl-body{flex:1}
+.impl-title{font-size:14px;font-weight:700;color:var(--ink);margin-bottom:4px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.impl-desc{font-size:12px;color:var(--sub);line-height:1.55;margin-bottom:8px}
+.impl-impact{display:inline-flex;align-items:center;gap:5px;font-size:11px;color:var(--gn);font-weight:600;background:rgba(22,163,74,.08);padding:3px 10px;border-radius:6px}
+/* SCORE COMPARISON */
+.score-compare{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:20px}
+.sc-box{background:#fff;border:1.5px solid var(--bd);border-radius:14px;padding:20px;text-align:center}
+.sc-box.before{opacity:.65}
+.sc-box.after{border-color:rgba(22,163,74,.4);background:rgba(22,163,74,.03)}
+.sc-label{font-size:11px;font-weight:700;color:var(--sub);text-transform:uppercase;letter-spacing:.06em;margin-bottom:8px}
+.sc-val{font-family:"Syne",sans-serif;font-weight:800;font-size:42px;letter-spacing:-.03em;line-height:1;margin-bottom:4px}
+.sc-val.red{color:var(--rd)}
+.sc-val.green{color:var(--gn)}
+.sc-sub{font-size:11px;color:var(--sub)}
+/* NEXT STEPS */
+.next-grid{display:flex;flex-direction:column;gap:10px}
+.next-card{background:#fff;border:1px solid var(--bd);border-radius:12px;padding:16px 18px;display:flex;gap:14px;align-items:flex-start}
+.next-card.high{border-left:4px solid var(--rd)}
+.next-card.med{border-left:4px solid var(--gd)}
+.next-ico{font-size:20px;flex-shrink:0;margin-top:2px}
+.next-title{font-size:13px;font-weight:700;color:var(--ink);margin-bottom:3px}
+.next-desc{font-size:12px;color:var(--sub);line-height:1.5}
+.next-meta{font-size:10px;color:var(--sub);margin-top:6px;display:flex;gap:12px}
+.next-meta span{font-weight:600}
+/* EXPECTED RESULTS */
+.results-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:20px}
+@media(max-width:640px){.results-grid{grid-template-columns:1fr}.score-compare{grid-template-columns:1fr}}
+.res-card{background:#fff;border:1px solid var(--bd);border-radius:12px;padding:18px}
+.res-month{font-size:10px;font-weight:700;color:var(--or);text-transform:uppercase;letter-spacing:.06em;margin-bottom:8px}
+.res-items{display:flex;flex-direction:column;gap:5px}
+.res-item{font-size:12px;color:var(--ink);display:flex;gap:6px}
+.res-item:before{content:"→";color:var(--or);font-weight:700;flex-shrink:0}
+/* TIMELINE */
+.timeline{display:flex;flex-direction:column;gap:0;position:relative}
+.tl-item{display:flex;gap:14px;padding-bottom:20px;position:relative}
+.tl-item:last-child{padding-bottom:0}
+.tl-dot-wrap{display:flex;flex-direction:column;align-items:center;flex-shrink:0}
+.tl-dot{width:12px;height:12px;border-radius:50%;background:var(--gn);margin-top:3px;flex-shrink:0}
+.tl-line{width:2px;background:var(--bd);flex:1;margin-top:4px}
+.tl-item:last-child .tl-line{display:none}
+.tl-body{flex:1}
+.tl-date{font-size:10px;color:var(--sub);margin-bottom:3px}
+.tl-title{font-size:13px;font-weight:700;color:var(--ink)}
+.tl-detail{font-size:11px;color:var(--sub);margin-top:2px;line-height:1.5}
+/* CTA */
+.cta-box{background:var(--ink);border-radius:20px;padding:36px 32px;text-align:center;margin-top:48px}
+.cta-box h2{font-family:"Syne",sans-serif;font-weight:800;font-size:24px;color:#fff;letter-spacing:-.02em;margin-bottom:10px}
+.cta-box p{color:rgba(255,255,255,.55);font-size:14px;margin-bottom:24px}
+.cta-btn{display:inline-flex;align-items:center;gap:8px;background:var(--or);color:#fff;padding:13px 28px;border-radius:10px;font-weight:700;font-size:14px;text-decoration:none}
+.cta-btn:hover{opacity:.88}
+.footer-note{font-size:11px;color:var(--sub);text-align:right;margin-top:40px;padding-top:20px;border-top:1px solid var(--bd)}
+</style>
+</head>
+<body>
+
+<header class="hdr">
+  <div class="hdr-inner">
+    <div class="hdr-logo">Rankeo<span>.</span></div>
+    <div class="hdr-meta">Reporte #2 · JETCAB · 07 Oct 2026</div>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-badge">⚡ Reporte #2 — Sprint Técnico</div>
+    <h1>Implementaciones Técnicas<br>Octubre 2026</h1>
+    <p class="hero-sub">10 mejoras implementadas en jetcab.mx entre el 07 Oct. Fixes de performance, señales GEO para IAs, versión en inglés y optimizaciones de conversión.</p>
+    <div class="hero-stats">
+      <div class="hs"><div class="hs-val">10</div><div class="hs-lbl">mejoras implementadas</div></div>
+      <div class="hs"><div class="hs-val">2/10</div><div class="hs-lbl">GEO Score (era 0)</div></div>
+      <div class="hs"><div class="hs-val">+154%</div><div class="hs-lbl">tráfico orgánico activo</div></div>
+      <div class="hs"><div class="hs-val">28+</div><div class="hs-lbl">páginas indexadas</div></div>
+    </div>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <!-- SCORE COMPARISON -->
+  <div class="section">
+    <div class="section-hd"><h2>📊 Antes vs. Después</h2></div>
+    <div class="score-compare">
+      <div class="sc-box before">
+        <div class="sc-label">Antes del sprint (05 Oct)</div>
+        <div class="sc-val red">0</div>
+        <div class="sc-sub">GEO Score · Sin schema · Sin inglés</div>
+      </div>
+      <div class="sc-box after">
+        <div class="sc-label">Después del sprint (07 Oct)</div>
+        <div class="sc-val green">2/10</div>
+        <div class="sc-sub">GEO Score · FAQ + Speakable activos · jetcab.mx/en/ live</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 10 IMPLEMENTACIONES -->
+  <div class="section">
+    <div class="section-hd"><h2>✅ Las 10 mejoras implementadas</h2><span class="tag done">Completadas 07 Oct 2026</span></div>
+    <div class="impl-grid">
+
+      <div class="impl-card done">
+        <div class="impl-num">1</div>
+        <div class="impl-body">
+          <div class="impl-title"><span class="tag done">Performance</span> Backup completo del sitio — UpdraftPlus</div>
+          <div class="impl-desc">Respaldo manual creado antes de cualquier cambio técnico. Copia de seguridad de todos los archivos y base de datos de WordPress. Esto garantiza que si algo falla podemos restaurar el sitio en minutos.</div>
+          <div class="impl-impact">✓ Seguridad garantizada para todo el sprint</div>
+        </div>
+      </div>
+
+      <div class="impl-card done">
+        <div class="impl-num">2</div>
+        <div class="impl-body">
+          <div class="impl-title"><span class="tag seo">CLS / Performance</span> Fix 6 imágenes sin dimensiones — WPCode</div>
+          <div class="impl-desc">6 de las imágenes del homepage no tenían atributos width/height declarados. Esto causaba Cumulative Layout Shift (CLS): el contenido "saltaba" mientras cargaba la página. Snippet WPCode activo que asigna dimensiones automáticamente. Google penaliza el CLS en Core Web Vitals.</div>
+          <div class="impl-impact">✓ Impacto esperado: CLS baja a &lt;0.1 — mejora en rankings móvil</div>
+        </div>
+      </div>
+
+      <div class="impl-card done">
+        <div class="impl-num">3</div>
+        <div class="impl-body">
+          <div class="impl-title"><span class="tag done">UX / Conversión</span> Luxury Polish — micro-mejoras visuales</div>
+          <div class="impl-desc">Refinamientos de presentación orientados al perfil UHNWI de JETCAB: animaciones de hover en botones, transiciones suaves, ajustes de padding y espaciado, mejora de tipografía en secciones clave. El objetivo es que el sitio se sienta a la altura del ticket promedio de $680K MXN.</div>
+          <div class="impl-impact">✓ Percepción de marca premium elevada</div>
+        </div>
+      </div>
+
+      <div class="impl-card done">
+        <div class="impl-num">4</div>
+        <div class="impl-body">
+          <div class="impl-title"><span class="tag done">Conversión</span> Rediseño página /cotizar</div>
+          <div class="impl-desc">La página de cotización fue rediseñada con UX optimizada para conversión de tickets altos. Formulario más claro, campos reorganizados, menos fricción visual, mejor jerarquía de llamados a la acción. Un visitante de alto perfil no debe dudar en qué hacer al llegar a esta página.</div>
+          <div class="impl-impact">✓ Reducción de fricción en punto clave de conversión</div>
+        </div>
+      </div>
+
+      <div class="impl-card done">
+        <div class="impl-num">5</div>
+        <div class="impl-body">
+          <div class="impl-title"><span class="tag done">Conversión</span> Botón WhatsApp flotante activo en todo el sitio</div>
+          <div class="impl-desc">Botón de contacto directo vía WhatsApp visible en todas las páginas del sitio. Los clientes de aviación privada toman decisiones rápidas — necesitan una vía de contacto inmediata. El 80%+ del tráfico de JETCAB llega desde dispositivos móviles.</div>
+          <div class="impl-impact">✓ Canal de contacto disponible en todo el funnel</div>
+        </div>
+      </div>
+
+      <div class="impl-card done">
+        <div class="impl-num">6</div>
+        <div class="impl-body">
+          <div class="impl-title"><span class="tag seo">SEO / Redes</span> OG image landscape 1200×630 + og:image:alt (Yoast)</div>
+          <div class="impl-desc">La imagen que aparecía al compartir jetcab.mx en WhatsApp o LinkedIn era el logo en formato cuadrado 1024×1024. Reemplazada por imagen horizontal 1200×630px con foto de avión y nombre JETCAB. También se añadió og:image:alt para accesibilidad y señales SEO adicionales.</div>
+          <div class="impl-impact">✓ Links en WhatsApp/LinkedIn ahora se ven profesionales</div>
+        </div>
+      </div>
+
+      <div class="impl-card done">
+        <div class="impl-num">7</div>
+        <div class="impl-body">
+          <div class="impl-title"><span class="tag geo">GEO / IAs</span> FAQPage 7 preguntas + Speakable schema (Yoast)</div>
+          <div class="impl-desc">Implementados via Yoast SEO Premium. 7 preguntas FAQ del tipo que usan ChatGPT y Perplexity para citar fuentes: costos por ruta, tiempos de disponibilidad, diferencias entre aeronaves. El schema Speakable marca qué partes del contenido son prioritarias para asistentes de voz e IAs. Este paso lleva el GEO Score de 0 → 2/10.</div>
+          <div class="impl-impact">✓ GEO Score sube de 0 → 2/10 · JETCAB ahora tiene señales para IAs</div>
+        </div>
+      </div>
+
+      <div class="impl-card done">
+        <div class="impl-num">8</div>
+        <div class="impl-body">
+          <div class="impl-title"><span class="tag seo">SEO / Internacional</span> Versión en inglés jetcab.mx/en/ + hreflang</div>
+          <div class="impl-desc">Landing completa en inglés para capturar búsquedas de clientes internacionales ("private jet charter Mexico", "private jet CDMX", "charter flight Mexico City"). El atributo hreflang está configurado correctamente para que Google sirva la versión correcta por idioma sin duplicate content. Esto también amplía la cobertura GEO para IAs en inglés.</div>
+          <div class="impl-impact">✓ Mercado internacional desbloqueado · Sin penalización por contenido duplicado</div>
+        </div>
+      </div>
+
+      <div class="impl-card done">
+        <div class="impl-num">9</div>
+        <div class="impl-body">
+          <div class="impl-title"><span class="tag done">UX</span> Language switcher ES/EN en todo el sitio</div>
+          <div class="impl-desc">Selector de idioma visible en el header de todas las páginas. Detecta automáticamente el idioma del navegador del visitante. Un ejecutivo que llega desde EE.UU. o Europa puede cambiar a inglés sin perder contexto. Funciona en móvil y desktop.</div>
+          <div class="impl-impact">✓ Experiencia bilingüe sin fricción</div>
+        </div>
+      </div>
+
+      <div class="impl-card done">
+        <div class="impl-num">10</div>
+        <div class="impl-body">
+          <div class="impl-title"><span class="tag seo">SEO Técnico</span> Sitemap XML actualizado enviado a Google Search Console</div>
+          <div class="impl-desc">El sitemap fue actualizado para incluir la nueva versión /en/ y enviado manualmente a Google Search Console. Esto le indica a Google qué páginas indexar prioritariamente. La reindexación está en curso — Google procesará las nuevas URLs en los próximos 3–7 días.</div>
+          <div class="impl-impact">✓ Google recibió instrucciones de reindexar jetcab.mx/en/ y páginas actualizadas</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- TIMELINE -->
+  <div class="section">
+    <div class="section-hd"><h2>📅 Línea de tiempo del proyecto</h2></div>
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-dot-wrap"><div class="tl-dot"></div><div class="tl-line"></div></div>
+        <div class="tl-body">
+          <div class="tl-date">01 Oct 2026</div>
+          <div class="tl-title">Inicio del proyecto</div>
+          <div class="tl-detail">Onboarding completado. Google Analytics conectado. Auditoría iniciada.</div>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot-wrap"><div class="tl-dot"></div><div class="tl-line"></div></div>
+        <div class="tl-body">
+          <div class="tl-date">03 Oct 2026</div>
+          <div class="tl-title">Revisión estrategia Q4 — Brief 25 Años JETCAB</div>
+          <div class="tl-detail">Lectura del Master Brief: avatares A/B/C identificados, tickets $680K MXN, hubs CDMX/Toluca/MTY/GDL.</div>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot-wrap"><div class="tl-dot"></div><div class="tl-line"></div></div>
+        <div class="tl-body">
+          <div class="tl-date">05 Oct 2026</div>
+          <div class="tl-title">Reporte #1 entregado — Diagnóstico GEO + SEO</div>
+          <div class="tl-detail">8 problemas críticos identificados con datos reales de Analytics. Plan Q4 documentado.</div>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot-wrap"><div class="tl-dot" style="background:var(--or)"></div><div class="tl-line"></div></div>
+        <div class="tl-body">
+          <div class="tl-date">07 Oct 2026 — HOY</div>
+          <div class="tl-title">Sprint técnico: 10 mejoras implementadas</div>
+          <div class="tl-detail">Backup, CLS fix, luxury polish, /cotizar rediseño, WhatsApp, og:image, FAQPage + Speakable, jetcab.mx/en/, language switcher, sitemap a GSC.</div>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot-wrap"><div class="tl-dot" style="background:var(--bd)"></div><div class="tl-line"></div></div>
+        <div class="tl-body">
+          <div class="tl-date">2ª quincena Oct 2026</div>
+          <div class="tl-title">Próximo sprint: JSON-LD AirCharter + páginas GEO</div>
+          <div class="tl-detail">JSON-LD AirCharter + LocalBusiness (hubs CDMX/Toluca/MTY/GDL) · Página "Vuelos privados navidad México 2026" · Optimización JS (21 scripts activos).</div>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot-wrap"><div class="tl-dot" style="background:var(--bd)"></div><div class="tl-line"></div></div>
+        <div class="tl-body">
+          <div class="tl-date">Noviembre 2026</div>
+          <div class="tl-title">Páginas de aterrizaje por avatar + GEO Score objetivo 5/10</div>
+          <div class="tl-detail">Página "Jet privado CDMX–Miami para negocios" (Avatar A+B) · Menciones en directorios NBAA y Private Jet Card Comparisons · Consolidación de rankings Q4.</div>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot-wrap"><div class="tl-dot" style="background:var(--bd)"></div></div>
+        <div class="tl-body">
+          <div class="tl-date">Diciembre 2026</div>
+          <div class="tl-title">Campaña "Cierre de Año" + GEO Score objetivo 7/10</div>
+          <div class="tl-detail">Activación campaña 25 años JETCAB. Página "Vuelos privados navidad México 2026" (Avatar C). Medición de menciones en ChatGPT y Perplexity.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PRÓXIMOS PASOS -->
+  <div class="section">
+    <div class="section-hd"><h2>🔜 Próximos pasos — 2ª quincena octubre</h2></div>
+    <div class="next-grid">
+
+      <div class="next-card high">
+        <div class="next-ico">🏗️</div>
+        <div>
+          <div class="next-title">JSON-LD AirCharter + LocalBusiness (4 hubs)</div>
+          <div class="next-desc">Schema estructurado para que ChatGPT y Perplexity puedan citar a JETCAB cuando alguien pregunta "jet privado en 2 horas CDMX". Configurar para los 4 hubs operativos: CDMX, Toluca, Monterrey, Guadalajara.</div>
+          <div class="next-meta"><span>Prioridad:</span> Alta · <span>Impacto GEO:</span> +3 puntos de score · <span>Plazo:</span> 2a quincena oct</div>
+        </div>
+      </div>
+
+      <div class="next-card high">
+        <div class="next-ico">✈️</div>
+        <div>
+          <div class="next-title">Página GEO: "Jet privado CDMX–Miami para negocios"</div>
+          <div class="next-desc">Página de aterrizaje optimizada para Avatar A (ejecutivo de empresa) y Avatar B (empresario independiente). Keyword de alta intención con ticket promedio de viaje por encima de $250K MXN. Esta página tiene alta probabilidad de aparecer en AI Overviews.</div>
+          <div class="next-meta"><span>Prioridad:</span> Alta · <span>Avatar:</span> A + B · <span>Plazo:</span> 2a quincena oct</div>
+        </div>
+      </div>
+
+      <div class="next-card med">
+        <div class="next-ico">⚡</div>
+        <div>
+          <div class="next-title">Optimización JS — 21 scripts activos</div>
+          <div class="next-desc">El sitio carga 21 archivos JavaScript separados. Instalar WP Rocket o Perfmatters para combinar y diferir scripts no críticos. Esto mejoraría el score de Performance en PageSpeed y el tiempo de carga en móvil.</div>
+          <div class="next-meta"><span>Prioridad:</span> Media · <span>Impacto:</span> Performance +8–15pts · <span>Plazo:</span> oct–nov</div>
+        </div>
+      </div>
+
+      <div class="next-card med">
+        <div class="next-ico">🗺️</div>
+        <div>
+          <div class="next-title">Directorios de aviación privada (NBAA, PJCC)</div>
+          <div class="next-desc">Menciones en NBAA.org y Private Jet Card Comparisons. Las IAs usan estas fuentes para citar operadores de aviación privada. Tener a JETCAB mencionado ahí es una de las señales de autoridad más fuertes para ChatGPT y Perplexity.</div>
+          <div class="next-meta"><span>Prioridad:</span> Media · <span>Impacto GEO:</span> +1–2 puntos · <span>Plazo:</span> nov</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- RESULTADOS ESPERADOS -->
+  <div class="section">
+    <div class="section-hd"><h2>📈 Resultados esperados — Q4 2026</h2></div>
+    <div class="results-grid">
+      <div class="res-card">
+        <div class="res-month">Octubre (2a quincena)</div>
+        <div class="res-items">
+          <div class="res-item">Reindexación de jetcab.mx/en/ completada</div>
+          <div class="res-item">CLS &lt;0.1 confirmado en PageSpeed</div>
+          <div class="res-item">JSON-LD AirCharter activo en los 4 hubs</div>
+          <div class="res-item">GEO Score objetivo: 4/10</div>
+          <div class="res-item">Primera aparición en AI Overviews (FAQ)</div>
+        </div>
+      </div>
+      <div class="res-card">
+        <div class="res-month">Noviembre</div>
+        <div class="res-items">
+          <div class="res-item">Página CDMX–Miami indexada y posicionando</div>
+          <div class="res-item">+200% tráfico orgánico vs. baseline oct</div>
+          <div class="res-item">Primeras citas en Perplexity verificadas</div>
+          <div class="res-item">GEO Score objetivo: 5–6/10</div>
+          <div class="res-item">Mejora de 5–10 posiciones en keywords core</div>
+        </div>
+      </div>
+      <div class="res-card">
+        <div class="res-month">Diciembre (campaña 25 años)</div>
+        <div class="res-items">
+          <div class="res-item">Página "vuelos navidad México" posicionando</div>
+          <div class="res-item">JETCAB citado en ChatGPT para keywords clave</div>
+          <div class="res-item">GEO Score objetivo: 7/10</div>
+          <div class="res-item">+50% conversiones vs. oct (campaña activa)</div>
+          <div class="res-item">Cierre de año: leads de avatar C medibles</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-box">
+    <h2>¿Tienes preguntas sobre el sprint?</h2>
+    <p>Cualquier duda sobre lo que se implementó, cómo verificarlo en tu sitio, o qué viene en la segunda quincena — escríbenos.</p>
+    <a class="cta-btn" href="https://wa.me/525532894890?text=Hola%2C+tengo+una+pregunta+sobre+el+Reporte+%232+de+JETCAB" target="_blank" rel="noopener">
+      Hablar con Rankeo en WhatsApp →
+    </a>
+  </div>
+
+  <div class="footer-note">
+    Reporte #2 — Implementaciones Técnicas · JETCAB México · 07 Oct 2026<br>
+    Generado por Rankeo · rankeo.agency
+  </div>
+
+</div>
+</body>
+</html>
