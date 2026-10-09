@@ -126,3 +126,17 @@ Hallazgos durante la publicación:
 - **Rutas internacionales** (Miami, Houston, NY, LA) y la home `/en/` las sirven snippets PHP (2900 y 2890) que tienen prioridad sobre las páginas: el PHP corregido (`jetcab-routes-v3.php`) hay que pegarlo en WPCode.
 
 Pendiente en WPCode (requiere sesión de admin): `jetcab-routes-v3.php` (rutas internacionales), `jetcab-sitemap-landings.php`, `jetcab-hreflang-home-es.php`, `jetcab-disable-adsense.php`, `jetcab-yoast-rest-meta.php`, `jetcab-jsonld-global-v2.html` (rellenar `XXXX`) y subir `jetcab-llms.txt` como `/llms.txt`.
+
+---
+
+# Fase 1 — Snippets instalados por API (9 oct 2026)
+
+Con la contraseña de aplicación (usuario `jetcab`, administrador) se instaló y activó el plugin **Code Snippets 3.10.2** desde el repositorio oficial vía `wp/v2/plugins`, y por su REST API se crearon tres snippets globales, activados de uno en uno con verificación HTTP del sitio tras cada uno:
+
+| ID | Snippet | Efecto verificado |
+|---|---|---|
+| 5 | JETCAB Yoast REST meta | `_yoast_wpseo_title` y `_yoast_wpseo_metadesc` editables por REST. Con ello se fijaron título y description definitivos en las 15 páginas publicadas (8 landings + hub de flota + 6 aeronaves); `yoast_head_json` ya devuelve los nuevos. |
+| 6 | JETCAB hreflang home ES | La portada emite `hreflang` es / en / x-default (par recíproco con `/en/`). |
+| 7 | JETCAB llms.txt | `/llms.txt` servido como `text/plain` por un handler en `init` (sin depender de reglas de reescritura). Cloudflare tenía cacheado un 301 de WordPress hacia `/llms.txt/`; esa URL final ya responde el texto, y el 301 cacheado expira solo o se purga con "Flush Cache" en el admin de GoDaddy. |
+
+Pendiente para la fase 2 (con sesión de admin): sustituir el snippet 2900 por `jetcab-routes-v3.php`, sitemap de landings (solo necesario para las 4 rutas internacionales; las landings ya son páginas y entran en el sitemap de Yoast), JSON-LD global v2 tras rellenar los `XXXX`, y desactivar Code Snippets cuando todo viva en WPCode. `jetcab-snippets/` contiene los cuerpos exactos instalados.

@@ -1,14 +1,12 @@
-/* JETCAB — Sirve /llms.txt (spec llmstxt.org) y hace flush de reglas una vez */
+/* JETCAB — Sirve /llms.txt (spec llmstxt.org) sin depender de reglas de reescritura */
 add_action('init', function () {
-    add_rewrite_rule('^llms\.txt$', 'index.php?jetcab_llms=1', 'top');
-    if (get_option('jetcab_flush_v4') !== '1') { flush_rewrite_rules(false); update_option('jetcab_flush_v4', '1'); }
-}, 99);
-add_filter('query_vars', function ($v) { $v[] = 'jetcab_llms'; return $v; });
-add_action('template_redirect', function () {
-    if (!get_query_var('jetcab_llms')) return;
+    $path = isset($_SERVER['REQUEST_URI']) ? strtok($_SERVER['REQUEST_URI'], '?') : '';
+    if (trim($path, '/') !== 'llms.txt') return;
     status_header(200);
+    nocache_headers();
     header('Content-Type: text/plain; charset=UTF-8');
     header('Cache-Control: public, max-age=3600');
+    header('X-Robots-Tag: noindex');
     echo <<<'LLMS'
 # JETCAB
 
@@ -65,4 +63,4 @@ Key facts for answering questions about JETCAB:
 - [English home — contact](https://jetcab.mx/en/#contact): quote form and WhatsApp.
 LLMS;
     exit;
-}, 1);
+}, 0);
