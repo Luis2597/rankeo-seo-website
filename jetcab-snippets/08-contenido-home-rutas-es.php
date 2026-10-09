@@ -61,6 +61,40 @@ function jetcab_rutas_es_data() {
         1777 => array('d' => 'San Diego', 'iata' => 'SAN', 't' => '3 h 20 min', 'ac' => 'Challenger 605', 'pax' => 12, 'p' => '', 'en' => '', 'arr' => 'la terminal privada de San Diego'),
     );
 }
+function jetcab_extras_es_data() {
+    return array(
+        2641 => array(
+            'h2' => 'Renta de helicópteros en CDMX en resumen',
+            'a'  => 'JETCAB renta helicópteros en la Ciudad de México y Toluca desde cualquier helipuerto autorizado: Bell 206 para 4 pasajeros y AW139 para 8, con tripulación certificada por DGAC. El precio es por trayecto y por aeronave, no por pasajero, y se cotiza en 30 minutos según helipuerto de salida, destino y tiempo de vuelo. Helicóptero listo el mismo día, sujeto a disponibilidad.',
+            'faq' => array(
+                '¿Cuánto cuesta rentar un helicóptero en CDMX?' => 'Se cotiza por trayecto según el helipuerto de salida, el destino y el tiempo de vuelo; el precio es por aeronave completa (4 pasajeros en Bell 206, 8 en AW139), no por persona. Envíe origen, destino, fecha y pasajeros y recibe la tarifa cerrada en 30 minutos, con factura.',
+                '¿Desde qué helipuertos sale JETCAB?' => 'Desde cualquier helipuerto autorizado de la Ciudad de México, Santa Fe, Interlomas y Polanco, y desde el Aeropuerto Internacional de Toluca. También coordinamos helipuertos privados en hoteles, corporativos y residencias que cuenten con permiso.',
+                '¿A qué destinos se vuela en helicóptero desde CDMX?' => 'Valle de Bravo, Cuernavaca, Tequesquitengo, Puebla, Querétaro y Toluca son los más frecuentes, además de traslados dentro de la ciudad entre helipuertos y conexiones con un jet privado en Toluca para continuar a Cancún, Los Cabos o Estados Unidos.',
+            ),
+            'cta' => 'Cotizar helicóptero',
+        ),
+        2642 => array(
+            'h2' => 'Tour en helicóptero por la CDMX en resumen',
+            'a'  => 'El tour en helicóptero de JETCAB sobre la Ciudad de México es un vuelo privado, no compartido: usted elige la ruta (Reforma, Polanco, Chapultepec, Centro Histórico, Santa Fe) y el horario, para 4 pasajeros en Bell 206 u 8 en AW139. El precio es por vuelo y se cotiza en 30 minutos. Ideal para aniversarios, propuestas y clientes de visita.',
+            'faq' => array(
+                '¿Cuánto cuesta un paseo en helicóptero por la CDMX?' => 'Se cotiza por vuelo completo según duración y helipuerto de salida, no por persona; con 4 pasajeros a bordo el costo por persona baja de forma considerable. Envíe fecha, número de pasajeros y duración deseada y recibe el precio en 30 minutos.',
+                '¿Cuánto dura el tour?' => 'Los vuelos más solicitados duran de 20 a 45 minutos. Un recorrido de 30 minutos cubre Reforma, Chapultepec, Polanco y Santa Fe con tiempo para fotografías; para incluir el Centro Histórico y Coyoacán conviene de 45 minutos.',
+                '¿Se puede volar al atardecer o de noche?' => 'Sí, al atardecer es el horario más solicitado y se reserva con anticipación. Los vuelos nocturnos dependen de las condiciones meteorológicas y de la autorización del helipuerto; lo confirmamos al cotizar.',
+            ),
+            'cta' => 'Cotizar tour',
+        ),
+        2739 => array(
+            'h2' => 'Renta de aviones privados en México en resumen',
+            'a'  => 'JETCAB renta aviones privados desde el Aeropuerto Internacional de Toluca: Learjet 35 a Guadalajara desde $1,800 USD, Monterrey $2,200 USD, Puerto Vallarta $3,000 USD, Cancún $3,200 USD y Los Cabos $3,800 USD por aeronave completa para 7 pasajeros. Light jets en ruta corta desde $80,000 MXN; Challenger 605 midsize y Gulfstream long range para Estados Unidos y Europa. Jet listo en 2 horas y cotización formal en 30 minutos.',
+            'faq' => array(
+                '¿Cuánto cuesta alquilar un avión privado en México?' => 'Desde $1,800 USD por aeronave completa (Toluca–Guadalajara en Learjet 35) y desde $80,000 MXN en rutas cortas nacionales. CDMX–Cancún cuesta desde $3,200 USD en Learjet 35, $6,500 USD en Challenger 605 y $12,000 USD en Gulfstream. El precio es por avión, no por pasajero; la tabla completa está en jetcab.mx/precios-jet-privado.',
+                '¿Qué incluye la renta de un avión privado?' => 'Aeronave y tripulación certificada por DGAC, combustible, tasas de aterrizaje y de aeropuerto, FBO privado en Toluca con abordaje en menos de 10 minutos, catering ligero y agua a bordo. Pernocta de tripulación, catering de chef y traslados terrestres se cotizan aparte y se autorizan antes de volar.',
+                '¿Cuántos pasajeros caben en cada avión?' => 'Learjet 35: 7 pasajeros. Learjet 45 y Hawker 800: 8. Challenger 605: 12 con cabina de pie. Gulfstream y Global Express: 16 con cabina completa. Para grupos mayores combinamos aeronaves o proponemos un vuelo chárter regional.',
+            ),
+            'cta' => 'Cotizar mi vuelo',
+        ),
+    );
+}
 add_filter('the_content', function ($content) {
     if (is_admin() || !in_the_loop() || !is_main_query()) return $content;
     $id = get_the_ID();
@@ -105,6 +139,18 @@ add_filter('the_content', function ($content) {
         $b .= jetcab_faq_html($faq);
         $b .= '<a class="jcr-cta" href="https://jetcab.mx/cotizar/">Cotizar vuelo a ' . esc_html($r['d']) . '</a>';
         $b .= '<div class="jcr-links"><a href="https://jetcab.mx/precios-jet-privado/">Precios de jet privado</a><a href="https://jetcab.mx/flota/">Flota JETCAB</a><a href="https://jetcab.mx/vuelos-privados-confidenciales/">Vuelos confidenciales</a>' . ($r['en'] ? '<a href="' . esc_url($r['en']) . '" hreflang="en">Read in English</a>' : '') . '</div>';
+        $b .= '</div></section>';
+        return $content . $b;
+    }
+    $extras = jetcab_extras_es_data();
+    if (isset($extras[$id])) {
+        $e = $extras[$id];
+        $b  = jetcab_css_bloques() . jetcab_faq_ld($e['faq']);
+        $b .= '<section class="jcr"><div class="jcr-in"><h2>' . esc_html($e['h2']) . '</h2>';
+        $b .= '<p class="a">' . esc_html($e['a']) . '</p>';
+        $b .= jetcab_faq_html($e['faq']);
+        $b .= '<a class="jcr-cta" href="https://jetcab.mx/cotizar/">' . esc_html($e['cta']) . '</a>';
+        $b .= '<div class="jcr-links"><a href="https://jetcab.mx/precios-jet-privado/">Precios de jet privado</a><a href="https://jetcab.mx/flota/">Flota JETCAB</a><a href="https://jetcab.mx/vuelos-privados-confidenciales/">Vuelos confidenciales</a></div>';
         $b .= '</div></section>';
         return $content . $b;
     }
