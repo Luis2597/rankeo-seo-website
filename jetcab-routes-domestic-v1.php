@@ -54,15 +54,15 @@ add_action("template_redirect", function() {
             "dest_full"    => "Los Cabos, Baja California Sur",
             "slug"         => "los-cabos",
             "es_live"      => true,
-            "answer"       => "A JETCAB private jet from Mexico City (Toluca, AIT) to Los Cabos (SJD) takes 2 h 30 min nonstop and starts at $3,800 USD one-way on a Learjet 35 for 7 passengers, $7,500 USD on a Challenger 605 for 12, and $14,000 USD on a Gulfstream for 16. Domestic route: no immigration, no customs. Per aircraft, all-inclusive. Aircraft ready in 2 hours.",
+            "answer"       => "A JETCAB private jet from Mexico City (Toluca, AIT) to Los Cabos (SJD) takes 2 h 30 min nonstop and starts at $3,800 USD one-way on a Learjet 35 for 7 passengers; a Challenger 605 for 12 or a Gulfstream for 16 is quoted on request. Domestic route: no immigration, no customs. Per aircraft, all-inclusive. Aircraft ready in 2 hours.",
             "slug_es"      => "vuelos-privados-a-los-cabos",
             "to_iata"      => "SJD",
             "dest_airport" => "Los Cabos International",
             "time"         => "2h 30m",
             "price"        => "3,800",
             "p1"           => "\$3,800",
-            "p2"           => "\$7,500",
-            "p3"           => "\$14,000",
+            "p2"           => "Quote on request",
+            "p3"           => "Quote on request",
             "meta_desc"    => "Private jet from Mexico City (Toluca) to Los Cabos in 2h 30m. Private terminal at SJD, 25 min from Cabo San Lucas. Learjet 35 from \$3,800 USD. Same-day flights.",
             "wa_text"      => "Hi%2C+I%27d+like+a+quote+for+a+private+jet+from+Mexico+City+to+Los+Cabos.",
             "hero_img"     => "1506905925346-21bda4d32df4",
@@ -79,7 +79,7 @@ add_action("template_redirect", function() {
                 ["q" => "How long is the flight from Mexico City to Los Cabos on a private jet?", "a" => "2 hours 30 minutes nonstop from Toluca (AIT) to Los Cabos (SJD). Commercial passengers on the same route typically take 4 to 5 hours door to door."],
                 ["q" => "Is there immigration for a domestic private jet to Los Cabos?", "a" => "No. Mexico City to Los Cabos is a domestic route. No immigration, no customs. Step off at the SJD private terminal and go directly to your vehicle."],
                 ["q" => "Which Cabo resort is closest to the private terminal at SJD?", "a" => "The Corridor resorts (Las Ventanas, Montage, Esperanza) are 15 to 25 minutes from the SJD private terminal. Cabo San Lucas marina is 25 minutes."],
-                ["q" => "How much does a private jet from Mexico City to Los Cabos cost?", "a" => "From \$3,800 USD for a Learjet 35 (7 passengers). Challenger 605 from \$7,500. Gulfstream GV from \$14,000. Full aircraft pricing — not per seat."],
+                ["q" => "How much does a private jet from Mexico City to Los Cabos cost?", "a" => "From \$3,800 USD for a Learjet 35 (7 passengers). Challenger 605 and Gulfstream GV are quoted on request. Full aircraft pricing — not per seat."],
                 ["q" => "Can I charter a private jet to Los Cabos for a group corporate offsite?", "a" => "Yes. The Challenger 605 seats 12 and is our most-requested aircraft for executive offsite groups. Quote in under an hour."],
             ],
         ],
@@ -89,15 +89,15 @@ add_action("template_redirect", function() {
             "dest_full"    => "Puerto Vallarta, Jalisco",
             "slug"         => "puerto-vallarta",
             "es_live"      => true,
-            "answer"       => "A JETCAB private jet from Mexico City (Toluca, AIT) to Puerto Vallarta (PVR) takes 1 h 45 min nonstop and starts at $3,000 USD one-way on a Learjet 35 for 7 passengers, $5,800 USD on a Challenger 605 for 12, and $10,500 USD on a Gulfstream. The PVR private terminal is 10 minutes from the Malecón and 45 from Punta Mita. Quote in 30 minutes.",
+            "answer"       => "A JETCAB private jet from Mexico City (Toluca, AIT) to Puerto Vallarta (PVR) takes 1 h 45 min nonstop and starts at $3,000 USD one-way on a Learjet 35 for 7 passengers; a Challenger 605 for 12 or a Gulfstream for 16 is quoted on request. The PVR private terminal is 10 minutes from the Malecón and 45 from Punta Mita. Quote in 30 minutes.",
             "slug_es"      => "vuelos-privados-a-puerto-vallarta",
             "to_iata"      => "PVR",
             "dest_airport" => "Puerto Vallarta International",
             "time"         => "1h 45m",
             "price"        => "3,000",
             "p1"           => "\$3,000",
-            "p2"           => "\$5,800",
-            "p3"           => "\$10,500",
+            "p2"           => "Quote on request",
+            "p3"           => "Quote on request",
             "meta_desc"    => "Private jet from Mexico City (Toluca) to Puerto Vallarta in 1h 45m. Private terminal at PVR, 10 min from the Malecón, 45 from Punta Mita. From \$3,000 USD.",
             "wa_text"      => "Hi%2C+I%27d+like+a+quote+for+a+private+jet+from+Mexico+City+to+Puerto+Vallarta.",
             "hero_img"     => "1518509562785-1e33754df4b5",
@@ -114,7 +114,7 @@ add_action("template_redirect", function() {
                 ["q" => "How long is the private jet flight from Mexico City to Puerto Vallarta?", "a" => "1 hour 45 minutes nonstop from Toluca (AIT) to Puerto Vallarta (PVR) — one of the shortest routes in the JETCAB fleet."],
                 ["q" => "Is there immigration for a domestic private jet to Puerto Vallarta?", "a" => "No. Domestic flight — no immigration, no customs. You land at the PVR private terminal and go directly to your vehicle. Ground time under 5 minutes."],
                 ["q" => "Is it worth flying private from Mexico City to Puerto Vallarta?", "a" => "Commercial passengers spend more time at Juárez Airport than in the air. Private reduces door-to-door from 4 hours to under 2h30m. For Punta Mita, you save 2 hours each way."],
-                ["q" => "How much does a private jet from Mexico City to Puerto Vallarta cost?", "a" => "From \$3,000 USD for a Learjet 35 (7 passengers). Challenger 605 from \$5,800. Gulfstream GV from \$10,500. Per aircraft, not per seat."],
+                ["q" => "How much does a private jet from Mexico City to Puerto Vallarta cost?", "a" => "From \$3,000 USD for a Learjet 35 (7 passengers). Challenger 605 and Gulfstream GV are quoted on request. Per aircraft, not per seat."],
                 ["q" => "How far is Punta Mita from the Puerto Vallarta private terminal?", "a" => "Approximately 45 minutes north of PVR by car. We can arrange ground transportation from the private terminal directly to your resort."],
             ],
         ],
@@ -124,15 +124,15 @@ add_action("template_redirect", function() {
             "dest_full"    => "Monterrey, Nuevo León",
             "slug"         => "monterrey",
             "es_live"      => true,
-            "answer"       => "A JETCAB private jet from Mexico City (Toluca, AIT) to Monterrey (MTY) takes 1 h 15 min nonstop, JETCAB's fastest business route, and starts at $2,200 USD one-way on a Learjet 35 for 7 passengers, $4,500 USD on a Challenger 605 for 12, and $8,500 USD on a Gulfstream. Same-day round trips are the most common booking. Per aircraft, all-inclusive.",
+            "answer"       => "A JETCAB private jet from Mexico City (Toluca, AIT) to Monterrey (MTY) takes 1 h 15 min nonstop, JETCAB's fastest business route, and starts at $2,200 USD one-way on a Learjet 35 for 7 passengers; a Challenger 605 for 12 or a Gulfstream for 16 is quoted on request. Same-day round trips are the most common booking. Per aircraft, all-inclusive.",
             "slug_es"      => "vuelos-privados-a-monterrey",
             "to_iata"      => "MTY",
             "dest_airport" => "Monterrey International",
             "time"         => "1h 15m",
             "price"        => "2,200",
             "p1"           => "\$2,200",
-            "p2"           => "\$4,500",
-            "p3"           => "\$8,500",
+            "p2"           => "Quote on request",
+            "p3"           => "Quote on request",
             "meta_desc"    => "Private jet from Mexico City (Toluca) to Monterrey in 1h 15m. Private terminal at MTY, 20 min from San Pedro Garza García. From \$2,200 USD. Same-day trips.",
             "wa_text"      => "Hi%2C+I%27d+like+a+quote+for+a+private+jet+from+Mexico+City+to+Monterrey.",
             "hero_img"     => "1518773553398-650c184e0bb3",
@@ -150,7 +150,7 @@ add_action("template_redirect", function() {
                 ["q" => "Can I fly same-day round trip from Mexico City to Monterrey?", "a" => "Yes, and it\'s the most common booking pattern on this route. Depart 7am, in San Pedro Garza García by 9am. Return at 5pm, back in CDMX by 6:30pm."],
                 ["q" => "Which airport do private jets use in Monterrey?", "a" => "JETCAB uses General Mariano Escobedo Airport (MTY), 20 minutes from San Pedro Garza García and 25 minutes from Valle Oriente. Private terminal, separate from commercial traffic."],
                 ["q" => "Is there immigration for private jets to Monterrey from Mexico City?", "a" => "No. Domestic flight — no immigration, no customs. Ground time at MTY is under 5 minutes."],
-                ["q" => "How much does a private jet from Mexico City to Monterrey cost?", "a" => "From \$2,200 USD for a Learjet 35 — our most competitive domestic rate. Challenger 605 from \$4,500. Gulfstream GV from \$8,500. Full aircraft pricing."],
+                ["q" => "How much does a private jet from Mexico City to Monterrey cost?", "a" => "From \$2,200 USD for a Learjet 35 — our most competitive domestic rate. Challenger 605 and Gulfstream GV are quoted on request. Full aircraft pricing."],
             ],
         ],
         "guadalajara" => [
@@ -159,15 +159,15 @@ add_action("template_redirect", function() {
             "dest_full"    => "Guadalajara, Jalisco",
             "slug"         => "guadalajara",
             "es_live"      => true,
-            "answer"       => "A JETCAB private jet from Mexico City (Toluca, AIT) to Guadalajara (GDL) takes 50 minutes nonstop and starts at $1,800 USD one-way on a Learjet 35 for 7 passengers, JETCAB's lowest domestic rate; $3,800 USD on a Challenger 605 for 12; $7,000 USD on a Gulfstream. The GDL private terminal is 15 minutes from Zapopan. Door to door under 2 hours. Quote in 30 minutes.",
+            "answer"       => "A JETCAB private jet from Mexico City (Toluca, AIT) to Guadalajara (GDL) takes 50 minutes nonstop and starts at $1,800 USD one-way on a Learjet 35 for 7 passengers, JETCAB's lowest domestic rate; Challenger 605 and Gulfstream are quoted on request. The GDL private terminal is 15 minutes from Zapopan. Door to door under 2 hours. Quote in 30 minutes.",
             "slug_es"      => "vuelos-privados-a-guadalajara",
             "to_iata"      => "GDL",
             "dest_airport" => "Miguel Hidalgo International",
             "time"         => "50m",
             "price"        => "1,800",
             "p1"           => "\$1,800",
-            "p2"           => "\$3,800",
-            "p3"           => "\$7,000",
+            "p2"           => "Quote on request",
+            "p3"           => "Quote on request",
             "meta_desc"    => "Private jet from Mexico City (Toluca) to Guadalajara in 50 minutes. Private terminal at GDL, 15 min from Zapopan. From \$1,800 USD. Same-day round trips.",
             "wa_text"      => "Hi%2C+I%27d+like+a+quote+for+a+private+jet+from+Mexico+City+to+Guadalajara.",
             "hero_img"     => "1558618666-fcd25c85cd64",
@@ -185,7 +185,7 @@ add_action("template_redirect", function() {
                 ["q" => "Is it worth flying private from Mexico City to Guadalajara for such a short flight?", "a" => "Commercial passengers spend 2 to 3 hours in Juárez Airport for a 45-minute flight. Private reduces total travel to under 2 hours door to door — a saving of 2 hours or more each way."],
                 ["q" => "Can I fly same-day round trip from Mexico City to Guadalajara?", "a" => "Yes — it\'s the most common booking pattern. Depart 7am, in Zapopan by 9am. Return at 4pm, back in Mexico City by 6pm."],
                 ["q" => "Which airport do private jets use in Guadalajara?", "a" => "JETCAB uses Miguel Hidalgo y Costilla International Airport (GDL), 15 minutes from Zapopan and 20 minutes from Providencia. Private terminal separate from commercial operations."],
-                ["q" => "How much does a private jet from Mexico City to Guadalajara cost?", "a" => "From \$1,800 USD for a Learjet 35 — our lowest domestic rate. Challenger 605 from \$3,800. Gulfstream GV from \$7,000. Per aircraft, not per seat."],
+                ["q" => "How much does a private jet from Mexico City to Guadalajara cost?", "a" => "From \$1,800 USD for a Learjet 35 — our lowest domestic rate. Challenger 605 and Gulfstream GV are quoted on request. Per aircraft, not per seat."],
             ],
         ],
     ];
@@ -201,6 +201,17 @@ if (!function_exists('jc_json_str')) {
     // Escape a string for use inside a JSON string literal (esc_js produces \' which is invalid JSON).
     function jc_json_str($str) {
         return substr(json_encode((string)$str, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES), 1, -1);
+    }
+}
+
+if (!function_exists('jc_price_html')) {
+    // Prints "From $X USD" when a brief price exists, otherwise a quote-on-request label.
+    function jc_price_html($v, $from = 'From', $quote = 'Quote on request') {
+        $v = trim((string)$v);
+        if (preg_match('/^\$?[0-9][0-9,]*$/', $v)) {
+            return '<span class="jc-fleet-price-from">' . esc_html($from) . '</span><span class="jc-fleet-price-amount">' . esc_html(ltrim($v, '$') === $v ? '$' . $v : $v) . ' USD</span>';
+        }
+        return '<span class="jc-fleet-price-amount jc-fleet-price-quote">' . esc_html($quote) . '</span>';
     }
 }
 
@@ -431,7 +442,7 @@ body{background:var(--dark);color:var(--text);font-family:var(--ff-body);line-he
   <div class="jc-fleet-grid">
     <div class="jc-fleet-card">
       <div class="jc-fleet-card-img">
-        <img src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=800&q=75" alt="Learjet 35 light jet private cabin" loading="lazy">
+        <img src="https://jetcab.mx/wp-content/uploads/2024/11/Learjet35enrenta.jpeg" width="700" height="394" decoding="async" alt="Learjet 35 light jet private cabin" loading="lazy">
         <span class="jc-fleet-badge">Light Jet</span>
       </div>
       <div class="jc-fleet-body">
@@ -443,13 +454,13 @@ body{background:var(--dark);color:var(--text);font-family:var(--ff-body);line-he
           <div class="jc-fleet-spec"><strong>850 km/h</strong>Cruise</div>
           <div class="jc-fleet-spec"><strong>Wi-Fi</strong>Available</div>
         </div>
-        <div class="jc-fleet-price"><span class="jc-fleet-price-from">From</span><span class="jc-fleet-price-amount"><?php echo esc_html($r['p1']); ?> USD</span></div>
+        <div class="jc-fleet-price"><?php echo jc_price_html($r['p1']); ?></div>
         <a href="<?php echo $wa; ?>" class="jc-fleet-cta" target="_blank" rel="noopener">Book this aircraft</a>
       </div>
     </div>
     <div class="jc-fleet-card">
       <div class="jc-fleet-card-img">
-        <img src="https://images.unsplash.com/photo-1581093806997-124204d9fa9d?auto=format&fit=crop&w=800&q=75" alt="Challenger 605 midsize private jet cabin" loading="lazy">
+        <img src="https://jetcab.mx/wp-content/uploads/2024/11/Challenger-605-en-renta.jpeg" width="700" height="394" decoding="async" alt="Challenger 605 midsize private jet cabin" loading="lazy">
         <span class="jc-fleet-badge">Midsize Jet</span>
       </div>
       <div class="jc-fleet-body">
@@ -461,13 +472,13 @@ body{background:var(--dark);color:var(--text);font-family:var(--ff-body);line-he
           <div class="jc-fleet-spec"><strong>882 km/h</strong>Cruise</div>
           <div class="jc-fleet-spec"><strong>Starlink</strong>Wi-Fi</div>
         </div>
-        <div class="jc-fleet-price"><span class="jc-fleet-price-from">From</span><span class="jc-fleet-price-amount"><?php echo esc_html($r['p2']); ?> USD</span></div>
+        <div class="jc-fleet-price"><?php echo jc_price_html($r['p2']); ?></div>
         <a href="<?php echo $wa; ?>" class="jc-fleet-cta" target="_blank" rel="noopener">Book this aircraft</a>
       </div>
     </div>
     <div class="jc-fleet-card">
       <div class="jc-fleet-card-img">
-        <img src="https://images.unsplash.com/photo-1540962351504-03099e0a754b?auto=format&fit=crop&w=800&q=75" alt="Gulfstream GV large cabin private jet" loading="lazy">
+        <img src="https://jetcab.mx/wp-content/uploads/2024/11/Gulfstream-Gv-en-Renta.jpeg" width="700" height="394" decoding="async" alt="Gulfstream GV large cabin private jet" loading="lazy">
         <span class="jc-fleet-badge">Large Cabin</span>
       </div>
       <div class="jc-fleet-body">
@@ -479,7 +490,7 @@ body{background:var(--dark);color:var(--text);font-family:var(--ff-body);line-he
           <div class="jc-fleet-spec"><strong>904 km/h</strong>Cruise</div>
           <div class="jc-fleet-spec"><strong>Bedroom</strong>On board</div>
         </div>
-        <div class="jc-fleet-price"><span class="jc-fleet-price-from">From</span><span class="jc-fleet-price-amount"><?php echo esc_html($r['p3']); ?> USD</span></div>
+        <div class="jc-fleet-price"><?php echo jc_price_html($r['p3']); ?></div>
         <a href="<?php echo $wa; ?>" class="jc-fleet-cta" target="_blank" rel="noopener">Book this aircraft</a>
       </div>
     </div>

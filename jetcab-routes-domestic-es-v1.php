@@ -61,8 +61,8 @@ add_action("template_redirect", function() {
             "time"         => '2h 30m',
             "price"        => '3,800',
             "p1"           => '$3,800',
-            "p2"           => '$7,500',
-            "p3"           => '$14,000',
+            "p2"           => 'Cotizar',
+            "p3"           => 'Cotizar',
             "meta_desc"    => 'Vuelos privados a Los Cabos desde CDMX en 2h 30m. Salida del FBO privado de Toluca, terminal privada en SJD a 20 min del Corredor. Desde $3,800 USD. JETCAB.',
             "wa_text"      => 'Hola%2C+quiero+cotizar+un+vuelo+privado+de+CDMX+a+Los+Cabos.',
             "hero_img"     => '1506905925346-21bda4d32df4',
@@ -72,16 +72,16 @@ add_action("template_redirect", function() {
             "alt_1"        => 'El Arco de Cabo San Lucas y resort de lujo en Los Cabos',
             "alt_2"        => 'Jet privado en plataforma al atardecer listo para vuelo a Los Cabos',
             "alt_3"        => 'Acantilados del Pacífico en Baja California Sur, destino de jet privado',
-            "answer"       => 'Un vuelo privado de CDMX a Los Cabos cuesta desde $3,800 USD por aeronave en Learjet 35 (7 pasajeros), $7,500 USD en Challenger 605 (12) y $14,000 USD en Gulfstream GV (16). Se paga por avión, no por asiento. Despega del FBO privado de Toluca (AIT) y aterriza 2 horas 30 minutos después en la terminal privada de Los Cabos (SJD), a 20 minutos del Corredor Turístico.',
+            "answer"       => 'Un vuelo privado de CDMX a Los Cabos cuesta bajo cotización por aeronave en Learjet 35 (7 pasajeros), Challenger 605 (12) y Gulfstream GV (16) bajo cotización. Se paga por avión, no por asiento. Despega del FBO privado de Toluca (AIT) y aterriza 2 horas 30 minutos después en la terminal privada de Los Cabos (SJD), a 20 minutos del Corredor Turístico.',
             "about_1"      => 'Los Cabos son dos ciudades unidas por el Corredor. San José del Cabo es la dirección discreta: hoteles boutique, galerías, la marina del centro histórico. Cabo San Lucas es el hub de hospitalidad internacional: resorts cinco estrellas, pesca deportiva, El Arco. En el Corredor están Las Ventanas, Montage, Esperanza y One&Only, todos a menos de 25 minutos de la terminal privada de SJD.',
             "about_2"      => 'En jet privado, CDMX–Los Cabos son 2 horas 30 minutos sin escalas. En comercial son mínimo 4 horas de puerta a puerta, y más en temporada alta cuando el AICM satura. La terminal privada de SJD está separada de las salas comerciales: sin autobús de plataforma, sin banda de equipaje, sin fila de taxis.',
             "about_3"      => 'Vuelo nacional: sin migración, sin aduana. Baja del avión y su camioneta está al pie de la escalinata. Los resorts del Corredor quedan a 20–30 minutos; la marina de Cabo San Lucas a 25. Si su destino es una residencia en Palmilla o Querencia, el trayecto es de 10 minutos.',
             "faqs" => [
-                ["q" => '¿Cuánto cuesta un vuelo privado de CDMX a Los Cabos?', "a" => 'Desde $3,800 USD por aeronave en Learjet 35 para 7 pasajeros. El Challenger 605 para 12 parte de $7,500 USD y el Gulfstream GV para 16 de $14,000 USD. El precio incluye tripulación, combustible y tasas de SJD; el avión completo es suyo, no se vende por asiento. Cotización por WhatsApp en 30 minutos.'],
+                ["q" => '¿Cuánto cuesta un vuelo privado de CDMX a Los Cabos?', "a" => 'Desde $3,800 USD por aeronave en Learjet 35 para 7 pasajeros. El Challenger 605 para 12 y el Gulfstream GV para 16 se cotizan bajo solicitud, con respuesta en 30 minutos. El precio incluye tripulación, combustible y tasas de SJD; el avión completo es suyo, no se vende por asiento. Cotización por WhatsApp en 30 minutos.'],
                 ["q" => '¿Cuánto dura el vuelo de Toluca a Los Cabos en jet privado?', "a" => '2 horas 30 minutos sin escalas desde el Aeropuerto Internacional de Toluca (AIT) hasta Los Cabos (SJD). Sumando los 40 minutos desde Santa Fe y los 10 minutos de abordaje Tarmac-to-Cabin, está en el Corredor en menos de 4 horas. En comercial, la misma ruta toma entre 5 y 6 horas de puerta a puerta.'],
                 ["q" => '¿Qué resort de Los Cabos queda más cerca de la terminal privada de SJD?', "a" => 'Los resorts del Corredor (Las Ventanas, Montage, Esperanza, One&Only Palmilla) están a 15–25 minutos de la terminal privada de SJD. La marina de Cabo San Lucas a 25 minutos y Chileno Bay a 20. Coordinamos la camioneta al pie de la escalinata para que no haya ninguna espera al aterrizar.'],
                 ["q" => '¿Hay migración en un vuelo privado nacional a Los Cabos?', "a" => 'No. CDMX–Los Cabos es ruta nacional: cero migración, cero aduana, cero revisión de equipaje. Al aterrizar en la terminal de aviación general de SJD baja directo a su vehículo. El tiempo en tierra es menor a 5 minutos. Solo necesita identificación oficial vigente por cada pasajero.'],
-                ["q" => '¿Puedo rentar un jet privado CDMX Los Cabos para un grupo corporativo?', "a" => 'Sí. El Challenger 605 con 12 asientos y cabina de pie es la aeronave más solicitada para offsites directivos y consejos en Los Cabos, desde $7,500 USD. Para grupos de hasta 16 con sala de juntas a bordo, el Gulfstream GV desde $14,000 USD. Cotizamos en menos de una hora.'],
+                ["q" => '¿Puedo rentar un jet privado CDMX Los Cabos para un grupo corporativo?', "a" => 'Sí. El Challenger 605 con 12 asientos y cabina de pie es la aeronave más solicitada para offsites directivos y consejos en Los Cabos, bajo cotización. Para grupos de hasta 16 con sala de juntas a bordo, el Gulfstream GV bajo cotización. Cotizamos en menos de una hora.'],
                 ["q" => '¿Qué equipaje puedo llevar en un jet privado Toluca Los Cabos?', "a" => 'El Learjet 35 admite alrededor de 7 maletas medianas más bolsas de golf en compartimento. El Challenger 605 tiene bodega de 115 pies cúbicos: tablas cortas de surf, equipo de pesca y maletas para 12 personas sin problema. No hay límite de peso por pasajero como en aerolínea; solo confirmamos el volumen total al cotizar.'],
                 ["q" => '¿Con cuánta anticipación reservo un vuelo privado a Los Cabos?', "a" => 'Con 2 horas desde su mensaje podemos tener el jet listo en Toluca si hay aeronave disponible. En Semana Santa, Thanksgiving y del 20 de diciembre al 6 de enero los slots de SJD se agotan: confirme con 72 horas de anticipación. La aeronave queda bloqueada en cuanto confirma por WhatsApp.'],
             ],
@@ -97,8 +97,8 @@ add_action("template_redirect", function() {
             "time"         => '1h 45m',
             "price"        => '3,000',
             "p1"           => '$3,000',
-            "p2"           => '$5,800',
-            "p3"           => '$10,500',
+            "p2"           => 'Cotizar',
+            "p3"           => 'Cotizar',
             "meta_desc"    => 'Vuelos privados a Puerto Vallarta desde CDMX en 1h 45m. Salida del FBO de Toluca, terminal privada en PVR a 10 min del Malecón. Desde $3,000 USD. JETCAB.',
             "wa_text"      => 'Hola%2C+quiero+cotizar+un+vuelo+privado+de+CDMX+a+Puerto+Vallarta.',
             "hero_img"     => '1518509562785-1e33754df4b5',
@@ -108,18 +108,18 @@ add_action("template_redirect", function() {
             "alt_1"        => 'Costa tropical de Puerto Vallarta y Bahía de Banderas',
             "alt_2"        => 'Jet privado en plataforma listo para vuelo a Puerto Vallarta',
             "alt_3"        => 'Alberca de resort en Puerto Vallarta con vista a la bahía',
-            "answer"       => 'Un vuelo privado de CDMX a Puerto Vallarta cuesta desde $3,000 USD por aeronave en Learjet 35 (7 pasajeros), $5,800 USD en Challenger 605 (12) y $10,500 USD en Gulfstream GV (16). Precio por avión, no por asiento. Sale del FBO privado de Toluca (AIT) y aterriza en 1 hora 45 minutos en la terminal privada de Puerto Vallarta (PVR), a 10 minutos del Malecón.',
+            "answer"       => 'Un vuelo privado de CDMX a Puerto Vallarta cuesta bajo cotización por aeronave en Learjet 35 (7 pasajeros), Challenger 605 (12) y Gulfstream GV (16) bajo cotización. Precio por avión, no por asiento. Sale del FBO privado de Toluca (AIT) y aterriza en 1 hora 45 minutos en la terminal privada de Puerto Vallarta (PVR), a 10 minutos del Malecón.',
             "about_1"      => 'Puerto Vallarta está a 1 hora 45 minutos de Toluca en jet privado. Un pasajero comercial desde la CDMX pasa esa misma hora y 45 minutos formado en el AICM antes de abordar. De puerta a puerta, lo privado reduce el viaje de 4 horas a menos de 2 horas 30 minutos.',
             "about_2"      => 'El Malecón queda a 10 minutos de la terminal privada de PVR. Para quien va a Punta Mita, donde están el Four Seasons y el St. Regis, el jet privado ahorra dos horas por tramo. Sin fila de migración nacional, sin aduana, sin banda de equipaje.',
             "about_3"      => 'La Riviera Nayarit empieza donde termina Bahía de Banderas: Sayulita, San Pancho, Punta de Mita, Litibú, todos a menos de una hora de PVR. La terminal de aviación general atiende su aeronave separada de la operación comercial. Camioneta al pie de la escalinata en cuanto apagan motores.',
             "faqs" => [
-                ["q" => '¿Cuánto cuesta un vuelo privado de CDMX a Puerto Vallarta?', "a" => 'Desde $3,000 USD por aeronave en Learjet 35 para 7 pasajeros. El Challenger 605 para 12 parte de $5,800 USD y el Gulfstream GV para 16 de $10,500 USD. Es precio por avión completo con tripulación, combustible y tasas de PVR; no se cobra por asiento. Cotización por WhatsApp en 30 minutos.'],
+                ["q" => '¿Cuánto cuesta un vuelo privado de CDMX a Puerto Vallarta?', "a" => 'Desde $3,000 USD por aeronave en Learjet 35 para 7 pasajeros. El Challenger 605 para 12 y el Gulfstream GV para 16 se cotizan bajo solicitud, con respuesta en 30 minutos. Es precio por avión completo con tripulación, combustible y tasas de PVR; no se cobra por asiento. Cotización por WhatsApp en 30 minutos.'],
                 ["q" => '¿Cuánto dura el vuelo privado de Toluca a Puerto Vallarta?', "a" => '1 hora 45 minutos sin escalas desde el Aeropuerto Internacional de Toluca (AIT) hasta Puerto Vallarta (PVR), una de las rutas más cortas de la flota JETCAB. De puerta a puerta, saliendo de Polanco, Lomas o Santa Fe, el trayecto completo queda en menos de 2 horas 30 minutos.'],
                 ["q" => '¿Vale la pena volar en jet privado de CDMX a Puerto Vallarta?', "a" => 'En comercial, el pasajero pasa más tiempo en el AICM que en el aire: 2 horas de terminal para 1 hora 20 de vuelo. En privado desde Toluca el tiempo total baja de 4 horas a menos de 2 horas 30. Si su destino es Punta Mita, el ahorro es de 2 horas por tramo.'],
                 ["q" => '¿Hay migración o aduana al llegar a Puerto Vallarta en jet privado?', "a" => 'No. Es vuelo nacional: sin migración, sin aduana, sin declaración. Aterriza en la terminal de aviación general de PVR, separada de las salas comerciales, y baja directo a su camioneta. Tiempo en tierra menor a 5 minutos. Solo se requiere identificación oficial vigente de cada pasajero.'],
                 ["q" => '¿A qué distancia queda Punta Mita de la terminal privada de PVR?', "a" => 'Aproximadamente 45 minutos al norte por la carretera 200 hacia la Riviera Nayarit. Sayulita está a 50 minutos y San Pancho a 55. Coordinamos camioneta blindada o SUV de lujo directo desde la escalinata hasta su resort o residencia en Punta Mita, Kupuri o Litibú.'],
                 ["q" => '¿Puedo hacer viaje redondo a Puerto Vallarta el mismo día?', "a" => 'Sí. Con 1 hora 45 por tramo es una de las rutas con más viajes redondos en el día: salida 8:00 de Toluca, comida de negocios o visita a propiedad en Punta Mita, y de regreso en la CDMX a las 19:00. La tripulación espera en PVR; no hay cargo de pernocta en ese caso.'],
-                ["q" => '¿Qué jet recomiendan para renta de jet privado CDMX Puerto Vallarta en familia?', "a" => 'Para 4 a 7 personas, el Learjet 35 desde $3,000 USD es la opción directa. Familias con niños, personal y más de 8 maletas viajan mejor en el Challenger 605 (12 asientos, cabina de pie) desde $5,800 USD. Mascotas en cabina previa confirmación. Catering de firma cargado antes del abordaje.'],
+                ["q" => '¿Qué jet recomiendan para renta de jet privado CDMX Puerto Vallarta en familia?', "a" => 'Para 4 a 7 personas, el Learjet 35 bajo cotización es la opción directa. Familias con niños, personal y más de 8 maletas viajan mejor en el Challenger 605 (12 asientos, cabina de pie) bajo cotización. Mascotas en cabina previa confirmación. Catering de firma cargado antes del abordaje.'],
             ],
         ],
         "monterrey" => [
@@ -133,8 +133,8 @@ add_action("template_redirect", function() {
             "time"         => '1h 15m',
             "price"        => '2,200',
             "p1"           => '$2,200',
-            "p2"           => '$4,500',
-            "p3"           => '$8,500',
+            "p2"           => 'Cotizar',
+            "p3"           => 'Cotizar',
             "meta_desc"    => 'Vuelos privados a Monterrey desde CDMX en 1h 15m. Salida del FBO privado de Toluca, terminal privada en MTY a 20 min de San Pedro. Desde $2,200 USD. JETCAB.',
             "wa_text"      => 'Hola%2C+quiero+cotizar+un+vuelo+privado+de+CDMX+a+Monterrey.',
             "hero_img"     => '1518773553398-650c184e0bb3',
@@ -144,17 +144,17 @@ add_action("template_redirect", function() {
             "alt_1"        => 'Skyline moderno de Monterrey con el Cerro de la Silla',
             "alt_2"        => 'Jet privado en plataforma listo para vuelo a Monterrey',
             "alt_3"        => 'Distrito corporativo de Monterrey de noche, destino de jets privados',
-            "answer"       => 'Un vuelo privado de CDMX a Monterrey cuesta desde $2,200 USD por aeronave en Learjet 35 (7 pasajeros), $4,500 USD en Challenger 605 (12) y $8,500 USD en Gulfstream GV (16). Es una de las tarifas nacionales más competitivas de JETCAB y se paga por avión, no por asiento. Despega del FBO privado de Toluca (AIT) y aterriza en 1 hora 15 minutos en la terminal privada de Monterrey (MTY), a 20 minutos de San Pedro Garza García.',
+            "answer"       => 'Un vuelo privado de CDMX a Monterrey cuesta bajo cotización por aeronave en Learjet 35 (7 pasajeros), Challenger 605 (12) y Gulfstream GV (16) bajo cotización. Es una de las tarifas nacionales más competitivas de JETCAB y se paga por avión, no por asiento. Despega del FBO privado de Toluca (AIT) y aterriza en 1 hora 15 minutos en la terminal privada de Monterrey (MTY), a 20 minutos de San Pedro Garza García.',
             "about_1"      => 'Monterrey es la capital industrial de México. CEMEX, FEMSA, Alfa, Vitro, Banorte: los corporativos que construyeron la industria mexicana moderna tienen aquí su sede. San Pedro Garza García, a 20 minutos de la terminal privada de MTY, es el municipio con mayor ingreso per cápita de América Latina.',
             "about_2"      => 'Con 1 hora 15 minutos, CDMX–Monterrey es la ruta más rápida de la flota nacional de JETCAB después de Guadalajara. La mayoría de nuestros clientes la vuela redonda en el día: consejo matutino en San Pedro, comida en Valle Oriente y de regreso en la CDMX antes de las 18:00. El ahorro frente a comercial se mide en horas, no en minutos.',
             "about_3"      => 'Vuelo nacional de Toluca (AIT) al Aeropuerto Internacional General Mariano Escobedo (MTY). Sin migración, sin aduana. Terminal de aviación general separada de la operación comercial. Chofer al pie de la escalinata y camioneta blindada disponible para la última milla a San Pedro o Apodaca.',
             "faqs" => [
-                ["q" => '¿Cuánto cuesta un vuelo privado de CDMX a Monterrey?', "a" => 'Desde $2,200 USD por aeronave en Learjet 35 para 7 pasajeros, una de las tarifas nacionales más bajas de JETCAB junto con Guadalajara. El Challenger 605 para 12 parte de $4,500 USD y el Gulfstream GV para 16 de $8,500 USD. Precio por avión completo, no por asiento. Cotización por WhatsApp en 30 minutos.'],
+                ["q" => '¿Cuánto cuesta un vuelo privado de CDMX a Monterrey?', "a" => 'Desde $2,200 USD por aeronave en Learjet 35 para 7 pasajeros, una de las tarifas nacionales más bajas de JETCAB junto con Guadalajara. El Challenger 605 para 12 y el Gulfstream GV para 16 se cotizan bajo solicitud, con respuesta en 30 minutos. Precio por avión completo, no por asiento. Cotización por WhatsApp en 30 minutos.'],
                 ["q" => '¿Cuánto dura el vuelo privado de Toluca a Monterrey?', "a" => '1 hora 15 minutos sin escalas desde el Aeropuerto Internacional de Toluca (AIT) hasta Monterrey (MTY). De puerta a puerta, desde Santa Fe hasta una oficina en San Pedro Garza García, el trayecto completo se resuelve en 2 horas 30 minutos. En comercial, la misma ruta toma de 4 a 5 horas.'],
                 ["q" => '¿Puedo ir y volver de Monterrey el mismo día en jet privado?', "a" => 'Sí, y es el patrón de reserva más común en esta ruta. Salida 7:00 de Toluca, en San Pedro Garza García a las 9:00. Regreso a las 17:00 y en la CDMX a las 18:30. La tripulación permanece en MTY durante su agenda, sin cargo de pernocta en viajes redondos el mismo día.'],
                 ["q" => '¿Qué aeropuerto usan los jets privados en Monterrey?', "a" => 'El Aeropuerto Internacional General Mariano Escobedo (MTY), en Apodaca, a 20 minutos de San Pedro Garza García y 25 de Valle Oriente. La terminal de aviación general está separada del tráfico comercial. Para reuniones en el Parque Industrial Apodaca o en Santa Catarina coordinamos la camioneta directo a la plataforma.'],
                 ["q" => '¿Hay migración en un vuelo privado de CDMX a Monterrey?', "a" => 'No. Es ruta nacional: sin migración, sin aduana, sin filtro de seguridad comercial. Baja de la aeronave y su vehículo lo espera al pie de la escalinata; el tiempo en tierra en MTY es menor a 5 minutos. Cada pasajero solo presenta una identificación oficial vigente al abordar en Toluca.'],
-                ["q" => '¿Conviene el Learjet o el Challenger para renta de jet privado CDMX Monterrey?', "a" => 'Para 1 a 7 ejecutivos con portafolios, el Learjet 35 desde $2,200 USD resuelve el viaje en 1 hora 15. Si viaja con su consejo o con inversionistas y necesita mesa de trabajo, cabina de pie y Starlink para seguir la junta en el aire, el Challenger 605 desde $4,500 USD es el escenario correcto.'],
+                ["q" => '¿Conviene el Learjet o el Challenger para renta de jet privado CDMX Monterrey?', "a" => 'Para 1 a 7 ejecutivos con portafolios, el Learjet 35 bajo cotización resuelve el viaje en 1 hora 15. Si viaja con su consejo o con inversionistas y necesita mesa de trabajo, cabina de pie y Starlink para seguir la junta en el aire, el Challenger 605 bajo cotización es el escenario correcto.'],
                 ["q" => '¿Cómo es el abordaje en Toluca para un jet privado a Monterrey?', "a" => 'Su camioneta ingresa al FBO privado del Aeropuerto Internacional de Toluca (AIT) y lo deja al pie de la escalinata. Del tarmac a la cabina pasan menos de 10 minutos. Sin sala de espera, sin filtro de rayos X comercial, sin anuncios por altavoz. Llega 15 minutos antes de la hora de despegue y listo.'],
             ],
         ],
@@ -169,8 +169,8 @@ add_action("template_redirect", function() {
             "time"         => '50m',
             "price"        => '1,800',
             "p1"           => '$1,800',
-            "p2"           => '$3,800',
-            "p3"           => '$7,000',
+            "p2"           => 'Cotizar',
+            "p3"           => 'Cotizar',
             "meta_desc"    => 'Vuelos privados a Guadalajara desde CDMX en 50 minutos. Salida del FBO privado de Toluca, terminal privada en GDL a 15 min de Zapopan. Desde $1,800 USD. JETCAB.',
             "wa_text"      => 'Hola%2C+quiero+cotizar+un+vuelo+privado+de+CDMX+a+Guadalajara.',
             "hero_img"     => '1558618666-fcd25c85cd64',
@@ -180,18 +180,18 @@ add_action("template_redirect", function() {
             "alt_1"        => 'Skyline moderno de Zapopan, Guadalajara, destino de vuelos privados',
             "alt_2"        => 'Jet privado en plataforma listo para vuelo a Guadalajara',
             "alt_3"        => 'Arquitectura colonial de Tlaquepaque en Guadalajara, Jalisco',
-            "answer"       => 'Un vuelo privado de CDMX a Guadalajara cuesta desde $1,800 USD por aeronave en Learjet 35 (7 pasajeros), $3,800 USD en Challenger 605 (12) y $7,000 USD en Gulfstream GV (16). Es la tarifa más baja de la flota nacional de JETCAB y se paga por avión, no por asiento. Sale del FBO privado de Toluca (AIT) y aterriza en 50 minutos en la terminal privada de Guadalajara (GDL), a 15 minutos de Zapopan.',
+            "answer"       => 'Un vuelo privado de CDMX a Guadalajara cuesta bajo cotización por aeronave en Learjet 35 (7 pasajeros), Challenger 605 (12) y Gulfstream GV (16) bajo cotización. Es la tarifa más baja de la flota nacional de JETCAB y se paga por avión, no por asiento. Sale del FBO privado de Toluca (AIT) y aterriza en 50 minutos en la terminal privada de Guadalajara (GDL), a 15 minutos de Zapopan.',
             "about_1"      => 'Guadalajara está a 50 minutos de Toluca en jet privado: la ruta nacional más corta de la flota JETCAB. En comercial, el mismo viaje consume de 3 a 4 horas de puerta a puerta. En privado baja a menos de 2 horas en total. La cuenta es simple.',
             "about_2"      => 'Oracle, Intel, IBM, HP y Luxoft operan en el corredor tecnológico de Zapopan, a 15 minutos de la terminal privada de GDL. Andares y Puerta de Hierro a 20. La Ribera de Chapala, a 45 minutos del aeropuerto, es destino frecuente de clientes con residencia de fin de semana en Ajijic.',
             "about_3"      => 'Vuelo nacional de Toluca (AIT) al Aeropuerto Internacional Miguel Hidalgo y Costilla (GDL). Sin migración, sin aduana. La mayoría de nuestros clientes vuela redondo en el día: junta en Zapopan por la mañana, de regreso en la CDMX antes de la cena. Tequila queda a 50 minutos por carretera desde el aeropuerto.',
             "faqs" => [
-                ["q" => '¿Cuánto cuesta un vuelo privado de CDMX a Guadalajara?', "a" => 'Desde $1,800 USD por aeronave en Learjet 35 para 7 pasajeros, la tarifa nacional más baja de JETCAB. El Challenger 605 para 12 parte de $3,800 USD y el Gulfstream GV para 16 de $7,000 USD. El precio cubre el avión completo, tripulación y tasas de GDL; nunca por asiento. Cotización por WhatsApp en 30 minutos.'],
+                ["q" => '¿Cuánto cuesta un vuelo privado de CDMX a Guadalajara?', "a" => 'Desde $1,800 USD por aeronave en Learjet 35 para 7 pasajeros, la tarifa nacional más baja de JETCAB. El Challenger 605 para 12 y el Gulfstream GV para 16 se cotizan bajo solicitud, con respuesta en 30 minutos. El precio cubre el avión completo, tripulación y tasas de GDL; nunca por asiento. Cotización por WhatsApp en 30 minutos.'],
                 ["q" => '¿Cuánto dura el vuelo privado de Toluca a Guadalajara?', "a" => '50 minutos sin escalas desde el Aeropuerto Internacional de Toluca (AIT) hasta Guadalajara (GDL), la ruta más corta de la flota nacional. De puerta a puerta, desde Santa Fe hasta una oficina en Zapopan, el trayecto completo queda por debajo de 2 horas. En comercial son de 3 a 4 horas.'],
                 ["q" => '¿Vale la pena un jet privado para un vuelo tan corto a Guadalajara?', "a" => 'El pasajero comercial pasa de 2 a 3 horas en el AICM por 1 hora 10 de vuelo. En privado desde Toluca el viaje completo baja a menos de 2 horas de puerta a puerta: un ahorro de 2 horas o más por tramo. En un viaje redondo el mismo día recupera media jornada de trabajo.'],
                 ["q" => '¿Puedo hacer viaje redondo CDMX Guadalajara el mismo día?', "a" => 'Sí, es el patrón más frecuente en esta ruta. Salida 7:00 de Toluca, en Zapopan a las 8:30. Regreso a las 16:00 y en la CDMX a las 18:00. La tripulación permanece en GDL durante su agenda sin cargo de pernocta. Para agendas que cierran tarde, el jet espera hasta la hora que usted indique.'],
                 ["q" => '¿Qué aeropuerto usan los jets privados en Guadalajara?', "a" => 'El Aeropuerto Internacional Miguel Hidalgo y Costilla (GDL), en Tlajomulco, a 15 minutos de Zapopan, 20 de Providencia y 25 de Andares. La terminal de aviación general opera separada de las salas comerciales. Camioneta blindada disponible al pie de la escalinata para la última milla a Puerta de Hierro o Chapala.'],
                 ["q" => '¿Hay migración en un vuelo privado nacional a Guadalajara?', "a" => 'No. CDMX–Guadalajara es ruta nacional: sin migración, sin aduana, sin filtro comercial. Baja de la aeronave y su vehículo lo espera en plataforma; el tiempo en tierra en GDL es menor a 5 minutos. Cada pasajero presenta identificación oficial vigente al abordar en el FBO de Toluca y nada más.'],
-                ["q" => '¿Qué jet conviene para renta de jet privado CDMX Guadalajara?', "a" => 'Para 1 a 7 ejecutivos, el Learjet 35 desde $1,800 USD es la decisión lógica: 50 minutos de vuelo y la tarifa más baja. Si lleva a su consejo o a inversionistas, el Challenger 605 desde $3,800 USD ofrece cabina de pie, mesa de juntas y Starlink. Para 16 pasajeros, el Gulfstream GV desde $7,000 USD.'],
+                ["q" => '¿Qué jet conviene para renta de jet privado CDMX Guadalajara?', "a" => 'Para 1 a 7 ejecutivos, el Learjet 35 bajo cotización es la decisión lógica: 50 minutos de vuelo y la tarifa más baja. Si lleva a su consejo o a inversionistas, el Challenger 605 bajo cotización ofrece cabina de pie, mesa de juntas y Starlink. Para 16 pasajeros, el Gulfstream GV bajo cotización.'],
             ],
         ],
     ];
@@ -207,6 +207,17 @@ if (!function_exists('jc_json_str')) {
     // Escapa un string para usarlo dentro de un literal JSON (esc_js produce \' que es JSON inválido).
     function jc_json_str($str) {
         return substr(json_encode((string)$str, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES), 1, -1);
+    }
+}
+
+if (!function_exists('jc_price_html')) {
+    // Prints "From $X USD" when a brief price exists, otherwise a quote-on-request label.
+    function jc_price_html($v, $from = 'From', $quote = 'Quote on request') {
+        $v = trim((string)$v);
+        if (preg_match('/^\$?[0-9][0-9,]*$/', $v)) {
+            return '<span class="jc-fleet-price-from">' . esc_html($from) . '</span><span class="jc-fleet-price-amount">' . esc_html(ltrim($v, '$') === $v ? '$' . $v : $v) . ' USD</span>';
+        }
+        return '<span class="jc-fleet-price-amount jc-fleet-price-quote">' . esc_html($quote) . '</span>';
     }
 }
 
@@ -459,7 +470,7 @@ body{background:var(--dark);color:var(--text);font-family:var(--ff-body);line-he
   <div class="jc-fleet-grid">
     <div class="jc-fleet-card">
       <div class="jc-fleet-card-img">
-        <img src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=800&q=75" alt="Learjet 35, light jet para vuelos privados nacionales desde Toluca" loading="lazy">
+        <img src="https://jetcab.mx/wp-content/uploads/2024/11/Learjet35enrenta.jpeg" width="700" height="394" decoding="async" alt="Learjet 35, light jet para vuelos privados nacionales desde Toluca" loading="lazy">
         <span class="jc-fleet-badge">Light Jet</span>
       </div>
       <div class="jc-fleet-body">
@@ -471,13 +482,13 @@ body{background:var(--dark);color:var(--text);font-family:var(--ff-body);line-he
           <div class="jc-fleet-spec"><strong>850 km/h</strong>Crucero</div>
           <div class="jc-fleet-spec"><strong>Wi-Fi</strong>Disponible</div>
         </div>
-        <div class="jc-fleet-price"><span class="jc-fleet-price-from">Desde</span><span class="jc-fleet-price-amount"><?php echo esc_html($r['p1']); ?> USD</span></div>
+        <div class="jc-fleet-price"><?php echo jc_price_html($r['p1'], 'Desde', 'Cotizar'); ?></div>
         <a href="<?php echo $wa; ?>" class="jc-fleet-cta" target="_blank" rel="noopener">Reservar esta aeronave</a>
       </div>
     </div>
     <div class="jc-fleet-card">
       <div class="jc-fleet-card-img">
-        <img src="https://images.unsplash.com/photo-1581093806997-124204d9fa9d?auto=format&fit=crop&w=800&q=75" alt="Cabina del Challenger 605, jet privado midsize para grupos corporativos" loading="lazy">
+        <img src="https://jetcab.mx/wp-content/uploads/2024/11/Challenger-605-en-renta.jpeg" width="700" height="394" decoding="async" alt="Cabina del Challenger 605, jet privado midsize para grupos corporativos" loading="lazy">
         <span class="jc-fleet-badge">Midsize Jet</span>
       </div>
       <div class="jc-fleet-body">
@@ -489,13 +500,13 @@ body{background:var(--dark);color:var(--text);font-family:var(--ff-body);line-he
           <div class="jc-fleet-spec"><strong>882 km/h</strong>Crucero</div>
           <div class="jc-fleet-spec"><strong>Starlink</strong>Wi-Fi</div>
         </div>
-        <div class="jc-fleet-price"><span class="jc-fleet-price-from">Desde</span><span class="jc-fleet-price-amount"><?php echo esc_html($r['p2']); ?> USD</span></div>
+        <div class="jc-fleet-price"><?php echo jc_price_html($r['p2'], 'Desde', 'Cotizar'); ?></div>
         <a href="<?php echo $wa; ?>" class="jc-fleet-cta" target="_blank" rel="noopener">Reservar esta aeronave</a>
       </div>
     </div>
     <div class="jc-fleet-card">
       <div class="jc-fleet-card-img">
-        <img src="https://images.unsplash.com/photo-1540962351504-03099e0a754b?auto=format&fit=crop&w=800&q=75" alt="Gulfstream GV, jet privado de cabina grande con recámara a bordo" loading="lazy">
+        <img src="https://jetcab.mx/wp-content/uploads/2024/11/Gulfstream-Gv-en-Renta.jpeg" width="700" height="394" decoding="async" alt="Gulfstream GV, jet privado de cabina grande con recámara a bordo" loading="lazy">
         <span class="jc-fleet-badge">Cabina Grande</span>
       </div>
       <div class="jc-fleet-body">
@@ -507,7 +518,7 @@ body{background:var(--dark);color:var(--text);font-family:var(--ff-body);line-he
           <div class="jc-fleet-spec"><strong>904 km/h</strong>Crucero</div>
           <div class="jc-fleet-spec"><strong>Recámara</strong>A bordo</div>
         </div>
-        <div class="jc-fleet-price"><span class="jc-fleet-price-from">Desde</span><span class="jc-fleet-price-amount"><?php echo esc_html($r['p3']); ?> USD</span></div>
+        <div class="jc-fleet-price"><?php echo jc_price_html($r['p3'], 'Desde', 'Cotizar'); ?></div>
         <a href="<?php echo $wa; ?>" class="jc-fleet-cta" target="_blank" rel="noopener">Reservar esta aeronave</a>
       </div>
     </div>

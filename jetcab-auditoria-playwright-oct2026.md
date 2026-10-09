@@ -94,3 +94,12 @@ Trabajo de tres especialistas en paralelo (SEO técnico, GEO/AEO para IAs, conte
 2. WPCode: añadir `jetcab-routes-domestic-es-v1.php`, `jetcab-landing-confidencialidad.php`, `jetcab-landing-tipos-jet.php`, `jetcab-sitemap-landings.php`, `jetcab-hreflang-home-es.php` (PHP Snippet, Run Everywhere). Luego Ajustes → Enlaces permanentes → Guardar.
 3. Sustituir el snippet 2890 (/en/) por `jetcab-en.html` y el 2896 por `jetcab-jsonld-global-v2.html` (tras rellenar placeholders).
 4. Subir `jetcab-llms.txt` como `/llms.txt`. Reenviar `sitemap_index.xml` en Search Console y pedir indexación de las 17 landings.
+
+---
+
+# Ronda 3 — Ajustes solicitados por Luis (9 oct 2026)
+
+- **Hero EN restaurado**: fuera el párrafo answer-first dentro del hero (rompía el layout móvil). Vuelve a ser título + vídeo, con el vídeo activo también en móvil. Además el hero ya no recorta contenido: `height:auto; min-height:100vh` y padding superior para que el título nunca quede bajo la barra de navegación ni bajo el selector ES/EN. Verificado a 390 y 1440 px.
+- **Solo precios del brief.** Se conservan únicamente: rutas domésticas en Learjet 35 (Guadalajara $1,800, Monterrey $2,200, Puerto Vallarta $3,000, Cancún $3,200, Los Cabos $3,800 USD), CDMX–Cancún en Challenger 605 $6,500 y Gulfstream $12,000 USD, Light Jet desde $80,000 MXN y Long Range desde $100,000 USD. Todo lo demás (tarifas por hora, rutas internacionales, Challenger/Gulfstream en otras rutas, destinos sin landing, Hawker/Learjet 45/G650ER) muestra **«Quote on request» / «Cotizar»**. Aplicado en home EN (guía, FAQ visible y schema, modales de flota y destino), 9 rutas EN, 5 rutas ES, landings, 6 páginas de flota, JSON-LD global v2 y llms.txt. Los schema `Offer` sin precio del brief quedan sin `price` (válidos).
+- **Fotos reales de aeronaves** (las de la página ES, `/wp-content/uploads/2024/11/`): héroe y miniatura exterior de las 6 páginas de flota, cards de aeronave en las 9 rutas EN y 5 ES, landings de tipos de jet y confidencialidad. En la landing Light Jets, «Hawker 400» y «Learjet 75» pasan a **Hawker 800** y **Learjet 45**, que son los que tienen foto real en el sitio.
+- **AdSense**: nuevo snippet `jetcab-disable-adsense.php` (WPCode, PHP, Run Everywhere): bloquea la etiqueta de Site Kit, anula la cola `adsbygoogle`, limpia del HTML los scripts/`<ins>`/meta de AdSense y elimina en el navegador cualquier anuncio que se inyecte después. Complemento manual: Site Kit → AdSense → desconectar, y en la cuenta AdSense → Sitios → jetcab.mx → Auto Ads OFF.

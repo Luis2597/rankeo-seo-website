@@ -22,14 +22,14 @@ add_action("template_redirect", function() {
             "time"         => "3h 30m",
             "slug"         => "miami",
             "es_live"      => false,
-            "answer"       => "A JETCAB private jet from Mexico City (Toluca, AIT) to Miami Opa-locka Executive (OPF) takes 3 h 30 min nonstop and starts at $4,800 USD one-way on a Learjet 35 for 7 passengers, $9,500 USD on a Challenger 605 for 12, and $18,000 USD on a Gulfstream for 16. U.S. Customs clears at the FBO in under 15 minutes. Passport and B1/B2 visa required.",
+            "answer"       => "A JETCAB private jet from Mexico City (Toluca, AIT) to Miami Opa-locka Executive (OPF) takes 3 h 30 min nonstop and is quoted per full aircraft on request (Learjet 35 for 7 passengers, Challenger 605 for 12 or Gulfstream for 16), confirmed in 30 minutes. U.S. Customs clears at the FBO in under 15 minutes. Passport and B1/B2 visa required.",
             "slug_es"      => "vuelo-privado-cdmx-miami",
             "wa_text"      => "Hi%2C+I%27d+like+a+quote+for+a+private+jet+from+Mexico+City+to+Miami.",
-            "meta_desc"    => "Private jet from Mexico City (Toluca) to Miami nonstop in 3h 30m. Land at Opa-locka Executive, 20 min from South Beach. US Customs at the FBO. From \$4,800 USD.",
+            "meta_desc"    => "Private jet from Mexico City (Toluca) to Miami nonstop in 3h 30m. Land at Opa-locka Executive, 20 min from South Beach. US Customs at the FBO. Quote in 30 min.",
             "fomo"         => "Availability confirmed within 30 minutes",
-            "p1"           => "\$4,800",
-            "p2"           => "\$9,500",
-            "p3"           => "\$18,000",
+            "p1"           => "Quote on request",
+            "p2"           => "Quote on request",
+            "p3"           => "Quote on request",
             "cta_urgency"  => "Flying to Miami this week?",
             "cta_sub"      => "Availability open. Send your dates — quote in 30 minutes.",
             "hero_img"     => "1519501025264-65ba15a82390",
@@ -53,7 +53,7 @@ add_action("template_redirect", function() {
                 ["q" => "How long is the flight from Mexico City to Miami on a private jet?", "a" => "3 hours 30 minutes nonstop from Toluca (AIT) to Miami. Commercial routes via Dallas or Atlanta typically take 6 to 7 hours door to door."],
                 ["q" => "Which airport do private jets use in Miami?", "a" => "JETCAB flies into Opa-locka Executive Airport (OPF), 20 minutes from South Beach and 25 minutes from Brickell. We can also arrange arrivals at Fort Lauderdale Executive (FXE) depending on your destination."],
                 ["q" => "Is there US Customs at Opa-locka for private jet arrivals?", "a" => "Yes. US Customs and Border Protection operates at OPF. Private jet passengers clear at the FBO — the process takes under 15 minutes with no queues."],
-                ["q" => "How much does a private jet from Mexico City to Miami cost?", "a" => "From \$4,800 USD for a Learjet 35 (up to 7 passengers). Challenger 605 from \$9,500 for groups up to 12. Gulfstream GV from \$18,000. Price is the full aircraft, not per seat."],
+                ["q" => "How much does a private jet from Mexico City to Miami cost?", "a" => "Quoted per full aircraft, not per seat: Learjet 35 (up to 7 passengers), Challenger 605 (up to 12) or Gulfstream GV (up to 16). Confirmed price in 30 minutes, including crew, fuel, catering and permits."],
                 ["q" => "Can I fly private from Mexico City to Miami same day?", "a" => "Yes. JETCAB has confirmed same-day availability on this route with as little as 2 hours notice, subject to fleet availability."],
             ],
         ],
@@ -67,14 +67,14 @@ add_action("template_redirect", function() {
             "time"         => "2h 45m",
             "slug"         => "houston",
             "es_live"      => false,
-            "answer"       => "A JETCAB private jet from Mexico City (Toluca, AIT) to Houston Hobby (HOU) takes 2 h 45 min nonstop and starts at $3,800 USD one-way on a Learjet 35 for 7 passengers, $7,500 USD on a Challenger 605 for 12, and $14,000 USD on a Gulfstream for 16. Hobby is 10 minutes from downtown. Same-day round trips are JETCAB's most common booking on this route.",
+            "answer"       => "A JETCAB private jet from Mexico City (Toluca, AIT) to Houston Hobby (HOU) takes 2 h 45 min nonstop and is quoted per full aircraft on request (Learjet 35 for 7 passengers, Challenger 605 for 12 or Gulfstream for 16), confirmed in 30 minutes. Hobby is 10 minutes from downtown. Same-day round trips are JETCAB's most common booking on this route.",
             "slug_es"      => "vuelo-privado-cdmx-houston",
             "wa_text"      => "Hi%2C+I%27d+like+a+quote+for+a+private+jet+from+Mexico+City+to+Houston.",
-            "meta_desc"    => "Private jet from Mexico City (Toluca) to Houston in 2h 45m. Land at Hobby Airport, 10 min from Downtown and the Texas Medical Center. From \$3,800 USD. Same-day.",
+            "meta_desc"    => "Private jet from Mexico City (Toluca) to Houston in 2h 45m. Land at Hobby Airport, 10 min from Downtown and the Texas Medical Center. Quote in 30 min. Same-day.",
             "fomo"         => "Availability confirmed within 30 minutes",
-            "p1"           => "\$3,800",
-            "p2"           => "\$7,500",
-            "p3"           => "\$14,000",
+            "p1"           => "Quote on request",
+            "p2"           => "Quote on request",
+            "p3"           => "Quote on request",
             "cta_urgency"  => "Business trip to Houston?",
             "cta_sub"      => "Our most-requested route. Quote in under 30 minutes.",
             "hero_img"     => "1486325212027-8081e485255e",
@@ -99,7 +99,7 @@ add_action("template_redirect", function() {
                 ["q" => "Which Houston airport do private jets use from Mexico City?", "a" => "JETCAB primarily uses William P. Hobby Airport (HOU), 10 minutes from downtown Houston. For the Energy Corridor, we can arrange arrivals at Houston Executive Airport (TME), 20 minutes closer to the west side."],
                 ["q" => "Why is Mexico City to Houston the most popular business route for JETCAB?", "a" => "Houston is the global hub for energy and petrochemicals, with strong Mexico-US ties in oil, construction, and infrastructure. Many of our clients fly this route weekly — often same-day round trips."],
                 ["q" => "Can I fly to Houston and back in the same day from Mexico City?", "a" => "Yes. At 2 hours 45 minutes each way, a same-day round trip is the most common booking pattern. You can arrive for a 10am meeting and be back in Mexico City by 9pm."],
-                ["q" => "How much does a private jet from Mexico City to Houston cost?", "a" => "From \$3,800 USD for a Learjet 35 (7 passengers). Challenger 605 from \$7,500. Gulfstream GV from \$14,000. Full aircraft, not per seat."],
+                ["q" => "How much does a private jet from Mexico City to Houston cost?", "a" => "Quoted per full aircraft, not per seat: Learjet 35 (up to 7 passengers), Challenger 605 (up to 12) or Gulfstream GV (up to 16). Confirmed price in 30 minutes, including crew, fuel, catering and permits."],
             ],
         ],
         "new-york" => [
@@ -112,14 +112,14 @@ add_action("template_redirect", function() {
             "time"         => "5h 30m",
             "slug"         => "new-york",
             "es_live"      => false,
-            "answer"       => "A JETCAB private jet from Mexico City (Toluca, AIT) to Teterboro (TEB), 12 minutes from Midtown Manhattan, takes 5 h 30 min and starts at $9,500 USD one-way on a midsize jet for 8 passengers, $18,500 USD on a Challenger 605, and $28,000 USD nonstop on a Gulfstream for 16. Passport and B1/B2 visa required; JETCAB files eAPIS and arranges CBP at the FBO.",
+            "answer"       => "A JETCAB private jet from Mexico City (Toluca, AIT) to Teterboro (TEB), 12 minutes from Midtown Manhattan, takes 5 h 30 min and is quoted per full aircraft on request (midsize jet for 8 passengers, Challenger 605 for 12 or Gulfstream nonstop for 16), confirmed in 30 minutes. Passport and B1/B2 visa required; JETCAB files eAPIS and arranges CBP at the FBO.",
             "slug_es"      => "vuelo-privado-cdmx-nueva-york",
             "wa_text"      => "Hi%2C+I%27d+like+a+quote+for+a+private+jet+from+Mexico+City+to+New+York.",
-            "meta_desc"    => "Private jet from Mexico City (Toluca) to New York in 5h 30m. Land at Teterboro, 12 min from Midtown Manhattan. Skip JFK. From \$9,500 USD. DGAC certified.",
+            "meta_desc"    => "Private jet from Mexico City (Toluca) to New York in 5h 30m. Land at Teterboro, 12 min from Midtown Manhattan. Skip JFK. Quote in 30 min. DGAC certified.",
             "fomo"         => "Availability confirmed within 30 minutes",
-            "p1"           => "\$9,500",
-            "p2"           => "\$18,500",
-            "p3"           => "\$28,000",
+            "p1"           => "Quote on request",
+            "p2"           => "Quote on request",
+            "p3"           => "Quote on request",
             "cta_urgency"  => "New York this month?",
             "cta_sub"      => "One long-range jet on this route this week. Send your dates.",
             "hero_img"     => "1534430480872-e9a62c0c8d96",
@@ -143,7 +143,7 @@ add_action("template_redirect", function() {
                 ["q" => "Why land at Teterboro instead of JFK for a private jet to New York?", "a" => "Teterboro Airport (TEB) is 12 minutes from Midtown Manhattan. JFK averages 45 minutes by car, often more. For business travelers, this difference compounds across every trip."],
                 ["q" => "How long is the private jet flight from Mexico City to New York?", "a" => "5 hours 30 minutes nonstop from Toluca (AIT) to Teterboro (TEB). Commercial routes via Dallas or Atlanta typically take 8 to 10 hours door to door."],
                 ["q" => "Does a private jet clear US Customs at Teterboro?", "a" => "Yes. US Customs and Border Protection operates at Teterboro for private jet arrivals. The process at the FBO takes under 10 minutes. A valid passport and U.S. B1/B2 visa are required; ESTA is not valid on private aircraft."],
-                ["q" => "How much does it cost to charter a private jet from Mexico City to New York?", "a" => "From \$9,500 USD for a midsize jet (8 passengers). Gulfstream GV from \$28,000 for up to 16 passengers. For groups of 4 or more, the per-person cost is comparable to business class."],
+                ["q" => "How much does it cost to charter a private jet from Mexico City to New York?", "a" => "Quoted per full aircraft, not per seat: midsize jet (8 passengers) or Gulfstream GV (up to 16, nonstop). Confirmed price in 30 minutes. For groups of 4 or more, the per-person cost is comparable to business class."],
                 ["q" => "Can the Gulfstream GV fly nonstop from Mexico City to New York?", "a" => "Yes. The Gulfstream GV has the range to fly CDMX to New York nonstop in 5 hours 30 minutes. It includes a full bedroom, conference seating for 8, and satellite Wi-Fi."],
             ],
         ],
@@ -157,14 +157,14 @@ add_action("template_redirect", function() {
             "time"         => "3h 45m",
             "slug"         => "los-angeles",
             "es_live"      => false,
-            "answer"       => "A JETCAB private jet from Mexico City (Toluca, AIT) to Van Nuys (VNY), 15 minutes from Beverly Hills, takes 3 h 45 min nonstop and starts at $5,200 USD one-way on a Learjet 35 for 7 passengers, $10,500 USD on a Challenger 605 for 12, and $19,000 USD on a Gulfstream for 16. U.S. Customs clears at the FBO. Passport and B1/B2 visa required.",
+            "answer"       => "A JETCAB private jet from Mexico City (Toluca, AIT) to Van Nuys (VNY), 15 minutes from Beverly Hills, takes 3 h 45 min nonstop and is quoted per full aircraft on request (Learjet 35 for 7 passengers, Challenger 605 for 12 or Gulfstream for 16), confirmed in 30 minutes. U.S. Customs clears at the FBO. Passport and B1/B2 visa required.",
             "slug_es"      => "vuelo-privado-cdmx-los-angeles",
             "wa_text"      => "Hi%2C+I%27d+like+a+quote+for+a+private+jet+from+Mexico+City+to+Los+Angeles.",
-            "meta_desc"    => "Private jet from Mexico City (Toluca) to Los Angeles in 3h 45m. Land at Van Nuys, 15 min from Beverly Hills. Skip LAX. From \$5,200 USD. Jet ready in 2 hours.",
+            "meta_desc"    => "Private jet from Mexico City (Toluca) to Los Angeles in 3h 45m. Land at Van Nuys, 15 min from Beverly Hills. Skip LAX. Quote in 30 min. Jet ready in 2 hours.",
             "fomo"         => "Availability confirmed within 30 minutes",
-            "p1"           => "\$5,200",
-            "p2"           => "\$10,500",
-            "p3"           => "\$19,000",
+            "p1"           => "Quote on request",
+            "p2"           => "Quote on request",
+            "p3"           => "Quote on request",
             "cta_urgency"  => "Los Angeles this week?",
             "cta_sub"      => "Availability confirmed in under 30 minutes.",
             "hero_img"     => "1504941812617-26c6e088459a",
@@ -188,7 +188,7 @@ add_action("template_redirect", function() {
                 ["q" => "What airport do private jets use in Los Angeles when flying from Mexico City?", "a" => "JETCAB flies into Van Nuys Airport (VNY), the busiest general aviation airport in California. No commercial traffic. We can also arrange arrivals at Burbank Bob Hope (BUR) or Santa Monica Airport (SMO) based on your destination."],
                 ["q" => "How long is the private jet flight from Mexico City to Los Angeles?", "a" => "3 hours 45 minutes nonstop from Toluca (AIT) to Van Nuys (VNY). Commercial routes with connections typically take 6 to 8 hours door to door."],
                 ["q" => "Is Van Nuys Airport closer to Beverly Hills than LAX?", "a" => "Significantly closer. Van Nuys is 15 minutes from Beverly Hills. LAX is 25 to 45 minutes in typical traffic — and LAX traffic is unpredictable. For Malibu, VNY saves up to an hour each way."],
-                ["q" => "How much does a private jet from Mexico City to Los Angeles cost?", "a" => "From \$5,200 USD for a Learjet 35 (7 passengers). Challenger 605 from \$10,500. Gulfstream GV from \$19,000. Full aircraft pricing."],
+                ["q" => "How much does a private jet from Mexico City to Los Angeles cost?", "a" => "Quoted per full aircraft, not per seat: Learjet 35 (up to 7 passengers), Challenger 605 (up to 12) or Gulfstream GV (up to 16). Confirmed price in 30 minutes, including crew, fuel, catering and permits."],
                 ["q" => "Do I need US Customs for a private jet to Los Angeles from Mexico?", "a" => "Yes. US Customs clears at Van Nuys Airport for arrivals from Mexico. The process takes under 15 minutes at the FBO. A valid passport and U.S. B1/B2 visa are required; ESTA is not valid on private aircraft."],
             ],
         ],
@@ -205,6 +205,17 @@ if (!function_exists('jc_json_str')) {
     // Escape a string for use inside a JSON string literal (esc_js produces \' which is invalid JSON).
     function jc_json_str($str) {
         return substr(json_encode((string)$str, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES), 1, -1);
+    }
+}
+
+if (!function_exists('jc_price_html')) {
+    // Prints "From $X USD" when a brief price exists, otherwise a quote-on-request label.
+    function jc_price_html($v, $from = 'From', $quote = 'Quote on request') {
+        $v = trim((string)$v);
+        if (preg_match('/^\$?[0-9][0-9,]*$/', $v)) {
+            return '<span class="jc-fleet-price-from">' . esc_html($from) . '</span><span class="jc-fleet-price-amount">' . esc_html(ltrim($v, '$') === $v ? '$' . $v : $v) . ' USD</span>';
+        }
+        return '<span class="jc-fleet-price-amount jc-fleet-price-quote">' . esc_html($quote) . '</span>';
     }
 }
 
@@ -240,7 +251,7 @@ function jetcab_route_page_v3($r) {
 <script type="application/ld+json">
 {"@context":"https://schema.org","@graph":[
 {"@type":"WebPage","@id":"<?php echo $canonical; ?>#webpage","url":"<?php echo $canonical; ?>","name":"<?php echo jc_json_str($r['title']); ?>","description":"<?php echo jc_json_str($r['meta_desc']); ?>","primaryImageOfPage":{"@type":"ImageObject","url":"<?php echo $hero_url; ?>"},"breadcrumb":{"@id":"<?php echo $canonical; ?>#breadcrumb"},"speakable":{"@type":"SpeakableSpecification","cssSelector":[".jc-answer","h1",".jc-faq-item h3",".jc-faq-item p"]},"isPartOf":{"@id":"https://jetcab.mx/#website"},"about":{"@id":"https://jetcab.mx/#organization"},"inLanguage":"en"},
-{"@type":"Service","name":"Private Jet Charter Mexico City to <?php echo jc_json_str($r['dest_full']); ?>","description":"<?php echo jc_json_str($r['meta_desc']); ?>","provider":{"@type":"LocalBusiness","@id":"https://jetcab.mx/#organization","name":"JETCAB","url":"https://jetcab.mx/","telephone":"+52-729-108-1200","foundingDate":"1999","areaServed":"Mexico"},"serviceType":"Air Charter","areaServed":["Mexico","<?php echo jc_json_str($r['dest_full']); ?>"],"offers":{"@type":"Offer","priceCurrency":"USD","price":"<?php echo str_replace(array('$',','),'',$r['p1']); ?>","priceSpecification":{"@type":"UnitPriceSpecification","priceCurrency":"USD","price":"<?php echo str_replace(array('$',','),'',$r['p1']); ?>","unitText":"per aircraft, one-way"},"availability":"https://schema.org/InStock","url":"<?php echo $canonical; ?>"}},
+{"@type":"Service","name":"Private Jet Charter Mexico City to <?php echo jc_json_str($r['dest_full']); ?>","description":"<?php echo jc_json_str($r['meta_desc']); ?>","provider":{"@type":"LocalBusiness","@id":"https://jetcab.mx/#organization","name":"JETCAB","url":"https://jetcab.mx/","telephone":"+52-729-108-1200","foundingDate":"1999","areaServed":"Mexico"},"serviceType":"Air Charter","areaServed":["Mexico","<?php echo jc_json_str($r['dest_full']); ?>"],"offers":{"@type":"Offer","url":"<?php echo $canonical; ?>","priceCurrency":"USD","availability":"https://schema.org/InStock"}},
 {"@type":"BreadcrumbList","@id":"<?php echo $canonical; ?>#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"JETCAB","item":"https://jetcab.mx/en/"},{"@type":"ListItem","position":2,"name":"Private Jet Routes from Mexico City","item":"https://jetcab.mx/en/#destinations"},{"@type":"ListItem","position":3,"name":"Mexico City to <?php echo jc_json_str($r['dest']); ?>"}]},
 {"@type":"FAQPage","mainEntity":[<?php $fq=array_map(function($f){return '{"@type":"Question","name":"'.jc_json_str($f["q"]).'","acceptedAnswer":{"@type":"Answer","text":"'.jc_json_str($f["a"]).'"}}';},$r['faqs']);echo implode(',',$fq);?>]}
 ]}
@@ -529,7 +540,7 @@ html{scroll-behavior:smooth}body{background:var(--dark);color:var(--text);font-f
     <div class="jc-fleet-grid">
       <div class="jc-fleet-card">
         <div class="jc-fleet-img">
-          <img src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=800&q=75" alt="Light jet private cabin interior" loading="lazy">
+          <img src="https://jetcab.mx/wp-content/uploads/2024/11/Learjet35enrenta.jpeg" width="700" height="394" decoding="async" alt="Learjet 35 light jet — private jet Mexico City to <?php echo esc_attr($r['dest']); ?>" loading="lazy">
           <span class="jc-fleet-badge">Light Jet</span>
         </div>
         <div class="jc-fleet-body">
@@ -540,13 +551,13 @@ html{scroll-behavior:smooth}body{background:var(--dark);color:var(--text);font-f
             <div class="jc-fleet-spec"><strong>850 km/h</strong>Cruise</div>
             <div class="jc-fleet-spec"><strong>Wi-Fi</strong>Available</div>
           </div>
-          <div class="jc-fleet-price"><span class="jc-fleet-price-from">From</span><span class="jc-fleet-price-amount"><?php echo esc_html($r['p1']); ?> USD</span></div>
+          <div class="jc-fleet-price"><?php echo jc_price_html($r['p1']); ?></div>
           <a href="<?php echo $wa; ?>" class="jc-fleet-cta" target="_blank" rel="noopener">Book this aircraft</a>
         </div>
       </div>
       <div class="jc-fleet-card">
         <div class="jc-fleet-img">
-          <img src="https://images.unsplash.com/photo-1581093806997-124204d9fa9d?auto=format&fit=crop&w=800&q=75" alt="Midsize private jet Challenger cabin" loading="lazy">
+          <img src="https://jetcab.mx/wp-content/uploads/2024/11/Challenger-605-en-renta.jpeg" width="700" height="394" decoding="async" alt="Challenger 605 midsize jet — private jet Mexico City to <?php echo esc_attr($r['dest']); ?>" loading="lazy">
           <span class="jc-fleet-badge">Midsize Jet</span>
         </div>
         <div class="jc-fleet-body">
@@ -557,13 +568,13 @@ html{scroll-behavior:smooth}body{background:var(--dark);color:var(--text);font-f
             <div class="jc-fleet-spec"><strong>882 km/h</strong>Cruise</div>
             <div class="jc-fleet-spec"><strong>Starlink</strong>Wi-Fi</div>
           </div>
-          <div class="jc-fleet-price"><span class="jc-fleet-price-from">From</span><span class="jc-fleet-price-amount"><?php echo esc_html($r['p2']); ?> USD</span></div>
+          <div class="jc-fleet-price"><?php echo jc_price_html($r['p2']); ?></div>
           <a href="<?php echo $wa; ?>" class="jc-fleet-cta" target="_blank" rel="noopener">Book this aircraft</a>
         </div>
       </div>
       <div class="jc-fleet-card">
         <div class="jc-fleet-img">
-          <img src="https://images.unsplash.com/photo-1540962351504-03099e0a754b?auto=format&fit=crop&w=800&q=75" alt="Gulfstream GV large cabin private jet" loading="lazy">
+          <img src="https://jetcab.mx/wp-content/uploads/2024/11/Gulfstream-Gv-en-Renta.jpeg" width="700" height="394" decoding="async" alt="Gulfstream GV large cabin private jet" loading="lazy">
           <span class="jc-fleet-badge">Large Cabin</span>
         </div>
         <div class="jc-fleet-body">
@@ -574,7 +585,7 @@ html{scroll-behavior:smooth}body{background:var(--dark);color:var(--text);font-f
             <div class="jc-fleet-spec"><strong>904 km/h</strong>Cruise</div>
             <div class="jc-fleet-spec"><strong>Bedroom</strong>On board</div>
           </div>
-          <div class="jc-fleet-price"><span class="jc-fleet-price-from">From</span><span class="jc-fleet-price-amount"><?php echo esc_html($r['p3']); ?> USD</span></div>
+          <div class="jc-fleet-price"><?php echo jc_price_html($r['p3']); ?></div>
           <a href="<?php echo $wa; ?>" class="jc-fleet-cta" target="_blank" rel="noopener">Book this aircraft</a>
         </div>
       </div>

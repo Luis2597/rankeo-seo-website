@@ -288,7 +288,7 @@ body{background:var(--dark);color:var(--text);font-family:var(--ff-body);line-he
   <div class="jc-fleet-grid">
     <div class="jc-fleet-card">
       <div class="jc-fleet-card-img">
-        <img src="https://images.unsplash.com/photo-1581093806997-124204d9fa9d?auto=format&fit=crop&w=800&q=75" alt="Cabina del Challenger 605, jet privado midsize con mesa de juntas" loading="lazy">
+        <img src="https://jetcab.mx/wp-content/uploads/2024/11/Challenger-605-en-renta.jpeg" width="700" height="394" decoding="async" alt="Challenger 605, jet privado midsize con mesa de juntas" loading="lazy">
         <span class="jc-fleet-badge">Midsize Jet</span>
       </div>
       <div class="jc-fleet-body">
@@ -306,7 +306,7 @@ body{background:var(--dark);color:var(--text);font-family:var(--ff-body);line-he
     </div>
     <div class="jc-fleet-card">
       <div class="jc-fleet-card-img">
-        <img src="https://images.unsplash.com/photo-1540962351504-03099e0a754b?auto=format&fit=crop&w=800&q=75" alt="Gulfstream GV, jet privado long range con recámara y sala de juntas" loading="lazy">
+        <img src="https://jetcab.mx/wp-content/uploads/2024/11/Gulfstream-Gv-en-Renta.jpeg" width="700" height="394" decoding="async" alt="Gulfstream GV, jet privado long range con recámara y sala de juntas" loading="lazy">
         <span class="jc-fleet-badge">Long Range</span>
       </div>
       <div class="jc-fleet-body">
