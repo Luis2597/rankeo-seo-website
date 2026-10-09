@@ -132,4 +132,34 @@
     <priority>0.8</priority>
   </url>
 
+  <url>
+    <loc>https://rankeo-nu.vercel.app/agencia-seo-bogota</loc>
+    <lastmod>2026-06-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="es-CO" href="https://rankeo-nu.vercel.app/"/>
+    <xhtml:link rel="alternate" hreflang="es-MX" href="https://rankeo-nu.vercel.app/"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://rankeo-nu.vercel.app/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rankeo-nu.vercel.app/"/>
+  </url>
+  <url>
+    <loc>https://rankeo-nu.vercel.app/agencia-seo-medellin</loc>
+    <lastmod>2026-06-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="es-CO" href="https://rankeo-nu.vercel.app/"/>
+    <xhtml:link rel="alternate" hreflang="es-MX" href="https://rankeo-nu.vercel.app/"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://rankeo-nu.vercel.app/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rankeo-nu.vercel.app/"/>
+  </url>
+  <url>
+    <loc>https://rankeo-nu.vercel.app/agencia-seo-cdmx</loc>
+    <lastmod>2026-06-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="es-CO" href="https://rankeo-nu.vercel.app/"/>
+    <xhtml:link rel="alternate" hreflang="es-MX" href="https://rankeo-nu.vercel.app/"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://rankeo-nu.vercel.app/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rankeo-nu.vercel.app/"/>
+  </url>
 </urlset>

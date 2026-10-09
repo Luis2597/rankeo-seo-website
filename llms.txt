@@ -1,0 +1,25 @@
+# Rankeo — Agencia SEO + GEO
+
+> Rankeo es una agencia de posicionamiento web para Colombia, México y el mercado hispano de Estados Unidos. Posiciona negocios en Google y en motores de respuesta con IA (ChatGPT, Perplexity, Google AI Overviews) mediante SEO técnico, SEO local, contenido y GEO (Generative Engine Optimization).
+
+## Servicios y precios (USD, mensual, sin contratos anuales)
+- Plan Local — $199/mes: auditoría técnica, Google Business Profile, SEO local y reporte mensual.
+- Plan Web + SEO — $349/mes: sitio web nuevo optimizado (hasta 5 páginas), SEO on-page, schema markup y optimización GEO.
+- Plan Autoridad — $649/mes: sitio completo hasta 8 páginas con blog, 2 artículos SEO al mes, estrategia de contenido y análisis de competidores.
+- Auditoría SEO gratuita sin registro: https://rankeo-nu.vercel.app/auditoria-seo-gratis
+
+## Páginas principales
+- Inicio: https://rankeo-nu.vercel.app/
+- Precios: https://rankeo-nu.vercel.app/precios
+- Agencia SEO Colombia: https://rankeo-nu.vercel.app/seo-colombia
+- Agencia SEO Bogotá: https://rankeo-nu.vercel.app/agencia-seo-bogota
+- Agencia SEO Medellín: https://rankeo-nu.vercel.app/agencia-seo-medellin
+- Agencia SEO Cali: https://rankeo-nu.vercel.app/seo-cali
+- Agencia SEO México / CDMX: https://rankeo-nu.vercel.app/agencia-seo-cdmx
+- Agencia GEO Colombia: https://rankeo-nu.vercel.app/geo-colombia
+- SEO por industria: https://rankeo-nu.vercel.app/seo-para-dentistas · /seo-para-abogados · /seo-para-gimnasios · /seo-para-restaurantes
+- Blog (guías de SEO y GEO): https://rankeo-nu.vercel.app/blog/
+
+## Contacto
+- WhatsApp: +52 55 3289 4890
+- Formulario: https://rankeo-nu.vercel.app/#contacto

@@ -3,8 +3,18 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Salud Integral Polanco | Centro Médico en CDMX — Atención integral de calidad</title>
+<link rel="icon" href="/favicon.svg" type="image/svg+xml"/>
+  <link rel="icon" href="/favicon.ico" sizes="32x32"/>
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png"/>
+<title>Salud Integral Polanco | Centro Médico en CDMX</title>
 <meta name="description" content="Centro médico en Polanco, CDMX. 12 especialidades médicas, tecnología de diagnóstico avanzada y atención personalizada. Agenda tu cita en línea hoy.">
+<meta name="robots" content="noindex,follow">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Salud Integral Polanco | Centro Médico en CDMX">
+<meta property="og:description" content="Centro médico en Polanco, CDMX. 12 especialidades médicas, tecnología de diagnóstico avanzada y atención personalizada. Agenda tu cita en línea hoy.">
+<meta property="og:image" content="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1200&h=630&q=80">
+<meta property="og:locale" content="es_MX">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
@@ -62,8 +72,8 @@ h1{font-family:'Libre Baskerville',serif;font-size:clamp(2rem,3.5vw,3rem);line-h
 h1 em{font-style:italic;color:var(--teal)}
 .hero-desc{font-size:1rem;color:var(--subtle);line-height:1.7;margin-bottom:36px}
 .appt-card{background:white;border-radius:16px;padding:32px;border:1px solid var(--border);box-shadow:0 4px 24px rgba(8,126,114,.08)}
-.appt-card h3{font-family:'Libre Baskerville',serif;font-size:1.2rem;color:var(--ink);margin-bottom:20px;display:flex;align-items:center;gap:10px}
-.appt-card h3 span{width:8px;height:8px;border-radius:50%;background:var(--teal);flex-shrink:0}
+.appt-card h2{font-family:'Libre Baskerville',serif;font-size:1.2rem;color:var(--ink);margin-bottom:20px;display:flex;align-items:center;gap:10px}
+.appt-card h2 span{width:8px;height:8px;border-radius:50%;background:var(--teal);flex-shrink:0}
 .fi{display:flex;flex-direction:column;gap:12px}
 .fi select,.fi input{width:100%;padding:12px 16px;border:1.5px solid var(--border);border-radius:10px;font-family:'IBM Plex Sans',sans-serif;font-size:.9rem;color:var(--ink);background:var(--bg);outline:none;transition:border-color var(--dur)}
 .fi select:focus,.fi input:focus{border-color:var(--teal);background:white}
@@ -141,7 +151,7 @@ footer{background:var(--slate);padding:56px 0 28px;overflow:hidden}
 .foot-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;margin-bottom:40px}
 .foot-logo{font-family:'Libre Baskerville',serif;color:white;font-size:1.1rem;margin-bottom:12px}
 .fbrand p{font-size:.85rem;color:rgba(255,255,255,.5);line-height:1.8;max-width:260px}
-.fc h4{font-size:.7rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:14px}
+.fc h3{font-size:.7rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:14px}
 .fc ul{list-style:none;display:flex;flex-direction:column;gap:9px}
 .fc a{font-size:.88rem;color:rgba(255,255,255,.55);transition:color var(--dur)}
 .fc a:hover{color:var(--teal)}
@@ -272,9 +282,9 @@ footer{background:var(--slate);padding:56px 0 28px;overflow:hidden}
     <h1>Atención médica donde <em>el paciente primero</em></h1>
     <p class="hero-desc">12 especialidades bajo un mismo techo. Médicos certificados por el Consejo Mexicano, tecnología de diagnóstico de primer nivel y un trato humano que sana desde adentro.</p>
     <div class="appt-card">
-      <h3><span></span>Agenda tu cita en línea</h3>
+      <h2><span></span>Agenda tu cita en línea</h2>
       <form class="fi" onsubmit="submitForm(event)">
-        <select required>
+        <select required aria-label="Selecciona especialidad">
           <option value="" disabled selected>Selecciona especialidad</option>
           <option>Medicina general</option>
           <option>Cardiología</option>
@@ -286,10 +296,10 @@ footer{background:var(--slate);padding:56px 0 28px;overflow:hidden}
           <option>Oftalmología</option>
         </select>
         <div class="form-row">
-          <input type="text" placeholder="Tu nombre completo" required>
-          <input type="tel" placeholder="WhatsApp o teléfono" required>
+          <input type="text" placeholder="Tu nombre completo" required aria-label="Tu nombre completo">
+          <input type="tel" placeholder="WhatsApp o teléfono" required aria-label="WhatsApp o teléfono">
         </div>
-        <input type="date" id="fecha">
+        <input type="date" id="fecha" aria-label="Fecha preferida">
         <button type="submit" class="appt-submit">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
           Confirmar cita →
@@ -437,7 +447,7 @@ footer{background:var(--slate);padding:56px 0 28px;overflow:hidden}
         <p>Centro médico en Polanco, CDMX. 12 especialidades, tecnología avanzada y el trato humano que mereces.</p>
       </div>
       <div class="fc">
-        <h4>Especialidades</h4>
+        <h3>Especialidades</h3>
         <ul>
           <li><a href="#">Cardiología</a></li>
           <li><a href="#">Pediatría</a></li>
@@ -447,7 +457,7 @@ footer{background:var(--slate);padding:56px 0 28px;overflow:hidden}
         </ul>
       </div>
       <div class="fc">
-        <h4>Centro</h4>
+        <h3>Centro</h3>
         <ul>
           <li><a href="#">Nuestros médicos</a></li>
           <li><a href="#">Laboratorio</a></li>
@@ -456,7 +466,7 @@ footer{background:var(--slate);padding:56px 0 28px;overflow:hidden}
         </ul>
       </div>
       <div class="fc">
-        <h4>Contacto</h4>
+        <h3>Contacto</h3>
         <ul>
           <li><a href="#">Av. Presidente Masaryk 187, Polanco</a></li>
           <li><a href="tel:+5255512345">55 5512-3456</a></li>

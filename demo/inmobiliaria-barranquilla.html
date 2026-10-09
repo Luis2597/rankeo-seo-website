@@ -3,8 +3,18 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Arenas Inmobiliaria | Apartamentos y Proyectos en Barranquilla</title>
+<link rel="icon" href="/favicon.svg" type="image/svg+xml"/>
+  <link rel="icon" href="/favicon.ico" sizes="32x32"/>
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png"/>
+<title>Arenas Inmobiliaria | Apartamentos en Barranquilla</title>
 <meta name="description" content="Inmobiliaria en Barranquilla con 18 años de experiencia. Apartamentos nuevos, casas y proyectos en los mejores sectores de la Costa. Asesoría gratis.">
+<meta name="robots" content="noindex,follow">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Arenas Inmobiliaria | Apartamentos en Barranquilla">
+<meta property="og:description" content="Inmobiliaria en Barranquilla con 18 años de experiencia. Apartamentos nuevos, casas y proyectos en los mejores sectores de la Costa. Asesoría gratis.">
+<meta property="og:image" content="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1200&h=630&q=80">
+<meta property="og:locale" content="es_CO">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@300;400;600;700&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
@@ -142,7 +152,7 @@ footer{background:var(--ink);padding:56px 0 28px;overflow:hidden}
 .fl{font-family:'Unbounded',sans-serif;font-size:1rem;font-weight:600;color:white;letter-spacing:.02em}
 .fl span{color:#6FB3FF}
 .fbrand p{font-size:.85rem;color:rgba(255,255,255,.45);line-height:1.8;margin-top:12px;max-width:260px}
-.fc h4{font-size:.68rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:14px}
+.fc h3{font-size:.68rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:14px}
 .fc ul{list-style:none;display:flex;flex-direction:column;gap:9px}
 .fc a{font-size:.88rem;color:rgba(255,255,255,.5);transition:color var(--dur)}
 .fc a:hover{color:#6FB3FF}
@@ -248,7 +258,7 @@ footer{background:var(--ink);padding:56px 0 28px;overflow:hidden}
       <div class="search-fields">
         <div class="sf-group">
           <label class="sf-label">Sector</label>
-          <select>
+          <select aria-label="Cualquier sector">
             <option>Cualquier sector</option>
             <option>El Prado</option>
             <option>Puerto Colombia</option>
@@ -260,7 +270,7 @@ footer{background:var(--ink);padding:56px 0 28px;overflow:hidden}
         </div>
         <div class="sf-group">
           <label class="sf-label">Tipo</label>
-          <select>
+          <select aria-label="Cualquier tipo">
             <option>Cualquier tipo</option>
             <option>Apartamento</option>
             <option>Casa</option>
@@ -270,7 +280,7 @@ footer{background:var(--ink);padding:56px 0 28px;overflow:hidden}
         </div>
         <div class="sf-group">
           <label class="sf-label">Presupuesto</label>
-          <select>
+          <select aria-label="Cualquier precio">
             <option>Cualquier precio</option>
             <option>Hasta $200M</option>
             <option>$200M – $400M</option>
@@ -326,7 +336,7 @@ footer{background:var(--ink);padding:56px 0 28px;overflow:hidden}
           </div>
           <div class="pc-price-row">
             <div class="pc-price">$680.000.000 <small>Precio de lanzamiento</small></div>
-            <a href="https://wa.me/573001234567?text=Quiero+info+sobre+Torres+del+Prado+en+El+Prado" target="_blank" class="pc-cta">Ver más →</a>
+            <a href="https://wa.me/573001234567?text=Quiero+info+sobre+Torres+del+Prado+en+El+Prado" target="_blank" rel="noopener" class="pc-cta">Ver más →</a>
           </div>
         </div>
       </div>
@@ -346,7 +356,7 @@ footer{background:var(--ink);padding:56px 0 28px;overflow:hidden}
           </div>
           <div class="pc-price-row">
             <div class="pc-price">$1.200.000.000 <small>Valor comercial</small></div>
-            <a href="https://wa.me/573001234567" target="_blank" class="pc-cta">Ver →</a>
+            <a href="https://wa.me/573001234567" target="_blank" rel="noopener" class="pc-cta">Ver →</a>
           </div>
         </div>
       </div>
@@ -366,7 +376,7 @@ footer{background:var(--ink);padding:56px 0 28px;overflow:hidden}
           </div>
           <div class="pc-price-row">
             <div class="pc-price arriendo">$2.800.000 <small>/ mes</small></div>
-            <a href="https://wa.me/573001234567" target="_blank" class="pc-cta">Ver →</a>
+            <a href="https://wa.me/573001234567" target="_blank" rel="noopener" class="pc-cta">Ver →</a>
           </div>
         </div>
       </div>
@@ -386,7 +396,7 @@ footer{background:var(--ink);padding:56px 0 28px;overflow:hidden}
           </div>
           <div class="pc-price-row">
             <div class="pc-price">Desde $420.000.000 <small>En preventa</small></div>
-            <a href="https://wa.me/573001234567" target="_blank" class="pc-cta">Ver →</a>
+            <a href="https://wa.me/573001234567" target="_blank" rel="noopener" class="pc-cta">Ver →</a>
           </div>
         </div>
       </div>
@@ -484,7 +494,7 @@ footer{background:var(--ink);padding:56px 0 28px;overflow:hidden}
 </section>
 
 <!-- FOOTER -->
-<footer>
+<footer id="contacto">
   <div class="con">
     <div class="foot-grid">
       <div class="fbrand">
@@ -492,7 +502,7 @@ footer{background:var(--ink);padding:56px 0 28px;overflow:hidden}
         <p>Inmobiliaria de referencia en Barranquilla. 18 años construyendo hogares en la Costa Caribe colombiana.</p>
       </div>
       <div class="fc">
-        <h4>Propiedades</h4>
+        <h3>Propiedades</h3>
         <ul>
           <li><a href="#">Comprar</a></li>
           <li><a href="#">Arrendar</a></li>
@@ -501,7 +511,7 @@ footer{background:var(--ink);padding:56px 0 28px;overflow:hidden}
         </ul>
       </div>
       <div class="fc">
-        <h4>Sectores</h4>
+        <h3>Sectores</h3>
         <ul>
           <li><a href="#">El Prado</a></li>
           <li><a href="#">Villa Santos</a></li>
@@ -510,7 +520,7 @@ footer{background:var(--ink);padding:56px 0 28px;overflow:hidden}
         </ul>
       </div>
       <div class="fc">
-        <h4>Contacto</h4>
+        <h3>Contacto</h3>
         <ul>
           <li><a href="#">Cra 54 #68-247, Barranquilla</a></li>
           <li><a href="tel:+5753454567">(5) 345-4567</a></li>

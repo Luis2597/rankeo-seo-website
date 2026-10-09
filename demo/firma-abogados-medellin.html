@@ -3,8 +3,18 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Ospina & Asociados | Firma de Abogados en Medellín — El Poblado</title>
+<link rel="icon" href="/favicon.svg" type="image/svg+xml"/>
+  <link rel="icon" href="/favicon.ico" sizes="32x32"/>
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png"/>
+<title>Ospina & Asociados | Abogados en Medellín, El Poblado</title>
 <meta name="description" content="Firma de abogados en Medellín con 20 años de experiencia en derecho laboral, familiar, penal y comercial. Consulta inicial gratis. Resultados comprobados.">
+<meta name="robots" content="noindex,follow">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Ospina & Asociados | Abogados en Medellín, El Poblado">
+<meta property="og:description" content="Firma de abogados en Medellín con 20 años de experiencia en derecho laboral, familiar, penal y comercial. Consulta inicial gratis. Resultados comprobados.">
+<meta property="og:image" content="https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=1200&h=630&q=80">
+<meta property="og:locale" content="es_CO">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,700;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
@@ -386,10 +396,10 @@ footer{background:var(--ink);padding:56px 0 28px;border-top:1px solid rgba(255,2
           <h3>Envíenos su consulta</h3>
           <form class="fi" onsubmit="submitForm(event)">
             <div class="form-row">
-              <input type="text" placeholder="Su nombre completo" required>
-              <input type="tel" placeholder="Teléfono o WhatsApp" required>
+              <input type="text" placeholder="Su nombre completo" required aria-label="Su nombre completo">
+              <input type="tel" placeholder="Teléfono o WhatsApp" required aria-label="Teléfono o WhatsApp">
             </div>
-            <select required>
+            <select required aria-label="Área jurídica">
               <option value="" disabled selected>Área jurídica</option>
               <option>Derecho laboral</option>
               <option>Derecho de familia</option>
@@ -399,7 +409,7 @@ footer{background:var(--ink);padding:56px 0 28px;border-top:1px solid rgba(255,2
               <option>Tutelas</option>
               <option>Otro</option>
             </select>
-            <textarea placeholder="Describa brevemente su situación (confidencial)"></textarea>
+            <textarea placeholder="Describa brevemente su situación (confidencial)" aria-label="Describa brevemente su situación (confidencial)"></textarea>
             <button type="submit" class="btn-gold">Enviar consulta →</button>
           </form>
           <p class="form-note">Información confidencial. Sujeto a secreto profesional.</p>
