@@ -103,3 +103,24 @@ Trabajo de tres especialistas en paralelo (SEO técnico, GEO/AEO para IAs, conte
 - **Solo precios del brief.** Se conservan únicamente: rutas domésticas en Learjet 35 (Guadalajara $1,800, Monterrey $2,200, Puerto Vallarta $3,000, Cancún $3,200, Los Cabos $3,800 USD), CDMX–Cancún en Challenger 605 $6,500 y Gulfstream $12,000 USD, Light Jet desde $80,000 MXN y Long Range desde $100,000 USD. Todo lo demás (tarifas por hora, rutas internacionales, Challenger/Gulfstream en otras rutas, destinos sin landing, Hawker/Learjet 45/G650ER) muestra **«Quote on request» / «Cotizar»**. Aplicado en home EN (guía, FAQ visible y schema, modales de flota y destino), 9 rutas EN, 5 rutas ES, landings, 6 páginas de flota, JSON-LD global v2 y llms.txt. Los schema `Offer` sin precio del brief quedan sin `price` (válidos).
 - **Fotos reales de aeronaves** (las de la página ES, `/wp-content/uploads/2024/11/`): héroe y miniatura exterior de las 6 páginas de flota, cards de aeronave en las 9 rutas EN y 5 ES, landings de tipos de jet y confidencialidad. En la landing Light Jets, «Hawker 400» y «Learjet 75» pasan a **Hawker 800** y **Learjet 45**, que son los que tienen foto real en el sitio.
 - **AdSense**: nuevo snippet `jetcab-disable-adsense.php` (WPCode, PHP, Run Everywhere): bloquea la etiqueta de Site Kit, anula la cola `adsbygoogle`, limpia del HTML los scripts/`<ins>`/meta de AdSense y elimina en el navegador cualquier anuncio que se inyecte después. Complemento manual: Site Kit → AdSense → desconectar, y en la cuenta AdSense → Sitios → jetcab.mx → Auto Ads OFF.
+
+---
+
+# Ronda 4 — Publicación en jetcab.mx (9 oct 2026)
+
+Publicado vía REST API de WordPress (Application Password del usuario `jetcab`, ejecutado desde un sandbox externo porque este entorno no llega a jetcab.mx). Verificado en vivo con curl: contenido nuevo, JSON-LD válido, fotos reales, sin precios fuera del brief.
+
+| URL | Acción | ID |
+|---|---|---|
+| /private-jet-mexico-city-{cancun,los-cabos,puerto-vallarta,monterrey,guadalajara}/ | Actualizadas con la versión nueva | 2909–2913 |
+| /vuelos-privados-confidenciales/ | Creada | 2933 |
+| /light-jets-toluca/ | Creada | 2934 |
+| /long-range-jets-toluca/ | Creada | 2935 |
+| /en/ (página 2895) | Actualizada con el `jetcab-en.html` final | 2895 |
+
+Hallazgos durante la publicación:
+- **Las rutas ES ya existían** como páginas del cliente (`/vuelos-privados-a-cancun/` 1634, `-los-cabos/` 1720, `-puerto-vallarta/` 1769, `-monterrey/` 1842, `-guadalajara/` 1706, y otras 15). No se tocaron. `jetcab-routes-domestic-es-v1.php` queda como propuesta de rediseño; los hreflang `es` de las rutas EN apuntan a páginas reales.
+- **Yoast servía el título y la description genéricos del sitio** en las páginas creadas por REST (no admite fijar `_yoast_wpseo_title` sin registrar el meta). Mitigación publicada: script `jc-seo-head` al inicio de cada landing que fija `document.title`, meta description, OG/Twitter y canonical en el DOM renderizado. Solución definitiva: instalar `jetcab-yoast-rest-meta.php` en WPCode; después se fijan los títulos reales con una llamada REST por página.
+- **Rutas internacionales** (Miami, Houston, NY, LA) y la home `/en/` las sirven snippets PHP (2900 y 2890) que tienen prioridad sobre las páginas: el PHP corregido (`jetcab-routes-v3.php`) hay que pegarlo en WPCode.
+
+Pendiente en WPCode (requiere sesión de admin): `jetcab-routes-v3.php` (rutas internacionales), `jetcab-sitemap-landings.php`, `jetcab-hreflang-home-es.php`, `jetcab-disable-adsense.php`, `jetcab-yoast-rest-meta.php`, `jetcab-jsonld-global-v2.html` (rellenar `XXXX`) y subir `jetcab-llms.txt` como `/llms.txt`.
