@@ -165,3 +165,9 @@ Limpieza recomendada cuando haya sesión de admin: sustituir en WPCode el 2900 p
 - Inventario WPCode confirmó que «Noindex WooCommerce Pages» (2880) ya existe: el pendiente #5 del brief estaba hecho.
 
 Estado final de snippets JETCAB en Code Snippets: 5 Yoast REST meta · 6 hreflang home ES · 7 llms.txt · 8 rutas internacionales v4 · 9 sitemap landings · 12 JSON-LD global v2 (activos); 10 purge once · 11 helper REST (inactivos). Code Snippets es la casa definitiva de estas mejoras; WPCode 2900 sigue activo solo como respaldo.
+
+---
+
+# Fase 3 — Auditoría SEO/GEO/AEO en vivo (9 oct 2026)
+
+Informe completo en `jetcab-auditoria-seo-geo-aeo-live-oct2026.md` (ranking actual, índice, visibilidad en IAs, autoridad, PageSpeed y plan por prioridades). Aplicado por API en esta fase: noindex en carrito/checkout/mi cuenta; snippet 13 «JETCAB H1 paginas constructor» (H1 en /cotizar/, /renta-de-aviones-privados/ y /sobre-nosotros/); título y description Yoast del home (página 355) con la keyword «renta de jets privados Toluca»; snippet 14 «JETCAB footer enlaces internos» (`jetcab-snippets/07-footer-enlaces-internos.php`), barra rastreable en todas las páginas ES hacia flota, landings, rutas y /en/.
