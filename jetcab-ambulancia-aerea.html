@@ -220,19 +220,19 @@ footer{background:#050403;padding:36px 48px;border-top:1px solid var(--border);d
       <p class="cta-p">Cotización gratuita en menos de 30 minutos. Sin compromisos. Atención directa 24/7.</p>
       <div class="cta-info">
         <div class="ci"><span class="ci-l">Teléfono</span><span class="ci-v">+52 (729) 108-1200</span></div>
-        <div class="ci"><span class="ci-l">WhatsApp</span><span class="ci-v">wa.link/rbmftv · 24/7</span></div>
+        <div class="ci"><span class="ci-l">WhatsApp</span><span class="ci-v">+52 729 108 1200 · 24/7</span></div>
         <div class="ci"><span class="ci-l">Base</span><span class="ci-v">Toluca, Estado de México</span></div>
       </div>
     </div>
     <div class="cform">
       <div class="cf-h"><h3>Solicitar Cotización</h3><p>Aeronave: Ambulancia Aérea</p></div>
       <div class="cf-b">
-        <label class="cfl">Origen</label><input class="cfi" type="text" placeholder="Ciudad o aeropuerto">
-        <label class="cfl">Destino</label><input class="cfi" type="text" placeholder="Ciudad o aeropuerto">
-        <label class="cfl">Fecha</label><input class="cfi" type="date" style="color-scheme:dark">
-        <label class="cfl">Nombre</label><input class="cfi" type="text" placeholder="Tu nombre completo">
-        <label class="cfl">WhatsApp</label><input class="cfi" type="tel" placeholder="+52 ...">
-        <button class="cf-sub">Solicitar Cotización</button>
+        <label class="cfl" for="cf-origen">Origen</label><input class="cfi" id="cf-origen" type="text" placeholder="Ciudad o aeropuerto">
+        <label class="cfl" for="cf-destino">Destino</label><input class="cfi" id="cf-destino" type="text" placeholder="Ciudad o aeropuerto">
+        <label class="cfl" for="cf-fecha">Fecha</label><input class="cfi" id="cf-fecha" type="date" style="color-scheme:dark">
+        <label class="cfl" for="cf-nombre">Nombre</label><input class="cfi" id="cf-nombre" type="text" placeholder="Tu nombre completo" required>
+        <label class="cfl" for="cf-whatsapp">WhatsApp</label><input class="cfi" id="cf-whatsapp" type="tel" placeholder="+52 ..." required>
+        <button class="cf-sub" type="button">Solicitar Cotización</button>
       </div>
     </div>
   </div>
@@ -243,9 +243,26 @@ footer{background:#050403;padding:36px 48px;border-top:1px solid var(--border);d
   <span class="ft-copy">© 2025 JETCAB · Private Aviation México · +52 (729) 108-1200</span>
 </footer>
 
-<a href="https://wa.link/rbmftv" target="_blank" class="wa" aria-label="WhatsApp">
+<a href="https://wa.me/527291081200" target="_blank" class="wa" aria-label="WhatsApp">
   <svg viewBox="0 0 24 24" width="26" height="26" fill="#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.122 1.532 5.848L.057 23.25a.75.75 0 00.916.905l5.565-1.457A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.75a9.722 9.722 0 01-4.964-1.362l-.356-.211-3.683.965.983-3.588-.232-.369A9.722 9.722 0 012.25 12C2.25 6.615 6.615 2.25 12 2.25S21.75 6.615 21.75 12 17.385 21.75 12 21.75z"/></svg>
 </a>
 
+<script>
+(function(){
+  var btn=document.querySelector('.cf-sub'); if(!btn) return;
+  var box=btn.closest('.cf-b'); var aero=(document.querySelector('.cf-h p')||{}).textContent||'';
+  aero=aero.replace(/^Aeronave:\s*/,'').trim();
+  btn.addEventListener('click',function(e){
+    e.preventDefault();
+    var f=box.querySelectorAll('.cfi'); var v=function(i){return f[i]?f[i].value.trim():'';};
+    f.forEach(function(i){i.style.borderColor='';});
+    if(!v(3)||!v(4)){ if(!v(3)) f[3].style.borderColor='var(--orange)'; if(!v(4)) f[4].style.borderColor='var(--orange)'; (v(3)?f[4]:f[3]).focus(); return; }
+    var parts=[]; if(v(0)) parts.push('Origen: '+v(0)); if(v(1)) parts.push('Destino: '+v(1)); if(v(2)) parts.push('Fecha: '+v(2));
+    parts.push('Nombre: '+v(3)); parts.push('WhatsApp: '+v(4));
+    var msg='Hola JETCAB, quiero cotizar un vuelo'+(aero?' en '+aero:'')+'. '+parts.join(' · ');
+    window.open('https://wa.me/527291081200?text='+encodeURIComponent(msg),'_blank','noopener,noreferrer');
+  });
+})();
+</script>
 </body>
 </html>

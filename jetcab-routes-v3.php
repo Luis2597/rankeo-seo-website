@@ -192,6 +192,14 @@ add_action("template_redirect", function() {
     exit;
 });
 
+
+if (!function_exists('jc_json_str')) {
+    // Escape a string for use inside a JSON string literal (esc_js produces \' which is invalid JSON).
+    function jc_json_str($str) {
+        return substr(json_encode((string)$str, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES), 1, -1);
+    }
+}
+
 function jetcab_route_page_v3($r) {
     $wa = 'https://wa.me/527291081200?text=' . $r['wa_text'];
     $canonical = 'https://jetcab.mx/private-jet-mexico-city-' . $r['slug'] . '/';
@@ -219,9 +227,9 @@ function jetcab_route_page_v3($r) {
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@graph":[
-{"@type":"WebPage","@id":"<?php echo $canonical; ?>","url":"<?php echo $canonical; ?>","name":"<?php echo esc_js($r['title']); ?>","inLanguage":"en"},
-{"@type":"Service","name":"Private Jet Charter Mexico City to <?php echo esc_js($r['dest_full']); ?>","description":"<?php echo esc_js($r['meta_desc']); ?>","provider":{"@type":"LocalBusiness","name":"JETCAB","url":"https://jetcab.mx","telephone":"+52-729-108-1200","foundingDate":"1999","areaServed":"Mexico"},"serviceType":"Air Charter","areaServed":["Mexico","<?php echo esc_js($r['dest_full']); ?>"],"offers":{"@type":"Offer","priceCurrency":"USD","price":"<?php echo ltrim($r['p1'],'\$'); ?>","priceSpecification":{"@type":"UnitPriceSpecification","priceCurrency":"USD","price":"<?php echo ltrim($r['p1'],'\$'); ?>","unitText":"per aircraft"}}},
-{"@type":"FAQPage","mainEntity":[<?php $fq=array_map(function($f){return '{"@type":"Question","name":"'.esc_js($f["q"]).'","acceptedAnswer":{"@type":"Answer","text":"'.esc_js($f["a"]).'"}}';},$r['faqs']);echo implode(',',$fq);?>]}
+{"@type":"WebPage","@id":"<?php echo $canonical; ?>","url":"<?php echo $canonical; ?>","name":"<?php echo jc_json_str($r['title']); ?>","inLanguage":"en"},
+{"@type":"Service","name":"Private Jet Charter Mexico City to <?php echo jc_json_str($r['dest_full']); ?>","description":"<?php echo jc_json_str($r['meta_desc']); ?>","provider":{"@type":"LocalBusiness","name":"JETCAB","url":"https://jetcab.mx","telephone":"+52-729-108-1200","foundingDate":"1999","areaServed":"Mexico"},"serviceType":"Air Charter","areaServed":["Mexico","<?php echo jc_json_str($r['dest_full']); ?>"],"offers":{"@type":"Offer","priceCurrency":"USD","price":"<?php echo ltrim($r['p1'],'\$'); ?>","priceSpecification":{"@type":"UnitPriceSpecification","priceCurrency":"USD","price":"<?php echo ltrim($r['p1'],'\$'); ?>","unitText":"per aircraft"}}},
+{"@type":"FAQPage","mainEntity":[<?php $fq=array_map(function($f){return '{"@type":"Question","name":"'.jc_json_str($f["q"]).'","acceptedAnswer":{"@type":"Answer","text":"'.jc_json_str($f["a"]).'"}}';},$r['faqs']);echo implode(',',$fq);?>]}
 ]}
 </script>
 <style>
