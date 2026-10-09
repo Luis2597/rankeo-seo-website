@@ -117,6 +117,8 @@ Publicado vía REST API de WordPress (Application Password del usuario `jetcab`,
 | /light-jets-toluca/ | Creada | 2934 |
 | /long-range-jets-toluca/ | Creada | 2935 |
 | /en/ (página 2895) | Actualizada con el `jetcab-en.html` final | 2895 |
+| /flota/ | Creada: hub de flota con ItemList + BreadcrumbList | 2945 |
+| /flota/{learjet-35, challenger-605, gulfstream-gv, helicoptero-bell-206, helicoptero-aw139, ambulancia-aerea}/ | Creadas: 6 páginas de aeronave (SEO completo, fotos reales, «Cotizar») | 2946–2951 |
 
 Hallazgos durante la publicación:
 - **Las rutas ES ya existían** como páginas del cliente (`/vuelos-privados-a-cancun/` 1634, `-los-cabos/` 1720, `-puerto-vallarta/` 1769, `-monterrey/` 1842, `-guadalajara/` 1706, y otras 15). No se tocaron. `jetcab-routes-domestic-es-v1.php` queda como propuesta de rediseño; los hreflang `es` de las rutas EN apuntan a páginas reales.
