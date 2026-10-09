@@ -1,5 +1,5 @@
 <?php
-/* JETCAB — barra de enlaces internos (rastreable) en el footer de las paginas ES
+/* JETCAB, barra de enlaces internos (rastreable) en el footer de las paginas ES
    Instalado como snippet 14 de Code Snippets (scope global). Se omite en /en/, rutas EN, /flota/ y landings. */
 add_action('wp_footer', function () {
     if (is_admin()) return;
