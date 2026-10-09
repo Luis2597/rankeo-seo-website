@@ -83,6 +83,76 @@ function jetcab_extras_es_data() {
             ),
             'cta' => 'Cotizar tour',
         ),
+        1689 => array(
+            'h2' => 'Vuelos privados a Europa desde Toluca en resumen',
+            'a'  => 'JETCAB vuela a Madrid, Barcelona, París, Londres, Lisboa o Milán desde el Aeropuerto Internacional de Toluca en Gulfstream o Global Express, con cabina completa para 16 pasajeros y sin escalas en la mayoría de las rutas. Toluca a Madrid toma unas 10 horas 30 minutos. El vuelo se cotiza por aeronave completa en 30 minutos; los long range intercontinentales parten de $100,000 USD.',
+            'faq' => array(
+                '¿Cuánto cuesta un jet privado de México a Europa?' => 'Desde $100,000 USD por aeronave completa en long range (Gulfstream o Global Express, hasta 16 pasajeros), según destino, fechas y pernocta de tripulación. Se cotiza en 30 minutos con el total cerrado y factura.',
+                '¿Cuánto dura el vuelo de Toluca a Madrid en jet privado?' => 'Unas 10 horas 30 minutos sin escalas en Gulfstream. A París o Londres, alrededor de 11 horas. Con un Challenger 605 se hace con una escala técnica en el Atlántico norte.',
+                '¿Qué documentos necesito para volar a Europa?' => 'Pasaporte vigente y, según nacionalidad, el permiso ETIAS cuando entre en vigor para mexicanos. Migración y aduana se hacen en la terminal privada al aterrizar. Conviene reservar con 72 horas para permisos de sobrevuelo y slots.',
+            ),
+            'cta' => 'Cotizar vuelo a Europa',
+        ),
+        1656 => array(
+            'h2' => 'Vuelos privados a España desde Toluca en resumen',
+            'a'  => 'De Toluca a Madrid o Barcelona en Gulfstream sin escalas, unas 10 horas 30 minutos, con cabina completa, dormitorio y galley para 16 pasajeros. JETCAB gestiona permisos de sobrevuelo, slots y aduana en la terminal privada de Barajas o El Prat. Long range desde $100,000 USD por aeronave; cotización en 30 minutos.',
+            'faq' => array(
+                '¿Cuánto cuesta un jet privado de México a España?' => 'Desde $100,000 USD por aeronave completa en long range, según fechas y días de estancia. El precio es por avión, no por pasajero; con 10 o 12 viajeros, el costo por persona se acerca al de una primera clase comercial sin escalas ni filas.',
+                '¿A qué aeropuertos de España se puede llegar?' => 'Madrid-Barajas, Barcelona-El Prat, Málaga, Palma de Mallorca, Ibiza, Valencia y Sevilla, todos con terminal de aviación ejecutiva. También aeropuertos menores que no reciben vuelos comerciales directos desde México.',
+                '¿Con cuánta anticipación se reserva un vuelo a España?' => 'Recomendamos 72 horas para permisos de sobrevuelo, slots y tripulación de relevo. En temporada alta (verano y Navidad) conviene una o dos semanas.',
+            ),
+            'cta' => 'Cotizar vuelo a España',
+        ),
+        1649 => array(
+            'h2' => 'Vuelos privados a Cuba desde Toluca en resumen',
+            'a'  => 'De Toluca a La Habana en Challenger 605 toma unas 3 horas sin escalas, con cabina de pie para 12 pasajeros; a Varadero o Cayo Coco, tiempos similares. JETCAB tramita los permisos de entrada cubanos y coordina la terminal de aviación general en destino. Se cotiza por aeronave completa en 30 minutos.',
+            'faq' => array(
+                '¿Cuánto cuesta un jet privado de México a Cuba?' => 'Se cotiza por aeronave completa según fechas, aeronave y días de estancia, con el total cerrado en 30 minutos. El precio es por avión, no por pasajero.',
+                '¿Qué documentos necesito para volar privado a Cuba?' => 'Pasaporte vigente y tarjeta de turista cubana, que gestionamos con el vuelo. La aduana se hace en la terminal de aviación general al aterrizar.',
+                '¿Cuánto dura el vuelo de Toluca a La Habana?' => 'Alrededor de 3 horas en Challenger 605 sin escalas. En Learjet 35 la ruta requiere escala técnica en Cancún.',
+            ),
+            'cta' => 'Cotizar vuelo a Cuba',
+        ),
+        1668 => array(
+            'h2' => 'Vuelos privados a Estados Unidos desde Toluca en resumen',
+            'a'  => 'JETCAB vuela de Toluca a Houston en 2 horas, Miami en 3, Las Vegas en 3 horas 30, Los Ángeles en 3 horas 45 y Nueva York en 5, sin escalas. Migración y aduana de Estados Unidos se hacen en la terminal privada al aterrizar, en menos de 15 minutos. Challenger 605 para hasta 12 pasajeros y Gulfstream para 16. Se cotiza por aeronave en 30 minutos; conviene avisar con 24 horas por los permisos de aduana.',
+            'faq' => array(
+                '¿Qué necesito para volar en jet privado a Estados Unidos?' => 'Pasaporte vigente y visa estadounidense (los mexicanos no pueden usar ESTA). El operador presenta el manifiesto de pasajeros a la aduana antes del despegue; por eso pedimos los datos de los viajeros con 24 horas. Al aterrizar, migración y aduana atienden en la terminal privada.',
+                '¿Cuánto cuesta un jet privado de México a Estados Unidos?' => 'Depende de la ruta y la cabina: Houston y Dallas son las más cortas; Nueva York y Los Ángeles requieren long range. Se cotiza por aeronave completa en 30 minutos con el total cerrado.',
+                '¿A qué aeropuertos de Estados Unidos llega JETCAB?' => 'Houston Hobby, Dallas Love Field, Miami Opa-locka, Teterboro para Nueva York, Van Nuys para Los Ángeles, Las Vegas Henderson, San Diego y McAllen, entre otros con terminal de aviación general.',
+            ),
+            'cta' => 'Cotizar vuelo a Estados Unidos',
+        ),
+        1734 => array(
+            'h2' => 'Vuelos privados a McAllen desde Toluca en resumen',
+            'a'  => 'De Toluca a McAllen, Texas, en Learjet 35 toma alrededor de 1 hora 50 minutos sin escalas, para 7 pasajeros. Es la ruta habitual para compras, médicos y negocios en el Valle del Río Grande. Aduana e inmigración en la terminal privada de McAllen al aterrizar. Se cotiza por aeronave completa en 30 minutos; conviene avisar con 24 horas por los permisos de aduana.',
+            'faq' => array(
+                '¿Cuánto dura el vuelo privado de CDMX a McAllen?' => 'Alrededor de 1 hora 50 minutos desde el Aeropuerto Internacional de Toluca en Learjet 35, sin escalas. Un viaje redondo el mismo día es posible y no genera pernocta de tripulación.',
+                '¿Cuánto cuesta un jet privado a McAllen?' => 'Se cotiza por aeronave completa (7 pasajeros en Learjet 35) según fecha y estancia, con el total cerrado en 30 minutos. El precio es por avión, no por pasajero.',
+                '¿Qué documentos necesito?' => 'Pasaporte y visa estadounidense vigentes. Enviamos el manifiesto de pasajeros a la aduana antes del despegue, por lo que pedimos los datos con 24 horas de anticipación.',
+            ),
+            'cta' => 'Cotizar vuelo a McAllen',
+        ),
+        1843 => array(
+            'h2' => 'Vuelos privados a la Ciudad de México en resumen',
+            'a'  => 'JETCAB recibe vuelos privados hacia la Ciudad de México en el Aeropuerto Internacional de Toluca, la base de la aviación ejecutiva del centro del país, a 40 minutos de Santa Fe y 55 de Polanco. Llega de Monterrey en 1 hora 15 minutos, de Guadalajara en 50, de Cancún en 2 horas 15 o de Houston en 2 horas, y su camioneta lo espera al pie de la escalinata. Se cotiza por aeronave completa en 30 minutos.',
+            'faq' => array(
+                '¿Por qué aterrizar en Toluca y no en el AICM?' => 'Porque en Toluca hay terminal de aviación general y hangares privados: su vehículo entra a plataforma y lo recoge en la escalinata. El AICM opera saturado y los tiempos de rodaje y espera de slot pueden sumar más de 30 minutos.',
+                '¿Cuánto cuesta un vuelo privado a la Ciudad de México?' => 'Depende del origen: desde Guadalajara desde $1,800 USD, desde Monterrey $2,200 USD y desde Cancún $3,200 USD por aeronave completa en Learjet 35. Otras ciudades se cotizan en 30 minutos.',
+                '¿Pueden recogerme en otra ciudad?' => 'Sí. La aeronave se posiciona desde Toluca a su ciudad de origen; ese tramo se incluye en la cotización. Si vuela con frecuencia, conviene coordinar viaje redondo para evitar posicionamientos.',
+            ),
+            'cta' => 'Cotizar vuelo a CDMX',
+        ),
+        1770 => array(
+            'h2' => 'Vuelos privados desde Toluca en resumen',
+            'a'  => 'JETCAB opera desde la terminal de aviación general del Aeropuerto Internacional de Toluca (AIT) desde 1999, con hangar propio y tripulación en base. Eso permite confirmar un vuelo nacional en 2 horas y abordar en menos de 10 minutos desde su camioneta. Rutas de referencia en Learjet 35: Guadalajara desde $1,800 USD, Monterrey $2,200, Puerto Vallarta $3,000, Cancún $3,200 y Los Cabos $3,800 por aeronave. Estados Unidos y Europa en Challenger 605 y Gulfstream.',
+            'faq' => array(
+                '¿Dónde está el FBO de JETCAB en Toluca?' => 'En la terminal de aviación general del Aeropuerto Internacional de Toluca, San Pedro Totoltepec, a 40 minutos de Santa Fe por la autopista México-Toluca. Le enviamos la ubicación exacta y el nombre del hangar al confirmar el vuelo.',
+                '¿Cuánto antes debo llegar al aeropuerto de Toluca?' => '15 minutos antes de la hora de salida. No hay filtro de seguridad comercial ni sala de espera: su vehículo entra a plataforma y aborda directo.',
+                '¿Qué aeronaves salen de Toluca?' => 'Learjet 35 y 45 y Hawker 800 (light jets, 7 u 8 pasajeros), Challenger 605 (12 pasajeros, cabina de pie), Gulfstream y Global Express (16 pasajeros, intercontinental), helicópteros Bell 206 y AW139 y ambulancia aérea.',
+            ),
+            'cta' => 'Cotizar desde Toluca',
+        ),
         2739 => array(
             'h2' => 'Renta de aviones privados en México en resumen',
             'a'  => 'JETCAB renta aviones privados desde el Aeropuerto Internacional de Toluca: Learjet 35 a Guadalajara desde $1,800 USD, Monterrey $2,200 USD, Puerto Vallarta $3,000 USD, Cancún $3,200 USD y Los Cabos $3,800 USD por aeronave completa para 7 pasajeros. Light jets en ruta corta desde $80,000 MXN; Challenger 605 midsize y Gulfstream long range para Estados Unidos y Europa. Jet listo en 2 horas y cotización formal en 30 minutos.',
@@ -117,7 +187,7 @@ add_filter('the_content', function ($content) {
         $b .= '<div class="jch-step"><div class="n">02</div><h3>Jet listo en 2 horas</h3><p>Confirmado el pago, tripulación y aeronave quedan asignadas. Para rutas nacionales puede despegar el mismo día.</p></div>';
         $b .= '<div class="jch-step"><div class="n">03</div><h3>Aborde en 10 minutos</h3><p>Llegue al FBO de Toluca 15 minutos antes. De la camioneta a su asiento sin terminal ni filas.</p></div></div>';
         $b .= '<h2>Tarifas de referencia desde Toluca</h2><p>Precio por aeronave completa en Learjet 35 para 7 pasajeros. <a href="https://jetcab.mx/precios-jet-privado/" style="color:#C9973F">Vea todas las tarifas y qué incluyen</a>.</p><div class="jch-rates">';
-        foreach (array(1706, 1842, 1769, 1634, 1720) as $rid) { $r = jetcab_rutas_es_data()[$rid]; $b .= '<a class="jch-rate" href="' . get_permalink($rid) . '"><span class="r">Toluca – ' . esc_html($r['d']) . '<small>' . esc_html($r['t']) . ' · ' . esc_html($r['ac']) . '</small></span><span class="p">' . esc_html($r['p']) . '</span></a>'; }
+        foreach (array(1706, 1842, 1769, 1634, 1720) as $rid) { $r = jetcab_rutas_es_data()[$rid]; $b .= '<a class="jch-rate" href="' . get_permalink($rid) . '"><span class="r">Toluca a ' . esc_html($r['d']) . '<small>' . esc_html($r['t']) . ' · ' . esc_html($r['ac']) . '</small></span><span class="p">' . esc_html($r['p']) . '</span></a>'; }
         $b .= '<a class="jch-rate" href="https://jetcab.mx/long-range-jets-toluca/"><span class="r">Intercontinental<small>Nueva York, Los Ángeles, Europa · Gulfstream</small></span><span class="p">desde $100,000 USD</span></a></div>';
         $b .= '<h2>Preguntas frecuentes</h2>' . jetcab_faq_html($faq);
         $b .= '<a class="jch-cta" href="https://jetcab.mx/cotizar/">Cotizar mi vuelo</a>';
@@ -134,7 +204,7 @@ add_filter('the_content', function ($content) {
             '¿Con cuánta anticipación debo reservar el vuelo a ' . $r['d'] . '?' => 'El jet puede estar listo en 2 horas desde su confirmación, sujeto a disponibilidad. En temporada alta (diciembre, Semana Santa y puentes) conviene reservar con dos semanas para asegurar aeronave y tarifa.',
         );
         $b  = jetcab_css_bloques() . jetcab_faq_ld($faq);
-        $b .= '<section class="jcr"><div class="jcr-in"><h2>Jet privado CDMX – ' . esc_html($r['d']) . ' en resumen</h2>';
+        $b .= '<section class="jcr"><div class="jcr-in"><h2>Jet privado CDMX a ' . esc_html($r['d']) . ' en resumen</h2>';
         $b .= '<p class="a">Un jet privado de la Ciudad de México a ' . esc_html($r['d']) . ' con JETCAB despega del Aeropuerto Internacional de Toluca y aterriza en ' . esc_html($r['iata']) . ' en ' . esc_html($r['t']) . ' en ' . esc_html($r['ac']) . ', ' . $precio . '. Jet listo en 2 horas, abordaje en menos de 10 minutos y cotización formal en 30 minutos.</p>';
         $b .= jetcab_faq_html($faq);
         $b .= '<a class="jcr-cta" href="https://jetcab.mx/cotizar/">Cotizar vuelo a ' . esc_html($r['d']) . '</a>';
