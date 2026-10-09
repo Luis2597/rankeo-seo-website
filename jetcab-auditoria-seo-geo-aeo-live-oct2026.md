@@ -143,3 +143,48 @@ Lo que más mueve la aguja y solo puede hacer el cliente: Google Business Profil
 Probado y descartado: fijar `Cache-Control: max-age=3600` desde PHP; el gateway lo sobrescribe con 31 días. La purga sigue requiriendo el admin de GoDaddy.
 
 Estado de snippets JETCAB en Code Snippets: 5, 6, 7, 8, 9, 12, 13, 14, 15, 16 activos · 10, 11 inactivos.
+
+---
+
+## 6. Con acceso a Search Console y Analytics (9 oct 2026, tarde)
+
+Conectados por OAuth: propiedad de dominio `sc-domain:jetcab.mx` (propietario) y GA4 «JETCAB» (properties/369436223, la que recibe datos; «jetcab.mx - GA4» 377233989 está vacía).
+
+### 6.1 Lo que dice Search Console (últimos 90 días)
+
+| Métrica | Valor |
+|---|---|
+| Clics | 396 |
+| Impresiones | 22.425 |
+| Posición media | 10,0 en México · 28,7 en EE. UU. |
+| Móvil / escritorio | 311 / 83 clics |
+
+La foto es mejor que la del muestreo externo: el sitio sí aparece en primera página para muchas consultas de cola larga, pero con pocos clics por título pobre («Vuelos Privados a Cancun - Jetcab ✈️») y sin precio en el snippet.
+
+**Páginas con más impresiones y su posición:** Cancún 3.017 imp / pos 15,7 · renta-de-aviones-privados 2.983 / 14,3 · home 2.538 / 21,6 · Acapulco 1.959 / 7,8 · Monterrey 1.825 / 9,0 · helicópteros CDMX 1.578 / 12,2 · Las Vegas 1.070 / 7,1 · Europa 946 / 4,7.
+
+**Consultas con más impresiones:** «renta de helicopteros» 230 (pos 7) · «renta de helicopteros cdmx» 143 (pos 8) · «costo vuelo privado monterrey…» 125 · «avion privado» 71 (pos 39) · «jetcab» 67 (pos 8,6: la marca sí sale, pero no en el puesto 1) · «agencia de aviones privados» 38 (pos 13,6) · «alquiler de aviones privados precios» 38 (pos 16,5).
+
+**Hallazgo crítico:** las páginas nuevas (/en/ sí, pero /flota/, /light-jets-toluca/, /vuelos-privados-confidenciales/, las 9 rutas EN, /precios-jet-privado/ y el blog) devuelven «Google no reconoce esta URL»: Google no las había descubierto. El índice de sitemaps de Yoast se envió el 7 oct, pero el sitemap de landings no estaba en Search Console. Hoy se enviaron `sitemap_index.xml` y `jetcab-landings-sitemap.xml`; la petición manual de indexación sigue siendo lo más rápido (ver 6.3).
+
+### 6.2 Lo que dice Analytics (90 días, GA4 369436223)
+
+| Canal | Sesiones |
+|---|---|
+| Orgánico | 585 |
+| Directo | 257 |
+| Social orgánico | 107 |
+| Referral / pagado | 12 |
+
+Cero eventos clave configurados: Analytics no cuenta conversiones. Los clics a WhatsApp existen (wa.link 13, wa.me 7) y el evento `tel` suma 43, pero ninguno está marcado como evento clave.
+
+### 6.3 Aplicado hoy con estos datos
+
+1. **Títulos y descripciones nuevos** en las 12 páginas con más impresiones, con precio del brief o tiempo de vuelo en el título (Cancún «desde $3,200 USD», Monterrey «desde $2,200 USD», helicópteros «Cotiza en 30 min», aviones «Precios 2026», Acapulco «45 min desde Toluca», etc.). Objetivo: subir el CTR en posiciones 7–16 sin esperar a ganar posiciones.
+2. **Cápsulas de respuesta + FAQ** en helicópteros CDMX, tour en helicóptero y renta de aviones privados (snippet 16 ampliado), las tres páginas con intención de precio en sus consultas. Pasan de 366–439 a 800–900 palabras.
+3. **Sitemaps enviados** a Search Console (índice de Yoast + sitemap de landings).
+4. **Eventos GA4 de contacto** (snippet 17, `jetcab-snippets/10-ga4-eventos-contacto.php`): `contacto_whatsapp`, `contacto_telefono`, `contacto_email`, `cotizacion_enviada`. Falta marcarlos como eventos clave en GA4 (Admin → Eventos → interruptor «Evento clave»); no hay API en el conector para hacerlo.
+
+### 6.4 Pendiente que solo se hace en la interfaz de Google (5 minutos)
+
+En Search Console → Inspección de URL → «Solicitar indexación» para: `/precios-jet-privado/`, `/flota/`, `/light-jets-toluca/`, `/long-range-jets-toluca/`, `/vuelos-privados-confidenciales/`, `/private-jet-mexico-city-cancun/`, `/private-jet-mexico-city-miami/`, `/private-jet-mexico-city-houston/`, `/private-jet-mexico-city-new-york/`, `/cuanto-cuesta-jet-privado-mexico/2026/`. El límite es de unas 10 al día.
