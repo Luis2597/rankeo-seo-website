@@ -16,6 +16,7 @@ add_action('wp_footer', function () {
        . '<a href="https://jetcab.mx/vuelos-privados-a-cancun/" ' . $a . '>Cancún</a>'
        . '<a href="https://jetcab.mx/vuelos-privados-a-monterrey/" ' . $a . '>Monterrey</a>'
        . '<a href="https://jetcab.mx/vuelos-privados-a-los-cabos/" ' . $a . '>Los Cabos</a>'
+       . '<a href="https://jetcab.mx/precios-jet-privado/" ' . $a . '>Precios</a>'
        . '<a href="https://jetcab.mx/cotizar/" ' . $a . '>Cotizar</a>'
        . '<a href="https://jetcab.mx/en/" hreflang="en" ' . $a . '>English</a>'
        . '</div></nav>' . "\n";

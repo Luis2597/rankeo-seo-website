@@ -125,3 +125,21 @@ Lo publicado en fases 1–2b (EN completo, rutas EN, landings, flota, JSON-LD v2
 | 3–6 meses | Top 10 en «renta de jets privados toluca», «vuelos privados a cancún», «jet privado toluca cancún» y «private jet mexico city to cancun» con 20–30 enlaces editoriales/directorios y contenido de precios. |
 
 Lo que más mueve la aguja y solo puede hacer el cliente: Google Business Profile, Search Console, enlaces desde sus propios perfiles y 2–3 notas de prensa. Todo lo on-page, AEO y GEO ya está publicado.
+
+---
+
+## 5. Segunda tanda aplicada por API (9 oct 2026, misma tarde)
+
+| Qué | Dónde | Efecto |
+|---|---|---|
+| **IndexNow** (snippet 15, `jetcab-snippets/09-indexnow-key.php`) | clave servida en `/<key>.txt`; 53 URLs del sitio + 17 nuevas/actualizadas enviadas a api.indexnow.org y bing.com (202/200) | Bing, Yandex y los asistentes que usan el índice de Bing (ChatGPT, Copilot) reciben las URLs hoy, sin esperar rastreo. Google no usa IndexNow: sigue dependiendo de Search Console. |
+| **Página de precios** `/precios-jet-privado/` (página 2959, `jetcab-publish/precios-jet-privado.html`) | 1.525 palabras, 3 tablas (rutas Learjet 35, CDMX–Cancún por cabina, por clase), qué incluye, qué mueve el precio, 8 FAQ visibles; JSON-LD WebPage + BreadcrumbList + Service/OfferCatalog (solo precios del brief) + FAQPage + Speakable | Responde «cuánto cuesta un jet privado en México», la consulta que más citan las IAs. |
+| **Bloque SEO en el home** (snippet 16, `jetcab-snippets/08-contenido-home-rutas-es.php`) | se añade al final del contenido de la página 355 vía `the_content` | Home pasa de 497 a 1.145 palabras: respuesta directa, por qué Toluca, proceso en 3 pasos, 6 tarifas enlazadas, 6 FAQ visibles con FAQPage JSON-LD. Diseño en el sistema JETCAB (Barlow, #0D0D0D, naranja/oro). |
+| **Cápsulas answer-first en 12 rutas ES** (mismo snippet 16) | Cancún, Monterrey, Guadalajara, Puerto Vallarta, Los Cabos, Acapulco, Querétaro, Mazatlán, Tijuana, Nueva York, Las Vegas, San Diego | Resumen citable (tiempo, aeronave, precio del brief o «cotizar», aterrizaje), 3 FAQ visibles + FAQPage JSON-LD, enlaces a precios, flota, confidencialidad y versión EN. Cancún pasa de 470 a 879 palabras. |
+| **3 artículos de blog** (`jetcab-publish/blog/`, posts 2960–2962) | `/cuanto-cuesta-jet-privado-mexico/2026/`, `/jet-privado-toluca-vs-aicm/2026/`, `/vuelo-privado-cdmx-cancun-tiempo-aeronaves-precio/2026/` | Contenido para las preguntas que hacen las IAs, con Yoast title/description y enlaces a precios, rutas y flota. La estructura de permalinks del sitio añade `/2026/` al final; cambiarla requiere el admin. |
+| Footer de enlaces (snippet 14) | enlace «Precios» añadido | La página de precios recibe enlace desde todas las páginas ES. |
+| JSON-LD v2 (snippet 12) | `alternateName` ya presente («Jetcab México», «JETCAB Charters», «Jetcab Toluca») | Ayuda a desambiguar la marca frente a jetcab.ro. |
+
+Probado y descartado: fijar `Cache-Control: max-age=3600` desde PHP; el gateway lo sobrescribe con 31 días. La purga sigue requiriendo el admin de GoDaddy.
+
+Estado de snippets JETCAB en Code Snippets: 5, 6, 7, 8, 9, 12, 13, 14, 15, 16 activos · 10, 11 inactivos.
