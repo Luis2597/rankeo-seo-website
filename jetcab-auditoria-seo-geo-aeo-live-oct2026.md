@@ -189,3 +189,20 @@ Cero eventos clave configurados: Analytics no cuenta conversiones. Los clics a W
 
 En Search Console → Inspección de URL → «Solicitar indexación» para: `/precios-jet-privado/`, `/flota/`, `/light-jets-toluca/`, `/long-range-jets-toluca/`, `/vuelos-privados-confidenciales/`, `/private-jet-mexico-city-cancun/`, `/private-jet-mexico-city-miami/`, `/private-jet-mexico-city-houston/`, `/private-jet-mexico-city-new-york/`, `/cuanto-cuesta-jet-privado-mexico/2026/`. El límite es de unas 10 al día.
 5. **Analytics en las páginas EN** (snippet 18, `jetcab-snippets/11-ga4-paginas-en.php`): /en/ y las rutas `/private-jet-*` se sirven por `template_redirect` sin `wp_head`, así que no llevaban la etiqueta GA4. Ahora se inyecta `G-GDZ8NL03E5` y los eventos de contacto antes de `</head>` por búfer de salida. Hasta hoy el tráfico EN no se medía.
+
+---
+
+## 7. Paquete de autoridad externa (9 oct 2026, noche)
+
+Todo el copy nuevo pasó por revisión de estilo: sin guiones largos, sin triadas, sin etiquetas en negrita, sin adjetivos de folleto. Los títulos Yoast que usaban « — JETCAB» pasaron a « | JETCAB» en 19 páginas.
+
+| Entregable | Archivo | Para quién |
+|---|---|---|
+| Kit de fichas y directorios (NAP, categorías, descripciones de 150/400/750 caracteres, servicios con precio del brief, fotos, preguntas para la ficha, 10 sitios en orden) | `jetcab-kit-fichas-directorios.md` | Cliente: Google Business Profile, Bing Places, Apple, Aviapages, pjreviews, Wikidata |
+| Nota de prensa «25 años», versión corta, asunto, lista de 14 medios (4 correos verificados, 10 con página de contacto), plan de envío y 3 ángulos | `jetcab-prensa-25-anos.md` | Cliente: confirmar correo de prensa y enviar |
+| Bios para Instagram, Facebook, LinkedIn y YouTube, y plantilla de WhatsApp para pedir reseñas | `jetcab-redes-bios-y-resenas.md` | Cliente: pegar en cada perfil |
+| 4 artículos nuevos (documentos para EE. UU., mascotas, empty legs, cómo pagar de última hora), posts 2967 a 2970 | `jetcab-publish/blog/` | Publicados |
+| Cápsulas de respuesta y FAQ en Europa, España, Cuba, Estados Unidos, McAllen, CDMX y Toluca (snippet 16) | `jetcab-snippets/08-contenido-home-rutas-es.php` | Publicado; esas páginas pasan a 950 palabras |
+| Seguimiento semanal automático (lunes 8:52, Ciudad de México): Search Console y Analytics, semana contra semana, con acciones | Routine «JETCAB seguimiento semanal SEO» | Llega como mensaje en esta sesión |
+
+Pendiente del cliente, en orden: dirección exacta del hangar para la verificación de Google Business Profile, correo de prensa, pegar bios, pedir reseñas, enviar la nota.
