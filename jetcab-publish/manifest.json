@@ -142,5 +142,67 @@
   "lang": "en",
   "file": "en.html",
   "bytes": 224778
+ },
+ {
+  "slug": "learjet-35",
+  "parent": "flota",
+  "title": "Renta Learjet 35 México | Jet Privado desde Toluca — JETCAB",
+  "description": "Renta de Learjet 35 desde el Aeropuerto de Toluca (AIT): 4–7 pasajeros, 3,500 km de alcance. Ideal Acapulco, Monterrey o Cancún.",
+  "lang": "es-MX",
+  "file": "flota-learjet-35.html",
+  "bytes": 25941
+ },
+ {
+  "slug": "challenger-605",
+  "parent": "flota",
+  "title": "Renta Challenger 605 México | Jet Privado Toluca — JETCAB",
+  "description": "Renta de Challenger 605 desde Toluca (AIT): 6–9 pasajeros, 6,500 km sin escalas. Cabina ancha para juntas rumbo a Miami o Houston.",
+  "lang": "es-MX",
+  "file": "flota-challenger-605.html",
+  "bytes": 25975
+ },
+ {
+  "slug": "gulfstream-gv",
+  "parent": "flota",
+  "title": "Renta Gulfstream GV México | Jet Largo Alcance — JETCAB",
+  "description": "Renta de Gulfstream GV desde Toluca (AIT): 8–16 pasajeros, 12,000 km sin escalas a Nueva York o Europa. Cabina completa, Identity Shield.",
+  "lang": "es-MX",
+  "file": "flota-gulfstream-gv.html",
+  "bytes": 25869
+ },
+ {
+  "slug": "helicoptero-bell-206",
+  "parent": "flota",
+  "title": "Renta Helicóptero Bell 206 México | CDMX — JETCAB",
+  "description": "Renta de helicóptero Bell 206 en CDMX y Toluca: 3–5 pasajeros, 620 km de alcance. Polanco–Toluca en 20 min, Valle de Bravo y más.",
+  "lang": "es-MX",
+  "file": "flota-helicoptero-bell-206.html",
+  "bytes": 25269
+ },
+ {
+  "slug": "helicoptero-aw139",
+  "parent": "flota",
+  "title": "Renta Helicóptero AW139 México | Ejecutivo — JETCAB",
+  "description": "Renta de helicóptero AW139 en México: hasta 15 pasajeros, bimotor Pratt & Whitney, 1,000 km de alcance. Traslados corporativos y VIP.",
+  "lang": "es-MX",
+  "file": "flota-helicoptero-aw139.html",
+  "bytes": 25370
+ },
+ {
+  "slug": "ambulancia-aerea",
+  "parent": "flota",
+  "title": "Ambulancia Aérea México 24/7 | Traslado Médico — JETCAB",
+  "description": "Ambulancia aérea en México 24/7: UCI a bordo, médico y enfermero especializados. Despegue desde Toluca en 2 horas. México y EE. UU.",
+  "lang": "es-MX",
+  "file": "flota-ambulancia-aerea.html",
+  "bytes": 25641
+ },
+ {
+  "slug": "flota",
+  "title": "Flota JETCAB | Jets Privados y Helicópteros en Renta desde Toluca",
+  "description": "Flota JETCAB en renta desde el Aeropuerto de Toluca: Learjet 35, Challenger 605, Gulfstream GV, helicópteros Bell 206 y AW139 y ambulancia aérea. Jet listo en 2 horas. Cotiza por WhatsApp.",
+  "lang": "es-MX",
+  "file": "flota.html",
+  "bytes": 8747
  }
 ]
