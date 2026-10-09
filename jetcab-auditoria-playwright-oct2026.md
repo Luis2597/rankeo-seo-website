@@ -140,3 +140,17 @@ Con la contraseña de aplicación (usuario `jetcab`, administrador) se instaló 
 | 7 | JETCAB llms.txt | `/llms.txt` servido como `text/plain` por un handler en `init` (sin depender de reglas de reescritura). Cloudflare tenía cacheado un 301 de WordPress hacia `/llms.txt/`; esa URL final ya responde el texto, y el 301 cacheado expira solo o se purga con "Flush Cache" en el admin de GoDaddy. |
 
 Pendiente para la fase 2 (con sesión de admin): sustituir el snippet 2900 por `jetcab-routes-v3.php`, sitemap de landings (solo necesario para las 4 rutas internacionales; las landings ya son páginas y entran en el sitemap de Yoast), JSON-LD global v2 tras rellenar los `XXXX`, y desactivar Code Snippets cuando todo viva en WPCode. `jetcab-snippets/` contiene los cuerpos exactos instalados.
+
+---
+
+# Fase 2 — Instalada por API (9 oct 2026)
+
+| ID | Snippet (Code Snippets) | Efecto verificado en vivo |
+|---|---|---|
+| 8 | JETCAB rutas internacionales v4 | Miami, Houston, Nueva York y Los Ángeles sirven la versión corregida (cápsula answer-first, «Quote on request», TLC como IATA de Toluca, frase de ESTA corregida, fotos reales). Se ejecuta en `template_redirect` con prioridad 1, por lo que prevalece sobre el snippet 2900 de WPCode sin tocarlo; función renombrada a `jetcab_route_page_v4_cs` para evitar colisiones. |
+| 9 | JETCAB sitemap landings | `/jetcab-landings-sitemap.xml` (20 URLs: /en/, /flota/ + 6 aeronaves, 3 landings, 9 rutas EN) servido por handler en `init` y enlazado desde `sitemap_index.xml` de Yoast. |
+| 10 | JETCAB purge once (fase 2) | Flush de reglas + purga de LiteSpeed una sola vez; queda desactivado. |
+
+No instalado, a propósito: AdSense off (no hay anuncios en el sitio) y JSON-LD global v2 (placeholders `XXXX` sin rellenar; además duplicaría el snippet 2896 activo en WPCode).
+
+Limpieza recomendada cuando haya sesión de admin: sustituir en WPCode el 2900 por `jetcab-routes-v3.php`, mover los snippets 5–9 a WPCode y desactivar Code Snippets. Hasta entonces, Code Snippets debe permanecer activo: es lo que sirve estas mejoras.
