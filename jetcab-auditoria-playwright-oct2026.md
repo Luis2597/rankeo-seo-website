@@ -40,3 +40,57 @@
 - Drawer móvil de la home EN abre y cierra correctamente; selector ES/EN visible.
 - Sin menciones a IA, plantillas ni automatización en ningún copy.
 - Todos los enlaces de WhatsApp de rutas y home usan `wa.me/527291081200` con texto prellenado por ruta.
+
+---
+
+# Ronda 2 — SEO · GEO · AEO (9 oct 2026, misma sesión)
+
+Trabajo de tres especialistas en paralelo (SEO técnico, GEO/AEO para IAs, contenido ES) integrado y verificado con Playwright en 25 páginas (desktop 1440 + móvil 390): 0 errores JS, 0 JSON-LD inválidos, 0 scroll horizontal, 1 H1 por página, titles 49–60 y descriptions 150–160 en todas.
+
+## Qué se corrigió en los archivos existentes
+
+**Home EN (`jetcab-en.html`)**
+- **Libro de precios único.** La home decía CDMX→Cancún «2h 10m desde $15,000» y las rutas/brief «2h 15m desde $3,200»; Miami $25,000/2h50/MIA vs $4,800/3h30/Opa-locka; NY $45,000 vs $9,500; Houston $18,000 vs $3,800; etc. Ahora toda la home usa las cifras de las páginas de ruta (que coinciden con el brief §12): guía de destinos, FAQ visible, FAQ JSON-LD, modales de destino y modales de flota. Destinos sin landing propia (Acapulco, Querétaro, Las Vegas…) ya no muestran un «desde $X» inventado: muestran tarifa por hora.
+- Challenger 604 → **605** (39 veces), helicóptero «$800/hr» → $1,500/hr, «500+ flights» → 2,000+, medevac «90 minutos» → «menos de 2 horas», «IATA member» eliminado (IATA no afilia operadores chárter), «sin un solo incidente» → dato verificable, `aggregateRating` 5★/500 autoservido eliminado del schema (riesgo de acción manual), «AIT/MMTO» → «TLC/MMTO (AIT)».
+- **Cápsulas answer-first** para IAs: una bajo el H1 (quién es JETCAB, base, desde cuándo, precios desde, «por aeronave, no por asiento») y otra al inicio de la guía de rutas con los 9 precios y tiempos. Ambas en `speakable`.
+- **Canibalización**: los 8 H3-pregunta de la home que repetían la keyword de las landings de ruta pasan a encabezado descriptivo + enlace con anchor de keyword a la landing; sus 6 preguntas duplicadas salen del FAQPage de la home (31 → 25).
+- Schema: `SpeakableSpecification` suelto (inválido) → nodo `WebPage` con speakable + breadcrumb; `WebSite` y `Organization` con `@id` raíz `https://jetcab.mx/#website` / `#organization` (misma entidad en todas las páginas); `x-default` → `/`.
+- Urgencia ficticia: «● LIVE — Aircraft Ready», «2 Left», «Chartered today» sustituidos; código muerto del ticker de reservas inventadas eliminado.
+- Title/description nuevos: «Private Jet Charter Mexico City | Toluca FBO — JETCAB».
+- Accesibilidad/rendimiento: `prefers-reduced-motion` y `<noscript>` para `.rv`, `var(--ink)` inexistente → `var(--bg)`, `.contact`/`footer` overflow hidden (regla CLAUDE.md), enlaces de nav «Routes».
+
+**Rutas EN (`jetcab-routes-domestic-v1.php`, `jetcab-routes-v3.php`)**
+- H1 con keyword exacta «Private Jet Mexico City to X»; H2 de flota y FAQ con keyword; titles/descriptions nuevos por ruta.
+- Cápsula answer-first por ruta (40–60 palabras con tiempo, 3 precios, aeropuerto, inclusiones) + `speakable`, `isPartOf`, `about` y `BreadcrumbList` en el JSON-LD; `price` sin coma; `provider` por `@id`.
+- Fix legal: «ESTA requirements apply» (falso en aviación privada) → «pasaporte + visa B1/B2; ESTA no es válida en aviación privada» (NY y LA).
+- Internacionales: «AIT» mostrado como código IATA → **TLC** (Toluca · Mexico City); escasez estática «2 jets available this week» → «Availability confirmed within 30 minutes»; héroe con `width/height`.
+- hreflang «es» condicionado a `es_live` (true en domésticas porque las ES ya existen; false en internacionales hasta crearlas). Nav y logo → `/en/`; sección «Other routes» con las otras 8 rutas; footer con las 9 + home EN; `rel="noopener"`; preload del héroe; OG/Twitter completos.
+
+**Flota (6 archivos)**: H1 transaccional («Renta de jet privado desde Toluca · Learjet 35»), CTA de nav → `#cotizar` (antes a un documento interno de Rankeo), © dinámico, «Vuela en el Ambulancia» corregido, `loading="lazy"` en galerías, sección de rutas frecuentes + enlaces a flota/cotizar/EN, descriptions ≤160.
+
+## Archivos nuevos (listos para WPCode → PHP Snippet → Run Everywhere → guardar Enlaces permanentes)
+
+| Archivo | Qué publica | Slugs |
+|---|---|---|
+| `jetcab-routes-domestic-es-v1.php` | 5 rutas domésticas en español (pendiente #1 del brief): answer-first «¿Cuánto cuesta…?», pilares Identity Shield / Tarmac-to-Cabin / Jet en 2h, 7 FAQs, JSON-LD, hreflang recíproco con las EN | `/vuelos-privados-a-{cancun,los-cabos,puerto-vallarta,monterrey,guadalajara}/` |
+| `jetcab-landing-confidencialidad.php` | Landing Identity Shield (pendiente #6), avatar «El Poder Silencioso», 8 FAQs | `/vuelos-privados-confidenciales/` |
+| `jetcab-landing-tipos-jet.php` | Landings por tipo de jet (pendiente #7) | `/light-jets-toluca/`, `/long-range-jets-toluca/` |
+| `jetcab-sitemap-landings.php` | Sitemap propio de las 17 landings (Yoast no las ve porque se sirven por `template_redirect`) añadido al índice de Yoast | `/jetcab-landings-sitemap.xml` |
+| `jetcab-hreflang-home-es.php` | hreflang recíproco en la home ES (sin esto Google ignora el par ES/EN) | — |
+| `jetcab-jsonld-global-v2.html` | `@graph` de 13 nodos para sustituir el snippet 2896: Organization, LocalBusiness, WebSite, OfferCatalog (17 ofertas), 4 aeropuertos, FAQ ES de 15 preguntas. **4 placeholders `XXXX`** (redes, Wikidata, Google Business Profile, hangar) a rellenar antes de publicar | header global |
+| `jetcab-llms.txt` | llms.txt para la raíz del dominio (spec llmstxt.org) | `/llms.txt` |
+| `_agent-seo-tecnico.md`, `_agent-geo-aeo.md`, `_agent-contenido-es.md` | Informes completos de los tres especialistas (50 preguntas EN/ES con respuesta, plan de autoridad externa, plan de enlazado, verificaciones en vivo) | — |
+
+## Decisiones que necesita el cliente (no se tocaron)
+1. **Precio real CDMX–Cancún en Learjet 35**: rutas y brief dicen $3,200; la home decía $15,000. Se unificó a $3,200. Si la cifra real es otra, cambiar en los PHP (`price`/`p1`) y la home.
+2. **Gulfstream GV (sitio) vs G650/G650ER (brief)**: todo el sitio dice GV; las landings nuevas por tipo de jet usan G650 según el brief. Confirmar qué célula opera y unificar.
+3. **Vídeo de héroe**: sigue siendo stock de Pexels (ya solo carga en desktop). Hace falta vídeo propio de Toluca.
+4. **Fotos reales de aeronaves** en rutas y flota (hoy Unsplash): el informe SEO lista las URLs de `/wp-content/uploads/2024/11/` a verificar en vivo antes de sustituir.
+5. Rellenar los 4 `XXXX` del JSON-LD global; crear Google Business Profile, Wikidata y perfiles con NAP idéntico (plan P0/P1 en `_agent-geo-aeo.md`).
+6. Desactivar AdSense y `noindex` en `/cart/`, `/checkout/`, `/my-account/` (pendientes #4 y #5 del brief; requieren admin de WordPress).
+
+## Instalación en jetcab.mx (orden)
+1. WPCode: actualizar los snippets de rutas EN (domésticas e internacionales) con los dos PHP corregidos.
+2. WPCode: añadir `jetcab-routes-domestic-es-v1.php`, `jetcab-landing-confidencialidad.php`, `jetcab-landing-tipos-jet.php`, `jetcab-sitemap-landings.php`, `jetcab-hreflang-home-es.php` (PHP Snippet, Run Everywhere). Luego Ajustes → Enlaces permanentes → Guardar.
+3. Sustituir el snippet 2890 (/en/) por `jetcab-en.html` y el 2896 por `jetcab-jsonld-global-v2.html` (tras rellenar placeholders).
+4. Subir `jetcab-llms.txt` como `/llms.txt`. Reenviar `sitemap_index.xml` en Search Console y pedir indexación de las 17 landings.
