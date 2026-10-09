@@ -51,6 +51,9 @@
 <link rel="alternate" hreflang="x-default" href="https://jetcab.mx/en/">
 <meta property="og:locale" content="en_US">
 <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://images.unsplash.com">
+<link rel="preload" as="image" href="https://images.unsplash.com/photo-1540962351504-03099e0a754b?auto=format&fit=crop&w=2000&q=85" fetchpriority="high">
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;400;600;700;800&family=Barlow:wght@300;400;500&display=swap" rel="stylesheet">
 <script type="application/ld+json">
 {
@@ -156,7 +159,7 @@ nav.solid{background:rgba(10,9,8,.96);backdrop-filter:blur(16px);border-bottom:1
 .n-cta{background:var(--orange);color:#fff;padding:9px 22px;font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;border:none;cursor:pointer;transition:background .2s,transform .15s cubic-bezier(0.4,0,0.2,1);border-radius:100px}
 .n-cta:hover{background:var(--orangedk)}
 .n-cta:active{transform:scale(0.96)}
-.burger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px}
+.burger{display:none;flex-direction:column;justify-content:center;gap:5px;cursor:pointer;padding:4px;min-width:44px;min-height:44px;align-items:center}
 .burger span{display:block;width:22px;height:1.5px;background:var(--white)}
 
 /* HERO */
@@ -372,7 +375,7 @@ nav.solid{background:rgba(10,9,8,.96);backdrop-filter:blur(16px);border-bottom:1
 /* FOOTER */
 footer{background:var(--bg2);border-top:1px solid var(--border);padding:64px 48px 40px}
 .footer-in{max-width:1160px;margin:0 auto}
-.footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;padding-bottom:48px;border-bottom:1px solid var(--border)}
+.footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1.3fr 1fr;gap:48px;padding-bottom:48px;border-bottom:1px solid var(--border)}
 .ft-brand-name{font-family:'Barlow Condensed',sans-serif;font-size:24px;font-weight:800;letter-spacing:.2em;color:var(--white);text-transform:uppercase;margin-bottom:12px}
 .ft-brand-p{font-size:13px;color:var(--muted);line-height:1.7;max-width:280px;margin-bottom:24px}
 .ft-col-h{font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:700;letter-spacing:.3em;text-transform:uppercase;color:var(--orange);margin-bottom:16px}
@@ -389,14 +392,14 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:64px 48p
 .drawer-overlay.open{opacity:1;pointer-events:all}
 .drawer{position:fixed;top:0;right:0;bottom:0;width:280px;background:var(--bg2);z-index:400;transform:translateX(100%);transition:transform .35s cubic-bezier(0.4,0,0.2,1);padding:24px;display:flex;flex-direction:column;gap:6px}
 .drawer.open{transform:translateX(0)}
-.drawer-close{background:none;border:none;color:var(--muted);font-size:22px;cursor:pointer;align-self:flex-end;margin-bottom:16px;line-height:1}
+.drawer-close{background:none;border:none;color:var(--muted);font-size:22px;cursor:pointer;align-self:flex-end;margin-bottom:16px;line-height:1;min-width:44px;min-height:44px}
 .drawer a{display:block;padding:12px 8px;font-family:'Barlow Condensed',sans-serif;font-size:15px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--cream);border-bottom:1px solid var(--border);transition:color .2s}
 .drawer a:hover{color:var(--orange)}
 .drawer .d-cta{background:var(--orange);color:#fff;text-align:center;margin-top:16px;border:none;padding:14px;border-radius:100px}
 .drawer .d-cta:hover{background:var(--orangedk)}
 
 /* CINEMATIC INTRO */
-#page-intro{position:fixed;inset:0;background:#000;z-index:9999;display:flex;align-items:center;justify-content:center;animation:pi-exit .7s ease-in 2.4s forwards;will-change:opacity;overflow:hidden}
+#page-intro{position:fixed;inset:0;background:#000;z-index:9999;display:flex;align-items:center;justify-content:center;animation:pi-exit .5s ease-in 1.1s forwards;will-change:opacity;overflow:hidden}
 @keyframes pi-exit{0%{opacity:1;pointer-events:all}100%{opacity:0;pointer-events:none}}
 .pi-inner{text-align:center;padding:20px}
 .pi-word{font-family:'Barlow Condensed',sans-serif;font-size:clamp(48px,10vw,112px);font-weight:800;letter-spacing:.4em;text-transform:uppercase;color:#fff;opacity:0;animation:pi-word-in .9s cubic-bezier(0,0,.2,1) .1s forwards}
@@ -460,6 +463,13 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:64px 48p
   .dest-grid{grid-template-columns:1fr 1fr}
   .statsbar-in{grid-template-columns:repeat(2,1fr)}
 }
+
+/* ── Accessibility patch: 44px touch targets + 12px minimum text ── */
+.ha,.fc-link,.dest-more-l,.ft-col a,.footer a{min-height:44px;display:inline-flex;align-items:center}
+@media(min-width:769px){.n-links a,.n-cta{min-height:44px;display:inline-flex;align-items:center}}
+.n-links a,.n-cta,.ha,.fc-link,.hero-eyebrow,.cert-lbl,.ft-col-h,.footer-cert,.cil,.sec-tag{font-size:12px}
+.btn-o,.btn-ghost,.jm-btn-wa,.dm-wa-btn,.cf-sub{min-height:48px}
+@media(max-width:768px){.n-links a{padding:10px 0}.hero-eyebrow{letter-spacing:.2em}}
 </style>
 <script type="application/ld+json">
 {
@@ -533,7 +543,7 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:64px 48p
 <section class="hero">
   <div class="hero-bg">
     <!-- Aerial private aviation video — muted autoplay loop -->
-    <video class="hero-video" id="hero-video" autoplay muted loop playsinline preload="auto"
+    <video class="hero-video" id="hero-video" muted loop playsinline preload="none"
       poster="https://images.unsplash.com/photo-1540962351504-03099e0a754b?auto=format&fit=crop&w=2000&q=85">
       <source src="https://videos.pexels.com/video-files/28586474/12427476_2560_1440_24fps.mp4" type="video/mp4">
       <source src="https://videos.pexels.com/video-files/28586474/12427475_1920_1080_24fps.mp4" type="video/mp4">
@@ -570,7 +580,7 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:64px 48p
       </button>
     </div>
     <div class="hero-actions">
-      <a class="ha" href="https://wa.link/rbmftv" target="_blank" rel="noopener noreferrer">WhatsApp 24/7</a>
+      <a class="ha" href="https://wa.me/527291081200" target="_blank" rel="noopener noreferrer">WhatsApp 24/7</a>
       <a class="ha" href="tel:+527291081200">+52 (729) 108-1200</a>
     </div>
   </div>
@@ -889,16 +899,16 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:64px 48p
     <a href="#contact" class="btn-ghost">View all destinations →</a>
   </div>
   <div class="dest-grid">
-    <div class="dc rv rv-d1" style="cursor:pointer" onclick="openDest('cancun')" role="button" tabindex="0" aria-label="Explore Cancún destination"><div class="dc-bg" style="background-image:url('https://jetcab.mx/wp-content/uploads/2024/10/vuelosprivadosacancun-1-scaled.jpg')"></div><div class="dc-ol"></div><span class="dc-urgency">● Chartered today</span><span class="dc-flytime">2h 10m from CDMX</span><div class="dc-info"><span class="dc-city">Cancún</span><span class="dc-ctry">Mexico</span></div></div>
-    <div class="dc rv rv-d2" style="cursor:pointer" onclick="openDest('loscabos')" role="button" tabindex="0" aria-label="Explore Los Cabos destination"><div class="dc-bg" style="background-image:url('https://jetcab.mx/wp-content/uploads/2024/10/vuelos-privados-a-los-cabos-scaled.jpg')"></div><div class="dc-ol"></div><span class="dc-urgency">● Chartered this week</span><span class="dc-flytime">2h 40m from CDMX</span><div class="dc-info"><span class="dc-city">Los Cabos</span><span class="dc-ctry">Mexico</span></div></div>
-    <div class="dc rv rv-d3" style="cursor:pointer" onclick="openDest('puertovallarta')" role="button" tabindex="0" aria-label="Explore Puerto Vallarta destination"><div class="dc-bg" style="background-image:url('https://jetcab.mx/wp-content/uploads/2024/11/Vuelos-privados-a-puerto-vallarta-scaled.jpg')"></div><div class="dc-ol"></div><span class="dc-urgency">● Available today</span><span class="dc-flytime">1h 30m from CDMX</span><div class="dc-info"><span class="dc-city">Puerto Vallarta</span><span class="dc-ctry">Mexico</span></div></div>
+    <div class="dc rv rv-d1" style="cursor:pointer" onclick="openDest('cancun')" role="button" tabindex="0" aria-label="Explore Cancún destination"><div class="dc-bg" style="background-image:url('https://jetcab.mx/wp-content/uploads/2024/10/vuelosprivadosacancun-1-scaled.jpg')"></div><div class="dc-ol"></div><span class="dc-urgency">● Chartered today</span><span class="dc-flytime">2h 15m from CDMX</span><div class="dc-info"><span class="dc-city">Cancún</span><span class="dc-ctry">Mexico</span></div></div>
+    <div class="dc rv rv-d2" style="cursor:pointer" onclick="openDest('loscabos')" role="button" tabindex="0" aria-label="Explore Los Cabos destination"><div class="dc-bg" style="background-image:url('https://jetcab.mx/wp-content/uploads/2024/10/vuelos-privados-a-los-cabos-scaled.jpg')"></div><div class="dc-ol"></div><span class="dc-urgency">● Chartered this week</span><span class="dc-flytime">2h 30m from CDMX</span><div class="dc-info"><span class="dc-city">Los Cabos</span><span class="dc-ctry">Mexico</span></div></div>
+    <div class="dc rv rv-d3" style="cursor:pointer" onclick="openDest('puertovallarta')" role="button" tabindex="0" aria-label="Explore Puerto Vallarta destination"><div class="dc-bg" style="background-image:url('https://jetcab.mx/wp-content/uploads/2024/11/Vuelos-privados-a-puerto-vallarta-scaled.jpg')"></div><div class="dc-ol"></div><span class="dc-urgency">● Available today</span><span class="dc-flytime">1h 45m from CDMX</span><div class="dc-info"><span class="dc-city">Puerto Vallarta</span><span class="dc-ctry">Mexico</span></div></div>
     <div class="dc rv rv-d4" style="cursor:pointer" onclick="openDest('monterrey')" role="button" tabindex="0" aria-label="Explore Monterrey destination"><div class="dc-bg" style="background-image:url('https://jetcab.mx/wp-content/uploads/2024/10/Vuelosprivadosmonterrey-scaled.jpg')"></div><div class="dc-ol"></div><span class="dc-urgency">● Chartered today</span><span class="dc-flytime">1h 15m from CDMX</span><div class="dc-info"><span class="dc-city">Monterrey</span><span class="dc-ctry">Mexico</span></div></div>
-    <div class="dc rv rv-d1" style="cursor:pointer" onclick="openDest('guadalajara')" role="button" tabindex="0" aria-label="Explore Guadalajara destination"><div class="dc-bg" style="background-image:url('https://jetcab.mx/wp-content/uploads/2024/10/vuelos-privados-a-Guadalajara-scaled.jpg')"></div><div class="dc-ol"></div><span class="dc-urgency">● Chartered this week</span><span class="dc-flytime">55m from CDMX</span><div class="dc-info"><span class="dc-city">Guadalajara</span><span class="dc-ctry">Mexico</span></div></div>
+    <div class="dc rv rv-d1" style="cursor:pointer" onclick="openDest('guadalajara')" role="button" tabindex="0" aria-label="Explore Guadalajara destination"><div class="dc-bg" style="background-image:url('https://jetcab.mx/wp-content/uploads/2024/10/vuelos-privados-a-Guadalajara-scaled.jpg')"></div><div class="dc-ol"></div><span class="dc-urgency">● Chartered this week</span><span class="dc-flytime">50m from CDMX</span><div class="dc-info"><span class="dc-city">Guadalajara</span><span class="dc-ctry">Mexico</span></div></div>
     <div class="dc rv rv-d2" style="cursor:pointer" onclick="openDest('acapulco')" role="button" tabindex="0" aria-label="Explore Acapulco destination"><div class="dc-bg" style="background-image:url('https://jetcab.mx/wp-content/uploads/2024/10/vuelosprivadosaacapulcomexico-1024x684.jpg')"></div><div class="dc-ol"></div><span class="dc-urgency">● Popular route</span><span class="dc-flytime">45m from CDMX</span><div class="dc-info"><span class="dc-city">Acapulco</span><span class="dc-ctry">Mexico</span></div></div>
     <div class="dc rv rv-d3" style="cursor:pointer" onclick="openDest('queretaro')" role="button" tabindex="0" aria-label="Explore Querétaro destination"><div class="dc-bg" style="background-image:url('https://jetcab.mx/wp-content/uploads/2024/10/Vuelosprivadosaqueretaro-scaled.jpg')"></div><div class="dc-ol"></div><span class="dc-urgency">● Available today</span><span class="dc-flytime">35m from CDMX</span><div class="dc-info"><span class="dc-city">Querétaro</span><span class="dc-ctry">Mexico</span></div></div>
     <div class="dc rv rv-d4" style="cursor:pointer" onclick="openDest('toluca')" role="button" tabindex="0" aria-label="Explore Toluca destination"><div class="dc-bg" style="background-image:url('https://jetcab.mx/wp-content/uploads/2024/10/vuelos-privados-a-toluca-scaled.jpg')"></div><div class="dc-ol"></div><span class="dc-urgency">● Hub city</span><span class="dc-flytime">Departs from AIT</span><div class="dc-info"><span class="dc-city">Toluca</span><span class="dc-ctry">Mexico</span></div></div>
     <div class="dc rv rv-d1" style="cursor:pointer" onclick="openDest('cdmx')" role="button" tabindex="0" aria-label="Explore Mexico City destination"><div class="dc-bg" style="background-image:url('https://jetcab.mx/wp-content/uploads/2024/10/vuelos-privados-a-cdmx-scaled.jpg')"></div><div class="dc-ol"></div><span class="dc-urgency">● Chartered today</span><span class="dc-flytime">Departs from AIT</span><div class="dc-info"><span class="dc-city">Mexico City</span><span class="dc-ctry">Mexico</span></div></div>
-    <div class="dc rv rv-d2" style="cursor:pointer" onclick="openDest('newyork')" role="button" tabindex="0" aria-label="Explore New York destination"><div class="dc-bg" style="background-image:url('https://jetcab.mx/wp-content/uploads/2024/10/vuelosprivadosanuevayork-scaled.jpg')"></div><div class="dc-ol"></div><span class="dc-urgency">● Chartered this week</span><span class="dc-flytime">4h 45m from CDMX</span><div class="dc-info"><span class="dc-city">Nueva York</span><span class="dc-ctry">United States</span></div></div>
+    <div class="dc rv rv-d2" style="cursor:pointer" onclick="openDest('newyork')" role="button" tabindex="0" aria-label="Explore New York destination"><div class="dc-bg" style="background-image:url('https://jetcab.mx/wp-content/uploads/2024/10/vuelosprivadosanuevayork-scaled.jpg')"></div><div class="dc-ol"></div><span class="dc-urgency">● Chartered this week</span><span class="dc-flytime">5h 30m from CDMX</span><div class="dc-info"><span class="dc-city">Nueva York</span><span class="dc-ctry">United States</span></div></div>
     <div class="dc rv rv-d3" style="cursor:pointer" onclick="openDest('lasvegas')" role="button" tabindex="0" aria-label="Explore Las Vegas destination"><div class="dc-bg" style="background-image:url('https://jetcab.mx/wp-content/uploads/2024/10/Vuelos-Privados-a-Las-Vegas-scaled.jpg')"></div><div class="dc-ol"></div><span class="dc-urgency">● High demand</span><span class="dc-flytime">3h 50m from CDMX</span><div class="dc-info"><span class="dc-city">Las Vegas</span><span class="dc-ctry">United States</span></div></div>
     <div class="dc rv rv-d4" style="cursor:pointer" onclick="openDest('sandiego')" role="button" tabindex="0" aria-label="Explore San Diego destination"><div class="dc-bg" style="background-image:url('https://jetcab.mx/wp-content/uploads/2024/10/vuelos-privados-a-san-diego-scaled.jpg')"></div><div class="dc-ol"></div><span class="dc-urgency">● Popular route</span><span class="dc-flytime">3h 20m from CDMX</span><div class="dc-info"><span class="dc-city">San Diego</span><span class="dc-ctry">United States</span></div></div>
     <div class="dc rv rv-d1" style="cursor:pointer" onclick="openDest('tijuana')" role="button" tabindex="0" aria-label="Explore Tijuana destination"><div class="dc-bg" style="background-image:url('https://jetcab.mx/wp-content/uploads/2024/10/vuelosprivadosatijuana-scaled.jpg')"></div><div class="dc-ol"></div><span class="dc-urgency">● Available today</span><span class="dc-flytime">3h 10m from CDMX</span><div class="dc-info"><span class="dc-city">Tijuana</span><span class="dc-ctry">Mexico</span></div></div>
@@ -911,6 +921,18 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:64px 48p
       <p class="dest-more-n">+200</p>
       <span class="dest-more-l">Available destinations</span>
     </div>
+  </div>
+  <div class="route-links" role="navigation" aria-label="Private jet route guides from Mexico City">
+    <strong>Route guides</strong>
+    <a href="https://jetcab.mx/private-jet-mexico-city-cancun/">Mexico City → Cancún</a>
+    <a href="https://jetcab.mx/private-jet-mexico-city-los-cabos/">Mexico City → Los Cabos</a>
+    <a href="https://jetcab.mx/private-jet-mexico-city-puerto-vallarta/">Mexico City → Puerto Vallarta</a>
+    <a href="https://jetcab.mx/private-jet-mexico-city-monterrey/">Mexico City → Monterrey</a>
+    <a href="https://jetcab.mx/private-jet-mexico-city-guadalajara/">Mexico City → Guadalajara</a>
+    <a href="https://jetcab.mx/private-jet-mexico-city-miami/">Mexico City → Miami</a>
+    <a href="https://jetcab.mx/private-jet-mexico-city-houston/">Mexico City → Houston</a>
+    <a href="https://jetcab.mx/private-jet-mexico-city-new-york/">Mexico City → New York</a>
+    <a href="https://jetcab.mx/private-jet-mexico-city-los-angeles/">Mexico City → Los Angeles</a>
   </div>
 </section>
 <section id="destinations-faq" aria-label="Private jet routes and pricing from Mexico City" style="background:var(--bg2);padding:64px 48px 72px"><div style="max-width:900px;margin:0 auto"><p style="font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--orange);margin:0 0 12px">Destination Guide</p><h2 style="font-family:'Barlow Condensed',sans-serif;font-size:clamp(26px,3.5vw,38px);font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--white);margin:0 0 8px">Private Jet Routes &amp; Pricing from Mexico City</h2><p style="color:rgba(255,255,255,.55);font-size:14px;margin:0 0 10px;line-height:1.6">Flight times, charter pricing by aircraft, and key facts for 18 JETCAB destinations. All flights depart from <strong style="color:var(--white)">Toluca International Airport (AIT/MMTO)</strong>, 65 km from CDMX — no commercial queues, no security lines, 10-minute boarding.</p><p style="color:rgba(255,255,255,.38);font-size:12px;margin:0 0 40px">Prices are one-way estimates and vary by date and availability. <a href="https://wa.me/527291081200" style="color:var(--orange);text-decoration:none">Get a confirmed quote in 30 min →</a></p><div style="border-bottom:1px solid rgba(255,255,255,.08);padding:28px 0"><h3 style="font-size:16px;font-weight:700;color:var(--white);margin:0 0 10px;line-height:1.4">How long is a private jet from Mexico City to Cancún (CUN)? How much does it cost?</h3><p style="font-size:14px;line-height:1.75;color:rgba(255,255,255,.65);margin:0 0 14px">JETCAB private jets depart from Toluca International Airport (AIT/MMTO), 65 km west of CDMX, and reach Cancún International Airport (CUN/MMUN) in approximately <strong style='color:var(--white)'>2 hours 10 minutes</strong> — a flight that takes over 2.5 hours commercially plus 3–4 hours of airport time. Charter rates: <em>Learjet 35</em> (up to 7 pax) from <strong style='color:var(--white)'>$15,000 USD</strong>; <em>Challenger 604</em> (up to 9 pax) from $24,000 USD; <em>Gulfstream GV</em> (up to 16 pax) from $45,000 USD. All prices include crew, catering, permits, fuel, and airport fees. Confirmed quote in 30 min, 24/7.</p><div style="display:flex;flex-wrap:wrap;gap:8px;margin:8px 0 0"><span style="font-size:11px;font-weight:600;color:var(--white);background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);padding:4px 10px;border-radius:3px">Learjet 35 · up to 7 pax · from $15,000</span><span style="font-size:11px;font-weight:600;color:var(--white);background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);padding:4px 10px;border-radius:3px">Challenger 604 · up to 9 pax · from $24,000</span><span style="font-size:11px;font-weight:600;color:var(--white);background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);padding:4px 10px;border-radius:3px">Gulfstream GV · up to 16 pax · from $45,000</span><span style="font-size:11px;font-weight:600;color:var(--white);background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);padding:4px 10px;border-radius:3px">~2h 10m · IATA: CUN · 1,280 km</span></div><p style="font-size:12px;color:rgba(255,255,255,.4);margin:10px 0 0;font-style:italic">Ideal for: beach getaways, destination weddings, incentive travel, family vacations.</p></div><div style="border-bottom:1px solid rgba(255,255,255,.08);padding:28px 0"><h3 style="font-size:16px;font-weight:700;color:var(--white);margin:0 0 10px;line-height:1.4">How long is a private jet from Mexico City to Los Cabos (SJD)? How much does it cost?</h3><p style="font-size:14px;line-height:1.75;color:rgba(255,255,255,.65);margin:0 0 14px">JETCAB flies from Toluca (AIT) to Los Cabos International Airport (SJD/MMSD) in approximately <strong style='color:var(--white)'>2 hours 40 minutes</strong>. High demand November–March. <em>Learjet 35</em> from <strong style='color:var(--white)'>$18,000 USD</strong>; <em>Challenger 604</em> from $29,000 USD; <em>Gulfstream GV</em> from $54,000 USD.</p><div style="display:flex;flex-wrap:wrap;gap:8px;margin:8px 0 0"><span style="font-size:11px;font-weight:600;color:var(--white);background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);padding:4px 10px;border-radius:3px">Learjet 35 · up to 7 pax · from $18,000</span><span style="font-size:11px;font-weight:600;color:var(--white);background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);padding:4px 10px;border-radius:3px">Challenger 604 · up to 9 pax · from $29,000</span><span style="font-size:11px;font-weight:600;color:var(--white);background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);padding:4px 10px;border-radius:3px">Gulfstream GV · up to 16 pax · from $54,000</span><span style="font-size:11px;font-weight:600;color:var(--white);background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);padding:4px 10px;border-radius:3px">~2h 40m · IATA: SJD · 1,530 km</span></div><p style="font-size:12px;color:rgba(255,255,255,.4);margin:10px 0 0;font-style:italic">Ideal for: corporate retreats, golf trips, New Year's celebrations, luxury resort access.</p></div><div style="border-bottom:1px solid rgba(255,255,255,.08);padding:28px 0"><h3 style="font-size:16px;font-weight:700;color:var(--white);margin:0 0 10px;line-height:1.4">How long is a private jet from Mexico City to Miami (MIA)? How much does it cost?</h3><p style="font-size:14px;line-height:1.75;color:rgba(255,255,255,.65);margin:0 0 14px">JETCAB flies from Toluca (AIT) to Miami International Airport (MIA/KMIA) in approximately <strong style='color:var(--white)'>2 hours 50 minutes</strong> — JETCAB's #1 international route. <em>Learjet 35</em> from <strong style='color:var(--white)'>$25,000 USD</strong>; <em>Challenger 604</em> from $40,000 USD; <em>Gulfstream GV</em> from $68,000 USD. U.S. Customs CBP arrival handling at the FBO included.</p><div style="display:flex;flex-wrap:wrap;gap:8px;margin:8px 0 0"><span style="font-size:11px;font-weight:600;color:var(--white);background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);padding:4px 10px;border-radius:3px">Learjet 35 · up to 7 pax · from $25,000</span><span style="font-size:11px;font-weight:600;color:var(--white);background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);padding:4px 10px;border-radius:3px">Challenger 604 · up to 9 pax · from $40,000</span><span style="font-size:11px;font-weight:600;color:var(--white);background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);padding:4px 10px;border-radius:3px">Gulfstream GV · up to 16 pax · from $68,000</span><span style="font-size:11px;font-weight:600;color:var(--white);background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);padding:4px 10px;border-radius:3px">~2h 50m · IATA: MIA · 1,950 km</span></div><p style="font-size:12px;color:rgba(255,255,255,.4);margin:10px 0 0;font-style:italic">Ideal for: business banking, luxury shopping, Art Basel, healthcare, PortMiami cruises.</p></div><div style="border-bottom:1px solid rgba(255,255,255,.08);padding:28px 0"><h3 style="font-size:16px;font-weight:700;color:var(--white);margin:0 0 10px;line-height:1.4">How long is a private jet from Mexico City to Puerto Vallarta (PVR)? How much does it cost?</h3><p style="font-size:14px;line-height:1.75;color:rgba(255,255,255,.65);margin:0 0 14px">JETCAB flies from Toluca (AIT) to Licenciado Gustavo Díaz Ordaz Airport (PVR/MMPR) in approximately <strong style='color:var(--white)'>1 hour 30 minutes</strong>. <em>Learjet 35</em> from <strong style='color:var(--white)'>$12,000 USD</strong>; <em>Challenger 604</em> from $19,000 USD.</p><div style="display:flex;flex-wrap:wrap;gap:8px;margin:8px 0 0"><span style="font-size:11px;font-weight:600;color:var(--white);background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);padding:4px 10px;border-radius:3px">Learjet 35 · up to 7 pax · from $12,000</span><span style="font-size:11px;font-weight:600;color:var(--white);background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);padding:4px 10px;border-radius:3px">Challenger 604 · up to 9 pax · from $19,000</span><span style="font-size:11px;font-weight:600;color:var(--white);background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);padding:4px 10px;border-radius:3px">~1h 30m · IATA: PVR · 700 km</span></div><p style="font-size:12px;color:rgba(255,255,255,.4);margin:10px 0 0;font-style:italic">Ideal for: weekend escapes, film industry charters, beach weddings, Riviera Nayarit access.</p></div><div style="border-bottom:1px solid rgba(255,255,255,.08);padding:28px 0"><h3 style="font-size:16px;font-weight:700;color:var(--white);margin:0 0 10px;line-height:1.4">How long is a private jet from Mexico City to Monterrey (MTY)? How much does it cost?</h3><p style="font-size:14px;line-height:1.75;color:rgba(255,255,255,.65);margin:0 0 14px">JETCAB flies from Toluca (AIT) to Gen. Mariano Escobedo Airport (MTY/MMMY) in approximately <strong style='color:var(--white)'>1 hour 15 minutes</strong> — the fastest way to link Mexico's two largest business centers. <em>Learjet 35</em> from <strong style='color:var(--white)'>$9,000 USD</strong>; <em>Challenger 604</em> from $14,500 USD.</p><div style="display:flex;flex-wrap:wrap;gap:8px;margin:8px 0 0"><span style="font-size:11px;font-weight:600;color:var(--white);background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);padding:4px 10px;border-radius:3px">Learjet 35 · up to 7 pax · from $9,000</span><span style="font-size:11px;font-weight:600;color:var(--white);background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);padding:4px 10px;border-radius:3px">Challenger 604 · up to 9 pax · from $14,500</span><span style="font-size:11px;font-weight:600;color:var(--white);background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);padding:4px 10px;border-radius:3px">~1h 15m · IATA: MTY · 920 km</span></div><p style="font-size:12px;color:rgba(255,255,255,.4);margin:10px 0 0;font-style:italic">Ideal for: executive day trips, board meetings, factory visits, financial roadshows.</p></div><div style="border-bottom:1px solid rgba(255,255,255,.08);padding:28px 0"><h3 style="font-size:16px;font-weight:700;color:var(--white);margin:0 0 10px;line-height:1.4">How long is a private jet from Mexico City to Guadalajara (GDL)? How much does it cost?</h3><p style="font-size:14px;line-height:1.75;color:rgba(255,255,255,.65);margin:0 0 14px">JETCAB flies from Toluca (AIT) to Don Miguel Hidalgo Airport (GDL/MMGL) in approximately <strong style='color:var(--white)'>55 minutes</strong>. <em>Learjet 35</em> from <strong style='color:var(--white)'>$7,000 USD</strong>; <em>Challenger 604</em> from $11,000 USD.</p><div style="display:flex;flex-wrap:wrap;gap:8px;margin:8px 0 0"><span style="font-size:11px;font-weight:600;color:var(--white);background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);padding:4px 10px;border-radius:3px">Learjet 35 · up to 7 pax · from $7,000</span><span style="font-size:11px;font-weight:600;color:var(--white);background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);padding:4px 10px;border-radius:3px">Challenger 604 · up to 9 pax · from $11,000</span><span style="font-size:11px;font-weight:600;color:var(--white);background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);padding:4px 10px;border-radius:3px">~55 min · IATA: GDL · 490 km</span></div><p style="font-size:12px;color:rgba(255,255,255,.4);margin:10px 0 0;font-style:italic">Ideal for: Tequila region tours, tech industry events, Lake Chapala weekend getaways.</p></div><div style="border-bottom:1px solid rgba(255,255,255,.08);padding:28px 0"><h3 style="font-size:16px;font-weight:700;color:var(--white);margin:0 0 10px;line-height:1.4">How long is a private jet from Mexico City to Houston (IAH/HOU)? How much does it cost?</h3><p style="font-size:14px;line-height:1.75;color:rgba(255,255,255,.65);margin:0 0 14px">JETCAB flies from Toluca (AIT) to George Bush Intercontinental (IAH) or Hobby (HOU) in approximately <strong style='color:var(--white)'>2 hours</strong>. Houston is a key hub for oil &amp; gas and medical travel. <em>Learjet 35</em> from <strong style='color:var(--white)'>$18,000 USD</strong>; <em>Challenger 604</em> from $29,000 USD.</p><div style="display:flex;flex-wrap:wrap;gap:8px;margin:8px 0 0"><span style="font-size:11px;font-weight:600;color:var(--white);background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);padding:4px 10px;border-radius:3px">Learjet 35 · up to 7 pax · from $18,000</span><span style="font-size:11px;font-weight:600;color:var(--white);background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);padding:4px 10px;border-radius:3px">Challenger 604 · up to 9 pax · from $29,000</span><span style="font-size:11px;font-weight:600;color:var(--white);background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);padding:4px 10px;border-radius:3px">~2h · IATA: IAH/HOU · 1,350 km</span></div><p style="font-size:12px;color:rgba(255,255,255,.4);margin:10px 0 0;font-style:italic">Ideal for: energy sector executives, Texas Medical Center visits, oil &amp; gas conferences.</p></div><div style="border-bottom:1px solid rgba(255,255,255,.08);padding:28px 0"><h3 style="font-size:16px;font-weight:700;color:var(--white);margin:0 0 10px;line-height:1.4">How long is a private jet from Mexico City to Mérida (MID)? How much does it cost?</h3><p style="font-size:14px;line-height:1.75;color:rgba(255,255,255,.65);margin:0 0 14px">JETCAB flies from Toluca (AIT) to Manuel Crescencio Rejón Airport (MID/MMMD) in approximately <strong style='color:var(--white)'>1 hour 45 minutes</strong>. Mérida is the gateway to Chichén Itzá, Uxmal, and Yucatán's cenotes. <em>Learjet 35</em> from <strong style='color:var(--white)'>$13,000 USD</strong>; <em>Challenger 604</em> from $21,000 USD.</p><div style="display:flex;flex-wrap:wrap;gap:8px;margin:8px 0 0"><span style="font-size:11px;font-weight:600;color:var(--white);background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);padding:4px 10px;border-radius:3px">Learjet 35 · up to 7 pax · from $13,000</span><span style="font-size:11px;font-weight:600;color:var(--white);background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);padding:4px 10px;border-radius:3px">Challenger 604 · up to 9 pax · from $21,000</span><span style="font-size:11px;font-weight:600;color:var(--white);background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);padding:4px 10px;border-radius:3px">~1h 45m · IATA: MID · 1,100 km</span></div><p style="font-size:12px;color:rgba(255,255,255,.4);margin:10px 0 0;font-style:italic">Ideal for: cultural tourism, hacienda weddings, archaeological site visits, Yucatán cenotes.</p></div><div style="border-bottom:1px solid rgba(255,255,255,.08);padding:28px 0"><h3 style="font-size:16px;font-weight:700;color:var(--white);margin:0 0 10px;line-height:1.4">How long is a private jet from Mexico City to Oaxaca (OAX)? How much does it cost?</h3><p style="font-size:14px;line-height:1.75;color:rgba(255,255,255,.65);margin:0 0 14px">JETCAB flies from Toluca (AIT) to Xoxocotlán International Airport (OAX/MMOX) in approximately <strong style='color:var(--white)'>1 hour 10 minutes</strong>. <em>Learjet 35</em> from <strong style='color:var(--white)'>$8,500 USD</strong>; <em>Challenger 604</em> from $13,500 USD.</p><div style="display:flex;flex-wrap:wrap;gap:8px;margin:8px 0 0"><span style="font-size:11px;font-weight:600;color:var(--white);background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);padding:4px 10px;border-radius:3px">Learjet 35 · up to 7 pax · from $8,500</span><span style="font-size:11px;font-weight:600;color:var(--white);background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);padding:4px 10px;border-radius:3px">Challenger 604 · up to 9 pax · from $13,500</span><span style="font-size:11px;font-weight:600;color:var(--white);background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);padding:4px 10px;border-radius:3px">~1h 10m · IATA: OAX · 580 km</span></div><p style="font-size:12px;color:rgba(255,255,255,.4);margin:10px 0 0;font-style:italic">Ideal for: Day of the Dead, culinary tourism, artisan destination weddings, Hierve el Agua.</p></div><div style="border-bottom:1px solid rgba(255,255,255,.08);padding:28px 0"><h3 style="font-size:16px;font-weight:700;color:var(--white);margin:0 0 10px;line-height:1.4">How long is a private jet from Mexico City to New York (TEB/JFK)? How much does it cost?</h3><p style="font-size:14px;line-height:1.75;color:rgba(255,255,255,.65);margin:0 0 14px">JETCAB flies from Toluca (AIT) to Teterboro (TEB) or JFK in approximately <strong style='color:var(--white)'>4 hours 45 minutes</strong>. For non-stop service we recommend the <em>Gulfstream GV</em>. <em>Learjet 35</em> (with one fuel stop) from <strong style='color:var(--white)'>$45,000 USD</strong>; <em>Challenger 604</em> from $68,000 USD; <em>Gulfstream GV</em> (non-stop) from $95,000 USD. U.S. CBP pre-clearance arranged.</p><div style="display:flex;flex-wrap:wrap;gap:8px;margin:8px 0 0"><span style="font-size:11px;font-weight:600;color:var(--white);background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);padding:4px 10px;border-radius:3px">Learjet 35 · from $45,000 · 1 stop</span><span style="font-size:11px;font-weight:600;color:var(--white);background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);padding:4px 10px;border-radius:3px">Challenger 604 · from $68,000</span><span style="font-size:11px;font-weight:600;color:var(--white);background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);padding:4px 10px;border-radius:3px">Gulfstream GV · from $95,000 · non-stop</span><span style="font-size:11px;font-weight:600;color:var(--white);background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);padding:4px 10px;border-radius:3px">~4h 45m · IATA: TEB/JFK · 3,500 km</span></div><p style="font-size:12px;color:rgba(255,255,255,.4);margin:10px 0 0;font-style:italic">Ideal for: fashion week, financial roadshows, entertainment travel, UN General Assembly.</p></div><div style="border-bottom:1px solid rgba(255,255,255,.08);padding:28px 0"><h3 style="font-size:16px;font-weight:700;color:var(--white);margin:0 0 10px;line-height:1.4">How long is a private jet from Mexico City to Las Vegas (LAS)? How much does it cost?</h3><p style="font-size:14px;line-height:1.75;color:rgba(255,255,255,.65);margin:0 0 14px">JETCAB flies from Toluca (AIT) to Harry Reid International Airport (LAS/KLAS) in approximately <strong style='color:var(--white)'>3 hours 50 minutes</strong>. <em>Learjet 35</em> from <strong style='color:var(--white)'>$35,000 USD</strong>; <em>Challenger 604</em> from $56,000 USD; <em>Gulfstream GV</em> from $82,000 USD. U.S. CBP arrival at FBO.</p><div style="display:flex;flex-wrap:wrap;gap:8px;margin:8px 0 0"><span style="font-size:11px;font-weight:600;color:var(--white);background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);padding:4px 10px;border-radius:3px">Learjet 35 · up to 7 pax · from $35,000</span><span style="font-size:11px;font-weight:600;color:var(--white);background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);padding:4px 10px;border-radius:3px">Challenger 604 · up to 9 pax · from $56,000</span><span style="font-size:11px;font-weight:600;color:var(--white);background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);padding:4px 10px;border-radius:3px">Gulfstream GV · up to 16 pax · from $82,000</span><span style="font-size:11px;font-weight:600;color:var(--white);background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);padding:4px 10px;border-radius:3px">~3h 50m · IATA: LAS · 2,800 km</span></div><p style="font-size:12px;color:rgba(255,255,255,.4);margin:10px 0 0;font-style:italic">Ideal for: Formula 1 Grand Prix, boxing events, corporate incentive travel, casino groups.</p></div><div style="border-bottom:1px solid rgba(255,255,255,.08);padding:28px 0"><h3 style="font-size:16px;font-weight:700;color:var(--white);margin:0 0 10px;line-height:1.4">How long is a private jet from Mexico City to Acapulco (ACA)? How much does it cost?</h3><p style="font-size:14px;line-height:1.75;color:rgba(255,255,255,.65);margin:0 0 14px">JETCAB flies from Toluca (AIT) to Juan N. Álvarez Airport (ACA/MMAA) in approximately <strong style='color:var(--white)'>45 minutes</strong> — one of JETCAB's shortest routes. <em>Learjet 35</em> from <strong style='color:var(--white)'>$6,000 USD</strong>.</p><div style="display:flex;flex-wrap:wrap;gap:8px;margin:8px 0 0"><span style="font-size:11px;font-weight:600;color:var(--white);background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);padding:4px 10px;border-radius:3px">Learjet 35 · up to 7 pax · from $6,000</span><span style="font-size:11px;font-weight:600;color:var(--white);background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);padding:4px 10px;border-radius:3px">~45 min · IATA: ACA · 360 km</span><span style="font-size:11px;font-weight:600;color:var(--white);background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);padding:4px 10px;border-radius:3px">Shortest domestic route</span></div><p style="font-size:12px;color:rgba(255,255,255,.4);margin:10px 0 0;font-style:italic">Ideal for: same-day beach trips, corporate cliff-side venue events.</p></div><div style="border-bottom:1px solid rgba(255,255,255,.08);padding:28px 0"><h3 style="font-size:16px;font-weight:700;color:var(--white);margin:0 0 10px;line-height:1.4">How long is a private jet from Mexico City to San Diego (SAN)? How much does it cost?</h3><p style="font-size:14px;line-height:1.75;color:rgba(255,255,255,.65);margin:0 0 14px">JETCAB flies from Toluca (AIT) to San Diego International Airport (SAN/KSAN) in approximately <strong style='color:var(--white)'>3 hours 20 minutes</strong>. <em>Learjet 35</em> from <strong style='color:var(--white)'>$30,000 USD</strong>; <em>Challenger 604</em> from $48,000 USD.</p><div style="display:flex;flex-wrap:wrap;gap:8px;margin:8px 0 0"><span style="font-size:11px;font-weight:600;color:var(--white);background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);padding:4px 10px;border-radius:3px">Learjet 35 · up to 7 pax · from $30,000</span><span style="font-size:11px;font-weight:600;color:var(--white);background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);padding:4px 10px;border-radius:3px">Challenger 604 · up to 9 pax · from $48,000</span><span style="font-size:11px;font-weight:600;color:var(--white);background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);padding:4px 10px;border-radius:3px">~3h 20m · IATA: SAN · 2,400 km</span></div><p style="font-size:12px;color:rgba(255,255,255,.4);margin:10px 0 0;font-style:italic">Ideal for: cross-border business, medical tourism, tech industry travel, Tijuana–San Diego corridor.</p></div><div style="border-bottom:1px solid rgba(255,255,255,.08);padding:28px 0"><h3 style="font-size:16px;font-weight:700;color:var(--white);margin:0 0 10px;line-height:1.4">How long is a private jet from Mexico City to Tijuana (TIJ)? How much does it cost?</h3><p style="font-size:14px;line-height:1.75;color:rgba(255,255,255,.65);margin:0 0 14px">JETCAB flies from Toluca (AIT) to Abelardo L. Rodríguez Airport (TIJ/MMTJ) in approximately <strong style='color:var(--white)'>3 hours 10 minutes</strong>. <em>Learjet 35</em> from <strong style='color:var(--white)'>$28,000 USD</strong>.</p><div style="display:flex;flex-wrap:wrap;gap:8px;margin:8px 0 0"><span style="font-size:11px;font-weight:600;color:var(--white);background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);padding:4px 10px;border-radius:3px">Learjet 35 · up to 7 pax · from $28,000</span><span style="font-size:11px;font-weight:600;color:var(--white);background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);padding:4px 10px;border-radius:3px">~3h 10m · IATA: TIJ · 2,350 km</span></div><p style="font-size:12px;color:rgba(255,255,255,.4);margin:10px 0 0;font-style:italic">Ideal for: maquiladora executives, cross-border trade, medical tourism.</p></div><div style="border-bottom:1px solid rgba(255,255,255,.08);padding:28px 0"><h3 style="font-size:16px;font-weight:700;color:var(--white);margin:0 0 10px;line-height:1.4">How long is a private jet from Mexico City to McAllen, TX (MFE)? How much does it cost?</h3><p style="font-size:14px;line-height:1.75;color:rgba(255,255,255,.65);margin:0 0 14px">JETCAB flies from Toluca (AIT) to McAllen Miller International Airport (MFE/KMFE) in approximately <strong style='color:var(--white)'>1 hour 30 minutes</strong>. <em>Learjet 35</em> from <strong style='color:var(--white)'>$10,000 USD</strong>; <em>Challenger 604</em> from $16,000 USD.</p><div style="display:flex;flex-wrap:wrap;gap:8px;margin:8px 0 0"><span style="font-size:11px;font-weight:600;color:var(--white);background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);padding:4px 10px;border-radius:3px">Learjet 35 · up to 7 pax · from $10,000</span><span style="font-size:11px;font-weight:600;color:var(--white);background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);padding:4px 10px;border-radius:3px">Challenger 604 · up to 9 pax · from $16,000</span><span style="font-size:11px;font-weight:600;color:var(--white);background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);padding:4px 10px;border-radius:3px">~1h 30m · IATA: MFE · 750 km</span></div><p style="font-size:12px;color:rgba(255,255,255,.4);margin:10px 0 0;font-style:italic">Ideal for: maquiladora executives, cross-border trade missions, agricultural export business.</p></div><div style="border-bottom:1px solid rgba(255,255,255,.08);padding:28px 0"><h3 style="font-size:16px;font-weight:700;color:var(--white);margin:0 0 10px;line-height:1.4">How long is a private jet from Mexico City to Querétaro (QRO)? How much does it cost?</h3><p style="font-size:14px;line-height:1.75;color:rgba(255,255,255,.65);margin:0 0 14px">JETCAB flies from Toluca (AIT) to Querétaro Intercontinental Airport (QRO/MMQT) in approximately <strong style='color:var(--white)'>35 minutes</strong>. <em>Learjet 35</em> from <strong style='color:var(--white)'>$5,000 USD</strong>.</p><div style="display:flex;flex-wrap:wrap;gap:8px;margin:8px 0 0"><span style="font-size:11px;font-weight:600;color:var(--white);background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);padding:4px 10px;border-radius:3px">Learjet 35 · up to 7 pax · from $5,000</span><span style="font-size:11px;font-weight:600;color:var(--white);background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);padding:4px 10px;border-radius:3px">~35 min · IATA: QRO · 215 km</span></div><p style="font-size:12px;color:rgba(255,255,255,.4);margin:10px 0 0;font-style:italic">Ideal for: automotive/aerospace executives, winery tours, colonial city visits.</p></div><div style="border-bottom:1px solid rgba(255,255,255,.08);padding:28px 0"><h3 style="font-size:16px;font-weight:700;color:var(--white);margin:0 0 10px;line-height:1.4">How long is a private jet from Mexico City to Havana, Cuba (HAV)? How much does it cost?</h3><p style="font-size:14px;line-height:1.75;color:rgba(255,255,255,.65);margin:0 0 14px">JETCAB flies from Toluca (AIT) to José Martí International Airport (HAV/MUHA) in approximately <strong style='color:var(--white)'>2 hours 30 minutes</strong>. International permits and overflight authorizations are handled by JETCAB. <em>Learjet 35</em> from <strong style='color:var(--white)'>$22,000 USD</strong>; <em>Challenger 604</em> from $35,000 USD.</p><div style="display:flex;flex-wrap:wrap;gap:8px;margin:8px 0 0"><span style="font-size:11px;font-weight:600;color:var(--white);background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);padding:4px 10px;border-radius:3px">Learjet 35 · up to 7 pax · from $22,000</span><span style="font-size:11px;font-weight:600;color:var(--white);background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);padding:4px 10px;border-radius:3px">Challenger 604 · up to 9 pax · from $35,000</span><span style="font-size:11px;font-weight:600;color:var(--white);background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);padding:4px 10px;border-radius:3px">~2h 30m · IATA: HAV · 1,600 km</span><span style="font-size:11px;font-weight:600;color:var(--white);background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);padding:4px 10px;border-radius:3px">Permits included</span></div><p style="font-size:12px;color:rgba(255,255,255,.4);margin:10px 0 0;font-style:italic">Ideal for: cultural delegations, business travel, diplomatic missions.</p></div><div style="border-bottom:1px solid rgba(255,255,255,.08);padding:28px 0"><h3 style="font-size:16px;font-weight:700;color:var(--white);margin:0 0 10px;line-height:1.4">How long is a private jet from Mexico City to Madrid, Spain (MAD)? How much does it cost?</h3><p style="font-size:14px;line-height:1.75;color:rgba(255,255,255,.65);margin:0 0 14px">JETCAB arranges transatlantic charters from Toluca (AIT) to Adolfo Suárez Madrid–Barajas Airport (MAD/LEMD) in approximately <strong style='color:var(--white)'>11 hours</strong>. The <em>Gulfstream GV</em> is required for this ultra-long-range route. Rates from <strong style='color:var(--white)'>$120,000 USD</strong> one-way on a Gulfstream GV including crew rest, permits, fuel, and full-flight catering.</p><div style="display:flex;flex-wrap:wrap;gap:8px;margin:8px 0 0"><span style="font-size:11px;font-weight:600;color:var(--white);background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);padding:4px 10px;border-radius:3px">Gulfstream GV · up to 16 pax · from $120,000</span><span style="font-size:11px;font-weight:600;color:var(--white);background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);padding:4px 10px;border-radius:3px">~11h · IATA: MAD · 9,000 km</span><span style="font-size:11px;font-weight:600;color:var(--white);background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);padding:4px 10px;border-radius:3px">Ultra-long-range · Transatlantic</span></div><p style="font-size:12px;color:rgba(255,255,255,.4);margin:10px 0 0;font-style:italic">Ideal for: international business, fashion week, diplomatic travel, family relocation.</p></div><div style="margin:40px 0 0;text-align:center"><a href="https://wa.me/527291081200?text=Hi%20JETCAB%2C%20I'd%20like%20a%20private%20jet%20quote" target="_blank" rel="noopener" style="display:inline-block;background:var(--orange);color:var(--white);font-family:'Barlow Condensed',sans-serif;font-weight:700;letter-spacing:.1em;text-transform:uppercase;font-size:14px;padding:14px 36px;border-radius:4px;text-decoration:none">Request a Quote via WhatsApp</a></div></div></section>
@@ -1006,7 +1028,7 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:64px 48p
       <p class="cp">Personalized response in under 30 minutes. No commitment. Direct 24/7 service, 365 days a year.</p>
       <div class="cinfo">
         <div class="cir"><span class="cil">Phone</span><span class="civ">+52 (729) 108-1200</span></div>
-        <div class="cir"><span class="cil">WhatsApp</span><span class="civ">wa.link/rbmftv · 24/7</span></div>
+        <div class="cir"><span class="cil">WhatsApp</span><span class="civ">+52 729 108 1200 · 24/7</span></div>
         <div class="cir"><span class="cil">Base</span><span class="civ">Toluca, México (AIT)</span></div>
         <div class="cir"><span class="cil">Coverage</span><span class="civ">Mexico &amp; International</span></div>
       </div>
@@ -1054,8 +1076,8 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:64px 48p
         <div class="ft-brand-name">JETCAB</div>
         <p class="ft-brand-p">Mexico's premier private jet and helicopter charter company. 25 years, 2,000+ flights, 500+ satisfied clients. DGAC certified.</p>
         <div style="display:flex;gap:10px">
-          <a href="https://wa.link/rbmftv" target="_blank" rel="noopener noreferrer" style="background:var(--orange);color:#fff;padding:8px 16px;font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;border-radius:100px">WhatsApp</a>
-          <a href="tel:+527291081200" style="border:1px solid var(--border);color:var(--muted);padding:8px 16px;font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;border-radius:100px">Call Now</a>
+          <a href="https://wa.me/527291081200" target="_blank" rel="noopener noreferrer" style="background:var(--orange);color:#fff;padding:12px 18px;min-height:44px;display:inline-flex;align-items:center;font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;border-radius:100px">WhatsApp</a>
+          <a href="tel:+527291081200" style="border:1px solid var(--border);color:var(--muted);padding:12px 18px;min-height:44px;display:inline-flex;align-items:center;font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;border-radius:100px">Call Now</a>
         </div>
       </div>
       <div class="ft-col">
@@ -1080,10 +1102,24 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:64px 48p
         </ul>
       </div>
       <div class="ft-col">
+        <div class="ft-col-h">Routes</div>
+        <ul>
+          <li><a href="https://jetcab.mx/private-jet-mexico-city-cancun/">Mexico City – Cancún</a></li>
+          <li><a href="https://jetcab.mx/private-jet-mexico-city-los-cabos/">Mexico City – Los Cabos</a></li>
+          <li><a href="https://jetcab.mx/private-jet-mexico-city-puerto-vallarta/">Mexico City – Puerto Vallarta</a></li>
+          <li><a href="https://jetcab.mx/private-jet-mexico-city-monterrey/">Mexico City – Monterrey</a></li>
+          <li><a href="https://jetcab.mx/private-jet-mexico-city-guadalajara/">Mexico City – Guadalajara</a></li>
+          <li><a href="https://jetcab.mx/private-jet-mexico-city-miami/">Mexico City – Miami</a></li>
+          <li><a href="https://jetcab.mx/private-jet-mexico-city-houston/">Mexico City – Houston</a></li>
+          <li><a href="https://jetcab.mx/private-jet-mexico-city-new-york/">Mexico City – New York</a></li>
+          <li><a href="https://jetcab.mx/private-jet-mexico-city-los-angeles/">Mexico City – Los Angeles</a></li>
+        </ul>
+      </div>
+      <div class="ft-col">
         <div class="ft-col-h">Contact</div>
         <ul>
           <li><a href="tel:+527291081200">+52 (729) 108-1200</a></li>
-          <li><a href="https://wa.link/rbmftv" target="_blank" rel="noopener noreferrer">WhatsApp 24/7</a></li>
+          <li><a href="https://wa.me/527291081200" target="_blank" rel="noopener noreferrer">WhatsApp 24/7</a></li>
           <li><a href="mailto:contacto@jetcab.mx">contacto@jetcab.mx</a></li>
           <li><a href="/" onclick="document.cookie='jetcab_lang=es;path=/;max-age=2592000;SameSite=Lax'">Versión en Español</a></li>
         </ul>
@@ -1122,7 +1158,7 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:64px 48p
 </div>
 
 <!-- WHATSAPP FLOAT -->
-<a href="https://wa.link/rbmftv" target="_blank" rel="noopener noreferrer" aria-label="Contact via WhatsApp" style="position:fixed;bottom:90px;right:24px;z-index:9999;width:56px;height:56px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,.45);animation:waPulse 2.5s ease-in-out infinite;text-decoration:none">
+<a href="https://wa.me/527291081200" target="_blank" rel="noopener noreferrer" aria-label="Contact via WhatsApp" style="position:fixed;bottom:90px;right:24px;z-index:9999;width:56px;height:56px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,.45);animation:waPulse 2.5s ease-in-out infinite;text-decoration:none">
   <svg width="28" height="28" viewBox="0 0 24 24" fill="#fff" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
 </a>
 <style>@keyframes waPulse{0%,100%{box-shadow:0 4px 20px rgba(37,211,102,.45)}50%{box-shadow:0 4px 20px rgba(37,211,102,.45),0 0 0 8px rgba(37,211,102,.18)}}@media(prefers-reduced-motion:reduce){[style*="waPulse"]{animation:none}}</style>
@@ -1178,58 +1214,6 @@ document.querySelectorAll('.faq-q').forEach(function(q){
   if(d)d.querySelectorAll('a').forEach(function(a){a.addEventListener('click',cl);});
 })();
 
-// FOMO & social proof ticker
-(function(){
-  var events = [
-    'Alejandro R. booked CDMX → Miami · 3 hrs ago',
-    'Daniel W. requested Cancún → NYC · 1 hr ago',
-    'Grupo Empresarial chartered CDMX → Monterrey · this morning',
-    'James H. flew Los Cabos → Las Vegas · yesterday',
-    'Valentina C. booked helicopter tour CDMX · 2 hrs ago',
-    'Carlos M. requested air ambulance · same-day flight · today',
-    'Sarah T. booked Gulfstream GV to Miami · 4 hrs ago',
-    'MX Corp arranged fleet for executive summit · this week',
-    'Rodrigo A. flew Puerto Vallarta → Houston · this morning',
-    'Fernanda B. chartered Bell 206 for Cancún tour · 5 hrs ago'
-  ];
-  var el = document.getElementById('fomo-text');
-  var vc = document.getElementById('viewer-count');
-  var avail = document.getElementById('avail-count');
-  var idx = 0;
-
-  function rotateEvent() {
-    if (!el) return;
-    el.style.opacity = '0';
-    setTimeout(function(){
-      el.textContent = events[idx % events.length];
-      el.style.opacity = '1';
-      idx++;
-    }, 400);
-  }
-
-  if (el) {
-    el.style.transition = 'opacity .4s';
-    rotateEvent();
-    setInterval(rotateEvent, 5000);
-  }
-
-  // Viewer count: fluctuate between 3–8
-  if (vc) {
-    setInterval(function(){
-      var base = 4 + Math.round(Math.random() * 4);
-      vc.textContent = base;
-    }, 12000);
-  }
-
-  // Available aircraft: fluctuate 3–6
-  if (avail) {
-    setInterval(function(){
-      var n = 3 + Math.round(Math.random() * 3);
-      avail.textContent = n;
-    }, 30000);
-  }
-})();
-
 // ─── VIDEO BACKGROUND FADE-IN ────────────────────────────────────────────────
 (function(){
   var v = document.getElementById('hero-video');
@@ -1240,10 +1224,14 @@ document.querySelectorAll('.faq-q').forEach(function(q){
     var bg = v.parentElement;
     if (bg) bg.style.setProperty('--fallback-opacity', '0');
   }
+  var conn = navigator.connection || {};
+  var wantsVideo = window.innerWidth > 768 && !conn.saveData
+    && !(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
+  if (!wantsVideo) { v.remove(); return; } // mobile & data-saver keep the lightweight poster only
   v.addEventListener('canplaythrough', onReady, {once:true});
   v.addEventListener('playing', onReady, {once:true});
-  // Trigger load
-  v.load();
+  v.setAttribute('preload', 'auto'); v.autoplay = true;
+  v.load(); var pr = v.play(); if (pr && pr.catch) pr.catch(function(){});
 })();
 
 // ─── CANVAS FLIGHT-PATH PARTICLE NETWORK ─────────────────────────────────────
@@ -1358,16 +1346,18 @@ document.querySelectorAll('.faq-q').forEach(function(q){
 (function(){
   var pi = document.getElementById('page-intro');
   if (!pi) return;
-  // If user prefers reduced motion, skip intro immediately
-  if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  var seen = false;
+  try { seen = sessionStorage.getItem('jc-intro') === '1'; } catch (e) {}
+  // Skip intro on repeat views in the same session, or if user prefers reduced motion
+  if (seen || (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches)) {
     pi.style.display = 'none';
     return;
   }
-  // Remove from DOM 400ms after CSS fade-out finishes (2.4s delay + 0.7s fade = 3.1s total)
-  setTimeout(function(){ pi.style.display = 'none'; }, 3200);
-  // Prevent scrolling during intro
+  try { sessionStorage.setItem('jc-intro', '1'); } catch (e) {}
+  // CSS: 1.1s delay + 0.5s fade = 1.6s total
+  setTimeout(function(){ pi.style.display = 'none'; }, 1700);
   document.body.style.overflow = 'hidden';
-  setTimeout(function(){ document.body.style.overflow = ''; }, 2500);
+  setTimeout(function(){ document.body.style.overflow = ''; }, 1200);
 })();
 
 // Quote form: submit handler
@@ -1484,6 +1474,13 @@ document.querySelectorAll('.faq-q').forEach(function(q){
 .dm-a{display:none;padding:0 0 12px;font-size:12px;line-height:1.65;color:rgba(255,255,255,.62)}
 .dm-qa.open .dm-a{display:block}
 .dm-cta{text-align:center}
+.dm-route-link{display:inline-flex;align-items:center;min-height:44px;margin-top:14px;font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--orange);text-decoration:none}
+.dm-route-link:hover{text-decoration:underline}
+.route-links{max-width:1200px;margin:28px auto 0;padding:0 48px;display:flex;flex-wrap:wrap;gap:6px 18px;align-items:center}
+.route-links strong{font-family:'Barlow Condensed',sans-serif;font-size:12px;letter-spacing:.3em;text-transform:uppercase;color:var(--orange);margin-right:6px}
+.route-links a{display:inline-flex;align-items:center;min-height:44px;font-size:13px;color:var(--muted);text-decoration:none;border-bottom:1px solid transparent}
+.route-links a:hover{color:#fff;border-color:var(--orange)}
+@media(max-width:768px){.route-links{padding:0 24px}}
 .dm-wa-btn{display:inline-flex;align-items:center;gap:10px;background:#25D366;color:#fff;padding:16px 32px;font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;border-radius:100px;text-decoration:none;transition:background .2s}
 .dm-wa-btn:hover{background:#1ebd5a}
 .dm-wa-btn svg{width:18px;height:18px;fill:#fff}
@@ -1947,7 +1944,7 @@ function swapJetHero(thumb,url){
 var DESTS={
   cancun:{
     city:'Cancún',country:'Mexico',tag:'Caribbean Coast',
-    flytime:'✈ 2h 10m from CDMX',
+    flytime:'✈ 2h 15m from CDMX',
     fomo:'Two hours in the air. The moment the door opens, you feel it — salt, warmth, that unmistakable Caribbean light. Your villa is waiting, breakfast already set on the terrace facing the turquoise sea. You brought the family. <em>They\'re already in the water.</em>',
     ideal:'Ideal for: Families · Couples · Executive Retreats',
     imgs:['https://jetcab.mx/wp-content/uploads/2024/10/vuelosprivadosacancun-1-scaled.jpg','https://jetcab.mx/wp-content/uploads/2024/10/vuelosprivadosacancun-1-scaled.jpg'],
@@ -1955,7 +1952,7 @@ var DESTS={
   },
   loscabos:{
     city:'Los Cabos',country:'Mexico',tag:'Pacific Baja',
-    flytime:'✈ 2h 40m from CDMX',
+    flytime:'✈ 2h 30m from CDMX',
     fomo:'Where the desert meets the Pacific. Whale season. A cliff-top suite at Las Ventanas. A yacht waiting at the marina. You close deals from the terrace and call it rest. <em>Some people work in an office. You work better here.</em>',
     ideal:'Ideal for: Power Couples · Deal Closings · Family Villas',
     imgs:['https://jetcab.mx/wp-content/uploads/2024/10/vuelos-privados-a-los-cabos-scaled.jpg','https://jetcab.mx/wp-content/uploads/2024/10/vuelos-privados-a-los-cabos-scaled.jpg'],
@@ -1963,7 +1960,7 @@ var DESTS={
   },
   puertovallarta:{
     city:'Puerto Vallarta',country:'Mexico',tag:'Pacific Coast',
-    flytime:'✈ 1h 30m from CDMX',
+    flytime:'✈ 1h 45m from CDMX',
     fomo:'School ends Friday at 3pm. By 5pm your family is airborne. By sunset, the kids are in the pool at a villa on the Pacific. No connections. No terminals. <em>Ninety minutes and a new world. This is what time freedom looks like.</em>',
     ideal:'Ideal for: Families · Weekend Escapes · Pacific Retreats',
     imgs:['https://jetcab.mx/wp-content/uploads/2024/11/Vuelos-privados-a-puerto-vallarta-scaled.jpg','https://jetcab.mx/wp-content/uploads/2024/11/Vuelos-privados-a-puerto-vallarta-scaled.jpg'],
@@ -1979,7 +1976,7 @@ var DESTS={
   },
   guadalajara:{
     city:'Guadalajara',country:'Mexico',tag:'Mexico\'s Silicon Valley',
-    flytime:'✈ 55m from CDMX',
+    flytime:'✈ 50m from CDMX',
     fomo:'Fifty-five minutes. You land, take a car to the office, run three meetings, and are back in CDMX for dinner. No overnight. No hotel. <em>When time is your most valuable asset, you stop treating it like it isn\'t.</em>',
     ideal:'Ideal for: Day Trips · Tech Meetings · Corporate Travel',
     imgs:['https://jetcab.mx/wp-content/uploads/2024/10/vuelos-privados-a-Guadalajara-scaled.jpg','https://jetcab.mx/wp-content/uploads/2024/10/vuelos-privados-a-Guadalajara-scaled.jpg'],
@@ -2019,7 +2016,7 @@ var DESTS={
   },
   newyork:{
     city:'Nueva York',country:'United States',tag:'East Coast',
-    flytime:'✈ 4h 45m from CDMX',
+    flytime:'✈ 5h 30m from CDMX',
     fomo:'The meeting is Thursday at 9am. You fly in Wednesday night, sleep in your suite, and arrive sharp. No red-eye. No middle seat. No shared armrest. When the deal closes, <em>JETCAB brings you home. Same day.</em>',
     ideal:'Ideal for: Executives · Deal Closings · Board Meetings',
     imgs:['https://jetcab.mx/wp-content/uploads/2024/10/vuelosprivadosanuevayork-scaled.jpg','https://jetcab.mx/wp-content/uploads/2024/10/vuelosprivadosanuevayork-scaled.jpg'],
@@ -2112,8 +2109,10 @@ espana:{airport:'Madrid–Barajas Airport (MAD) / Barcelona El Prat (BCN)',desc:
 europa:{airport:'All major European airports — London (LHR/LCY), Paris (LBG), Milan (MXP), Geneva (GVA), Zurich (ZRH)',desc:'JETCAB connects Mexico City to all major European capitals including London (LHR/LCY), Paris (LBG), Milan (MXP), Geneva (GVA), Zurich (ZRH), Frankfurt (FRA), and Amsterdam (AMS), on Gulfstream GIV and GV aircraft. Flight times range from 10.5 hours (London) to 12+ hours (Eastern Europe). Charter rates start from $115,000 USD one-way.',facts:['From ~$115,000 USD one-way','All EU capitals served','Gulfstream IV/V · 10.5–13h flight'],faq:[{q:'Which European cities does JETCAB fly to from Mexico City?',a:'JETCAB operates private charter flights from Mexico City to all major European airports including London (LHR, LCY), Paris (LBG, CDG), Milan (MXP, LIN), Geneva (GVA), Zurich (ZRH), Frankfurt (FRA), Amsterdam (AMS), Lisbon (LIS), and beyond.'},{q:'How much does a private jet to Europe cost from Mexico?',a:'Private jet charters from Mexico City to Europe start from approximately $115,000 USD one-way. JETCAB uses Gulfstream IV and V for transatlantic routes — non-stop coverage without technical stops.'},{q:'How long is a private jet flight from Mexico to London or Paris?',a:'JETCAB Gulfstream IV/V aircraft fly from Toluca (AIT) to London (LHR) in approximately 10.5 hours, and to Paris (LBG) in approximately 11 hours non-stop.'}]}
 };
 
+var ROUTE_URLS={cancun:'/private-jet-mexico-city-cancun/',loscabos:'/private-jet-mexico-city-los-cabos/',puertovallarta:'/private-jet-mexico-city-puerto-vallarta/',monterrey:'/private-jet-mexico-city-monterrey/',guadalajara:'/private-jet-mexico-city-guadalajara/',newyork:'/private-jet-mexico-city-new-york/'};
 function openDest(id){
   var d=DESTS[id]; if(!d) return;
+  var rl=document.getElementById('dm-route-link'); if(rl){ if(ROUTE_URLS[id]){ rl.href='https://jetcab.mx'+ROUTE_URLS[id]; rl.hidden=false; } else { rl.hidden=true; } }
   var a=DEST_AEO[id]||{};
   document.getElementById('dm-city').textContent=d.city;
   document.getElementById('dm-country').textContent=d.country;
@@ -2174,6 +2173,7 @@ document.querySelectorAll('.fc[tabindex]').forEach(function(el){
         <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.122.548 4.11 1.504 5.844L0 24l6.336-1.479A11.946 11.946 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.807 9.807 0 01-5.001-1.373l-.36-.214-3.725.869.937-3.43-.235-.374A9.784 9.784 0 012.182 12C2.182 6.57 6.57 2.182 12 2.182S21.818 6.57 21.818 12 17.43 21.818 12 21.818z"/></svg>
         Request This Route via WhatsApp
       </a>
+      <a id="dm-route-link" class="dm-route-link" href="#" hidden>Read the full route guide, pricing &amp; FAQ →</a>
     </div>
   </div>
 </div>

@@ -361,8 +361,8 @@ html{scroll-behavior:smooth}body{background:var(--dark);color:var(--text);font-f
 .jc-footer{background:#0A0A0A;border-top:1px solid var(--border);padding:3rem 2rem}
 .jc-footer-inner{max-width:1000px;margin:0 auto;display:flex;justify-content:space-between;align-items:flex-start;gap:2rem;flex-wrap:wrap}
 .jc-footer-brand p{font-size:0.8rem;color:var(--muted);margin-top:0.5rem;max-width:240px;line-height:1.6}
-.jc-footer-links{display:flex;flex-direction:column;gap:0.5rem}
-.jc-footer-links a{font-size:0.85rem;color:var(--muted);text-decoration:none;transition:color 0.2s}
+.jc-footer-links{display:flex;flex-direction:column;gap:0}
+.jc-footer-links a{font-size:0.85rem;color:var(--muted);text-decoration:none;transition:color 0.2s;min-height:44px;display:inline-flex;align-items:center}
 .jc-footer-links a:hover{color:#fff}
 .jc-footer-bottom{text-align:center;font-size:0.75rem;color:#555;padding-top:2rem;margin-top:2rem;border-top:1px solid var(--border);max-width:1000px;margin-left:auto;margin-right:auto}
 @keyframes pulse-wa{0%,100%{box-shadow:0 4px 16px rgba(37,211,102,0.4)}50%{box-shadow:0 4px 24px rgba(37,211,102,0.65)}}

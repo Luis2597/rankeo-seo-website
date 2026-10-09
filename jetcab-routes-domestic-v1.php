@@ -311,8 +311,8 @@ body{background:var(--dark);color:var(--text);font-family:var(--ff-body);line-he
 .jc-footer{background:#0A0A0A;border-top:1px solid rgba(255,255,255,.07);padding:3rem 24px}
 .jc-footer-inner{max-width:900px;margin:0 auto;display:flex;justify-content:space-between;align-items:flex-start;gap:2rem;flex-wrap:wrap}
 .jc-footer-brand p{font-size:.8rem;color:var(--muted);margin-top:8px;max-width:240px;line-height:1.6}
-.jc-footer-links{display:flex;flex-direction:column;gap:8px}
-.jc-footer-links a{font-size:.85rem;color:var(--muted);text-decoration:none;transition:color 0.2s}
+.jc-footer-links{display:flex;flex-direction:column;gap:0}
+.jc-footer-links a{font-size:.85rem;color:var(--muted);text-decoration:none;transition:color 0.2s;min-height:44px;display:inline-flex;align-items:center}
 .jc-footer-links a:hover{color:#fff}
 .jc-footer-bottom{text-align:center;font-size:.75rem;color:#444;padding-top:2rem;margin-top:2rem;border-top:1px solid rgba(255,255,255,.07);max-width:900px;margin-left:auto;margin-right:auto}
 @keyframes pulse-wa{0%,100%{box-shadow:0 4px 16px rgba(37,211,102,.4)}50%{box-shadow:0 4px 24px rgba(37,211,102,.65)}}
