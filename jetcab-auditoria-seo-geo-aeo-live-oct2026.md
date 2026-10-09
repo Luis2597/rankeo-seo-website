@@ -188,3 +188,4 @@ Cero eventos clave configurados: Analytics no cuenta conversiones. Los clics a W
 ### 6.4 Pendiente que solo se hace en la interfaz de Google (5 minutos)
 
 En Search Console → Inspección de URL → «Solicitar indexación» para: `/precios-jet-privado/`, `/flota/`, `/light-jets-toluca/`, `/long-range-jets-toluca/`, `/vuelos-privados-confidenciales/`, `/private-jet-mexico-city-cancun/`, `/private-jet-mexico-city-miami/`, `/private-jet-mexico-city-houston/`, `/private-jet-mexico-city-new-york/`, `/cuanto-cuesta-jet-privado-mexico/2026/`. El límite es de unas 10 al día.
+5. **Analytics en las páginas EN** (snippet 18, `jetcab-snippets/11-ga4-paginas-en.php`): /en/ y las rutas `/private-jet-*` se sirven por `template_redirect` sin `wp_head`, así que no llevaban la etiqueta GA4. Ahora se inyecta `G-GDZ8NL03E5` y los eventos de contacto antes de `</head>` por búfer de salida. Hasta hoy el tráfico EN no se medía.
