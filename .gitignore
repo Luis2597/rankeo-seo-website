@@ -16,3 +16,6 @@ push.bat
 push_result.txt
 __askpass.bat
 push_to_github.py
+
+# Playwright MCP (capturas, snapshots y logs de consola)
+.playwright-mcp/
