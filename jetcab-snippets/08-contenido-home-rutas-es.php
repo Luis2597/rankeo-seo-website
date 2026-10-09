@@ -16,13 +16,14 @@ function jetcab_css_bloques() {
 .jch-step{background:#141414;border-top:1px solid #E85A1E;padding:22px 20px}
 .jch-step .n{font-family:"Barlow Condensed",Barlow,Arial,sans-serif;font-size:2.2rem;font-weight:800;color:#C9973F;line-height:1;margin-bottom:8px}
 .jch-step p{font-size:.95rem;color:#bdbdbd;margin:0}
-.jch-rates{display:grid;grid-template-columns:1fr;gap:10px;margin:8px 0 48px}
-@media(min-width:640px){.jch-rates{grid-template-columns:repeat(2,1fr)}}
-.jch-rate{display:flex;justify-content:space-between;align-items:center;background:#141414;border-left:1px solid #E85A1E;padding:16px 20px;text-decoration:none;color:#fff;transition:background .2s}
+.jch-rates{display:grid;grid-template-columns:minmax(0,1fr);gap:10px;margin:8px 0 48px}
+@media(min-width:640px){.jch-rates{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.jch-rate{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:4px 12px;min-width:0;background:#141414;border-left:1px solid #E85A1E;padding:16px 20px;text-decoration:none;color:#fff;transition:background .2s}
 .jch-rate:hover{background:#1b1b1b}
 .jch-rate .r{font-family:"Barlow Condensed",Barlow,Arial,sans-serif;font-size:1.1rem;font-weight:600;letter-spacing:.03em}
 .jch-rate .r small{display:block;font-family:Barlow,Arial,sans-serif;font-size:.8rem;color:#888;font-weight:400;letter-spacing:0}
-.jch-rate .p{font-family:"Barlow Condensed",Barlow,Arial,sans-serif;font-size:1.3rem;font-weight:800;color:#C9973F;white-space:nowrap}
+.jch-rate .r{min-width:0}
+.jch-rate .p{font-family:"Barlow Condensed",Barlow,Arial,sans-serif;font-size:1.3rem;font-weight:800;color:#C9973F}
 .jc-faqv{margin:0 0 40px}
 .jc-faqv div{border-bottom:1px solid rgba(255,255,255,.1);padding:18px 0}
 .jc-faqv div:first-child{border-top:1px solid rgba(255,255,255,.1)}
