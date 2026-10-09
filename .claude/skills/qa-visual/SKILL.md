@@ -54,6 +54,5 @@ No corregir nada sin que el usuario lo pida, salvo que la tarea original fuera y
 ## Notas de entorno
 
 - **Windows (local)**: el MCP usa Google Chrome instalado, con ventana visible. Si no hay Chrome: `npx @playwright/mcp install-browser`.
-- **Sesión cloud de Claude Code**: no hay Chrome ni display. El entorno debe tener estas variables (ver CLAUDE.md §2E):
-  `PLAYWRIGHT_MCP_HEADLESS=1`, `PLAYWRIGHT_MCP_BROWSER=chromium`, `PLAYWRIGHT_MCP_EXECUTABLE_PATH=/opt/pw-browsers/chromium`.
+- **Sesión cloud de Claude Code**: no hay Chrome ni display. El lanzador `.claude/mcp/playwright-launcher.cjs` arranca solo el Chromium preinstalado en headless; no hace falta configurar variables (ver CLAUDE.md §2E).
 - No usar `browser_run_code_unsafe` salvo necesidad real: `browser_evaluate` cubre casi todo.

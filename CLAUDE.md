@@ -332,6 +332,7 @@ Claude Code tiene configurado el servidor MCP de Playwright (`@playwright/mcp`) 
 | Archivo | Para qué |
 |---|---|
 | `.mcp.json` | Servidor `playwright` (scope proyecto). Se carga en cualquier clon; Claude Code pide aprobarlo la primera vez. |
+| `.claude/mcp/playwright-launcher.cjs` | Lanzador que arranca `npx @playwright/mcp@latest` con los flags correctos según el entorno (ver abajo). |
 | `.claude/settings.json` | Pre-aprueba el servidor (`enabledMcpjsonServers`) una vez que la carpeta es de confianza. |
 | `.claude/skills/qa-visual/SKILL.md` | Skill `/qa-visual`: checklist desktop + móvil con las herramientas `browser_*`. |
 | `.playwright-mcp/` | Capturas, snapshots y logs que genera el MCP. **Ignorada por git.** |
@@ -340,14 +341,10 @@ Claude Code tiene configurado el servidor MCP de Playwright (`@playwright/mcp`) 
 Antes de hacer push de cualquier cambio de diseño (index, demos, landings, portal), correr `/qa-visual` sobre la página tocada. Verifica con medidas reales lo que exigen §2B y §9: espacio blanco al final (footer vs. `scrollHeight`), overflow horizontal, burger menu en móvil, touch targets ≥ 44px, errores de consola.
 
 ### Cómo funciona por entorno
-- **Windows (local)**: el MCP usa Google Chrome instalado, con ventana visible, y perfil persistente en `%LOCALAPPDATA%\ms-playwright\mcp-chrome-<hash>`. Si no hay Chrome: `npx @playwright/mcp install-browser`.
-- **Sesión cloud de Claude Code**: no hay Chrome ni pantalla, y el Chromium preinstalado no coincide con la versión que pide el paquete. El servidor conecta igual, pero `browser_navigate` falla con `Chromium distribution 'chrome' is not found` salvo que el entorno tenga estas variables (menú del entorno cloud → Edit → variables de entorno; una sesión nueva las toma):
-  ```
-  PLAYWRIGHT_MCP_HEADLESS=1
-  PLAYWRIGHT_MCP_BROWSER=chromium
-  PLAYWRIGHT_MCP_EXECUTABLE_PATH=/opt/pw-browsers/chromium
-  ```
-  Verificado (oct 2026): con esas tres variables navega, captura y busca en el snapshot sin flags extra.
+El lanzador decide solo; no hay que configurar nada:
+- **Windows (local)**: usa Google Chrome instalado, con ventana visible, y perfil persistente en `%LOCALAPPDATA%\ms-playwright\mcp-chrome-<hash>`. Si no hay Chrome: `npx @playwright/mcp install-browser`.
+- **Sesión cloud de Claude Code**: no hay Chrome ni pantalla, y el Chromium que pide el paquete no coincide con el preinstalado. El lanzador detecta Linux sin Chrome y arranca el MCP con `--browser chromium --executable-path /opt/pw-browsers/chromium --headless`. Verificado (oct 2026): navega, captura y busca en el snapshot sin variables de entorno.
+- Cualquier variable `PLAYWRIGHT_MCP_*` definida en el entorno tiene prioridad sobre lo que decide el lanzador.
 - **En cloud no hay salida a `rankeo-nu.vercel.app`** (política de red). Servir el repo y navegar en local:
   ```bash
   python3 -m http.server 8080 --bind 127.0.0.1 &

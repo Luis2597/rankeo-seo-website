@@ -19,3 +19,6 @@ push_to_github.py
 
 # Playwright MCP (capturas, snapshots y logs de consola)
 .playwright-mcp/
+
+# Worktrees locales de Claude Code (nunca versionar)
+.claude/worktrees/
