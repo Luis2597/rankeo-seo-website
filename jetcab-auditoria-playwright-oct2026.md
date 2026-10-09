@@ -154,3 +154,14 @@ Pendiente para la fase 2 (con sesión de admin): sustituir el snippet 2900 por `
 No instalado, a propósito: AdSense off (no hay anuncios en el sitio) y JSON-LD global v2 (placeholders `XXXX` sin rellenar; además duplicaría el snippet 2896 activo en WPCode).
 
 Limpieza recomendada cuando haya sesión de admin: sustituir en WPCode el 2900 por `jetcab-routes-v3.php`, mover los snippets 5–9 a WPCode y desactivar Code Snippets. Hasta entonces, Code Snippets debe permanecer activo: es lo que sirve estas mejoras.
+
+---
+
+# Fase 2b — Consolidación por API (9 oct 2026)
+
+- **JSON-LD consolidado.** La portada ES emitía cuatro bloques JSON-LD solapados (Yoast + WPCode 2878, 2896 y 2897, este último el grafo EN con `@id` de `/en/`). Se pasaron a borrador esos tres snippets de WPCode (reversible: volver a «publish») y se instaló el grafo v2 limpio como snippet de Code Snippets (ID 12, `wp_head`, excluye `/en/`). Ahora la portada lleva Yoast + v2: Organization con `sameAs` reales (Instagram, Facebook, LinkedIn), LocalBusiness/TravelAgency, WebSite, 3 Services, OfferCatalog sin precios fuera del brief, 4 aeropuertos y FAQPage. `jetcab-jsonld-global-v2.html` en el repo ya no tiene placeholders; Wikidata y Google Business Profile se añadirán a `sameAs` cuando existan.
+- **hreflang en rutas internacionales activado**: las versiones ES (`/vuelo-privado-cdmx-{miami,houston,nueva-york,los-angeles}/`, snippet WPCode 2901) existen, así que `es_live` pasa a `true`.
+- **Helper REST** (`jetcab/v1/wpcode`, snippet 11, solo administradores) para inventariar y cambiar el estado de snippets de WPCode sin entrar al admin. Queda desactivado; se activa cuando haga falta.
+- Inventario WPCode confirmó que «Noindex WooCommerce Pages» (2880) ya existe: el pendiente #5 del brief estaba hecho.
+
+Estado final de snippets JETCAB en Code Snippets: 5 Yoast REST meta · 6 hreflang home ES · 7 llms.txt · 8 rutas internacionales v4 · 9 sitemap landings · 12 JSON-LD global v2 (activos); 10 purge once · 11 helper REST (inactivos). Code Snippets es la casa definitiva de estas mejoras; WPCode 2900 sigue activo solo como respaldo.
