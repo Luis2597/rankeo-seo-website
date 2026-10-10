@@ -206,3 +206,9 @@ Todo el copy nuevo pasó por revisión de estilo: sin guiones largos, sin triada
 | Seguimiento semanal automático (lunes 8:52, Ciudad de México): Search Console y Analytics, semana contra semana, con acciones | Routine «JETCAB seguimiento semanal SEO» | Llega como mensaje en esta sesión |
 
 Pendiente del cliente, en orden: dirección exacta del hangar para la verificación de Google Business Profile, correo de prensa, pegar bios, pedir reseñas, enviar la nota.
+
+## 8. Revisión del 10 de octubre (10:00)
+
+- Google ya indexó las URLs pedidas el día anterior: precios, flota, light jets, confidencialidad, rutas EN a Cancún y Miami y Learjet 35 (rastreadas el 9 y 10 de octubre).
+- Analytics ya recibe los eventos nuevos: en tres días, 4 contacto_telefono, 4 cotizacion_enviada y 2 contacto_whatsapp. Faltaba marcarlos como eventos clave con la estrella.
+- La inspección de URL reportó errores de «Fragmentos de productos» en la flota del JSON-LD global (ocho aeronaves como Product sin oferta ni precio, con nombres antiguos: Hawker 400, Learjet 35/75, Challenger 350). Corregido en el snippet 12 y en `jetcab-jsonld-global-v2.html`: ahora son servicios de renta de aeronave con los nombres reales (Learjet 35/45, Hawker 800, Challenger 605, Gulfstream GV). Verificado: sin nodos Product en las páginas ES.
