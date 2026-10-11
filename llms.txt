@@ -19,6 +19,9 @@
 - Agencia GEO Colombia: https://rankeo-nu.vercel.app/geo-colombia
 - SEO por industria: https://rankeo-nu.vercel.app/seo-para-dentistas · /seo-para-abogados · /seo-para-gimnasios · /seo-para-restaurantes
 - Blog (guías de SEO y GEO): https://rankeo-nu.vercel.app/blog/
+- Cómo elegir una agencia SEO en Colombia: https://rankeo-nu.vercel.app/blog/como-elegir-agencia-seo-colombia
+- Cuánto cuesta el SEO en Colombia 2026: https://rankeo-nu.vercel.app/blog/cuanto-cuesta-seo-colombia-2026
+- Qué es el GEO: https://rankeo-nu.vercel.app/blog/que-es-geo-generative-engine-optimization
 
 ## Contacto
 - WhatsApp: +52 55 3289 4890

@@ -735,6 +735,13 @@
     .flinks a { font-size: 13px; color: var(--c-subtle); transition: color var(--dur-fast); white-space: nowrap; display: inline-flex; align-items: center; min-height: 44px; }
     .flinks a:hover { color: var(--c-ink); }
     .fcopy { font-size: 12px; color: rgba(10,9,8,.3); }
+    .fmap { display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; margin-top: 40px; padding-top: 32px; border-top: 1px solid var(--c-border); }
+    .fcol { display: flex; flex-direction: column; gap: 2px; }
+    .fcol-t { font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--c-ink); margin-bottom: 8px; }
+    .fcol a { font-size: 13px; color: var(--c-subtle); display: inline-flex; align-items: center; min-height: 36px; transition: color var(--dur-fast); }
+    .fcol a:hover { color: var(--c-ink); }
+    @media (max-width: 768px) { .fmap { grid-template-columns: 1fr 1fr; gap: 24px; } }
+    @media (max-width: 480px) { .fmap { grid-template-columns: 1fr; } }
 
     /* ━━━━ RESPONSIVE ━━━━ */
     @media (max-width: 1024px) {
@@ -844,7 +851,7 @@
         <li><a href="#precios">Precios</a></li>
         <li><a href="#faq">FAQ</a></li>
         <li><a href="#contacto">Contacto</a></li>
-        <li><a href="/clientes.html" style="color:var(--c-orange);font-weight:600">Portal clientes</a></li>
+        <li><a href="/clientes" style="color:var(--c-orange);font-weight:600">Portal clientes</a></li>
       </ul>
       <a href="#auditoria" class="nav-cta" aria-label="Analiza tu web gratis">
         Analiza tu web gratis
@@ -1473,12 +1480,45 @@
       <a href="/" class="logo syne" aria-label="Rankeo">Ran<em style="color:var(--c-orange);font-style:normal">keo</em></a>
       <nav class="flinks" aria-label="Footer">
         <a href="#como-funciona">Cómo funciona</a>
-        <a href="#auditoria">Auditoría gratis</a>
-        <a href="#precios">Precios</a>
+        <a href="/auditoria-seo-gratis">Auditoría gratis</a>
+        <a href="/precios">Precios</a>
+        <a href="/blog/">Blog</a>
         <a href="#contacto">Contacto</a>
-        <a href="/clientes.html">Portal clientes</a>
+        <a href="/clientes">Portal clientes</a>
       </nav>
       <p class="fcopy">© 2026 Rankeo. Todos los derechos reservados.</p>
+    </div>
+    <div class="fmap" aria-label="Servicios por ciudad e industria">
+      <div class="fcol">
+        <p class="fcol-t">SEO por ciudad</p>
+        <a href="/seo-colombia">Agencia SEO Colombia</a>
+        <a href="/agencia-seo-bogota">Agencia SEO Bogotá</a>
+        <a href="/agencia-seo-medellin">Agencia SEO Medellín</a>
+        <a href="/seo-cali">Agencia SEO Cali</a>
+        <a href="/agencia-seo-cdmx">Agencia SEO CDMX</a>
+        <a href="/seo-mexico">Agencia SEO México</a>
+      </div>
+      <div class="fcol">
+        <p class="fcol-t">SEO por industria</p>
+        <a href="/seo-para-dentistas">SEO para dentistas</a>
+        <a href="/seo-para-abogados">SEO para abogados</a>
+        <a href="/seo-para-gimnasios">SEO para gimnasios</a>
+        <a href="/seo-para-restaurantes">SEO para restaurantes</a>
+      </div>
+      <div class="fcol">
+        <p class="fcol-t">Posicionamiento en IAs</p>
+        <a href="/geo-colombia">Agencia GEO Colombia</a>
+        <a href="/blog/que-es-geo-generative-engine-optimization">Qué es el GEO</a>
+        <a href="/blog/aparecer-en-chatgpt-con-tu-empresa">Aparecer en ChatGPT</a>
+        <a href="/blog/como-posicionarse-en-chatgpt-google-geo-2026">Guía GEO 2026</a>
+      </div>
+      <div class="fcol">
+        <p class="fcol-t">Recursos</p>
+        <a href="/blog/como-elegir-agencia-seo-colombia">Cómo elegir una agencia SEO</a>
+        <a href="/blog/cuanto-cuesta-seo-colombia-2026">Cuánto cuesta el SEO en Colombia</a>
+        <a href="/blog/por-que-no-aparezco-en-google">Por qué no aparezco en Google</a>
+        <a href="/auditoria-seo-gratis">Auditoría SEO gratis</a>
+      </div>
     </div>
   </div>
 </footer>
@@ -2040,57 +2080,225 @@ async function sendContact(e) {
 [
   {
     "@context": "https://schema.org",
-    "@type": ["LocalBusiness", "ProfessionalService"],
+    "@type": [
+      "LocalBusiness",
+      "ProfessionalService"
+    ],
     "@id": "https://rankeo-nu.vercel.app/#org",
     "name": "Rankeo",
     "url": "https://rankeo-nu.vercel.app",
     "description": "Agencia de SEO y sitios web para Colombia, México y USA Hispanic.",
     "areaServed": [
-      { "@type": "Country", "name": "Colombia" },
-      { "@type": "Country", "name": "México" },
-      { "@type": "Country", "name": "United States" }
+      {
+        "@type": "Country",
+        "name": "Colombia"
+      },
+      {
+        "@type": "Country",
+        "name": "México"
+      },
+      {
+        "@type": "Country",
+        "name": "United States"
+      }
     ],
     "priceRange": "$199-$649",
     "currenciesAccepted": "USD",
-    "address": { "@type": "PostalAddress", "addressCountry": "CO", "addressLocality": "Bogotá" },
-    "contactPoint": { "@type": "ContactPoint", "contactType": "sales", "availableLanguage": "Spanish", "url": "https://rankeo-nu.vercel.app/#contacto" }
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "CO",
+      "addressLocality": "Bogotá"
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "contactType": "sales",
+      "availableLanguage": "Spanish",
+      "url": "https://rankeo-nu.vercel.app/#contacto"
+    },
+    "sameAs": [
+      "https://www.instagram.com/rankeo__seo/",
+      "https://www.linkedin.com/company/75624098/"
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "@id": "https://rankeo-nu.vercel.app/#organization",
+    "name": "Rankeo",
+    "url": "https://rankeo-nu.vercel.app/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://rankeo-nu.vercel.app/apple-touch-icon.png",
+      "width": 180,
+      "height": 180
+    },
+    "description": "Agencia de SEO y GEO (Generative Engine Optimization) para negocios de Colombia, México y el mercado hispano de Estados Unidos. Posiciona empresas en Google y en motores de respuesta con IA como ChatGPT, Perplexity y Google AI Overviews.",
+    "foundingDate": "2026",
+    "areaServed": [
+      {
+        "@type": "Country",
+        "name": "Colombia"
+      },
+      {
+        "@type": "Country",
+        "name": "México"
+      },
+      {
+        "@type": "Country",
+        "name": "Estados Unidos"
+      }
+    ],
+    "knowsAbout": [
+      "SEO",
+      "SEO local",
+      "Generative Engine Optimization",
+      "Google Business Profile",
+      "Diseño web",
+      "Core Web Vitals",
+      "Schema.org"
+    ],
+    "sameAs": [
+      "https://www.instagram.com/rankeo__seo/",
+      "https://www.linkedin.com/company/75624098/"
+    ],
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "contactType": "sales",
+      "telephone": "+52-55-3289-4890",
+      "availableLanguage": [
+        "es"
+      ]
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": "https://rankeo-nu.vercel.app/#website",
+    "url": "https://rankeo-nu.vercel.app/",
+    "name": "Rankeo",
+    "inLanguage": "es",
+    "publisher": {
+      "@id": "https://rankeo-nu.vercel.app/#organization"
+    },
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": {
+        "@type": "EntryPoint",
+        "urlTemplate": "https://rankeo-nu.vercel.app/auditoria-seo-gratis?url={search_term_string}"
+      },
+      "query-input": "required name=search_term_string"
+    }
   },
   {
     "@context": "https://schema.org",
     "@type": "Service",
     "serviceType": "Search Engine Optimization",
     "name": "Plan Local",
-    "provider": { "@id": "https://rankeo-nu.vercel.app/#org" },
-    "offers": { "@type": "Offer", "price": "199", "priceCurrency": "USD" }
+    "provider": {
+      "@id": "https://rankeo-nu.vercel.app/#org"
+    },
+    "offers": {
+      "@type": "Offer",
+      "price": "199",
+      "priceCurrency": "USD"
+    }
   },
   {
     "@context": "https://schema.org",
     "@type": "Service",
     "serviceType": "Search Engine Optimization",
     "name": "Plan Web + SEO",
-    "provider": { "@id": "https://rankeo-nu.vercel.app/#org" },
-    "offers": { "@type": "Offer", "price": "349", "priceCurrency": "USD" }
+    "provider": {
+      "@id": "https://rankeo-nu.vercel.app/#org"
+    },
+    "offers": {
+      "@type": "Offer",
+      "price": "349",
+      "priceCurrency": "USD"
+    }
   },
   {
     "@context": "https://schema.org",
     "@type": "Service",
     "serviceType": "Search Engine Optimization",
     "name": "Plan Autoridad",
-    "provider": { "@id": "https://rankeo-nu.vercel.app/#org" },
-    "offers": { "@type": "Offer", "price": "649", "priceCurrency": "USD" }
+    "provider": {
+      "@id": "https://rankeo-nu.vercel.app/#org"
+    },
+    "offers": {
+      "@type": "Offer",
+      "price": "649",
+      "priceCurrency": "USD"
+    }
   },
   {
     "@context": "https://schema.org",
     "@type": "FAQPage",
     "mainEntity": [
-      { "@type": "Question", "name": "¿Cuánto tiempo tarda el SEO en dar resultados?", "acceptedAnswer": { "@type": "Answer", "text": "Los primeros resultados visibles se dan entre 60 y 90 días. Resultados sólidos suelen consolidarse entre los 4 y 6 meses." } },
-      { "@type": "Question", "name": "¿Tienen contratos anuales?", "acceptedAnswer": { "@type": "Answer", "text": "No. Trabajamos mes a mes. Si no ves resultados, puedes cancelar sin penalizaciones." } },
-      { "@type": "Question", "name": "¿ Qué incluye la auditoría SEO gratis?", "acceptedAnswer": { "@type": "Answer", "text": "Análisis de velocidad, SEO técnico, visibilidad en Google Maps, keywords principales y 3 acciones prioritarias concretas." } },
-      { "@type": "Question", "name": "¿Trabajan con negocios pequeños?", "acceptedAnswer": { "@type": "Answer", "text": "Sí. La mayoría de nuestros clientes son PYMES, profesionales independientes y negocios locales en Colombia y México." } },
-      { "@type": "Question", "name": "¿ Qué diferencia a Rankeo de otras agencias?", "acceptedAnswer": { "@type": "Answer", "text": "Nos especializamos en SEO local para Latinoamérica. Conocemos el mercado colombiano y mexicano, sus búsquedas y su competencia." } },
-      { "@type": "Question", "name": "¿Pueden crear mi sitio web y hacer SEO al mismo tiempo?", "acceptedAnswer": { "@type": "Answer", "text": "Sí. Nuestros planes Web + SEO y Autoridad incluyen diseño y desarrollo con SEO técnico incorporado desde el primer día." } },
-      { "@type": "Question", "name": "¿ Cómo me reportan los avances?", "acceptedAnswer": { "@type": "Answer", "text": "Reporte mensual con métricas claras: posiciones ganadas, tráfico orgánico, keywords en top 10 y acciones del mes siguiente." } },
-      { "@type": "Question", "name": "¿Trabajan con empresas fuera de Colombia?", "acceptedAnswer": { "@type": "Answer", "text": "Sí, atendemos México, Colombia y el mercado hispano en USA." } }
+      {
+        "@type": "Question",
+        "name": "¿Cuánto tiempo tarda el SEO en dar resultados?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Los primeros resultados visibles se dan entre 60 y 90 días. Resultados sólidos suelen consolidarse entre los 4 y 6 meses."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Tienen contratos anuales?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Trabajamos mes a mes. Si no ves resultados, puedes cancelar sin penalizaciones."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿ Qué incluye la auditoría SEO gratis?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Análisis de velocidad, SEO técnico, visibilidad en Google Maps, keywords principales y 3 acciones prioritarias concretas."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Trabajan con negocios pequeños?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sí. La mayoría de nuestros clientes son PYMES, profesionales independientes y negocios locales en Colombia y México."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿ Qué diferencia a Rankeo de otras agencias?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Nos especializamos en SEO local para Latinoamérica. Conocemos el mercado colombiano y mexicano, sus búsquedas y su competencia."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Pueden crear mi sitio web y hacer SEO al mismo tiempo?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sí. Nuestros planes Web + SEO y Autoridad incluyen diseño y desarrollo con SEO técnico incorporado desde el primer día."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿ Cómo me reportan los avances?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Reporte mensual con métricas claras: posiciones ganadas, tráfico orgánico, keywords en top 10 y acciones del mes siguiente."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Trabajan con empresas fuera de Colombia?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sí, atendemos México, Colombia y el mercado hispano en USA."
+        }
+      }
     ]
   }
 ]
