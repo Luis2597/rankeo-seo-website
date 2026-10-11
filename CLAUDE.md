@@ -9,7 +9,7 @@
 |---|---|
 | Agencia | Rankeo |
 | Dominio | rankeo.agency (producción, conectado en Vercel oct 2026; canonicals, sitemap y schema ya apuntan aquí) / rankeo-nu.vercel.app (staging) |
-| Mercado | Colombia, México, USA Hispanic |
+| Mercado | México y USA Hispanic (principal), Colombia (secundario) |
 | Propuesta | Sitios web + SEO + GEO que posicionan en Google **y** en IAs (ChatGPT, Perplexity, AI Overviews) |
 | Modelo | Suscripción mensual $199–$649/mes con auditoría gratis como gancho |
 | WhatsApp | +525532894890 |
