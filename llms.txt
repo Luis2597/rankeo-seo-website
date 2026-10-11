@@ -1,6 +1,6 @@
 # Rankeo — Agencia SEO + GEO
 
-> Rankeo es una agencia de posicionamiento web para Colombia, México y el mercado hispano de Estados Unidos. Posiciona negocios en Google y en motores de respuesta con IA (ChatGPT, Perplexity, Google AI Overviews) mediante SEO técnico, SEO local, contenido y GEO (Generative Engine Optimization).
+> Rankeo es una agencia de posicionamiento web para México, el mercado hispano de Estados Unidos y Colombia. Posiciona negocios en Google y en motores de respuesta con IA (ChatGPT, Perplexity, Google AI Overviews) mediante SEO técnico, SEO local, contenido y GEO (Generative Engine Optimization).
 
 ## Servicios y precios (USD, mensual, sin contratos anuales)
 - Plan Local — $199/mes: auditoría técnica, Google Business Profile, SEO local y reporte mensual.
@@ -11,14 +11,23 @@
 ## Páginas principales
 - Inicio: https://rankeo.agency/
 - Precios: https://rankeo.agency/precios
+- Agencia SEO México: https://rankeo.agency/seo-mexico
+- Agencia SEO CDMX: https://rankeo.agency/agencia-seo-cdmx
+- Agencia SEO Monterrey: https://rankeo.agency/seo-monterrey
+- SEO para negocios hispanos en Estados Unidos: https://rankeo.agency/seo-hispanos-usa
+- SEO en Miami: https://rankeo.agency/seo-miami
+- SEO en Houston: https://rankeo.agency/seo-houston
+- SEO en Los Ángeles: https://rankeo.agency/seo-los-angeles
 - Agencia SEO Colombia: https://rankeo.agency/seo-colombia
 - Agencia SEO Bogotá: https://rankeo.agency/agencia-seo-bogota
 - Agencia SEO Medellín: https://rankeo.agency/agencia-seo-medellin
 - Agencia SEO Cali: https://rankeo.agency/seo-cali
-- Agencia SEO México / CDMX: https://rankeo.agency/agencia-seo-cdmx
 - Agencia GEO Colombia: https://rankeo.agency/geo-colombia
 - SEO por industria: https://rankeo.agency/seo-para-dentistas · /seo-para-abogados · /seo-para-gimnasios · /seo-para-restaurantes
 - Blog (guías de SEO y GEO): https://rankeo.agency/blog/
+- Cuánto cuesta el SEO en México 2026: https://rankeo.agency/blog/cuanto-cuesta-seo-mexico-2026
+- SEO para negocios latinos en Estados Unidos: https://rankeo.agency/blog/seo-para-negocios-latinos-estados-unidos
+- Cómo aparecer en ChatGPT en México: https://rankeo.agency/blog/como-aparecer-en-chatgpt-mexico
 - Cómo elegir una agencia SEO en Colombia: https://rankeo.agency/blog/como-elegir-agencia-seo-colombia
 - Cuánto cuesta el SEO en Colombia 2026: https://rankeo.agency/blog/cuanto-cuesta-seo-colombia-2026
 - Qué es el GEO: https://rankeo.agency/blog/que-es-geo-generative-engine-optimization
