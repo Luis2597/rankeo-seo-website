@@ -172,11 +172,6 @@
     .sl{display:flex;align-items:center;gap:12px;margin-bottom:18px;flex-wrap:wrap;}
     .sl-d{width:26px;height:1px;background:var(--c-orange);flex-shrink:0;}
     .sl-t{font-size:11px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--c-orange);}
-    /* TRUST BAR */
-    .trust{padding:60px 0;border-top:1px solid var(--c-border);}
-    .trust-label{font-size:11px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:rgba(10,9,8,.3);text-align:center;margin-bottom:28px;}
-    .trust-logos{display:flex;align-items:center;justify-content:center;gap:40px;flex-wrap:wrap;}
-    .trust-logo{font-family:"Syne",sans-serif;font-weight:800;font-size:15px;color:rgba(10,9,8,.18);letter-spacing:-.02em;white-space:nowrap;}
     /* WHY CITY */
     .why{padding:120px 0;border-top:1px solid var(--c-border);}
     .why-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;}
@@ -196,15 +191,13 @@
     /* TESTIMONIALS */
     .testi{padding:120px 0;border-top:1px solid var(--c-border);background:var(--c-bg);}
     .testi-h{font-family:"Syne",sans-serif;font-weight:800;font-size:clamp(2rem,4vw,3.4rem);letter-spacing:-.03em;line-height:1.05;margin-bottom:52px;}
-    .tgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
-    .tcard{background:white;border:1.5px solid var(--c-border);border-radius:20px;padding:28px 26px;display:flex;flex-direction:column;gap:16px;transition:transform var(--dur-base) var(--ease-out),box-shadow var(--dur-base);}
-    .tcard:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(0,0,0,.07);}
-    .tcard-stars{color:#f59e0b;font-size:15px;letter-spacing:2px;}
-    .tcard-q{font-size:14px;color:rgba(10,9,8,.75);line-height:1.75;flex:1;font-style:italic;}
-    .tcard-who{display:flex;align-items:center;gap:12px;}
-    .tcard-avatar{width:38px;height:38px;border-radius:50%;background:var(--c-orange);color:white;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
-    .tcard-name{font-size:13px;font-weight:700;color:var(--c-ink);}
-    .tcard-role{font-size:11.5px;color:var(--c-subtle);margin-top:1px;}
+    .case{background:white;border:1.5px solid var(--c-border);border-radius:20px;padding:36px 32px;display:grid;grid-template-columns:auto 1fr;gap:28px 40px;align-items:center;max-width:860px;}
+    .case-metric{font-family:"Syne",sans-serif;font-weight:800;font-size:clamp(3.2rem,6vw,4.6rem);letter-spacing:-.05em;line-height:.9;color:var(--c-orange);}
+    .case-label{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--c-ink);margin-bottom:10px;}
+    .case-desc{font-size:15px;color:rgba(10,9,8,.75);line-height:1.7;margin:0 0 10px;}
+    .case-who{font-size:12.5px;color:var(--c-subtle);display:flex;flex-wrap:wrap;gap:0 14px;align-items:center;}
+    .case-who a{color:var(--c-orange);font-weight:600;min-height:44px;display:inline-flex;align-items:center;}
+    @media(max-width:640px){.case{grid-template-columns:1fr;padding:28px 22px;gap:18px;}}
     /* AUDIT */
     .audit{padding:120px 0;border-top:1px solid var(--c-border);}
     .aw{max-width:720px;margin:0 auto;}
@@ -352,10 +345,10 @@
     /* RESPONSIVE */
     @media(max-width:1024px){.hero-visual{width:320px;}}
     @media(max-width:900px){.fq-g{grid-template-columns:1fr;gap:40px;}.fq-l{position:static;}.hero-body{flex-direction:column;padding:110px var(--sp-6) 80px;text-align:center;gap:48px;}.hero-text{display:flex;flex-direction:column;align-items:center;width:100%;}.hero-visual{width:100%;max-width:380px;}.pill{max-width:460px;}.why-grid{grid-template-columns:1fr;gap:40px;}.why-img{display:none;}.cg{grid-template-columns:1fr;gap:48px;}.mini-card-2{display:none;}.mini-card{right:8px;bottom:8px;}}
-    @media(max-width:768px){.nav-links,.nav-cta{display:none;}.burger{display:flex;}.cats{grid-template-columns:1fr;}.rcta{flex-direction:column;}.plans{grid-template-columns:1fr;}.tgrid{grid-template-columns:1fr;}.arow{flex-direction:column;}.ago{width:100%;}.fi{flex-direction:column;text-align:center;}.flinks{justify-content:center;flex-wrap:wrap;}.hero-stats{flex-wrap:wrap;justify-content:center;gap:4px;}.hst{padding:8px 14px;border-right:none;border-bottom:1px solid rgba(10,9,8,.08);}.hst:last-child{border-bottom:none;}.csend{align-self:stretch;text-align:center;justify-content:center;}.trust-logos{gap:20px;}.cta-dark-btns{flex-direction:column;align-items:center;}}
+    @media(max-width:768px){.nav-links,.nav-cta{display:none;}.burger{display:flex;}.cats{grid-template-columns:1fr;}.rcta{flex-direction:column;}.plans{grid-template-columns:1fr;}.tgrid{grid-template-columns:1fr;}.arow{flex-direction:column;}.ago{width:100%;}.fi{flex-direction:column;text-align:center;}.flinks{justify-content:center;flex-wrap:wrap;}.hero-stats{flex-wrap:wrap;justify-content:center;gap:4px;}.hst{padding:8px 14px;border-right:none;border-bottom:1px solid rgba(10,9,8,.08);}.hst:last-child{border-bottom:none;}.csend{align-self:stretch;text-align:center;justify-content:center;}.cta-dark-btns{flex-direction:column;align-items:center;}}
     @media(max-width:520px){.rsc{flex-direction:column;align-items:flex-start;}.pill-p{display:none;}.pill-in{padding-left:8px;}}
     @media(prefers-reduced-motion:reduce){.hero{animation:none;background-position:0% 50%;}.band-tr{animation:none;}.rank-card,.mini-card{animation:none;}.rc-badge-dot,.ld{animation:none;}.sline::after{animation:none;}}
-      @media (hover:none){.nav-cta:hover:not(:active),.pill-btn:hover:not(:active),.ghost-link:hover:not(:active),.rcta-b:hover:not(:active),.tcard:hover:not(:active),.plan:hover:not(:active),.pbtn:hover:not(:active),.csend:hover:not(:active),.wa-btn:hover:not(:active),.why-card:hover:not(:active),.cta-btn-primary:hover:not(:active),.pcta-b:hover:not(:active){transform:none;}}
+      @media (hover:none){.nav-cta:hover:not(:active),.pill-btn:hover:not(:active),.ghost-link:hover:not(:active),.rcta-b:hover:not(:active),.plan:hover:not(:active),.pbtn:hover:not(:active),.csend:hover:not(:active),.wa-btn:hover:not(:active),.why-card:hover:not(:active),.cta-btn-primary:hover:not(:active),.pcta-b:hover:not(:active){transform:none;}}
     html{-webkit-tap-highlight-color:transparent;-webkit-text-size-adjust:100%;}
     a,button,[role="button"]{touch-action:manipulation;}
     button,.pill-btn,.nav-cta,.pbtn,.ck-ok,.csend,.ago,.fq-q,.burger{user-select:none;-webkit-user-select:none;}
@@ -372,7 +365,7 @@
     "areaServed": [{"@type":"City","name":"Ciudad de México"},{"@type":"Country","name":"México"}],
     "priceRange": "$199-$649",
     "currenciesAccepted": "USD",
-    "contactPoint": {"@type":"ContactPoint","contactType":"sales","availableLanguage":"Spanish","url":"https://rankeo.agency/agencia-seo-bogota#contacto"},
+    "contactPoint": {"@type":"ContactPoint","contactType":"sales","availableLanguage":"Spanish","url":"https://rankeo.agency/agencia-seo-cdmx#contacto"},
     "sameAs": ["https://rankeo.agency"]
   }
   </script>
@@ -413,7 +406,7 @@
 </header>
 <main id="main-content">
 <!-- HERO -->
-<section class="hero" aria-label="Agencia SEO Bogotá">
+<section class="hero" aria-label="Agencia SEO CDMX">
   <div class="hero-orbs" aria-hidden="true">
     <div class="orb orb-a"></div>
     <div class="orb orb-b"></div>
@@ -512,20 +505,6 @@
     <span class="bi"><span class="bd"></span>Schema Markup</span>
   </div>
 </div>
-<!-- TRUST BAR -->
-<div class="trust rv">
-  <div class="con">
-    <p class="trust-label">Negocios en CDMX que ya confían en Rankeo</p>
-    <div class="trust-logos">
-      <span class="trust-logo">Restaurante La Condesa</span>
-      <span class="trust-logo">Abogados Polanco</span>
-      <span class="trust-logo">Clínica Santa Fe CDMX</span>
-      <span class="trust-logo">Inmobiliaria Satélite</span>
-      <span class="trust-logo">Spa Roma Norte</span>
-      <span class="trust-logo">Gym Functional Coyoacán</span>
-    </div>
-  </div>
-</div>
 <!-- POR QUÉ BOGOTÁ -->
 <section class="why" id="por-que-cdmx" aria-labelledby="why-title">
   <div class="con">
@@ -564,35 +543,17 @@
     </div>
   </div>
 </section>
-<!-- TESTIMONIALS -->
-<section class="testi" aria-label="Testimonios de clientes en Bogotá">
+<!-- CASO REAL -->
+<section class="testi" aria-label="Caso real de un cliente">
   <div class="con">
-    <div class="sl rv"><div class="sl-d" aria-hidden="true"></div><span class="sl-t">CDMX nos responde</span></div>
-    <h2 class="testi-h rv">Negocios capitalinos<br/>que ya aparecen en Google.</h2>
-    <div class="tgrid rv" data-d="1">
-      <div class="tcard">
-        <div class="tcard-stars" aria-label="5 estrellas">★★★★★</div>
-        <p class="tcard-q">"Teníamos el restaurante en La Condesa desde hace 4 años pero la competencia era brutal. A los 3 meses con Rankeo ya éramos el primer resultado para 'restaurante La Condesa' y las reservas en línea se duplicaron."</p>
-        <div class="tcard-who">
-          <div class="tcard-avatar" aria-hidden="true">CM</div>
-          <div><div class="tcard-name">Chef Marco Elizondo</div><div class="tcard-role">Restaurante Lienzo · La Condesa, CDMX</div></div>
-        </div>
-      </div>
-      <div class="tcard">
-        <div class="tcard-stars" aria-label="5 estrellas">★★★★★</div>
-        <p class="tcard-q">"En Polanco hay mucha competencia para despachos de abogados corporativos. Rankeo identificó las keywords exactas que usan los clientes en CDMX y en 5 meses pasamos de página 3 a página 1. Los leads de calidad subieron un 320%."</p>
-        <div class="tcard-who">
-          <div class="tcard-avatar" aria-hidden="true">RA</div>
-          <div><div class="tcard-name">Lic. Sofía Herrera</div><div class="tcard-role">Herrera & Asociados Polanco · CDMX</div></div>
-        </div>
-      </div>
-      <div class="tcard">
-        <div class="tcard-stars" aria-label="5 estrellas">★★★★★</div>
-        <p class="tcard-q">"Nuestra clínica dental en Satélite no aparecía en ningún resultado local. Rankeo nos posicionó para 'dentista Satélite' y 'ortodoncia Ciudad Satélite'. Hoy el 65% de los nuevos pacientes nos encuentran por Google."</p>
-        <div class="tcard-who">
-          <div class="tcard-avatar" aria-hidden="true">LP</div>
-          <div><div class="tcard-name">Dr. Alejandro Fuentes</div><div class="tcard-role">Clínica Dental Satélite · Naucalpan, CDMX</div></div>
-        </div>
+    <div class="sl rv"><div class="sl-d" aria-hidden="true"></div><span class="sl-t">Caso real</span></div>
+    <h2 class="testi-h rv">Lo que pasa cuando el sitio<br/>y el SEO van juntos.</h2>
+    <div class="case rv" data-d="1">
+      <div class="case-metric">+180%</div>
+      <div class="case-body">
+        <div class="case-label">Matrículas desde la web · en 4 meses</div>
+        <p class="case-desc">El Colegio San Martín de Tours, en San Martín (Meta, Colombia), ofrece bachillerato para adultos. Construimos su sitio y lo posicionamos para las búsquedas de su zona. Las matrículas que llegan por la web crecieron un 180% en los primeros cuatro meses.</p>
+        <div class="case-who"><span>Colegio San Martín de Tours · Institución educativa · Meta, Colombia</span><a href="/demo/colegio-san-martin-meta" target="_blank" rel="noopener">Ver el sitio →</a></div>
       </div>
     </div>
   </div>

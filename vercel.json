@@ -35,5 +35,17 @@
         }
       ]
     }
+  ],
+  "redirects": [
+    {
+      "source": "/seo-bogota",
+      "destination": "/agencia-seo-bogota",
+      "permanent": true
+    },
+    {
+      "source": "/seo-medellin",
+      "destination": "/agencia-seo-medellin",
+      "permanent": true
+    }
   ]
 }
