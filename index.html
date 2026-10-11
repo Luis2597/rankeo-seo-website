@@ -3,25 +3,28 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="theme-color" content="#FAF8F5"/>
   <title>Agencia SEO Colombia, México y USA — Rankeo</title>
   <meta name="description" content="Agencia SEO + GEO para Colombia, México y USA. Posicionamos tu negocio en Google, ChatGPT y AI Overviews desde $199/mes. Auditoría gratis sin tarjeta."/>
 
   <!-- Canonical & hreflang -->
-  <link rel="canonical" href="https://rankeo-nu.vercel.app/"/>
-  <link rel="alternate" hreflang="es-CO" href="https://rankeo-nu.vercel.app/"/>
-  <link rel="alternate" hreflang="es-MX" href="https://rankeo-nu.vercel.app/"/>
-  <link rel="alternate" hreflang="es-US" href="https://rankeo-nu.vercel.app/"/>
-  <link rel="alternate" hreflang="x-default" href="https://rankeo-nu.vercel.app/"/>
+  <link rel="canonical" href="https://rankeo.agency/"/>
+  <link rel="alternate" hreflang="es-CO" href="https://rankeo.agency/"/>
+  <link rel="alternate" hreflang="es-MX" href="https://rankeo.agency/"/>
+  <link rel="alternate" hreflang="es-US" href="https://rankeo.agency/"/>
+  <link rel="alternate" hreflang="x-default" href="https://rankeo.agency/"/>
 
   <!-- Favicon -->
-  <link rel="icon" href="/favicon.ico" type="image/x-icon"/>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml"/>
+  <link rel="icon" href="/favicon.ico" sizes="32x32"/>
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png"/>
 
   <!-- Open Graph -->
   <meta property="og:type"        content="website"/>
-  <meta property="og:url"         content="https://rankeo-nu.vercel.app/"/>
+  <meta property="og:url"         content="https://rankeo.agency/"/>
   <meta property="og:title"       content="Agencia SEO Colombia, México y USA — Rankeo"/>
   <meta property="og:description" content="Agencia SEO + GEO en Colombia, México y USA. Posicionamos tu negocio en Google, ChatGPT y Perplexity desde $199/mes. Auditoría gratis sin tarjeta."/>
-  <meta property="og:image"       content="https://rankeo-nu.vercel.app/preview.png"/>
+  <meta property="og:image"       content="https://rankeo.agency/preview.png"/>
   <meta property="og:image:width"  content="1200"/>
   <meta property="og:image:height" content="630"/>
   <meta property="og:locale"      content="es_CO"/>
@@ -34,7 +37,7 @@
   <meta name="twitter:card"        content="summary_large_image"/>
   <meta name="twitter:title"       content="Agencia SEO Colombia, México y USA — Rankeo"/>
   <meta name="twitter:description" content="SEO + GEO para Colombia y México. Visible en Google, ChatGPT y Perplexity desde $199/mes. Auditoría gratis."/>
-  <meta name="twitter:image"       content="https://rankeo-nu.vercel.app/preview.png"/>
+  <meta name="twitter:image"       content="https://rankeo.agency/preview.png"/>
 
   <!-- Geo -->
   <meta name="geo.region"   content="CO"/>
@@ -69,7 +72,7 @@
       /* Motion tokens (ui-ux-pro-max §7) */
       --dur-fast:   150ms;
       --dur-base:   250ms;
-      --dur-slow:   500ms;
+      --dur-slow:   400ms;
       --dur-xslow:  700ms;
       /* Animate-skill exact curves — strong, satisfying, real-world mass */
       --ease-out:    cubic-bezier(0.23, 1, 0.32, 1);   /* strong ease-out for UI */
@@ -121,13 +124,13 @@
 
     /* ━━━━ SKIP LINK (accessibility §1) ━━━━ */
     .skip-link {
-      position: absolute; top: -100%; left: var(--sp-4);
+      position: absolute; top: 0; left: var(--sp-4);
       background: var(--c-orange); color: white;
       padding: var(--sp-2) var(--sp-4); border-radius: 0 0 8px 8px;
       font-weight: 700; font-size: 14px; z-index: 9999;
-      transition: top var(--dur-fast);
+      transition: transform var(--dur-fast) var(--ease-out); transform: translateY(-120%);
     }
-    .skip-link:focus { top: 0; }
+    .skip-link:focus { transform: translateY(0); }
 
     /* ━━━━ UTILS ━━━━ */
     .syne { font-family: 'Syne', sans-serif; }
@@ -137,8 +140,8 @@
     .rv {
       opacity: 0; transform: translateY(32px);
       transition:
-        opacity var(--dur-xslow) var(--ease-out),
-        transform var(--dur-xslow) var(--ease-out);
+        opacity var(--dur-slow) var(--ease-out),
+        transform var(--dur-slow) var(--ease-out);
       /* No CSS animation fallback — it overrides .rv.in via animation cascade.
          JS handles both viewport-on-load (immediate) and scroll-triggered reveals. */
     }
@@ -153,16 +156,16 @@
     .rv-l {
       opacity: 0; transform: translateX(-32px);
       transition:
-        opacity var(--dur-xslow) var(--ease-out),
-        transform var(--dur-xslow) var(--ease-out);
+        opacity var(--dur-slow) var(--ease-out),
+        transform var(--dur-slow) var(--ease-out);
     }
     .rv-l.in { opacity: 1; transform: translateX(0); }
 
     .rv-r {
       opacity: 0; transform: translateX(32px);
       transition:
-        opacity var(--dur-xslow) 80ms var(--ease-out),
-        transform var(--dur-xslow) 80ms var(--ease-out);
+        opacity var(--dur-slow) 80ms var(--ease-out),
+        transform var(--dur-slow) 80ms var(--ease-out);
     }
     .rv-r.in { opacity: 1; transform: translateX(0); }
 
@@ -170,8 +173,8 @@
     .rv-z {
       opacity: 0; transform: scale(0.95);
       transition:
-        opacity var(--dur-xslow) var(--ease-out),
-        transform var(--dur-xslow) var(--ease-out);
+        opacity var(--dur-slow) var(--ease-out),
+        transform var(--dur-slow) var(--ease-out);
     }
     .rv-z.in { opacity: 1; transform: scale(1); }
 
@@ -217,16 +220,16 @@
       border-bottom: 1px solid var(--c-border);
     }
     .nav-i { height: 100%; display: flex; align-items: center; justify-content: space-between; }
-    .logo { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 21px; letter-spacing: -.025em; }
+    .logo { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 21px; letter-spacing: -.025em; display: inline-flex; align-items: center; min-height: 44px; }
     .logo em { color: var(--c-orange); font-style: normal; }
-    .nav-links { display: flex; align-items: center; gap: 28px; list-style: none; font-size: 13.5px; font-weight: 500; color: rgba(10,9,8,.5); }
+    .nav-links { display: flex; align-items: center; gap: 28px; list-style: none; font-size: 13.5px; font-weight: 500; color: rgba(10,9,8,.62); }
     .nav-links a { transition: color var(--dur-fast); text-underline-offset: 4px; }
     .nav-links a:hover { color: var(--c-ink); text-decoration: underline; text-decoration-color: var(--c-orange); text-decoration-thickness: 1.5px; }
     .nav-cta {
       display: inline-flex; align-items: center; gap: 6px;
       background: var(--c-ink); color: var(--c-white);
       font-size: 13px; font-weight: 700; padding: 10px 20px; border-radius: 100px;
-      transition: background var(--dur-fast), transform var(--dur-fast) var(--ease-spring);
+      transition: background var(--dur-fast), transform var(--dur-fast) var(--ease-out);
       min-height: 44px; /* touch target §2 */
     }
     .nav-cta:hover { background: var(--c-orange); transform: translateY(-1px); }
@@ -292,13 +295,13 @@
     .pill-p { font-size: 13px; color: rgba(10,9,8,.35); user-select: none; pointer-events: none; white-space: nowrap; }
     .pill-in { flex: 1; border: none; outline: none; background: transparent; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 16px; color: var(--c-ink); min-width: 0; padding: 8px 0; }
     .pill-in::placeholder { color: rgba(10,9,8,.3); }
-    .pill-btn { display: inline-flex; align-items: center; gap: 7px; background: var(--c-orange); color: white; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 13px; font-weight: 700; padding: 12px 22px; border-radius: 100px; border: none; cursor: pointer; white-space: nowrap; min-height: 44px; flex-shrink: 0; transition: background var(--dur-fast), transform var(--dur-fast) var(--ease-spring); }
+    .pill-btn { display: inline-flex; align-items: center; gap: 7px; background: var(--c-orange); color: white; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 13px; font-weight: 700; padding: 12px 22px; border-radius: 100px; border: none; cursor: pointer; white-space: nowrap; min-height: 44px; flex-shrink: 0; transition: background var(--dur-fast), transform var(--dur-fast) var(--ease-out); }
     .pill-btn:hover { background: var(--c-ink); transform: translateY(-1px) scale(1.02); }
     .pill-btn:active { transform: scale(0.97); } /* scale feedback §7 */
     .pill-btn svg { width: 13px; height: 13px; }
     .pill-err { font-size: 12px; color: var(--c-error); margin-top: 8px; display: none; }
 
-    .ghost-link { font-size: 13px; font-weight: 500; color: rgba(10,9,8,.48); padding: 9px 16px; border-radius: 100px; border: 1px solid rgba(10,9,8,.13); background: rgba(255,255,255,.28); backdrop-filter: blur(8px); transition: background var(--dur-fast) var(--ease-out), color var(--dur-fast) var(--ease-out), border-color var(--dur-fast) var(--ease-out), transform var(--dur-fast) var(--ease-spring); display: inline-block; }
+    .ghost-link { display: inline-flex; align-items: center; min-height: 44px; font-size: 13px; font-weight: 500; color: rgba(10,9,8,.48); padding: 9px 16px; border-radius: 100px; border: 1px solid rgba(10,9,8,.13); background: rgba(255,255,255,.28); backdrop-filter: blur(8px); transition: background var(--dur-fast) var(--ease-out), color var(--dur-fast) var(--ease-out), border-color var(--dur-fast) var(--ease-out), transform var(--dur-fast) var(--ease-out); display: inline-block; }
     .ghost-link:hover { background: rgba(255,255,255,.70); color: var(--c-ink); border-color: rgba(10,9,8,.22); transform: translateY(-1px); }
 
     .hero-stats { display: flex; align-items: center; margin-top: 36px; }
@@ -306,7 +309,7 @@
     .hst:first-child { padding-left: 0; }
     .hst:last-child { border-right: none; }
     .hst-n { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 22px; color: var(--c-ink); letter-spacing: -.04em; line-height: 1; }
-    .hst-l { font-size: 10.5px; color: rgba(10,9,8,.4); margin-top: 2px; }
+    .hst-l { font-size: 11px; color: rgba(10,9,8,.4); margin-top: 2px; }
 
     /* Right: SVG visual — animated ranking card (ckmui-styling visual layer) */
     .hero-visual {
@@ -324,15 +327,15 @@
     .rc-header { display: flex; align-items: center; gap: 10px; margin-bottom: 20px; }
     .rc-dot { width: 10px; height: 10px; border-radius: 50%; }
     .rc-title { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 13px; color: var(--c-ink); }
-    .rc-url { font-size: 10px; color: var(--c-subtle); margin-left: auto; }
+    .rc-url { font-size: 11px; color: var(--c-subtle); margin-left: auto; }
     .rank-row { display: flex; align-items: center; gap: 10px; padding: 9px 0; border-bottom: 1px solid rgba(0,0,0,.06); }
     .rank-row:last-child { border-bottom: none; }
     .rr-pos { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 15px; color: var(--c-border); width: 24px; flex-shrink: 0; text-align: center; letter-spacing: -.03em; }
     .rr-pos.you { color: var(--c-orange); }
     .rr-bar-wrap { flex: 1; height: 6px; background: rgba(0,0,0,.06); border-radius: 3px; overflow: hidden; }
-    .rr-bar { height: 100%; border-radius: 3px; background: var(--c-border); transition: width 1.2s cubic-bezier(0.23, 1, 0.32, 1); }
+    .rr-bar { height: 100%; width: 100%; border-radius: 3px; background: var(--c-border); transform: scaleX(0); transform-origin: left; transition: transform 1.2s var(--ease-out); }
     .rr-bar.you { background: linear-gradient(90deg, var(--c-orange), #FF7A50); }
-    .rr-label { font-size: 10.5px; color: var(--c-subtle); width: 70px; text-align: right; flex-shrink: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .rr-label { font-size: 11px; color: var(--c-subtle); width: 70px; text-align: right; flex-shrink: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
     .rr-label.you { color: var(--c-orange); font-weight: 700; }
     .rc-badge {
       display: inline-flex; align-items: center; gap: 6px;
@@ -353,7 +356,7 @@
     .mc-icon { width: 32px; height: 32px; border-radius: 8px; background: rgba(240,78,35,.2); display: flex; align-items: center; justify-content: center; }
     .mc-text { line-height: 1.3; }
     .mc-num { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 16px; color: white; letter-spacing: -.04em; }
-    .mc-sub { font-size: 10px; color: rgba(255,255,255,.5); }
+    .mc-sub { font-size: 11px; color: rgba(255,255,255,.5); }
 
     /* ── Hero interactive canvas ── */
     #heroCanvas {
@@ -435,6 +438,7 @@
       color: rgba(255,255,255,.92);
     }
     .mf-q em { color: var(--c-orange); font-style: normal; position: relative; }
+    @media (max-width: 768px) { .mf-q br { display: none; } }
     .mf-rule { display: none; }
     .mf-txt {
       font-size: 15px; color: rgba(255,255,255,.38);
@@ -452,13 +456,13 @@
     .hiw { padding: 120px 0; border-top: 1px solid var(--c-border); }
     .hiw-g { display: grid; grid-template-columns: 340px 1fr; gap: 80px; align-items: start; }
     .hiw-l { position: sticky; top: 90px; }
-    .hiw-h { font-family: 'Syne', sans-serif; font-weight: 800; font-size: clamp(2rem,3.5vw,2.9rem); letter-spacing: -.03em; line-height: 1.08; }
+    .hiw-h { font-family: 'Syne', sans-serif; font-weight: 800; font-size: clamp(2rem,3vw,2.4rem); letter-spacing: -.03em; line-height: 1.08; overflow-wrap: normal; word-break: normal; }
     .hiw-h em { color: var(--c-orange); font-style: normal; }
     .hiw-s { font-size: 15px; color: var(--c-subtle); line-height: 1.7; margin-top: 14px; }
     .steps { display: flex; flex-direction: column; }
     .step { display: flex; gap: 24px; padding: 30px 0; border-bottom: 1px solid var(--c-border); cursor: default; }
     .step:last-child { border-bottom: none; padding-bottom: 0; }
-    .sn { font-family: 'Syne', sans-serif; font-weight: 800; font-size: clamp(2rem,4vw,3.2rem); color: var(--c-border); flex-shrink: 0; line-height: 1; letter-spacing: -.04em; transition: color var(--dur-base) var(--ease-out), transform var(--dur-base) var(--ease-spring); }
+    .sn { font-family: 'Syne', sans-serif; font-weight: 800; font-size: clamp(2rem,4vw,3.2rem); color: var(--c-border); flex-shrink: 0; line-height: 1; letter-spacing: -.04em; transition: color var(--dur-base) var(--ease-out), transform var(--dur-base) var(--ease-out); }
     .step:hover .sn { color: var(--c-orange); transform: scale(1.05); }
     .sb { padding-top: 2px; }
     .st { font-family: 'Syne', sans-serif; font-weight: 700; font-size: clamp(1rem,1.8vw,1.25rem); letter-spacing: -.02em; margin-bottom: 10px; }
@@ -475,7 +479,7 @@
     .ain { width: 100%; background: var(--c-surface); border: 1.5px solid var(--c-border); border-radius: 14px; padding: 15px 16px 15px 62px; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 16px; color: var(--c-ink); outline: none; transition: border-color var(--dur-fast), box-shadow var(--dur-fast); min-height: 52px; }
     .ain:focus { border-color: rgba(240,78,35,.45); box-shadow: 0 0 0 3px rgba(240,78,35,.1); }
     .ain::placeholder { color: rgba(10,9,8,.28); }
-    .ago { background: var(--c-orange); color: white; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 14px; font-weight: 700; padding: 0 28px; border-radius: 14px; border: none; cursor: pointer; min-height: 52px; white-space: nowrap; transition: background var(--dur-fast), transform var(--dur-fast) var(--ease-spring); }
+    .ago { background: var(--c-orange); color: white; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 14px; font-weight: 700; padding: 0 28px; border-radius: 14px; border: none; cursor: pointer; min-height: 52px; white-space: nowrap; transition: background var(--dur-fast), transform var(--dur-fast) var(--ease-out); }
     .ago:hover { background: var(--c-ink); }
     .ago:active { transform: scale(0.97); }
     .ago:disabled { opacity: .38; cursor: not-allowed; transform: none; }
@@ -514,7 +518,7 @@
     .rcta { background: var(--c-ink); border-radius: 16px; padding: 24px 28px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
     .rcta h3 { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 17px; color: white; margin-bottom: 3px; }
     .rcta p { font-size: 13px; color: rgba(255,255,255,.5); }
-    .rcta-b { display: inline-flex; align-items: center; gap: 8px; background: var(--c-orange); color: white; font-size: 13px; font-weight: 700; padding: 13px 22px; border-radius: 100px; white-space: nowrap; min-height: 44px; transition: background var(--dur-fast), transform var(--dur-fast) var(--ease-spring); }
+    .rcta-b { display: inline-flex; align-items: center; gap: 8px; background: var(--c-orange); color: white; font-size: 13px; font-weight: 700; padding: 13px 22px; border-radius: 100px; white-space: nowrap; min-height: 44px; transition: background var(--dur-fast), transform var(--dur-fast) var(--ease-out); }
     .rcta-b:hover { background: white; color: var(--c-orange); transform: translateY(-1px); }
 
     /* ━━━━ PORTFOLIO ━━━━ */
@@ -527,7 +531,7 @@
       border-radius: 18px; border: 1.5px solid var(--c-border);
       overflow: hidden; cursor: default;
       box-shadow: 0 1px 3px rgba(0,0,0,.05), 0 1px 2px rgba(0,0,0,.03);
-      transition: transform var(--dur-base) var(--ease-spring), box-shadow var(--dur-base);
+      transition: transform var(--dur-base) var(--ease-out), box-shadow var(--dur-base);
       background: var(--c-white);
     }
     .pc:hover { transform: translateY(-6px) scale(1.01); box-shadow: 0 2px 4px rgba(0,0,0,.04), 0 8px 20px rgba(0,0,0,.06), 0 24px 52px rgba(0,0,0,.09); }
@@ -543,15 +547,16 @@
     .pc-line:nth-child(2) { width: 75%; }
     .pc-line:nth-child(3) { width: 55%; }
     .pc-foot { padding: 12px 16px; border-top: 1px solid var(--c-border); display: flex; align-items: center; justify-content: space-between; }
-    .pc-industry { font-size: 10.5px; font-weight: 700; text-transform: uppercase; letter-spacing: .12em; color: var(--c-subtle); }
-    .pc-tag { font-size: 10px; font-weight: 700; padding: 3px 10px; border-radius: 100px; border: 1px solid; white-space: nowrap; }
+    .pc-industry { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .12em; color: var(--c-subtle); }
+    .pc-tag { font-size: 11px; font-weight: 700; padding: 3px 10px; border-radius: 100px; border: 1px solid; white-space: nowrap; position: relative; }
+    a.pc-tag::before { content: ''; position: absolute; inset: -12px -8px; } /* área táctil 44px sin alterar el diseño */
     .pc-tag.avail { color: var(--c-orange); border-color: rgba(240,78,35,.3); background: rgba(240,78,35,.06); }
     .pc-tag.soon  { color: var(--c-subtle); border-color: var(--c-border); background: var(--c-surface); }
 
     .port-cta { display: flex; align-items: center; justify-content: space-between; gap: 20px; background: var(--c-ink); border-radius: 18px; padding: 28px 32px; }
     .pcta-t h3 { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 18px; color: white; margin-bottom: 4px; }
     .pcta-t p { font-size: 13.5px; color: rgba(255,255,255,.5); }
-    .pcta-b { display: inline-flex; align-items: center; gap: 8px; background: var(--c-orange); color: white; font-size: 13.5px; font-weight: 700; padding: 14px 24px; border-radius: 100px; white-space: nowrap; min-height: 44px; transition: background var(--dur-fast), transform var(--dur-fast) var(--ease-spring); }
+    .pcta-b { display: inline-flex; align-items: center; gap: 8px; background: var(--c-orange); color: white; font-size: 13.5px; font-weight: 700; padding: 14px 24px; border-radius: 100px; white-space: nowrap; min-height: 44px; transition: background var(--dur-fast), transform var(--dur-fast) var(--ease-out); }
     .pcta-b:hover { background: white; color: var(--c-orange); transform: translateY(-1px); }
 
     /* ━━━━ PORTFOLIO CARD — PHOTO OVERLAY ━━━━ */
@@ -560,9 +565,9 @@
     .pc:hover .pcp-img img { transform: scale(1.05); }
     .pcp-ov { position: absolute; inset: 0; background: linear-gradient(to top, rgba(10,9,8,.88) 0%, rgba(10,9,8,.08) 60%, transparent 100%); display: flex; flex-direction: column; justify-content: flex-end; padding: 14px 16px; transition: background var(--dur-base); }
     .pc:hover .pcp-ov { background: linear-gradient(to top, rgba(10,9,8,.95) 0%, rgba(10,9,8,.20) 60%, transparent 100%); }
-    .pcp-m { font-size: 9.5px; font-weight: 700; color: rgba(255,255,255,.55); text-transform: uppercase; letter-spacing: .12em; }
+    .pcp-m { font-size: 11px; font-weight: 700; color: rgba(255,255,255,.55); text-transform: uppercase; letter-spacing: .12em; }
     .pcp-n { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 2.1rem; color: var(--c-orange); line-height: 1; margin: 4px 0 3px; letter-spacing: -.035em; }
-    .pcp-s { font-size: 10.5px; color: rgba(255,255,255,.72); line-height: 1.35; }
+    .pcp-s { font-size: 11px; color: rgba(255,255,255,.72); line-height: 1.35; }
 
     /* ━━━━ VIDEO SECTION ━━━━ */
     .vid-sec { padding: 120px 0; border-top: 1px solid var(--c-border); background: var(--c-ink); }
@@ -570,6 +575,8 @@
     .vid-h { font-family: 'Syne', sans-serif; font-weight: 800; font-size: clamp(1.8rem,3.5vw,2.8rem); letter-spacing: -.03em; line-height: 1.08; color: white; }
     .vid-h em { color: var(--c-orange); font-style: normal; }
     .vid-sub { font-size: 15px; color: rgba(255,255,255,.45); line-height: 1.75; }
+    .vid-cards { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; margin-top: 12px; }
+    @media (max-width: 900px) { .vid-cards { grid-template-columns: 1fr; gap: 16px; } }
     .vid-wrap { position: relative; padding-bottom: 56.25%; border-radius: 20px; overflow: hidden; box-shadow: 0 32px 80px rgba(0,0,0,.55); }
     .vid-wrap iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
     @media (max-width: 768px) {
@@ -580,7 +587,7 @@
     .testi { padding: 120px 0; border-top: 1px solid var(--c-border); background: var(--c-bg); }
     .testi-h { font-family: 'Syne', sans-serif; font-weight: 800; font-size: clamp(2rem,4vw,3.4rem); letter-spacing: -.03em; line-height: 1.05; margin-bottom: 52px; }
     .tgrid { display: grid; grid-template-columns: repeat(3,1fr); gap: 14px; }
-    .tcard { background: white; border: 1.5px solid var(--c-border); border-radius: 20px; padding: 32px 28px; display: flex; flex-direction: column; gap: 12px; box-shadow: 0 1px 3px rgba(0,0,0,.05); transition: box-shadow var(--dur-base), transform var(--dur-base) var(--ease-spring); }
+    .tcard { background: white; border: 1.5px solid var(--c-border); border-radius: 20px; padding: 32px 28px; display: flex; flex-direction: column; gap: 12px; box-shadow: 0 1px 3px rgba(0,0,0,.05); transition: box-shadow var(--dur-base), transform var(--dur-base) var(--ease-out); }
     .tcard:hover { box-shadow: 0 2px 4px rgba(0,0,0,.03), 0 8px 24px rgba(0,0,0,.07), 0 20px 48px rgba(0,0,0,.07); transform: translateY(-4px); }
     .tcard-metric { font-family: 'Syne', sans-serif; font-weight: 800; font-size: clamp(3rem,5vw,4.2rem); letter-spacing: -.05em; color: var(--c-ink); line-height: .9; }
     .tcard-metric span { color: var(--c-orange); }
@@ -592,11 +599,11 @@
     .pricing { padding: 120px 0; border-top: 1px solid var(--c-border); background: var(--c-surface); }
     .pricing-h { font-family: 'Syne', sans-serif; font-weight: 800; font-size: clamp(2rem,4vw,3.4rem); letter-spacing: -.03em; margin-bottom: 52px; }
     .plans { display: grid; grid-template-columns: repeat(3,1fr); gap: 14px; }
-    .plan { background: var(--c-bg); border: 1.5px solid var(--c-border); border-radius: 20px; padding: 30px; display: flex; flex-direction: column; position: relative; transition: transform var(--dur-base) var(--ease-spring), box-shadow var(--dur-base); box-shadow: 0 1px 3px rgba(0,0,0,.04); }
+    .plan { background: var(--c-bg); border: 1.5px solid var(--c-border); border-radius: 20px; padding: 30px; display: flex; flex-direction: column; position: relative; transition: transform var(--dur-base) var(--ease-out), box-shadow var(--dur-base); box-shadow: 0 1px 3px rgba(0,0,0,.04); }
     .plan:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,0,0,.07); }
     .plan.hot { background: var(--c-ink); border-color: transparent; box-shadow: 0 0 0 1px rgba(240,78,35,.22), 0 0 0 4px rgba(240,78,35,.07), 0 24px 64px rgba(0,0,0,.22), 0 4px 16px rgba(240,78,35,.08); }
     .plan.hot:hover { transform: translateY(-6px); box-shadow: 0 0 0 1px rgba(240,78,35,.32), 0 0 0 5px rgba(240,78,35,.10), 0 32px 80px rgba(0,0,0,.28), 0 4px 20px rgba(240,78,35,.12); }
-    .ptag { position: absolute; top: -1px; right: 24px; background: var(--c-orange); color: white; font-size: 10px; font-weight: 700; padding: 5px 11px; border-radius: 0 0 8px 8px; text-transform: uppercase; letter-spacing: .1em; }
+    .ptag { position: absolute; top: -1px; right: 24px; background: var(--c-orange); color: white; font-size: 11px; font-weight: 700; padding: 5px 11px; border-radius: 0 0 8px 8px; text-transform: uppercase; letter-spacing: .1em; }
     .pname { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .15em; color: var(--c-subtle); margin-bottom: 22px; }
     .plan.hot .pname { color: rgba(255,255,255,.4); }
     .pprice { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 52px; letter-spacing: -.045em; line-height: 1; margin-bottom: 4px; }
@@ -609,7 +616,7 @@
     .pf { display: flex; align-items: flex-start; gap: 10px; font-size: 13.5px; color: rgba(10,9,8,.68); }
     .plan.hot .pf { color: rgba(255,255,255,.65); }
     .pf svg { width: 15px; height: 15px; flex-shrink: 0; margin-top: 1px; }
-    .pbtn { display: flex; align-items: center; justify-content: center; padding: 13px; border-radius: 100px; font-size: 13.5px; font-weight: 700; background: var(--c-surface); border: 1.5px solid var(--c-border); color: var(--c-ink); min-height: 44px; transition: background var(--dur-fast) var(--ease-out), color var(--dur-fast) var(--ease-out), border-color var(--dur-fast) var(--ease-out), transform var(--dur-fast) var(--ease-spring); }
+    .pbtn { display: flex; align-items: center; justify-content: center; padding: 13px; border-radius: 100px; font-size: 13.5px; font-weight: 700; background: var(--c-surface); border: 1.5px solid var(--c-border); color: var(--c-ink); min-height: 44px; transition: background var(--dur-fast) var(--ease-out), color var(--dur-fast) var(--ease-out), border-color var(--dur-fast) var(--ease-out), transform var(--dur-fast) var(--ease-out); }
     .pbtn:hover { background: var(--c-ink); color: white; border-color: var(--c-ink); transform: translateY(-1px); }
     .plan.hot .pbtn { background: var(--c-orange); color: white; border-color: var(--c-orange); }
     .plan.hot .pbtn:hover { background: white; color: var(--c-orange); border-color: white; }
@@ -634,12 +641,12 @@
       position: absolute; top: 3px; left: 3px;
       width: 20px; height: 20px; border-radius: 50%;
       background: white; box-shadow: 0 1px 4px rgba(0,0,0,.15);
-      transition: transform var(--dur-base) var(--ease-spring);
+      transition: transform var(--dur-base) var(--ease-out);
       pointer-events: none;
     }
     .pt-switch.annual .pt-thumb { transform: translateX(22px); }
     .pt-badge {
-      font-size: 10px; font-weight: 700; letter-spacing: .05em;
+      font-size: 11px; font-weight: 700; letter-spacing: .05em;
       text-transform: uppercase; background: rgba(240,78,35,.1);
       color: var(--c-orange); padding: 3px 8px; border-radius: 100px;
       border: 1px solid rgba(240,78,35,.2);
@@ -660,7 +667,7 @@
     .cf input:focus, .cf textarea:focus { border-color: rgba(240,78,35,.45); box-shadow: 0 0 0 3px rgba(240,78,35,.08); }
     .cf input::placeholder, .cf textarea::placeholder { color: rgba(10,9,8,.28); }
     .cf textarea { min-height: 100px; resize: vertical; }
-    .csend { background: var(--c-ink); color: white; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 14px; font-weight: 700; padding: 15px 28px; border-radius: 100px; border: none; cursor: pointer; align-self: flex-start; min-height: 48px; transition: background var(--dur-fast), transform var(--dur-fast) var(--ease-spring); }
+    .csend { background: var(--c-ink); color: white; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 14px; font-weight: 700; padding: 15px 28px; border-radius: 100px; border: none; cursor: pointer; align-self: flex-start; min-height: 48px; transition: background var(--dur-fast), transform var(--dur-fast) var(--ease-out); }
     .csend:hover { background: var(--c-orange); transform: translateY(-1px); }
     .csend:active { transform: scale(0.97); }
     .cok { background: var(--c-surface); border: 1.5px solid var(--c-border); border-radius: 18px; padding: 32px; text-align: center; }
@@ -680,19 +687,20 @@
     .fq-q { width: 100%; background: none; border: none; text-align: left; cursor: pointer; display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 20px 0; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 15px; font-weight: 600; color: var(--c-ink); min-height: 44px; }
     .fq-q svg { width: 18px; height: 18px; flex-shrink: 0; color: var(--c-subtle); transition: transform var(--dur-base) var(--ease-out); }
     .fq-item.open .fq-q svg { transform: rotate(45deg); color: var(--c-orange); }
-    .fq-a { max-height: 0; overflow: hidden; font-size: 14px; color: var(--c-subtle); line-height: 1.75; padding-bottom: 0; transition: max-height 0.4s cubic-bezier(0.23, 1, 0.32, 1), padding-bottom 0.4s cubic-bezier(0.23, 1, 0.32, 1); }
-    .fq-item.open .fq-a { max-height: 600px; padding-bottom: 18px; }
+    .fq-a { display: grid; grid-template-rows: 0fr; overflow: hidden; opacity: 0; font-size: 14px; color: var(--c-subtle); line-height: 1.75; transition: grid-template-rows 280ms var(--ease-out), opacity 200ms var(--ease-out); }
+    .fq-a > p { min-height: 0; margin-bottom: 18px; }
+    .fq-item.open .fq-a { grid-template-rows: 1fr; opacity: 1; }
 
     /* ━━━━ WHATSAPP FLOAT ━━━━ */
-    .wa { position: fixed; bottom: 24px; right: 24px; z-index: 350; transition: bottom var(--dur-base) var(--ease-out); }
-    .wa-btn { display: flex; align-items: center; gap: 10px; background: #25D366; color: white; font-size: 13.5px; font-weight: 700; padding: 13px 20px 13px 16px; border-radius: 100px; box-shadow: 0 4px 24px rgba(37,211,102,.35); text-decoration: none; transition: transform var(--dur-fast) var(--ease-spring), box-shadow var(--dur-fast); min-height: 50px; }
+    .wa { position: fixed; bottom: 24px; right: 24px; z-index: 350; transition: transform var(--dur-base) var(--ease-out); }
+    .wa-btn { display: flex; align-items: center; gap: 10px; background: #25D366; color: white; font-size: 13.5px; font-weight: 700; padding: 13px 20px 13px 16px; border-radius: 100px; box-shadow: 0 4px 24px rgba(37,211,102,.35); text-decoration: none; transition: transform var(--dur-fast) var(--ease-out), box-shadow var(--dur-fast); min-height: 50px; }
     .wa-btn:hover { transform: translateY(-3px) scale(1.03); box-shadow: 0 8px 32px rgba(37,211,102,.45); }
     .wa-btn:active { transform: scale(0.97); }
     .wa-btn svg { width: 22px; height: 22px; flex-shrink: 0; }
     .wa-label { white-space: nowrap; }
     @media (max-width: 520px) { .wa-btn { padding: 13px; border-radius: 50%; } .wa-label { display: none; } }
     /* Push WA above cookie banner while it's visible */
-    body.ck-active .wa { bottom: 160px; }
+    body.ck-active .wa { transform: translateY(-136px); }
 
 
     /* ━━━━ WA PULSE RING ━━━━ */
@@ -715,17 +723,25 @@
     .ck { position: fixed; bottom: 0; left: 0; right: 0; z-index: 300; background: rgba(10,9,8,.96); backdrop-filter: blur(16px); padding: 16px 24px; display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
     .ck p { font-size: 12.5px; color: rgba(255,255,255,.65); line-height: 1.5; }
     .ck a { color: var(--c-orange); }
-    .ck-ok { background: var(--c-orange); color: white; font-size: 12.5px; font-weight: 700; padding: 9px 20px; border-radius: 100px; border: none; cursor: pointer; min-height: 38px; white-space: nowrap; transition: background var(--dur-fast); }
+    .ck-ok { background: var(--c-orange); color: white; font-size: 12.5px; font-weight: 700; padding: 9px 20px; border-radius: 100px; border: none; cursor: pointer; min-height: 44px; white-space: nowrap; transition: background var(--dur-fast); }
     .ck-ok:hover { background: white; color: var(--c-orange); }
+    .ck-ok:active, .ghost-link:active, .pcta-b:active, .pbtn:active, .dcta:active { transform: scale(0.97); transition-duration: 100ms; }
     .ck.hidden { display: none; }
 
     /* ━━━━ FOOTER ━━━━ */
     footer { border-top: 1px solid var(--c-border); padding: 38px 0; overflow: hidden; }
     .fi { display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
-    .flinks { display: flex; gap: 22px; }
-    .flinks a { font-size: 13px; color: var(--c-subtle); transition: color var(--dur-fast); }
+    .flinks { display: flex; gap: 6px 22px; flex-wrap: wrap; }
+    .flinks a { font-size: 13px; color: var(--c-subtle); transition: color var(--dur-fast); white-space: nowrap; display: inline-flex; align-items: center; min-height: 44px; }
     .flinks a:hover { color: var(--c-ink); }
     .fcopy { font-size: 12px; color: rgba(10,9,8,.3); }
+    .fmap { display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; margin-top: 40px; padding-top: 32px; border-top: 1px solid var(--c-border); }
+    .fcol { display: flex; flex-direction: column; gap: 2px; }
+    .fcol-t { font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--c-ink); margin-bottom: 8px; }
+    .fcol a { font-size: 13px; color: var(--c-subtle); display: inline-flex; align-items: center; min-height: 36px; transition: color var(--dur-fast); }
+    .fcol a:hover { color: var(--c-ink); }
+    @media (max-width: 768px) { .fmap { grid-template-columns: 1fr 1fr; gap: 24px; } }
+    @media (max-width: 480px) { .fmap { grid-template-columns: 1fr; } }
 
     /* ━━━━ RESPONSIVE ━━━━ */
     @media (max-width: 1024px) {
@@ -738,7 +754,7 @@
       .fq-g { grid-template-columns: 1fr; gap: 40px; }
       .fq-l { position: static; }
       .hero-body { flex-direction: column; padding: 110px var(--sp-6) 80px; text-align: center; gap: 48px; }
-      .hero-text { display: flex; flex-direction: column; align-items: center; }
+      .hero-text { display: flex; flex-direction: column; align-items: center; width: 100%; }
       .hero-visual { width: 100%; max-width: 380px; }
       .pill { max-width: 460px; }
       .hiw-g { grid-template-columns: 1fr; gap: 48px; }
@@ -775,7 +791,10 @@
       /* Contact send button full width on mobile */
       .csend { align-self: stretch; text-align: center; justify-content: center; }
       /* Geo badge wraps cleanly */
-      .geo-badge { font-size: 10px; gap: 5px; }
+      .geo-badge { font-size: 11px; gap: 5px; }
+    }
+    @media (max-width: 768px) {
+      .hiw, .audit, .portfolio, .vid-sec, .testi, .pricing, .contact, .faq { padding: 72px 0; }
     }
     @media (max-width: 520px) {
       .pgrid { grid-template-columns: 1fr; }
@@ -784,6 +803,19 @@
       .pill-p { display: none; }
       .pill-in { padding-left: 8px; }
     }
+
+
+    /* Hover solo con puntero real: en táctil el :hover queda pegado tras el tap (mobile-native §1) */
+    @media (hover: none) {
+      .nav-cta:hover:not(:active), .pill-btn:hover:not(:active), .ghost-link:hover:not(:active), .rcta-b:hover:not(:active),
+      .pc:hover:not(:active), .pcta-b:hover:not(:active), .tcard:hover:not(:active), .plan:hover:not(:active), .plan.hot:hover:not(:active),
+      .pbtn:hover:not(:active), .csend:hover:not(:active), .wa-btn:hover:not(:active) { transform: none; }
+      .pc:hover .pcp-img img, .step:hover .sn { transform: none; }
+    }
+    /* Capa de plataforma (mobile-native): sin flash gris al tocar, sin retraso de 300ms, controles no seleccionables */
+    html { -webkit-tap-highlight-color: transparent; -webkit-text-size-adjust: 100%; }
+    a, button, [role="button"], .pill-btn, .ago, .csend, .pbtn, .ck-ok { touch-action: manipulation; }
+    button, .pill-btn, .nav-cta, .pbtn, .ck-ok, .csend, .ago, .fq-q, .burger { user-select: none; -webkit-user-select: none; }
 
     /* ━━━━ MOTION SAFETY — cubre todas las animaciones infinitas ━━━━ */
     @media (prefers-reduced-motion: reduce) {
@@ -819,7 +851,7 @@
         <li><a href="#precios">Precios</a></li>
         <li><a href="#faq">FAQ</a></li>
         <li><a href="#contacto">Contacto</a></li>
-        <li><a href="/clientes.html" style="color:var(--c-orange);font-weight:600">Portal clientes</a></li>
+        <li><a href="/clientes" style="color:var(--c-orange);font-weight:600">Portal clientes</a></li>
       </ul>
       <a href="#auditoria" class="nav-cta" aria-label="Analiza tu web gratis">
         Analiza tu web gratis
@@ -927,29 +959,29 @@
         </div>
         <div class="rank-row">
           <span class="rr-pos">2</span>
-          <div class="rr-bar-wrap"><div class="rr-bar" style="width:0%" data-w="74%"></div></div>
+          <div class="rr-bar-wrap"><div class="rr-bar" data-w="74%"></div></div>
           <span class="rr-label">Clínica Norte</span>
         </div>
         <div class="rank-row">
           <span class="rr-pos">3</span>
-          <div class="rr-bar-wrap"><div class="rr-bar" style="width:0%" data-w="58%"></div></div>
+          <div class="rr-bar-wrap"><div class="rr-bar" data-w="58%"></div></div>
           <span class="rr-label">Dental Express</span>
         </div>
         <div class="rank-row">
           <span class="rr-pos">4</span>
-          <div class="rr-bar-wrap"><div class="rr-bar" style="width:0%" data-w="41%"></div></div>
+          <div class="rr-bar-wrap"><div class="rr-bar" data-w="41%"></div></div>
           <span class="rr-label">SmilePro</span>
         </div>
         <div class="rank-row">
           <span class="rr-pos">5</span>
-          <div class="rr-bar-wrap"><div class="rr-bar" style="width:0%" data-w="28%"></div></div>
+          <div class="rr-bar-wrap"><div class="rr-bar" data-w="28%"></div></div>
           <span class="rr-label">Dientes Sanos</span>
         </div>
         <div class="rc-badge">
           <span class="rc-badge-dot"></span>
           Subió del #5 al #1 en 60 días
         </div>
-        <p style="font-size:10px;color:var(--c-subtle);margin-top:8px;opacity:.5">* Ejemplo ilustrativo</p>
+        <p style="font-size: 11px;color:var(--c-subtle);margin-top:8px;opacity:.5">* Ejemplo ilustrativo</p>
       </div>
       <!-- Second floating chip — top-left -->
       <div class="mini-card-2">
@@ -1006,7 +1038,7 @@
 <div class="manifesto rv" role="complementary" aria-label="Filosofía Rankeo">
   <div class="con">
     <div class="mf-inner">
-      <p class="mf-q">Tus clientes ya no<br/>solo buscan en Google.<br/><em>Nosotros decidimos<br/>dónde apareces: en todos.</em></p>
+      <p class="mf-q">Tus clientes ya no <br/>solo buscan en Google. <br/><em>Nosotros decidimos <br/>dónde apareces: en todos.</em></p>
       <div class="mf-rule" aria-hidden="true"></div>
       <p class="mf-txt">Preguntan en ChatGPT. Consultan en Perplexity. Buscan en Google AI. Rankeo construye la presencia técnica y de contenido para que tu negocio aparezca en todos los canales — y siga apareciendo.</p>
     </div>
@@ -1185,7 +1217,7 @@
       </div>
       <p class="vid-sub">En menos de 10 minutos entenderás por qué tus clientes no te encuentran en Google — y exactamente cómo lo solucionamos para negocios en Colombia y México.</p>
     </div>
-    <div class="rv" data-d="2" style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:24px;margin-top:12px">
+    <div class="rv vid-cards" data-d="2">
       <div style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:18px;padding:28px 24px">
         <div style="font-size:11px;font-weight:700;letter-spacing:.08em;color:rgba(255,255,255,.35);text-transform:uppercase;margin-bottom:12px">Antes de Rankeo</div>
         <div style="font-family:'Syne',sans-serif;font-size:2.2rem;font-weight:800;color:#fff;line-height:1;margin-bottom:10px">Pág.<br/><span style="color:rgba(255,255,255,.25)">#4–8</span></div>
@@ -1308,7 +1340,7 @@
             ¿Cuánto cuesta el SEO para mi negocio en Colombia?
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15"/></svg>
           </button>
-          <p class="fq-a">Rankeo ofrece planes desde $199 USD/mes (Plan Local) para optimizar tu sitio existente, $349 USD/mes (Plan Web + SEO) para sitio nuevo con SEO local completo, y $649 USD/mes (Plan Autoridad) para mercados competitivos con blog y estrategia de contenido. Todos incluyen reporte mensual y garantía de 60 días.</p>
+          <div class="fq-a"><p>Rankeo ofrece planes desde $199 USD/mes (Plan Local) para optimizar tu sitio existente, $349 USD/mes (Plan Web + SEO) para sitio nuevo con SEO local completo, y $649 USD/mes (Plan Autoridad) para mercados competitivos con blog y estrategia de contenido. Todos incluyen reporte mensual y garantía de 60 días.</p></div>
         </div>
 
         <div class="fq-item" role="listitem">
@@ -1316,7 +1348,7 @@
             ¿Cuánto tiempo tarda el SEO en dar resultados?
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15"/></svg>
           </button>
-          <p class="fq-a">Para palabras clave locales de baja competencia, los primeros resultados se ven en 30-60 días. Para keywords más competitivas a nivel nacional, el SEO toma entre 4 y 6 meses para mostrar tracción significativa. El máximo retorno se ve a partir de los 12 meses de trabajo continuo.</p>
+          <div class="fq-a"><p>Para palabras clave locales de baja competencia, los primeros resultados se ven en 30-60 días. Para keywords más competitivas a nivel nacional, el SEO toma entre 4 y 6 meses para mostrar tracción significativa. El máximo retorno se ve a partir de los 12 meses de trabajo continuo.</p></div>
         </div>
 
         <div class="fq-item" role="listitem">
@@ -1324,7 +1356,7 @@
             ¿Necesito tener sitio web para contratar el servicio?
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15"/></svg>
           </button>
-          <p class="fq-a">No es indispensable. Los planes Web + SEO y Autoridad incluyen la construcción del sitio web optimizado desde cero. Si ya tienes un sitio, el Plan Local lo optimiza. En cualquier caso, empezamos con una auditoría gratuita.</p>
+          <div class="fq-a"><p>No es indispensable. Los planes Web + SEO y Autoridad incluyen la construcción del sitio web optimizado desde cero. Si ya tienes un sitio, el Plan Local lo optimiza. En cualquier caso, empezamos con una auditoría gratuita.</p></div>
         </div>
 
         <div class="fq-item" role="listitem">
@@ -1332,7 +1364,7 @@
             ¿Trabajan con negocios en México y Estados Unidos?
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15"/></svg>
           </button>
-          <p class="fq-a">Sí. Trabajamos con negocios en Colombia, México y el mercado hispano de Estados Unidos. Las estrategias SEO se adaptan al mercado geográfico específico: keywords regionales, Google Business por país y posicionamiento local en cada mercado.</p>
+          <div class="fq-a"><p>Sí. Trabajamos con negocios en Colombia, México y el mercado hispano de Estados Unidos. Las estrategias SEO se adaptan al mercado geográfico específico: keywords regionales, Google Business por país y posicionamiento local en cada mercado.</p></div>
         </div>
 
         <div class="fq-item" role="listitem">
@@ -1340,7 +1372,7 @@
             ¿Hay contratos anuales obligatorios?
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15"/></svg>
           </button>
-          <p class="fq-a">No. Los planes Rankeo son mensuales y puedes cancelar cuando quieras. Ofrecemos una garantía de devolución de 60 días si no ves mejoras técnicas medibles en tu posicionamiento. Creemos que los resultados deben hablar por sí solos.</p>
+          <div class="fq-a"><p>No. Los planes Rankeo son mensuales y puedes cancelar cuando quieras. Ofrecemos una garantía de devolución de 60 días si no ves mejoras técnicas medibles en tu posicionamiento. Creemos que los resultados deben hablar por sí solos.</p></div>
         </div>
 
         <div class="fq-item" role="listitem">
@@ -1348,7 +1380,7 @@
             ¿Qué es el SEO local y para qué sirve?
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15"/></svg>
           </button>
-          <p class="fq-a">El SEO local es la optimización para aparecer en búsquedas geográficas: "dentista en Bogotá", "abogados en Medellín", "gimnasio cerca de mí". Incluye optimización de Google Business Profile, generación de reseñas y posicionamiento en Google Maps. Es la estrategia más rentable para negocios físicos y de servicios locales en Colombia y México.</p>
+          <div class="fq-a"><p>El SEO local es la optimización para aparecer en búsquedas geográficas: "dentista en Bogotá", "abogados en Medellín", "gimnasio cerca de mí". Incluye optimización de Google Business Profile, generación de reseñas y posicionamiento en Google Maps. Es la estrategia más rentable para negocios físicos y de servicios locales en Colombia y México.</p></div>
         </div>
 
         <div class="fq-item" role="listitem">
@@ -1356,7 +1388,7 @@
             ¿Incluyen optimización para ChatGPT y Google AI Overviews?
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15"/></svg>
           </button>
-          <p class="fq-a">Sí. En 2026 el SEO moderno incluye GEO (Generative Engine Optimization): optimizar tu sitio para ser citado por Google AI Overviews, ChatGPT Search y Perplexity. Los planes Web + SEO y Autoridad incluyen esta capa de optimización, que captura hasta el 30% de los clics en búsquedas informacionales.</p>
+          <div class="fq-a"><p>Sí. En 2026 el SEO moderno incluye GEO (Generative Engine Optimization): optimizar tu sitio para ser citado por Google AI Overviews, ChatGPT Search y Perplexity. Los planes Web + SEO y Autoridad incluyen esta capa de optimización, que captura hasta el 30% de los clics en búsquedas informacionales.</p></div>
         </div>
 
         <div class="fq-item" role="listitem">
@@ -1364,7 +1396,7 @@
             ¿Qué es una auditoría SEO y por qué es gratis?
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15"/></svg>
           </button>
-          <p class="fq-a">Es el diagnóstico completo de tu sitio: velocidad, metadatos, palabras clave, estructura de URLs, posicionamiento local y más de 40 factores técnicos. La ofrecemos gratis porque queremos mostrarte con datos concretos por qué tu sitio no aparece en Google, antes de proponerte cualquier plan.</p>
+          <div class="fq-a"><p>Es el diagnóstico completo de tu sitio: velocidad, metadatos, palabras clave, estructura de URLs, posicionamiento local y más de 40 factores técnicos. La ofrecemos gratis porque queremos mostrarte con datos concretos por qué tu sitio no aparece en Google, antes de proponerte cualquier plan.</p></div>
         </div>
 
       </div>
@@ -1448,12 +1480,45 @@
       <a href="/" class="logo syne" aria-label="Rankeo">Ran<em style="color:var(--c-orange);font-style:normal">keo</em></a>
       <nav class="flinks" aria-label="Footer">
         <a href="#como-funciona">Cómo funciona</a>
-        <a href="#auditoria">Auditoría gratis</a>
-        <a href="#precios">Precios</a>
+        <a href="/auditoria-seo-gratis">Auditoría gratis</a>
+        <a href="/precios">Precios</a>
+        <a href="/blog/">Blog</a>
         <a href="#contacto">Contacto</a>
-        <a href="/clientes.html">Portal clientes</a>
+        <a href="/clientes">Portal clientes</a>
       </nav>
       <p class="fcopy">© 2026 Rankeo. Todos los derechos reservados.</p>
+    </div>
+    <div class="fmap" aria-label="Servicios por ciudad e industria">
+      <div class="fcol">
+        <p class="fcol-t">SEO por ciudad</p>
+        <a href="/seo-colombia">Agencia SEO Colombia</a>
+        <a href="/agencia-seo-bogota">Agencia SEO Bogotá</a>
+        <a href="/agencia-seo-medellin">Agencia SEO Medellín</a>
+        <a href="/seo-cali">Agencia SEO Cali</a>
+        <a href="/agencia-seo-cdmx">Agencia SEO CDMX</a>
+        <a href="/seo-mexico">Agencia SEO México</a>
+      </div>
+      <div class="fcol">
+        <p class="fcol-t">SEO por industria</p>
+        <a href="/seo-para-dentistas">SEO para dentistas</a>
+        <a href="/seo-para-abogados">SEO para abogados</a>
+        <a href="/seo-para-gimnasios">SEO para gimnasios</a>
+        <a href="/seo-para-restaurantes">SEO para restaurantes</a>
+      </div>
+      <div class="fcol">
+        <p class="fcol-t">Posicionamiento en IAs</p>
+        <a href="/geo-colombia">Agencia GEO Colombia</a>
+        <a href="/blog/que-es-geo-generative-engine-optimization">Qué es el GEO</a>
+        <a href="/blog/aparecer-en-chatgpt-con-tu-empresa">Aparecer en ChatGPT</a>
+        <a href="/blog/como-posicionarse-en-chatgpt-google-geo-2026">Guía GEO 2026</a>
+      </div>
+      <div class="fcol">
+        <p class="fcol-t">Recursos</p>
+        <a href="/blog/como-elegir-agencia-seo-colombia">Cómo elegir una agencia SEO</a>
+        <a href="/blog/cuanto-cuesta-seo-colombia-2026">Cuánto cuesta el SEO en Colombia</a>
+        <a href="/blog/por-que-no-aparezco-en-google">Por qué no aparezco en Google</a>
+        <a href="/auditoria-seo-gratis">Auditoría SEO gratis</a>
+      </div>
     </div>
   </div>
 </footer>
@@ -1514,8 +1579,8 @@ const barObs = new IntersectionObserver(entries => {
       e.target.querySelectorAll('.rr-bar').forEach((bar, i) => {
         setTimeout(() => {
           // Staggered duration: first bar fastest (hero), rest progressively slower
-          bar.style.transition = `width ${1.0 + i * 0.1}s cubic-bezier(0.23, 1, 0.32, 1)`;
-          bar.style.width = bar.dataset.w;
+          bar.style.transition = `transform ${1.0 + i * 0.1}s cubic-bezier(0.23, 1, 0.32, 1)`;
+          bar.style.transform = `scaleX(${parseFloat(bar.dataset.w) / 100})`;
         }, i * 100);
       });
       barObs.unobserve(e.target);
@@ -2015,57 +2080,225 @@ async function sendContact(e) {
 [
   {
     "@context": "https://schema.org",
-    "@type": ["LocalBusiness", "ProfessionalService"],
-    "@id": "https://rankeo-nu.vercel.app/#org",
+    "@type": [
+      "LocalBusiness",
+      "ProfessionalService"
+    ],
+    "@id": "https://rankeo.agency/#org",
     "name": "Rankeo",
-    "url": "https://rankeo-nu.vercel.app",
+    "url": "https://rankeo.agency",
     "description": "Agencia de SEO y sitios web para Colombia, México y USA Hispanic.",
     "areaServed": [
-      { "@type": "Country", "name": "Colombia" },
-      { "@type": "Country", "name": "México" },
-      { "@type": "Country", "name": "United States" }
+      {
+        "@type": "Country",
+        "name": "Colombia"
+      },
+      {
+        "@type": "Country",
+        "name": "México"
+      },
+      {
+        "@type": "Country",
+        "name": "United States"
+      }
     ],
     "priceRange": "$199-$649",
     "currenciesAccepted": "USD",
-    "address": { "@type": "PostalAddress", "addressCountry": "CO", "addressLocality": "Bogotá" },
-    "contactPoint": { "@type": "ContactPoint", "contactType": "sales", "availableLanguage": "Spanish", "url": "https://rankeo-nu.vercel.app/#contacto" }
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "CO",
+      "addressLocality": "Bogotá"
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "contactType": "sales",
+      "availableLanguage": "Spanish",
+      "url": "https://rankeo.agency/#contacto"
+    },
+    "sameAs": [
+      "https://www.instagram.com/rankeo__seo/",
+      "https://www.linkedin.com/company/75624098/"
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "@id": "https://rankeo.agency/#organization",
+    "name": "Rankeo",
+    "url": "https://rankeo.agency/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://rankeo.agency/apple-touch-icon.png",
+      "width": 180,
+      "height": 180
+    },
+    "description": "Agencia de SEO y GEO (Generative Engine Optimization) para negocios de Colombia, México y el mercado hispano de Estados Unidos. Posiciona empresas en Google y en motores de respuesta con IA como ChatGPT, Perplexity y Google AI Overviews.",
+    "foundingDate": "2026",
+    "areaServed": [
+      {
+        "@type": "Country",
+        "name": "Colombia"
+      },
+      {
+        "@type": "Country",
+        "name": "México"
+      },
+      {
+        "@type": "Country",
+        "name": "Estados Unidos"
+      }
+    ],
+    "knowsAbout": [
+      "SEO",
+      "SEO local",
+      "Generative Engine Optimization",
+      "Google Business Profile",
+      "Diseño web",
+      "Core Web Vitals",
+      "Schema.org"
+    ],
+    "sameAs": [
+      "https://www.instagram.com/rankeo__seo/",
+      "https://www.linkedin.com/company/75624098/"
+    ],
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "contactType": "sales",
+      "telephone": "+52-55-3289-4890",
+      "availableLanguage": [
+        "es"
+      ]
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": "https://rankeo.agency/#website",
+    "url": "https://rankeo.agency/",
+    "name": "Rankeo",
+    "inLanguage": "es",
+    "publisher": {
+      "@id": "https://rankeo.agency/#organization"
+    },
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": {
+        "@type": "EntryPoint",
+        "urlTemplate": "https://rankeo.agency/auditoria-seo-gratis?url={search_term_string}"
+      },
+      "query-input": "required name=search_term_string"
+    }
   },
   {
     "@context": "https://schema.org",
     "@type": "Service",
     "serviceType": "Search Engine Optimization",
     "name": "Plan Local",
-    "provider": { "@id": "https://rankeo-nu.vercel.app/#org" },
-    "offers": { "@type": "Offer", "price": "199", "priceCurrency": "USD" }
+    "provider": {
+      "@id": "https://rankeo.agency/#org"
+    },
+    "offers": {
+      "@type": "Offer",
+      "price": "199",
+      "priceCurrency": "USD"
+    }
   },
   {
     "@context": "https://schema.org",
     "@type": "Service",
     "serviceType": "Search Engine Optimization",
     "name": "Plan Web + SEO",
-    "provider": { "@id": "https://rankeo-nu.vercel.app/#org" },
-    "offers": { "@type": "Offer", "price": "349", "priceCurrency": "USD" }
+    "provider": {
+      "@id": "https://rankeo.agency/#org"
+    },
+    "offers": {
+      "@type": "Offer",
+      "price": "349",
+      "priceCurrency": "USD"
+    }
   },
   {
     "@context": "https://schema.org",
     "@type": "Service",
     "serviceType": "Search Engine Optimization",
     "name": "Plan Autoridad",
-    "provider": { "@id": "https://rankeo-nu.vercel.app/#org" },
-    "offers": { "@type": "Offer", "price": "649", "priceCurrency": "USD" }
+    "provider": {
+      "@id": "https://rankeo.agency/#org"
+    },
+    "offers": {
+      "@type": "Offer",
+      "price": "649",
+      "priceCurrency": "USD"
+    }
   },
   {
     "@context": "https://schema.org",
     "@type": "FAQPage",
     "mainEntity": [
-      { "@type": "Question", "name": "¿Cuánto tiempo tarda el SEO en dar resultados?", "acceptedAnswer": { "@type": "Answer", "text": "Los primeros resultados visibles se dan entre 60 y 90 días. Resultados sólidos suelen consolidarse entre los 4 y 6 meses." } },
-      { "@type": "Question", "name": "¿Tienen contratos anuales?", "acceptedAnswer": { "@type": "Answer", "text": "No. Trabajamos mes a mes. Si no ves resultados, puedes cancelar sin penalizaciones." } },
-      { "@type": "Question", "name": "¿ Qué incluye la auditoría SEO gratis?", "acceptedAnswer": { "@type": "Answer", "text": "Análisis de velocidad, SEO técnico, visibilidad en Google Maps, keywords principales y 3 acciones prioritarias concretas." } },
-      { "@type": "Question", "name": "¿Trabajan con negocios pequeños?", "acceptedAnswer": { "@type": "Answer", "text": "Sí. La mayoría de nuestros clientes son PYMES, profesionales independientes y negocios locales en Colombia y México." } },
-      { "@type": "Question", "name": "¿ Qué diferencia a Rankeo de otras agencias?", "acceptedAnswer": { "@type": "Answer", "text": "Nos especializamos en SEO local para Latinoamérica. Conocemos el mercado colombiano y mexicano, sus búsquedas y su competencia." } },
-      { "@type": "Question", "name": "¿Pueden crear mi sitio web y hacer SEO al mismo tiempo?", "acceptedAnswer": { "@type": "Answer", "text": "Sí. Nuestros planes Web + SEO y Autoridad incluyen diseño y desarrollo con SEO técnico incorporado desde el primer día." } },
-      { "@type": "Question", "name": "¿ Cómo me reportan los avances?", "acceptedAnswer": { "@type": "Answer", "text": "Reporte mensual con métricas claras: posiciones ganadas, tráfico orgánico, keywords en top 10 y acciones del mes siguiente." } },
-      { "@type": "Question", "name": "¿Trabajan con empresas fuera de Colombia?", "acceptedAnswer": { "@type": "Answer", "text": "Sí, atendemos México, Colombia y el mercado hispano en USA." } }
+      {
+        "@type": "Question",
+        "name": "¿Cuánto tiempo tarda el SEO en dar resultados?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Los primeros resultados visibles se dan entre 60 y 90 días. Resultados sólidos suelen consolidarse entre los 4 y 6 meses."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Tienen contratos anuales?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Trabajamos mes a mes. Si no ves resultados, puedes cancelar sin penalizaciones."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿ Qué incluye la auditoría SEO gratis?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Análisis de velocidad, SEO técnico, visibilidad en Google Maps, keywords principales y 3 acciones prioritarias concretas."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Trabajan con negocios pequeños?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sí. La mayoría de nuestros clientes son PYMES, profesionales independientes y negocios locales en Colombia y México."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿ Qué diferencia a Rankeo de otras agencias?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Nos especializamos en SEO local para Latinoamérica. Conocemos el mercado colombiano y mexicano, sus búsquedas y su competencia."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Pueden crear mi sitio web y hacer SEO al mismo tiempo?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sí. Nuestros planes Web + SEO y Autoridad incluyen diseño y desarrollo con SEO técnico incorporado desde el primer día."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿ Cómo me reportan los avances?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Reporte mensual con métricas claras: posiciones ganadas, tráfico orgánico, keywords en top 10 y acciones del mes siguiente."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Trabajan con empresas fuera de Colombia?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sí, atendemos México, Colombia y el mercado hispano en USA."
+        }
+      }
     ]
   }
 ]

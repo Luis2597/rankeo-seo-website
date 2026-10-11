@@ -3,8 +3,18 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml"/>
+  <link rel="icon" href="/favicon.ico" sizes="32x32"/>
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png"/>
 <title>Casa Inés | Hotel Boutique en Getsemaní, Cartagena de Indias</title>
-<meta name="description" content="Hotel boutique en el corazón de Getsemaní, Cartagena. Habitaciones coloniales restauradas, piscina, desayuno gourmet. Reserva directa con la mejor tarifa garantizada.">
+<meta name="description" content="Hotel boutique en el corazón de Getsemaní, Cartagena. Habitaciones coloniales restauradas, piscina, desayuno gourmet. Reserva directa con tarifa garantizada.">
+<meta name="robots" content="noindex,follow">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Casa Inés | Hotel Boutique en Getsemaní, Cartagena de Indias">
+<meta property="og:description" content="Hotel boutique en el corazón de Getsemaní, Cartagena. Habitaciones coloniales restauradas, piscina, desayuno gourmet. Reserva directa con tarifa garantizada.">
+<meta property="og:image" content="https://images.unsplash.com/photo-1582719508461-905c673771fd?auto=format&fit=crop&w=1200&h=630&q=80">
+<meta property="og:locale" content="es_CO">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
@@ -205,7 +215,7 @@ footer{background:var(--ink);padding:56px 0 28px;overflow:hidden}
 <body>
 
 <div class="demo-band">
-  <strong>Proyecto demo</strong> — Sitio creado por <a href="https://rankeo-nu.vercel.app">Rankeo</a>. ¿Tu hotel necesita más reservas directas? <a href="https://rankeo-nu.vercel.app/#contacto">Hablemos →</a>
+  <strong>Proyecto demo</strong> — Sitio creado por <a href="https://rankeo.agency">Rankeo</a>. ¿Tu hotel necesita más reservas directas? <a href="https://rankeo.agency/#contacto">Hablemos →</a>
 </div>
 
 <nav id="nav">
@@ -422,18 +432,18 @@ footer{background:var(--ink);padding:56px 0 28px;overflow:hidden}
           <h3>Solicitar reserva</h3>
           <form class="fi" onsubmit="submitForm(event)">
             <div class="form-row">
-              <input type="date" placeholder="Check-in" id="checkin">
-              <input type="date" placeholder="Check-out" id="checkout">
+              <input type="date" placeholder="Check-in" id="checkin" aria-label="Check-in">
+              <input type="date" placeholder="Check-out" id="checkout" aria-label="Check-out">
             </div>
-            <select>
+            <select aria-label="Tipo de habitación">
               <option value="" disabled selected>Tipo de habitación</option>
               <option>Suite Colonial (2 personas)</option>
               <option>Habitación Patio (2 personas)</option>
               <option>Habitación Piscina (2 personas)</option>
             </select>
             <div class="form-row">
-              <input type="text" placeholder="Tu nombre" required>
-              <input type="tel" placeholder="WhatsApp" required>
+              <input type="text" placeholder="Tu nombre" required aria-label="Tu nombre">
+              <input type="tel" placeholder="WhatsApp" required aria-label="WhatsApp">
             </div>
             <button type="submit" class="btn-book">Solicitar reserva →</button>
           </form>
@@ -510,7 +520,7 @@ function submitForm(e){e.preventDefault();window.open('https://wa.me/57300123456
 })();
 </script>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Hotel","name":"Casa Inés Hotel Boutique","url":"https://rankeo-nu.vercel.app/demo/hotel-boutique-cartagena","telephone":"+5756642210","address":{"@type":"PostalAddress","streetAddress":"Cl. 30 #10-11","addressLocality":"Cartagena","addressRegion":"Bolívar","addressCountry":"CO"},"description":"Hotel boutique en Getsemaní, Cartagena. Casona colonial del siglo XIX con piscina privada y desayuno gourmet.","aggregateRating":{"@type":"AggregateRating","ratingValue":"4.9","reviewCount":"284"}}
+{"@context":"https://schema.org","@type":"Hotel","name":"Casa Inés Hotel Boutique","url":"https://rankeo.agency/demo/hotel-boutique-cartagena","telephone":"+5756642210","address":{"@type":"PostalAddress","streetAddress":"Cl. 30 #10-11","addressLocality":"Cartagena","addressRegion":"Bolívar","addressCountry":"CO"},"description":"Hotel boutique en Getsemaní, Cartagena. Casona colonial del siglo XIX con piscina privada y desayuno gourmet.","aggregateRating":{"@type":"AggregateRating","ratingValue":"4.9","reviewCount":"284"}}
 </script>
 </body>
 </html>
