@@ -8,7 +8,7 @@
 | Campo | Valor |
 |---|---|
 | Agencia | Rankeo |
-| Dominio | rankeo.agency (producción) / rankeo-nu.vercel.app (staging) |
+| Dominio | rankeo.agency (producción, conectado en Vercel oct 2026; canonicals, sitemap y schema ya apuntan aquí) / rankeo-nu.vercel.app (staging) |
 | Mercado | Colombia, México, USA Hispanic |
 | Propuesta | Sitios web + SEO + GEO que posicionan en Google **y** en IAs (ChatGPT, Perplexity, AI Overviews) |
 | Modelo | Suscripción mensual $199–$649/mes con auditoría gratis como gancho |

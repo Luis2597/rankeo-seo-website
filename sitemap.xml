@@ -4,25 +4,25 @@
 
   <!-- Home -->
   <url>
-    <loc>https://rankeo-nu.vercel.app/</loc>
+    <loc>https://rankeo.agency/</loc>
     <lastmod>2026-10-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
-    <xhtml:link rel="alternate" hreflang="es-CO" href="https://rankeo-nu.vercel.app/"/>
-    <xhtml:link rel="alternate" hreflang="es-MX" href="https://rankeo-nu.vercel.app/"/>
-    <xhtml:link rel="alternate" hreflang="es-US" href="https://rankeo-nu.vercel.app/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://rankeo-nu.vercel.app/"/>
+    <xhtml:link rel="alternate" hreflang="es-CO" href="https://rankeo.agency/"/>
+    <xhtml:link rel="alternate" hreflang="es-MX" href="https://rankeo.agency/"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://rankeo.agency/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rankeo.agency/"/>
   </url>
 
   <!-- Landings de servicio por ciudad -->
   <url>
-    <loc>https://rankeo-nu.vercel.app/seo-medellin</loc>
+    <loc>https://rankeo.agency/seo-medellin</loc>
     <lastmod>2026-10-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://rankeo-nu.vercel.app/seo-cali</loc>
+    <loc>https://rankeo.agency/seo-cali</loc>
     <lastmod>2026-10-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
@@ -30,25 +30,25 @@
 
   <!-- Landings de servicio por país -->
   <url>
-    <loc>https://rankeo-nu.vercel.app/seo-colombia</loc>
+    <loc>https://rankeo.agency/seo-colombia</loc>
     <lastmod>2026-10-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://rankeo-nu.vercel.app/seo-bogota</loc>
+    <loc>https://rankeo.agency/seo-bogota</loc>
     <lastmod>2026-10-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://rankeo-nu.vercel.app/seo-mexico</loc>
+    <loc>https://rankeo.agency/seo-mexico</loc>
     <lastmod>2026-10-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://rankeo-nu.vercel.app/geo-colombia</loc>
+    <loc>https://rankeo.agency/geo-colombia</loc>
     <lastmod>2026-10-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -56,25 +56,25 @@
 
   <!-- Landings por industria -->
   <url>
-    <loc>https://rankeo-nu.vercel.app/seo-para-gimnasios</loc>
+    <loc>https://rankeo.agency/seo-para-gimnasios</loc>
     <lastmod>2026-10-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://rankeo-nu.vercel.app/seo-para-abogados</loc>
+    <loc>https://rankeo.agency/seo-para-abogados</loc>
     <lastmod>2026-10-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://rankeo-nu.vercel.app/seo-para-dentistas</loc>
+    <loc>https://rankeo.agency/seo-para-dentistas</loc>
     <lastmod>2026-10-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://rankeo-nu.vercel.app/seo-para-restaurantes</loc>
+    <loc>https://rankeo.agency/seo-para-restaurantes</loc>
     <lastmod>2026-10-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -82,13 +82,13 @@
 
   <!-- Herramienta + precios -->
   <url>
-    <loc>https://rankeo-nu.vercel.app/auditoria-seo-gratis</loc>
+    <loc>https://rankeo.agency/auditoria-seo-gratis</loc>
     <lastmod>2026-10-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://rankeo-nu.vercel.app/precios</loc>
+    <loc>https://rankeo.agency/precios</loc>
     <lastmod>2026-10-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -96,74 +96,74 @@
 
   <!-- Blog -->
   <url>
-    <loc>https://rankeo-nu.vercel.app/blog/</loc>
+    <loc>https://rankeo.agency/blog/</loc>
     <lastmod>2026-10-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://rankeo-nu.vercel.app/blog/por-que-no-aparezco-en-google</loc>
+    <loc>https://rankeo.agency/blog/por-que-no-aparezco-en-google</loc>
     <lastmod>2026-10-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://rankeo-nu.vercel.app/blog/cuanto-cuesta-seo-colombia-2026</loc>
+    <loc>https://rankeo.agency/blog/cuanto-cuesta-seo-colombia-2026</loc>
     <lastmod>2026-10-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://rankeo-nu.vercel.app/blog/que-es-geo-generative-engine-optimization</loc>
+    <loc>https://rankeo.agency/blog/que-es-geo-generative-engine-optimization</loc>
     <lastmod>2026-10-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://rankeo-nu.vercel.app/blog/aparecer-en-chatgpt-con-tu-empresa</loc>
+    <loc>https://rankeo.agency/blog/aparecer-en-chatgpt-con-tu-empresa</loc>
     <lastmod>2026-10-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://rankeo-nu.vercel.app/blog/como-posicionarse-en-chatgpt-google-geo-2026</loc>
+    <loc>https://rankeo.agency/blog/como-posicionarse-en-chatgpt-google-geo-2026</loc>
     <lastmod>2026-10-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://rankeo-nu.vercel.app/agencia-seo-bogota</loc>
+    <loc>https://rankeo.agency/agencia-seo-bogota</loc>
     <lastmod>2026-10-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
-    <xhtml:link rel="alternate" hreflang="es-CO" href="https://rankeo-nu.vercel.app/agencia-seo-bogota"/>
-    <xhtml:link rel="alternate" hreflang="es-MX" href="https://rankeo-nu.vercel.app/agencia-seo-bogota"/>
-    <xhtml:link rel="alternate" hreflang="es-US" href="https://rankeo-nu.vercel.app/agencia-seo-bogota"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://rankeo-nu.vercel.app/agencia-seo-bogota"/>
+    <xhtml:link rel="alternate" hreflang="es-CO" href="https://rankeo.agency/agencia-seo-bogota"/>
+    <xhtml:link rel="alternate" hreflang="es-MX" href="https://rankeo.agency/agencia-seo-bogota"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://rankeo.agency/agencia-seo-bogota"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rankeo.agency/agencia-seo-bogota"/>
   </url>
   <url>
-    <loc>https://rankeo-nu.vercel.app/agencia-seo-medellin</loc>
+    <loc>https://rankeo.agency/agencia-seo-medellin</loc>
     <lastmod>2026-10-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
-    <xhtml:link rel="alternate" hreflang="es-CO" href="https://rankeo-nu.vercel.app/agencia-seo-medellin"/>
-    <xhtml:link rel="alternate" hreflang="es-MX" href="https://rankeo-nu.vercel.app/agencia-seo-medellin"/>
-    <xhtml:link rel="alternate" hreflang="es-US" href="https://rankeo-nu.vercel.app/agencia-seo-medellin"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://rankeo-nu.vercel.app/agencia-seo-medellin"/>
+    <xhtml:link rel="alternate" hreflang="es-CO" href="https://rankeo.agency/agencia-seo-medellin"/>
+    <xhtml:link rel="alternate" hreflang="es-MX" href="https://rankeo.agency/agencia-seo-medellin"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://rankeo.agency/agencia-seo-medellin"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rankeo.agency/agencia-seo-medellin"/>
   </url>
   <url>
-    <loc>https://rankeo-nu.vercel.app/agencia-seo-cdmx</loc>
+    <loc>https://rankeo.agency/agencia-seo-cdmx</loc>
     <lastmod>2026-10-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
-    <xhtml:link rel="alternate" hreflang="es-CO" href="https://rankeo-nu.vercel.app/agencia-seo-cdmx"/>
-    <xhtml:link rel="alternate" hreflang="es-MX" href="https://rankeo-nu.vercel.app/agencia-seo-cdmx"/>
-    <xhtml:link rel="alternate" hreflang="es-US" href="https://rankeo-nu.vercel.app/agencia-seo-cdmx"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://rankeo-nu.vercel.app/agencia-seo-cdmx"/>
+    <xhtml:link rel="alternate" hreflang="es-CO" href="https://rankeo.agency/agencia-seo-cdmx"/>
+    <xhtml:link rel="alternate" hreflang="es-MX" href="https://rankeo.agency/agencia-seo-cdmx"/>
+    <xhtml:link rel="alternate" hreflang="es-US" href="https://rankeo.agency/agencia-seo-cdmx"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rankeo.agency/agencia-seo-cdmx"/>
   </url>
   <url>
-    <loc>https://rankeo-nu.vercel.app/blog/como-elegir-agencia-seo-colombia</loc>
+    <loc>https://rankeo.agency/blog/como-elegir-agencia-seo-colombia</loc>
     <lastmod>2026-10-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>

@@ -7,7 +7,7 @@
 La base técnica es fuerte y, tras esta ronda, casi todo lo que depende del código está resuelto: metadatos, schema, sitemap, enlaces internos, señales para rastreadores de IA y profundidad de contenido en las páginas más delgadas. **Lo que hoy frena el posicionamiento no está en el código: es el dominio y la autoridad.** `rankeo.agency` no resuelve en DNS, el sitio vive en un subdominio de Vercel y no tiene backlinks. Ningún ajuste on-page compensa eso.
 
 Prioridades, en orden:
-1. Conectar `rankeo.agency` en Vercel y en el registrador. Luego migrar canonicals, sitemap, robots y schema al dominio propio (un commit, ya preparado el patrón).
+1. ~~Conectar `rankeo.agency`~~ **Hecho el 11 oct 2026**: dominio válido en Vercel y canonicals, sitemap, robots, llms.txt y schema migrados a `rankeo.agency`.
 2. Verificar el sitio en Google Search Console (meta de verificación o registro DNS), enviar el sitemap y pedir indexación de las 23 URLs.
 3. Conseguir las primeras 10 a 15 menciones externas: directorios (Clutch, GoodFirms, Sortlist, directorio de agencias de SE Ranking y Semrush), perfil de LinkedIn e Instagram enlazando al sitio, y un primer artículo invitado.
 

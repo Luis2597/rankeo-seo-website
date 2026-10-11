@@ -21,6 +21,6 @@ Allow: /
 Disallow: /*?*
 
 # Resumen del sitio para modelos de lenguaje
-# https://rankeo-nu.vercel.app/llms.txt
+# https://rankeo.agency/llms.txt
 
-Sitemap: https://rankeo-nu.vercel.app/sitemap.xml
+Sitemap: https://rankeo.agency/sitemap.xml
