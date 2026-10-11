@@ -340,3 +340,7 @@ footer { border-top: 1px solid var(--c-border); padding: 38px 0; }
 html { -webkit-tap-highlight-color: transparent; -webkit-text-size-adjust: 100%; }
 a, button, [role="button"] { touch-action: manipulation; }
 button, .btn-primary, .btn-ghost, .nav-cta, .pbtn, .ck-ok, .csend, .dcta, .burger, .faq-lp-item summary { user-select: none; -webkit-user-select: none; }
+
+.feat-grid.four { grid-template-columns: repeat(4, 1fr); }
+@media (max-width: 900px) { .feat-grid.four { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 520px) { .feat-grid.four { grid-template-columns: 1fr; } }
