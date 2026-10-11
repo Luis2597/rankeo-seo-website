@@ -13,21 +13,23 @@ add_action("template_redirect", function() {
     if (!$route) return;
     $routes = [
         "miami" => [
-            "title"        => "Private Jet Mexico City to Miami | Charter Flights — JETCAB",
+            "title"        => "Private Jet Mexico City to Miami | Nonstop 3h 30m — JETCAB",
             "dest"         => "Miami",
             "dest_full"    => "Miami, Florida",
-            "from"         => "Mexico City",
-            "from_iata"    => "AIT",
+            "from"         => "Toluca · Mexico City",
+            "from_iata"    => "TLC",
             "to_iata"      => "MIA",
             "time"         => "3h 30m",
             "slug"         => "miami",
+            "es_live"      => true,
+            "answer"       => "A JETCAB private jet from Mexico City (Toluca, AIT) to Miami Opa-locka Executive (OPF) takes 3 h 30 min nonstop and is quoted per full aircraft on request (Learjet 35 for 7 passengers, Challenger 605 for 12 or Gulfstream for 16), confirmed in 30 minutes. U.S. Customs clears at the FBO in under 15 minutes. Passport and B1/B2 visa required.",
             "slug_es"      => "vuelo-privado-cdmx-miami",
             "wa_text"      => "Hi%2C+I%27d+like+a+quote+for+a+private+jet+from+Mexico+City+to+Miami.",
-            "meta_desc"    => "Private jet from Mexico City to Miami in 3h 30m. Land at Opa-locka Executive, 20 min from South Beach. From \$4,800. JETCAB — 25 years, DGAC certified.",
-            "fomo"         => "2 jets available this week",
-            "p1"           => "\$4,800",
-            "p2"           => "\$9,500",
-            "p3"           => "\$18,000",
+            "meta_desc"    => "Private jet from Mexico City (Toluca) to Miami nonstop in 3h 30m. Land at Opa-locka Executive, 20 min from South Beach. US Customs at the FBO. Quote in 30 min.",
+            "fomo"         => "Availability confirmed within 30 minutes",
+            "p1"           => "Quote on request",
+            "p2"           => "Quote on request",
+            "p3"           => "Quote on request",
             "cta_urgency"  => "Flying to Miami this week?",
             "cta_sub"      => "Availability open. Send your dates — quote in 30 minutes.",
             "hero_img"     => "1519501025264-65ba15a82390",
@@ -51,26 +53,28 @@ add_action("template_redirect", function() {
                 ["q" => "How long is the flight from Mexico City to Miami on a private jet?", "a" => "3 hours 30 minutes nonstop from Toluca (AIT) to Miami. Commercial routes via Dallas or Atlanta typically take 6 to 7 hours door to door."],
                 ["q" => "Which airport do private jets use in Miami?", "a" => "JETCAB flies into Opa-locka Executive Airport (OPF), 20 minutes from South Beach and 25 minutes from Brickell. We can also arrange arrivals at Fort Lauderdale Executive (FXE) depending on your destination."],
                 ["q" => "Is there US Customs at Opa-locka for private jet arrivals?", "a" => "Yes. US Customs and Border Protection operates at OPF. Private jet passengers clear at the FBO — the process takes under 15 minutes with no queues."],
-                ["q" => "How much does a private jet from Mexico City to Miami cost?", "a" => "From \$4,800 USD for a Learjet 35 (up to 7 passengers). Challenger 605 from \$9,500 for groups up to 12. Gulfstream GV from \$18,000. Price is the full aircraft, not per seat."],
+                ["q" => "How much does a private jet from Mexico City to Miami cost?", "a" => "Quoted per full aircraft, not per seat: Learjet 35 (up to 7 passengers), Challenger 605 (up to 12) or Gulfstream GV (up to 16). Confirmed price in 30 minutes, including crew, fuel, catering and permits."],
                 ["q" => "Can I fly private from Mexico City to Miami same day?", "a" => "Yes. JETCAB has confirmed same-day availability on this route with as little as 2 hours notice, subject to fleet availability."],
             ],
         ],
         "houston" => [
-            "title"        => "Private Jet Mexico City to Houston | Charter Flights — JETCAB",
+            "title"        => "Private Jet Mexico City to Houston | 2h 45m — JETCAB",
             "dest"         => "Houston",
             "dest_full"    => "Houston, Texas",
-            "from"         => "Mexico City",
-            "from_iata"    => "AIT",
+            "from"         => "Toluca · Mexico City",
+            "from_iata"    => "TLC",
             "to_iata"      => "HOU",
             "time"         => "2h 45m",
             "slug"         => "houston",
+            "es_live"      => true,
+            "answer"       => "A JETCAB private jet from Mexico City (Toluca, AIT) to Houston Hobby (HOU) takes 2 h 45 min nonstop and is quoted per full aircraft on request (Learjet 35 for 7 passengers, Challenger 605 for 12 or Gulfstream for 16), confirmed in 30 minutes. Hobby is 10 minutes from downtown. Same-day round trips are JETCAB's most common booking on this route.",
             "slug_es"      => "vuelo-privado-cdmx-houston",
             "wa_text"      => "Hi%2C+I%27d+like+a+quote+for+a+private+jet+from+Mexico+City+to+Houston.",
-            "meta_desc"    => "Private jet from Mexico City to Houston in 2h 45m. Land at Hobby Airport, 10 min from Downtown. From \$3,800. JETCAB — the most-requested business route in our fleet.",
-            "fomo"         => "3 jets available this week",
-            "p1"           => "\$3,800",
-            "p2"           => "\$7,500",
-            "p3"           => "\$14,000",
+            "meta_desc"    => "Private jet from Mexico City (Toluca) to Houston in 2h 45m. Land at Hobby Airport, 10 min from Downtown and the Texas Medical Center. Quote in 30 min. Same-day.",
+            "fomo"         => "Availability confirmed within 30 minutes",
+            "p1"           => "Quote on request",
+            "p2"           => "Quote on request",
+            "p3"           => "Quote on request",
             "cta_urgency"  => "Business trip to Houston?",
             "cta_sub"      => "Our most-requested route. Quote in under 30 minutes.",
             "hero_img"     => "1486325212027-8081e485255e",
@@ -95,25 +99,27 @@ add_action("template_redirect", function() {
                 ["q" => "Which Houston airport do private jets use from Mexico City?", "a" => "JETCAB primarily uses William P. Hobby Airport (HOU), 10 minutes from downtown Houston. For the Energy Corridor, we can arrange arrivals at Houston Executive Airport (TME), 20 minutes closer to the west side."],
                 ["q" => "Why is Mexico City to Houston the most popular business route for JETCAB?", "a" => "Houston is the global hub for energy and petrochemicals, with strong Mexico-US ties in oil, construction, and infrastructure. Many of our clients fly this route weekly — often same-day round trips."],
                 ["q" => "Can I fly to Houston and back in the same day from Mexico City?", "a" => "Yes. At 2 hours 45 minutes each way, a same-day round trip is the most common booking pattern. You can arrive for a 10am meeting and be back in Mexico City by 9pm."],
-                ["q" => "How much does a private jet from Mexico City to Houston cost?", "a" => "From \$3,800 USD for a Learjet 35 (7 passengers). Challenger 605 from \$7,500. Gulfstream GV from \$14,000. Full aircraft, not per seat."],
+                ["q" => "How much does a private jet from Mexico City to Houston cost?", "a" => "Quoted per full aircraft, not per seat: Learjet 35 (up to 7 passengers), Challenger 605 (up to 12) or Gulfstream GV (up to 16). Confirmed price in 30 minutes, including crew, fuel, catering and permits."],
             ],
         ],
         "new-york" => [
-            "title"        => "Private Jet Mexico City to New York | Charter Flights — JETCAB",
+            "title"        => "Private Jet Mexico City to New York | Teterboro — JETCAB",
             "dest"         => "New York",
             "dest_full"    => "New York, NY",
-            "from"         => "Mexico City",
-            "from_iata"    => "AIT",
+            "from"         => "Toluca · Mexico City",
+            "from_iata"    => "TLC",
             "to_iata"      => "TEB",
             "time"         => "5h 30m",
             "slug"         => "new-york",
+            "es_live"      => true,
+            "answer"       => "A JETCAB private jet from Mexico City (Toluca, AIT) to Teterboro (TEB), 12 minutes from Midtown Manhattan, takes 5 h 30 min and is quoted per full aircraft on request (midsize jet for 8 passengers, Challenger 605 for 12 or Gulfstream nonstop for 16), confirmed in 30 minutes. Passport and B1/B2 visa required; JETCAB files eAPIS and arranges CBP at the FBO.",
             "slug_es"      => "vuelo-privado-cdmx-nueva-york",
             "wa_text"      => "Hi%2C+I%27d+like+a+quote+for+a+private+jet+from+Mexico+City+to+New+York.",
-            "meta_desc"    => "Private jet from Mexico City to New York in 5h 30m. Land at Teterboro — 12 minutes from Midtown Manhattan. Skip JFK. From \$9,500. JETCAB — DGAC certified.",
-            "fomo"         => "1 long-range jet available this week",
-            "p1"           => "\$9,500",
-            "p2"           => "\$18,500",
-            "p3"           => "\$28,000",
+            "meta_desc"    => "Private jet from Mexico City (Toluca) to New York in 5h 30m. Land at Teterboro, 12 min from Midtown Manhattan. Skip JFK. Quote in 30 min. DGAC certified.",
+            "fomo"         => "Availability confirmed within 30 minutes",
+            "p1"           => "Quote on request",
+            "p2"           => "Quote on request",
+            "p3"           => "Quote on request",
             "cta_urgency"  => "New York this month?",
             "cta_sub"      => "One long-range jet on this route this week. Send your dates.",
             "hero_img"     => "1534430480872-e9a62c0c8d96",
@@ -136,27 +142,29 @@ add_action("template_redirect", function() {
             "faqs" => [
                 ["q" => "Why land at Teterboro instead of JFK for a private jet to New York?", "a" => "Teterboro Airport (TEB) is 12 minutes from Midtown Manhattan. JFK averages 45 minutes by car, often more. For business travelers, this difference compounds across every trip."],
                 ["q" => "How long is the private jet flight from Mexico City to New York?", "a" => "5 hours 30 minutes nonstop from Toluca (AIT) to Teterboro (TEB). Commercial routes via Dallas or Atlanta typically take 8 to 10 hours door to door."],
-                ["q" => "Does a private jet clear US Customs at Teterboro?", "a" => "Yes. US Customs and Border Protection operates at Teterboro for private jet arrivals. The process at the FBO takes under 10 minutes. Standard US visa or ESTA requirements apply regardless of aircraft type."],
-                ["q" => "How much does it cost to charter a private jet from Mexico City to New York?", "a" => "From \$9,500 USD for a midsize jet (8 passengers). Gulfstream GV from \$28,000 for up to 16 passengers. For groups of 4 or more, the per-person cost is comparable to business class."],
+                ["q" => "Does a private jet clear US Customs at Teterboro?", "a" => "Yes. US Customs and Border Protection operates at Teterboro for private jet arrivals. The process at the FBO takes under 10 minutes. A valid passport and U.S. B1/B2 visa are required; ESTA is not valid on private aircraft."],
+                ["q" => "How much does it cost to charter a private jet from Mexico City to New York?", "a" => "Quoted per full aircraft, not per seat: midsize jet (8 passengers) or Gulfstream GV (up to 16, nonstop). Confirmed price in 30 minutes. For groups of 4 or more, the per-person cost is comparable to business class."],
                 ["q" => "Can the Gulfstream GV fly nonstop from Mexico City to New York?", "a" => "Yes. The Gulfstream GV has the range to fly CDMX to New York nonstop in 5 hours 30 minutes. It includes a full bedroom, conference seating for 8, and satellite Wi-Fi."],
             ],
         ],
         "los-angeles" => [
-            "title"        => "Private Jet Mexico City to Los Angeles | Charter Flights — JETCAB",
+            "title"        => "Private Jet Mexico City to Los Angeles | Van Nuys — JETCAB",
             "dest"         => "Los Angeles",
             "dest_full"    => "Los Angeles, California",
-            "from"         => "Mexico City",
-            "from_iata"    => "AIT",
+            "from"         => "Toluca · Mexico City",
+            "from_iata"    => "TLC",
             "to_iata"      => "VNY",
             "time"         => "3h 45m",
             "slug"         => "los-angeles",
+            "es_live"      => true,
+            "answer"       => "A JETCAB private jet from Mexico City (Toluca, AIT) to Van Nuys (VNY), 15 minutes from Beverly Hills, takes 3 h 45 min nonstop and is quoted per full aircraft on request (Learjet 35 for 7 passengers, Challenger 605 for 12 or Gulfstream for 16), confirmed in 30 minutes. U.S. Customs clears at the FBO. Passport and B1/B2 visa required.",
             "slug_es"      => "vuelo-privado-cdmx-los-angeles",
             "wa_text"      => "Hi%2C+I%27d+like+a+quote+for+a+private+jet+from+Mexico+City+to+Los+Angeles.",
-            "meta_desc"    => "Private jet from Mexico City to Los Angeles in 3h 45m. Land at Van Nuys, 15 min from Beverly Hills. Skip LAX. From \$5,200. JETCAB — 25 years in aviation.",
-            "fomo"         => "2 jets available this week",
-            "p1"           => "\$5,200",
-            "p2"           => "\$10,500",
-            "p3"           => "\$19,000",
+            "meta_desc"    => "Private jet from Mexico City (Toluca) to Los Angeles in 3h 45m. Land at Van Nuys, 15 min from Beverly Hills. Skip LAX. Quote in 30 min. Jet ready in 2 hours.",
+            "fomo"         => "Availability confirmed within 30 minutes",
+            "p1"           => "Quote on request",
+            "p2"           => "Quote on request",
+            "p3"           => "Quote on request",
             "cta_urgency"  => "Los Angeles this week?",
             "cta_sub"      => "Availability confirmed in under 30 minutes.",
             "hero_img"     => "1504941812617-26c6e088459a",
@@ -180,8 +188,8 @@ add_action("template_redirect", function() {
                 ["q" => "What airport do private jets use in Los Angeles when flying from Mexico City?", "a" => "JETCAB flies into Van Nuys Airport (VNY), the busiest general aviation airport in California. No commercial traffic. We can also arrange arrivals at Burbank Bob Hope (BUR) or Santa Monica Airport (SMO) based on your destination."],
                 ["q" => "How long is the private jet flight from Mexico City to Los Angeles?", "a" => "3 hours 45 minutes nonstop from Toluca (AIT) to Van Nuys (VNY). Commercial routes with connections typically take 6 to 8 hours door to door."],
                 ["q" => "Is Van Nuys Airport closer to Beverly Hills than LAX?", "a" => "Significantly closer. Van Nuys is 15 minutes from Beverly Hills. LAX is 25 to 45 minutes in typical traffic — and LAX traffic is unpredictable. For Malibu, VNY saves up to an hour each way."],
-                ["q" => "How much does a private jet from Mexico City to Los Angeles cost?", "a" => "From \$5,200 USD for a Learjet 35 (7 passengers). Challenger 605 from \$10,500. Gulfstream GV from \$19,000. Full aircraft pricing."],
-                ["q" => "Do I need US Customs for a private jet to Los Angeles from Mexico?", "a" => "Yes. US Customs clears at Van Nuys Airport for arrivals from Mexico. The process takes under 15 minutes at the FBO. Standard US visa or ESTA requirements apply."],
+                ["q" => "How much does a private jet from Mexico City to Los Angeles cost?", "a" => "Quoted per full aircraft, not per seat: Learjet 35 (up to 7 passengers), Challenger 605 (up to 12) or Gulfstream GV (up to 16). Confirmed price in 30 minutes, including crew, fuel, catering and permits."],
+                ["q" => "Do I need US Customs for a private jet to Los Angeles from Mexico?", "a" => "Yes. US Customs clears at Van Nuys Airport for arrivals from Mexico. The process takes under 15 minutes at the FBO. A valid passport and U.S. B1/B2 visa are required; ESTA is not valid on private aircraft."],
             ],
         ],
     ];
@@ -191,6 +199,25 @@ add_action("template_redirect", function() {
     echo jetcab_route_page_v3($routes[$route]);
     exit;
 });
+
+
+if (!function_exists('jc_json_str')) {
+    // Escape a string for use inside a JSON string literal (esc_js produces \' which is invalid JSON).
+    function jc_json_str($str) {
+        return substr(json_encode((string)$str, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES), 1, -1);
+    }
+}
+
+if (!function_exists('jc_price_html')) {
+    // Prints "From $X USD" when a brief price exists, otherwise a quote-on-request label.
+    function jc_price_html($v, $from = 'From', $quote = 'Quote on request') {
+        $v = trim((string)$v);
+        if (preg_match('/^\$?[0-9][0-9,]*$/', $v)) {
+            return '<span class="jc-fleet-price-from">' . esc_html($from) . '</span><span class="jc-fleet-price-amount">' . esc_html(ltrim($v, '$') === $v ? '$' . $v : $v) . ' USD</span>';
+        }
+        return '<span class="jc-fleet-price-amount jc-fleet-price-quote">' . esc_html($quote) . '</span>';
+    }
+}
 
 function jetcab_route_page_v3($r) {
     $wa = 'https://wa.me/527291081200?text=' . $r['wa_text'];
@@ -206,22 +233,27 @@ function jetcab_route_page_v3($r) {
 <meta name="description" content="<?php echo esc_attr($r['meta_desc']); ?>">
 <link rel="canonical" href="<?php echo $canonical; ?>">
 <link rel="alternate" hreflang="en" href="<?php echo $canonical; ?>">
-<link rel="alternate" hreflang="es" href="<?php echo $canonical_es; ?>">
+<?php if (!empty($r['es_live'])) : ?><link rel="alternate" hreflang="es" href="<?php echo $canonical_es; ?>"><?php endif; ?>
 <link rel="alternate" hreflang="x-default" href="<?php echo $canonical; ?>">
 <meta property="og:title" content="<?php echo esc_attr($r['title']); ?>">
 <meta property="og:description" content="<?php echo esc_attr($r['meta_desc']); ?>">
 <meta property="og:url" content="<?php echo $canonical; ?>">
 <meta property="og:type" content="website">
-<meta property="og:image" content="https://jetcab.mx/wp-content/uploads/2023/09/jetcab-og.jpg">
+<meta property="og:image" content="<?php echo $hero_url; ?>">
+<meta property="og:image:width" content="1400"><meta property="og:image:height" content="933">
+<meta property="og:image:alt" content="Private jet Mexico City to <?php echo esc_attr($r['dest']); ?> — JETCAB">
+<meta property="og:site_name" content="JETCAB"><meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="<?php echo esc_attr($r['title']); ?>"><meta name="twitter:description" content="<?php echo esc_attr($r['meta_desc']); ?>"><meta name="twitter:image" content="<?php echo $hero_url; ?>">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@graph":[
-{"@type":"WebPage","@id":"<?php echo $canonical; ?>","url":"<?php echo $canonical; ?>","name":"<?php echo esc_js($r['title']); ?>","inLanguage":"en"},
-{"@type":"Service","name":"Private Jet Charter Mexico City to <?php echo esc_js($r['dest_full']); ?>","description":"<?php echo esc_js($r['meta_desc']); ?>","provider":{"@type":"LocalBusiness","name":"JETCAB","url":"https://jetcab.mx","telephone":"+52-729-108-1200","foundingDate":"1999","areaServed":"Mexico"},"serviceType":"Air Charter","areaServed":["Mexico","<?php echo esc_js($r['dest_full']); ?>"],"offers":{"@type":"Offer","priceCurrency":"USD","price":"<?php echo ltrim($r['p1'],'\$'); ?>","priceSpecification":{"@type":"UnitPriceSpecification","priceCurrency":"USD","price":"<?php echo ltrim($r['p1'],'\$'); ?>","unitText":"per aircraft"}}},
-{"@type":"FAQPage","mainEntity":[<?php $fq=array_map(function($f){return '{"@type":"Question","name":"'.esc_js($f["q"]).'","acceptedAnswer":{"@type":"Answer","text":"'.esc_js($f["a"]).'"}}';},$r['faqs']);echo implode(',',$fq);?>]}
+{"@type":"WebPage","@id":"<?php echo $canonical; ?>#webpage","url":"<?php echo $canonical; ?>","name":"<?php echo jc_json_str($r['title']); ?>","description":"<?php echo jc_json_str($r['meta_desc']); ?>","primaryImageOfPage":{"@type":"ImageObject","url":"<?php echo $hero_url; ?>"},"breadcrumb":{"@id":"<?php echo $canonical; ?>#breadcrumb"},"speakable":{"@type":"SpeakableSpecification","cssSelector":[".jc-answer","h1",".jc-faq-item h3",".jc-faq-item p"]},"isPartOf":{"@id":"https://jetcab.mx/#website"},"about":{"@id":"https://jetcab.mx/#organization"},"inLanguage":"en"},
+{"@type":"Service","name":"Private Jet Charter Mexico City to <?php echo jc_json_str($r['dest_full']); ?>","description":"<?php echo jc_json_str($r['meta_desc']); ?>","provider":{"@type":"LocalBusiness","@id":"https://jetcab.mx/#organization","name":"JETCAB","url":"https://jetcab.mx/","telephone":"+52-729-108-1200","foundingDate":"1999","areaServed":"Mexico"},"serviceType":"Air Charter","areaServed":["Mexico","<?php echo jc_json_str($r['dest_full']); ?>"],"offers":{"@type":"Offer","url":"<?php echo $canonical; ?>","priceCurrency":"USD","availability":"https://schema.org/InStock"}},
+{"@type":"BreadcrumbList","@id":"<?php echo $canonical; ?>#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"JETCAB","item":"https://jetcab.mx/en/"},{"@type":"ListItem","position":2,"name":"Private Jet Routes from Mexico City","item":"https://jetcab.mx/en/#destinations"},{"@type":"ListItem","position":3,"name":"Mexico City to <?php echo jc_json_str($r['dest']); ?>"}]},
+{"@type":"FAQPage","mainEntity":[<?php $fq=array_map(function($f){return '{"@type":"Question","name":"'.jc_json_str($f["q"]).'","acceptedAnswer":{"@type":"Answer","text":"'.jc_json_str($f["a"]).'"}}';},$r['faqs']);echo implode(',',$fq);?>]}
 ]}
 </script>
 <style>
@@ -232,7 +264,7 @@ html{scroll-behavior:smooth}body{background:var(--dark);color:var(--text);font-f
 .jc-nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:1rem 2rem;background:rgba(13,13,13,0.88);backdrop-filter:blur(14px);border-bottom:1px solid var(--border)}
 .jc-nav-logo{font-family:var(--ff-head);font-size:1.5rem;font-weight:800;letter-spacing:0.08em;color:#fff;text-decoration:none}
 .jc-nav-logo span{color:var(--orange)}.jc-nav-links{display:flex;align-items:center;gap:2rem}
-.jc-nav-links a{color:var(--muted);text-decoration:none;font-size:0.875rem;transition:color 0.2s}.jc-nav-links a:hover{color:#fff}
+.jc-nav-links a{color:var(--muted);text-decoration:none;font-size:0.875rem;transition:color 0.2s cubic-bezier(.32,.72,0,1)}.jc-nav-links a:hover{color:#fff}
 .jc-nav-cta{background:var(--orange);color:#fff!important;padding:0.5rem 1.25rem;border-radius:4px;font-weight:600;text-decoration:none}
 .jc-nav-cta:hover{background:#ff6a2f!important}.jc-lang{color:var(--muted)!important;font-size:0.75rem;border:1px solid var(--border);padding:0.3rem 0.6rem;border-radius:3px}
 @media(max-width:768px){.jc-nav-links{display:none}}
@@ -248,12 +280,12 @@ html{scroll-behavior:smooth}body{background:var(--dark);color:var(--text);font-f
 .jc-hero h1 .line2{display:block;font-size:clamp(3.5rem,9vw,7.5rem)}
 .jc-hero-sub{font-size:1.1rem;color:rgba(255,255,255,0.72);max-width:580px;line-height:1.65;margin-bottom:2rem}
 .jc-avail{display:inline-flex;align-items:center;gap:0.6rem;background:rgba(20,20,20,0.9);border:1px solid rgba(255,255,255,0.1);padding:0.6rem 1.25rem;border-radius:3px;font-size:0.85rem;color:#ccc;margin-bottom:2rem}
-.jc-avail-dot{width:8px;height:8px;background:#22c55e;border-radius:50%;flex-shrink:0;animation:pulse-green 2s infinite}
+.jc-avail-dot{width:8px;height:8px;background:#22c55e;border-radius:50%;flex-shrink:0}
 @keyframes pulse-green{0%,100%{box-shadow:0 0 0 0 rgba(34,197,94,0.4)}50%{box-shadow:0 0 0 6px rgba(34,197,94,0)}}
 .jc-hero-ctas{display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:2.5rem}
-.btn-primary{background:var(--orange);color:#fff;padding:0.9rem 2rem;border-radius:4px;font-size:1rem;font-weight:600;text-decoration:none;transition:background 0.2s,transform 0.15s;display:inline-block}
+.btn-primary{background:var(--orange);color:#fff;padding:0.9rem 2rem;border-radius:4px;font-size:1rem;font-weight:600;text-decoration:none;transition:background 0.2s cubic-bezier(.32,.72,0,1),transform 0.15s;display:inline-block}
 .btn-primary:hover{background:#ff6a2f;transform:translateY(-1px)}
-.btn-ghost{border:1px solid rgba(255,255,255,0.25);color:#fff;padding:0.9rem 2rem;border-radius:4px;font-size:1rem;text-decoration:none;transition:border-color 0.2s;display:inline-block}
+.btn-ghost{border:1px solid rgba(255,255,255,0.25);color:#fff;padding:0.9rem 2rem;border-radius:4px;font-size:1rem;text-decoration:none;transition:border-color 0.2s cubic-bezier(.32,.72,0,1);display:inline-block}
 .btn-ghost:hover{border-color:rgba(255,255,255,0.5)}
 .jc-trust-bar{display:flex;gap:2rem;flex-wrap:wrap}
 .jc-trust-bar span{font-size:0.8rem;color:rgba(255,255,255,0.45);letter-spacing:0.05em;text-transform:uppercase}
@@ -272,7 +304,7 @@ html{scroll-behavior:smooth}body{background:var(--dark);color:var(--text);font-f
 .jc-dest-label{font-family:var(--ff-head);font-size:0.78rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--orange);margin-bottom:0.75rem}
 .jc-dest h2{font-family:var(--ff-head);font-size:clamp(2.2rem,5vw,3.5rem);font-weight:800;color:#fff;line-height:1.05;margin-bottom:1.5rem}
 .jc-dest-about{font-size:1rem;color:#bbb;line-height:1.8;margin-bottom:2rem}
-.jc-fbo-box{background:var(--dark3);border:1px solid var(--border);border-left:3px solid var(--orange);padding:1.25rem 1.5rem;border-radius:0 6px 6px 0;margin-bottom:2rem}
+.jc-fbo-box{background:var(--dark3);border:1px solid var(--border);background:rgba(232,90,30,.08);padding:1.25rem 1.5rem;border-radius:12px;margin-bottom:2rem}
 .jc-fbo-box .label{font-family:var(--ff-head);font-size:0.7rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--orange);margin-bottom:0.4rem}
 .jc-fbo-box .name{font-family:var(--ff-head);font-size:1.1rem;font-weight:700;color:#fff;margin-bottom:0.3rem}
 .jc-fbo-box .dist{font-size:0.875rem;color:var(--muted)}
@@ -285,10 +317,10 @@ html{scroll-behavior:smooth}body{background:var(--dark);color:var(--text);font-f
 /* DESTINATION GALLERY */
 .jc-gallery{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:auto auto;gap:0.75rem}
 .jc-gallery-main{grid-column:1 / -1;position:relative;border-radius:8px;overflow:hidden;aspect-ratio:16/9}
-.jc-gallery-main img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.4s ease}
+.jc-gallery-main img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.4s cubic-bezier(.32,.72,0,1) ease}
 .jc-gallery-main:hover img{transform:scale(1.03)}
 .jc-gallery-sub{position:relative;border-radius:8px;overflow:hidden;aspect-ratio:4/3}
-.jc-gallery-sub img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.4s ease}
+.jc-gallery-sub img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.4s cubic-bezier(.32,.72,0,1) ease}
 .jc-gallery-sub:hover img{transform:scale(1.03)}
 /* ARRIVAL SECTION */
 .jc-arrival{padding:5rem 2rem}
@@ -307,10 +339,10 @@ html{scroll-behavior:smooth}body{background:var(--dark);color:var(--text);font-f
 .jc-fleet-section h2{font-family:var(--ff-head);font-size:clamp(1.8rem,4vw,2.6rem);font-weight:800;color:#fff;line-height:1.1;margin-bottom:0.75rem}
 .jc-fleet-section > .jc-fleet-inner > p{color:#aaa;font-size:0.95rem;margin-bottom:2.5rem;max-width:600px}
 .jc-fleet-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}
-.jc-fleet-card{background:var(--dark3);border:1px solid var(--border);border-radius:8px;overflow:hidden;transition:border-color 0.2s,transform 0.2s}
+.jc-fleet-card{background:var(--dark3);border:1px solid var(--border);border-radius:8px;overflow:hidden;transition:border-color 0.2s cubic-bezier(.32,.72,0,1),transform 0.2s}
 .jc-fleet-card:hover{border-color:rgba(232,90,30,0.4);transform:translateY(-3px)}
 .jc-fleet-img{position:relative;aspect-ratio:16/10;overflow:hidden}
-.jc-fleet-img img{width:100%;height:100%;object-fit:cover;opacity:0.85;transition:opacity 0.3s}
+.jc-fleet-img img{width:100%;height:100%;object-fit:cover;opacity:0.85;transition:opacity 0.3s cubic-bezier(.32,.72,0,1)}
 .jc-fleet-card:hover .jc-fleet-img img{opacity:1}
 .jc-fleet-badge{position:absolute;bottom:0.75rem;left:0.75rem;font-family:var(--ff-head);font-size:0.7rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:var(--orange);background:rgba(0,0,0,0.82);padding:0.25rem 0.6rem;border-radius:2px}
 .jc-fleet-body{padding:1.25rem}
@@ -322,7 +354,7 @@ html{scroll-behavior:smooth}body{background:var(--dark);color:var(--text);font-f
 .jc-fleet-price{display:flex;align-items:baseline;gap:0.4rem;margin-bottom:0.75rem}
 .jc-fleet-price-from{font-size:0.72rem;color:var(--muted)}
 .jc-fleet-price-amount{font-family:var(--ff-head);font-size:1.5rem;font-weight:800;color:var(--gold)}
-.jc-fleet-cta{display:block;text-align:center;background:transparent;border:1px solid var(--orange);color:var(--orange);padding:0.6rem 1rem;border-radius:4px;font-size:0.875rem;font-weight:600;text-decoration:none;transition:background 0.2s,color 0.2s}
+.jc-fleet-cta{display:block;text-align:center;background:transparent;border:1px solid var(--orange);color:var(--orange);padding:0.6rem 1rem;border-radius:4px;font-size:0.875rem;font-weight:600;text-decoration:none;transition:background 0.2s cubic-bezier(.32,.72,0,1),color 0.2s}
 .jc-fleet-cta:hover{background:var(--orange);color:#fff}
 /* WHY */
 .jc-why{padding:5rem 2rem}
@@ -339,9 +371,9 @@ html{scroll-behavior:smooth}body{background:var(--dark);color:var(--text);font-f
 .jc-faq-sub{font-size:0.9rem;color:var(--muted);margin-bottom:2rem}
 .jc-faq-list{margin-top:0}.jc-faq-item{border-bottom:1px solid var(--border)}
 .jc-faq-q{width:100%;background:none;border:none;color:#fff;font-family:var(--ff-body);font-size:1rem;font-weight:500;text-align:left;padding:1.25rem 0;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:1rem}
-.jc-faq-q:hover{color:var(--orange)}.jc-faq-icon{font-size:1.25rem;color:var(--orange);flex-shrink:0;transition:transform 0.25s}
+.jc-faq-q:hover{color:var(--orange)}.jc-faq-icon{font-size:1.25rem;color:var(--orange);flex-shrink:0;transition:transform 0.25s cubic-bezier(.32,.72,0,1)}
 .jc-faq-item.open .jc-faq-icon{transform:rotate(45deg)}
-.jc-faq-a{max-height:0;overflow:hidden;transition:max-height 0.3s ease}
+.jc-faq-a{max-height:0;overflow:hidden;transition:max-height .3s cubic-bezier(.32,.72,0,1)}
 .jc-faq-item.open .jc-faq-a{max-height:300px}
 .jc-faq-a p{padding:0 0 1.25rem;color:#aaa;font-size:0.95rem;line-height:1.75;margin:0}
 /* CTA FINAL */
@@ -353,10 +385,10 @@ html{scroll-behavior:smooth}body{background:var(--dark);color:var(--text);font-f
 .jc-footer{background:#0A0A0A;border-top:1px solid var(--border);padding:3rem 2rem}
 .jc-footer-inner{max-width:1000px;margin:0 auto;display:flex;justify-content:space-between;align-items:flex-start;gap:2rem;flex-wrap:wrap}
 .jc-footer-brand p{font-size:0.8rem;color:var(--muted);margin-top:0.5rem;max-width:240px;line-height:1.6}
-.jc-footer-links{display:flex;flex-direction:column;gap:0.5rem}
-.jc-footer-links a{font-size:0.85rem;color:var(--muted);text-decoration:none;transition:color 0.2s}
+.jc-footer-links{display:flex;flex-direction:column;gap:0}
+.jc-footer-links a{font-size:0.85rem;color:var(--muted);text-decoration:none;transition:color 0.2s cubic-bezier(.32,.72,0,1);min-height:44px;display:inline-flex;align-items:center}
 .jc-footer-links a:hover{color:#fff}
-.jc-footer-bottom{text-align:center;font-size:0.75rem;color:#555;padding-top:2rem;margin-top:2rem;border-top:1px solid var(--border);max-width:1000px;margin-left:auto;margin-right:auto}
+.jc-footer-bottom{text-align:center;font-size:0.75rem;color:#8a8a8a;padding-top:2rem;margin-top:2rem;border-top:1px solid var(--border);max-width:1000px;margin-left:auto;margin-right:auto}
 @keyframes pulse-wa{0%,100%{box-shadow:0 4px 16px rgba(37,211,102,0.4)}50%{box-shadow:0 4px 24px rgba(37,211,102,0.65)}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
 @media(max-width:768px){
@@ -372,33 +404,63 @@ html{scroll-behavior:smooth}body{background:var(--dark);color:var(--text);font-f
   .btn-primary,.btn-ghost{text-align:center}
   .jc-steps{grid-template-columns:1fr}
 }
+.jc-answer{font-size:1.15rem;line-height:1.55;color:#fff;background:rgba(232,90,30,.08);padding:18px 22px;border-radius:12px;margin:0 0 28px}
+.jc-answer-wrap{background:var(--dark);padding:2.5rem 24px 0}
+.jc-answer-inner{max-width:900px;margin:0 auto}
+.jc-related{background:#0A0A0A;border-top:1px solid rgba(255,255,255,.07);padding:3rem 24px}
+.jc-related-inner{max-width:900px;margin:0 auto}
+.jc-related h2{font-family:var(--ff-head);font-size:1.4rem;color:#fff;margin-bottom:16px}
+.jc-related-links{display:flex;flex-wrap:wrap;gap:4px 18px}
+.jc-related-links a{display:inline-flex;align-items:center;min-height:44px;color:var(--muted);text-decoration:none;font-size:.95rem;border-bottom:1px solid transparent}
+.jc-related-links a:hover{color:#fff;border-color:var(--orange)}
+.jc-related-note{margin-top:14px;font-size:.85rem;color:var(--muted)}
+.jc-related-note a{color:var(--orange);text-decoration:none}
+
+/* ── Craft floor: browser surfaces, states, motion ── */
+::selection{background:rgba(232,90,30,.35);color:#fff}
+html{scrollbar-color:rgba(255,255,255,.18) #0D0D0D}
+::-webkit-scrollbar{width:10px}::-webkit-scrollbar-track{background:#0D0D0D}::-webkit-scrollbar-thumb{background:rgba(255,255,255,.18);border-radius:10px;border:2px solid #0D0D0D}
+:focus-visible{outline:2px solid var(--orange);outline-offset:3px;border-radius:4px}
+a:focus:not(:focus-visible),button:focus:not(:focus-visible){outline:none}
+[id]{scroll-margin-top:88px}
+h1,h2,h3{text-wrap:balance}
+p,li{text-wrap:pretty}
+.jc-route-time,.jc-detail-box .value,.jc-fleet-price-amount,.jc-fleet-spec b,.jc-stat strong,.jc-hero-stats strong,.jc-pillar-num,.jc-pilar-num,.jc-route-table td,.jc-ruta-t{font-variant-numeric:tabular-nums}
+.jc-fleet-price-quote{color:var(--muted);font-weight:500;letter-spacing:.02em}
+a,button{transition-timing-function:cubic-bezier(.32,.72,0,1)}
+.jc-btn,.jc-btn-primary,.jc-btn-ghost,.jc-fleet-cta,.jc-cta-btn,.jc-nav-cta,.jc-hero-cta a{transition:transform .22s cubic-bezier(.32,.72,0,1),background-color .22s cubic-bezier(.32,.72,0,1),border-color .22s cubic-bezier(.32,.72,0,1),color .22s cubic-bezier(.32,.72,0,1),box-shadow .22s cubic-bezier(.32,.72,0,1)}
+.jc-btn:active,.jc-btn-primary:active,.jc-btn-ghost:active,.jc-fleet-cta:active,.jc-cta-btn:active,.jc-nav-cta:active{transform:scale(.98)}
+@media(hover:hover) and (pointer:fine){.jc-fleet-card:hover,.jc-pillar:hover,.jc-pilar:hover,.jc-related-links a:hover{transition-timing-function:cubic-bezier(.32,.72,0,1)}}
+@media(hover:none){.jc-fleet-card:hover,.jc-pillar:hover,.jc-pilar:hover{transform:none!important}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
 </style>
 </head>
 <body>
 
 <nav class="jc-nav">
-  <a href="https://jetcab.mx" class="jc-nav-logo">JET<span>CAB</span></a>
+  <a href="https://jetcab.mx/en/" class="jc-nav-logo" aria-label="JETCAB — Private jet charter Mexico (home)">JET<span>CAB</span></a>
   <div class="jc-nav-links">
-    <a href="https://jetcab.mx/#flota">Fleet</a>
+    <a href="https://jetcab.mx/en/#fleet">Fleet</a>
+    <a href="https://jetcab.mx/en/#destinations">Routes</a>
     <a href="https://jetcab.mx/sobre-nosotros/">About</a>
     <a href="https://jetcab.mx/cotizar/">Pricing</a>
     <a href="<?php echo $canonical_es; ?>" class="jc-lang">ES</a>
-    <a href="<?php echo $wa; ?>" class="jc-nav-cta" target="_blank">Get a Quote</a>
+    <a href="<?php echo $wa; ?>" class="jc-nav-cta" target="_blank" rel="noopener">Get a Quote</a>
   </div>
 </nav>
 
 <section class="jc-hero">
   <div class="jc-hero-bg">
-    <img src="https://images.unsplash.com/photo-<?php echo esc_attr($r['hero_img']); ?>?auto=format&fit=crop&w=1800&q=85" alt="<?php echo esc_attr($r['dest_full']); ?>" fetchpriority="high">
+    <img src="https://images.unsplash.com/photo-<?php echo esc_attr($r['hero_img']); ?>?auto=format&fit=crop&w=1800&q=85" alt="Private jet Mexico City to <?php echo esc_attr($r['dest_full']); ?> — <?php echo esc_attr($r['fbo_name']); ?>" width="1800" height="1013" fetchpriority="high" decoding="async">
     <div class="jc-hero-grad"></div>
   </div>
   <div class="jc-hero-inner">
     <div class="jc-route-badge"><?php echo esc_html($r['from']); ?> &rarr; <?php echo esc_html($r['dest']); ?></div>
-    <h1><span class="line1"><?php echo esc_html($r['hero_line1']); ?></span><span class="line2"><?php echo esc_html($r['hero_line2']); ?></span></h1>
+    <h1><span class="line1">Private Jet <?php echo esc_html($r['hero_line1']); ?></span><span class="line2"><?php echo esc_html($r['hero_line2']); ?></span></h1>
     <p class="jc-hero-sub"><?php echo esc_html($r['hero_sub']); ?></p>
     <div class="jc-avail"><span class="jc-avail-dot"></span><?php echo esc_html($r['fomo']); ?></div>
     <div class="jc-hero-ctas">
-      <a href="<?php echo $wa; ?>" class="btn-primary" target="_blank">Request availability &rarr;</a>
+      <a href="<?php echo $wa; ?>" class="btn-primary" target="_blank" rel="noopener">Request availability &rarr;</a>
       <a href="https://jetcab.mx/cotizar/" class="btn-ghost">See pricing</a>
     </div>
     <div class="jc-trust-bar">
@@ -417,6 +479,10 @@ html{scroll-behavior:smooth}body{background:var(--dark);color:var(--text);font-f
     <div class="jc-port"><div class="jc-port-iata"><?php echo esc_html($r['to_iata']); ?></div><div class="jc-port-name"><?php echo esc_html($r['dest']); ?></div></div>
   </div>
 </div>
+
+<section class="jc-answer-wrap"><div class="jc-answer-inner">
+  <p class="jc-answer"><?php echo esc_html($r['answer']); ?></p>
+</div></section>
 
 <section class="jc-dest">
   <div class="jc-dest-inner">
@@ -487,12 +553,12 @@ html{scroll-behavior:smooth}body{background:var(--dark);color:var(--text);font-f
 <section class="jc-fleet-section">
   <div class="jc-fleet-inner">
     <div class="jc-section-label">Choose your aircraft</div>
-    <h2>Three cabins for this route.</h2>
+    <h2>Private jets Mexico City to <?php echo esc_html($r['dest']); ?>: three cabins.</h2>
     <p>Every aircraft is DGAC-certified and maintained to international standards. Your crew briefs you on board.</p>
     <div class="jc-fleet-grid">
       <div class="jc-fleet-card">
         <div class="jc-fleet-img">
-          <img src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=800&q=75" alt="Light jet private cabin interior" loading="lazy">
+          <img src="https://jetcab.mx/wp-content/uploads/2024/11/Learjet35enrenta.jpeg" width="700" height="394" decoding="async" alt="Learjet 35 light jet — private jet Mexico City to <?php echo esc_attr($r['dest']); ?>" loading="lazy">
           <span class="jc-fleet-badge">Light Jet</span>
         </div>
         <div class="jc-fleet-body">
@@ -503,13 +569,13 @@ html{scroll-behavior:smooth}body{background:var(--dark);color:var(--text);font-f
             <div class="jc-fleet-spec"><strong>850 km/h</strong>Cruise</div>
             <div class="jc-fleet-spec"><strong>Wi-Fi</strong>Available</div>
           </div>
-          <div class="jc-fleet-price"><span class="jc-fleet-price-from">From</span><span class="jc-fleet-price-amount"><?php echo esc_html($r['p1']); ?> USD</span></div>
-          <a href="<?php echo $wa; ?>" class="jc-fleet-cta" target="_blank">Book this aircraft</a>
+          <div class="jc-fleet-price"><?php echo jc_price_html($r['p1']); ?></div>
+          <a href="<?php echo $wa; ?>" class="jc-fleet-cta" target="_blank" rel="noopener">Book this aircraft</a>
         </div>
       </div>
       <div class="jc-fleet-card">
         <div class="jc-fleet-img">
-          <img src="https://images.unsplash.com/photo-1581093806997-124204d9fa9d?auto=format&fit=crop&w=800&q=75" alt="Midsize private jet Challenger cabin" loading="lazy">
+          <img src="https://jetcab.mx/wp-content/uploads/2024/11/Challenger-605-en-renta.jpeg" width="700" height="394" decoding="async" alt="Challenger 605 midsize jet — private jet Mexico City to <?php echo esc_attr($r['dest']); ?>" loading="lazy">
           <span class="jc-fleet-badge">Midsize Jet</span>
         </div>
         <div class="jc-fleet-body">
@@ -520,13 +586,13 @@ html{scroll-behavior:smooth}body{background:var(--dark);color:var(--text);font-f
             <div class="jc-fleet-spec"><strong>882 km/h</strong>Cruise</div>
             <div class="jc-fleet-spec"><strong>Starlink</strong>Wi-Fi</div>
           </div>
-          <div class="jc-fleet-price"><span class="jc-fleet-price-from">From</span><span class="jc-fleet-price-amount"><?php echo esc_html($r['p2']); ?> USD</span></div>
-          <a href="<?php echo $wa; ?>" class="jc-fleet-cta" target="_blank">Book this aircraft</a>
+          <div class="jc-fleet-price"><?php echo jc_price_html($r['p2']); ?></div>
+          <a href="<?php echo $wa; ?>" class="jc-fleet-cta" target="_blank" rel="noopener">Book this aircraft</a>
         </div>
       </div>
       <div class="jc-fleet-card">
         <div class="jc-fleet-img">
-          <img src="https://images.unsplash.com/photo-1540962351504-03099e0a754b?auto=format&fit=crop&w=800&q=75" alt="Gulfstream GV large cabin private jet" loading="lazy">
+          <img src="https://jetcab.mx/wp-content/uploads/2024/11/Gulfstream-Gv-en-Renta.jpeg" width="700" height="394" decoding="async" alt="Gulfstream GV large cabin private jet" loading="lazy">
           <span class="jc-fleet-badge">Large Cabin</span>
         </div>
         <div class="jc-fleet-body">
@@ -537,8 +603,8 @@ html{scroll-behavior:smooth}body{background:var(--dark);color:var(--text);font-f
             <div class="jc-fleet-spec"><strong>904 km/h</strong>Cruise</div>
             <div class="jc-fleet-spec"><strong>Bedroom</strong>On board</div>
           </div>
-          <div class="jc-fleet-price"><span class="jc-fleet-price-from">From</span><span class="jc-fleet-price-amount"><?php echo esc_html($r['p3']); ?> USD</span></div>
-          <a href="<?php echo $wa; ?>" class="jc-fleet-cta" target="_blank">Book this aircraft</a>
+          <div class="jc-fleet-price"><?php echo jc_price_html($r['p3']); ?></div>
+          <a href="<?php echo $wa; ?>" class="jc-fleet-cta" target="_blank" rel="noopener">Book this aircraft</a>
         </div>
       </div>
     </div>
@@ -580,12 +646,20 @@ html{scroll-behavior:smooth}body{background:var(--dark);color:var(--text);font-f
     <h2><?php echo esc_html($r['cta_urgency']); ?></h2>
     <p><?php echo esc_html($r['cta_sub']); ?> Send us the dates and we take care of everything else.</p>
     <div class="jc-cta-pair">
-      <a href="<?php echo $wa; ?>" class="btn-primary" target="_blank">WhatsApp us now &rarr;</a>
+      <a href="<?php echo $wa; ?>" class="btn-primary" target="_blank" rel="noopener">WhatsApp us now &rarr;</a>
       <a href="https://jetcab.mx/cotizar/" class="btn-ghost">Get a full quote online</a>
     </div>
   </div>
 </section>
 
+
+<section class="jc-related" aria-label="Other private jet routes from Mexico City">
+  <div class="jc-related-inner">
+    <h2>Other private jet routes from Mexico City</h2>
+    <div class="jc-related-links"><?php if ($r["slug"] !== "cancun") { ?><a href="https://jetcab.mx/private-jet-mexico-city-cancun/">Mexico City → Cancún</a><?php } ?><?php if ($r["slug"] !== "los-cabos") { ?><a href="https://jetcab.mx/private-jet-mexico-city-los-cabos/">Mexico City → Los Cabos</a><?php } ?><?php if ($r["slug"] !== "puerto-vallarta") { ?><a href="https://jetcab.mx/private-jet-mexico-city-puerto-vallarta/">Mexico City → Puerto Vallarta</a><?php } ?><?php if ($r["slug"] !== "monterrey") { ?><a href="https://jetcab.mx/private-jet-mexico-city-monterrey/">Mexico City → Monterrey</a><?php } ?><?php if ($r["slug"] !== "guadalajara") { ?><a href="https://jetcab.mx/private-jet-mexico-city-guadalajara/">Mexico City → Guadalajara</a><?php } ?><?php if ($r["slug"] !== "miami") { ?><a href="https://jetcab.mx/private-jet-mexico-city-miami/">Mexico City → Miami</a><?php } ?><?php if ($r["slug"] !== "houston") { ?><a href="https://jetcab.mx/private-jet-mexico-city-houston/">Mexico City → Houston</a><?php } ?><?php if ($r["slug"] !== "new-york") { ?><a href="https://jetcab.mx/private-jet-mexico-city-new-york/">Mexico City → New York</a><?php } ?><?php if ($r["slug"] !== "los-angeles") { ?><a href="https://jetcab.mx/private-jet-mexico-city-los-angeles/">Mexico City → Los Angeles</a><?php } ?></div>
+    <p class="jc-related-note">Prices are per aircraft, one-way, from Toluca (AIT). <a href="https://jetcab.mx/en/">All destinations &amp; fleet</a> · <a href="https://jetcab.mx/cotizar/">Request a quote</a></p>
+  </div>
+</section>
 <footer class="jc-footer">
   <div class="jc-footer-inner">
     <div class="jc-footer-brand">
@@ -599,13 +673,19 @@ html{scroll-behavior:smooth}body{background:var(--dark);color:var(--text);font-f
       <a href="https://jetcab.mx/sobre-nosotros/">About JETCAB</a>
     </div>
     <div class="jc-footer-links">
-      <a href="https://jetcab.mx/private-jet-mexico-city-miami/">CDMX to Miami</a>
-      <a href="https://jetcab.mx/private-jet-mexico-city-houston/">CDMX to Houston</a>
-      <a href="https://jetcab.mx/private-jet-mexico-city-new-york/">CDMX to New York</a>
-      <a href="https://jetcab.mx/private-jet-mexico-city-los-angeles/">CDMX to Los Angeles</a>
+      <a href="https://jetcab.mx/en/#destinations">All private jet routes from Mexico City</a>
+      <a href="https://jetcab.mx/private-jet-mexico-city-cancun/">Private jet Mexico City to Cancún</a>
+      <a href="https://jetcab.mx/private-jet-mexico-city-los-cabos/">Private jet Mexico City to Los Cabos</a>
+      <a href="https://jetcab.mx/private-jet-mexico-city-puerto-vallarta/">Private jet Mexico City to Puerto Vallarta</a>
+      <a href="https://jetcab.mx/private-jet-mexico-city-monterrey/">Private jet Mexico City to Monterrey</a>
+      <a href="https://jetcab.mx/private-jet-mexico-city-guadalajara/">Private jet Mexico City to Guadalajara</a>
+      <a href="https://jetcab.mx/private-jet-mexico-city-miami/">Private jet Mexico City to Miami</a>
+      <a href="https://jetcab.mx/private-jet-mexico-city-houston/">Private jet Mexico City to Houston</a>
+      <a href="https://jetcab.mx/private-jet-mexico-city-new-york/">Private jet Mexico City to New York</a>
+      <a href="https://jetcab.mx/private-jet-mexico-city-los-angeles/">Private jet Mexico City to Los Angeles</a>
     </div>
   </div>
-  <p class="jc-footer-bottom">&copy; <?php echo date('Y'); ?> JETCAB. All rights reserved. &mdash; <a href="https://jetcab.mx/aviso-de-privacidad/" style="color:#555">Privacy notice</a></p>
+  <p class="jc-footer-bottom">&copy; <?php echo date('Y'); ?> JETCAB. All rights reserved. &mdash; <a href="https://jetcab.mx/aviso-de-privacidad/" style="color:#8a8a8a">Privacy notice</a></p>
 </footer>
 
 <a href="<?php echo $wa; ?>" target="_blank" style="position:fixed;bottom:1.5rem;right:1.5rem;background:#25D366;color:#fff;width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;text-decoration:none;box-shadow:0 4px 16px rgba(37,211,102,0.4);z-index:999;animation:pulse-wa 2.5s infinite" aria-label="WhatsApp JETCAB">
