@@ -3,8 +3,18 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>OdontoVida | Clínica Dental de Alta Especialidad en Chapinero, Bogotá</title>
+<link rel="icon" href="/favicon.svg" type="image/svg+xml"/>
+  <link rel="icon" href="/favicon.ico" sizes="32x32"/>
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png"/>
+<title>OdontoVida | Clínica Dental en Chapinero, Bogotá</title>
 <meta name="description" content="Clínica dental en Chapinero. Implantes, ortodoncia invisible y blanqueamiento con tecnología 3D. Más de 8.000 pacientes satisfechos. Valoración gratis.">
+<meta name="robots" content="noindex,follow">
+<meta property="og:type" content="website">
+<meta property="og:title" content="OdontoVida | Clínica Dental en Chapinero, Bogotá">
+<meta property="og:description" content="Clínica dental en Chapinero. Implantes, ortodoncia invisible y blanqueamiento con tecnología 3D. Más de 8.000 pacientes satisfechos. Valoración gratis.">
+<meta property="og:image" content="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1200&h=630&q=80">
+<meta property="og:locale" content="es_CO">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -223,7 +233,7 @@ footer{background:var(--ink);padding:64px 0 32px;overflow:hidden}
 <body>
 
 <div class="demo-band">
-  <strong>Proyecto demo</strong> — Sitio creado por <a href="https://rankeo-nu.vercel.app">Rankeo</a>. ¿Quieres uno así para tu clínica? <a href="https://rankeo-nu.vercel.app/#contacto">Contáctanos →</a>
+  <strong>Proyecto demo</strong> — Sitio creado por <a href="https://rankeo.agency">Rankeo</a>. ¿Quieres uno así para tu clínica? <a href="https://rankeo.agency/#contacto">Contáctanos →</a>
 </div>
 
 <nav id="nav">
@@ -521,10 +531,10 @@ footer{background:var(--ink);padding:64px 0 32px;overflow:hidden}
           <h3>Reserva tu cita</h3>
           <form class="fi" id="agendaForm" onsubmit="submitAgenda(event)">
             <div class="form-row">
-              <input type="text" placeholder="Tu nombre" required>
-              <input type="tel" placeholder="WhatsApp o teléfono" required>
+              <input type="text" placeholder="Tu nombre" required aria-label="Tu nombre">
+              <input type="tel" placeholder="WhatsApp o teléfono" required aria-label="WhatsApp o teléfono">
             </div>
-            <select required>
+            <select required aria-label="¿Qué tratamiento te interesa?">
               <option value="" disabled selected>¿Qué tratamiento te interesa?</option>
               <option>Valoración general</option>
               <option>Implante dental</option>
@@ -534,7 +544,7 @@ footer{background:var(--ink);padding:64px 0 32px;overflow:hidden}
               <option>Limpieza dental</option>
               <option>Urgencia dental</option>
             </select>
-            <input type="date" placeholder="Fecha preferida">
+            <input type="date" placeholder="Fecha preferida" aria-label="Fecha preferida">
             <button type="submit" class="btn-primary">Agendar valoración gratis →</button>
           </form>
           <p class="form-note">Al agendar aceptas nuestra política de datos (Ley 1581 de 2012).</p>
@@ -637,7 +647,7 @@ function submitAgenda(e){
 </script>
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Dentist","name":"OdontoVida Clínica Dental","url":"https://rankeo-nu.vercel.app/demo/clinica-dental-bogota","telephone":"+5716013214567","address":{"@type":"PostalAddress","streetAddress":"Cra 13 #64-56","addressLocality":"Bogotá","addressRegion":"Cundinamarca","addressCountry":"CO"},"description":"Clínica dental de alta especialidad en Chapinero. Implantes, ortodoncia invisible y blanqueamiento con tecnología de última generación.","aggregateRating":{"@type":"AggregateRating","ratingValue":"4.9","reviewCount":"847"}}
+{"@context":"https://schema.org","@type":"Dentist","name":"OdontoVida Clínica Dental","url":"https://rankeo.agency/demo/clinica-dental-bogota","telephone":"+5716013214567","address":{"@type":"PostalAddress","streetAddress":"Cra 13 #64-56","addressLocality":"Bogotá","addressRegion":"Cundinamarca","addressCountry":"CO"},"description":"Clínica dental de alta especialidad en Chapinero. Implantes, ortodoncia invisible y blanqueamiento con tecnología de última generación.","aggregateRating":{"@type":"AggregateRating","ratingValue":"4.9","reviewCount":"847"}}
 </script>
 </body>
 </html>
