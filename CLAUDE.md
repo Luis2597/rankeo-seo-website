@@ -32,7 +32,11 @@ seo-company/
 │   ├── gimnasio-crossfit-cali.html     ✅ Premium — mantener (Bebas Neue, dark red)
 │   ├── inmobiliaria-barranquilla.html  ✅ Reconstruido — search-first hero
 │   ├── centro-medico-cdmx.html         ✅ Reconstruido — foto izq / form der invertido
-│   └── arquitectura-bogota.html        ✅ Premium — mantener (stacked words cream)
+│   ├── arquitectura-bogota.html        ✅ Premium — mantener (stacked words cream)
+│   ├── dentista-monterrey.html         ✅ oct 2026 — agenda de horarios como héroe (MX)
+│   ├── abogado-inmigracion-houston.html ✅ oct 2026 — héroe triage 4 opciones, toggle ES/EN (USA)
+│   ├── restaurante-guadalajara.html    ✅ oct 2026 — menú primero, carrusel de platillos + abierto/cerrado (MX)
+│   └── remodelacion-los-angeles.html   ✅ oct 2026 — foto full-width + barra de cotización (USA)
 └── CLAUDE.md
 ```
 
@@ -191,6 +195,10 @@ Agregar siempre el drawer al final antes de `</body>`:
 | inmobiliaria | buscador de propiedades como héroe principal (no foto full-bleed) |
 | centro médico | blanco, foto izq / formulario cita der (invertido) |
 | arquitectura | stacked words cream, imagen grid derecha |
+| dentista Monterrey | agenda semanal de horarios clicables (WhatsApp) a la derecha |
+| abogado Houston | triage "¿En qué podemos ayudarte?" con 4 opciones grandes |
+| restaurante Guadalajara | nombre gigante + carrusel scroll-snap de platillos con precio |
+| remodelación LA | foto full-width + barra de cotización montada en el borde |
 
 ### ⛔ Imágenes: SIEMPRE usar Unsplash CDN con IDs específicos
 Formato: `https://images.unsplash.com/photo-{ID}?auto=format&fit=crop&w={W}&q=80`
@@ -219,6 +227,10 @@ No basta con cambiar el hero — el sitio entero debe sentirse diferente:
 | restaurante | (mantener original) | Warm dark | — |
 | crossfit | Bebas Neue + (sans) | Red oscuro | — |
 | arquitectura | (mantener original) | Cream editorial | — |
+| dentista Monterrey | Bricolage Grotesque + Figtree | Cobalt #1F4FD8 | Clínica moderna regia |
+| abogado Houston | Archivo + Public Sans | Forest #123B2F + ámbar #E3A23B | Confianza, bilingüe |
+| restaurante Guadalajara | Bricolage Grotesque + Instrument Sans | Olive #4A5A2A + brick #B8432F | Fonda tapatía |
+| remodelación LA | Barlow Condensed + Barlow | Off-black + tan + amarillo #F2C230 (solo CTA) | Obra, radius 0 |
 
 ---
 
