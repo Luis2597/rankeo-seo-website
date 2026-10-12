@@ -216,3 +216,45 @@ Pendiente del cliente, en orden: dirección exacta del hangar para la verificaci
 ## 9. Seguimiento semanal, 12 de octubre
 
 Semana del 4 al 10 de octubre contra la anterior: impresiones 1.254 a 1.756 (+40 %), clics 26 a 27, posición media 11,5 a 10,2. «jetcab» pasa de 5,3 a 2,8. La página de precios ya suma 230 impresiones en posición 4,9 con 2 clics; se cambió el título a «Precios de Jet Privado en México: desde $1,800 USD | JETCAB» para subir el CTR. Sesiones orgánicas 99 a 104. Eventos de la semana: 9 cotizaciones enviadas, 4 teléfono, 3 WhatsApp; solo «tel» está marcado como evento clave. Pendientes de indexación: /flota/challenger-605/ y el artículo Toluca vs AICM; empty legs «descubierta, sin indexar».
+
+## 10. Checklist de calidad (CLAUDE.md §9), 12 de octubre
+
+Páginas revisadas en vivo con Chromium a 390 × 844 (móvil) y 1366 × 900: `/`, `/en/`, `/precios-jet-privado/`, `/flota/`, `/vuelos-privados-a-cancun/` (ruta ES) y `/private-jet-mexico-city-cancun/` (ruta EN). Todas las URLs con `?qa=<timestamp>` para saltar la caché de Cloudflare.
+
+### Resultado antes de corregir
+
+| Criterio | Resultado |
+|---|---|
+| Overflow horizontal en 390 px | Ninguna página desborda (`scrollWidth` = 390). En `/en/` el cajón del menú cerrado quedaba fuera de pantalla, pero enfocable con teclado. |
+| Espacio blanco al final | Ninguno. Lo que va después del footer es la barra de enlaces internos y el crédito, ambos sobre fondo oscuro. |
+| Errores de consola | `Unexpected identifier 'Montserrat'` en todas las páginas ES y en la ruta EN: el snippet de WPCode 2902 («Destination Card Links») tenía comillas sin escapar. Ya existía una versión minificada que hace lo mismo, así que el 2902 nunca llegó a ejecutarse. |
+| Touch targets < 44 px | Iconos sociales del footer (18 × 18), botones COTIZAR del constructor (39 de alto), menú del footer (39), banderas (44 × 30), logo de cabecera (20 de alto), enlaces del pie de las landings (21 a 25), crédito de Rankeo y campos del formulario de `/en/` (17 a 43). |
+| Title y description | `/flota/`: title de 65 caracteres y description de 188 (la fijaba el script `jc-seo-head` y no Yoast). Home: description de 167. `/en/` y la ruta EN usaban « — JETCAB» (raya larga). |
+| JSON-LD | Dos `FAQPage` en home, precios y ambas rutas: el grafo global (snippet 12) añadía a todas las páginas un FAQ de 15 preguntas que no se ven en ellas. Logo e imagen de Organization con 404 (`jetcab-logo.png`, `jetcab-og.jpg`). `sameAs` de Instagram apuntando a `jetcab.mx` en lugar de `jetcab.fly`. Breadcrumb de la ruta EN con el mismo `@id` que el de Yoast. |
+| Otros | Home: 6 botones COTIZAR con `href="jetcab.mx/cotizar"` (relativo: llevaba a `jetcab.mx/jetcab.mx/cotizar`, 404). Ruta ES Cancún: precios fuera del brief ($1,500 y $4,950 USD), duración de 2 h 30 min y un enlace roto cuyo `href` era el texto del bloque. Precios: dos H1 (el título de Astra más el del contenido). Ruta EN Cancún: foto del hero de Unsplash con 404 (hero sin imagen) y foto de stock de un jet. |
+
+### Corregido por REST
+
+| Qué | Dónde | Copia en el repo |
+|---|---|---|
+| WPCode 2902 pasado a borrador (reversible) | helper `jetcab/v1/wpcode`, snippet 11, que vuelve a quedar inactivo | — |
+| Grafo global sin FAQPage, logo `2023/04/1024-LOGO-JETCAB-BLACK.jpg`, imagen `2024/10/vuelosprivadosaacapulcomexico.jpg`, Instagram `jetcab.fly`, breadcrumb solo por referencia al de Yoast | Code Snippets 12 | `jetcab-snippets/13-jsonld-global-v2.php`, `jetcab-jsonld-global-v2.html` |
+| Áreas táctiles de 44 px (botones del constructor, iconos sociales, menú del footer, logo, enlaces de landings, crédito) y botón vacío `href="#"` oculto; año del copyright de Astra de 2025 al año en curso | Code Snippets 20 (nuevo) | `jetcab-snippets/14-areas-tactiles-44-anio-footer.php` |
+| Banderas de idioma a 44 px de alto | Code Snippets 19 | `jetcab-snippets/12-banderas-idioma.php` |
+| Home: 12 enlaces COTIZAR (HTML y atributos del bloque) a `https://jetcab.mx/cotizar/`; description de 159 caracteres | página 355 | `jetcab-publish/constructor/inicio-355.html` |
+| Cancún ES: precios del brief (Learjet 35 desde $3,200 USD, Challenger 605 desde $6,500, Gulfstream desde $12,000), 2 h 15 min, enlace roto eliminado, «Cancún» con acento en H1 y textos | página 1634 | `jetcab-publish/constructor/vuelos-privados-a-cancun-1634.html` |
+| Precios: un solo H1 (`site-post-title` desactivado), sin `jc-seo-head`, `provider` como referencia a `#organization` | página 2959 | `jetcab-publish/precios-jet-privado.html` |
+| Ruta EN Cancún: hero con la foto real `2024/10/vuelosprivadosacancun-1-scaled.jpg`, Learjet 35 real en lugar del jet de stock, breadcrumb propio con `@id` distinto, sin `jc-seo-head` (title y description salen de Yoast, con « | JETCAB») | página 2909 | `jetcab-publish/private-jet-mexico-city-cancun.html` |
+| Flota: Yoast «Flota de Jets Privados y Helicópteros en Toluca \| JETCAB» (56) y description de 150; sin `jc-seo-head` | página 2945 | `jetcab-publish/flota.html` |
+| `/en/`: title, og:title y nombre del WebPage con « \| JETCAB», og:image real del sitio, logo del LocalBusiness sin 404, cajón del menú con `visibility:hidden` al estar cerrado, campos del formulario a 44 px, enlaces del footer y crédito a 44 px | `jetcab-en.html` (WPCode 2893 lo descarga y lo guarda en el transient `jetcab_en_v3`) | `jetcab-en.html` |
+
+### Resultado después
+
+Las cinco páginas de WordPress pasan los seis criterios en móvil y escritorio: sin overflow, sin espacio blanco final, sin errores de consola, sin elementos interactivos por debajo de 44 px (salvo el enlace «Ir al contenido», que es solo para lector de pantalla), title de 50 a 59 caracteres, description de 150 a 159, un solo FAQPage por página y todas las imágenes del JSON-LD con 200. `jetcab-en.html` pasa lo mismo servido en local.
+
+### Pendiente
+
+- `/en/` en vivo sigue mostrando la versión anterior hasta que caduque el transient `jetcab_en_v3` del WPCode 2893. No hay forma de borrarlo por REST sin ampliar el helper; si corre prisa, borrar el transient desde el admin o guardar de nuevo el snippet 2893.
+- El hero de `/en/` lleva todavía la frase «No lines. No terminals…» bajo el título; la regla del traspaso dice solo título y vídeo. No se tocó porque el commit `cadc598` la restauró a propósito; confirmar con el usuario.
+- Las otras rutas EN (2910 a 2913) y las landings conservan el script `jc-seo-head` y el mismo patrón de breadcrumb y `provider`; conviene aplicar la misma limpieza.
+- Purgar Cloudflare desde el admin de GoDaddy para que los visitantes vean ya los cambios (la caché HTML es de 31 días).
