@@ -123,3 +123,60 @@ H2 de los competidores (muestra):
 - www.helidom.com/tours: 
 
 Preguntas de la gente (PAA): ¿Cuál es el helicóptero más lujoso del mundo? · ¿Cuál es el precio aproximado de un helicóptero? · ¿Cuál es el precio de un helicóptero barato? · ¿Cuánto cobra un helicóptero por hora? · ¿Cuánto cuesta el alquiler de un avión privado? · ¿Cuánto cuesta la renta de un helicóptero? · ¿Cuánto cuesta un Uber helicóptero? · ¿Cuánto cuesta un helicóptero en México en pesos? · ¿Cuánto cuesta un helicóptero en pesos mexicanos? · ¿Cuánto cuesta un helicóptero para turismo?
+---
+
+## Mapa de keywords definitivo (12 oct 2026, tarde)
+
+Criterio: volumen > 100 y competencia (Google Ads, 0-100) < 35; si ninguna cumple, la de más volumen y menos competencia (marcadas «fallback»).
+
+### Español (México)
+
+| Keyword | Volumen | Competencia | KD | Pos. JETCAB | Página de JETCAB |
+|---|---|---|---|---|---|
+| jet privado / jets privados | 6,600 | 13 | 2 | 83 | Nueva guía «Jet privado» (pilar) |
+| avion privado | 1,300 | 19 | 14 | 29 | /renta-de-aviones-privados/ |
+| aviones privados | 480 | 21 | 11 | 39 | /renta-de-aviones-privados/ |
+| charter avion | 260 | 11 | — | 50 | /renta-de-aviones-privados/ |
+| jet privado precios / precio | 880 | 28 | 1 | 22 | /precios-jet-privado/ |
+| cuanto cuesta un avion privado | 880 | 22 | 0 | — | /precios-jet-privado/ |
+| cuánto cuesta un jet privado en méxico | 590 | 23 | 0 | 17 | /precios-jet-privado/ |
+| cuánto cuesta un jet privado | 390 | 14 | 0 | 41 | /precios-jet-privado/ |
+| cuánto cuesta un jet privado en pesos mexicanos | 210 | 17 | 0 | 28 | /precios-jet-privado/ |
+| precio de un avion privado | 210 | 15 | 0 | — | /precios-jet-privado/ |
+| jet privado de lujo | 320 | 4 | 0 | — | Guía «Jet privado» |
+| qué es un jet privado | 170 | 0 | 0 | — | Guía «Jet privado» |
+| cuanto cuesta un helicoptero en mexico | 480 | 1 | — | 48 | /helicopteros-en-renta-cdmx/ |
+| renta de helicopteros / renta de un helicoptero | 390 | 23 | 0 | 10 | /helicopteros-en-renta-cdmx/ |
+| cuanto cuesta rentar un helicóptero | 210 | 11 | — | 13 | /helicopteros-en-renta-cdmx/ |
+| helicoptero cdmx | 210 | 27 | 0 | 19 | /helicopteros-en-renta-cdmx/ |
+| helicoptero privado | 170 | 7 | 0 | — | /helicopteros-en-renta-cdmx/ |
+| tour en helicoptero | 110 | 27 | 0 | — | /tour-helicoptero-cdmx/ |
+| ambulancia aerea (fallback) | 480 | 43 | 0 | — | /flota/ambulancia-aerea/ |
+
+### Inglés (EE. UU.)
+
+| Keyword | Volumen | Competencia | KD | Página de JETCAB |
+|---|---|---|---|---|
+| private jet charter | 18,100 | 31 | 55 | /en/ |
+| how much does a private jet cost | 8,100 | 28 | 12 | Nueva guía EN de precios |
+| private jet charter services | 2,900 | 5 | 69 | /en/ |
+| low cost private jet | 2,900 | 25 | 23 | Nueva página EN de empty legs |
+| helicopter charter | 1,000 | 17 | 0 | Nueva página EN de helicópteros |
+| average cost of a private jet | 590 | 16 | 12 | Guía EN de precios |
+| private jet charter miami | 260 | 22 | 0 | /private-jet-mexico-city-miami/ |
+| private jet charter houston | 210 | 28 | 0 | /private-jet-mexico-city-houston/ |
+| private jet charter los angeles | 210 | 18 | 0 | /private-jet-mexico-city-los-angeles/ |
+| private jet charter new york | 210 | 21 | 10 | /private-jet-mexico-city-new-york/ |
+| private jet to cabo (fallback) | 110 | 73 | 0 | /private-jet-mexico-city-los-cabos/ |
+
+## Top 3 competidores (DataForSEO Labs)
+
+| Mercado | Dominio | Keywords orgánicas | Tráfico est./mes | Top 3 | Top 10 | Páginas que más tráfico traen |
+|---|---|---|---|---|---|---|
+| MX | **jetcab.mx** | 51 | 23 | 0 | 5 | renta-de-aviones-privados, tour-helicoptero-cdmx |
+| MX | flyflapper.com | 552 | 950 | 37 | 155 | Blog: cuánto cuesta un helicóptero, cuánto cuesta un jet en México, qué es un vuelo fletado |
+| MX | patriotaviation.mx | 138 | 752 | 22 | 56 | Home; blog: cuánto cuesta rentar un helicóptero, qué es un vuelo chárter, ambulancia aérea |
+| MX | fly-select.com | 125 | 348 | 14 | 28 | Landings: renta de helicópteros, aviones privados México, taxi aéreo Toluca |
+| US | jettly.com | 34,637 | 69,260 | 3,749 | 17,664 | Blog masivo de aviación + empty legs |
+| US | flyxo.com | 7,893 | 25,357 | 1,100 | 2,930 | Home + una página por aeropuerto (incluye Toluca MMTO) |
+| US | vistajet.com | 4,586 | 15,150 | 819 | 2,090 | Home, empty legs, fichas de aeronaves |
