@@ -254,7 +254,7 @@ Las cinco páginas de WordPress pasan los seis criterios en móvil y escritorio:
 
 ### Pendiente
 
-- `/en/` en vivo sigue mostrando la versión anterior hasta que caduque el transient `jetcab_en_v3` del WPCode 2893. No hay forma de borrarlo por REST sin ampliar el helper; si corre prisa, borrar el transient desde el admin o guardar de nuevo el snippet 2893.
+- ~~`/en/` en vivo con la versión anterior~~ Resuelto el mismo día: snippet 21 (`jetcab-snippets/15-purge-en-once.php`) borró una vez el transient `jetcab_en_v3` y quedó inactivo. `/en/` en vivo pasa los seis criterios (sin overflow, 0 elementos por debajo de 44 px, consola limpia, title de 53 y description de 155, JSON-LD sin 404).
 - El hero de `/en/` lleva todavía la frase «No lines. No terminals…» bajo el título; la regla del traspaso dice solo título y vídeo. No se tocó porque el commit `cadc598` la restauró a propósito; confirmar con el usuario.
 - Las otras rutas EN (2910 a 2913) y las landings conservan el script `jc-seo-head` y el mismo patrón de breadcrumb y `provider`; conviene aplicar la misma limpieza.
 - Purgar Cloudflare desde el admin de GoDaddy para que los visitantes vean ya los cambios (la caché HTML es de 31 días).
