@@ -395,7 +395,7 @@ const colors = {
   bg:      '#FAF8F5',  // fondo página (cream cálido, NO blanco puro)
   surface: '#F2EFE9',  // cards, inputs, elementos elevados
   border:  '#E4E0D9',  // bordes sutiles
-  subtle:  '#787370',  // texto secundario, placeholders
+  subtle:  '#6A6562',  // texto secundario, placeholders (oct 2026: era #787370, 4.42:1 no pasaba AA)
 }
 ```
 
@@ -407,7 +407,7 @@ const colors = {
   --c-bg:      #FAF8F5;
   --c-surface: #F2EFE9;
   --c-border:  #E4E0D9;
-  --c-subtle:  #787370;
+  --c-subtle:  #6A6562;
 
   --dur-fast:  150ms;
   --dur-base:  250ms;
