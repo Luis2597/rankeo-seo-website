@@ -1120,6 +1120,15 @@
     <p class="ps rv">Proyectos demo que muestran lo que hacemos: diseño web + posicionamiento SEO para negocios en México, Estados Unidos y Colombia.</p>
 
     <div class="pgrid" role="list">
+      <!-- Centro médico -->
+      <div class="pc rv" data-d="1" role="listitem">
+        <div class="pc-browser"><div class="pc-dot"></div><div class="pc-dot"></div><div class="pc-dot"></div><div class="pc-bar"></div></div>
+        <div class="pc-preview pcp-img">
+          <img src="https://images.unsplash.com/photo-1584432810601-6c7f27d2362b?auto=format&fit=crop&w=600&q=80" alt="Centro médico CDMX" loading="lazy">
+          <div class="pcp-ov"><div class="pcp-m">Tráfico orgánico</div><div class="pcp-n">+390%</div><div class="pcp-s">12 especialidades · Centro médico CDMX</div></div>
+        </div>
+        <div class="pc-foot"><span class="pc-industry">Centro Médico · México</span><a href="/demo/centro-medico-cdmx" target="_blank" rel="noopener" class="pc-tag avail" style="text-decoration:none;">Ver demo →</a></div>
+      </div>
       <!-- Dental -->
       <div class="pc rv" data-d="1" role="listitem">
         <div class="pc-browser"><div class="pc-dot"></div><div class="pc-dot"></div><div class="pc-dot"></div><div class="pc-bar"></div></div>
@@ -1173,15 +1182,6 @@
           <div class="pcp-ov"><div class="pcp-m">Reservas directas</div><div class="pcp-n">+180%</div><div class="pcp-s">en 7 meses · Hotel boutique Cartagena</div></div>
         </div>
         <div class="pc-foot"><span class="pc-industry">Hotel Boutique · Cartagena</span><a href="/demo/hotel-boutique-cartagena" target="_blank" rel="noopener" class="pc-tag avail" style="text-decoration:none;">Ver demo →</a></div>
-      </div>
-      <!-- Centro médico -->
-      <div class="pc rv" data-d="1" role="listitem">
-        <div class="pc-browser"><div class="pc-dot"></div><div class="pc-dot"></div><div class="pc-dot"></div><div class="pc-bar"></div></div>
-        <div class="pc-preview pcp-img">
-          <img src="https://images.unsplash.com/photo-1584432810601-6c7f27d2362b?auto=format&fit=crop&w=600&q=80" alt="Centro médico CDMX" loading="lazy">
-          <div class="pcp-ov"><div class="pcp-m">Tráfico orgánico</div><div class="pcp-n">+390%</div><div class="pcp-s">12 especialidades · Centro médico CDMX</div></div>
-        </div>
-        <div class="pc-foot"><span class="pc-industry">Centro Médico · México</span><a href="/demo/centro-medico-cdmx" target="_blank" rel="noopener" class="pc-tag avail" style="text-decoration:none;">Ver demo →</a></div>
       </div>
       <!-- Arquitectura -->
       <div class="pc rv" data-d="2" role="listitem">
@@ -1385,7 +1385,7 @@
             ¿Qué es el SEO local y para qué sirve?
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15"/></svg>
           </button>
-          <div class="fq-a"><p>El SEO local es la optimización para aparecer en búsquedas geográficas: "dentista en Bogotá", "abogados en Medellín", "gimnasio cerca de mí". Incluye optimización de Google Business Profile, generación de reseñas y posicionamiento en Google Maps. Es la estrategia más rentable para negocios físicos y de servicios locales en Colombia y México.</p></div>
+          <div class="fq-a"><p>El SEO local es la optimización para aparecer en búsquedas geográficas: "dentista en CDMX", "abogado de inmigración en Houston", "gimnasio cerca de mí". Incluye optimización de Google Business Profile, generación de reseñas y posicionamiento en Google Maps. Es la estrategia más rentable para negocios físicos y de servicios locales en México, Estados Unidos y Colombia.</p></div>
         </div>
 
         <div class="fq-item" role="listitem">
@@ -1435,7 +1435,7 @@
           </div>
           <div class="cf">
             <label for="ctel">Teléfono / WhatsApp <span style="font-weight:400;opacity:.6">(opcional)</span></label>
-            <input type="tel" id="ctel" placeholder="+57 300 000 0000" autocomplete="tel" inputmode="tel"/>
+            <input type="tel" id="ctel" placeholder="+52 55 1234 5678" autocomplete="tel" inputmode="tel"/>
           </div>
           <div class="cf">
             <label for="cweb">Sitio web <span style="font-weight:400;opacity:.6">(opcional)</span></label>
@@ -1746,7 +1746,7 @@ async function analyzeSEO(rawUrl) {
   const contIssues = [];
   if (wordCount >= 600) contScore += 20;
   else if (wordCount >= 300) contScore += 10;
-  else { seoScore -= 5; contIssues.push(`Texto escaso (${wordCount} palabras) — Google prefiere páginas con más contenido`); }
+  else { contScore -= 10; contIssues.push(`Texto escaso (${wordCount} palabras) — Google prefiere páginas con más contenido`); }
   if (h2s.length >= 2) contScore += 10;
   else if (h2s.length === 0) { contScore -= 10; contIssues.push('Sin subtítulos H2 — estructura pobre para Google y usuarios'); }
   if (imgsNoAlt.length === 0 && imgs.length > 0) contScore += 10;
@@ -1763,9 +1763,9 @@ async function analyzeSEO(rawUrl) {
   let localScore = 45;
   const localIssues = [];
   const hasPhone = /\+?\d[\d\s\-\.]{7,}\d/.test(bodyLow);
-  const hasAddress = /calle|av\.|avenida|col\.|colonia|ciudad|cdmx|bogot|medell|barranquilla|cartagena|guadalajara|monterrey|street|blvd/i.test(bodyLow);
+  const hasAddress = /calle|av\.|avenida|col\.|colonia|c\.\s?p\.|ciudad|cdmx|guadalajara|monterrey|puebla|quer[eé]taro|tijuana|m[eé]rida|le[oó]n|canc[uú]n|toluca|street|\bst\.|\bave\b|blvd|suite|los angeles|houston|miami|dallas|san antonio|chicago|phoenix|\b[a-z]{2}\s\d{5}\b|bogot|medell|barranquilla|cartagena/i.test(bodyLow);
   const hasLocalSchema = jsonLd.some(s => (s.textContent||'').includes('LocalBusiness'));
-  if (hasLocalSchema) contScore += 15; else { localScore -= 20; localIssues.push('Sin schema LocalBusiness — Google no muestra info en panel de conocimiento'); }
+  if (hasLocalSchema) localScore += 15; else { localScore -= 20; localIssues.push('Sin schema LocalBusiness — Google no muestra info en panel de conocimiento'); }
   if (hasPhone) localScore += 15; else { localScore -= 15; localIssues.push('Teléfono no detectado — reduce confianza y conversiones'); }
   if (hasAddress) localScore += 15; else { localScore -= 10; localIssues.push('Dirección no detectada — necesaria para SEO local'); }
   const hasGBP = bodyLow.includes('google.com/maps') || bodyLow.includes('goo.gl/maps');
@@ -2109,7 +2109,7 @@ async function sendContact(e) {
       },
       {
         "@type": "Country",
-        "name": "United States"
+        "name": "Estados Unidos"
       },
       {
         "@type": "Country",
@@ -2121,7 +2121,12 @@ async function sendContact(e) {
     "telephone": "+52-55-3289-4890",
     "image": "https://rankeo.agency/preview.png",
     "logo": "https://rankeo.agency/apple-touch-icon.png",
-    "address": { "@type": "PostalAddress", "addressLocality": "Ciudad de México", "addressRegion": "CDMX", "addressCountry": "MX" },
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Ciudad de México",
+      "addressRegion": "CDMX",
+      "addressCountry": "MX"
+    },
     "contactPoint": {
       "@type": "ContactPoint",
       "contactType": "sales",
@@ -2250,66 +2255,66 @@ async function sendContact(e) {
     "mainEntity": [
       {
         "@type": "Question",
+        "name": "¿Cuánto cuesta el SEO para mi negocio?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Rankeo ofrece planes desde $199 USD/mes (Plan Local) para optimizar tu sitio existente, $349 USD/mes (Plan Web + SEO) para sitio nuevo con SEO local completo, y $649 USD/mes (Plan Autoridad) para mercados competitivos con blog y estrategia de contenido. Todos incluyen reporte mensual y garantía de 60 días."
+        }
+      },
+      {
+        "@type": "Question",
         "name": "¿Cuánto tiempo tarda el SEO en dar resultados?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Los primeros resultados visibles se dan entre 60 y 90 días. Resultados sólidos suelen consolidarse entre los 4 y 6 meses."
+          "text": "Para palabras clave locales de baja competencia, los primeros resultados se ven en 30-60 días. Para keywords más competitivas a nivel nacional, el SEO toma entre 4 y 6 meses para mostrar tracción significativa. El máximo retorno se ve a partir de los 12 meses de trabajo continuo."
         }
       },
       {
         "@type": "Question",
-        "name": "¿Tienen contratos anuales?",
+        "name": "¿Necesito tener sitio web para contratar el servicio?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "No. Trabajamos mes a mes. Si no ves resultados, puedes cancelar sin penalizaciones."
+          "text": "No es indispensable. Los planes Web + SEO y Autoridad incluyen la construcción del sitio web optimizado desde cero. Si ya tienes un sitio, el Plan Local lo optimiza. En cualquier caso, empezamos con una auditoría gratuita."
         }
       },
       {
         "@type": "Question",
-        "name": "¿ Qué incluye la auditoría SEO gratis?",
+        "name": "¿Trabajan con negocios en México y Estados Unidos?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Análisis de velocidad, SEO técnico, visibilidad en Google Maps, keywords principales y 3 acciones prioritarias concretas."
+          "text": "Sí. Trabajamos con negocios en México, el mercado hispano de Estados Unidos y Colombia. Las estrategias SEO se adaptan al mercado geográfico específico: keywords regionales, Google Business por país y posicionamiento local en cada mercado."
         }
       },
       {
         "@type": "Question",
-        "name": "¿Trabajan con negocios pequeños?",
+        "name": "¿Hay contratos anuales obligatorios?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Sí. La mayoría de nuestros clientes son PYMES, profesionales independientes y negocios locales en México, Estados Unidos y Colombia."
+          "text": "No. Los planes Rankeo son mensuales y puedes cancelar cuando quieras. Ofrecemos una garantía de devolución de 60 días si no ves mejoras técnicas medibles en tu posicionamiento. Creemos que los resultados deben hablar por sí solos."
         }
       },
       {
         "@type": "Question",
-        "name": "¿ Qué diferencia a Rankeo de otras agencias?",
+        "name": "¿Qué es el SEO local y para qué sirve?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Nos especializamos en SEO local para Latinoamérica. Conocemos el mercado mexicano, el hispano de Estados Unidos y el colombiano, sus búsquedas y su competencia."
+          "text": "El SEO local es la optimización para aparecer en búsquedas geográficas: \"dentista en CDMX\", \"abogado de inmigración en Houston\", \"gimnasio cerca de mí\". Incluye optimización de Google Business Profile, generación de reseñas y posicionamiento en Google Maps. Es la estrategia más rentable para negocios físicos y de servicios locales en México, Estados Unidos y Colombia."
         }
       },
       {
         "@type": "Question",
-        "name": "¿Pueden crear mi sitio web y hacer SEO al mismo tiempo?",
+        "name": "¿Incluyen optimización para ChatGPT y Google AI Overviews?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Sí. Nuestros planes Web + SEO y Autoridad incluyen diseño y desarrollo con SEO técnico incorporado desde el primer día."
+          "text": "Sí. En 2026 el SEO moderno incluye GEO (Generative Engine Optimization): optimizar tu sitio para ser citado por Google AI Overviews, ChatGPT Search y Perplexity. Los planes Web + SEO y Autoridad incluyen esta capa de optimización, que captura hasta el 30% de los clics en búsquedas informacionales."
         }
       },
       {
         "@type": "Question",
-        "name": "¿ Cómo me reportan los avances?",
+        "name": "¿Qué es una auditoría SEO y por qué es gratis?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Reporte mensual con métricas claras: posiciones ganadas, tráfico orgánico, keywords en top 10 y acciones del mes siguiente."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "¿Trabajan con empresas en Estados Unidos o fuera de México?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Sí, atendemos México, el mercado hispano en USA y Colombia."
+          "text": "Es el diagnóstico completo de tu sitio: velocidad, metadatos, palabras clave, estructura de URLs, posicionamiento local y más de 40 factores técnicos. La ofrecemos gratis porque queremos mostrarte con datos concretos por qué tu sitio no aparece en Google, antes de proponerte cualquier plan."
         }
       }
     ]
