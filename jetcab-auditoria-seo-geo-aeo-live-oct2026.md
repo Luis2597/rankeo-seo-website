@@ -212,3 +212,7 @@ Pendiente del cliente, en orden: dirección exacta del hangar para la verificaci
 - Google ya indexó las URLs pedidas el día anterior: precios, flota, light jets, confidencialidad, rutas EN a Cancún y Miami y Learjet 35 (rastreadas el 9 y 10 de octubre).
 - Analytics ya recibe los eventos nuevos: en tres días, 4 contacto_telefono, 4 cotizacion_enviada y 2 contacto_whatsapp. Faltaba marcarlos como eventos clave con la estrella.
 - La inspección de URL reportó errores de «Fragmentos de productos» en la flota del JSON-LD global (ocho aeronaves como Product sin oferta ni precio, con nombres antiguos: Hawker 400, Learjet 35/75, Challenger 350). Corregido en el snippet 12 y en `jetcab-jsonld-global-v2.html`: ahora son servicios de renta de aeronave con los nombres reales (Learjet 35/45, Hawker 800, Challenger 605, Gulfstream GV). Verificado: sin nodos Product en las páginas ES.
+
+## 9. Seguimiento semanal, 12 de octubre
+
+Semana del 4 al 10 de octubre contra la anterior: impresiones 1.254 a 1.756 (+40 %), clics 26 a 27, posición media 11,5 a 10,2. «jetcab» pasa de 5,3 a 2,8. La página de precios ya suma 230 impresiones en posición 4,9 con 2 clics; se cambió el título a «Precios de Jet Privado en México: desde $1,800 USD | JETCAB» para subir el CTR. Sesiones orgánicas 99 a 104. Eventos de la semana: 9 cotizaciones enviadas, 4 teléfono, 3 WhatsApp; solo «tel» está marcado como evento clave. Pendientes de indexación: /flota/challenger-605/ y el artículo Toluca vs AICM; empty legs «descubierta, sin indexar».
