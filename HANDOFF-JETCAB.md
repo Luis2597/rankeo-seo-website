@@ -14,7 +14,7 @@ Lee esto junto con `CLAUDE.md` y la skill `jetcab-context` antes de tocar jetcab
 - Google Search Console (`sc-domain:jetcab.mx`) y GA4 (`properties/369436223`, la propiedad «JETCAB»; la «jetcab.mx - GA4» está vacía) se consultaron vía Composio.
 
 ## Reglas que el usuario fijó
-- Precios: solo los del brief (Learjet 35: GDL $1,800, MTY $2,200, PVR $3,000, CUN $3,200, SJD $3,800 USD; CDMX a Cancún Challenger $6,500 y Gulfstream $12,000; light jet desde $80,000 MXN; long range desde $100,000 USD). Todo lo demás: «Cotizar».
+- Precios: solo los del brief (Learjet 35: GDL $1,800, MTY $2,200, PVR $3,000, CUN $3,200, SJD $3,800 USD; CDMX a Cancún Challenger $6,500 y Gulfstream $12,000; light jet desde $80,000 MXN; long range desde $100,000 USD). Si el brief no tiene el precio, se usa el que aparece en la página en español de esa ruta y ese avión (por ejemplo, rutas internacionales: Miami 4,800 / 9,500 / 18,000; Houston 3,800 / 7,500 / 14,000; Nueva York 9,500 / 18,500 / 28,000; Los Ángeles 5,200 / 10,500 / 19,000 USD en Learjet 35 / Challenger 605 / Gulfstream GV). Solo si tampoco está ahí: «Cotizar». Las tarifas por hora del home ES se quedan como están (regla fijada el 12 oct 2026).
 - Fotos de aeronaves: las reales del sitio (`/wp-content/uploads/2024/11/`).
 - Hero de `/en/`: solo título y video, sin párrafo.
 - Copy con aspecto humano: sin rayas largas, sin listas de tres, sin etiquetas en negrita, sin adjetivos de folleto. Nunca mencionar IA.

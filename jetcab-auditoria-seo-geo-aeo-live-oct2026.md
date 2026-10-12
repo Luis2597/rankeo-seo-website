@@ -258,3 +258,13 @@ Las cinco páginas de WordPress pasan los seis criterios en móvil y escritorio:
 - El hero de `/en/` lleva todavía la frase «No lines. No terminals…» bajo el título; la regla del traspaso dice solo título y vídeo. No se tocó porque el commit `cadc598` la restauró a propósito; confirmar con el usuario.
 - Las otras rutas EN (2910 a 2913) y las landings conservan el script `jc-seo-head` y el mismo patrón de breadcrumb y `provider`; conviene aplicar la misma limpieza.
 - Purgar Cloudflare desde el admin de GoDaddy para que los visitantes vean ya los cambios (la caché HTML es de 31 días).
+
+## 11. Precios en la versión en inglés (12 de octubre, noche)
+
+Regla nueva del usuario: primero el brief; si el brief no tiene el precio, el que aparece en la página en español de esa ruta y ese avión; si tampoco está, «quote on request». Las páginas en español no se tocaron (tienen bloques antiguos que contradicen la cápsula del brief en Guadalajara, Monterrey, Puerto Vallarta y Los Cabos; el usuario decidió dejarlas así).
+
+| Dónde | Cambio |
+|---|---|
+| Rutas EN Miami, Houston, Nueva York, Los Ángeles (Code Snippets 8, `jetcab-snippets/01-routes-intl-v4.php`) | Tarjetas de flota, respuesta directa y FAQ con los precios por avión de las páginas `/vuelo-privado-cdmx-*/`; JSON-LD `AggregateOffer` con `lowPrice`/`highPrice`; `provider` por referencia; títulos con « \| JETCAB». |
+| `/en/` (`jetcab-en.html`, página 2895) | Tarjetas de Miami, Houston y Nueva York con precio por avión (Nueva York pasa de «Midsize jet» a Learjet 35, como en la página ES). Acapulco $1,500, Querétaro $3,000, Las Vegas $15,000, San Diego $9,000, Tijuana $12,000, McAllen $8,000 y Cuba $1,800 USD «por aeronave», sin atribuirlo a un avión porque la página ES no lo hace. Fichas de Guadalajara, Monterrey, Los Cabos y Puerto Vallarta con el precio del brief que antes decían «quoted on request»; España y Europa con «long range desde $100,000 USD» del brief. Challenger 605 a Guadalajara sigue bajo cotización (no aparece en ninguna página ES). |
+| Caché | Transient de `/en/` borrado con el snippet 21 (purga única, otra vez inactivo). Cloudflare sigue sirviendo la copia anterior de `/en/` hasta vaciar la caché desde «GoDaddy Quick Links → Vaciar caché». |
