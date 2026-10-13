@@ -22,3 +22,5 @@ push_to_github.py
 
 # Worktrees locales de Claude Code (nunca versionar)
 .claude/worktrees/
+
+seo/publicar-local.log
