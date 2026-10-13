@@ -5,7 +5,7 @@
    la página con ?r=<versión>, que el CDN tampoco tiene en caché. Así los visitantes que ya habían entrado ven los
    cambios en su siguiente visita. Versión = última modificación de cualquier página o post + JETCAB_BUILD
    (subir a mano cuando un cambio vive solo en un snippet). Snippet 28. */
-if (!defined('JETCAB_BUILD')) define('JETCAB_BUILD', '2026-10-13a');
+if (!defined('JETCAB_BUILD')) define('JETCAB_BUILD', '2026-10-14a');
 
 function jetcab_site_version() {
     static $v = null;
@@ -29,9 +29,9 @@ add_action('template_redirect', function () {
     $v = jetcab_site_version();
     $js = '<script id="jc-version">(function(){var V="' . $v . '";'
         . 'if(/bot|crawl|spider|lighthouse|headless/i.test(navigator.userAgent)||navigator.webdriver)return;'
-        . 'try{var k="jcv:"+location.pathname;if(sessionStorage.getItem(k)===V)return;}catch(e){}'
+        . 'try{var k="jcv:"+location.pathname,lt=+sessionStorage.getItem(k)||0;if(Date.now()-lt<300000)return;}catch(e){}'
         . 'fetch("/jc-version.txt?t="+Date.now(),{cache:"no-store"}).then(function(r){return r.ok?r.text():"";}).then(function(t){t=(t||"").trim();'
-        . 'if(!/^[a-f0-9]{10}$/.test(t))return;try{sessionStorage.setItem(k,t);}catch(e){}'
+        . 'if(!/^[a-f0-9]{10}$/.test(t))return;try{sessionStorage.setItem(k,String(Date.now()));}catch(e){}'
         . 'if(t!==V){var u=new URL(location.href);if(u.searchParams.get("r")===t)return;u.searchParams.set("r",t);location.replace(u.toString());}'
         . '}).catch(function(){});})();</script>';
     ob_start(function ($buf) use ($js) {
