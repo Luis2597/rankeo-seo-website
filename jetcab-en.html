@@ -475,8 +475,9 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:64px 48p
   <div class="hero-bg">
     <!-- Aerial private aviation video — muted autoplay loop -->
     <video class="hero-video" id="hero-video" muted loop playsinline preload="none"
-      poster="https://images.unsplash.com/photo-1540962351504-03099e0a754b?auto=format&fit=crop&w=1280&q=70"
-      data-src="https://videos.pexels.com/video-files/28586474/12427475_1920_1080_24fps.mp4"></video>
+      poster="https://jetcab.mx/wp-content/uploads/2026/10/jetcab-hero-poster.jpg"
+      data-src="https://jetcab.mx/wp-content/uploads/2026/10/jetcab-hero-1080.mp4"
+      data-src-m="https://jetcab.mx/wp-content/uploads/2026/10/jetcab-hero-720.mp4"></video>
   </div>
   <div class="hero-grain" aria-hidden="true"></div>
   <canvas id="hero-canvas" aria-hidden="true"></canvas>
@@ -1165,10 +1166,11 @@ document.querySelectorAll('.faq-q').forEach(function(q){
   }
   v.addEventListener('canplaythrough', onReady, {once:true});
   v.addEventListener('playing', onReady, {once:true});
-  // Video solo en pantallas grandes y después de cargar la página; en celular queda la imagen (ahorra ~11 MB)
+  // Video comprimido (720p en celular 0.8 MB, 1080p en escritorio 2.8 MB) que se carga después de mostrar la página
   var c = navigator.connection || {};
-  if (!window.matchMedia('(min-width: 900px)').matches || c.saveData || /2g/.test(c.effectiveType || '')) return;
-  window.addEventListener('load', function(){ setTimeout(function(){ v.src = v.getAttribute('data-src'); v.load(); var p = v.play(); if (p && p.catch) p.catch(function(){}); }, 1200); });
+  if (c.saveData || /2g/.test(c.effectiveType || '')) return;
+  function go(){ v.src = v.getAttribute(window.matchMedia('(min-width: 900px)').matches ? 'data-src' : 'data-src-m'); v.load(); var p = v.play(); if (p && p.catch) p.catch(function(){}); }
+  if (document.readyState === 'complete') setTimeout(go, 600); else window.addEventListener('load', function(){ setTimeout(go, 600); });
 })();
 
 // ─── CANVAS FLIGHT-PATH PARTICLE NETWORK ─────────────────────────────────────
