@@ -6,7 +6,7 @@
  * (solo usuarios con permiso de edición; el Application Password de "jetcab" lo tiene).
  */
 add_action('init', function () {
-    foreach (['_yoast_wpseo_title', '_yoast_wpseo_metadesc', '_yoast_wpseo_opengraph-title', '_yoast_wpseo_opengraph-description'] as $key) {
+    foreach (['_yoast_wpseo_title', '_yoast_wpseo_metadesc', '_yoast_wpseo_opengraph-title', '_yoast_wpseo_opengraph-description', '_yoast_wpseo_canonical', '_yoast_wpseo_focuskw'] as $key) {
         register_post_meta('page', $key, [
             'show_in_rest'  => true,
             'single'        => true,

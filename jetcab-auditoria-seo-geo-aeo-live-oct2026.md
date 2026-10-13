@@ -268,3 +268,26 @@ Regla nueva del usuario: primero el brief; si el brief no tiene el precio, el qu
 | Rutas EN Miami, Houston, Nueva York, Los Ángeles (Code Snippets 8, `jetcab-snippets/01-routes-intl-v4.php`) | Tarjetas de flota, respuesta directa y FAQ con los precios por avión de las páginas `/vuelo-privado-cdmx-*/`; JSON-LD `AggregateOffer` con `lowPrice`/`highPrice`; `provider` por referencia; títulos con « \| JETCAB». |
 | `/en/` (`jetcab-en.html`, página 2895) | Tarjetas de Miami, Houston y Nueva York con precio por avión (Nueva York pasa de «Midsize jet» a Learjet 35, como en la página ES). Acapulco $1,500, Querétaro $3,000, Las Vegas $15,000, San Diego $9,000, Tijuana $12,000, McAllen $8,000 y Cuba $1,800 USD «por aeronave», sin atribuirlo a un avión porque la página ES no lo hace. Fichas de Guadalajara, Monterrey, Los Cabos y Puerto Vallarta con el precio del brief que antes decían «quoted on request»; España y Europa con «long range desde $100,000 USD» del brief. Challenger 605 a Guadalajara sigue bajo cotización (no aparece en ninguna página ES). |
 | Caché | Transient de `/en/` borrado con el snippet 21 (purga única, otra vez inactivo). Cloudflare sigue sirviendo la copia anterior de `/en/` hasta vaciar la caché desde «GoDaddy Quick Links → Vaciar caché». |
+
+## 12. Plan SEO con DataForSEO y método Andrés Agudelo (12 oct 2026, noche)
+
+Método documentado en `METODO-SEO-ANDRES-AGUDELO.md`. Keyword map en `jetcab-keyword-map-oct2026.xlsx`; competidores en `jetcab-competidores-dataforseo-oct2026.md`. Coste DataForSEO de la jornada: unos 2 USD.
+
+| Qué | Dónde | Copia |
+|---|---|---|
+| Skills instaladas con find-skills: copywriting, seo-audit, ai-seo, schema, site-architecture, content-strategy, find-skills | `.claude/skills/`, `.agents/skills/` | repo |
+| 33 posts (22 ES, 11 EN) escritos con brief propio, programados L-M-V 09:00 CDMX del 14 oct al 28 dic; jets primero, helicópteros al final (prioridad del cliente). Imagen destacada real, categoría por tema, Yoast title/desc/focus kw | posts 2985 a 3017 | `jetcab-publish/blog/*.html`, `_plan-33.json`, `_programados.json`, `_BRIEF-REDACCION.md` |
+| Preguntas frecuentes ES (22) y EN (13) con preguntas reales de Google (DataForSEO Labs + PAA), FAQPage, hreflang entre sí | páginas 2983 y 2984 | `jetcab-publish/preguntas-frecuentes.html`, `private-jet-faq.html` |
+| Landing EN nueva de helicópteros con venta cruzada a jet | página 2982 | `jetcab-publish/helicopter-charter-mexico-city.html` |
+| Keyword principal en H1 y title: renta de aviones (avión privado), aviones en renta (vuelos privados), helicópteros (renta de helicópteros); canonical de la página 968 a /flota/ | páginas 2739, 2646, 2641, 968 | snippet 5 amplía meta REST (canonical, focus kw) |
+| Secciones nuevas: tarifas y rutas de helicóptero; tipos de avión y precios a EE. UU. en renta de aviones; «Guías relacionadas» en 13 landings (solo posts publicados); enlaces a posts programados se muestran como texto hasta publicarse | Code Snippets 23 | `jetcab-snippets/16-landings-ampliadas-y-guias.php` |
+| Idioma EN correcto (`lang`, `og:locale`, `inLanguage`) en rutas EN de WordPress, landing y FAQ EN y posts de la categoría English; hreflang en 7 pares ES/EN | Code Snippets 22 | `jetcab-snippets/15-idioma-en-hreflang.php` |
+| Sitemap: post de prueba de 2023 a borrador; sin sitemap de productos; landings sitemap solo con URLs que Yoast no publica (incluye las 4 rutas internacionales ES, antes ausentes) con hreflang y lastmod fijo | Code Snippets 9, post 18 | `jetcab-snippets/03-sitemap-landings.php` |
+| `llms.txt` actualizado (flota real, precios con la regla nueva, páginas de preguntas) y `/pricing.md` nuevo para agentes de IA | Code Snippets 7 | `jetcab-snippets/06-llms-txt.php` |
+| «Preguntas frecuentes» en la barra de enlaces del footer | Code Snippets 14 | `jetcab-snippets/07-footer-enlaces-internos.php` |
+
+Pendiente:
+- Nombre, cargo y años en aviación del autor real de los posts (E-E-A-T): hoy el schema muestra «jetcab» como Person.
+- `robots.txt` es un archivo estático de 2023 (no lo controla WordPress): añadir `Sitemap: https://jetcab.mx/sitemap_index.xml` desde el administrador de archivos de GoDaddy o el editor de archivos de Yoast.
+- El cliente debe revisar los datos de los posts antes de su fecha (ver avisos de los redactores en el resumen de la sesión: aritmética por persona, tiempos de helicóptero, nombre oficial del aeropuerto).
+- Vaciar caché de GoDaddy tras estos cambios.

@@ -24,3 +24,9 @@ Lee esto junto con `CLAUDE.md` y la skill `jetcab-context` antes de tocar jetcab
 - Usuario: estrella de evento clave en GA4 para `contacto_whatsapp`, `contacto_telefono`, `cotizacion_enviada`; pedir indexación de `/flota/challenger-605/` y `/jet-privado-toluca-vs-aicm/2026/`.
 - Cliente: dirección exacta del hangar y Google Business Profile, correo de prensa, bios en redes, reseñas.
 - Seguimiento semanal automático los lunes 8:52 (Ciudad de México), routine «JETCAB seguimiento semanal SEO», que escribe en la sesión cloud original.
+
+## Actualización 12 oct 2026 (noche)
+- Método de trabajo: `METODO-SEO-ANDRES-AGUDELO.md` (keyword map vol > 100 y comp < 35, H1 = keyword principal, posts enlazan a su landing, 3 posts por semana, preguntas reales de DataForSEO).
+- Prioridad comercial del cliente: vender vuelos en jet/avión privado por encima de helicópteros. Todo contenido de helicópteros lleva venta cruzada al jet.
+- 33 posts programados (2985 a 3017) hasta el 28 dic. Brief de redacción: `jetcab-publish/blog/_BRIEF-REDACCION.md`.
+- DataForSEO: credenciales de la API las da el usuario (no se guardan en el repo).
