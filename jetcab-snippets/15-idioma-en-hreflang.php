@@ -66,3 +66,46 @@ add_filter('wp_nav_menu_args', function ($args) {
     if ($loc === 'footer_menu') $args['menu'] = 59;                                                // Footer menu EN
     return $args;
 }, 99);
+
+// Páginas y posts EN: los textos del tema y de WordPress (meta del post, comentarios, navegación, saltar al contenido) en inglés.
+add_action('wp', function () {
+    if (!is_admin() && jetcab_is_en()) switch_to_locale('en_US');
+}, 1);
+
+// Autor y categoría visibles en inglés.
+add_filter('the_author', function ($n) { return (!is_admin() && jetcab_is_en()) ? 'JETCAB team' : $n; }, 99);
+// Astra arma la categoría con get_the_terms(): en los posts EN se muestra «Private jet guides» y lleva al blog en inglés.
+add_filter('get_the_terms', function ($terms, $post_id, $tax) {
+    if (is_admin() || $tax !== 'category' || !is_array($terms) || !jetcab_is_en()) return $terms;
+    foreach ($terms as $t) {
+        if ($t->slug === 'english') { $c = clone $t; $c->name = 'Private jet guides'; return array($c); }
+    }
+    return $terms;
+}, 99, 3);
+add_filter('term_link', function ($url, $term) {
+    return (!is_admin() && $term->slug === 'english') ? 'https://jetcab.mx/private-jet-guides/' : $url;
+}, 99, 2);
+
+// Crédito del pie y etiquetas de los iconos sociales.
+add_filter('astra_get_option_footer-copyright-editor', function ($v) {
+    return (is_string($v) && jetcab_is_en()) ? str_replace('Sitio Web & SEO por', 'Website & SEO by', $v) : $v;
+}, 99);
+add_action('wp_footer', function () {
+    if (!jetcab_is_en()) return;
+    // El crédito del pie y el botón de WhatsApp los pintan otros snippets; se traducen al cargar la página.
+    echo '<script>(function(){var m={"Telefono":"Phone","Whats":"WhatsApp","Cotizar por WhatsApp":"Get a quote on WhatsApp"};'
+       . 'function t(){document.querySelectorAll("[aria-label]").forEach(function(e){var l=e.getAttribute("aria-label").trim();if(m[l])e.setAttribute("aria-label",m[l]);});'
+       . 'var w=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT),n;while(n=w.nextNode()){if(n.nodeValue.indexOf("Sitio Web & SEO por")>-1)n.nodeValue=n.nodeValue.replace("Sitio Web & SEO por","Website & SEO by");}}'
+       . 'if(document.readyState==="complete")t();else window.addEventListener("load",function(){t();setTimeout(t,800);});})();</script>' . "\n";
+}, 99);
+
+// «Anterior / siguiente» solo entre artículos del mismo idioma (antes un post EN enlazaba a uno en español y viceversa).
+foreach (array('get_previous_post_where', 'get_next_post_where') as $jc_hook) {
+    add_filter($jc_hook, function ($where) {
+        $t = get_term_by('slug', 'english', 'category');
+        if (!$t) return $where;
+        global $wpdb;
+        $in = jetcab_is_en() ? 'IN' : 'NOT IN';
+        return $where . $wpdb->prepare(" AND p.ID $in (SELECT object_id FROM {$wpdb->term_relationships} WHERE term_taxonomy_id = %d)", $t->term_taxonomy_id);
+    });
+}
