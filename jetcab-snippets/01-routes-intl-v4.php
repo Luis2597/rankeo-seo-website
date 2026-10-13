@@ -13,7 +13,7 @@ add_action("template_redirect", function() {
     if (!$route) return;
     $routes = [
         "miami" => [
-            "title"        => "Private Jet Mexico City to Miami | Nonstop 3h 30m | JETCAB",
+            "title"        => "Private Jet Charter Mexico City to Miami | 3h 30m | JETCAB",
             "dest"         => "Miami",
             "dest_full"    => "Miami, Florida",
             "from"         => "Toluca · Mexico City",
@@ -22,10 +22,10 @@ add_action("template_redirect", function() {
             "time"         => "3h 30m",
             "slug"         => "miami",
             "es_live"      => true,
-            "answer"       => "A JETCAB private jet from Mexico City (Toluca, AIT) to Miami Opa-locka Executive (OPF) takes 3 h 30 min nonstop and costs from $4,800 USD per full aircraft on a Learjet 35 for 7 passengers, $9,500 USD on a Challenger 605 for 12 or $18,000 USD on a Gulfstream GV for 16, confirmed in 30 minutes. U.S. Customs clears at the FBO in under 15 minutes. Passport and B1/B2 visa required.",
+            "answer"       => "A JETCAB private jet charter from Mexico City (Toluca, AIT) to Miami Opa-locka Executive (OPF) takes 3 h 30 min nonstop and costs from $4,800 USD per full aircraft on a Learjet 35 for 7 passengers, $9,500 USD on a Challenger 605 for 12 or $18,000 USD on a Gulfstream GV for 16, confirmed in 30 minutes. U.S. Customs clears at the FBO in under 15 minutes. Passport and B1/B2 visa required.",
             "slug_es"      => "vuelo-privado-cdmx-miami",
             "wa_text"      => "Hi%2C+I%27d+like+a+quote+for+a+private+jet+from+Mexico+City+to+Miami.",
-            "meta_desc"    => "Private jet from Mexico City (Toluca) to Miami nonstop in 3h 30m. Land at Opa-locka Executive, 20 min from South Beach. US Customs at the FBO. Quote in 30 min.",
+            "meta_desc"    => "Private jet charter from Mexico City (Toluca) to Miami: 3h 30m, from $4,800 USD per aircraft. Land at Opa-locka, 20 min from South Beach. Quote in 30 min.",
             "fomo"         => "Availability confirmed within 30 minutes",
             "p1"           => "$4,800",
             "p2"           => "$9,500",
@@ -58,7 +58,7 @@ add_action("template_redirect", function() {
             ],
         ],
         "houston" => [
-            "title"        => "Private Jet Mexico City to Houston | 2h 45m | JETCAB",
+            "title"        => "Private Jet Charter Mexico City to Houston | 2h 45m | JETCAB",
             "dest"         => "Houston",
             "dest_full"    => "Houston, Texas",
             "from"         => "Toluca · Mexico City",
@@ -67,10 +67,10 @@ add_action("template_redirect", function() {
             "time"         => "2h 45m",
             "slug"         => "houston",
             "es_live"      => true,
-            "answer"       => "A JETCAB private jet from Mexico City (Toluca, AIT) to Houston Hobby (HOU) takes 2 h 45 min nonstop and costs from $3,800 USD per full aircraft on a Learjet 35 for 7 passengers, $7,500 USD on a Challenger 605 for 12 or $14,000 USD on a Gulfstream GV for 16, confirmed in 30 minutes. Hobby is 10 minutes from downtown. Same-day round trips are JETCAB's most common booking on this route.",
+            "answer"       => "A JETCAB private jet charter from Mexico City (Toluca, AIT) to Houston Hobby (HOU) takes 2 h 45 min nonstop and costs from $3,800 USD per full aircraft on a Learjet 35 for 7 passengers, $7,500 USD on a Challenger 605 for 12 or $14,000 USD on a Gulfstream GV for 16, confirmed in 30 minutes. Hobby is 10 minutes from downtown. Same-day round trips are JETCAB's most common booking on this route.",
             "slug_es"      => "vuelo-privado-cdmx-houston",
             "wa_text"      => "Hi%2C+I%27d+like+a+quote+for+a+private+jet+from+Mexico+City+to+Houston.",
-            "meta_desc"    => "Private jet from Mexico City (Toluca) to Houston in 2h 45m. Land at Hobby Airport, 10 min from Downtown and the Texas Medical Center. Quote in 30 min. Same-day.",
+            "meta_desc"    => "Private jet charter from Mexico City (Toluca) to Houston in 2h 45m. Land at Hobby Airport, 10 min from Downtown and the Texas Medical Center. Quote in 30 min.",
             "fomo"         => "Availability confirmed within 30 minutes",
             "p1"           => "$3,800",
             "p2"           => "$7,500",
@@ -103,7 +103,7 @@ add_action("template_redirect", function() {
             ],
         ],
         "new-york" => [
-            "title"        => "Private Jet Mexico City to New York | Teterboro | JETCAB",
+            "title"        => "Private Jet Charter Mexico City to New York | JETCAB",
             "dest"         => "New York",
             "dest_full"    => "New York, NY",
             "from"         => "Toluca · Mexico City",
@@ -112,10 +112,10 @@ add_action("template_redirect", function() {
             "time"         => "5h 30m",
             "slug"         => "new-york",
             "es_live"      => true,
-            "answer"       => "A JETCAB private jet from Mexico City (Toluca, AIT) to Teterboro (TEB), 12 minutes from Midtown Manhattan, takes 5 h 30 min and costs from $9,500 USD per full aircraft on a Learjet 35 for 7 passengers (one fuel stop), $18,500 USD on a Challenger 605 for 12 or $28,000 USD on a nonstop Gulfstream GV for 16, confirmed in 30 minutes. Passport and B1/B2 visa required; JETCAB files eAPIS and arranges CBP at the FBO.",
+            "answer"       => "A JETCAB private jet charter from Mexico City (Toluca, AIT) to Teterboro (TEB), 12 minutes from Midtown Manhattan, takes 5 h 30 min and costs from $9,500 USD per full aircraft on a Learjet 35 for 7 passengers (one fuel stop), $18,500 USD on a Challenger 605 for 12 or $28,000 USD on a nonstop Gulfstream GV for 16, confirmed in 30 minutes. Passport and B1/B2 visa required; JETCAB files eAPIS and arranges CBP at the FBO.",
             "slug_es"      => "vuelo-privado-cdmx-nueva-york",
             "wa_text"      => "Hi%2C+I%27d+like+a+quote+for+a+private+jet+from+Mexico+City+to+New+York.",
-            "meta_desc"    => "Private jet from Mexico City (Toluca) to New York in 5h 30m. Land at Teterboro, 12 min from Midtown Manhattan. Skip JFK. Quote in 30 min. DGAC certified.",
+            "meta_desc"    => "Private jet charter from Mexico City (Toluca) to New York in 5h 30m. Land at Teterboro, 12 min from Midtown Manhattan, and skip JFK. Quote in 30 min.",
             "fomo"         => "Availability confirmed within 30 minutes",
             "p1"           => "$9,500",
             "p2"           => "$18,500",
@@ -148,7 +148,7 @@ add_action("template_redirect", function() {
             ],
         ],
         "los-angeles" => [
-            "title"        => "Private Jet Mexico City to Los Angeles | Van Nuys | JETCAB",
+            "title"        => "Private Jet Charter Mexico City to Los Angeles | JETCAB",
             "dest"         => "Los Angeles",
             "dest_full"    => "Los Angeles, California",
             "from"         => "Toluca · Mexico City",
@@ -157,10 +157,10 @@ add_action("template_redirect", function() {
             "time"         => "3h 45m",
             "slug"         => "los-angeles",
             "es_live"      => true,
-            "answer"       => "A JETCAB private jet from Mexico City (Toluca, AIT) to Van Nuys (VNY), 15 minutes from Beverly Hills, takes 3 h 45 min nonstop and costs from $5,200 USD per full aircraft on a Learjet 35 for 7 passengers, $10,500 USD on a Challenger 605 for 12 or $19,000 USD on a Gulfstream GV for 16, confirmed in 30 minutes. U.S. Customs clears at the FBO. Passport and B1/B2 visa required.",
+            "answer"       => "A JETCAB private jet charter from Mexico City (Toluca, AIT) to Van Nuys (VNY), 15 minutes from Beverly Hills, takes 3 h 45 min nonstop and costs from $5,200 USD per full aircraft on a Learjet 35 for 7 passengers, $10,500 USD on a Challenger 605 for 12 or $19,000 USD on a Gulfstream GV for 16, confirmed in 30 minutes. U.S. Customs clears at the FBO. Passport and B1/B2 visa required.",
             "slug_es"      => "vuelo-privado-cdmx-los-angeles",
             "wa_text"      => "Hi%2C+I%27d+like+a+quote+for+a+private+jet+from+Mexico+City+to+Los+Angeles.",
-            "meta_desc"    => "Private jet from Mexico City (Toluca) to Los Angeles in 3h 45m. Land at Van Nuys, 15 min from Beverly Hills. Skip LAX. Quote in 30 min. Jet ready in 2 hours.",
+            "meta_desc"    => "Private jet charter from Mexico City (Toluca) to Los Angeles in 3h 45m. Land at Van Nuys, 15 min from Beverly Hills, and skip LAX. Quote in 30 min.",
             "fomo"         => "Availability confirmed within 30 minutes",
             "p1"           => "$5,200",
             "p2"           => "$10,500",
@@ -457,7 +457,7 @@ a,button{transition-timing-function:cubic-bezier(.32,.72,0,1)}
   </div>
   <div class="jc-hero-inner">
     <div class="jc-route-badge"><?php echo esc_html($r['from']); ?> &rarr; <?php echo esc_html($r['dest']); ?></div>
-    <h1><span class="line1">Private Jet <?php echo esc_html($r['hero_line1']); ?></span><span class="line2"><?php echo esc_html($r['hero_line2']); ?></span></h1>
+    <h1><span class="line1">Private Jet Charter <?php echo esc_html($r['hero_line1']); ?></span><span class="line2"><?php echo esc_html($r['hero_line2']); ?></span></h1>
     <p class="jc-hero-sub"><?php echo esc_html($r['hero_sub']); ?></p>
     <div class="jc-avail"><span class="jc-avail-dot"></span><?php echo esc_html($r['fomo']); ?></div>
     <div class="jc-hero-ctas">
