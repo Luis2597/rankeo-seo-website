@@ -96,7 +96,8 @@ img { display: block; max-width: 100%; }
 .nav-cta:hover { background: var(--c-orange); transform: translateY(-1px); }
 .nav-cta svg { width: 11px; height: 11px; }
 .burger { display: none; background: none; border: none; cursor: pointer; width: 44px; height: 44px; align-items: center; justify-content: center; border-radius: 50%; color: var(--c-ink); transition: background var(--dur-fast); }
-.burger:hover { background: rgba(10,9,8,.07); }
+.burger svg { width: 24px; height: 24px; display: block; flex-shrink: 0; }
+@media (hover: hover) { .burger:hover { background: rgba(10,9,8,.07); } }
 .burger:focus-visible { outline: 2px solid var(--c-orange); outline-offset: 2px; }
 .drawer { display: none; position: absolute; top: calc(100% + 8px); left: 16px; right: 16px; background: rgba(255,255,255,.95); backdrop-filter: blur(20px); border-radius: 18px; border: 1px solid rgba(0,0,0,.07); box-shadow: 0 16px 48px rgba(0,0,0,.10); padding: 10px; }
 .drawer.open { display: block; animation: fadeDown 180ms var(--ease-out) both; }
@@ -135,7 +136,8 @@ img { display: block; max-width: 100%; }
 .lp-breadcrumb span { color: rgba(10,9,8,.6); }
 .lp-h1 { font-family: 'Syne', sans-serif; font-weight: 800; font-size: clamp(1.8rem,5vw,3.8rem); letter-spacing: -.03em; line-height: 1.05; margin-bottom: 20px; color: var(--c-ink); }
 /* Acento del H1: subrayado marcador naranja bajo texto tinta (el naranja como texto sobre el degradado no pasa AA) */
-.lp-h1 em { color: var(--c-ink); font-style: normal; background: linear-gradient(transparent 58%, var(--c-orange) 58%, var(--c-orange) 88%, transparent 88%); padding: 0 .04em; -webkit-box-decoration-break: clone; box-decoration-break: clone; }
+/* Acento del H1: sin marcador ni naranja (sobre el degradado del héroe no da contraste); la jerarquía la da Syne 800 */
+.lp-h1 em { color: var(--c-ink); font-style: normal; }
 .lp-lead { font-size: clamp(15px,1.7vw,18px); color: rgba(10,9,8,.6); line-height: 1.7; max-width: 600px; margin-bottom: 32px; }
 .lp-ctas { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
 .btn-primary { display: inline-flex; align-items: center; gap: 8px; background: var(--c-orange); color: var(--c-ink); font-size: 14px; font-weight: 700; padding: 14px 28px; border-radius: 100px; min-height: 48px; transition: background var(--dur-fast), transform var(--dur-fast) var(--ease-out); }

@@ -235,7 +235,8 @@
     .nav-cta:active { transform: scale(0.97); transition-duration: 100ms; }
     .nav-cta svg { width: 11px; height: 11px; }
     .burger { display: none; background: none; border: none; cursor: pointer; width: 44px; height: 44px; align-items: center; justify-content: center; border-radius: 50%; color: var(--c-ink); transition: background var(--dur-fast); }
-    .burger:hover { background: rgba(10,9,8,.07); }
+    .burger svg { width: 24px; height: 24px; display: block; flex-shrink: 0; }
+    @media (hover: hover) { .burger:hover { background: rgba(10,9,8,.07); } }
     .burger:focus-visible { outline: 2px solid var(--c-orange); outline-offset: 2px; }
     /* Drawer móvil: pantalla completa bajo la barra (checklist §9.7) */
     .drawer { display: none; position: absolute; top: 100%; left: 0; right: 0; height: calc(100vh - 68px); height: calc(100dvh - 68px); flex-direction: column; background: var(--c-bg); border-top: 1px solid var(--c-border); padding: var(--sp-4) var(--sp-6) calc(var(--sp-8) + env(safe-area-inset-bottom, 0px)); overflow-y: auto; overscroll-behavior: contain; }
@@ -279,12 +280,15 @@
     h1.ht .th { display: block; font-weight: 800; font-size: clamp(2.5rem,4.8vw,5rem); line-height: .95; color: var(--c-ink); }
     h1.ht .ta { display: block; font-weight: 800; font-size: clamp(2.5rem,4.8vw,5rem); line-height: .95; color: var(--c-ink); }
     /* Acento: subrayado marcador naranja bajo texto ink; el naranja como texto daba 2.6:1 sobre el degradado */
-    h1.ht .ta mark { color: inherit; background: linear-gradient(transparent 54%, var(--c-orange) 54%, var(--c-orange) 84%, transparent 84%); padding: 0 .04em; -webkit-box-decoration-break: clone; box-decoration-break: clone; }
+    h1.ht .ta mark { color: inherit; background: none; padding: 0; }
+    h1.ht .th { color: var(--c-subtle); }
     /* .tg removed — secondary label below heading (eyebrow-below variant, banned) */
     @media (max-width: 480px) {
-      h1.ht .tl { font-size: clamp(1.75rem,10vw,2.4rem); }
-      h1.ht .th { font-size: clamp(2rem,12vw,2.8rem); }
-      h1.ht .ta { font-size: clamp(2rem,12vw,2.8rem); }
+      h1.ht .tl { font-size: clamp(1.05rem,5.2vw,1.35rem); margin-bottom: 6px; }
+      h1.ht .th { font-size: clamp(1.6rem,8.6vw,2.75rem); line-height: 1.02; white-space: nowrap; }
+      h1.ht .ta { font-size: clamp(1.6rem,8.6vw,2.75rem); line-height: 1.02; white-space: nowrap; }
+      .geo-badge .gb-more { display: none; }
+      .geo-badge { flex-wrap: nowrap; white-space: nowrap; }
       /* Tighter hero on small phones so ranking card peeks into view */
       .hero-body { padding-top: 82px !important; padding-bottom: 48px !important; gap: 28px !important; }
       .hero-visual { max-width: 300px; }
@@ -904,7 +908,7 @@
     <div class="hero-text">
       <div class="geo-badge anim-down" style="animation-delay:60ms; margin-bottom: 24px;" title="Optimizado para Google AI Overviews, ChatGPT y Perplexity">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09z"/></svg>
-        SEO + GEO · Google · ChatGPT · Perplexity · AI Overviews
+        SEO + GEO · Google · ChatGPT<span class="gb-more">· Perplexity · AI Overviews</span>
       </div>
 
       <h1 class="ht anim-up" style="animation-delay:100ms">
