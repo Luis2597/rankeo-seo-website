@@ -291,3 +291,9 @@ Pendiente:
 - `robots.txt` es un archivo estático de 2023 (no lo controla WordPress): añadir `Sitemap: https://jetcab.mx/sitemap_index.xml` desde el administrador de archivos de GoDaddy o el editor de archivos de Yoast.
 - El cliente debe revisar los datos de los posts antes de su fecha (ver avisos de los redactores en el resumen de la sesión: aritmética por persona, tiempos de helicóptero, nombre oficial del aeropuerto).
 - Vaciar caché de GoDaddy tras estos cambios.
+
+### 12.1 Pendientes resueltos el mismo día
+- `robots.txt` ya declara `Sitemap: https://jetcab.mx/sitemap_index.xml` (snippet 25 de una sola vez, ya inactivo; copia del original en `wp-content/robots-2023-original.txt`).
+- Autoría de posts: el usuario «jetcab» se llama «Equipo JETCAB»; en el schema el autor de cada Article es la Organization de JETCAB y cada post muestra caja de autor con fecha de actualización (snippet 24, `jetcab-snippets/17-autor-posts-eeat.php`). Falta solo el cargo real de José Chávez para pasar a un Person.
+- Caché: Cloudflare y la caché de GoDaddy sirven las páginas recién generadas (MISS); no hizo falta purgar.
+- Se quitó la afirmación «muchos clientes combinan helicóptero y jet» (no venía del cliente); ahora se presenta como opción disponible.
