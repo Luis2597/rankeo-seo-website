@@ -320,7 +320,7 @@ Pendiente:
 Resultado final: 0 enlaces rotos, 0 anclas rotas, 0 errores de consola, 0 desbordes; menú móvil operativo en las 33 páginas y en el idioma correcto.
 
 ### 12.5 Blog publicado (13 oct)
-- A pedido del usuario, los 32 artículos programados se publicaron el 13 oct (orden: jets primero, helicópteros al final). Total en el blog: 40 posts (29 ES, 11 EN), los 40 en el sitemap y enviados por IndexNow.
+- Cadencia confirmada por el usuario: 3 artículos por semana. Publicados hoy 3 (precio de jet en México EN, qué es un vuelo chárter, avión privado por hora); 30 programados L-M-V 09:00 CDMX del 14 oct al 21 dic (jets primero, helicópteros al final). Hubo una publicación masiva por error de unos minutos el 13 oct, revertida.
 - /blog/ y /private-jet-guides/ («Private Jet Blog») listan solo artículos publicados en tarjetas con imagen, categoría, resumen, autor («Equipo de operaciones de JETCAB» / «JETCAB operations team») y fecha (snippet 26).
 - Navegadores: el hosting manda Cache-Control max-age=2678400 en HTML; quien ya visitó el sitio ve copias viejas. Pendiente pedir a GoDaddy bajar el TTL de HTML a 1 h.
 - Autor real: pendiente nombre y cargo (José Chávez u otra persona) para pasar de Organization a Person.
