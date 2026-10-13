@@ -156,6 +156,45 @@ def page(i, c, pimgs, lang='en'):
     return T
 
 
+MEDIA = json.load(open(os.path.join(HERE, 'data', '_media_sizes.json'), encoding='utf-8')) if os.path.exists(os.path.join(HERE, 'data', '_media_sizes.json')) else {}
+SIZES_WIDE = '100vw'
+SIZES_HALF = '(max-width: 960px) 100vw, 50vw'
+
+
+def srcset(u):
+    """Variantes de WordPress (768/1024/1536/2048/original) o de Unsplash para una URL de imagen."""
+    if u.startswith('https://images.unsplash.com/'):
+        base = re.sub(r'[?&]w=\d+', '', u)
+        return base + '&w=1024', ', '.join('%s&w=%d %dw' % (base, w, w) for w in (640, 1024, 1600, 2000))
+    m = MEDIA.get(u)
+    if not m: return u, ''
+    cand = {}
+    for k in ('medium_large', 'large', '1536x1536', '2048x2048', 'full'):
+        if k in m['sizes']:
+            su, w, h = m['sizes'][k]
+            cand[w] = su
+    src = cand.get(1024) or u
+    return src, ', '.join('%s %dw' % (cand[w], w) for w in sorted(cand))
+
+
+def responsive(html_txt):
+    """Agrega srcset/sizes a cada <img> y al preload de la portada; fuentes sin bloquear el render."""
+    def rep(mo):
+        tag = mo.group(0); u = html.unescape(mo.group(1))
+        src, ss = srcset(u)
+        if not ss: return tag
+        wide = 'fetchpriority="high"' in tag or 'alt=""' in tag
+        return tag.replace('src="%s"' % mo.group(1), 'src="%s" srcset="%s" sizes="%s"' % (e(src), e(ss), SIZES_WIDE if wide else SIZES_HALF), 1)
+    out = re.sub(r'<img src="([^"]+)"[^>]*>', rep, html_txt)
+    def pre(mo):
+        u = html.unescape(mo.group(1)); src, ss = srcset(u)
+        return '<link rel="preload" as="image" href="%s"%s fetchpriority="high">' % (e(src), (' imagesrcset="%s" imagesizes="100vw"' % e(ss)) if ss else '')
+    out = re.sub(r'<link rel="preload" as="image" href="([^"]+)" fetchpriority="high">', pre, out)
+    f = '<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet">'
+    out = out.replace(f, f.replace('rel="stylesheet"', 'rel="preload" as="style" onload="this.onload=null;this.rel=\'stylesheet\'"') + '<noscript>' + f + '</noscript>')
+    return out
+
+
 TEMPLATE = open(os.path.join(HERE, 'template.html'), encoding='utf-8').read()
 
 if __name__ == '__main__':
@@ -167,7 +206,7 @@ if __name__ == '__main__':
             src = os.path.join(HERE, 'data' if lang == 'en' else 'data_es', i + '.json')
             if not os.path.exists(src): print('falta', lang, i); continue
             c = json.load(open(src, encoding='utf-8'))
-            out = page(i, c, pim[i], lang)
+            out = responsive(page(i, c, pim[i], lang))
             assert '—' not in out and '–' not in out, i + ': raya larga'
             name = DEST[i]['slug'] if lang == 'en' else 'es/' + DEST[i]['es'].strip('/')
             os.makedirs(os.path.join(HERE, os.path.dirname(name)) if os.path.dirname(name) else HERE, exist_ok=True)
