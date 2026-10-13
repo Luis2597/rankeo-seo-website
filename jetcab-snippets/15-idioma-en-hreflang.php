@@ -17,6 +17,7 @@ function jetcab_lang_pairs() {
         '/vuelos-privados-a-guadalajara/'     => '/private-jet-mexico-city-guadalajara/',
         '/helicopteros-en-renta-cdmx/'        => '/helicopter-charter-mexico-city/',
         '/preguntas-frecuentes/'              => '/private-jet-faq/',
+        '/blog/'                              => '/private-jet-guides/',
     ];
 }
 
