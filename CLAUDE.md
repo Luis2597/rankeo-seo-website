@@ -377,6 +377,7 @@ No usar `browser_run_code_unsafe` salvo necesidad real. Capacidades extra (`--ca
 - Credenciales de DataForSEO: las da el usuario en el chat; se guardan solo en `~/.dataforseo_creds` (fuera del repo). Nunca en el repo ni en la memoria.
 - Lote 1 (13 oct 2026): landings `/consultor-seo`, `/seo-local`, `/seo-monterrey` (agencia seo en monterrey), `/seo-mexico` (seo mexico) y `/preguntas-frecuentes` (35 preguntas reales).
 - **Publicación programada del blog:** los posts se suben con `<meta name="robots" content="noindex,follow"><!-- rankeo:programado -->` y fuera de sitemap, blog/index y llms.txt. `seo/publicar.py` los publica en su fecha y `.github/workflows/publicar-posts.yml` lo corre lun/mié/vie 15:00 UTC (09:00 CDMX). Para agregar un post: subirlo con esa marca y añadirlo a `CALENDARIO` en `seo/publicar.py`. Nunca publicar en masa sin orden explícita.
+- Portafolio del inicio (oct 2026): bloque «Clientes reales» (JETCAB primero, enlace principal a jetcab.mx/en/; Darinka Correa) separado de «Demos de muestra». Capturas en `img/clientes/` (Playwright 1280×800, sin scrollbar ni botón de WhatsApp). Solo datos verificados (Search Console / DataForSEO) y sin testimonios inventados.
 - `style.css` ya cumple AA: botones naranjas con texto tinta, enlaces del texto en tinta con subrayado naranja, acento del H1 como subrayado marcador.
 
 ## 3. Próxima tarea: Migrar a Next.js (App Router)
