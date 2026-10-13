@@ -180,3 +180,12 @@ Criterio: volumen > 100 y competencia (Google Ads, 0-100) < 35; si ninguna cumpl
 | US | jettly.com | 34,637 | 69,260 | 3,749 | 17,664 | Blog masivo de aviación + empty legs |
 | US | flyxo.com | 7,893 | 25,357 | 1,100 | 2,930 | Home + una página por aeropuerto (incluye Toluca MMTO) |
 | US | vistajet.com | 4,586 | 15,150 | 819 | 2,090 | Home, empty legs, fichas de aeronaves |
+
+## GEO: menciones en respuestas de IA (DataForSEO LLM Mentions, 12 oct 2026)
+
+| Plataforma | jetcab.mx | flyflapper.com | patriotaviation.mx | fly-select.com |
+|---|---|---|---|---|
+| Google, respuestas con IA (México, ES) | 1 | 117 | 52 | 13 |
+| ChatGPT (EE. UU., EN) | 0 | 28 | 0 | 0 |
+
+Cita de JETCAB: «cuanto cuesta rentar un avión privado» (210 búsquedas/mes), junto a flyflapper, El Universal, Global Charter y Luna Jets. patriotaviation aparece en «jet privado» (6,600) y «avión privado» (1,300) con guías generales. El índice de DataForSEO es una muestra que se actualiza por ciclos: las páginas publicadas hoy todavía no están reflejadas. Repetir la medición cada mes.

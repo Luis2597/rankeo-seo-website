@@ -297,3 +297,9 @@ Pendiente:
 - Autoría de posts: el usuario «jetcab» se llama «Equipo JETCAB»; en el schema el autor de cada Article es la Organization de JETCAB y cada post muestra caja de autor con fecha de actualización (snippet 24, `jetcab-snippets/17-autor-posts-eeat.php`). Falta solo el cargo real de José Chávez para pasar a un Person.
 - Caché: Cloudflare y la caché de GoDaddy sirven las páginas recién generadas (MISS); no hizo falta purgar.
 - Se quitó la afirmación «muchos clientes combinan helicóptero y jet» (no venía del cliente); ahora se presenta como opción disponible.
+
+### 12.2 Posts a nivel de competencia y GEO (12 oct, noche)
+- Los 33 posts responden de 13 a 17 preguntas distintas (competidores top 3: 10 a 14) y tienen de 1,334 a 1,693 palabras (competidores: 1,200 a 1,500). Preguntas nuevas tomadas de DataForSEO (Labs + People Also Ask), en `jetcab-publish/blog/_preguntas-dataforseo-*.json`.
+- Cada post lleva FAQPage JSON-LD con todas sus preguntas, además del Article de Yoast.
+- El primer post se publicó el 12 oct; el resto sigue L-M-V hasta el 25 dic. Índice del blog: `/blog/` y `/private-jet-guides/`.
+- GEO (DataForSEO LLM Mentions): respuestas con IA de Google en México, JETCAB 1 mención («cuanto cuesta rentar un avión privado») contra flyflapper 117, patriotaviation 52, fly-select 13; ChatGPT (muestra EN) JETCAB 0, flyflapper 28. Bots de IA (OAI-SearchBot, GPTBot, PerplexityBot, ClaudeBot, Google-Extended, Bingbot) reciben 200. IndexNow enviado (200).

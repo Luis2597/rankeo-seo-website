@@ -1,0 +1,546 @@
+[
+{
+"pregunta": "cuanto cuesta un helicoptero",
+"volumen": 1600
+},
+{
+"pregunta": "cuanto cuesta un avion privado",
+"volumen": 880
+},
+{
+"pregunta": "qué es un vuelo chárter",
+"volumen": 720
+},
+{
+"pregunta": "que es un vuelo chárter",
+"volumen": 720
+},
+{
+"pregunta": "cuánto cuesta un jet privado en méxico",
+"volumen": 590
+},
+{
+"pregunta": "cuanto cuesta un jet privado en méxico",
+"volumen": 590
+},
+{
+"pregunta": "como se llama el aeropuerto de toluca",
+"volumen": 590
+},
+{
+"pregunta": "como llegar aeropuerto de toluca",
+"volumen": 590
+},
+{
+"pregunta": "cómo llegar al aeropuerto de toluca",
+"volumen": 590
+},
+{
+"pregunta": "como llegar al aeropuerto de toluca",
+"volumen": 590
+},
+{
+"pregunta": "cuanto cuesta un helicoptero en mexico",
+"volumen": 480
+},
+{
+"pregunta": "como llegar al aeropuerto de toluca desde cdmx",
+"volumen": 480
+},
+{
+"pregunta": "cuanto cuesta un jet privado",
+"volumen": 390
+},
+{
+"pregunta": "cuánto cuesta un jet privado",
+"volumen": 390
+},
+{
+"pregunta": "cuanto vale un helicoptero",
+"volumen": 320
+},
+{
+"pregunta": "cuánto cuesta un jet privado en pesos mexicanos",
+"volumen": 210
+},
+{
+"pregunta": "cuanto cuesta rentar un jet privado en méxico",
+"volumen": 210
+},
+{
+"pregunta": "cuanto cuesta rentar un avion privado",
+"volumen": 210
+},
+{
+"pregunta": "que es un helicoptero",
+"volumen": 210
+},
+{
+"pregunta": "como hacer un helicoptero",
+"volumen": 210
+},
+{
+"pregunta": "cuanto cuesta rentar un helicoptero",
+"volumen": 210
+},
+{
+"pregunta": "que es un jet privado",
+"volumen": 170
+},
+{
+"pregunta": "qué es un jet privado",
+"volumen": 170
+},
+{
+"pregunta": "cuanto vale un avion privado",
+"volumen": 170
+},
+{
+"pregunta": "que es vuelo chárter",
+"volumen": 140
+},
+{
+"pregunta": "como llegar del aeropuerto de toluca a cdmx",
+"volumen": 140
+},
+{
+"pregunta": "qué vuelos salen desde el aeropuerto de toluca",
+"volumen": 140
+},
+{
+"pregunta": "cuánto vale un jet privado",
+"volumen": 110
+},
+{
+"pregunta": "cuanto vale un jet privado",
+"volumen": 110
+},
+{
+"pregunta": "como funciona un helicoptero",
+"volumen": 110
+},
+{
+"pregunta": "cuanto vale un helicoptero personal",
+"volumen": 110
+},
+{
+"pregunta": "cómo llegar al aeropuerto de toluca en transporte público",
+"volumen": 110
+},
+{
+"pregunta": "como ir del aeropuerto de toluca a cdmx",
+"volumen": 90
+},
+{
+"pregunta": "cuanto cuesta el estacionamiento del aeropuerto de toluca",
+"volumen": 90
+},
+{
+"pregunta": "cuanto cuesta vuelo privado",
+"volumen": 70
+},
+{
+"pregunta": "cuanto cuesta un vuelo privado",
+"volumen": 70
+},
+{
+"pregunta": "cuánto cuesta un helicoptero",
+"volumen": 70
+},
+{
+"pregunta": "qué vuelos salen del aeropuerto de toluca",
+"volumen": 70
+},
+{
+"pregunta": "dónde salen los camiones al aeropuerto de toluca",
+"volumen": 70
+},
+{
+"pregunta": "cual es el aeropuerto de toluca",
+"volumen": 70
+},
+{
+"pregunta": "cómo regresar del aeropuerto de toluca a cdmx",
+"volumen": 70
+},
+{
+"pregunta": "cuánto cuesta rentar un jet privado",
+"volumen": 50
+},
+{
+"pregunta": "cuanto cuesta viajar en jet privado",
+"volumen": 50
+},
+{
+"pregunta": "cuanto cuesta un jet privado nuevo",
+"volumen": 50
+},
+{
+"pregunta": "cuánto vale un jet privado en méxico",
+"volumen": 50
+},
+{
+"pregunta": "cuanto cuesta jet privado",
+"volumen": 50
+},
+{
+"pregunta": "cuanto cuesta un viaje en jet privado",
+"volumen": 50
+},
+{
+"pregunta": "cuanto cuesta rentar un jet privado",
+"volumen": 50
+},
+{
+"pregunta": "cuánto cuesta un avion privado",
+"volumen": 50
+},
+{
+"pregunta": "cual es el helicoptero mas rapido del mundo",
+"volumen": 50
+},
+{
+"pregunta": "cuanto cuesta un paseo en helicoptero",
+"volumen": 50
+},
+{
+"pregunta": "como vuela un helicoptero",
+"volumen": 50
+},
+{
+"pregunta": "como llegar al aeropuerto de toluca desde observatorio",
+"volumen": 50
+},
+{
+"pregunta": "que destinos tiene el aeropuerto de toluca",
+"volumen": 50
+},
+{
+"pregunta": "como llegar del aeropuerto de toluca al tren interurbano",
+"volumen": 50
+},
+{
+"pregunta": "como llegar al aeropuerto de toluca en metro",
+"volumen": 50
+},
+{
+"pregunta": "cuanto cuesta un avion privado pequeño",
+"volumen": 40
+},
+{
+"pregunta": "cuanto cuesta un vuelo privado en mexico",
+"volumen": 40
+},
+{
+"pregunta": "cual es el helicoptero mas poderoso del mundo",
+"volumen": 40
+},
+{
+"pregunta": "cuanto cuesta el helicoptero mas barato",
+"volumen": 40
+},
+{
+"pregunta": "cuanto cuesta la renta de un helicoptero",
+"volumen": 40
+},
+{
+"pregunta": "como hacer un helicoptero de papel",
+"volumen": 40
+},
+{
+"pregunta": "cuanto tiempo hace el caminante de toluca al aeropuerto",
+"volumen": 40
+},
+{
+"pregunta": "cuanto cobra el estacionamiento del aeropuerto de toluca por día",
+"volumen": 40
+},
+{
+"pregunta": "cuanto cuesta la renta de un jet privado",
+"volumen": 30
+},
+{
+"pregunta": "cuanto cuesta un jet privado de lujo",
+"volumen": 30
+},
+{
+"pregunta": "como hacer un helicoptero que vuela",
+"volumen": 30
+},
+{
+"pregunta": "que es mas rapido un avion o un helicoptero",
+"volumen": 30
+},
+{
+"pregunta": "cuanto tiempo puede volar un helicoptero",
+"volumen": 30
+},
+{
+"pregunta": "como hacer un helicoptero casero que vuele",
+"volumen": 30
+},
+{
+"pregunta": "como hacer un helicoptero que vuele",
+"volumen": 30
+},
+{
+"pregunta": "cuanto cuesta un vuelo en helicoptero",
+"volumen": 30
+},
+{
+"pregunta": "cuanto cobra el estacionamiento del aeropuerto de toluca",
+"volumen": 30
+},
+{
+"pregunta": "que paso en el aeropuerto de toluca hoy",
+"volumen": 30
+},
+{
+"pregunta": "cómo llegar al aeropuerto de toluca desde cdmx",
+"volumen": 30
+},
+{
+"pregunta": "es seguro el estacionamiento del aeropuerto de toluca",
+"volumen": 30
+},
+{
+"pregunta": "cual es el jet privado mas caro del mundo",
+"volumen": 20
+},
+{
+"pregunta": "que precio tiene un jet privado",
+"volumen": 20
+},
+{
+"pregunta": "como es un jet privado",
+"volumen": 20
+},
+{
+"pregunta": "cuanto cuesta comprar un jet privado en méxico",
+"volumen": 20
+},
+{
+"pregunta": "cuanto cuesta un jet privado en pesos mexicanos",
+"volumen": 20
+},
+{
+"pregunta": "cómo es un jet privado",
+"volumen": 20
+},
+{
+"pregunta": "que es jet privado",
+"volumen": 20
+},
+{
+"pregunta": "cuanto cuesta comprar un jet privado",
+"volumen": 20
+},
+{
+"pregunta": "cuanto sale un jet privado",
+"volumen": 20
+},
+{
+"pregunta": "cuanto cuesta comprar un avion privado",
+"volumen": 20
+},
+{
+"pregunta": "que tipo de combustible usa un helicoptero",
+"volumen": 20
+},
+{
+"pregunta": "como hacer un helicoptero con bloques",
+"volumen": 20
+},
+{
+"pregunta": "como cargar un helicoptero a control remoto",
+"volumen": 20
+},
+{
+"pregunta": "como volar un helicoptero",
+"volumen": 20
+},
+{
+"pregunta": "cuanto cuesta un helicoptero militar",
+"volumen": 20
+},
+{
+"pregunta": "que distancia puede recorrer un helicoptero",
+"volumen": 20
+},
+{
+"pregunta": "cuanto cuesta un helicoptero privado",
+"volumen": 20
+},
+{
+"pregunta": "cuanto puede volar un helicoptero",
+"volumen": 20
+},
+{
+"pregunta": "cuanto cuesta un helicoptero mexico",
+"volumen": 20
+},
+{
+"pregunta": "como hacer un helicoptero con encendedores",
+"volumen": 20
+},
+{
+"pregunta": "como se llaman los aviones privados",
+"volumen": 20
+},
+{
+"pregunta": "como ir al aeropuerto de toluca",
+"volumen": 20
+},
+{
+"pregunta": "como llegar al aeropuerto de toluca desde santa fe",
+"volumen": 20
+},
+{
+"pregunta": "como llegar al aeropuerto de toluca desde cdmx en tren",
+"volumen": 20
+},
+{
+"pregunta": "como llegar al aeropuerto de toluca desde puebla",
+"volumen": 20
+},
+{
+"pregunta": "como llegar al aeropuerto de toluca desde cuernavaca",
+"volumen": 20
+},
+{
+"pregunta": "donde esta el aeropuerto de toluca",
+"volumen": 20
+},
+{
+"pregunta": "¿Cuánto cuesta el alquiler de un avión privado?",
+"volumen": "PAA"
+},
+{
+"pregunta": "¿Qué precio tiene un avión privado?",
+"volumen": "PAA"
+},
+{
+"pregunta": "¿Cuánto vale un jet privado en México?",
+"volumen": "PAA"
+},
+{
+"pregunta": "¿Quién tiene el jet más caro del mundo?",
+"volumen": "PAA"
+},
+{
+"pregunta": "¿Cuánto cuesta un recorrido en helicóptero CDMX?",
+"volumen": "PAA"
+},
+{
+"pregunta": "¿Cuánto cuesta un helicóptero para turismo?",
+"volumen": "PAA"
+},
+{
+"pregunta": "¿Cuánto vale una hora de helicóptero?",
+"volumen": "PAA"
+},
+{
+"pregunta": "¿Cuál es el precio de un helicóptero barato?",
+"volumen": "PAA"
+},
+{
+"pregunta": "¿Cuánto cuesta rentar un helicóptero por hora?",
+"volumen": "PAA"
+},
+{
+"pregunta": "¿Cuánto cuesta un helicóptero barato en México?",
+"volumen": "PAA"
+},
+{
+"pregunta": "¿Cómo comprar un helicóptero en México?",
+"volumen": "PAA"
+},
+{
+"pregunta": "¿Cuál es el helicóptero más barato?",
+"volumen": "PAA"
+},
+{
+"pregunta": "¿Cuánto cuesta rentar un jet?",
+"volumen": "PAA"
+},
+{
+"pregunta": "¿Cuáles son los precios de los aviones privados en venta?",
+"volumen": "PAA"
+},
+{
+"pregunta": "¿Cuánto cuesta viajar en un avión privado?",
+"volumen": "PAA"
+},
+{
+"pregunta": "¿Cuánto cuesta una hora de avión privado?",
+"volumen": "PAA"
+},
+{
+"pregunta": "¿Dónde puedo encontrar vuelos privados en México?",
+"volumen": "PAA"
+},
+{
+"pregunta": "¿Cuál es el precio de un avión privado?",
+"volumen": "PAA"
+},
+{
+"pregunta": "¿Cuánto cuesta un avión privado de CDMX a Cancún?",
+"volumen": "PAA"
+},
+{
+"pregunta": "¿Qué artistas tienen avión privado?",
+"volumen": "PAA"
+},
+{
+"pregunta": "¿Cuánto cuesta una ambulancia aérea?",
+"volumen": "PAA"
+},
+{
+"pregunta": "¿Cuáles son los 4 tipos de ambulancia?",
+"volumen": "PAA"
+},
+{
+"pregunta": "¿Cómo se llama el avión ambulancia?",
+"volumen": "PAA"
+},
+{
+"pregunta": "¿Cuáles son los 3 tipos de ambulancias?",
+"volumen": "PAA"
+},
+{
+"pregunta": "¿Qué es el transporte sanitario aéreo?",
+"volumen": "PAA"
+},
+{
+"pregunta": "¿Qué es una ambulancia tipo 4?",
+"volumen": "PAA"
+},
+{
+"pregunta": "¿Cuál es la ambulancia tipo C?",
+"volumen": "PAA"
+},
+{
+"pregunta": "¿Cuáles son los tipos de ambulancia 1, 2 y 3?",
+"volumen": "PAA"
+},
+{
+"pregunta": "¿Cuánto cuesta una hora de jet privado?",
+"volumen": "PAA"
+},
+{
+"pregunta": "¿Cuánto cuesta contratar un jet privado?",
+"volumen": "PAA"
+},
+{
+"pregunta": "¿Cuánto cuesta un vuelo de 2 horas en un jet privado?",
+"volumen": "PAA"
+},
+{
+"pregunta": "¿Qué costo tiene un jet privado?",
+"volumen": "PAA"
+},
+{
+"pregunta": "¿Cuánto vale un jet privado más barato?",
+"volumen": "PAA"
+}
+]

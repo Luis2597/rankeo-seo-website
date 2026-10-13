@@ -1,0 +1,942 @@
+[
+{
+"pregunta": "how much is for a private jet",
+"volumen": 12100
+},
+{
+"pregunta": "how much private jet",
+"volumen": 12100
+},
+{
+"pregunta": "how much are private jet",
+"volumen": 12100
+},
+{
+"pregunta": "how much a private jet",
+"volumen": 12100
+},
+{
+"pregunta": "how much is it for a private jet",
+"volumen": 12100
+},
+{
+"pregunta": "how much for private jet",
+"volumen": 12100
+},
+{
+"pregunta": "how much for a private jet",
+"volumen": 12100
+},
+{
+"pregunta": "how much is a private jet",
+"volumen": 12100
+},
+{
+"pregunta": "how much does a private jet cost",
+"volumen": 8100
+},
+{
+"pregunta": "how much will a private jet cost",
+"volumen": 8100
+},
+{
+"pregunta": "how much does it cost a private jet",
+"volumen": 8100
+},
+{
+"pregunta": "how much does it cost private jet",
+"volumen": 8100
+},
+{
+"pregunta": "how much does private jet costs",
+"volumen": 8100
+},
+{
+"pregunta": "how much do private jet cost",
+"volumen": 8100
+},
+{
+"pregunta": "how much would a private jet cost",
+"volumen": 8100
+},
+{
+"pregunta": "how much do a private jet cost",
+"volumen": 8100
+},
+{
+"pregunta": "how much does the private jet cost",
+"volumen": 8100
+},
+{
+"pregunta": "how much does private jet cost",
+"volumen": 8100
+},
+{
+"pregunta": "how much does it cost for a private jet",
+"volumen": 8100
+},
+{
+"pregunta": "how much to hire a private jet",
+"volumen": 3600
+},
+{
+"pregunta": "how much is private jet rental",
+"volumen": 3600
+},
+{
+"pregunta": "how much for a private jet rental",
+"volumen": 3600
+},
+{
+"pregunta": "how much is renting a private jet",
+"volumen": 3600
+},
+{
+"pregunta": "how much is it to rent a private jet",
+"volumen": 3600
+},
+{
+"pregunta": "how much is a private jet rental",
+"volumen": 3600
+},
+{
+"pregunta": "how much to hire private jet",
+"volumen": 3600
+},
+{
+"pregunta": "how much rent private jet",
+"volumen": 3600
+},
+{
+"pregunta": "how much for private jet rental",
+"volumen": 3600
+},
+{
+"pregunta": "how much to rent private jet",
+"volumen": 3600
+},
+{
+"pregunta": "how much is a private jet rent",
+"volumen": 3600
+},
+{
+"pregunta": "how much private jet rental",
+"volumen": 3600
+},
+{
+"pregunta": "how much are private jet rentals",
+"volumen": 3600
+},
+{
+"pregunta": "how much rent a private jet",
+"volumen": 3600
+},
+{
+"pregunta": "how much private jet rent",
+"volumen": 3600
+},
+{
+"pregunta": "how much is to rent a private jet",
+"volumen": 3600
+},
+{
+"pregunta": "how much is to hire a private jet",
+"volumen": 3600
+},
+{
+"pregunta": "how much is it to rent private jet",
+"volumen": 3600
+},
+{
+"pregunta": "how much to rent a private jet",
+"volumen": 3600
+},
+{
+"pregunta": "how much is a private jet to hire",
+"volumen": 3600
+},
+{
+"pregunta": "how much for private jet flight",
+"volumen": 2400
+},
+{
+"pregunta": "how much is it to fly on a private jet",
+"volumen": 2400
+},
+{
+"pregunta": "how much is a flight on a private jet",
+"volumen": 2400
+},
+{
+"pregunta": "how much to fly a private jet",
+"volumen": 2400
+},
+{
+"pregunta": "how much to fly private jet",
+"volumen": 2400
+},
+{
+"pregunta": "how much is it to fly private jet",
+"volumen": 2400
+},
+{
+"pregunta": "how much is it to fly in a private jet",
+"volumen": 2400
+},
+{
+"pregunta": "how much is a flight on private jet",
+"volumen": 2400
+},
+{
+"pregunta": "how much to fly in private jet",
+"volumen": 2400
+},
+{
+"pregunta": "how much is to fly private jet",
+"volumen": 2400
+},
+{
+"pregunta": "how much is a private jet flight",
+"volumen": 2400
+},
+{
+"pregunta": "how much is private jet flight",
+"volumen": 2400
+},
+{
+"pregunta": "how much are private jet flights",
+"volumen": 2400
+},
+{
+"pregunta": "how much is a flight in a private jet",
+"volumen": 2400
+},
+{
+"pregunta": "how much for private jet flights",
+"volumen": 2400
+},
+{
+"pregunta": "how much to fly on a private jet",
+"volumen": 2400
+},
+{
+"pregunta": "how much for private jet charter",
+"volumen": 1900
+},
+{
+"pregunta": "how much to charter a private jet",
+"volumen": 1900
+},
+{
+"pregunta": "how much is it to charter a private jet",
+"volumen": 1900
+},
+{
+"pregunta": "how much are private jet charters",
+"volumen": 1900
+},
+{
+"pregunta": "how much is a private jet charter",
+"volumen": 1900
+},
+{
+"pregunta": "how much is to charter a private jet",
+"volumen": 1900
+},
+{
+"pregunta": "how much is private jet charter",
+"volumen": 1900
+},
+{
+"pregunta": "how much charter private jet",
+"volumen": 1900
+},
+{
+"pregunta": "how much private jet charter",
+"volumen": 1900
+},
+{
+"pregunta": "how much to charter a private flight",
+"volumen": 1900
+},
+{
+"pregunta": "how much is a private charter flight",
+"volumen": 1900
+},
+{
+"pregunta": "how much does private flight cost",
+"volumen": 1900
+},
+{
+"pregunta": "how much does a private jet charter cost",
+"volumen": 1600
+},
+{
+"pregunta": "how much do private jet charters cost",
+"volumen": 1600
+},
+{
+"pregunta": "how much does renting a private jet cost",
+"volumen": 1600
+},
+{
+"pregunta": "how much would it cost to rent a private jet",
+"volumen": 1600
+},
+{
+"pregunta": "how much does private jet charter cost",
+"volumen": 1600
+},
+{
+"pregunta": "how much does it cost to rent a private jet",
+"volumen": 1600
+},
+{
+"pregunta": "how much does it cost to charter a private jet",
+"volumen": 1600
+},
+{
+"pregunta": "how much does it cost to charter private jet",
+"volumen": 1600
+},
+{
+"pregunta": "how much does.it cost to rent a private jet",
+"volumen": 1600
+},
+{
+"pregunta": "how much does it cost rent a private jet",
+"volumen": 1600
+},
+{
+"pregunta": "how much does a private charter jet cost",
+"volumen": 1600
+},
+{
+"pregunta": "how much does it cost to rent private jet",
+"volumen": 1600
+},
+{
+"pregunta": "how much would it cost to charter a private jet",
+"volumen": 1600
+},
+{
+"pregunta": "how much does private jet rental cost",
+"volumen": 1600
+},
+{
+"pregunta": "how much does it cost charter a private jet",
+"volumen": 1600
+},
+{
+"pregunta": "how much does a private jet rent cost",
+"volumen": 1600
+},
+{
+"pregunta": "how much does chartering a private jet cost",
+"volumen": 1600
+},
+{
+"pregunta": "how much does a private jet rental cost",
+"volumen": 1600
+},
+{
+"pregunta": "how much does a private charter flight cost",
+"volumen": 1600
+},
+{
+"pregunta": "how much cost a private jet",
+"volumen": 720
+},
+{
+"pregunta": "how much private jet price",
+"volumen": 720
+},
+{
+"pregunta": "how much is the cost of private jet",
+"volumen": 720
+},
+{
+"pregunta": "how much is to buy a private jet",
+"volumen": 720
+},
+{
+"pregunta": "how much private jet costs",
+"volumen": 720
+},
+{
+"pregunta": "can you smoke on a private jet",
+"volumen": 720
+},
+{
+"pregunta": "can you smoke in private jet",
+"volumen": 720
+},
+{
+"pregunta": "how much costs a private jet",
+"volumen": 720
+},
+{
+"pregunta": "how much is a private jet cost",
+"volumen": 720
+},
+{
+"pregunta": "how much cost private jet",
+"volumen": 720
+},
+{
+"pregunta": "how much does a private jet plane cost",
+"volumen": 720
+},
+{
+"pregunta": "how much to buy a private jet",
+"volumen": 720
+},
+{
+"pregunta": "how much the private jet cost",
+"volumen": 720
+},
+{
+"pregunta": "how much is private jet cost",
+"volumen": 720
+},
+{
+"pregunta": "can you smoke on private jet",
+"volumen": 720
+},
+{
+"pregunta": "how much costs private jet",
+"volumen": 720
+},
+{
+"pregunta": "can you smoke in a private jet",
+"volumen": 720
+},
+{
+"pregunta": "how much a private jet cost",
+"volumen": 720
+},
+{
+"pregunta": "how much is it to buy a private jet",
+"volumen": 720
+},
+{
+"pregunta": "how much private jet cost",
+"volumen": 720
+},
+{
+"pregunta": "how much does it cost to fly a private jet",
+"volumen": 590
+},
+{
+"pregunta": "how much does it cost to own a private jet",
+"volumen": 590
+},
+{
+"pregunta": "how much does it cost for a private jet flight",
+"volumen": 590
+},
+{
+"pregunta": "how much does a flight on a private jet cost",
+"volumen": 590
+},
+{
+"pregunta": "how much does it cost to fly private jet",
+"volumen": 590
+},
+{
+"pregunta": "how much does it cost to fly in private jet",
+"volumen": 590
+},
+{
+"pregunta": "how much does it cost to own private jet",
+"volumen": 590
+},
+{
+"pregunta": "how much does it cost to fly on private jet",
+"volumen": 590
+},
+{
+"pregunta": "how much do private jet flights cost",
+"volumen": 590
+},
+{
+"pregunta": "how much does private jet flight cost",
+"volumen": 590
+},
+{
+"pregunta": "how fast does a private jet fly",
+"volumen": 480
+},
+{
+"pregunta": "how much does it cost to buy a private jet",
+"volumen": 480
+},
+{
+"pregunta": "how much does a private jet flight cost",
+"volumen": 320
+},
+{
+"pregunta": "how much does a private plane flight cost",
+"volumen": 320
+},
+{
+"pregunta": "how to charter a private jet",
+"volumen": 260
+},
+{
+"pregunta": "how to charter private jet",
+"volumen": 260
+},
+{
+"pregunta": "does medicare cover air ambulance",
+"volumen": 210
+},
+{
+"pregunta": "what are empty leg flights",
+"volumen": 210
+},
+{
+"pregunta": "what is an empty leg flight",
+"volumen": 210
+},
+{
+"pregunta": "what is empty leg flights",
+"volumen": 210
+},
+{
+"pregunta": "how much does air ambulance cost",
+"volumen": 170
+},
+{
+"pregunta": "how much does it cost for air ambulance",
+"volumen": 170
+},
+{
+"pregunta": "how much does an air ambulance cost",
+"volumen": 170
+},
+{
+"pregunta": "how to become a flight attendant on private jets",
+"volumen": 170
+},
+{
+"pregunta": "how much does a private jet cost per flight",
+"volumen": 170
+},
+{
+"pregunta": "how to become a flight attendant for private jets",
+"volumen": 170
+},
+{
+"pregunta": "how to become a private jet flight attendant",
+"volumen": 170
+},
+{
+"pregunta": "how to become a private flight attendant",
+"volumen": 140
+},
+{
+"pregunta": "how to become private flight attendant",
+"volumen": 140
+},
+{
+"pregunta": "what are air ambulance",
+"volumen": 110
+},
+{
+"pregunta": "what is an air ambulance",
+"volumen": 110
+},
+{
+"pregunta": "what is air ambulance",
+"volumen": 110
+},
+{
+"pregunta": "how to find empty leg flights",
+"volumen": 110
+},
+{
+"pregunta": "how much do private flight attendants make",
+"volumen": 110
+},
+{
+"pregunta": "how much to charter private jet",
+"volumen": 90
+},
+{
+"pregunta": "what does it cost to charter a private jet",
+"volumen": 90
+},
+{
+"pregunta": "how to empty catheter leg bag",
+"volumen": 90
+},
+{
+"pregunta": "how much a private jet flight cost",
+"volumen": 90
+},
+{
+"pregunta": "how much is a private jet flight cost",
+"volumen": 90
+},
+{
+"pregunta": "how much private jet flight cost",
+"volumen": 90
+},
+{
+"pregunta": "how much does a private jet cost to charter",
+"volumen": 70
+},
+{
+"pregunta": "how much is it to charter a helicopter",
+"volumen": 70
+},
+{
+"pregunta": "how much to charter a helicopter",
+"volumen": 70
+},
+{
+"pregunta": "how much does helicopter charter cost",
+"volumen": 70
+},
+{
+"pregunta": "how much is helicopter charter",
+"volumen": 70
+},
+{
+"pregunta": "how much is a helicopter charter",
+"volumen": 70
+},
+{
+"pregunta": "how much to charter helicopter",
+"volumen": 70
+},
+{
+"pregunta": "how much does it cost to charter a helicopter",
+"volumen": 70
+},
+{
+"pregunta": "how much does a helicopter charter cost",
+"volumen": 70
+},
+{
+"pregunta": "does insurance cover air ambulance",
+"volumen": 70
+},
+{
+"pregunta": "how much do private jet flight attendants make",
+"volumen": 70
+},
+{
+"pregunta": "how to book a private flight",
+"volumen": 70
+},
+{
+"pregunta": "how much does an air ambulance ride cost",
+"volumen": 50
+},
+{
+"pregunta": "how much is air ambulance",
+"volumen": 50
+},
+{
+"pregunta": "how much is an air ambulance",
+"volumen": 50
+},
+{
+"pregunta": "how to book an empty leg flight",
+"volumen": 50
+},
+{
+"pregunta": "how much does an empty leg press weigh",
+"volumen": 50
+},
+{
+"pregunta": "how to book empty leg flights",
+"volumen": 50
+},
+{
+"pregunta": "do private jets have flight attendants",
+"volumen": 50
+},
+{
+"pregunta": "what is the cost of private jet charter",
+"volumen": 40
+},
+{
+"pregunta": "what is the cost of a private jet charter",
+"volumen": 40
+},
+{
+"pregunta": "what is the cost to charter a private jet",
+"volumen": 40
+},
+{
+"pregunta": "how to book private flight",
+"volumen": 40
+},
+{
+"pregunta": "how to be a private jet flight attendant",
+"volumen": 40
+},
+{
+"pregunta": "how to be a flight attendant for private jets",
+"volumen": 40
+},
+{
+"pregunta": "who is the best private jet charter company",
+"volumen": 30
+},
+{
+"pregunta": "how much does a private jet charter flight cost",
+"volumen": 30
+},
+{
+"pregunta": "how much is an air ambulance ride",
+"volumen": 30
+},
+{
+"pregunta": "how much does an air ambulance flight cost",
+"volumen": 30
+},
+{
+"pregunta": "how much does medicare pay for air ambulance",
+"volumen": 30
+},
+{
+"pregunta": "how much do empty leg flights cost",
+"volumen": 30
+},
+{
+"pregunta": "how to find empty leg private flights",
+"volumen": 30
+},
+{
+"pregunta": "what is empty leg",
+"volumen": 30
+},
+{
+"pregunta": "how much weight is an empty leg press",
+"volumen": 30
+},
+{
+"pregunta": "how much does a private jet flight attendant make",
+"volumen": 30
+},
+{
+"pregunta": "what is a private jet charter",
+"volumen": 20
+},
+{
+"pregunta": "how much it cost to charter a private jet",
+"volumen": 20
+},
+{
+"pregunta": "how to start a private jet charter company",
+"volumen": 20
+},
+{
+"pregunta": "what is the average cost to charter a private jet",
+"volumen": 20
+},
+{
+"pregunta": "how expensive is it to charter a private jet",
+"volumen": 20
+},
+{
+"pregunta": "is private jet charter business profitable",
+"volumen": 20
+},
+{
+"pregunta": "how much cost to charter a private jet",
+"volumen": 20
+},
+{
+"pregunta": "what is the average cost of a private jet charter",
+"volumen": 20
+},
+{
+"pregunta": "how much is an air ambulance cost",
+"volumen": 20
+},
+{
+"pregunta": "does medicaid cover air ambulance",
+"volumen": 20
+},
+{
+"pregunta": "does tricare cover air ambulance",
+"volumen": 20
+},
+{
+"pregunta": "does health insurance cover air ambulance",
+"volumen": 20
+},
+{
+"pregunta": "how much air ambulance cost",
+"volumen": 20
+},
+{
+"pregunta": "how much is air ambulance cost",
+"volumen": 20
+},
+{
+"pregunta": "is air ambulance covered by insurance",
+"volumen": 20
+},
+{
+"pregunta": "does medicare cover air ambulance for seniors",
+"volumen": 20
+},
+{
+"pregunta": "how much are empty leg flights",
+"volumen": 20
+},
+{
+"pregunta": "what does empty leg flight mean",
+"volumen": 20
+},
+{
+"pregunta": "how to become private jet flight attendant",
+"volumen": 20
+},
+{
+"pregunta": "how much does a private helicopter flight cost",
+"volumen": 20
+},
+{
+"pregunta": "how much does it cost to charter a private flight",
+"volumen": 20
+},
+{
+"pregunta": "how much is it for a private jet flight",
+"volumen": 20
+},
+{
+"pregunta": "how to be a private flight attendant",
+"volumen": 20
+},
+{
+"pregunta": "how much does it cost for a private flight",
+"volumen": 20
+},
+{
+"pregunta": "who has the shortest flight in a private jet",
+"volumen": 20
+},
+{
+"pregunta": "How much is the cost of a private jet?",
+"volumen": "PAA"
+},
+{
+"pregunta": "What is the cheapest private jet you can buy?",
+"volumen": "PAA"
+},
+{
+"pregunta": "How much is a private jet for 5 hours?",
+"volumen": "PAA"
+},
+{
+"pregunta": "Is it cheaper to fly first class or private jet?",
+"volumen": "PAA"
+},
+{
+"pregunta": "Do you still go through TSA on a private jet?",
+"volumen": "PAA"
+},
+{
+"pregunta": "How much is it to hire a private jet?",
+"volumen": "PAA"
+},
+{
+"pregunta": "What's the cheapest way to fly privately?",
+"volumen": "PAA"
+},
+{
+"pregunta": "How much is a 2 hour private jet flight?",
+"volumen": "PAA"
+},
+{
+"pregunta": "What is the least amount to buy a private jet?",
+"volumen": "PAA"
+},
+{
+"pregunta": "How much do helicopter trips cost?",
+"volumen": "PAA"
+},
+{
+"pregunta": "How much does an Uber helicopter cost?",
+"volumen": "PAA"
+},
+{
+"pregunta": "How much does it cost to fly a helicopter for 2 hours?",
+"volumen": "PAA"
+},
+{
+"pregunta": "How much does a 2-person helicopter cost?",
+"volumen": "PAA"
+},
+{
+"pregunta": "How much is it to hire a helicopter for 2 hours?",
+"volumen": "PAA"
+},
+{
+"pregunta": "What is the cheapest one-seater helicopter?",
+"volumen": "PAA"
+},
+{
+"pregunta": "How far can a mini helicopter fly?",
+"volumen": "PAA"
+},
+{
+"pregunta": "How much is a private jet to Cabo?",
+"volumen": "PAA"
+},
+{
+"pregunta": "How much is a 2 hour flight on a private jet?",
+"volumen": "PAA"
+},
+{
+"pregunta": "How much does it cost to fly privately in Mexico?",
+"volumen": "PAA"
+},
+{
+"pregunta": "What is the cheapest way to fly privately?",
+"volumen": "PAA"
+},
+{
+"pregunta": "Do you have to go through TSA if you're on a private jet?",
+"volumen": "PAA"
+},
+{
+"pregunta": "Is it cheaper to own a jet or charter one?",
+"volumen": "PAA"
+},
+{
+"pregunta": "Can you fly a private plane from the US to Mexico?",
+"volumen": "PAA"
+},
+{
+"pregunta": "How much does a 2 hour private jet flight cost?",
+"volumen": "PAA"
+},
+{
+"pregunta": "What is the cheapest way to fly private jet?",
+"volumen": "PAA"
+},
+{
+"pregunta": "Is it cheaper to fly private or own a private jet?",
+"volumen": "PAA"
+},
+{
+"pregunta": "Do you have to go through TSA if you own a private jet?",
+"volumen": "PAA"
+},
+{
+"pregunta": "Can you use the bathroom on a private jet?",
+"volumen": "PAA"
+},
+{
+"pregunta": "At what point is a private jet worth it?",
+"volumen": "PAA"
+}
+]
