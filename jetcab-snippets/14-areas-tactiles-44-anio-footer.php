@@ -15,6 +15,10 @@ add_action('wp_head', function () {
        . '#masthead ~ #content .jc-nav,#masthead ~ #content .fl-nav,#masthead ~ #content nav.nav{display:none!important}'
        . '#masthead ~ #content .fl-wrap{padding-top:40px}'
        // Tablas anchas de los posts: desplazamiento dentro de la tabla, no de la página.
+       // Artículos del blog: Astra pinta la caja del post en blanco y el texto del sitio es blanco; caja oscura de la marca.
+       . 'body.single-post .ast-article-single,body.single-post .comments-area,body.single-post .ast-single-related-posts-container{background:#141414!important;color:#E8E8E8}'
+       . 'body.single-post .entry-content th,body.single-post .entry-content td{background:transparent;color:#E8E8E8;border-color:rgba(255,255,255,.15)}'
+       . 'body.single-post .entry-content a{color:#E85A1E}'
        . '@media(max-width:768px){.entry-content table{display:block;max-width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch}}'
        . '</style>' . "\n";
 }, 20);
