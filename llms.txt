@@ -11,9 +11,12 @@
 ## Páginas principales
 - Inicio: https://rankeo.agency/
 - Precios: https://rankeo.agency/precios
+- Preguntas frecuentes sobre SEO en México (35 respuestas): https://rankeo.agency/preguntas-frecuentes
 - Agencia SEO México: https://rankeo.agency/seo-mexico
 - Agencia SEO CDMX: https://rankeo.agency/agencia-seo-cdmx
 - Agencia SEO Monterrey: https://rankeo.agency/seo-monterrey
+- SEO local y Google Maps: https://rankeo.agency/seo-local
+- Consultor SEO en México: https://rankeo.agency/consultor-seo
 - SEO para negocios hispanos en Estados Unidos: https://rankeo.agency/seo-hispanos-usa
 - SEO en Miami: https://rankeo.agency/seo-miami
 - SEO en Houston: https://rankeo.agency/seo-houston

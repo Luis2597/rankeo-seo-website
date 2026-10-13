@@ -370,6 +370,15 @@ No usar `browser_run_code_unsafe` salvo necesidad real. Capacidades extra (`--ca
 
 ---
 
+## 2F. SEO de Rankeo con DataForSEO (método Andrés Agudelo, oct 2026)
+
+- Método y reglas: skill `rankeo-seo-cliente-nuevo` (volumen > 100 y competencia < 35, H1 = keyword principal, cada post enlaza a SU landing, 13-17 preguntas reales por post, autor Luis Díaz, fundador).
+- Keyword map, competidores y calendario: `seo/rankeo-keyword-map-oct2026.xlsx`. La carpeta `seo/` está en git pero NO se despliega (`.vercelignore`).
+- Credenciales de DataForSEO: las da el usuario en el chat; se guardan solo en `~/.dataforseo_creds` (fuera del repo). Nunca en el repo ni en la memoria.
+- Lote 1 (13 oct 2026): landings `/consultor-seo`, `/seo-local`, `/seo-monterrey` (agencia seo en monterrey), `/seo-mexico` (seo mexico) y `/preguntas-frecuentes` (35 preguntas reales).
+- **Publicación programada del blog:** los posts se suben con `<meta name="robots" content="noindex,follow"><!-- rankeo:programado -->` y fuera de sitemap, blog/index y llms.txt. `seo/publicar.py` los publica en su fecha y `.github/workflows/publicar-posts.yml` lo corre lun/mié/vie 15:00 UTC (09:00 CDMX). Para agregar un post: subirlo con esa marca y añadirlo a `CALENDARIO` en `seo/publicar.py`. Nunca publicar en masa sin orden explícita.
+- `style.css` ya cumple AA: botones naranjas con texto tinta, enlaces del texto en tinta con subrayado naranja, acento del H1 como subrayado marcador.
+
 ## 3. Próxima tarea: Migrar a Next.js (App Router)
 
 ### 3.1 Stack técnico

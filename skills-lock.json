@@ -101,7 +101,7 @@
       "source": "coreyhaines31/marketingskills",
       "sourceType": "github",
       "skillPath": "skills/copywriting/SKILL.md",
-      "computedHash": "c8c05158fddc8315dac0f163dd3bc2cd8a310b0ee63e23a13884f50ce6e5328d"
+      "computedHash": "18e403fe578adbf80b3f3a45bbae73a2241bd8db707ef112d4e4437e09e22edd"
     },
     "debugging-and-error-recovery": {
       "source": "addyosmani/agent-skills",
@@ -312,6 +312,12 @@
       "sourceType": "github",
       "skillPath": "skills/seo-audit/SKILL.md",
       "computedHash": "f321ae6d6959fcad4a9f65db8eb1548b981e3e85cb541050f94703ebacc6d39d"
+    },
+    "seo-dataforseo": {
+      "source": "agricidaniel/claude-seo",
+      "sourceType": "github",
+      "skillPath": "skills/seo-dataforseo/SKILL.md",
+      "computedHash": "d64274623c8e282720368be13c2fee746faaddb72172d7173025a3ce15883dcb"
     },
     "shipping-and-launch": {
       "source": "addyosmani/agent-skills",
