@@ -9,3 +9,14 @@ add_action('wp_head', function () {
 JCLD
     . '</script>' . "\n";
 }, 5);
+
+// Breadcrumb de Yoast: el último elemento (y el único en el inicio) salía sin "item"; Search Console lo marcaba
+// como «Falta el campo item» (13 oct 2026). Se completa con la URL de la página actual.
+add_filter('wpseo_schema_breadcrumb', function ($data) {
+    if (empty($data['itemListElement']) || !is_array($data['itemListElement'])) return $data;
+    $here = is_front_page() ? home_url('/') : (is_singular() ? get_permalink() : home_url(add_query_arg(array())));
+    foreach ($data['itemListElement'] as $i => $li) {
+        if (empty($li['item'])) $data['itemListElement'][$i]['item'] = $here;
+    }
+    return $data;
+}, 20);
