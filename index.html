@@ -776,6 +776,8 @@
       .mini-card-2 { display: none; }
       .mini-card   { right: 8px; bottom: 8px; }
     }
+    /* Tablet: con 7 enlaces el menú no cabe; hamburguesa hasta 1060px */
+    @media (max-width: 1060px) { .nav-links { display: none; } .burger { display: flex; } }
     @media (max-width: 768px) {
       .nav-links, .nav-cta { display: none; }
       .burger { display: flex; }
@@ -856,6 +858,7 @@
         <li><a href="#auditoria">Auditoría gratis</a></li>
         <li><a href="#precios">Precios</a></li>
         <li><a href="#faq">FAQ</a></li>
+        <li><a href="/blog/">Blog</a></li>
         <li><a href="#contacto">Contacto</a></li>
         <li><a href="/clientes" style="font-weight:600;box-shadow:inset 0 -2px 0 var(--c-orange)">Portal clientes</a></li>
       </ul>
@@ -874,6 +877,7 @@
       <a href="#auditoria"     class="dl" data-c>Auditoría gratis</a>
       <a href="#precios"       class="dl" data-c>Precios</a>
       <a href="#faq"           class="dl" data-c>Preguntas frecuentes</a>
+      <a href="/blog/" class="dl" data-c>Blog</a>
       <a href="#contacto"      class="dl" data-c>Contacto</a>
       <a href="/clientes"      class="dl dl-sm" data-c>Portal clientes</a>
       <a href="#auditoria"     class="dcta" data-c>Analiza tu web gratis</a>
