@@ -310,3 +310,11 @@ Pendiente:
 - /renta-de-aviones-privados/: la tabla de guía se cambió por un bloque comercial (precios desde, cotizar, enlaces a flota y destinos).
 - /en/: las secciones «Routes & Pricing» (2,036 palabras) y «Complete Guide» (956) pasaron a /private-jet-destination-guide/ y /private-jet-charter-mexico-guide/; /en/ baja de 4,562 a 1,625 palabras con un bloque comercial y enlace «Guides» en el menú. Hreflang /destinos/ <-> /private-jet-destination-guide/.
 - /blog/ y /private-jet-guides/ muestran «Guías principales» arriba.
+
+### 12.4 Revisión de navegación ES/EN con Playwright (12 oct, noche)
+33 páginas en móvil y escritorio, 138 URLs internas. Corregido:
+- Menú en inglés en las páginas EN que usan la cabecera del tema (menús 58 y 59, snippet 22); el hub EN se llama «Private Jet Blog» y todo enlace al blog dice «Blog».
+- Cabecera del sitio activada en 24 páginas que no tenían menú en móvil (flota y fichas, landings de jets, rutas EN, guías, FAQ EN, legales); su barra propia se oculta para no tapar el botón del menú (snippet 20).
+- Menú móvil propio para las 8 rutas internacionales servidas fuera del tema (snippet 27).
+- Botones «RESERVAR/COTIZAR» con 404 en 4 landings; anclas inexistentes (/en/#destinations-faq, /#flota) en 16 páginas, 2 posts y la plantilla de rutas; barra de enlaces ES fuera de las páginas EN; enlace de autor; URL suelta que incrustaba el sitio en el aviso de privacidad; tablas anchas en móvil.
+Resultado final: 0 enlaces rotos, 0 anclas rotas, 0 errores de consola, 0 desbordes; menú móvil operativo en las 33 páginas y en el idioma correcto.

@@ -30,3 +30,8 @@ add_filter('the_content', function ($content) {
     $cta = $en ? '<a href="https://jetcab.mx/cotizar/">Request a quote</a>' : '<a href="https://jetcab.mx/cotizar/">Cotizar un vuelo</a>';
     return $content . '<aside class="jc-autor" style="border-top:1px solid rgba(128,128,128,.3);margin-top:40px;padding-top:20px;font-size:.95rem;line-height:1.6">' . $txt . ' ' . $cta . '</aside>';
 }, 40);
+
+// El archivo de autor está desactivado (redirige al inicio): el enlace del autor lleva a la página de la empresa.
+add_filter('author_link', function ($link) {
+    return (is_singular('post') && has_category('english')) ? 'https://jetcab.mx/en/' : 'https://jetcab.mx/sobre-nosotros/';
+}, 20);

@@ -4,6 +4,7 @@
 add_action('wp_footer', function () {
     if (is_admin()) return;
     $uri = isset($_SERVER['REQUEST_URI']) ? $_SERVER['REQUEST_URI'] : '';
+    if (function_exists('jetcab_is_en') && jetcab_is_en()) return;
     if (strpos($uri, '/en/') === 0 || strpos($uri, '/private-jet-') === 0 || strpos($uri, '/flota') === 0 || strpos($uri, '/light-jets') === 0 || strpos($uri, '/long-range') === 0 || strpos($uri, '/vuelos-privados-confidenciales') === 0) return;
     $a = 'style="color:#bdbdbd;text-decoration:none;font-size:14px;line-height:44px"';
     echo '<nav class="jc-links-strip" aria-label="Más de JETCAB" style="background:#0D0D0D;border-top:1px solid rgba(255,255,255,.08);padding:22px 24px;font-family:Barlow,Arial,sans-serif">'

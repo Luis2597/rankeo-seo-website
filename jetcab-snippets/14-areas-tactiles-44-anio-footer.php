@@ -11,6 +11,11 @@ add_action('wp_head', function () {
        . '.jc-links-strip a{display:inline-flex;align-items:center;justify-content:center;min-width:44px;min-height:44px}'
        . 'a[href="https://rankeo.agency"]{display:inline-flex;align-items:center;min-height:44px}'
        . '.jc-nav-logo,.fl-logo,.jc-footer-links a,.jc-footer-brand a,.jc-table a{display:inline-flex;align-items:center;min-height:44px}'
+       // Con la cabecera del sitio activa, la barra propia de cada página sobra y tapaba el botón del menú móvil.
+       . '#masthead ~ #content .jc-nav,#masthead ~ #content .fl-nav,#masthead ~ #content nav.nav{display:none!important}'
+       . '#masthead ~ #content .fl-wrap{padding-top:40px}'
+       // Tablas anchas de los posts: desplazamiento dentro de la tabla, no de la página.
+       . '@media(max-width:768px){.entry-content table{display:block;max-width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch}}'
        . '</style>' . "\n";
 }, 20);
 add_filter('astra_get_option_footer-copyright-editor', function ($v) {
