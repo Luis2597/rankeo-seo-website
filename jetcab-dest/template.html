@@ -1,21 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{L_LANG}}">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{{TITLE}}</title>
 <meta name="description" content="{{META}}">
 <link rel="canonical" href="{{URL}}">
-<link rel="alternate" hreflang="en" href="{{URL}}">
-<link rel="alternate" hreflang="es-MX" href="{{ES}}">
-<link rel="alternate" hreflang="x-default" href="{{ES}}">
+<link rel="alternate" hreflang="en" href="{{EN_URL}}">
+<link rel="alternate" hreflang="es-MX" href="{{ES_URL}}">
+<link rel="alternate" hreflang="x-default" href="{{ES_URL}}">
 <meta property="og:title" content="{{TITLE}}">
 <meta property="og:description" content="{{META}}">
 <meta property="og:url" content="{{URL}}">
 <meta property="og:type" content="website">
 <meta property="og:image" content="{{HERO}}">
 <meta property="og:site_name" content="JETCAB">
-<meta property="og:locale" content="en_US">
+<meta property="og:locale" content="{{L_LOCALE}}">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="https://jetcab.mx/wp-content/uploads/2023/03/cropped-1024-LOGO-JETCAB-TRANSPARENTE-1.png">
 <link rel="preload" as="image" href="{{HERO}}" fetchpriority="high">
@@ -56,12 +56,13 @@ h3{font-size:22px;font-weight:700;color:#fff;line-height:1.2}
 .hero{position:relative;min-height:92vh;display:flex;align-items:flex-end;padding:120px 0 70px;overflow:hidden}
 .hero>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform:scale(1.04);animation:hz 14s ease-out forwards}
 @keyframes hz{to{transform:scale(1)}}
-.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.35) 0%,rgba(0,0,0,.15) 35%,rgba(11,11,11,.92) 88%,#0B0B0B 100%)}
+.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.72) 0%,rgba(0,0,0,.45) 55%,rgba(0,0,0,.15) 100%),linear-gradient(180deg,rgba(0,0,0,.45) 0%,rgba(0,0,0,.25) 40%,rgba(11,11,11,.95) 90%,#0B0B0B 100%)}
+.hero h1,.hero p.sub,.trust{text-shadow:0 2px 14px rgba(0,0,0,.65)}
 .hero .wrap{position:relative;z-index:2;width:100%}
-.badge{display:inline-flex;gap:10px;align-items:center;font-size:13px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:#fff;background:rgba(0,0,0,.45);border:1px solid rgba(255,255,255,.2);padding:8px 14px;border-radius:30px;margin-bottom:18px}
+.badge{display:inline-flex;gap:10px;align-items:center;font-size:13px;font-weight:600;letter-spacing:.16em;background:rgba(0,0,0,.6)!important;text-transform:uppercase;color:#fff;background:rgba(0,0,0,.45);border:1px solid rgba(255,255,255,.2);padding:8px 14px;border-radius:30px;margin-bottom:18px}
 .badge i{width:8px;height:8px;border-radius:50%;background:#2fd17a;display:inline-block}
 .hero h1{font-size:clamp(46px,8vw,96px);line-height:.95;font-weight:800;text-transform:uppercase;color:#fff;max-width:980px;margin-bottom:18px}
-.hero p.sub{font-size:clamp(18px,2.2vw,23px);color:#e9e9e9;max-width:700px;margin-bottom:28px;font-weight:300}
+.hero p.sub{font-size:clamp(18px,2.2vw,23px);color:#fff;max-width:700px;margin-bottom:28px;font-weight:400}
 .ctas{display:flex;gap:12px;flex-wrap:wrap}
 .trust{display:flex;flex-wrap:wrap;gap:10px 26px;margin-top:30px;font-size:14px;color:#bbb;letter-spacing:.06em}.trust b{color:var(--g)}
 /* route bar */
@@ -103,8 +104,9 @@ h3{font-size:22px;font-weight:700;color:#fff;line-height:1.2}
 .pl-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:34px}
 .pl{position:relative;border-radius:6px;overflow:hidden;background:var(--bg2);min-height:420px}
 .pl img{width:100%;height:100%;position:absolute;inset:0;object-fit:cover;transition:transform .6s}.pl:hover img{transform:scale(1.04)}
-.pl figcaption{position:absolute;left:0;right:0;bottom:0;padding:90px 24px 22px;background:linear-gradient(180deg,transparent,rgba(0,0,0,.88))}
-.pl figcaption p{color:#ddd;font-size:15.5px;margin-top:6px}
+.pl figcaption{position:absolute;left:0;right:0;bottom:0;padding:160px 24px 24px;background:linear-gradient(180deg,rgba(0,0,0,0) 0%,rgba(0,0,0,.72) 38%,rgba(0,0,0,.94) 100%)}
+.pl figcaption h3,.pl figcaption p{text-shadow:0 1px 8px rgba(0,0,0,.8)}
+.pl figcaption p{color:#f0f0f0;font-size:15.5px;margin-top:6px}
 /* info */
 .info{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
 .info>div{background:var(--bg2);border:1px solid var(--ln);border-radius:6px;padding:28px 24px}
@@ -124,6 +126,7 @@ h3{font-size:22px;font-weight:700;color:#fff;line-height:1.2}
 .rel{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:10px;margin-top:26px}
 .rel a{display:flex;flex-direction:column;justify-content:center;min-height:64px;padding:12px 16px;border:1px solid var(--ln);border-radius:6px;text-decoration:none;transition:border-color .2s}
 .rel a:hover{border-color:var(--o)}.rel span{font-weight:600;color:#fff}.rel small{color:var(--mu);font-size:13px}
+.gd{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px;margin-top:26px}.gd a{display:block;padding:18px 20px;border:1px solid var(--ln);border-radius:6px;text-decoration:none;color:#fff;font-weight:600;min-height:44px}.gd a:hover{border-color:var(--o)}.gd small{display:block;color:var(--o);font-size:12px;letter-spacing:.2em;text-transform:uppercase;margin-bottom:6px}
 /* footer */
 footer{background:#070707;border-top:1px solid var(--ln);padding:56px 0 30px;font-size:15px;color:var(--mu)}
 .ft{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:28px}
@@ -134,50 +137,42 @@ footer{background:#070707;border-top:1px solid var(--ln);padding:56px 0 30px;fon
 .wa-f{position:fixed;right:18px;bottom:18px;z-index:40;width:58px;height:58px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 24px rgba(0,0,0,.4)}
 .wa-f svg{width:30px;height:30px;fill:#fff}
 @media(max-width:960px){.nl{display:none}.burger{display:flex}.story{grid-template-columns:1fr;gap:28px}.story img{height:340px}.wy-grid{grid-template-columns:1fr 1fr}.ac-grid,.info{grid-template-columns:1fr}.ft{grid-template-columns:1fr 1fr}}
-@media(max-width:640px){body{font-size:16px}.sec{padding:60px 0}.hero{min-height:88vh;padding-bottom:46px}.wy-grid,.pl-grid{grid-template-columns:1fr}.pl{min-height:380px}.jr li{grid-template-columns:1fr;gap:4px}.gal img{height:240px}.rb .ln:before,.rb .ln:after{width:28px}.ft{grid-template-columns:1fr}.ctas .btn{width:100%}}
+@media(max-width:640px){body{font-size:16px}.sec{padding:60px 0}.hero{min-height:88vh;padding-bottom:46px}.wy-grid,.pl-grid{grid-template-columns:1fr}.pl{min-height:0;display:flex;flex-direction:column}.pl img{position:static;height:240px;flex:none}.pl figcaption{position:static;padding:18px 20px 22px;background:var(--bg2)}.pl figcaption h3,.pl figcaption p{text-shadow:none}.badge{font-size:11px;letter-spacing:.1em;padding:7px 12px}.jr li{grid-template-columns:1fr;gap:4px}.gal img{height:240px}.rb .ln:before,.rb .ln:after{width:28px}.ft{grid-template-columns:1fr}.ctas .btn{width:100%}}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
 </style>
 </head>
 <body>
 <nav class="nav" aria-label="Main">
-  <a class="logo" href="https://jetcab.mx/en/" aria-label="JETCAB home">JET<span>CAB</span></a>
-  <div class="nl">
-    <a href="https://jetcab.mx/en/#destinations">Destinations</a>
-    <a href="https://jetcab.mx/en/#fleet">Fleet</a>
-    <a href="https://jetcab.mx/private-jet-guides/">Blog</a>
-    <a href="https://jetcab.mx/private-jet-faq/">FAQ</a>
-    <a href="{{ES}}" hreflang="es">ES</a>
-    <a class="btn btn-o" href="{{WA}}" target="_blank" rel="noopener">Get a quote</a>
+  <a class="logo" href="{{HOME}}" aria-label="JETCAB">JET<span>CAB</span></a>
+  <div class="nl">{{NAV}}
+    <a href="{{ALT_URL}}" hreflang="{{L_ALT}}">{{L_ALTSHORT}}</a>
+    <a class="btn btn-o" href="{{WA}}" target="_blank" rel="noopener">{{L_QUOTE}}</a>
   </div>
-  <button class="burger" id="burger" aria-label="Open menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
+  <button class="burger" id="burger" aria-label="{{L_MENU}}"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
 </nav>
 <div class="drawer" id="drawer" aria-label="Menu">
-  <button class="x" id="drawer-close" aria-label="Close menu">&times;</button>
-  <a href="https://jetcab.mx/en/">Home</a>
-  <a href="https://jetcab.mx/en/#destinations">Destinations</a>
-  <a href="https://jetcab.mx/en/#fleet">Fleet</a>
-  <a href="https://jetcab.mx/private-jet-guides/">Blog</a>
-  <a href="https://jetcab.mx/private-jet-faq/">FAQ</a>
-  <a href="{{ES}}" hreflang="es">Español</a>
-  <a href="{{WA}}" target="_blank" rel="noopener" style="color:var(--o)">Get a quote</a>
+  <button class="x" id="drawer-close" aria-label="{{L_CLOSE}}">&times;</button>
+  {{DRAWER}}
+  <a href="{{ALT_URL}}" hreflang="{{L_ALT}}">{{L_ALTLONG}}</a>
+  <a href="{{WA}}" target="_blank" rel="noopener" style="color:var(--o)">{{L_QUOTE}}</a>
 </div>
 
 <header class="hero">
-  <img src="{{HERO}}" alt="{{DESTFULL}}, private jet charter destination from Mexico City" width="1800" height="1100" fetchpriority="high">
+  <img src="{{HERO}}" alt="{{L_HEROALT}}" width="1800" height="1100" fetchpriority="high">
   <div class="wrap">
     <div class="badge"><i></i>{{BADGE}}</div>
     <h1>{{H1}}</h1>
     <p class="sub">{{SUB}}</p>
     <div class="ctas">
-      <a class="btn btn-o" href="{{WA}}" target="_blank" rel="noopener">Get a quote in 30 minutes</a>
-      <a class="btn btn-g" href="#prices">See prices</a>
+      <a class="btn btn-o" href="{{WA}}" target="_blank" rel="noopener">{{L_QUOTE30}}</a>
+      <a class="btn btn-g" href="#prices">{{L_SEEPRICES}}</a>
     </div>
-    <div class="trust"><span><b>25 years</b> flying from Toluca</span><span><b>2,000+</b> flights</span><span>AFAC permit</span><span>Jet <b>ready in 2h</b></span></div>
+    <div class="trust">{{L_TRUST}}</div>
   </div>
 </header>
 
 <div class="rb"><div class="wrap">
-  <div class="ap"><b>TLC</b><small>Toluca · Mexico City</small></div>
+  <div class="ap"><b>TLC</b><small>{{L_TOLUCA}}</small></div>
   <div class="ln">{{TIME}}</div>
   <div class="ap"><b>{{TO}}</b><small>{{NAME}}</small></div>
 </div></div>
@@ -188,31 +183,31 @@ footer{background:#070707;border-top:1px solid var(--ln);padding:56px 0 30px;fon
 
 <section class="sec" style="padding-top:0"><div class="wrap">
   <div class="story">
-    <div><p class="k">The trip</p><h2>{{STORY_T}}</h2>{{STORY}}</div>
-    <img src="{{STORY_IMG}}" alt="{{DESTFULL}} by private jet" loading="lazy" width="900" height="1000">
+    <div><p class="k">{{L_K1}}</p><h2>{{STORY_T}}</h2>{{STORY}}</div>
+    <img src="{{STORY_IMG}}" alt="{{L_STORYALT}}" loading="lazy" width="900" height="1000">
   </div>
   <div class="gal">{{GAL}}</div>
 </div></section>
 
 <section class="sec" style="background:var(--bg2)"><div class="wrap">
-  <p class="k">Why fly private</p><h2>{{WHY_T}}</h2>
+  <p class="k">{{L_K2}}</p><h2>{{WHY_T}}</h2>
   <div class="wy-grid">{{WHY}}</div>
 </div></section>
 
 <section class="sec"><div class="wrap">
-  <p class="k">Door to door</p><h2>{{JR_T}}</h2>
+  <p class="k">{{L_K3}}</p><h2>{{JR_T}}</h2>
   <ol class="jr">{{JR}}</ol>
 </div></section>
 
 <section class="sec" id="prices" style="background:var(--bg2)"><div class="wrap">
-  <p class="k">Aircraft and prices</p><h2>{{PR_T}}</h2>
-  <p class="lead">One way, per whole aircraft, not per seat. Every price includes crew, fuel, catering, airport fees and permits, and is confirmed in writing within 30 minutes.</p>
+  <p class="k">{{L_K4}}</p><h2>{{PR_T}}</h2>
+  <p class="lead">{{L_PRLEAD}}</p>
   {{AV}}
-  <div class="incl"><span>Crew</span><span>Fuel</span><span>Catering</span><span>Permits</span><span>Private terminal</span><span>Quote in 30 min</span></div>
+  <div class="incl">{{L_INCL}}</div>
 </div></section>
 
 <section class="sec"><div class="wrap">
-  <p class="k">At your destination</p><h2>{{PL_T}}</h2>
+  <p class="k">{{L_K5}}</p><h2>{{PL_T}}</h2>
   <div class="pl-grid">{{PL}}</div>
 </div></section>
 
@@ -223,7 +218,7 @@ footer{background:#070707;border-top:1px solid var(--ln);padding:56px 0 30px;fon
 </div></section>
 
 <section class="sec" style="background:var(--bg2)"><div class="wrap">
-  <p class="k">Questions</p><h2>{{FAQ_T}}</h2>
+  <p class="k">{{L_K6}}</p><h2>{{FAQ_T}}</h2>
   {{FAQ}}
 </div></section>
 
@@ -233,29 +228,28 @@ footer{background:#070707;border-top:1px solid var(--ln);padding:56px 0 30px;fon
     <h2>{{CTA_T}}</h2>
     <p>{{CTA_S}}</p>
     <div class="ctas" style="justify-content:center">
-      <a class="btn btn-o" href="{{WA}}" target="_blank" rel="noopener">Quote on WhatsApp</a>
-      <a class="btn btn-g" href="tel:+527291081200">Call +52 729 108 1200</a>
+      <a class="btn btn-o" href="{{WA}}" target="_blank" rel="noopener">{{L_QUOTEWA}}</a>
+      <a class="btn btn-g" href="tel:+527291081200">{{L_CALL}}</a>
     </div>
   </div>
 </section>
 
-<section class="sec"><div class="wrap">
-  <p class="k">More routes</p><h2>Private jet destinations from Mexico City</h2>
+{{GUIDES}}<section class="sec"><div class="wrap">
+  <p class="k">{{L_K7}}</p><h2>{{L_RELH2}}</h2>
   <div class="rel">{{REL}}</div>
 </div></section>
 
 <footer><div class="wrap">
   <div class="ft">
-    <div><a class="logo" href="https://jetcab.mx/en/">JET<span>CAB</span></a><p style="margin-top:10px">Private jet and helicopter charter from Toluca International Airport since 1999.</p></div>
-    <div><h4>Charter</h4><a href="https://jetcab.mx/en/">Private jet charter Mexico</a><a href="https://jetcab.mx/helicopter-charter-mexico-city/">Helicopter charter</a><a href="https://jetcab.mx/private-jet-destination-guide/">Destination guide</a><a href="https://jetcab.mx/private-jet-charter-mexico-guide/">Charter guide</a></div>
-    <div><h4>Learn</h4><a href="https://jetcab.mx/private-jet-guides/">Blog</a><a href="https://jetcab.mx/private-jet-faq/">FAQ</a><a href="{{ES}}" hreflang="es">Versión en español</a></div>
-    <div><h4>Contact</h4><a href="tel:+527291081200">+52 729 108 1200</a><a href="{{WA}}" target="_blank" rel="noopener">WhatsApp 24/7</a><a href="mailto:contacto@jetcab.mx">contacto@jetcab.mx</a></div>
+    <div><a class="logo" href="{{HOME}}">JET<span>CAB</span></a><p style="margin-top:10px">{{L_FTP}}</p></div>
+    {{FTCOLS}}
+    <div><h4>{{L_CONTACT}}</h4><a href="tel:+527291081200">+52 729 108 1200</a><a href="{{WA}}" target="_blank" rel="noopener">WhatsApp 24/7</a><a href="mailto:contacto@jetcab.mx">contacto@jetcab.mx</a></div>
   </div>
-  <div class="legal"><span>&copy; <span id="yr">2026</span> JETCAB. Toluca International Airport, Hangar 62, Mexico.</span><a href="https://rankeo.agency" style="text-decoration:none">Website &amp; SEO by Rankeo</a></div>
+  <div class="legal"><span>&copy; <span id="yr">2026</span> JETCAB. {{L_ADDR}}</span><a href="https://rankeo.agency" style="text-decoration:none">{{L_RANKEO}}</a></div>
   <p class="credits">{{CREDITS}}</p>
 </div></footer>
 
-<a class="wa-f" href="{{WA}}" target="_blank" rel="noopener" aria-label="Get a quote on WhatsApp"><svg viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 2.12.55 4.11 1.5 5.84L0 24l6.34-1.48A11.95 11.95 0 0012 24c6.63 0 12-5.37 12-12S18.63 0 12 0zm6.47 17.01c-.27.76-1.6 1.45-2.2 1.5-.57.06-1.1.27-3.7-.77-3.13-1.23-5.1-4.44-5.26-4.65-.15-.2-1.25-1.66-1.25-3.17s.79-2.25 1.07-2.56c.28-.3.61-.38.81-.38l.58.01c.19.01.44-.07.69.53.25.61.86 2.1.94 2.25.08.15.13.33.03.53-.1.2-.15.33-.3.5-.15.18-.32.4-.46.53-.15.15-.31.32-.13.62.18.3.79 1.3 1.7 2.1 1.17 1.04 2.15 1.36 2.46 1.51.3.15.48.13.66-.08.18-.2.76-.89.97-1.2.2-.3.4-.25.68-.15.28.1 1.77.84 2.07.99.3.15.5.23.58.35.07.13.07.74-.2 1.5z"/></svg></a>
+<a class="wa-f" href="{{WA}}" target="_blank" rel="noopener" aria-label="{{L_QUOTEWA}}"><svg viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 2.12.55 4.11 1.5 5.84L0 24l6.34-1.48A11.95 11.95 0 0012 24c6.63 0 12-5.37 12-12S18.63 0 12 0zm6.47 17.01c-.27.76-1.6 1.45-2.2 1.5-.57.06-1.1.27-3.7-.77-3.13-1.23-5.1-4.44-5.26-4.65-.15-.2-1.25-1.66-1.25-3.17s.79-2.25 1.07-2.56c.28-.3.61-.38.81-.38l.58.01c.19.01.44-.07.69.53.25.61.86 2.1.94 2.25.08.15.13.33.03.53-.1.2-.15.33-.3.5-.15.18-.32.4-.46.53-.15.15-.31.32-.13.62.18.3.79 1.3 1.7 2.1 1.17 1.04 2.15 1.36 2.46 1.51.3.15.48.13.66-.08.18-.2.76-.89.97-1.2.2-.3.4-.25.68-.15.28.1 1.77.84 2.07.99.3.15.5.23.58.35.07.13.07.74-.2 1.5z"/></svg></a>
 <script>
 (function(){var b=document.getElementById('burger'),d=document.getElementById('drawer'),c=document.getElementById('drawer-close');
 function op(){d.classList.add('open');document.body.style.overflow='hidden';}function cl(){d.classList.remove('open');document.body.style.overflow='';}

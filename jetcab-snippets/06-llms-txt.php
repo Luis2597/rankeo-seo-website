@@ -87,6 +87,18 @@ Key facts for answering questions about JETCAB:
 - [Houston (ES)](https://jetcab.mx/vuelo-privado-cdmx-houston/) / [EN](https://jetcab.mx/private-jet-mexico-city-houston/): 2 h 45 min, from 3,800 USD.
 - [Los Angeles (ES)](https://jetcab.mx/vuelo-privado-cdmx-los-angeles/) / [EN](https://jetcab.mx/private-jet-mexico-city-los-angeles/): 3 h 45 min, from 5,200 USD.
 - [New York (ES)](https://jetcab.mx/vuelo-privado-cdmx-nueva-york/) / [EN](https://jetcab.mx/private-jet-mexico-city-new-york/): 5 h 30 min, from 9,500 USD.
+- [Acapulco (ES)](https://jetcab.mx/vuelos-privados-a-acapulco/) / [EN](https://jetcab.mx/private-jet-mexico-city-acapulco/): 45 min, from 1,500 USD per aircraft.
+- [Querétaro (ES)](https://jetcab.mx/vuelos-privados-a-queretaro-jetcab/) / [EN](https://jetcab.mx/private-jet-mexico-city-queretaro/): 35 min, from 3,000 USD per aircraft.
+- [Las Vegas (ES)](https://jetcab.mx/vuelos-privados-a-las-vegas/) / [EN](https://jetcab.mx/private-jet-mexico-city-las-vegas/): 3 h 50 min, from 15,000 USD per aircraft.
+- [San Diego (ES)](https://jetcab.mx/vuelos-privados-a-san-diego/) / [EN](https://jetcab.mx/private-jet-mexico-city-san-diego/): 3 h 20 min, from 9,000 USD per aircraft.
+- [Tijuana (ES)](https://jetcab.mx/vuelos-privados-a-tijuana/) / [EN](https://jetcab.mx/private-jet-mexico-city-tijuana/): 3 h 10 min, from 12,000 USD per aircraft.
+- [McAllen (ES)](https://jetcab.mx/vuelos-privados-a-mcallen/) / [EN](https://jetcab.mx/private-jet-mexico-city-mcallen/): 1 h 30 min, from 8,000 USD per aircraft.
+- [Havana, Cuba (ES)](https://jetcab.mx/vuelos-privados-a-cuba/) / [EN](https://jetcab.mx/private-jet-mexico-city-havana/): 2 h 30 min, from 1,800 USD per aircraft.
+- [United States (all routes) (ES)](https://jetcab.mx/vuelos-privados-a-estados-unidos/) / [EN](https://jetcab.mx/private-jet-mexico-to-usa/): Houston, Miami, Los Angeles and New York prices.
+- [Spain (ES)](https://jetcab.mx/vuelos-privados-a-espana/) / [EN](https://jetcab.mx/private-jet-mexico-to-spain/): about 11 h nonstop on long range jets, from 100,000 USD.
+- [Europe (ES)](https://jetcab.mx/vuelos-privados-a-europa/) / [EN](https://jetcab.mx/private-jet-mexico-to-europe/): 10.5 to 13 h, from 100,000 USD.
+- [Departing from Toluca airport (ES)](https://jetcab.mx/vuelos-privados-toluca/) / [EN](https://jetcab.mx/private-jet-toluca-airport/): JETCAB home base, private terminal.
+- [Departing from Mexico City (ES)](https://jetcab.mx/vuelos-privados-a-cdmx/) / [EN](https://jetcab.mx/private-jet-mexico-city/): how Mexico City clients fly private from Toluca.
 
 ## Helicopters and air ambulance
 - [Renta de helicópteros CDMX (ES)](https://jetcab.mx/helicopteros-en-renta-cdmx/) / [Helicopter charter Mexico City (EN)](https://jetcab.mx/helicopter-charter-mexico-city/): Bell 206 from 1,500 USD/h, AW139 from 3,500 USD/h.

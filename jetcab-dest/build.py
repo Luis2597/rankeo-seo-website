@@ -1,7 +1,7 @@
-"""Genera las páginas de destino en inglés de JETCAB (una por destino) desde data/<id>.json.
+"""Genera las páginas de destino en inglés y español de JETCAB (una por destino) desde data/<id>.json.
 Uso: python build.py  ->  escribe <slug>.html en esta carpeta. Las sirve el snippet «JETCAB destinos EN v5».
 Hechos de JETCAB (precios, tiempos, aeropuertos) viven aquí en DEST; el texto de cada destino en data/."""
-import json, os, html, re, sys
+import json, os, html, re, sys, urllib.parse
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 WA = '527291081200'
@@ -39,31 +39,79 @@ URL = lambda i: 'https://jetcab.mx/' + DEST[i]['slug'] + '/'
 e = lambda s: html.escape(str(s), quote=True)
 img = lambda g: g if g.startswith('http') else IMG(g)
 
-def price_rows(d):
-    p = d['p']
-    def row(a, b): return '<div class="pr-r"><span>%s</span><b>%s</b></div>' % (e(a), e('from ' + b + ' USD' if b.startswith('$') else b))
-    if isinstance(p, list):
-        return [('Learjet 35', 'Light jet · up to 7 passengers' + (' · one fuel stop' if d.get('stop') else ''), p[0], LJ),
-                ('Challenger 605', 'Midsize · up to 12 passengers · stand-up cabin', p[1], CL),
-                ('Gulfstream GV', 'Long range · up to 16 passengers', p[2], GV)], None
-    if p[0] == 'one':
-        return [('Learjet 35', 'Light jet · up to 7 passengers', p[1], LJ), ('Challenger 605', 'Midsize · up to 12 passengers', REQ, CL), ('Gulfstream GV', 'Long range · up to 16 passengers', REQ, GV)], 'Full-aircraft price from ' + p[1] + ' USD. Other cabins are quoted in 30 minutes.'
-    if p[0] == 'long':
-        return [('Gulfstream GV', 'Long range · up to 16 passengers · nonstop', '$100,000', GV), ('Global Express', 'Long range · up to 16 passengers', REQ, GV), ('Challenger 605', 'Midsize · up to 12 passengers · technical stop', REQ, CL)], None
-    return None, ''.join(row(a, b) for a, b in p[1])
+ES_URL = lambda i: 'https://jetcab.mx' + DEST[i]['es']
+ES_NAME = {'cancun': 'Cancún', 'loscabos': 'Los Cabos', 'puertovallarta': 'Puerto Vallarta', 'monterrey': 'Monterrey', 'guadalajara': 'Guadalajara', 'acapulco': 'Acapulco',
+           'queretaro': 'Querétaro', 'toluca': 'Toluca', 'cdmx': 'Ciudad de México', 'newyork': 'Nueva York', 'miami': 'Miami', 'houston': 'Houston', 'losangeles': 'Los Ángeles',
+           'lasvegas': 'Las Vegas', 'sandiego': 'San Diego', 'tijuana': 'Tijuana', 'mcallen': 'McAllen', 'estadosunidos': 'Estados Unidos', 'cuba': 'La Habana', 'espana': 'España', 'europa': 'Europa'}
+ES_TIME = {'Home base': 'Base JETCAB', 'Departures': 'Salidas', 'From 1h 30m': 'Desde 1h 30m', '10.5 to 13h': '10.5 a 13 h', '~11h': '~11 h'}
 
-def page(i, c, pimgs):
-    d = DEST[i]; url = URL(i); es_url = 'https://jetcab.mx' + d['es']
+L = {
+ 'en': dict(LANG='en', LOCALE='en_US', ALT='es', ALTSHORT='ES', ALTLONG='Español', QUOTE='Get a quote', MENU='Open menu', CLOSE='Close menu',
+            QUOTE30='Get a quote in 30 minutes', SEEPRICES='See prices', TOLUCA='Toluca · Mexico City',
+            TRUST='<span><b>25 years</b> flying from Toluca</span><span><b>2,000+</b> flights</span><span>AFAC permit</span><span>Jet <b>ready in 2h</b></span>',
+            K1='The trip', K2='Why fly private', K3='Door to door', K4='Aircraft and prices', K5='At your destination', K6='Questions', K7='More routes',
+            PRLEAD='One way, per whole aircraft, not per seat. Every price includes crew, fuel, catering, airport fees and permits, and is confirmed in writing within 30 minutes.',
+            INCL='<span>Crew</span><span>Fuel</span><span>Catering</span><span>Permits</span><span>Private terminal</span><span>Quote in 30 min</span>',
+            QUOTEWA='Quote on WhatsApp', CALL='Call +52 729 108 1200', RELH2='Private jet destinations from Mexico City', CONTACT='Contact',
+            FTP='Private jet and helicopter charter from Toluca International Airport since 1999.', ADDR='Toluca International Airport, Hangar 62, Mexico.', RANKEO='Website &amp; SEO by Rankeo',
+            FROM='from %s USD', REQ='Quote in 30 min', PRT='Private jet prices to %s', FAQT='%s private jet FAQ', PHOTOS='Photos of %s. Wikimedia Commons.',
+            HEROALT='%s, private jet charter destination from Mexico City', STORYALT='%s by private jet', GALALT='%s, private jet destination', ACALT='%s private jet charter to %s',
+            WA="Hi JETCAB, I'd like a quote for a private jet to %s.", ONE='Full-aircraft price from %s USD. Other cabins are quoted in 30 minutes.',
+            C_LJ='Light jet · up to 7 passengers', C_CL='Midsize · up to 12 passengers · stand-up cabin', C_GV='Long range · up to 16 passengers', STOP=' · one fuel stop',
+            C_GVN='Long range · up to 16 passengers · nonstop', C_CLS='Midsize · up to 12 passengers · technical stop',
+            BADGE={'toluca': 'JETCAB home base · Toluca International Airport (TLC)', 'cdmx': 'Departures from Toluca (TLC) · 65 km from Mexico City', 'estadosunidos': 'Toluca (TLC) to the United States · from 1h 30m'},
+            HOME='https://jetcab.mx/en/', BC=[('JETCAB', 'https://jetcab.mx/en/'), ('Destinations', 'https://jetcab.mx/private-jet-destination-guide/')],
+            NAV=[('Destinations', 'https://jetcab.mx/en/#destinations'), ('Fleet', 'https://jetcab.mx/en/#fleet'), ('Blog', 'https://jetcab.mx/private-jet-guides/'), ('FAQ', 'https://jetcab.mx/private-jet-faq/')],
+            FT=[('Charter', [('Private jet charter Mexico', 'https://jetcab.mx/en/'), ('Helicopter charter', 'https://jetcab.mx/helicopter-charter-mexico-city/'), ('Destination guide', 'https://jetcab.mx/private-jet-destination-guide/'), ('Charter guide', 'https://jetcab.mx/private-jet-charter-mexico-guide/')]),
+                ('Learn', [('Blog', 'https://jetcab.mx/private-jet-guides/'), ('FAQ', 'https://jetcab.mx/private-jet-faq/')])]),
+ 'es': dict(LANG='es-MX', LOCALE='es_MX', ALT='en', ALTSHORT='EN', ALTLONG='English', QUOTE='Cotizar', MENU='Abrir menú', CLOSE='Cerrar menú',
+            QUOTE30='Cotizar en 30 minutos', SEEPRICES='Ver precios', TOLUCA='Toluca · Ciudad de México',
+            TRUST='<span><b>25 años</b> volando desde Toluca</span><span><b>2,000+</b> vuelos</span><span>Permiso AFAC</span><span>Jet <b>listo en 2 h</b></span>',
+            K1='El viaje', K2='Por qué volar privado', K3='De puerta a puerta', K4='Aeronaves y precios', K5='En su destino', K6='Preguntas', K7='Más rutas',
+            PRLEAD='Precio por trayecto sencillo y por aeronave completa, no por asiento. Incluye tripulación, combustible, catering, derechos de aeropuerto y permisos, y se confirma por escrito en 30 minutos.',
+            INCL='<span>Tripulación</span><span>Combustible</span><span>Catering</span><span>Permisos</span><span>Terminal privada</span><span>Cotización en 30 min</span>',
+            QUOTEWA='Cotizar por WhatsApp', CALL='Llamar +52 729 108 1200', RELH2='Destinos en jet privado desde la Ciudad de México', CONTACT='Contacto',
+            FTP='Renta de jets privados y helicópteros desde el Aeropuerto Internacional de Toluca desde 1999.', ADDR='Aeropuerto Internacional de Toluca, Hangar 62, México.', RANKEO='Sitio web y SEO por Rankeo',
+            FROM='desde %s USD', REQ='Cotización en 30 min', PRT='Precios de jet privado a %s', FAQT='Preguntas frecuentes: jet privado a %s', PHOTOS='Fotos de %s. Wikimedia Commons.',
+            HEROALT='%s, destino en jet privado desde la Ciudad de México', STORYALT='%s en jet privado', GALALT='%s, destino en jet privado', ACALT='Renta de %s, jet privado a %s',
+            WA='Hola JETCAB, quiero cotizar un vuelo privado a %s.', ONE='Precio por aeronave completa desde %s USD. Las demás cabinas se cotizan en 30 minutos.',
+            C_LJ='Jet ligero · hasta 7 pasajeros', C_CL='Mediano · hasta 12 pasajeros · cabina de pie', C_GV='Largo alcance · hasta 16 pasajeros', STOP=' · una escala técnica',
+            C_GVN='Largo alcance · hasta 16 pasajeros · sin escalas', C_CLS='Mediano · hasta 12 pasajeros · escala técnica',
+            BADGE={'toluca': 'Base de JETCAB · Aeropuerto Internacional de Toluca (TLC)', 'cdmx': 'Salidas desde Toluca (TLC) · a 65 km de la CDMX', 'estadosunidos': 'De Toluca (TLC) a Estados Unidos · desde 1h 30m'},
+            HOME='https://jetcab.mx/', BC=[('Inicio', 'https://jetcab.mx/'), ('Destinos', 'https://jetcab.mx/destinos/')],
+            NAV=[('Inicio', 'https://jetcab.mx/'), ('Nuestra flota', 'https://jetcab.mx/flota/'), ('Precios', 'https://jetcab.mx/precios-jet-privado/'), ('Destinos', 'https://jetcab.mx/destinos/'), ('Blog', 'https://jetcab.mx/blog/'), ('Sobre nosotros', 'https://jetcab.mx/sobre-nosotros/')],
+            FT=[('Servicios', [('Renta de aviones privados', 'https://jetcab.mx/renta-de-aviones-privados/'), ('Precios de jet privado', 'https://jetcab.mx/precios-jet-privado/'), ('Renta de helicópteros', 'https://jetcab.mx/helicopteros-en-renta-cdmx/'), ('Ambulancia aérea', 'https://jetcab.mx/flota/ambulancia-aerea/')]),
+                ('Aprenda', [('Blog', 'https://jetcab.mx/blog/'), ('Preguntas frecuentes', 'https://jetcab.mx/preguntas-frecuentes/'), ('Destinos', 'https://jetcab.mx/destinos/')])]),
+}
+
+
+def price_rows(d, l):
+    p = d['p']
+    fmt = lambda b: (l['FROM'] % b) if b.startswith('$') else (l['REQ'] if b == REQ else b)
+    def row(a, b): return '<div class="pr-r"><span>%s</span><b>%s</b></div>' % (e(a), e(fmt(b)))
+    if isinstance(p, list):
+        return [('Learjet 35', l['C_LJ'] + (l['STOP'] if d.get('stop') else ''), p[0], LJ), ('Challenger 605', l['C_CL'], p[1], CL), ('Gulfstream GV', l['C_GV'], p[2], GV)], None, fmt
+    if p[0] == 'one':
+        return [('Learjet 35', l['C_LJ'], p[1], LJ), ('Challenger 605', l['C_CL'], REQ, CL), ('Gulfstream GV', l['C_GV'], REQ, GV)], l['ONE'] % p[1], fmt
+    if p[0] == 'long':
+        return [('Gulfstream GV', l['C_GVN'], '$100,000', GV), ('Global Express', l['C_GV'], REQ, GV), ('Challenger 605', l['C_CLS'], REQ, CL)], None, fmt
+    rows = [(a if l['LANG'] == 'en' else a.replace('one fuel stop', 'una escala técnica'), b) for a, b in p[1]]
+    return None, ''.join(row(a, b) for a, b in rows), fmt
+
+
+def page(i, c, pimgs, lang='en'):
+    l = L[lang]; d = DEST[i]
+    url = URL(i) if lang == 'en' else ES_URL(i)
+    alt_url = ES_URL(i) if lang == 'en' else URL(i)
+    name = d['name'] if lang == 'en' else ES_NAME[i]
+    tlabel = lambda j: DEST[j]['time'] if lang == 'en' else ES_TIME.get(DEST[j]['time'], DEST[j]['time'])
     hero = img(d['g'][0]); gal = [img(x) for x in d['g'][1:]]
-    kw = c['primary_kw']
-    wa = 'https://wa.me/%s?text=%s' % (WA, re.sub(r'\s', '+', "Hi JETCAB, I'd like a quote for a private jet to %s." % c['dest']).replace("'", '%27').replace(',', '%2C'))
-    cards, table = price_rows(d)
-    # aviones
+    wa = 'https://wa.me/%s?text=%s' % (WA, urllib.parse.quote(l['WA'] % c['dest']))
+    cards, table, fmt = price_rows(d, l)
     if cards:
-        av = ''.join('<article class="ac"><img src="%s" alt="%s private jet charter to %s" loading="lazy" width="800" height="500"><div class="ac-b"><h3>%s</h3><p>%s</p><div class="ac-p">%s</div></div></article>'
-                     % (e(im), e(n), e(c['dest']), e(n), e(sub), e('from ' + pr + ' USD' if pr.startswith('$') else pr)) for n, sub, pr, im in cards)
-        av_html = '<div class="ac-grid">%s</div>' % av
-        if table: av_html += '<p class="note">%s</p>' % e(table)
+        av = ''.join('<article class="ac"><img src="%s" alt="%s" loading="lazy" width="800" height="500"><div class="ac-b"><h3>%s</h3><p>%s</p><div class="ac-p">%s</div></div></article>'
+                     % (e(im), e(l['ACALT'] % (n, c['dest'])), e(n), e(sub), e(fmt(pr))) for n, sub, pr, im in cards)
+        av_html = '<div class="ac-grid">%s</div>' % av + ('<p class="note">%s</p>' % e(table) if table else '')
     else:
         av_html = '<div class="pr">%s</div>' % table
     places = ''.join('<figure class="pl"><img src="%s" alt="%s, %s" loading="lazy" width="800" height="560"><figcaption><h3>%s</h3><p>%s</p></figcaption></figure>'
@@ -72,47 +120,56 @@ def page(i, c, pimgs):
     jr = ''.join('<li><span class="jr-t">%s</span><div><h3>%s</h3><p>%s</p></div></li>' % (e(j['time']), e(j['t']), e(j['d'])) for j in c['journey'])
     faq = ''.join('<details class="fq"%s><summary>%s</summary><p>%s</p></details>' % (' open' if k == 0 else '', e(f['q']), e(f['a'])) for k, f in enumerate(c['faq']))
     story = ''.join('<p>%s</p>' % e(p) for p in c['story'])
-    galhtml = ''.join('<img src="%s" alt="%s, private jet destination" loading="lazy" width="900" height="600">' % (e(g), e(c['dest_full'])) for g in gal[1:])
-    rel = ''.join('<a href="%s"><span>%s</span><small>%s</small></a>' % (URL(j), e(DEST[j]['name']), e(DEST[j]['time'])) for j in ORDER if j != i)
+    galhtml = ''.join('<img src="%s" alt="%s" loading="lazy" width="900" height="600">' % (e(g), e(l['GALALT'] % c['dest_full'])) for g in gal[1:])
+    rel = ''.join('<a href="%s"><span>%s</span><small>%s</small></a>' % (URL(j) if lang == 'en' else ES_URL(j), e(DEST[j]['name'] if lang == 'en' else ES_NAME[j]), e(tlabel(j))) for j in ORDER if j != i)
     credits = '; '.join('%s: %s, %s' % (e(c['places'][k]['name']), e(pimgs[k]['author']), e(pimgs[k]['license'])) for k in range(len(c['places'])) if pimgs[k].get('author'))
     offers = ''
     if isinstance(d['p'], list):
         offers = ',"offers":{"@type":"AggregateOffer","priceCurrency":"USD","lowPrice":"%s","offerCount":"3"}' % d['p'][0].strip('$').replace(',', '')
     elif d['p'][0] == 'one':
         offers = ',"offers":{"@type":"Offer","priceCurrency":"USD","price":"%s"}' % d['p'][1].strip('$').replace(',', '')
+    bc = [{'@type': 'ListItem', 'position': k + 1, 'name': n, 'item': u} for k, (n, u) in enumerate(l['BC'])] + [{'@type': 'ListItem', 'position': 3, 'name': c['h1'], 'item': url}]
     ld = {'@context': 'https://schema.org', '@graph': [
-        {'@type': 'WebPage', '@id': url + '#webpage', 'url': url, 'name': c['title'], 'description': c['meta'], 'inLanguage': 'en', 'isPartOf': {'@id': 'https://jetcab.mx/#website'}, 'about': {'@id': 'https://jetcab.mx/#organization'}, 'primaryImageOfPage': {'@type': 'ImageObject', 'url': hero}, 'speakable': {'@type': 'SpeakableSpecification', 'cssSelector': ['.answer', 'h1']}, 'breadcrumb': {'@id': url + '#breadcrumb'}},
-        {'@type': 'BreadcrumbList', '@id': url + '#breadcrumb', 'itemListElement': [{'@type': 'ListItem', 'position': 1, 'name': 'JETCAB', 'item': 'https://jetcab.mx/en/'}, {'@type': 'ListItem', 'position': 2, 'name': 'Destinations', 'item': 'https://jetcab.mx/private-jet-destination-guide/'}, {'@type': 'ListItem', 'position': 3, 'name': c['h1'], 'item': url}]},
+        {'@type': 'WebPage', '@id': url + '#webpage', 'url': url, 'name': c['title'], 'description': c['meta'], 'inLanguage': l['LANG'], 'isPartOf': {'@id': 'https://jetcab.mx/#website'}, 'about': {'@id': 'https://jetcab.mx/#organization'}, 'primaryImageOfPage': {'@type': 'ImageObject', 'url': hero}, 'speakable': {'@type': 'SpeakableSpecification', 'cssSelector': ['.answer', 'h1']}, 'breadcrumb': {'@id': url + '#breadcrumb'}},
+        {'@type': 'BreadcrumbList', '@id': url + '#breadcrumb', 'itemListElement': bc},
         {'@type': 'FAQPage', '@id': url + '#faq', 'mainEntity': [{'@type': 'Question', 'name': f['q'], 'acceptedAnswer': {'@type': 'Answer', 'text': f['a']}} for f in c['faq']]}]}
-    svc = '{"@type":"Service","name":%s,"serviceType":"Private jet charter","provider":{"@id":"https://jetcab.mx/#organization"},"areaServed":%s%s}' % (json.dumps(c['h1']), json.dumps(c['dest_full']), offers)
-    ldtxt = json.dumps(ld, ensure_ascii=False, separators=(',', ':'))
-    ldtxt = ldtxt[:-2] + ',' + svc + ']}'
-    if d.get('hub'):
-        badge = {'toluca': 'JETCAB home base · Toluca International Airport (TLC)', 'cdmx': 'Departures from Toluca (TLC) · 65 km from Mexico City', 'estadosunidos': 'Toluca (TLC) to the United States · from 1h 30m'}[i]
-    else:
-        badge = 'Toluca (TLC) &rarr; %s (%s) · %s' % (e(d['name']), e(d['iata']), e(d['time']))
+    svc = '{"@type":"Service","name":%s,"serviceType":"%s","provider":{"@id":"https://jetcab.mx/#organization"},"areaServed":%s%s}' % (json.dumps(c['h1'], ensure_ascii=False), 'Private jet charter' if lang == 'en' else 'Renta de jet privado', json.dumps(c['dest_full'], ensure_ascii=False), offers)
+    ldtxt = json.dumps(ld, ensure_ascii=False, separators=(',', ':'))[:-2] + ',' + svc + ']}'
+    badge = e(l['BADGE'][i]) if d.get('hub') else 'Toluca (TLC) &rarr; %s (%s) · %s' % (e(name), e(d['iata']), e(tlabel(i)))
     T = TEMPLATE if not d.get('hub') else re.sub(r'<div class="rb">.*?</div></div>\s*', '', TEMPLATE, flags=re.S)
-    rep = {
-        '{{BADGE}}': badge, '{{TITLE}}': e(c['title']), '{{META}}': e(c['meta']), '{{URL}}': url, '{{ES}}': es_url, '{{HERO}}': e(hero), '{{LD}}': ldtxt.replace('</', '<\\/'),
-        '{{H1}}': e(c['h1']), '{{SUB}}': e(c['hero_sub']), '{{WA}}': e(wa), '{{FROM}}': 'TLC', '{{TO}}': e(d['iata']), '{{TIME}}': e(d['time']), '{{NAME}}': e(d['name']), '{{DESTFULL}}': e(c['dest_full']),
-        '{{ANSWER}}': e(c['answer']), '{{STORY_T}}': e(c['story_title']), '{{STORY}}': story, '{{STORY_IMG}}': e(gal[0] if gal else hero), '{{GAL}}': galhtml,
-        '{{WHY_T}}': e(c['why_title']), '{{WHY}}': why, '{{JR_T}}': e(c['journey_title']), '{{JR}}': jr, '{{PR_T}}': e('Private jet prices to ' + c['dest']), '{{AV}}': av_html,
-        '{{PL_T}}': e(c['places_title']), '{{PL}}': places, '{{BT_T}}': e(c['best_time_title']), '{{BT}}': e(c['best_time']), '{{AP_T}}': e(c['airport_title']), '{{AP}}': e(c['airport']),
-        '{{DOC_T}}': e(c['docs_title']), '{{DOC}}': e(c['docs']), '{{FAQ_T}}': e(c['dest'] + ' private jet FAQ'), '{{FAQ}}': faq, '{{CTA_T}}': e(c['cta_title']), '{{CTA_S}}': e(c['cta_sub']),
-        '{{REL}}': rel, '{{CREDITS}}': ('Photos of ' + credits + '. Wikimedia Commons.') if credits else '', '{{KW}}': e(kw),
-    }
+    nav = ''.join('\n    <a href="%s">%s</a>' % (u, e(n)) for n, u in l['NAV'])
+    drawer = ''.join('<a href="%s">%s</a>\n  ' % (u, e(n)) for n, u in ([('Home', l['HOME'])] if lang == 'en' else []) + l['NAV'])
+    ftcols = ''.join('<div><h4>%s</h4>%s</div>' % (e(h), ''.join('<a href="%s">%s</a>' % (u, e(n)) for n, u in items)) for h, items in l['FT'][:-1] + [(l['FT'][-1][0], l['FT'][-1][1] + [('Versión en español' if lang == 'en' else 'English version', alt_url)])])
+    rep = {'{{BADGE}}': badge, '{{TITLE}}': e(c['title']), '{{META}}': e(c['meta']), '{{URL}}': url, '{{EN_URL}}': URL(i), '{{ES_URL}}': ES_URL(i), '{{ALT_URL}}': alt_url,
+           '{{HOME}}': l['HOME'], '{{NAV}}': nav, '{{DRAWER}}': drawer, '{{FTCOLS}}': ftcols, '{{GUIDES}}': '<!--JC_GUIDES-->',
+           '{{HERO}}': e(hero), '{{LD}}': ldtxt.replace('</', '<\\/'), '{{H1}}': e(c['h1']), '{{SUB}}': e(c['hero_sub']), '{{WA}}': e(wa), '{{TO}}': e(d['iata']), '{{TIME}}': e(tlabel(i)), '{{NAME}}': e(name),
+           '{{ANSWER}}': e(c['answer']), '{{STORY_T}}': e(c['story_title']), '{{STORY}}': story, '{{STORY_IMG}}': e(gal[0] if gal else hero), '{{GAL}}': galhtml,
+           '{{WHY_T}}': e(c['why_title']), '{{WHY}}': why, '{{JR_T}}': e(c['journey_title']), '{{JR}}': jr, '{{PR_T}}': e(l['PRT'] % c['dest']), '{{AV}}': av_html,
+           '{{PL_T}}': e(c['places_title']), '{{PL}}': places, '{{BT_T}}': e(c['best_time_title']), '{{BT}}': e(c['best_time']), '{{AP_T}}': e(c['airport_title']), '{{AP}}': e(c['airport']),
+           '{{DOC_T}}': e(c['docs_title']), '{{DOC}}': e(c['docs']), '{{FAQ_T}}': e(l['FAQT'] % c['dest']), '{{FAQ}}': faq, '{{CTA_T}}': e(c['cta_title']), '{{CTA_S}}': e(c['cta_sub']),
+           '{{REL}}': rel, '{{CREDITS}}': (l['PHOTOS'] % credits) if credits else '',
+           '{{L_HEROALT}}': e(l['HEROALT'] % c['dest_full']), '{{L_STORYALT}}': e(l['STORYALT'] % c['dest_full'])}
+    for k in ['LANG', 'LOCALE', 'ALT', 'ALTSHORT', 'ALTLONG', 'QUOTE', 'MENU', 'CLOSE', 'QUOTE30', 'SEEPRICES', 'TOLUCA', 'TRUST', 'K1', 'K2', 'K3', 'K4', 'K5', 'K6', 'K7', 'PRLEAD', 'INCL', 'QUOTEWA', 'CALL', 'RELH2', 'CONTACT', 'FTP', 'ADDR', 'RANKEO']:
+        rep['{{L_%s}}' % k] = l[k]
     for k, v in rep.items(): T = T.replace(k, v)
     assert '{{' not in T, re.findall(r'\{\{\w+\}\}', T)
     return T
 
+
 TEMPLATE = open(os.path.join(HERE, 'template.html'), encoding='utf-8').read()
 
 if __name__ == '__main__':
+    langs = [a for a in sys.argv[1:] if a in ('en', 'es')] or ['en', 'es']
+    only = [a for a in sys.argv[1:] if a not in ('en', 'es')] or ORDER
     pim = json.load(open(os.path.join(HERE, 'data', '_place_images.json'), encoding='utf-8'))
-    only = sys.argv[1:] or ORDER
-    for i in only:
-        c = json.load(open(os.path.join(HERE, 'data', i + '.json'), encoding='utf-8'))
-        out = page(i, c, pim[i])
-        assert '—' not in out and '–' not in out, i + ': raya larga'
-        open(os.path.join(HERE, DEST[i]['slug'] + '.html'), 'w', encoding='utf-8', newline='\n').write(out)
-        print('ok', i, DEST[i]['slug'], len(out))
+    for lang in langs:
+        for i in only:
+            src = os.path.join(HERE, 'data' if lang == 'en' else 'data_es', i + '.json')
+            if not os.path.exists(src): print('falta', lang, i); continue
+            c = json.load(open(src, encoding='utf-8'))
+            out = page(i, c, pim[i], lang)
+            assert '—' not in out and '–' not in out, i + ': raya larga'
+            name = DEST[i]['slug'] if lang == 'en' else 'es/' + DEST[i]['es'].strip('/')
+            os.makedirs(os.path.join(HERE, os.path.dirname(name)) if os.path.dirname(name) else HERE, exist_ok=True)
+            open(os.path.join(HERE, name + '.html'), 'w', encoding='utf-8', newline='\n').write(out)
+            print('ok', lang, i, name, len(out))
