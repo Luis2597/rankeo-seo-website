@@ -22,6 +22,15 @@ add_action('wp_head', function () {
        . '@media(max-width:768px){.entry-content table{display:block;max-width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch}}'
        . '</style>' . "\n";
 }, 20);
+// Inicio: la portada usaba la foto de 1600 px (342 KB) también en celular; se sirve la variante por tamaño y se precarga.
+add_action('wp_head', function () {
+    if (!is_front_page()) return;
+    $b = 'https://jetcab.mx/wp-content/uploads/2023/03/WhatsApp-Image-2023-03-29-at-17.09.33-1-1';
+    echo '<link rel="preload" as="image" href="' . $b . '-768x512.jpeg" media="(max-width:767px)" fetchpriority="high">'
+       . '<link rel="preload" as="image" href="' . $b . '-1536x1023.jpeg" media="(min-width:768px)" fetchpriority="high">'
+       . '<style id="jc-home-hero">@media(max-width:767px){body .wp-block-uagb-container.uagb-block-18190b82{background-image:url(' . $b . '-768x512.jpeg)!important}}'
+       . '@media(min-width:768px){body .wp-block-uagb-container.uagb-block-18190b82{background-image:url(' . $b . '-1536x1023.jpeg)!important}}</style>' . "\n";
+}, 1);
 add_filter('astra_get_option_footer-copyright-editor', function ($v) {
     return is_string($v) ? str_replace('2025', wp_date('Y'), $v) : $v;
 });
