@@ -444,6 +444,7 @@ a,button{transition-timing-function:cubic-bezier(.32,.72,0,1)}
     <a href="https://jetcab.mx/en/#destinations">Routes</a>
     <a href="https://jetcab.mx/sobre-nosotros/">About</a>
     <a href="https://jetcab.mx/cotizar/">Pricing</a>
+    <a href="https://jetcab.mx/private-jet-guides/">Blog</a>
     <a href="<?php echo $canonical_es; ?>" class="jc-lang">ES</a>
     <a href="<?php echo $wa; ?>" class="jc-nav-cta" target="_blank" rel="noopener">Get a Quote</a>
   </div>
@@ -668,6 +669,7 @@ a,button{transition-timing-function:cubic-bezier(.32,.72,0,1)}
     </div>
     <div class="jc-footer-links">
       <a href="https://jetcab.mx/en/">English home</a>
+      <a href="https://jetcab.mx/private-jet-guides/">Blog</a>
       <a href="https://jetcab.mx/#flota">Our fleet</a>
       <a href="https://jetcab.mx/cotizar/">Request a quote</a>
       <a href="https://jetcab.mx/sobre-nosotros/">About JETCAB</a>

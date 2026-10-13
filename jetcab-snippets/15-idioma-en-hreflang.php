@@ -57,3 +57,12 @@ add_action('wp_head', function () {
     echo '<link rel="alternate" hreflang="en" href="https://jetcab.mx' . esc_attr($en) . '">' . "\n";
     echo '<link rel="alternate" hreflang="x-default" href="https://jetcab.mx' . esc_attr($es) . '">' . "\n";
 }, 2);
+
+// Menús en inglés en las páginas EN que usan la cabecera de Astra (blog EN, posts EN): antes mostraban el menú en español.
+add_filter('wp_nav_menu_args', function ($args) {
+    if (!jetcab_is_en()) return $args;
+    $loc = isset($args['theme_location']) ? $args['theme_location'] : '';
+    if (in_array($loc, array('primary', 'mobile_menu', 'secondary_menu'), true)) $args['menu'] = 58;  // Main menu EN
+    if ($loc === 'footer_menu') $args['menu'] = 59;                                                // Footer menu EN
+    return $args;
+}, 99);
