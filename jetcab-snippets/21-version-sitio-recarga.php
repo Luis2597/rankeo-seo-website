@@ -5,7 +5,7 @@
    la página con ?r=<versión>, que el CDN tampoco tiene en caché. Así los visitantes que ya habían entrado ven los
    cambios en su siguiente visita. Versión = última modificación de cualquier página o post + JETCAB_BUILD
    (subir a mano cuando un cambio vive solo en un snippet). Snippet 28. */
-if (!defined('JETCAB_BUILD')) define('JETCAB_BUILD', '2026-10-14b');
+if (!defined('JETCAB_BUILD')) define('JETCAB_BUILD', '2026-10-14c');
 
 function jetcab_site_version() {
     static $v = null;
