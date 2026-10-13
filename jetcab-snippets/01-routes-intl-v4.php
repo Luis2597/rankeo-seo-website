@@ -32,7 +32,7 @@ add_action("template_redirect", function() {
             "p3"           => "$18,000",
             "cta_urgency"  => "Flying to Miami this week?",
             "cta_sub"      => "Availability open. Send your dates — quote in 30 minutes.",
-            "hero_img"     => "1519501025264-65ba15a82390",
+            "hero_img"     => "https://jetcab.mx/wp-content/uploads/2026/10/jet-privado-mexico-miami-skyline.jpg",
             "hero_line1"   => "Mexico City",
             "hero_line2"   => "to Miami.",
             "hero_sub"     => "3 hours 30 minutes nonstop. Opa-locka Executive Airport — 20 minutes from South Beach, 25 from Brickell. No boarding line. No Dallas connection.",
@@ -77,7 +77,7 @@ add_action("template_redirect", function() {
             "p3"           => "$14,000",
             "cta_urgency"  => "Business trip to Houston?",
             "cta_sub"      => "Our most-requested route. Quote in under 30 minutes.",
-            "hero_img"     => "1486325212027-8081e485255e",
+            "hero_img"     => "https://jetcab.mx/wp-content/uploads/2026/10/jet-privado-mexico-houston-skyline.jpg",
             "hero_line1"   => "Mexico City",
             "hero_line2"   => "to Houston.",
             "hero_sub"     => "2 hours 45 minutes. The energy capital. Oil, gas, construction, medicine. The people who make this trip weekly have already done the math.",
@@ -122,7 +122,7 @@ add_action("template_redirect", function() {
             "p3"           => "$28,000",
             "cta_urgency"  => "New York this month?",
             "cta_sub"      => "One long-range jet on this route this week. Send your dates.",
-            "hero_img"     => "1534430480872-e9a62c0c8d96",
+            "hero_img"     => "https://jetcab.mx/wp-content/uploads/2024/10/vuelosprivadosanuevayork-scaled.jpg",
             "hero_line1"   => "Mexico City",
             "hero_line2"   => "to New York.",
             "hero_sub"     => "5 hours 30 minutes. Teterboro Airport is 12 minutes from Midtown. JFK is 45. The people who matter in that city don\'t use JFK.",
@@ -167,7 +167,7 @@ add_action("template_redirect", function() {
             "p3"           => "$19,000",
             "cta_urgency"  => "Los Angeles this week?",
             "cta_sub"      => "Availability confirmed in under 30 minutes.",
-            "hero_img"     => "1504941812617-26c6e088459a",
+            "hero_img"     => "1444723121867-7a241cacace9",
             "hero_line1"   => "Mexico City",
             "hero_line2"   => "to Los Angeles.",
             "hero_sub"     => "3 hours 45 minutes. Van Nuys Airport — 15 minutes from Beverly Hills. LAX is not your airport.",
@@ -223,6 +223,8 @@ function jetcab_route_page_v4_cs($r) {
     $wa = 'https://wa.me/527291081200?text=' . $r['wa_text'];
     $canonical = 'https://jetcab.mx/private-jet-mexico-city-' . $r['slug'] . '/';
     $canonical_es = 'https://jetcab.mx/' . $r['slug_es'] . '/';
+    // hero_img: URL completa (biblioteca del sitio) o ID de Unsplash
+    $hero_url = (strpos($r['hero_img'], 'http') === 0) ? $r['hero_img'] : 'https://images.unsplash.com/photo-' . $r['hero_img'] . '?auto=format&fit=crop&w=1800&q=85';
     ob_start();
 ?><!DOCTYPE html>
 <html lang="en">
@@ -239,7 +241,7 @@ function jetcab_route_page_v4_cs($r) {
 <meta property="og:description" content="<?php echo esc_attr($r['meta_desc']); ?>">
 <meta property="og:url" content="<?php echo $canonical; ?>">
 <meta property="og:type" content="website">
-<meta property="og:image" content="<?php echo $hero_url; ?>">
+<meta property="og:image" content="<?php echo esc_url($hero_url); ?>">
 <meta property="og:image:width" content="1400"><meta property="og:image:height" content="933">
 <meta property="og:image:alt" content="Private jet Mexico City to <?php echo esc_attr($r['dest']); ?> — JETCAB">
 <meta property="og:site_name" content="JETCAB"><meta property="og:locale" content="en_US">
@@ -452,7 +454,7 @@ a,button{transition-timing-function:cubic-bezier(.32,.72,0,1)}
 
 <section class="jc-hero">
   <div class="jc-hero-bg">
-    <img src="https://images.unsplash.com/photo-<?php echo esc_attr($r['hero_img']); ?>?auto=format&fit=crop&w=1800&q=85" alt="Private jet Mexico City to <?php echo esc_attr($r['dest_full']); ?> — <?php echo esc_attr($r['fbo_name']); ?>" width="1800" height="1013" fetchpriority="high" decoding="async">
+    <img src="<?php echo esc_url($hero_url); ?>" alt="Private jet Mexico City to <?php echo esc_attr($r['dest_full']); ?> — <?php echo esc_attr($r['fbo_name']); ?>" width="1800" height="1013" fetchpriority="high" decoding="async">
     <div class="jc-hero-grad"></div>
   </div>
   <div class="jc-hero-inner">
