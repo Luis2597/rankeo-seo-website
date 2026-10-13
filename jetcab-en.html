@@ -1050,6 +1050,7 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:64px 48p
         <input class="cfi" id="qf-name" name="name" type="text" placeholder="Your full name" autocomplete="name" required>
         <label class="cfl" for="qf-phone">WhatsApp / Phone</label>
         <input class="cfi" id="qf-phone" name="phone" type="tel" placeholder="+1 ..." autocomplete="tel" required>
+        <input type="text" id="qf-website" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">
         <button class="cf-sub" id="quote-submit" type="submit" aria-label="Submit quote request via WhatsApp">Request Quote</button>
         <p class="cf-note">100% confidential · No commitment · Free</p>
         </div>
@@ -1384,7 +1385,16 @@ document.querySelectorAll('.faq-q').forEach(function(q){
             + ', Name: ' + name
             + ', Phone: ' + phone;
     var url = 'https://wa.me/527291081200?text=' + encodeURIComponent(msg);
+    // Copia por correo a fly@jetcab.mx (snippet 32), aunque el cliente no envíe el WhatsApp
+    try {
+      fetch('/wp-json/jetcab/v1/lead', {method:'POST', keepalive:true, headers:{'Content-Type':'application/json'},
+        body: JSON.stringify({name:name, phone:phone, origin:origin, destination:dest, date:date, passengers:pax,
+          aircraft:(type && type !== 'No preference' ? type : ''), page:location.href.split('?')[0], website:val('qf-website')})});
+    } catch (err) {}
     window.open(url, '_blank', 'noopener,noreferrer');
+    var note = form.querySelector('.cf-note');
+    if (note) note.textContent = 'Thank you, ' + name.split(' ')[0] + '. We received your request and will reply within 30 minutes.';
+    if (typeof gtag === 'function') gtag('event', 'generate_lead', {form: 'quote_en'});
   });
 })();
 </script>
