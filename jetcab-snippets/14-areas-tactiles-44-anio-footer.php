@@ -31,6 +31,26 @@ add_action('wp_head', function () {
        . '<style id="jc-home-hero">@media(max-width:767px){body .wp-block-uagb-container.uagb-block-18190b82{background-image:url(' . $b . '-768x512.jpeg)!important}}'
        . '@media(min-width:768px){body .wp-block-uagb-container.uagb-block-18190b82{background-image:url(' . $b . '-1536x1023.jpeg)!important}}</style>' . "\n";
 }, 1);
+// Fuentes de Astra (Karla y Rubik, sí se usan): mismas letras, pero sin bloquear el primer pintado.
+add_filter('style_loader_tag', function ($tag, $handle) {
+    if ($handle !== 'astra-google-fonts' || is_admin()) return $tag;
+    return str_replace("rel='stylesheet'", "rel='preload' as='style' onload=\"this.onload=null;this.rel='stylesheet'\"", $tag) . '<noscript>' . $tag . '</noscript>';
+}, 10, 2);
+
+// Cormorant y Montserrat solo se usan en /cotizar/: fuera de ahí se quita su @import (se descargaban sin usarse).
+add_action('template_redirect', function () {
+    if (is_admin() || is_page('cotizar')) return;
+    ob_start(function ($buf) {
+        return preg_replace("#@import url\('https://fonts\.googleapis\.com/css2\?family=Cormorant\+Garamond[^']*'\);?#", '', $buf);
+    });
+}, 1);
+
+// Botón de llamada ligero (mismo aspecto que el de Call Now Button, sin su script externo de 86 KB).
+add_action('wp_footer', function () {
+    if (is_admin()) return;
+    echo '<a class="jc-call" href="tel:7291081200" aria-label="Llamar a JETCAB"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg></a>'
+       . '<style>.jc-call{position:fixed;right:23px;bottom:23px;z-index:2147483646;width:55px;height:55px;border-radius:50%;background:#009900;display:flex;align-items:center;justify-content:center;box-shadow:0 1px 2px rgba(0,0,0,.4)}.jc-call svg{width:28px;height:28px;fill:#fff}.jc-call:hover{filter:brightness(1.08)}</style>' . "\n";
+}, 99);
 add_filter('astra_get_option_footer-copyright-editor', function ($v) {
     return is_string($v) ? str_replace('2025', wp_date('Y'), $v) : $v;
 });
