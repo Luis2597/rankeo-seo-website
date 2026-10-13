@@ -23,7 +23,7 @@ add_filter('wpseo_schema_graph', function ($graph) {
 add_filter('the_content', function ($content) {
     if (is_admin() || !is_singular('post') || !in_the_loop() || !is_main_query()) return $content;
     $en = has_category('english');
-    $fecha = $en ? get_the_modified_date('F j, Y') : date_i18n('j \d\e F \d\e Y', get_the_modified_time('U'));
+    $fecha = $en ? gmdate('F j, Y', get_post_modified_time('U', true)) :date_i18n('j \d\e F \d\e Y', get_the_modified_time('U'));
     $txt = $en
         ? '<strong>JETCAB operations team.</strong> Private jet and helicopter charter operator flying from Toluca International Airport since 1999 under Mexican civil aviation authority (AFAC) authorization. Prices and flight times in this guide come from JETCAB quotes. Last updated: ' . esc_html($fecha) . '.'
         : '<strong>Equipo de operaciones de JETCAB.</strong> Operador de jets privados y helicópteros desde el Aeropuerto Internacional de Toluca desde 1999, con permiso de la AFAC. Los precios y tiempos de esta guía salen de cotizaciones reales de JETCAB. Actualizado: ' . esc_html($fecha) . '.';

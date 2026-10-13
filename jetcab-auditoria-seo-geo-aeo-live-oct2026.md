@@ -318,3 +318,9 @@ Pendiente:
 - Menú móvil propio para las 8 rutas internacionales servidas fuera del tema (snippet 27).
 - Botones «RESERVAR/COTIZAR» con 404 en 4 landings; anclas inexistentes (/en/#destinations-faq, /#flota) en 16 páginas, 2 posts y la plantilla de rutas; barra de enlaces ES fuera de las páginas EN; enlace de autor; URL suelta que incrustaba el sitio en el aviso de privacidad; tablas anchas en móvil.
 Resultado final: 0 enlaces rotos, 0 anclas rotas, 0 errores de consola, 0 desbordes; menú móvil operativo en las 33 páginas y en el idioma correcto.
+
+### 12.5 Blog publicado (13 oct)
+- A pedido del usuario, los 32 artículos programados se publicaron el 13 oct (orden: jets primero, helicópteros al final). Total en el blog: 40 posts (29 ES, 11 EN), los 40 en el sitemap y enviados por IndexNow.
+- /blog/ y /private-jet-guides/ («Private Jet Blog») listan solo artículos publicados en tarjetas con imagen, categoría, resumen, autor («Equipo de operaciones de JETCAB» / «JETCAB operations team») y fecha (snippet 26).
+- Navegadores: el hosting manda Cache-Control max-age=2678400 en HTML; quien ya visitó el sitio ve copias viejas. Pendiente pedir a GoDaddy bajar el TTL de HTML a 1 h.
+- Autor real: pendiente nombre y cargo (José Chávez u otra persona) para pasar de Organization a Person.
