@@ -426,6 +426,57 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:64px 48p
 .routes-answer{font-size:16px;line-height:1.7;color:#fff;border-left:3px solid var(--orange);padding-left:18px;margin:18px 0 28px}
 @media(max-width:768px){.jc-lang-switch{top:72px!important;right:16px!important}}
 .ft-col li a{display:inline-flex;align-items:center;min-height:44px;min-width:44px}
+
+/* Cotizador y comparador (oct 2026) */
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.bf select{appearance:none;-webkit-appearance:none;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%23999'/%3E%3C/svg%3E") no-repeat right 4px center;padding-right:18px}
+.qt-res{background:#fff;color:#111;margin-top:10px;border-radius:4px;box-shadow:0 24px 64px rgba(0,0,0,.5);padding:22px 24px;text-align:left;max-width:100%}
+.qt-res[hidden]{display:none}
+.qt-head{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;border-bottom:1px solid #eee;padding-bottom:12px;margin-bottom:6px}
+.qt-route{font-family:'Barlow Condensed',sans-serif;font-size:22px;font-weight:800;letter-spacing:.06em;text-transform:uppercase}
+.qt-time{font-size:13px;color:#555;letter-spacing:.06em}
+.qt-row{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:11px 0;border-bottom:1px solid #f1f1f1}
+.qt-ac{font-size:15px;font-weight:600}.qt-ac small{display:block;font-size:12px;font-weight:400;color:#666;margin-top:2px}
+.qt-pr{font-family:'Barlow Condensed',sans-serif;font-size:24px;font-weight:800;color:#C2410C;white-space:nowrap}
+.qt-pr.ask{font-family:'Barlow',sans-serif;font-size:13px;font-weight:600;color:#555}
+.qt-note{font-size:12px;color:#555;line-height:1.55;margin:12px 0 14px}
+.qt-acts{display:flex;gap:10px;flex-wrap:wrap}
+.qt-wa{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 22px;background:#25D366;color:#0b2e17;font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;text-decoration:none;border-radius:2px}
+.qt-wa:hover{background:#1ebd5a}
+.qt-more{display:inline-flex;align-items:center;min-height:48px;padding:0 18px;color:#111;font-size:13px;font-weight:600;border:1px solid #ddd;border-radius:2px;text-decoration:none;background:#fff;cursor:pointer;font-family:'Barlow',sans-serif}
+#cmp-modal{position:fixed;inset:0;z-index:10001;display:none;background:#0a0908;overflow-y:auto;padding:72px 16px 40px}
+#cmp-modal.open{display:block}
+#cmp-modal .jm-close{z-index:10002}
+.cmp-cards{display:none}
+.cmp-card{border:1px solid rgba(255,255,255,.1);background:#141414;padding:18px 16px;margin-bottom:14px}
+.cmp-card h3{font-family:'Barlow Condensed',sans-serif;font-size:24px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:#fff;margin:0}
+.cmp-card .cc-cat{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--orange);margin:2px 0 12px}
+.cmp-card dl{display:grid;grid-template-columns:1fr auto;gap:8px 12px;margin:0 0 14px;font-size:14px;color:#e8e8e8}
+.cmp-card dt{color:rgba(255,255,255,.6)}.cmp-card dd{margin:0;text-align:right;font-weight:600}
+.cmp-card dd.pr{font-family:'Barlow Condensed',sans-serif;font-size:18px;font-weight:700;color:#fff}
+.cmp-card .cc-h{grid-column:1/-1;font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--orange);border-top:1px solid rgba(255,255,255,.1);padding-top:10px;margin-top:4px}
+.cmp-card .cc-acts a,.cmp-card .cc-acts button{display:inline-flex;align-items:center;min-height:44px;padding:0 16px;margin:0 6px 6px 0;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;border-radius:2px;cursor:pointer;font-family:'Barlow',sans-serif}
+.cmp-card .cc-acts a{background:#25D366;color:#0b2e17}.cmp-card .cc-acts button{background:none;color:#fff;border:1px solid rgba(255,255,255,.3)}
+@media(max-width:700px){.cmp-wrap{display:none}.cmp-cards{display:block}}
+.cmp-box{max-width:980px;margin:0 auto}
+.cmp-box h2{font-family:'Barlow Condensed',sans-serif;font-size:clamp(28px,4.5vw,48px);font-weight:800;text-transform:uppercase;letter-spacing:.04em;color:#fff;margin:0 0 8px}
+.cmp-sub{color:rgba(255,255,255,.75);font-size:15px;line-height:1.6;margin:0 0 24px;max-width:680px}
+.cmp-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;border:1px solid rgba(255,255,255,.1)}
+.cmp-t{width:100%;min-width:600px;border-collapse:collapse;color:#e8e8e8;font-size:14px}
+.cmp-t th,.cmp-t td{padding:14px 16px;border-bottom:1px solid rgba(255,255,255,.08);text-align:left;vertical-align:top}
+.cmp-t thead th{background:#141414;font-family:'Barlow Condensed',sans-serif;font-size:20px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:#fff}
+.cmp-t thead th small{display:block;font-family:'Barlow',sans-serif;font-size:11px;font-weight:600;letter-spacing:.16em;color:var(--orange);margin-top:4px}
+.cmp-t tbody th{font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.6);white-space:nowrap}
+.cmp-t .cmp-sec th{color:var(--orange);background:rgba(240,120,40,.06);padding-top:12px;padding-bottom:12px}
+.cmp-t td.pr{font-family:'Barlow Condensed',sans-serif;font-size:20px;font-weight:700;color:#fff}
+.cmp-t td.pr small{display:block;font-family:'Barlow',sans-serif;font-size:11px;font-weight:400;color:rgba(255,255,255,.6)}
+.cmp-t td.ask{font-size:13px;color:rgba(255,255,255,.6)}
+.cmp-t tfoot td{padding:16px}
+.cmp-t tfoot a,.cmp-t tfoot button{display:inline-flex;align-items:center;min-height:44px;padding:0 16px;margin:0 6px 6px 0;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;border-radius:2px;cursor:pointer;font-family:'Barlow',sans-serif}
+.cmp-t tfoot a{background:#25D366;color:#0b2e17;border:none}
+.cmp-t tfoot button{background:none;color:#fff;border:1px solid rgba(255,255,255,.3)}
+.cmp-foot{font-size:12px;color:rgba(255,255,255,.6);line-height:1.6;margin-top:14px}
+@media(max-width:768px){.qt-res{padding:18px 16px}.qt-route{font-size:19px}.qt-pr{font-size:21px}#cmp-modal{padding-top:76px}}
 </style>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"WebSite","name":"JETCAB","url":"https://jetcab.mx/","description":"Mexico's premier private jet and helicopter charter company. DGAC certified, 25 years of experience, 2,000+ flights completed.","potentialAction":{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://jetcab.mx/en/#contact"},"query-input":"required name=flight_route"},"@id":"https://jetcab.mx/#website","inLanguage":["es-MX","en-US"]}
@@ -486,28 +537,35 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:64px 48p
     <span class="hero-eyebrow">Toluca FBO · DGAC Certified · Jet ready in 2 hours</span>
     <h1 class="hero-title">Private Jet<br>Charter<br>Mexico</h1>
     <p class="hero-sub" style="font-family:'Barlow Condensed',sans-serif;font-size:clamp(15px,2vw,20px);font-weight:400;letter-spacing:.18em;color:rgba(255,255,255,.7);text-transform:uppercase;margin-bottom:44px">No lines. No terminals. No waiting.<br>Your aircraft. Your schedule.</p>
-    <div class="bform">
+    <form class="bform" id="qt-form" novalidate>
       <div class="bf">
-        <span class="bf-l">Origin</span>
-        <input type="text" id="origin" name="origin" placeholder="City or airport" aria-label="Origin city or airport">
+        <label class="bf-l" for="qt-from">From</label>
+        <select id="qt-from" name="origin"><option value="tlc">Mexico City · Toluca (TLC)</option><option value="other">Other city</option></select>
       </div>
       <div class="bf">
-        <span class="bf-l">Destination</span>
-        <input type="text" id="destination" name="destination" placeholder="City or airport" aria-label="Destination city or airport">
+        <label class="bf-l" for="qt-to">To</label>
+        <select id="qt-to" name="destination">
+          <option value="">Choose destination</option>
+          <optgroup label="Mexico"><option value="acapulco">Acapulco</option><option value="cancun">Cancún</option><option value="guadalajara">Guadalajara</option><option value="loscabos">Los Cabos</option><option value="monterrey">Monterrey</option><option value="puertovallarta">Puerto Vallarta</option><option value="queretaro">Querétaro</option><option value="tijuana">Tijuana</option></optgroup>
+          <optgroup label="United States &amp; Caribbean"><option value="havana">Havana, Cuba</option><option value="houston">Houston</option><option value="lasvegas">Las Vegas</option><option value="losangeles">Los Angeles</option><option value="mcallen">McAllen</option><option value="miami">Miami</option><option value="newyork">New York</option><option value="sandiego">San Diego</option></optgroup>
+          <optgroup label="Europe"><option value="spain">Spain (Madrid, Barcelona)</option><option value="europe">Other Europe (London, Paris…)</option></optgroup>
+          <option value="other">Other destination</option>
+        </select>
       </div>
       <div class="bf">
-        <span class="bf-l">Date</span>
-        <input type="date" id="travel-date" name="travel_date" aria-label="Travel date">
+        <label class="bf-l" for="travel-date">Date</label>
+        <input type="date" id="travel-date" name="travel_date">
       </div>
       <div class="bf" style="border-right:none">
-        <span class="bf-l">Passengers</span>
-        <select><option>1–3</option><option>4–7</option><option>8–12</option><option>13+</option></select>
+        <label class="bf-l" for="qt-pax">Passengers</label>
+        <select id="qt-pax" name="passengers"><option value="0">1–3</option><option value="1">4–7</option><option value="2">8–12</option><option value="3">13+</option></select>
       </div>
-      <button class="bf-btn" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
-        <span>Get Quote</span>
-        <small>Free · 30 min</small>
+      <button class="bf-btn" type="submit">
+        <span>See Price</span>
+        <small>Instant · USD</small>
       </button>
-    </div>
+    </form>
+    <div class="qt-res" id="qt-res" role="region" aria-live="polite" aria-label="Price estimate" hidden></div>
     <div class="hero-actions">
       <a class="ha" href="https://wa.me/527291081200" target="_blank" rel="noopener noreferrer">WhatsApp 24/7</a>
       <a class="ha" href="tel:+527291081200">+52 (729) 108-1200</a>
@@ -582,7 +640,7 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:64px 48p
       <p>Fleet available in Mexico for domestic and international flights. Quote confirmed in under 30 minutes.</p>
       <div class="fb-btns">
         <a href="#fgrid" class="btn-o">View Aircraft</a>
-        <a href="#contact" class="btn-ghost">Request Comparison</a>
+        <button type="button" class="btn-ghost" onclick="openCmp()">Compare Jets &amp; Prices</button>
       </div>
     </div>
   </div>
@@ -605,7 +663,7 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:64px 48p
           <div class="fc-spec"><span class="fc-sl">Range</span><span class="fc-sv">~2,100 mi</span></div>
           <div class="fc-spec"><span class="fc-sl">Catering</span><span class="fc-sv">Included</span></div>
         </div>
-        <div class="fc-foot"><span class="fc-price">Quote on request</span><span class="fc-link">View aircraft →</span></div>
+        <div class="fc-foot"><span class="fc-price">From $1,800 USD</span><span class="fc-link">View aircraft →</span></div>
       </div>
     </div>
     <div class="fc rv rv-d2" data-cat="medio" onclick="openJet('challenger604')" style="cursor:pointer" role="button" tabindex="0" aria-label="View Challenger 605 details">
@@ -618,7 +676,7 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:64px 48p
           <div class="fc-spec"><span class="fc-sl">Range</span><span class="fc-sv">~4,000 mi</span></div>
           <div class="fc-spec"><span class="fc-sl">Lavatory</span><span class="fc-sv">Full</span></div>
         </div>
-        <div class="fc-foot"><span class="fc-price">Quote on request</span><span class="fc-link">View aircraft →</span></div>
+        <div class="fc-foot"><span class="fc-price">From $6,500 USD</span><span class="fc-link">View aircraft →</span></div>
       </div>
     </div>
     <div class="fc rv rv-d3" data-cat="largo" onclick="openJet('gulfstreamgv')" style="cursor:pointer" role="button" tabindex="0" aria-label="View Gulfstream GV details">
@@ -631,7 +689,7 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:64px 48p
           <div class="fc-spec"><span class="fc-sl">Range</span><span class="fc-sv">~7,400 mi</span></div>
           <div class="fc-spec"><span class="fc-sl">Suite</span><span class="fc-sv">Private</span></div>
         </div>
-        <div class="fc-foot"><span class="fc-price">Quote on request</span><span class="fc-link">View aircraft →</span></div>
+        <div class="fc-foot"><span class="fc-price">From $12,000 USD</span><span class="fc-link">View aircraft →</span></div>
       </div>
     </div>
     <div class="fc rv rv-d1" data-cat="corto" onclick="openJet('learjet45')" style="cursor:pointer" role="button" tabindex="0" aria-label="View Learjet 45 details">
@@ -1445,6 +1503,16 @@ document.querySelectorAll('.faq-q').forEach(function(q){
 }
 </style>
 
+<div id="cmp-modal" role="dialog" aria-modal="true" aria-labelledby="cmp-title" onclick="if(event.target===this)closeCmp()">
+  <button class="jm-close" onclick="closeCmp()" aria-label="Close"><svg viewBox="0 0 24 24"><path d="M18 6L6 18M6 6l12 12"/></svg></button>
+  <div class="cmp-box">
+    <h2 id="cmp-title">Compare Private Jets</h2>
+    <p class="cmp-sub">Side by side: cabin, range and one-way prices from Mexico City (Toluca), per aircraft, not per seat. Crew, fuel, catering and permits included.</p>
+    <div class="cmp-wrap"><table class="cmp-t" id="cmp-t"></table></div>
+    <div class="cmp-cards" id="cmp-cards"></div>
+    <p class="cmp-foot">Starting prices for one-way flights. Your final price depends on date, return leg and aircraft availability, and is confirmed on WhatsApp within 30 minutes. Helicopters, other aircraft and other routes are quoted on request.</p>
+  </div>
+</div>
 <div id="jc-modal" role="dialog" aria-modal="true" aria-label="Aircraft details">
   <button class="jm-close" onclick="closeJet()" aria-label="Close">
     <svg viewBox="0 0 18 18"><line x1="1" y1="1" x2="17" y2="17"/><line x1="17" y1="1" x2="1" y2="17"/></svg>
@@ -1498,7 +1566,7 @@ var JETS = {
     tagline:'The definitive executive jet for Mexico & US border routes',
     img:'https://jetcab.mx/wp-content/uploads/2024/11/Learjet35enrenta.jpeg',
     gallery:['https://images.unsplash.com/photo-1464037866556-6812c9d1c72e?auto=format&fit=crop&w=600&q=80','https://images.unsplash.com/photo-1583416750470-965b2707b355?auto=format&fit=crop&w=600&q=80','https://images.unsplash.com/photo-1474302770737-173ee21bab63?auto=format&fit=crop&w=600&q=80'],
-    price:'Quote on request',
+    price:'From $1,800 USD one way',
     waText:'Hi JETCAB, I\'d like to inquire about the Learjet 35 charter.',
     specs:[
       {l:'Passengers',v:'4 – 7'},
@@ -1529,7 +1597,7 @@ var JETS = {
     tagline:'Stand-up cabin, full galley, intercontinental range',
     img:'https://jetcab.mx/wp-content/uploads/2024/11/Challenger-605-en-renta.jpeg',
     gallery:['https://images.unsplash.com/photo-1474302770737-173ee21bab63?auto=format&fit=crop&w=600&q=80','https://images.unsplash.com/photo-1540962351504-03099e0a754b?auto=format&fit=crop&w=600&q=80','https://images.unsplash.com/photo-1464037866556-6812c9d1c72e?auto=format&fit=crop&w=600&q=80'],
-    price:'Quote on request',
+    price:'From $6,500 USD one way',
     waText:'Hi JETCAB, I\'d like to inquire about the Challenger 605 charter.',
     specs:[
       {l:'Passengers',v:'6 – 9'},
@@ -1560,7 +1628,7 @@ var JETS = {
     tagline:'Mexico City to London. Non-stop. The pinnacle of global aviation.',
     img:'https://jetcab.mx/wp-content/uploads/2024/11/Gulfstream-Gv-en-Renta.jpeg',
     gallery:['https://images.unsplash.com/photo-1474302770737-173ee21bab63?auto=format&fit=crop&w=600&q=80','https://images.unsplash.com/photo-1583416750470-965b2707b355?auto=format&fit=crop&w=600&q=80','https://images.unsplash.com/photo-1556388158-158ea5ccacbd?auto=format&fit=crop&w=600&q=80'],
-    price:'Quote on request',
+    price:'From $12,000 USD one way',
     waText:'Hi JETCAB, I\'d like to inquire about the Gulfstream GV charter.',
     specs:[
       {l:'Passengers',v:'8 – 16'},
@@ -2079,6 +2147,133 @@ function closeDest(){
   document.body.style.overflow='';
 }
 document.addEventListener('keydown',function(e){if(e.key==='Escape'){closeJet();closeDest();}});
+/* Cotizador y comparador: precios publicados en las guías de cada destino (USD, sólo ida, por aeronave) */
+var QT = {
+  acapulco:{n:'Acapulco',t:'45 min',base:1500,url:'/private-jet-mexico-city-acapulco/'},
+  cancun:{n:'Cancún',t:'2 h 15 min',lj:3200,cl:6500,gv:12000,url:'/private-jet-mexico-city-cancun/'},
+  guadalajara:{n:'Guadalajara',t:'50 min',lj:1800,url:'/private-jet-mexico-city-guadalajara/'},
+  loscabos:{n:'Los Cabos',t:'2 h 30 min',lj:3800,url:'/private-jet-mexico-city-los-cabos/'},
+  monterrey:{n:'Monterrey',t:'1 h 15 min',lj:2200,url:'/private-jet-mexico-city-monterrey/'},
+  puertovallarta:{n:'Puerto Vallarta',t:'1 h 45 min',lj:3000,url:'/private-jet-mexico-city-puerto-vallarta/'},
+  queretaro:{n:'Querétaro',t:'35 min',base:3000,url:'/private-jet-mexico-city-queretaro/'},
+  tijuana:{n:'Tijuana',t:'3 h 10 min',base:12000,url:'/private-jet-mexico-city-tijuana/'},
+  havana:{n:'Havana',t:'2 h 30 min',base:1800,url:'/private-jet-mexico-city-havana/'},
+  houston:{n:'Houston',t:'2 h 45 min',lj:3800,cl:7500,gv:14000,url:'/private-jet-mexico-city-houston/'},
+  lasvegas:{n:'Las Vegas',t:'3 h 50 min',base:15000,url:'/private-jet-mexico-city-las-vegas/'},
+  losangeles:{n:'Los Angeles',t:'3 h 45 min',lj:5200,cl:10500,gv:19000,url:'/private-jet-mexico-city-los-angeles/'},
+  mcallen:{n:'McAllen',t:'1 h 30 min',base:8000,url:'/private-jet-mexico-city-mcallen/'},
+  miami:{n:'Miami',t:'3 h 30 min',lj:4800,cl:9500,gv:18000,url:'/private-jet-mexico-city-miami/'},
+  newyork:{n:'New York',t:'5 h 30 min',lj:9500,cl:18500,gv:28000,ljNote:'one fuel stop',url:'/private-jet-mexico-city-new-york/'},
+  sandiego:{n:'San Diego',t:'3 h 20 min',base:9000,url:'/private-jet-mexico-city-san-diego/'},
+  spain:{n:'Spain',t:'about 11 h nonstop',lr:100000,url:'/private-jet-mexico-to-spain/'},
+  europe:{n:'Europe',t:'10.5 to 13 h nonstop',lr:100000,url:'/private-jet-mexico-to-europe/'}
+};
+var PAXL = ['1–3','4–7','8–12','13+'];
+function qtUsd(n){ return '$' + n.toLocaleString('en-US') + ' USD'; }
+function qtEsc(t){ return String(t).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];}); }
+function qtWa(msg){ return 'https://wa.me/527291081200?text=' + encodeURIComponent(msg); }
+function qtRows(r, pax){
+  var rows = [];
+  function add(name, sub, price){ rows.push({name:name, sub:sub, price:price}); }
+  if (r.lr) { add('Gulfstream GV or Global Express', 'Long range · up to 16 passengers', r.lr); return rows; }
+  if (r.lj || r.cl || r.gv) {
+    if (pax <= 1) add('Learjet 35', 'Up to 7 passengers' + (r.ljNote ? ' · ' + r.ljNote : ''), r.lj);
+    if (pax <= 2) add('Challenger 605', 'Mid-size · stand-up cabin', r.cl);
+    add('Gulfstream GV', 'Long range · up to 16 passengers', r.gv);
+    return rows;
+  }
+  if (pax <= 1) add('Private jet', 'Full aircraft for your group', r.base);
+  else add('Larger aircraft', 'For groups of 8 or more', null);
+  return rows;
+}
+(function(){
+  var f = document.getElementById('qt-form'), out = document.getElementById('qt-res');
+  if (!f || !out) return;
+  var d = document.getElementById('travel-date');
+  if (d) d.min = new Date().toISOString().slice(0,10);
+  f.addEventListener('submit', function(e){
+    e.preventDefault();
+    var from = document.getElementById('qt-from').value, toSel = document.getElementById('qt-to'), to = toSel.value;
+    var pax = +document.getElementById('qt-pax').value, date = d ? d.value : '';
+    if (!to) { toSel.focus(); toSel.parentNode.style.background = 'rgba(232,90,30,.1)'; return; }
+    toSel.parentNode.style.background = '';
+    var r = (from === 'tlc') ? QT[to] : null, html, msg;
+    var extra = (date ? ', date: ' + date : '') + ', passengers: ' + PAXL[pax];
+    if (!r) {
+      html = '<div class="qt-head"><span class="qt-route">Custom route</span></div>'
+           + '<p class="qt-note">Routes outside our published price list are quoted by our team within 30 minutes, 24/7, with aircraft, price and flight time.</p>';
+      msg = 'Hi JETCAB, I’d like a quote for a custom route' + (to !== 'other' ? ' to ' + toSel.options[toSel.selectedIndex].text : '') + extra + '.';
+    } else {
+      var rows = qtRows(r, pax), best = null;
+      html = '<div class="qt-head"><span class="qt-route">Mexico City → ' + qtEsc(r.n) + '</span><span class="qt-time">Flight time ' + qtEsc(r.t) + '</span></div>';
+      rows.forEach(function(x){
+        if (x.price && !best) best = x;
+        html += '<div class="qt-row"><span class="qt-ac">' + qtEsc(x.name) + '<small>' + qtEsc(x.sub) + '</small></span>'
+              + (x.price ? '<span class="qt-pr">From ' + qtUsd(x.price) + '</span>' : '<span class="qt-pr ask">Quoted in 30 min</span>') + '</div>';
+      });
+      html += '<p class="qt-note">One way, per aircraft (not per seat), from Toluca (TLC). Crew, fuel, catering and permits included. The closed price for your date is confirmed on WhatsApp within 30 minutes.</p>';
+      msg = 'Hi JETCAB, I’d like to confirm a private jet from Mexico City to ' + r.n + extra
+          + (best ? ' (' + best.name + ', from ' + qtUsd(best.price) + ' one way)' : '') + '.';
+    }
+    html += '<div class="qt-acts"><a class="qt-wa" href="' + qtWa(msg) + '" target="_blank" rel="noopener noreferrer">Confirm on WhatsApp</a>'
+          + (r ? '<a class="qt-more" href="' + r.url + '">' + qtEsc(r.n) + ' route guide</a>' : '')
+          + '<button type="button" class="qt-more" id="qt-form-btn">Send details by form</button></div>';
+    out.innerHTML = html; out.hidden = false;
+    out.scrollIntoView({behavior:'smooth', block:'nearest'});
+    document.getElementById('qt-form-btn').addEventListener('click', function(){
+      var set = function(id, v){ var el = document.getElementById(id); if (el && v) el.value = v; };
+      set('qf-origin', from === 'tlc' ? 'Mexico City / Toluca (TLC)' : '');
+      set('qf-dest', r ? r.n : (to === 'other' ? '' : toSel.options[toSel.selectedIndex].text));
+      set('qf-date', date); set('qf-pax', PAXL[pax]);
+      document.getElementById('contact').scrollIntoView({behavior:'smooth'});
+      setTimeout(function(){ var n = document.getElementById('qf-name'); if (n) n.focus({preventScroll:true}); }, 700);
+    });
+    if (typeof gtag === 'function') gtag('event', 'quote_estimate', {destination: to, passengers: PAXL[pax]});
+  });
+})();
+function openCmp(){
+  var t = document.getElementById('cmp-t'), ids = ['learjet35','challenger604','gulfstreamgv'];
+  if (!t.innerHTML) {
+    var spec = function(id, l){ var s = (JETS[id].specs || []).filter(function(x){ return x.l === l; })[0]; return s ? s.v : '—'; };
+    var h = '<thead><tr><th scope="col"><span class="sr-only">Feature</span></th>';
+    ids.forEach(function(id){ h += '<th scope="col">' + JETS[id].name + '<small>' + JETS[id].cat.split(' · ')[0] + '</small></th>'; });
+    h += '</tr></thead><tbody>';
+    ['Passengers','Range','Max Speed'].forEach(function(l){
+      h += '<tr><th scope="row">' + l + '</th>';
+      ids.forEach(function(id){ h += '<td>' + spec(id, l) + '</td>'; });
+      h += '</tr>';
+    });
+    h += '<tr><th scope="row">Best for</th>';
+    ids.forEach(function(id){ h += '<td>' + JETS[id].tagline + '</td>'; });
+    h += '</tr><tr class="cmp-sec"><th scope="row" colspan="4">One way from Mexico City (Toluca)</th></tr>';
+    ['cancun','houston','miami','losangeles','newyork','guadalajara','monterrey','puertovallarta','loscabos'].forEach(function(k){
+      var r = QT[k];
+      h += '<tr><th scope="row">' + r.n + ' · ' + r.t + '</th>';
+      [r.lj, r.cl, r.gv].forEach(function(v, i){
+        h += v ? '<td class="pr">' + qtUsd(v) + (i === 0 && r.ljNote ? '<small>' + r.ljNote + '</small>' : '') + '</td>' : '<td class="ask">Quoted in 30 min</td>';
+      });
+      h += '</tr>';
+    });
+    h += '</tbody><tfoot><tr><td></td>';
+    ids.forEach(function(id){
+      h += '<td><a href="' + qtWa('Hi JETCAB, I’d like a quote on the ' + JETS[id].name + '.') + '" target="_blank" rel="noopener noreferrer">Quote</a><button type="button" onclick="closeCmp();openJet(\'' + id + '\')">Details</button></td>';
+    });
+    t.innerHTML = h + '</tr></tfoot>';
+    var routes = ['cancun','houston','miami','losangeles','newyork','guadalajara','monterrey','puertovallarta','loscabos'];
+    document.getElementById('cmp-cards').innerHTML = ids.map(function(id, i){
+      var k = ['lj','cl','gv'][i], c = '<div class="cmp-card"><h3>' + JETS[id].name + '</h3><p class="cc-cat">' + JETS[id].cat.split(' · ')[0] + '</p><dl>';
+      ['Passengers','Range','Max Speed'].forEach(function(l){ c += '<dt>' + l + '</dt><dd>' + spec(id, l) + '</dd>'; });
+      c += '<dt class="cc-h">One way from Mexico City</dt>';
+      routes.forEach(function(rk){ var r = QT[rk], v = r[k]; c += '<dt>' + r.n + (i === 0 && r.ljNote ? ' (' + r.ljNote + ')' : '') + '</dt>' + (v ? '<dd class="pr">' + qtUsd(v) + '</dd>' : '<dd>Quoted in 30 min</dd>'); });
+      return c + '</dl><div class="cc-acts"><a href="' + qtWa('Hi JETCAB, I’d like a quote on the ' + JETS[id].name + '.') + '" target="_blank" rel="noopener noreferrer">Quote</a><button type="button" onclick="closeCmp();openJet(\'' + id + '\')">Details</button></div></div>';
+    }).join('');
+  }
+  var m = document.getElementById('cmp-modal'); m.classList.add('open'); document.body.style.overflow = 'hidden'; m.scrollTop = 0;
+  if (typeof gtag === 'function') gtag('event', 'compare_jets');
+}
+function closeCmp(){ var m = document.getElementById('cmp-modal'); if (m && m.classList.contains('open')) { m.classList.remove('open'); document.body.style.overflow = ''; } }
+document.addEventListener('keydown', function(e){ if (e.key === 'Escape') closeCmp(); });
+
 
 // Escape closes all modals — unified listener below
 // Keyboard accessibility for fleet cards
