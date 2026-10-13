@@ -59,7 +59,7 @@ function jetcab_helicopteros_extra() {
     $h .= '<tr><td>Cuernavaca, Tequesquitengo, Puebla y Querétaro</td><td>bajo cotización según helipuerto</td></tr>';
     $h .= '</tbody></table></div>';
     $h .= '<h2>¿Conviene helicóptero o jet privado?</h2>';
-    $h .= '<p>Para moverse dentro de la ciudad o a destinos de menos de una hora, el helicóptero despega y aterriza en helipuertos cercanos a oficinas, hoteles y residencias, y evita el traslado por carretera a Toluca. Cuando el destino supera la hora y media de vuelo, el jet resulta más rápido y por lo general más económico por kilómetro. Un ejemplo: Acapulco son 1 hora 20 minutos en helicóptero y 45 minutos en jet desde Toluca, con vuelo base desde 1,500 USD. Muchos clientes combinan los dos: helicóptero de Santa Fe a Toluca y de ahí jet a Cancún, Los Cabos o Estados Unidos.</p>';
+    $h .= '<p>Para moverse dentro de la ciudad o a destinos de menos de una hora, el helicóptero despega y aterriza en helipuertos cercanos a oficinas, hoteles y residencias, y evita el traslado por carretera a Toluca. Cuando el destino supera la hora y media de vuelo, el jet resulta más rápido y por lo general más económico por kilómetro. Un ejemplo: Acapulco son 1 hora 20 minutos en helicóptero y 45 minutos en jet desde Toluca, con vuelo base desde 1,500 USD. También puede combinar los dos: helicóptero de Santa Fe a Toluca y de ahí jet a Cancún, Los Cabos o Estados Unidos.</p>';
     $h .= '<p><a href="https://jetcab.mx/precios-jet-privado/" style="color:#C9973F">Vea las tarifas de jet privado por ruta</a> o <a href="https://jetcab.mx/tour-helicoptero-cdmx/" style="color:#C9973F">el tour en helicóptero por la CDMX</a>.</p>';
     $h .= '</div></section>';
     return $h;
