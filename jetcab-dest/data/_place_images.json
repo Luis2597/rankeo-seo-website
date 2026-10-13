@@ -1,0 +1,632 @@
+{
+ "toluca": [
+  {
+   "url": "https://jetcab.mx/wp-content/uploads/2026/10/private-jet-toluca-nevado-de-toluca.jpg",
+   "author": "México en Fotos, A.C.",
+   "license": "CC BY-SA 2.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Vista_del_Nevado_de_Toluca.jpg",
+   "id": 3183
+  },
+  {
+   "url": "https://jetcab.mx/wp-content/uploads/2026/10/private-jet-toluca-valle-de-bravo.jpg",
+   "author": "AlejandroLinaresGarcia",
+   "license": "CC BY-SA 4.0",
+   "source": "https://commons.wikimedia.org/wiki/File:PanVBravoSpires3.JPG",
+   "id": 3184
+  },
+  {
+   "url": "https://jetcab.mx/wp-content/uploads/2026/10/private-jet-toluca-metepec.jpg",
+   "author": "Thelmadatter",
+   "license": "CC BY-SA 3.0",
+   "source": "https://commons.wikimedia.org/wiki/File:PanMetepecMX.JPG",
+   "id": 3185
+  },
+  {
+   "url": "https://jetcab.mx/wp-content/uploads/2026/10/private-jet-toluca-toluca-historic-center.jpg",
+   "author": "Juan Carlos Fonseca Mata",
+   "license": "CC BY-SA 4.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Cosmovitral_(Toluca,_EdoMex),_fachada.jpg",
+   "id": 3186
+  }
+ ],
+ "cdmx": [
+  {
+   "url": "https://jetcab.mx/wp-content/uploads/2026/10/private-jet-mexico-city-polanco.jpg",
+   "author": "Raystormxc",
+   "license": "CC BY-SA 3.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Museo_Soumaya_Plaza.jpg",
+   "id": 3187
+  },
+  {
+   "url": "https://jetcab.mx/wp-content/uploads/2026/10/private-jet-mexico-city-paseo-de-la-reforma.jpg",
+   "author": "Fernando Flores",
+   "license": "CC BY-SA 2.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Blick_auf_den_Paseo_de_la_Reforma.jpg",
+   "id": 3188
+  },
+  {
+   "url": "https://jetcab.mx/wp-content/uploads/2026/10/private-jet-mexico-city-chapultepec.jpg",
+   "author": "EneasMx",
+   "license": "CC BY-SA 4.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Puerta_de_los_leones_en_Chapultepec_2.jpg",
+   "id": 3189
+  },
+  {
+   "url": "https://jetcab.mx/wp-content/uploads/2026/10/private-jet-mexico-city-santa-fe.jpg",
+   "author": "Fernando montes17",
+   "license": "CC BY-SA 4.0",
+   "source": "https://commons.wikimedia.org/wiki/File:A_view_of_Santa_Fe.jpg",
+   "id": 3190
+  }
+ ],
+ "cancun": [
+  {
+   "url": "https://jetcab.mx/wp-content/uploads/2026/10/private-jet-cancun-isla-mujeres.jpg",
+   "author": "dronepicr",
+   "license": "CC BY 2.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Isla_Mujeres_aerial_(29729604048).jpg",
+   "id": 3191
+  },
+  {
+   "url": "https://jetcab.mx/wp-content/uploads/2026/10/private-jet-cancun-chichen-itza.jpg",
+   "author": "Daniel Schwen",
+   "license": "CC BY-SA 4.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Chichen_Itza_3.jpg",
+   "id": 3192
+  },
+  {
+   "url": "https://jetcab.mx/wp-content/uploads/2026/10/private-jet-cancun-tulum.jpg",
+   "author": "Popo le Chien",
+   "license": "CC BY-SA 3.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Tulum_2.jpg",
+   "id": 3193
+  },
+  {
+   "url": "https://jetcab.mx/wp-content/uploads/2026/10/private-jet-cancun-playa-del-carmen.jpg",
+   "author": "Андрей Бобровский",
+   "license": "CC BY 3.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Sac_Pacal,_77720_Playa_del_Carmen,_Q.R.,_Mexico_-_panoramio_(3).jpg",
+   "id": 3194
+  }
+ ],
+ "loscabos": [
+  {
+   "url": "https://jetcab.mx/wp-content/uploads/2026/10/private-jet-los-cabos-el-arco-de-cabo-san-lucas.jpg",
+   "author": "User:Stan Shebs",
+   "license": "CC BY-SA 3.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Cabo_San_Lucas_Los_Arcos_3.jpg",
+   "id": 3195
+  },
+  {
+   "url": "https://jetcab.mx/wp-content/uploads/2026/10/private-jet-los-cabos-san-jose-del-cabo.jpg",
+   "author": "Thelmadatter",
+   "license": "CC BY-SA 4.0",
+   "source": "https://commons.wikimedia.org/wiki/File:SJCmunicipalhall01.JPG",
+   "id": 3196
+  },
+  {
+   "url": "https://jetcab.mx/wp-content/uploads/2026/10/private-jet-los-cabos-cabo-pulmo-national-park.jpg",
+   "author": "Francisco Reynoso",
+   "license": "CC BY 3.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Antes_de_llegar_a_Cabo_Pulmo_-_panoramio.jpg",
+   "id": 3197
+  },
+  {
+   "url": "https://jetcab.mx/wp-content/uploads/2026/10/private-jet-los-cabos-todos-santos.jpg",
+   "author": "panza.rayada",
+   "license": "CC BY-SA 3.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Plaza_Todos_Santos_BCS_-_panoramio.jpg",
+   "id": 3198
+  }
+ ],
+ "puertovallarta": [
+  {
+   "url": "https://jetcab.mx/wp-content/uploads/2026/10/private-jet-puerto-vallarta-zona-romantica.jpg",
+   "author": "Melikamp",
+   "license": "CC BY-SA 3.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Playa_de_Los_Muertos_(cropped).jpg",
+   "id": 3199
+  },
+  {
+   "url": "https://jetcab.mx/wp-content/uploads/2026/10/private-jet-puerto-vallarta-islas-marietas.jpg",
+   "author": "Christian Frausto Bernal from Tepic, Nayarit, MEXICO",
+   "license": "CC BY-SA 2.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Parque_Nacional_Islas_Marietas_(9372075457).jpg",
+   "id": 3200
+  },
+  {
+   "url": "https://jetcab.mx/wp-content/uploads/2026/10/private-jet-puerto-vallarta-punta-mita.jpg",
+   "author": "Lynx Burgos",
+   "license": "CC BY-SA 3.0",
+   "source": "https://commons.wikimedia.org/wiki/File:The_St._Regis_-_panoramio.jpg",
+   "id": 3201
+  },
+  {
+   "url": "https://jetcab.mx/wp-content/uploads/2026/10/private-jet-puerto-vallarta-sayulita.jpg",
+   "author": "Peon In Politics",
+   "license": "CC BY-SA 4.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Beach_in_Sayulita,_Mexico.jpg",
+   "id": 3202
+  }
+ ],
+ "monterrey": [
+  {
+   "url": "https://jetcab.mx/wp-content/uploads/2026/10/private-jet-monterrey-san-pedro-garza-garcia.jpg",
+   "author": "México en Fotos",
+   "license": "CC BY-SA 2.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Club_Campestre_de_Monterrey_A.C.jpg",
+   "id": 3203
+  },
+  {
+   "url": "https://jetcab.mx/wp-content/uploads/2026/10/private-jet-monterrey-parque-fundidora.jpg",
+   "author": "México en Fotos",
+   "license": "CC BY-SA 2.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Parque_Fundidora,_Monterrey1.jpg",
+   "id": 3204
+  },
+  {
+   "url": "https://jetcab.mx/wp-content/uploads/2026/10/private-jet-monterrey-barrio-antiguo.jpg",
+   "author": "Ivanmartinez",
+   "license": "CC BY-SA 4.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Monterrey_Barrio_Antiguo.JPG",
+   "id": 3205
+  },
+  {
+   "url": "https://jetcab.mx/wp-content/uploads/2026/10/private-jet-monterrey-cerro-de-la-silla.jpg",
+   "author": "Hafid (HDavilaMedia) Davila hafiddavila",
+   "license": "CC0",
+   "source": "https://commons.wikimedia.org/wiki/File:Cerro_de_La_Silla_on_a_warm_day_(Unsplash).jpg",
+   "id": 3206
+  }
+ ],
+ "guadalajara": [
+  {
+   "url": "https://jetcab.mx/wp-content/uploads/2026/10/private-jet-guadalajara-hospicio-cabanas.jpg",
+   "author": "ProtoplasmaKid",
+   "license": "CC BY-SA 4.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Hospicio_Caba%C3%B1as,_Guadalajara,_Jalisco_-_14.jpg",
+   "id": 3207
+  },
+  {
+   "url": "https://jetcab.mx/wp-content/uploads/2026/10/private-jet-guadalajara-tlaquepaque.jpg",
+   "author": "Antonio Renteria Navarro",
+   "license": "CC BY-SA 3.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Santuario_De_La_Soledad_02.jpg",
+   "id": 3208
+  },
+  {
+   "url": "https://jetcab.mx/wp-content/uploads/2026/10/private-jet-guadalajara-tequila-jalisco.jpg",
+   "author": "Gabriel Saldana",
+   "license": "CC BY-SA 2.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Streets_of_Tequila_664424236_(cropped).jpg",
+   "id": 3209
+  },
+  {
+   "url": "https://jetcab.mx/wp-content/uploads/2026/10/private-jet-guadalajara-lake-chapala.jpg",
+   "author": "Gil Garza",
+   "license": "CC0",
+   "source": "https://commons.wikimedia.org/wiki/File:Beach-blue-sky-chapala-545892.jpg",
+   "id": 3210
+  }
+ ],
+ "acapulco": [
+  {
+   "url": "https://jetcab.mx/wp-content/uploads/2026/10/private-jet-acapulco-la-quebrada-cliff-divers.jpg",
+   "author": "Dan Lundberg",
+   "license": "CC BY-SA 2.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Acapulco,_where_the_cliff_divers_perform_(47546175841).jpg",
+   "id": 3211
+  },
+  {
+   "url": "https://jetcab.mx/wp-content/uploads/2026/10/private-jet-acapulco-fort-of-san-diego.jpg",
+   "author": "Álvaro de la Paz Franco",
+   "license": "CC0",
+   "source": "https://commons.wikimedia.org/wiki/File:Entrada_al_Museo_Hist%C3%B3rico_de_Acapulco_Fuerte_de_San_Diego.jpg",
+   "id": 3212
+  },
+  {
+   "url": "https://jetcab.mx/wp-content/uploads/2026/10/private-jet-acapulco-pie-de-la-cuesta.jpg",
+   "author": "Esparta Palma from Ciudad de Mexico, Distrito Federal, Mexic",
+   "license": "CC BY 2.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Pie_de_la_Cuesta_en_Acapulco,_M%C3%A9xico.jpg",
+   "id": 3213
+  },
+  {
+   "url": "https://jetcab.mx/wp-content/uploads/2026/10/private-jet-acapulco-puerto-marques.jpg",
+   "author": "Ivan Hernández from Toronto, Canada",
+   "license": "CC BY 2.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Puerto_Marqu%C3%A9s_en_Acapulco,_M%C3%A9xico.jpg",
+   "id": 3214
+  }
+ ],
+ "queretaro": [
+  {
+   "url": "https://jetcab.mx/wp-content/uploads/2026/10/private-jet-queretaro-queretaro-aqueduct.jpg",
+   "author": "Carlos Valenzuela",
+   "license": "CC BY-SA 4.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Acueducto_20170917p1.jpg",
+   "id": 3215
+  },
+  {
+   "url": "https://jetcab.mx/wp-content/uploads/2026/10/private-jet-queretaro-pena-de-bernal.jpg",
+   "author": "Arq. Carlos G. Calzada",
+   "license": "CC BY-SA 4.0",
+   "source": "https://commons.wikimedia.org/wiki/File:La_Pe%C3%B1a_de_Bernal.JPG",
+   "id": 3216
+  },
+  {
+   "url": "https://jetcab.mx/wp-content/uploads/2026/10/private-jet-queretaro-san-miguel-de-allende.jpg",
+   "author": "Carl Campbell from Querétaro, Mexico",
+   "license": "CC BY-SA 2.0",
+   "source": "https://commons.wikimedia.org/wiki/File:San_Miguel_de_Allende_(The_Other_Side)_2_(6042874005).jpg",
+   "id": 3217
+  },
+  {
+   "url": "https://jetcab.mx/wp-content/uploads/2026/10/private-jet-queretaro-tequisquiapan.jpg",
+   "author": "Thelmadatter",
+   "license": "CC BY-SA 3.0",
+   "source": "https://commons.wikimedia.org/wiki/File:TemploSantaMar%C3%ADaTequis.jpg",
+   "id": 3218
+  }
+ ],
+ "newyork": [
+  {
+   "url": "https://jetcab.mx/wp-content/uploads/2026/10/private-jet-new-york-central-park.jpg",
+   "author": "Anthony Quintano from Hillsborough, NJ, United States",
+   "license": "CC BY 2.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Global_Citizen_Festival_Central_Park_New_York_City_from_NYonAir_(15351915006).jpg",
+   "id": 3219
+  },
+  {
+   "url": "https://jetcab.mx/wp-content/uploads/2026/10/private-jet-new-york-metropolitan-museum-of-art.jpg",
+   "author": "Hugo Schneider",
+   "license": "CC BY-SA 2.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Metropolitan_Museum_of_Art_(The_Met)_-_Central_Park,_NYC.jpg",
+   "id": 3220
+  },
+  {
+   "url": "https://jetcab.mx/wp-content/uploads/2026/10/private-jet-new-york-high-line.jpg",
+   "author": "Dansnguyen",
+   "license": "CC0",
+   "source": "https://commons.wikimedia.org/wiki/File:High_Line_Park,_Section_1a.jpg",
+   "id": 3221
+  },
+  {
+   "url": "https://jetcab.mx/wp-content/uploads/2026/10/private-jet-new-york-fifth-avenue.jpg",
+   "author": "A. Balet",
+   "license": "CC BY 3.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Photograph_of_Fifth_Avenue_from_the_Metropolitan%E2%80%94New_York_City.jpg",
+   "id": 3222
+  }
+ ],
+ "miami": [
+  {
+   "url": "https://jetcab.mx/wp-content/uploads/2026/10/private-jet-miami-south-beach.jpg",
+   "author": "chensiyuan",
+   "license": "CC BY-SA 4.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Ocean_drive_day_2009j.JPG",
+   "id": 3223
+  },
+  {
+   "url": "https://jetcab.mx/wp-content/uploads/2026/10/private-jet-miami-brickell.jpg",
+   "author": "Daniel Christensen",
+   "license": "Public domain",
+   "source": "https://commons.wikimedia.org/wiki/File:Brickell_skyline_2012.jpg",
+   "id": 3224
+  },
+  {
+   "url": "https://jetcab.mx/wp-content/uploads/2026/10/private-jet-miami-wynwood.jpg",
+   "author": "Dan Lundberg",
+   "license": "CC BY-SA 2.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Wynwood_Walls_Miami_Florida_October_2013.jpg",
+   "id": 3225
+  },
+  {
+   "url": "https://jetcab.mx/wp-content/uploads/2026/10/private-jet-miami-miami-design-district.jpg",
+   "author": "Ven-Lib",
+   "license": "CC BY-SA 4.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Buckminster_Fuller%27s_Fly%27s_Eye_Dome.jpg",
+   "id": 3226
+  }
+ ],
+ "houston": [
+  {
+   "url": "https://jetcab.mx/wp-content/uploads/2026/10/private-jet-houston-texas-medical-center.jpg",
+   "author": "David Daniel Turner",
+   "license": "CC BY 4.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Skyline_of_the_Texas_Medical_Center_-_Houston,_TX_-_December_2019.jpg",
+   "id": 3227
+  },
+  {
+   "url": "https://jetcab.mx/wp-content/uploads/2026/10/private-jet-houston-houston-museum-district.jpg",
+   "author": "Hequals2henry",
+   "license": "CC BY-SA 3.0",
+   "source": "https://commons.wikimedia.org/wiki/File:MFA_houston.jpg",
+   "id": 3228
+  },
+  {
+   "url": "https://jetcab.mx/wp-content/uploads/2026/10/private-jet-houston-the-galleria.jpg",
+   "author": "Postoak",
+   "license": "CC BY-SA 3.0",
+   "source": "https://commons.wikimedia.org/wiki/File:The_Galleria_(Houston,_Texas)_exterior_sign.jpg",
+   "id": 3229
+  },
+  {
+   "url": "https://jetcab.mx/wp-content/uploads/2026/10/private-jet-houston-space-center-houston.jpg",
+   "author": "Shujianyang",
+   "license": "CC BY 4.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Space_Center_Houston_2025.08.jpg",
+   "id": 3230
+  }
+ ],
+ "losangeles": [
+  {
+   "url": "https://jetcab.mx/wp-content/uploads/2026/10/private-jet-los-angeles-beverly-hills.jpg",
+   "author": "Morn the Gorn",
+   "license": "CC BY-SA 3.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Beverly_Hills_hires.jpg",
+   "id": 3231
+  },
+  {
+   "url": "https://jetcab.mx/wp-content/uploads/2026/10/private-jet-los-angeles-santa-monica.jpg",
+   "author": "Dietmar Rabich",
+   "license": "CC BY-SA 4.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Los_Angeles_(California,_USA),_Santa_Monica_Beach_--_2012_--_5301.jpg",
+   "id": 3232
+  },
+  {
+   "url": "https://jetcab.mx/wp-content/uploads/2026/10/private-jet-los-angeles-malibu.jpg",
+   "author": "The original uploader was Tillman at English Wikipedia.",
+   "license": "CC BY-SA 2.0",
+   "source": "https://commons.wikimedia.org/wiki/File:MalibuAir.jpg",
+   "id": 3233
+  },
+  {
+   "url": "https://jetcab.mx/wp-content/uploads/2026/10/private-jet-los-angeles-griffith-observatory.jpg",
+   "author": "Matthew Field",
+   "license": "CC BY 2.5",
+   "source": "https://commons.wikimedia.org/wiki/File:Griffith_observatory_2006.jpg",
+   "id": 3234
+  }
+ ],
+ "lasvegas": [
+  {
+   "url": "https://jetcab.mx/wp-content/uploads/2026/10/private-jet-las-vegas-las-vegas-strip.jpg",
+   "author": "Dietmar Rabich",
+   "license": "CC BY-SA 4.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Las_Vegas_(Nevada,_USA),_The_Strip_--_2012_--_6232.jpg",
+   "id": 3235
+  },
+  {
+   "url": "https://jetcab.mx/wp-content/uploads/2026/10/private-jet-las-vegas-fountains-of-bellagio.jpg",
+   "author": "Matt Kieffer",
+   "license": "CC BY-SA 2.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Bellagio_Fountains_at_night,_Las_Vegas,_Nevada_-_29174293017.jpg",
+   "id": 3236
+  },
+  {
+   "url": "https://jetcab.mx/wp-content/uploads/2026/10/private-jet-las-vegas-red-rock-canyon-national-conservation-area.jpg",
+   "author": "Wilson44691",
+   "license": "CC0",
+   "source": "https://commons.wikimedia.org/wiki/File:Red_Rock_Canyon_National_Conservation_Area_view_031513.JPG",
+   "id": 3237
+  },
+  {
+   "url": "https://jetcab.mx/wp-content/uploads/2026/10/private-jet-las-vegas-hoover-dam.jpg",
+   "author": "Mariordo (Mario Roberto Durán Ortiz)",
+   "license": "CC BY-SA 4.0",
+   "source": "https://commons.wikimedia.org/wiki/File:2017_Aerial_view_Hoover_Dam_4774.jpg",
+   "id": 3238
+  }
+ ],
+ "sandiego": [
+  {
+   "url": "https://jetcab.mx/wp-content/uploads/2026/10/private-jet-san-diego-la-jolla-cove.jpg",
+   "author": "Ajay Suresh from New York, NY, USA",
+   "license": "CC BY 2.0",
+   "source": "https://commons.wikimedia.org/wiki/File:LaJolla-2_(45716612345).jpg",
+   "id": 3239
+  },
+  {
+   "url": "https://jetcab.mx/wp-content/uploads/2026/10/private-jet-san-diego-balboa-park.jpg",
+   "author": "Bernard Gagnon",
+   "license": "CC BY-SA 3.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Balboa_Park_Botanical_Building_01.jpg",
+   "id": 3240
+  },
+  {
+   "url": "https://jetcab.mx/wp-content/uploads/2026/10/private-jet-san-diego-gaslamp-quarter.jpg",
+   "author": "Bernard Gagnon",
+   "license": "CC BY-SA 3.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Gaslamp_Quarter_01.jpg",
+   "id": 3241
+  },
+  {
+   "url": "https://jetcab.mx/wp-content/uploads/2026/10/private-jet-san-diego-hotel-del-coronado.jpg",
+   "author": "Armandoartist",
+   "license": "CC BY-SA 4.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Hotel_Del_Coronado_Drone_Picture_Turf_Lawn.jpg",
+   "id": 3242
+  }
+ ],
+ "tijuana": [
+  {
+   "url": "https://jetcab.mx/wp-content/uploads/2026/10/private-jet-tijuana-avenida-revolucion.jpg",
+   "author": "Johntex",
+   "license": "CC BY 2.5",
+   "source": "https://commons.wikimedia.org/wiki/File:Avenida_Revoluci%C3%B3n_in_Tijuana_Mexico.JPG",
+   "id": 3243
+  },
+  {
+   "url": "https://jetcab.mx/wp-content/uploads/2026/10/private-jet-tijuana-centro-cultural-tijuana.jpg",
+   "author": "AnakTianshi",
+   "license": "CC BY-SA 3.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Centroculturaltijuana.JPG",
+   "id": 3244
+  },
+  {
+   "url": "https://jetcab.mx/wp-content/uploads/2026/10/private-jet-tijuana-valle-de-guadalupe.jpg",
+   "author": "Cbojorquez75",
+   "license": "CC BY-SA 4.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Valle_de_Guadalupe.jpg",
+   "id": 3245
+  },
+  {
+   "url": "https://jetcab.mx/wp-content/uploads/2026/10/private-jet-tijuana-rosarito.jpg",
+   "author": "Eric Golub from Foster City, California",
+   "license": "CC BY 2.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Cristo_del_Sagrado_Corazon_(51432194755)_(cropped).jpg",
+   "id": 3246
+  }
+ ],
+ "mcallen": [
+  {
+   "url": "https://jetcab.mx/wp-content/uploads/2026/10/private-jet-mcallen-la-plaza-mall.jpg",
+   "author": "Jackilometresan",
+   "license": "CC0",
+   "source": "https://commons.wikimedia.org/wiki/File:The_exterior_entrance_of_La_Gran_Plaza_de_Fort_Worth_shopping_mall_in_Fort_Worth,_Texas.jpg",
+   "id": 3247
+  },
+  {
+   "url": "https://jetcab.mx/wp-content/uploads/2026/10/private-jet-mcallen-quinta-mazatlan.jpg",
+   "author": "Bettina Arrigoni",
+   "license": "CC BY 2.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Great_Kiskadee_Quinta_Mazatlan_McAllen_TX_2018-03-02_08-21-41_(40582112712).jpg",
+   "id": 3248
+  },
+  {
+   "url": "https://jetcab.mx/wp-content/uploads/2026/10/private-jet-mcallen-south-padre-island.jpg",
+   "author": "Satx usa",
+   "license": "CC BY-SA 4.0",
+   "source": "https://commons.wikimedia.org/wiki/File:South_Padre_Island.jpg",
+   "id": 3249
+  },
+  {
+   "url": "https://jetcab.mx/wp-content/uploads/2026/10/private-jet-mcallen-santa-ana-national-wildlife-refuge.jpg",
+   "author": "William L. Farr",
+   "license": "CC BY 4.0",
+   "source": "https://commons.wikimedia.org/wiki/File:The_Rio_Grande_in_Santa_Ana_National_Wildlife_Refuge,_Texas.jpg",
+   "id": 3250
+  }
+ ],
+ "estadosunidos": [
+  {
+   "url": "https://jetcab.mx/wp-content/uploads/2026/10/private-jet-united-states-miami.jpg",
+   "author": "Wilfredor",
+   "license": "CC0",
+   "source": "https://commons.wikimedia.org/wiki/File:Miami,_Florida,_Skyline_4.jpg",
+   "id": 3251
+  },
+  {
+   "url": "https://jetcab.mx/wp-content/uploads/2026/10/private-jet-united-states-houston.jpg",
+   "author": "Jason Villanueva",
+   "license": "CC BY-SA 4.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Buildings-city-houston-skyline-1870617.jpg",
+   "id": 3252
+  },
+  {
+   "url": "https://jetcab.mx/wp-content/uploads/2026/10/private-jet-united-states-new-york-city.jpg",
+   "author": "Dllu",
+   "license": "CC BY-SA 4.0",
+   "source": "https://commons.wikimedia.org/wiki/File:View_of_Empire_State_Building_from_Rockefeller_Center_New_York_City_dllu_(cropped).jpg",
+   "id": 3253
+  },
+  {
+   "url": "https://jetcab.mx/wp-content/uploads/2026/10/private-jet-united-states-los-angeles.jpg",
+   "author": "Gnaphron",
+   "license": "CC BY-SA 2.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Hollywood_sign_(8485145044).jpg",
+   "id": 3254
+  }
+ ],
+ "cuba": [
+  {
+   "url": "https://jetcab.mx/wp-content/uploads/2026/10/private-jet-havana-old-havana.jpg",
+   "author": "Burkhard Mücke",
+   "license": "CC BY-SA 4.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Plaza_Vieja_in_Havana.jpg",
+   "id": 3255
+  },
+  {
+   "url": "https://jetcab.mx/wp-content/uploads/2026/10/private-jet-havana-malecon-havana.jpg",
+   "author": "Ezarate\n\n\n\n\n\n\nThis  is a retouched picture, which means that",
+   "license": "CC BY-SA 4.0",
+   "source": "https://commons.wikimedia.org/wiki/File:AvMalecon-LaHabanaCuba-04735.jpg",
+   "id": 3256
+  },
+  {
+   "url": "https://jetcab.mx/wp-content/uploads/2026/10/private-jet-havana-vinales-valley.jpg",
+   "author": "simon",
+   "license": "CC BY 2.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Niebla_en_Vi%C3%B1ales,_Cuba.jpg",
+   "id": 3257
+  },
+  {
+   "url": "https://jetcab.mx/wp-content/uploads/2026/10/private-jet-havana-varadero.jpg",
+   "author": "Laslovarga",
+   "license": "CC BY-SA 3.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Aerial_photo_of_Varadero_16.JPG",
+   "id": 3258
+  }
+ ],
+ "espana": [
+  {
+   "url": "https://jetcab.mx/wp-content/uploads/2026/10/private-jet-spain-madrid.jpg",
+   "author": "Fernando Pascullo",
+   "license": "CC BY-SA 4.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Madrid_cathedral_2020_-_view_from_the_dome.jpg",
+   "id": 3259
+  },
+  {
+   "url": "https://jetcab.mx/wp-content/uploads/2026/10/private-jet-spain-barcelona.jpg",
+   "author": "M McBey",
+   "license": "CC BY 2.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Evening_light_over_Barcelona.jpg",
+   "id": 3260
+  },
+  {
+   "url": "https://jetcab.mx/wp-content/uploads/2026/10/private-jet-spain-marbella.jpg",
+   "author": "Milan Trninic (www.wedesignmarbella.com)",
+   "license": "CC BY-SA 4.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Captivating_Views_of_Old_Town_Marbella.jpg",
+   "id": 3261
+  },
+  {
+   "url": "https://jetcab.mx/wp-content/uploads/2026/10/private-jet-spain-ibiza.jpg",
+   "author": "Joselodos",
+   "license": "CC0",
+   "source": "https://commons.wikimedia.org/wiki/File:Cala_San_Vicente,_Ibiza,_Spain.jpg",
+   "id": 3262
+  }
+ ],
+ "europa": [
+  {
+   "url": "https://jetcab.mx/wp-content/uploads/2026/10/private-jet-europe-madrid.jpg",
+   "author": "Zarateman",
+   "license": "CC0",
+   "source": "https://commons.wikimedia.org/wiki/File:Madrid_-_Sky_Bar_360%C2%BA_(Hotel_Riu_Plaza_Espa%C3%B1a),_vistas_19.jpg",
+   "id": 3263
+  },
+  {
+   "url": "https://jetcab.mx/wp-content/uploads/2026/10/private-jet-europe-paris.jpg",
+   "author": "Yann Caradec from Paris, France",
+   "license": "CC BY-SA 2.0",
+   "source": "https://commons.wikimedia.org/wiki/File:La_Tour_Eiffel_vue_de_la_Tour_Saint-Jacques,_Paris_ao%C3%BBt_2014_(2).jpg",
+   "id": 3264
+  },
+  {
+   "url": "https://jetcab.mx/wp-content/uploads/2026/10/private-jet-europe-london.jpg",
+   "author": "Ilya Grigorik",
+   "license": "CC BY-SA 3.0",
+   "source": "https://commons.wikimedia.org/wiki/File:London_Skyline_(125508655).jpeg",
+   "id": 3265
+  },
+  {
+   "url": "https://jetcab.mx/wp-content/uploads/2026/10/private-jet-europe-milan.jpg",
+   "author": "Jiuguang Wang",
+   "license": "CC BY-SA 3.0",
+   "source": "https://commons.wikimedia.org/wiki/File:Milan_Cathedral_from_Piazza_del_Duomo.jpg",
+   "id": 3266
+  }
+ ]
+}

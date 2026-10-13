@@ -1,7 +1,7 @@
 <?php
 /* JETCAB — Sitemap de landings servidas por template_redirect (Yoast no las ve) + limpieza del índice y robots.txt. Snippet 9.
    Solo lista URLs que Yoast no publica, con hreflang ES/EN. lastmod fijo: se actualiza a mano cuando cambia el contenido. */
-if (!defined('JETCAB_LANDINGS_LASTMOD')) define('JETCAB_LANDINGS_LASTMOD', '2026-10-12');
+if (!defined('JETCAB_LANDINGS_LASTMOD')) define('JETCAB_LANDINGS_LASTMOD', '2026-10-13');
 
 add_filter('wpseo_sitemap_index', function ($xml) {
     return $xml . '<sitemap><loc>https://jetcab.mx/jetcab-landings-sitemap.xml</loc><lastmod>' . JETCAB_LANDINGS_LASTMOD . 'T00:00:00+00:00</lastmod></sitemap>' . "\n";
@@ -33,6 +33,14 @@ add_action('init', function () {
         $es = 'https://jetcab.mx/vuelo-privado-cdmx-' . $p[1] . '/';
         $urls[] = [$en, '0.8', $es, 'en'];
         $urls[] = [$es, '0.8', $en, 'es'];
+    }
+    // Destinos EN v5 servidos por el snippet de destinos (no son páginas de WordPress).
+    $v5 = ['acapulco' => 'vuelos-privados-a-acapulco', 'queretaro' => 'vuelos-privados-a-queretaro-jetcab', 'las-vegas' => 'vuelos-privados-a-las-vegas',
+           'san-diego' => 'vuelos-privados-a-san-diego', 'tijuana' => 'vuelos-privados-a-tijuana', 'mcallen' => 'vuelos-privados-a-mcallen', 'havana' => 'vuelos-privados-a-cuba'];
+    foreach ($v5 as $en => $es) { $urls[] = ['https://jetcab.mx/private-jet-mexico-city-' . $en . '/', '0.8', 'https://jetcab.mx/' . $es . '/', 'en']; }
+    foreach (['private-jet-toluca-airport' => 'vuelos-privados-toluca', 'private-jet-mexico-city' => 'vuelos-privados-a-cdmx', 'private-jet-mexico-to-usa' => 'vuelos-privados-a-estados-unidos',
+              'private-jet-mexico-to-spain' => 'vuelos-privados-a-espana', 'private-jet-mexico-to-europe' => 'vuelos-privados-a-europa'] as $en => $es) {
+        $urls[] = ['https://jetcab.mx/' . $en . '/', '0.8', 'https://jetcab.mx/' . $es . '/', 'en'];
     }
     status_header(200);
     header('Content-Type: application/xml; charset=UTF-8');

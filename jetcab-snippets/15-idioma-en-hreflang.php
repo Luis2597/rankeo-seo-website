@@ -19,6 +19,22 @@ function jetcab_lang_pairs() {
         '/preguntas-frecuentes/'              => '/private-jet-faq/',
         '/blog/'                              => '/private-jet-guides/',
         '/destinos/'                          => '/private-jet-destination-guide/',
+        '/vuelos-privados-a-acapulco/'         => '/private-jet-mexico-city-acapulco/',
+        '/vuelos-privados-a-queretaro-jetcab/' => '/private-jet-mexico-city-queretaro/',
+        '/vuelos-privados-toluca/'             => '/private-jet-toluca-airport/',
+        '/vuelos-privados-a-cdmx/'             => '/private-jet-mexico-city/',
+        '/vuelos-privados-a-las-vegas/'        => '/private-jet-mexico-city-las-vegas/',
+        '/vuelos-privados-a-san-diego/'        => '/private-jet-mexico-city-san-diego/',
+        '/vuelos-privados-a-tijuana/'          => '/private-jet-mexico-city-tijuana/',
+        '/vuelos-privados-a-mcallen/'          => '/private-jet-mexico-city-mcallen/',
+        '/vuelos-privados-a-estados-unidos/'   => '/private-jet-mexico-to-usa/',
+        '/vuelos-privados-a-cuba/'             => '/private-jet-mexico-city-havana/',
+        '/vuelos-privados-a-espana/'           => '/private-jet-mexico-to-spain/',
+        '/vuelos-privados-a-europa/'           => '/private-jet-mexico-to-europe/',
+        '/vuelo-privado-cdmx-nueva-york/'      => '/private-jet-mexico-city-new-york/',
+        '/vuelo-privado-cdmx-miami/'           => '/private-jet-mexico-city-miami/',
+        '/vuelo-privado-cdmx-houston/'         => '/private-jet-mexico-city-houston/',
+        '/vuelo-privado-cdmx-los-angeles/'     => '/private-jet-mexico-city-los-angeles/',
     ];
 }
 
