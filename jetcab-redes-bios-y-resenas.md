@@ -13,7 +13,7 @@ Enlace: https://jetcab.mx/cotizar/
 
 Enlaces adicionales (Instagram permite 5): jetcab.mx/precios-jet-privado, jetcab.mx/flota, wa.me/527291081200.
 
-## Facebook (facebook.com/jetcabmx)
+## Facebook (facebook.com/profile.php?id=61564055354413)
 
 Nombre de la página: JETCAB
 Categoría: Servicio de vuelos chárter

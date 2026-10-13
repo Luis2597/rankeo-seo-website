@@ -16,7 +16,7 @@ Copia y pega. Mismo nombre, mismo teléfono y misma dirección en todos los siti
 | Horario | Lunes a domingo, 24 horas (operación y cotización) |
 | Año de fundación | 1999 |
 | Zona de servicio | Toluca, Ciudad de México, Estado de México, Monterrey, Guadalajara, Cancún, Los Cabos, Puerto Vallarta, Acapulco, Querétaro y destinos en Estados Unidos |
-| Redes | instagram.com/jetcab.mx · facebook.com/jetcabmx · linkedin.com/company/jetcab |
+| Redes | instagram.com/jetcab.mx · facebook.com/profile.php?id=61564055354413 · linkedin.com/company/jetcab |
 
 ## Categorías (en este orden)
 
