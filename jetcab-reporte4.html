@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Reporte #4 · 42 destinos, sitio más rápido y primeros resultados · JETCAB | Rankeo</title>
+<meta name="robots" content="noindex,nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--or:#F04E23;--ink:#0A0908;--bg:#FAF8F5;--surf:#F2EFE9;--bd:#E4E0D9;--sub:#6A6562;--tl:#087E72;--rd:#DC2626;--gn:#16A34A;--gd:#CA8A04}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:"Plus Jakarta Sans",sans-serif;background:var(--bg);color:var(--ink);line-height:1.6}
+a{color:var(--or);text-decoration:none}
+.hdr{background:var(--ink);position:sticky;top:0;z-index:100}
+.hdr-inner{max-width:900px;margin:0 auto;padding:0 24px;height:56px;display:flex;align-items:center;justify-content:space-between}
+.hdr-logo{font-family:"Syne",sans-serif;font-weight:800;font-size:20px;color:#fff;letter-spacing:-.02em}
+.hdr-logo span{color:var(--or)}
+.hdr-meta{font-size:12px;color:rgba(255,255,255,.55);text-align:right}
+.hero{background:var(--ink);padding:48px 24px 40px}
+.hero-inner{max-width:900px;margin:0 auto}
+.hero-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(240,78,35,.15);border:1px solid rgba(240,78,35,.3);color:var(--or);padding:5px 12px;border-radius:20px;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;margin-bottom:16px}
+.hero h1{font-family:"Syne",sans-serif;font-weight:800;font-size:clamp(26px,5vw,42px);color:#fff;letter-spacing:-.03em;line-height:1.15;margin-bottom:10px}
+.hero-sub{color:rgba(255,255,255,.62);font-size:15px;margin-bottom:28px;max-width:620px}
+.hero-stats{display:flex;gap:24px;flex-wrap:wrap}
+.hs{border-left:2px solid var(--or);padding-left:12px}
+.hs-val{font-family:"Syne",sans-serif;font-weight:800;font-size:22px;color:#fff;letter-spacing:-.02em}
+.hs-lbl{font-size:11px;color:rgba(255,255,255,.55);margin-top:1px;max-width:180px}
+.wrap{max-width:900px;margin:0 auto;padding:0 24px 80px}
+.section{margin-top:48px}
+.section-hd{display:flex;align-items:center;gap:10px;margin-bottom:8px;flex-wrap:wrap}
+.section-hd h2{font-family:"Syne",sans-serif;font-weight:800;font-size:20px;letter-spacing:-.02em}
+.section-intro{font-size:13px;color:var(--sub);margin-bottom:18px;max-width:720px}
+.tag{display:inline-flex;align-items:center;padding:3px 9px;border-radius:5px;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.05em}
+.tag.done{background:rgba(22,163,74,.1);color:var(--gn)}
+.tag.next{background:rgba(202,138,4,.12);color:#A16207}
+.tag.geo{background:rgba(139,92,246,.1);color:#7C3AED}
+.tag.seo{background:rgba(37,99,235,.1);color:#2563EB}
+.tag.ux{background:rgba(8,126,114,.1);color:var(--tl)}
+.tag.crit{background:rgba(220,38,38,.1);color:var(--rd)}
+.tag.ok{background:rgba(22,163,74,.1);color:var(--gn)}
+.kpi-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.kpi{background:#fff;border:1px solid var(--bd);border-radius:14px;padding:16px}
+.kpi-lbl{font-size:11px;font-weight:700;color:var(--sub);text-transform:uppercase;letter-spacing:.05em}
+.kpi-val{font-family:"Syne",sans-serif;font-weight:800;font-size:26px;letter-spacing:-.02em;margin:4px 0 2px}
+.kpi-delta{font-size:12px;font-weight:700;color:var(--gn)}
+.kpi-delta.neutral{color:var(--sub)}
+.kpi-prev{font-size:11px;color:var(--sub)}
+.impl-grid{display:flex;flex-direction:column;gap:12px}
+.impl-card{background:#fff;border:1px solid var(--bd);border-radius:14px;padding:20px;display:flex;gap:16px;align-items:flex-start}
+.impl-card.done{border-left:4px solid var(--gn)}
+.impl-card.find{border-left:4px solid var(--rd)}
+.impl-card.good{border-left:4px solid var(--tl)}
+.impl-num{width:36px;height:36px;border-radius:10px;background:rgba(22,163,74,.1);color:var(--gn);display:flex;align-items:center;justify-content:center;font-family:"Syne",sans-serif;font-weight:800;font-size:14px;flex-shrink:0}
+.impl-card.find .impl-num{background:rgba(220,38,38,.08);color:var(--rd)}
+.impl-card.good .impl-num{background:rgba(8,126,114,.1);color:var(--tl)}
+.impl-body{flex:1;min-width:0}
+.impl-title{font-size:14px;font-weight:700;color:var(--ink);margin-bottom:4px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.impl-desc{font-size:12.5px;color:var(--sub);line-height:1.6;margin-bottom:8px}
+.impl-impact{display:inline-flex;align-items:center;gap:5px;font-size:11px;color:var(--gn);font-weight:600;background:rgba(22,163,74,.08);padding:3px 10px;border-radius:6px}
+.score-compare{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.sc-box{background:#fff;border:1.5px solid var(--bd);border-radius:14px;padding:20px}
+.sc-box.after{border-color:rgba(22,163,74,.4);background:rgba(22,163,74,.03)}
+.sc-label{font-size:11px;font-weight:700;color:var(--sub);text-transform:uppercase;letter-spacing:.06em;margin-bottom:10px}
+.sc-list{list-style:none;display:flex;flex-direction:column;gap:6px;font-size:12.5px}
+.sc-list li:before{content:"·";color:var(--or);font-weight:800;margin-right:6px}
+.tbl-wrap{overflow-x:auto;background:#fff;border:1px solid var(--bd);border-radius:14px}
+table{width:100%;border-collapse:collapse;font-size:12.5px;min-width:620px}
+th{background:var(--surf);text-align:left;font-weight:700;font-size:11px;text-transform:uppercase;letter-spacing:.04em;color:var(--sub);padding:10px 12px;border-bottom:1px solid var(--bd)}
+td{padding:9px 12px;border-bottom:1px solid var(--bd);vertical-align:top}
+tr:last-child td{border-bottom:none}
+td.num{font-variant-numeric:tabular-nums;white-space:nowrap}
+.pos-good{color:var(--gn);font-weight:700}
+.pos-mid{color:#A16207;font-weight:700}
+.pos-low{color:var(--sub)}
+.subhd{font-size:13px;font-weight:700;margin:22px 0 10px}
+.next-grid{display:flex;flex-direction:column;gap:10px}
+.next-card{background:#fff;border:1px solid var(--bd);border-radius:12px;padding:16px 18px;display:flex;gap:14px;align-items:flex-start}
+.next-card.high{border-left:4px solid var(--rd)}
+.next-card.med{border-left:4px solid var(--gd)}
+.next-ico{font-size:20px;flex-shrink:0;margin-top:2px}
+.next-title{font-size:13px;font-weight:700;color:var(--ink);margin-bottom:3px}
+.next-desc{font-size:12px;color:var(--sub);line-height:1.55}
+.next-meta{font-size:10.5px;color:var(--sub);margin-top:6px}
+.next-meta span{font-weight:700}
+.note{background:var(--surf);border-radius:12px;padding:16px 18px;font-size:12px;color:var(--sub);margin-top:14px;line-height:1.6}
+.note strong{color:var(--ink)}
+.timeline{display:flex;flex-direction:column}
+.tl-item{display:flex;gap:14px;padding-bottom:18px}
+.tl-item:last-child{padding-bottom:0}
+.tl-dot-wrap{display:flex;flex-direction:column;align-items:center;flex-shrink:0}
+.tl-dot{width:12px;height:12px;border-radius:50%;background:var(--gn);margin-top:3px}
+.tl-line{width:2px;background:var(--bd);flex:1;margin-top:4px}
+.tl-item:last-child .tl-line{display:none}
+.tl-date{font-size:10px;color:var(--sub);margin-bottom:3px}
+.tl-title{font-size:13px;font-weight:700}
+.tl-detail{font-size:11.5px;color:var(--sub);margin-top:2px;line-height:1.5}
+.cta-box{background:var(--ink);border-radius:20px;padding:36px 32px;text-align:center;margin-top:48px}
+.cta-box h2{font-family:"Syne",sans-serif;font-weight:800;font-size:24px;color:#fff;letter-spacing:-.02em;margin-bottom:10px}
+.cta-box p{color:rgba(255,255,255,.62);font-size:14px;margin-bottom:24px}
+.cta-btn{display:inline-flex;align-items:center;gap:8px;background:var(--or);color:#fff;padding:13px 28px;border-radius:10px;font-weight:700;font-size:14px;min-height:44px}
+.footer-note{font-size:11px;color:var(--sub);text-align:right;margin-top:40px;padding-top:20px;border-top:1px solid var(--bd)}
+@media(max-width:700px){.score-compare{grid-template-columns:1fr}.kpi-grid{grid-template-columns:1fr 1fr}.hdr-meta{font-size:11px}}
+</style>
+</head>
+<body>
+
+<header class="hdr">
+  <div class="hdr-inner">
+    <div class="hdr-logo">Rankeo<span>.</span></div>
+    <div class="hdr-meta">Reporte #4 · JETCAB · 13 Oct 2026</div>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-badge">🚀 Reporte #4 · Resultados y destinos</div>
+    <h1>JETCAB ya aparece en el top 5<br>para las búsquedas de precio</h1>
+    <p class="hero-sub">Desde el Reporte #3 publicamos 42 páginas de destino completas, aceleramos el sitio, ordenamos la navegación y dejamos sin errores lo que Google lee de jetcab.mx. Los primeros números de Search Console ya reflejan el trabajo de octubre.</p>
+    <div class="hero-stats">
+      <div class="hs"><div class="hs-val">+62 %</div><div class="hs-lbl">apariciones en Google en una semana</div></div>
+      <div class="hs"><div class="hs-val">9.1</div><div class="hs-lbl">posición media, antes 11.7: ya en primera página</div></div>
+      <div class="hs"><div class="hs-val">42</div><div class="hs-lbl">páginas de destino nuevas, en español e inglés</div></div>
+      <div class="hs"><div class="hs-val">100</div><div class="hs-lbl">calificación SEO de Google en las páginas medidas</div></div>
+    </div>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <!-- RESULTADOS -->
+  <div class="section">
+    <div class="section-hd"><h2>📈 Resultados en Google</h2><span class="tag ok">Search Console</span></div>
+    <p class="section-intro">Semana del 5 al 11 de octubre contra la semana anterior (28 de septiembre al 4 de octubre). Search Console publica los datos con 2 a 3 días de retraso, así que estos números todavía no incluyen las páginas de destino ni los títulos nuevos del 12 y 13 de octubre.</p>
+    <div class="kpi-grid">
+      <div class="kpi"><div class="kpi-lbl">Apariciones</div><div class="kpi-val">2,080</div><div class="kpi-delta">+62 %</div><div class="kpi-prev">antes 1,280</div></div>
+      <div class="kpi"><div class="kpi-lbl">Clics</div><div class="kpi-val">33</div><div class="kpi-delta">+14 %</div><div class="kpi-prev">antes 29</div></div>
+      <div class="kpi"><div class="kpi-lbl">Posición media</div><div class="kpi-val">9.1</div><div class="kpi-delta">sube 2.6 lugares</div><div class="kpi-prev">antes 11.7</div></div>
+      <div class="kpi"><div class="kpi-lbl">Tasa de clic</div><div class="kpi-val">1.6 %</div><div class="kpi-delta neutral">antes 2.3 %</div><div class="kpi-prev">más apariciones nuevas</div></div>
+    </div>
+
+    <div class="subhd">Búsquedas de precio: JETCAB ya está en el top 5</div>
+    <div class="tbl-wrap"><table>
+      <thead><tr><th>Búsqueda en Google</th><th>Apariciones</th><th>Posición antes</th><th>Posición ahora</th></tr></thead>
+      <tbody>
+        <tr><td>cuánto cuesta un jet privado</td><td class="num">34</td><td class="pos-low">sin aparecer</td><td class="num pos-good">3.4</td></tr>
+        <tr><td>cuánto cuesta rentar un jet privado en México</td><td class="num">26</td><td class="num pos-mid">8</td><td class="num pos-good">3</td></tr>
+        <tr><td>cuánto cuesta un jet privado en pesos mexicanos</td><td class="num">18</td><td class="pos-low">sin aparecer</td><td class="num pos-good">3.6</td></tr>
+        <tr><td>cuánto vale un jet privado en pesos mexicanos</td><td class="num">16</td><td class="pos-low">sin aparecer</td><td class="num pos-good">4.2</td></tr>
+        <tr><td>cuánto cuesta un jet privado nuevo</td><td class="num">8</td><td class="pos-low">sin aparecer</td><td class="num pos-good">2.8</td></tr>
+        <tr><td>jet privado precios</td><td class="num">1</td><td class="num pos-low">20</td><td class="num pos-good">2</td></tr>
+        <tr><td>renta de helicópteros</td><td class="num">12</td><td class="num pos-mid">8.5</td><td class="num pos-good">4.9</td></tr>
+        <tr><td>jetcab</td><td class="num">20</td><td class="num pos-mid">5.7</td><td class="num pos-good">2.4</td></tr>
+      </tbody>
+    </table></div>
+
+    <div class="subhd">Páginas que más crecen</div>
+    <div class="tbl-wrap"><table>
+      <thead><tr><th>Página</th><th>Apariciones</th><th>Clics</th><th>Posición antes</th><th>Posición ahora</th></tr></thead>
+      <tbody>
+        <tr><td>Precios de jet privado</td><td class="num">431</td><td class="num">6</td><td class="pos-low">sin aparecer</td><td class="num pos-good">4.8</td></tr>
+        <tr><td>Inicio</td><td class="num">216</td><td class="num">10</td><td class="num pos-low">15.2</td><td class="num pos-mid">9</td></tr>
+        <tr><td>Renta de helicópteros CDMX</td><td class="num">147</td><td class="num">2</td><td class="num pos-mid">11.1</td><td class="num pos-mid">9</td></tr>
+        <tr><td>Vuelos privados a Acapulco</td><td class="num">136</td><td class="num">5</td><td class="num pos-low">13.2</td><td class="num pos-mid">10.7</td></tr>
+        <tr><td>Vuelos privados a Europa</td><td class="num">86</td><td class="num">1</td><td class="num pos-good">4.2</td><td class="num pos-good">3.6</td></tr>
+        <tr><td>Artículo «Cuánto cuesta un jet privado en México»</td><td class="num">53</td><td class="num">1</td><td class="pos-low">sin aparecer</td><td class="num pos-good">5.2</td></tr>
+        <tr><td>Vuelos privados a Querétaro</td><td class="num">37</td><td class="num">2</td><td class="num pos-mid">8.5</td><td class="num pos-good">6.6</td></tr>
+      </tbody>
+    </table></div>
+    <div class="note"><strong>Lectura:</strong> la página de precios no existía en Google hace dos semanas y hoy es la que más aparece, en posición 4.8. Las preguntas de precio ya están en el top 5. El siguiente objetivo es que esas apariciones se conviertan en clics; por eso cada página de destino nueva abre con el precio por avión y un botón de cotización.</div>
+  </div>
+
+  <!-- ANTES / DESPUÉS -->
+  <div class="section">
+    <div class="section-hd"><h2>📊 Antes vs. Después</h2></div>
+    <div class="score-compare" style="margin-top:14px">
+      <div class="sc-box">
+        <div class="sc-label">Antes (12 Oct, tarde)</div>
+        <ul class="sc-list">
+          <li>Destinos en inglés como ventanas emergentes con poca información</li>
+          <li>Páginas de destino en español con textos cortos y fotos repetidas</li>
+          <li>Video de portada en inglés de 15 MB en el celular</li>
+          <li>El inicio enfocado en Toluca, una búsqueda más pequeña</li>
+          <li>Artículos del blog con texto blanco sobre fondo blanco</li>
+          <li>107 avisos de datos no válidos en Search Console</li>
+        </ul>
+      </div>
+      <div class="sc-box after">
+        <div class="sc-label">Después (13 Oct)</div>
+        <ul class="sc-list">
+          <li>42 páginas de destino completas, cada una con su propia dirección</li>
+          <li>Unas 1,600 palabras, de 9 a 12 fotos y precio por avión en cada destino</li>
+          <li>Video de 0.8 MB en el celular, cargado después de mostrar la página</li>
+          <li>Inicio enfocado en «renta de jet privado en México»</li>
+          <li>Blog legible, con tarjetas, autor y fecha</li>
+          <li>Datos corregidos y en revisión por Google</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- HALLAZGOS -->
+  <div class="section">
+    <div class="section-hd"><h2>🔍 Hallazgos</h2><span class="tag crit">Lo que encontramos</span></div>
+    <p class="section-intro">Revisión en teléfono y escritorio, en español e inglés, y lectura de los informes de Search Console.</p>
+    <div class="impl-grid">
+      <div class="impl-card find"><div class="impl-num">1</div><div class="impl-body">
+        <div class="impl-title"><span class="tag crit">Idioma</span> Visitantes con el teléfono en inglés no podían volver al español</div>
+        <div class="impl-desc">Un ajuste antiguo del sitio mandaba a la versión en inglés a cualquier navegador configurado en inglés, y el navegador guardaba esa instrucción hasta 31 días. Para esas personas, el botón de la bandera de México regresaba siempre a la página en inglés.</div>
+      </div></div>
+      <div class="impl-card find"><div class="impl-num">2</div><div class="impl-body">
+        <div class="impl-title"><span class="tag seo">Datos estructurados</span> 107 avisos en Search Console</div>
+        <div class="impl-desc">La flota estaba descrita para Google como «productos» sin precio, en todas las páginas, y la ruta de navegación del inicio estaba incompleta. Los avisos no impedían aparecer en Google, pero sí impedían los resultados enriquecidos.</div>
+      </div></div>
+      <div class="impl-card find"><div class="impl-num">3</div><div class="impl-body">
+        <div class="impl-title"><span class="tag ux">Velocidad</span> Páginas pesadas en el celular</div>
+        <div class="impl-desc">El video de la portada en inglés pesaba 15 MB y se descargaba completo en el teléfono, y varias fuentes retrasaban la primera vista del contenido. El servidor además indica a los navegadores guardar cada página 31 días, por lo que algunos visitantes seguían viendo versiones viejas.</div>
+      </div></div>
+      <div class="impl-card find"><div class="impl-num">4</div><div class="impl-body">
+        <div class="impl-title"><span class="tag seo">Indexación</span> Páginas nuevas que Google todavía no conoce</div>
+        <div class="impl-desc">Las páginas de destino nuevas y varias páginas en inglés aparecen en Search Console como «Google no reconoce esta URL». Google las descubrirá solo, pero tarda semanas; pedir la indexación una por una lo acelera.</div>
+      </div></div>
+    </div>
+  </div>
+
+  <!-- IMPLEMENTACIONES -->
+  <div class="section">
+    <div class="section-hd"><h2>✅ Lo que hicimos</h2><span class="tag done">En vivo 12 y 13 Oct 2026</span></div>
+    <div class="impl-grid">
+      <div class="impl-card done"><div class="impl-num">1</div><div class="impl-body">
+        <div class="impl-title"><span class="tag seo">Contenido</span> 42 páginas de destino completas</div>
+        <div class="impl-desc">21 en español y 21 en inglés: Cancún, Los Cabos, Puerto Vallarta, Monterrey, Guadalajara, Acapulco, Querétaro, Toluca, Ciudad de México, Nueva York, Miami, Houston, Los Ángeles, Las Vegas, San Diego, Tijuana, McAllen, La Habana, Estados Unidos, España y Europa. Cada una tiene unas 1,600 palabras, de 9 a 12 fotos reales del destino, tabla de precios por avión, el recorrido de un día de puerta a puerta, lugares para visitar y preguntas reales de Google. Todas siguen el mismo diseño, así que el visitante encuentra la información en el mismo lugar en cualquier destino.</div>
+        <div class="impl-impact">✓ Cada destino compite en Google con su propia página</div>
+      </div></div>
+      <div class="impl-card done"><div class="impl-num">2</div><div class="impl-body">
+        <div class="impl-title"><span class="tag seo">SEO</span> Búsquedas reales en títulos y encabezados</div>
+        <div class="impl-desc">Las búsquedas medidas en el Reporte #3 quedaron en los títulos, encabezados principales y descripciones de 28 artículos y 15 páginas de servicio. El inicio ahora apunta a «renta de jet privado en México», una búsqueda nacional con más volumen que la de Toluca; Toluca sigue en el texto como la base de operación.</div>
+        <div class="impl-impact">✓ Google sabe para qué búsqueda es cada página</div>
+      </div></div>
+      <div class="impl-card done"><div class="impl-num">3</div><div class="impl-body">
+        <div class="impl-title"><span class="tag ux">Navegación</span> Menú con Precios, Destinos y Blog</div>
+        <div class="impl-desc">Nueva página /destinos/ con los 21 destinos, guía de aviones dentro de /flota/ y menú con Precios, Destinos y Blog en español e inglés. Revisamos la navegación en 32 páginas: menú del celular funcionando en todas y enlaces rotos corregidos.</div>
+        <div class="impl-impact">✓ Del inicio a cualquier destino en dos toques</div>
+      </div></div>
+      <div class="impl-card done"><div class="impl-num">4</div><div class="impl-body">
+        <div class="impl-title"><span class="tag geo">Blog</span> Artículos legibles y calendario en marcha</div>
+        <div class="impl-desc">Se corrigió el texto blanco sobre fondo blanco de los artículos. El blog ahora muestra tarjetas con autor y fecha, y los artículos en inglés tienen todos sus textos en inglés. Están publicados los 3 primeros y 30 programados, lunes, miércoles y viernes a las 9:00, hasta el 21 de diciembre.</div>
+        <div class="impl-impact">✓ El primer artículo ya aparece en Google en posición 5.2</div>
+      </div></div>
+      <div class="impl-card done"><div class="impl-num">5</div><div class="impl-body">
+        <div class="impl-title"><span class="tag ux">Velocidad</span> Sitio más ligero en el celular</div>
+        <div class="impl-desc">Video de portada en inglés comprimido de 15 MB a 0.8 MB en celular (2.8 MB en escritorio) y cargado después de mostrar la página. Imágenes servidas al tamaño de cada pantalla, fuentes que ya no bloquean la primera vista y un botón de llamada más ligero que el anterior. Las páginas ahora avisan al navegador cuando hay una versión nueva, para que nadie vea información vieja.</div>
+        <div class="impl-impact">✓ Página de destino de Cancún: 92/100 en velocidad móvil y 100/100 en SEO</div>
+      </div></div>
+      <div class="impl-card done"><div class="impl-num">6</div><div class="impl-body">
+        <div class="impl-title"><span class="tag ux">Idioma</span> La bandera de México siempre lleva al español</div>
+        <div class="impl-desc">Se quitó la redirección automática por idioma del navegador. El inicio abre siempre en español y cada visitante elige su idioma con las banderas. Las páginas en inglés además borran la instrucción vieja que algunos navegadores tenían guardada.</div>
+        <div class="impl-impact">✓ Probado con navegadores en español y en inglés</div>
+      </div></div>
+      <div class="impl-card done"><div class="impl-num">7</div><div class="impl-body">
+        <div class="impl-title"><span class="tag geo">Datos estructurados</span> Ficha de empresa alineada con Google y avisos corregidos</div>
+        <div class="impl-desc">La información que Google lee de JETCAB ahora coincide con su perfil de empresa: hangar 62 del Aeropuerto Internacional de Toluca, coordenadas, horario de 24 horas y enlace al perfil. La flota se describe como servicio de renta, no como producto, y la ruta de navegación del inicio está completa. Ya pedimos a Google que valide ambas correcciones.</div>
+        <div class="impl-impact">✓ Sin errores pendientes del lado de JETCAB</div>
+      </div></div>
+      <div class="impl-card done"><div class="impl-num">8</div><div class="impl-body">
+        <div class="impl-title"><span class="tag seo">Indexación</span> Páginas nuevas enviadas a Google</div>
+        <div class="impl-desc">Pedimos la indexación de 11 páginas, el máximo que Google permite por día, empezando por las de jets. Revisamos cada página antes de pedirla para no gastar la cuota en páginas que ya están en Google. Además vaciamos la caché del servidor para que Google y los visitantes reciban la versión actual de todo el sitio.</div>
+        <div class="impl-impact">✓ Unas 10 páginas más cada día hasta completar las 42</div>
+      </div></div>
+    </div>
+  </div>
+
+  <!-- VELOCIDAD -->
+  <div class="section">
+    <div class="section-hd"><h2>⚡ Velocidad y calidad técnica</h2><span class="tag seo">Medición móvil, 13 Oct</span></div>
+    <p class="section-intro">Medición con Lighthouse, la herramienta de Google detrás de PageSpeed, en condiciones de celular.</p>
+    <div class="tbl-wrap"><table>
+      <thead><tr><th>Página</th><th>Velocidad</th><th>SEO</th><th>Accesibilidad</th><th>Carga del contenido principal</th></tr></thead>
+      <tbody>
+        <tr><td>Vuelos privados a Cancún (destino nuevo)</td><td class="num pos-good">92</td><td class="num pos-good">100</td><td class="num pos-good">93</td><td class="num">2.9 s</td></tr>
+        <tr><td>Versión en inglés /en/</td><td class="num pos-mid">84</td><td class="num pos-good">100</td><td class="num pos-mid">88</td><td class="num">3.9 s</td></tr>
+        <tr><td>Inicio</td><td class="num pos-mid">69</td><td class="num pos-good">100</td><td class="num pos-good">91</td><td class="num">7.0 s</td></tr>
+      </tbody>
+    </table></div>
+    <div class="note"><strong>Siguiente paso en velocidad:</strong> el inicio todavía carga complementos que posiblemente ya no se usan (tienda en línea y etiquetas de seguimiento duplicadas). Antes de retirarlos necesitamos que JETCAB nos confirme dos datos; están en la sección «Lo que necesitamos».</div>
+  </div>
+
+  <!-- CALENDARIO -->
+  <div class="section">
+    <div class="section-hd"><h2>📅 Próximos artículos</h2></div>
+    <div class="timeline" style="margin-top:14px">
+      <div class="tl-item"><div class="tl-dot-wrap"><div class="tl-dot"></div><div class="tl-line"></div></div><div class="tl-body">
+        <div class="tl-date">12 Oct · publicados</div><div class="tl-title">Precio de un jet en México, costo por hora y qué es un vuelo chárter</div>
+        <div class="tl-detail">El de precios ya aparece en Google en posición 5.2.</div></div></div>
+      <div class="tl-item"><div class="tl-dot-wrap"><div class="tl-dot" style="background:var(--or)"></div><div class="tl-line"></div></div><div class="tl-body">
+        <div class="tl-date">14 al 23 Oct</div><div class="tl-title">Aeropuerto de Toluca, jet a Cabo, tipos de jet y ambulancia aérea</div>
+        <div class="tl-detail">Cómo llegar al aeropuerto de Toluca (14), cómo se llama el aeropuerto y su terminal privada (16), precio de un jet a Cabo en inglés (19), qué es un jet privado (21) y costo de una ambulancia aérea (23).</div></div></div>
+      <div class="tl-item"><div class="tl-dot-wrap"><div class="tl-dot" style="background:var(--bd)"></div><div class="tl-line"></div></div><div class="tl-body">
+        <div class="tl-date">26 al 30 Oct</div><div class="tl-title">Vuelos a Estados Unidos</div>
+        <div class="tl-detail">Reglas para volar de EE. UU. a México en avión privado, jet o primera clase en inglés y jet privado a Miami, Houston y Nueva York.</div></div></div>
+      <div class="tl-item"><div class="tl-dot-wrap"><div class="tl-dot" style="background:var(--bd)"></div></div><div class="tl-body">
+        <div class="tl-date">Noviembre y diciembre</div><div class="tl-title">24 artículos más, sin cambios al calendario del Reporte #3</div>
+        <div class="tl-detail">Rutas, operación y temporada; los de helicópteros al cierre, todos con conexión al jet.</div></div></div>
+    </div>
+  </div>
+
+  <!-- LO QUE NECESITAMOS -->
+  <div class="section">
+    <div class="section-hd"><h2>🤝 Lo que necesitamos de JETCAB</h2><span class="tag next">Para acelerar resultados</span></div>
+    <div class="next-grid" style="margin-top:14px">
+      <div class="next-card high"><div class="next-ico">📍</div><div>
+        <div class="next-title">Acceso de administrador al perfil de Google «Jetcab México»</div>
+        <div class="next-desc">El perfil ya existe. Con acceso de administrador cambiamos la categoría principal a vuelos chárter y completamos la descripción y los servicios; los textos ya están listos. Es lo que más falta para aparecer en Google Maps y en el bloque de negocios locales.</div>
+        <div class="next-meta"><span>Prioridad:</span> Alta · <span>Tiempo de JETCAB:</span> 2 minutos (Perfil de Google → Administradores → agregar)</div></div></div>
+      <div class="next-card high"><div class="next-ico">✈️</div><div>
+        <div class="next-title">Confirmar tiempos de vuelo, tarifas y capacidad</div>
+        <div class="next-desc">Tiempos de vuelo a Las Vegas, McAllen, La Habana y España. Tarifas de Tijuana (12,000 USD, más que San Diego con 9,000) y McAllen (8,000 USD, más que Houston con 3,800): ¿son correctas? Capacidad del Challenger 605: en algunos textos aparece como 9 pasajeros y en otros como 12.</div>
+        <div class="next-meta"><span>Prioridad:</span> Alta · <span>Tiempo de JETCAB:</span> 10 minutos</div></div></div>
+      <div class="next-card med"><div class="next-ico">✍️</div><div>
+        <div class="next-title">Nombre y cargo de quien firma los artículos</div>
+        <div class="next-desc">Sigue pendiente del Reporte #3. Google da más peso a contenido firmado por una persona con experiencia en aviación.</div>
+        <div class="next-meta"><span>Prioridad:</span> Media · <span>Tiempo de JETCAB:</span> 5 minutos</div></div></div>
+      <div class="next-card med"><div class="next-ico">🧩</div><div>
+        <div class="next-title">¿Usan Google Tag Manager y la tienda en línea (WooCommerce)?</div>
+        <div class="next-desc">Si las campañas de Google Ads o el píxel de Meta dependen de Tag Manager, lo conservamos; si la tienda no se usa, la desactivamos. Con eso el inicio puede bajar varios segundos de carga en celular.</div>
+        <div class="next-meta"><span>Prioridad:</span> Media · <span>Tiempo de JETCAB:</span> 5 minutos</div></div></div>
+    </div>
+  </div>
+
+  <!-- PRÓXIMA MEDICIÓN -->
+  <div class="section">
+    <div class="section-hd"><h2>🔭 Próxima medición: 2 de noviembre</h2></div>
+    <p class="section-intro">Google tarda de 2 a 4 semanas en reflejar páginas nuevas. El 2 de noviembre medimos posiciones de nuevo con la misma herramienta del Reporte #3 y comparamos contra el 13 de octubre.</p>
+    <div class="impl-grid">
+      <div class="impl-card good"><div class="impl-num">→</div><div class="impl-body">
+        <div class="impl-title">Qué esperamos ver</div>
+        <div class="impl-desc">Las 42 páginas de destino indexadas y apareciendo para «vuelo privado a [destino]». Las preguntas de precio estables en el top 5 y con más clics. El inicio cerca del top 5 para «renta de jet privado en México». Los 11 artículos de octubre publicados y los primeros en Google. Ninguna agencia seria puede garantizar una posición concreta; mediremos cada semana y ajustaremos con datos.</div>
+      </div></div>
+    </div>
+  </div>
+
+  <div class="cta-box">
+    <h2>¿Revisamos juntos los datos pendientes?</h2>
+    <p>Con el acceso al perfil de Google y la confirmación de tarifas cerramos esta etapa. Escríbanos y lo resolvemos el mismo día.</p>
+    <a class="cta-btn" href="https://wa.me/525532894890?text=Hola%2C+tengo+una+pregunta+sobre+el+Reporte+%234+de+JETCAB" target="_blank" rel="noopener">Hablar con Rankeo en WhatsApp →</a>
+  </div>
+
+  <div class="footer-note">
+    Reporte #4 · Resultados, destinos y velocidad · JETCAB México · 13 Oct 2026<br>
+    Rankeo · rankeo.agency
+  </div>
+
+</div>
+</body>
+</html>

@@ -630,7 +630,8 @@ const CLIENTS={
     reports:[
       {title:"Diagnóstico GEO + SEO — Octubre 2026",date:"05 Oct 2026",url:"https://rankeo-nu.vercel.app/jetcab-reporte-cliente.html",desc:"Análisis completo de los 8 problemas críticos encontrados en jetcab.mx y el plan de acción para aparecer en Google, ChatGPT y Perplexity."},
       {title:"Reporte #2 — Implementaciones Técnicas Oct 2026",date:"07 Oct 2026",url:"https://rankeo-nu.vercel.app/jetcab-reporte2.html",desc:"10 mejoras implementadas en jetcab.mx: fix CLS (6 imágenes), luxury polish UX, rediseño /cotizar, botón WhatsApp, speakable schema para IAs, og:image landscape, FAQPage 7 preguntas, versión en inglés jetcab.mx/en/ con hreflang, language switcher y sitemap enviado a GSC. Incluye próximos pasos Q4 y resultados esperados."},
-      {title:"Reporte #3 · Estrategia SEO + GEO con datos de búsqueda",date:"12 Oct 2026",url:"https://rankeo-nu.vercel.app/jetcab-reporte3.html",desc:"Búsquedas reales en México y EE. UU., análisis de los 3 competidores principales, correcciones técnicas, 33 artículos programados, páginas de preguntas frecuentes en español e inglés, nueva página de helicópteros en inglés y resultados esperados a 30, 90 días y 6 meses."}
+      {title:"Reporte #3 · Estrategia SEO + GEO con datos de búsqueda",date:"12 Oct 2026",url:"https://rankeo-nu.vercel.app/jetcab-reporte3.html",desc:"Búsquedas reales en México y EE. UU., análisis de los 3 competidores principales, correcciones técnicas, 33 artículos programados, páginas de preguntas frecuentes en español e inglés, nueva página de helicópteros en inglés y resultados esperados a 30, 90 días y 6 meses."},
+      {title:"Reporte #4 · Resultados, 42 destinos y velocidad",date:"13 Oct 2026",url:"https://rankeo.agency/jetcab-reporte4.html",desc:"Primeros resultados en Search Console (+62 % de apariciones, posición media de 11.7 a 9.1, top 5 en búsquedas de precio), 42 páginas de destino en español e inglés, sitio más rápido en celular, navegación con Precios, Destinos y Blog, idioma corregido, datos para Google sin errores e indexación en curso."}
     ],
     tips:[
       {p:"alta",cat:"Técnico",t:"Meta AdSense de plataforma activa",d:"Hay un <meta name=\"google-adsense-platform-account\"> en el head que permite que Google muestre anuncios de competidores dentro de jetcab.mx. Eliminar del header.php en WordPress (Apariencia → Editor de temas, o con el plugin Insert Headers and Footers)."},
@@ -651,6 +652,9 @@ const CLIENTS={
       {n:5,mes:"1ª quincena Dic 2026",monto:"$2,500 MXN",estado:"pendiente"}
     ]},
     metrics:[
+      {lbl:"Apariciones en Google (7 días)",val:"2,080",sub:"+62 % vs semana anterior · Search Console 5–11 Oct",estado:"neutral"},
+      {lbl:"Posición media en Google",val:"9.1",sub:"Antes 11.7 · top 5 en búsquedas de precio",estado:"neutral"},
+      {lbl:"Páginas de destino",val:"42",sub:"21 en español + 21 en inglés · 12–13 Oct",estado:"neutral"},
       {lbl:"Usuarios activos (7 días)",val:"111",sub:"↑70.8% vs sem. anterior · Google Analytics",estado:"neutral"},
       {lbl:"Sesiones orgánicas Google",val:"99",sub:"↑153.8% · SEO en crecimiento",estado:"neutral"},
       {lbl:"Páginas vistas",val:"229",sub:"↑70.9% vs semana anterior",estado:"neutral"},
@@ -698,6 +702,14 @@ const CLIENTS={
       lista:[]
     },
     actividad:[
+      {fecha:"13 Oct 2026",tipo:"entregable",titulo:"Reporte #4 entregado",desc:"Resultados de Search Console, 42 páginas de destino, velocidad y pendientes de JETCAB."},
+      {fecha:"13 Oct 2026",tipo:"seo",titulo:"Indexación solicitada y caché del servidor vaciada",desc:"11 páginas enviadas a Google (cuota diaria). Caché vaciada para que Google y los visitantes vean la versión actual. Unas 10 páginas más cada día."},
+      {fecha:"13 Oct 2026",tipo:"geo",titulo:"Avisos de Search Console corregidos y en validación",desc:"La flota se describe como servicio de renta (107 avisos de «producto» resueltos) y la ruta de navegación del inicio está completa. Validación pedida a Google."},
+      {fecha:"13 Oct 2026",tipo:"implementacion",titulo:"Bandera de México siempre lleva al español",desc:"Se quitó la redirección automática por idioma del navegador que regresaba a algunos visitantes a la versión en inglés."},
+      {fecha:"12 Oct 2026",tipo:"implementacion",titulo:"Sitio más rápido en celular",desc:"Video de portada en inglés de 15 MB a 0.8 MB, imágenes al tamaño de cada pantalla, fuentes sin bloquear la carga y botón de llamada más ligero."},
+      {fecha:"12 Oct 2026",tipo:"seo",titulo:"42 páginas de destino en español e inglés",desc:"21 destinos con unas 1,600 palabras, de 9 a 12 fotos, precio por avión y preguntas reales de Google en cada página."},
+      {fecha:"12 Oct 2026",tipo:"seo",titulo:"Búsquedas reales en títulos de 28 artículos y 15 páginas",desc:"El inicio apunta a «renta de jet privado en México». Ficha de empresa para Google alineada con el perfil (hangar 62, 24 h)."},
+      {fecha:"12 Oct 2026",tipo:"implementacion",titulo:"Menú con Precios, Destinos y Blog",desc:"Página /destinos/ nueva, guía de aviones en /flota/, menú móvil revisado en 32 páginas y blog legible con tarjetas, autor y fecha."},
       {fecha:"07 Oct 2026",tipo:"implementacion",titulo:"Backup completo del sitio — UpdraftPlus",desc:"Respaldo manual creado antes de cualquier cambio técnico. Seguridad garantizada para todos los ajustes del sprint Oct."},
       {fecha:"07 Oct 2026",tipo:"implementacion",titulo:"Fix CLS: 6 imágenes con dimensiones explícitas (WPCode)",desc:"Las 6 imágenes sin width/height causaban saltos visuales (CLS) al cargar. Snippet WPCode añade dimensiones via JavaScript para estabilizar el layout. Impacto esperado: CLS < 0.1 en Core Web Vitals."},
       {fecha:"07 Oct 2026",tipo:"implementacion",titulo:"Luxury Polish UX — micro-mejoras visuales",desc:"Refinamientos de presentación premium: animaciones de hover en botones, transiciones suaves, ajustes de padding y tipografía para elevar percepción de marca UHNWI."},
@@ -714,6 +726,7 @@ const CLIENTS={
       {fecha:"01 Oct 2026",tipo:"inicio",titulo:"Proyecto iniciado",desc:"Onboarding completado. Analytics conectado. Auditoría iniciada."}
     ],
     notificaciones:[
+      {id:"n5",fecha:"13 Oct 2026",hora:"13:00",icono:"🚀",titulo:"Reporte #4: ya aparece en el top 5 para búsquedas de precio",mensaje:"Las apariciones en Google subieron 62 % en una semana y la posición media pasó de 11.7 a 9.1. Publicamos 42 páginas de destino en español e inglés, aceleramos el sitio en celular y corregimos los avisos de Search Console. Ábralo en la sección Reportes; al final están los 4 datos que necesitamos de JETCAB.",leido:false},
       {id:"n4",fecha:"12 Oct 2026",hora:"20:00",icono:"📈",titulo:"Reporte #3 disponible: estrategia con datos de búsqueda",mensaje:"Corregimos errores técnicos, unificamos precios en español e inglés, publicamos páginas de preguntas frecuentes y publicamos los primeros 3 de 33 artículos; los demás salen 3 por semana hasta el 21 de diciembre. Ábralo en la sección Reportes.",leido:false},
       {id:"n3",fecha:"07 Oct 2026",hora:"18:45",icono:"🚀",titulo:"10 mejoras implementadas en jetcab.mx",mensaje:"Hoy completamos el sprint técnico de octubre: fix CLS en 6 imágenes, FAQ + Speakable schema para IAs, versión en inglés /en/, language switcher, rediseño /cotizar, botón WhatsApp, OG image landscape y sitemap enviado a GSC. Tu GEO Score subió de 0 → 2/10. Reporte #2 disponible en la sección Reportes.",leido:false},
       {id:"n2",fecha:"07 Oct 2026",hora:"10:00",icono:"📋",titulo:"Reporte #2 disponible — Implementaciones Oct 2026",mensaje:"El Reporte #2 con todos los detalles de las 10 mejoras implementadas, próximos pasos Q4 y resultados esperados ya está disponible. Ábrelo desde la sección Reportes en tu panel.",leido:false},
