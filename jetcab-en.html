@@ -53,7 +53,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preconnect" href="https://images.unsplash.com">
-<link rel="preload" as="image" href="https://images.unsplash.com/photo-1540962351504-03099e0a754b?auto=format&fit=crop&w=2000&q=85" fetchpriority="high">
+<link rel="preload" as="image" href="https://images.unsplash.com/photo-1540962351504-03099e0a754b?auto=format&amp;fit=crop&amp;q=85&amp;w=1024" imagesrcset="https://images.unsplash.com/photo-1540962351504-03099e0a754b?auto=format&amp;fit=crop&amp;q=85&amp;w=640 640w, https://images.unsplash.com/photo-1540962351504-03099e0a754b?auto=format&amp;fit=crop&amp;q=85&amp;w=1024 1024w, https://images.unsplash.com/photo-1540962351504-03099e0a754b?auto=format&amp;fit=crop&amp;q=85&amp;w=1600 1600w, https://images.unsplash.com/photo-1540962351504-03099e0a754b?auto=format&amp;fit=crop&amp;q=85&amp;w=2000 2000w" imagesizes="100vw" fetchpriority="high">
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;400;600;700;800&family=Barlow:wght@300;400;500&display=swap" rel="stylesheet">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"LocalBusiness","name":"JETCAB","description":"Private jet and helicopter charter company in Mexico. DGAC certified, 25 years of experience, 2000+ flights completed.","url":"https://jetcab.mx/","logo":"https://jetcab.mx/wp-content/uploads/2023/04/1024-LOGO-JETCAB-BLACK.jpg","telephone":"+527291081200","address":{"@type":"PostalAddress","streetAddress":"Toluca International Airport (AIT), Calle 7, Hangar 62","addressLocality":"San Pedro Totoltepec","addressRegion":"Estado de México","postalCode":"50226","addressCountry":"MX"},"areaServed":["Mexico","United States","Latin America"],"serviceType":["Private Jet Charter","Helicopter Charter","Air Ambulance"],"foundingDate":"1999","numberOfEmployees":{"@type":"QuantitativeValue","minValue":20},"award":["DGAC Certified","IS-BAO Certified","25+ Years Experience"],"@id":"https://jetcab.mx/#organization","alternateName":"Jetcab México","geo":{"@type":"GeoCoordinates","latitude":19.3245165,"longitude":-99.5674256},"hasMap":"https://www.google.com/maps?cid=13407080476113551463","sameAs":["https://www.google.com/maps?cid=13407080476113551463","https://www.instagram.com/jetcab.fly","https://www.facebook.com/jetcabmx","https://www.linkedin.com/company/jetcab"],"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],"opens":"00:00","closes":"23:59"}],"priceRange":"From 1,800 USD per flight"}
@@ -119,7 +119,7 @@ nav.solid{background:rgba(10,9,8,.96);backdrop-filter:blur(16px);border-bottom:1
 .hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 1.2s ease;will-change:opacity}
 .hero-video.loaded{opacity:1}
 /* Fallback static image if video fails */
-.hero-bg::before{content:'';position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1540962351504-03099e0a754b?auto=format&fit=crop&w=2000&q=85') center 40%/cover;animation:hzoom 20s ease-out forwards}
+.hero-bg::before{content:'';position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1540962351504-03099e0a754b?auto=format&fit=crop&w=1280&q=70') center 40%/cover;animation:hzoom 20s ease-out forwards}
 @keyframes hzoom{from{transform:scale(1.06)}to{transform:scale(1)}}
 /* Grain/noise overlay for 3D premium feel */
 .hero-grain{position:absolute;inset:0;opacity:.04;z-index:1;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='1'/%3E%3C/svg%3E");background-size:200px 200px}
@@ -474,12 +474,9 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:64px 48p
 <section class="hero">
   <div class="hero-bg">
     <!-- Aerial private aviation video — muted autoplay loop -->
-    <video class="hero-video" id="hero-video" autoplay muted loop playsinline preload="auto"
-      poster="https://images.unsplash.com/photo-1540962351504-03099e0a754b?auto=format&fit=crop&w=2000&q=85">
-      <source src="https://videos.pexels.com/video-files/28586474/12427476_2560_1440_24fps.mp4" type="video/mp4">
-      <source src="https://videos.pexels.com/video-files/28586474/12427475_1920_1080_24fps.mp4" type="video/mp4">
-      <source src="https://videos.pexels.com/video-files/32395004/13818493_1920_1080_30fps.mp4" type="video/mp4">
-    </video>
+    <video class="hero-video" id="hero-video" muted loop playsinline preload="none"
+      poster="https://images.unsplash.com/photo-1540962351504-03099e0a754b?auto=format&fit=crop&w=1280&q=70"
+      data-src="https://videos.pexels.com/video-files/28586474/12427475_1920_1080_24fps.mp4"></video>
   </div>
   <div class="hero-grain" aria-hidden="true"></div>
   <canvas id="hero-canvas" aria-hidden="true"></canvas>
@@ -598,7 +595,7 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:64px 48p
   </div>
   <div class="fleet-grid" id="fgrid" style="scroll-margin-top:64px">
     <div class="fc rv rv-d1" data-cat="corto" onclick="openJet('learjet35')" style="cursor:pointer" role="button" tabindex="0" aria-label="View Learjet 35 details">
-      <div class="fc-img"><img src="https://jetcab.mx/wp-content/uploads/2024/11/Learjet35enrenta.jpeg" alt="Learjet 35 private jet charter Mexico" loading="lazy" width="700" height="394"><span class="fc-cat">Short Range</span><span class="fc-avail">● Available</span></div>
+      <div class="fc-img"><img src="https://jetcab.mx/wp-content/uploads/2024/11/Learjet35enrenta.jpeg" srcset="https://jetcab.mx/wp-content/uploads/2024/11/Learjet35enrenta.jpeg 678w" sizes="(max-width: 960px) 100vw, 50vw" alt="Learjet 35 private jet charter Mexico" loading="lazy" width="700" height="394"><span class="fc-cat">Short Range</span><span class="fc-avail">● Available</span></div>
       <div class="fc-body">
         <p class="fc-name">Learjet 35</p>
         <p class="fc-desc">The definitive regional executive jet</p>
@@ -611,7 +608,7 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:64px 48p
       </div>
     </div>
     <div class="fc rv rv-d2" data-cat="medio" onclick="openJet('challenger604')" style="cursor:pointer" role="button" tabindex="0" aria-label="View Challenger 605 details">
-      <div class="fc-img"><img src="https://jetcab.mx/wp-content/uploads/2024/11/Challenger-605-en-renta.jpeg" alt="Challenger 605 private jet Mexico" loading="lazy" width="700" height="394"><span class="fc-cat">Mid Range</span></div>
+      <div class="fc-img"><img src="https://jetcab.mx/wp-content/uploads/2024/11/Challenger-605-en-renta.jpeg" srcset="https://jetcab.mx/wp-content/uploads/2024/11/Challenger-605-en-renta-768x384.jpeg 768w, https://jetcab.mx/wp-content/uploads/2024/11/Challenger-605-en-renta.jpeg 783w" sizes="(max-width: 960px) 100vw, 50vw" alt="Challenger 605 private jet Mexico" loading="lazy" width="700" height="394"><span class="fc-cat">Mid Range</span></div>
       <div class="fc-body">
         <p class="fc-name">Challenger 605</p>
         <p class="fc-desc">Premium comfort for intercontinental travel</p>
@@ -624,7 +621,7 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:64px 48p
       </div>
     </div>
     <div class="fc rv rv-d3" data-cat="largo" onclick="openJet('gulfstreamgv')" style="cursor:pointer" role="button" tabindex="0" aria-label="View Gulfstream GV details">
-      <div class="fc-img"><img src="https://jetcab.mx/wp-content/uploads/2024/11/Gulfstream-Gv-en-Renta.jpeg" alt="Gulfstream GV luxury jet charter" loading="lazy" width="700" height="394"><span class="fc-cat">Long Range</span><span class="fc-avail">● Available</span></div>
+      <div class="fc-img"><img src="https://jetcab.mx/wp-content/uploads/2024/11/Gulfstream-Gv-en-Renta.jpeg" srcset="https://jetcab.mx/wp-content/uploads/2024/11/Gulfstream-Gv-en-Renta.jpeg 738w" sizes="(max-width: 960px) 100vw, 50vw" alt="Gulfstream GV luxury jet charter" loading="lazy" width="700" height="394"><span class="fc-cat">Long Range</span><span class="fc-avail">● Available</span></div>
       <div class="fc-body">
         <p class="fc-name">Gulfstream GV</p>
         <p class="fc-desc">The pinnacle of global executive aviation</p>
@@ -637,7 +634,7 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:64px 48p
       </div>
     </div>
     <div class="fc rv rv-d1" data-cat="corto" onclick="openJet('learjet45')" style="cursor:pointer" role="button" tabindex="0" aria-label="View Learjet 45 details">
-      <div class="fc-img"><img src="https://jetcab.mx/wp-content/uploads/2024/11/Learjet-45-en-renta.jpeg" alt="Learjet 45 private jet charter Mexico" loading="lazy" width="700" height="394"><span class="fc-cat">Short Range</span><span class="fc-avail">● Available</span></div>
+      <div class="fc-img"><img src="https://jetcab.mx/wp-content/uploads/2024/11/Learjet-45-en-renta.jpeg" srcset="https://jetcab.mx/wp-content/uploads/2024/11/Learjet-45-en-renta.jpeg 688w" sizes="(max-width: 960px) 100vw, 50vw" alt="Learjet 45 private jet charter Mexico" loading="lazy" width="700" height="394"><span class="fc-cat">Short Range</span><span class="fc-avail">● Available</span></div>
       <div class="fc-body">
         <p class="fc-name">Learjet 45</p>
         <p class="fc-desc">Superior comfort for short and medium routes</p>
@@ -650,7 +647,7 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:64px 48p
       </div>
     </div>
     <div class="fc rv rv-d2" data-cat="medio" onclick="openJet('hawker700')" style="cursor:pointer" role="button" tabindex="0" aria-label="View Hawker 700 details">
-      <div class="fc-img"><img src="https://jetcab.mx/wp-content/uploads/2024/11/Hawker-700-en-renta.jpeg" alt="Hawker 700 private jet charter Mexico" loading="lazy" width="700" height="394"><span class="fc-cat">Mid Range</span></div>
+      <div class="fc-img"><img src="https://jetcab.mx/wp-content/uploads/2024/11/Hawker-700-en-renta.jpeg" srcset="https://jetcab.mx/wp-content/uploads/2024/11/Hawker-700-en-renta.jpeg 620w" sizes="(max-width: 960px) 100vw, 50vw" alt="Hawker 700 private jet charter Mexico" loading="lazy" width="700" height="394"><span class="fc-cat">Mid Range</span></div>
       <div class="fc-body">
         <p class="fc-name">Hawker 700</p>
         <p class="fc-desc">Proven mid-size jet, spacious and reliable</p>
@@ -663,7 +660,7 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:64px 48p
       </div>
     </div>
     <div class="fc rv rv-d3" data-cat="medio" onclick="openJet('hawker800')" style="cursor:pointer" role="button" tabindex="0" aria-label="View Hawker 800 details">
-      <div class="fc-img"><img src="https://jetcab.mx/wp-content/uploads/2024/11/Hawker-800-en-renta.jpeg" alt="Hawker 800 private jet charter Mexico" loading="lazy" width="700" height="394"><span class="fc-cat">Mid Range</span></div>
+      <div class="fc-img"><img src="https://jetcab.mx/wp-content/uploads/2024/11/Hawker-800-en-renta.jpeg" srcset="https://jetcab.mx/wp-content/uploads/2024/11/Hawker-800-en-renta.jpeg 700w" sizes="(max-width: 960px) 100vw, 50vw" alt="Hawker 800 private jet charter Mexico" loading="lazy" width="700" height="394"><span class="fc-cat">Mid Range</span></div>
       <div class="fc-body">
         <p class="fc-name">Hawker 800</p>
         <p class="fc-desc">Extended range and enhanced cabin comfort</p>
@@ -676,7 +673,7 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:64px 48p
       </div>
     </div>
     <div class="fc rv rv-d1" data-cat="largo" onclick="openJet('gulfstreamg150')" style="cursor:pointer" role="button" tabindex="0" aria-label="View Gulfstream G150 details">
-      <div class="fc-img"><img src="https://jetcab.mx/wp-content/uploads/2024/11/GulfstreamG150enrenta.jpeg" alt="Gulfstream G150 private jet charter Mexico" loading="lazy" width="700" height="394"><span class="fc-cat">Long Range</span></div>
+      <div class="fc-img"><img src="https://jetcab.mx/wp-content/uploads/2024/11/GulfstreamG150enrenta.jpeg" srcset="https://jetcab.mx/wp-content/uploads/2024/11/GulfstreamG150enrenta.jpeg 701w" sizes="(max-width: 960px) 100vw, 50vw" alt="Gulfstream G150 private jet charter Mexico" loading="lazy" width="700" height="394"><span class="fc-cat">Long Range</span></div>
       <div class="fc-body">
         <p class="fc-name">Gulfstream G150</p>
         <p class="fc-desc">Transatlantic range with executive performance</p>
@@ -689,7 +686,7 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:64px 48p
       </div>
     </div>
     <div class="fc rv rv-d2" data-cat="largo" onclick="openJet('legacy600')" style="cursor:pointer" role="button" tabindex="0" aria-label="View Legacy 600 details">
-      <div class="fc-img"><img src="https://jetcab.mx/wp-content/uploads/2024/11/WhatsApp-Image-2024-11-04-at-14.21.53.jpeg" alt="Legacy 600 private jet charter Mexico" loading="lazy" width="700" height="394"><span class="fc-cat">Long Range</span></div>
+      <div class="fc-img"><img src="https://jetcab.mx/wp-content/uploads/2024/11/WhatsApp-Image-2024-11-04-at-14.21.53.jpeg" srcset="https://jetcab.mx/wp-content/uploads/2024/11/WhatsApp-Image-2024-11-04-at-14.21.53.jpeg 632w" sizes="(max-width: 960px) 100vw, 50vw" alt="Legacy 600 private jet charter Mexico" loading="lazy" width="700" height="394"><span class="fc-cat">Long Range</span></div>
       <div class="fc-body">
         <p class="fc-name">Legacy 600</p>
         <p class="fc-desc">Ultra-large cabin for groups and extended journeys</p>
@@ -702,7 +699,7 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:64px 48p
       </div>
     </div>
     <div class="fc rv rv-d1" data-cat="heli" onclick="openJet('bell206')" style="cursor:pointer" role="button" tabindex="0" aria-label="View Bell 206 details">
-      <div class="fc-img"><img src="https://jetcab.mx/wp-content/uploads/2024/11/Bel-206-en-renta.jpeg" alt="Bell 206 helicopter charter Mexico" loading="lazy" width="700" height="394"><span class="fc-cat">Helicopter</span></div>
+      <div class="fc-img"><img src="https://jetcab.mx/wp-content/uploads/2024/11/Bel-206-en-renta-1024x576.jpeg" srcset="https://jetcab.mx/wp-content/uploads/2024/11/Bel-206-en-renta-768x432.jpeg 768w, https://jetcab.mx/wp-content/uploads/2024/11/Bel-206-en-renta-1024x576.jpeg 1024w, https://jetcab.mx/wp-content/uploads/2024/11/Bel-206-en-renta.jpeg 1280w" sizes="(max-width: 960px) 100vw, 50vw" alt="Bell 206 helicopter charter Mexico" loading="lazy" width="700" height="394"><span class="fc-cat">Helicopter</span></div>
       <div class="fc-body">
         <p class="fc-name">Bell 206</p>
         <p class="fc-desc">Urban transfers and remote area access</p>
@@ -715,7 +712,7 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:64px 48p
       </div>
     </div>
     <div class="fc rv rv-d2" data-cat="heli" onclick="openJet('aw139')" style="cursor:pointer" role="button" tabindex="0" aria-label="View AW139 details">
-      <div class="fc-img"><img src="https://jetcab.mx/wp-content/uploads/2024/11/Renta-de-Helicopteros-Mex.jpeg" alt="AW139 executive helicopter Mexico" loading="lazy" width="700" height="394"><span class="fc-cat">Premium Helicopter</span></div>
+      <div class="fc-img"><img src="https://jetcab.mx/wp-content/uploads/2024/11/Renta-de-Helicopteros-Mex.jpeg" srcset="https://jetcab.mx/wp-content/uploads/2024/11/Renta-de-Helicopteros-Mex.jpeg 679w" sizes="(max-width: 960px) 100vw, 50vw" alt="AW139 executive helicopter Mexico" loading="lazy" width="700" height="394"><span class="fc-cat">Premium Helicopter</span></div>
       <div class="fc-body">
         <p class="fc-name">AgustaWestland AW139</p>
         <p class="fc-desc">The world's most advanced executive helicopter</p>
@@ -728,7 +725,7 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:64px 48p
       </div>
     </div>
     <div class="fc rv rv-d3" data-cat="med" onclick="openJet('ambulancia')" style="cursor:pointer" role="button" tabindex="0" aria-label="View Air Ambulance details">
-      <div class="fc-img"><img src="https://jetcab.mx/wp-content/uploads/2024/11/Ambulancia-aerea-Mexico.jpeg" alt="Air ambulance Mexico JETCAB" loading="lazy" width="700" height="394"><span class="fc-cat">Medical</span></div>
+      <div class="fc-img"><img src="https://jetcab.mx/wp-content/uploads/2024/11/Ambulancia-aerea-Mexico.jpeg" srcset="https://jetcab.mx/wp-content/uploads/2024/11/Ambulancia-aerea-Mexico-768x375.jpeg 768w, https://jetcab.mx/wp-content/uploads/2024/11/Ambulancia-aerea-Mexico.jpeg 793w" sizes="(max-width: 960px) 100vw, 50vw" alt="Air ambulance Mexico JETCAB" loading="lazy" width="700" height="394"><span class="fc-cat">Medical</span></div>
       <div class="fc-body">
         <p class="fc-name">Air Ambulance</p>
         <p class="fc-desc">Flying ICU · Specialized medical crew</p>
@@ -786,7 +783,7 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:64px 48p
       </div>
     </div>
     <div class="diff-photo rv-r">
-      <img src="https://images.unsplash.com/photo-1474302770737-173ee21bab63?auto=format&fit=crop&w=900&q=80" alt="Executive private jet Mexico JETCAB" loading="lazy" width="900" height="600">
+      <img src="https://images.unsplash.com/photo-1474302770737-173ee21bab63?auto=format&amp;fit=crop&amp;q=80&amp;w=1024" srcset="https://images.unsplash.com/photo-1474302770737-173ee21bab63?auto=format&amp;fit=crop&amp;q=80&amp;w=640 640w, https://images.unsplash.com/photo-1474302770737-173ee21bab63?auto=format&amp;fit=crop&amp;q=80&amp;w=1024 1024w, https://images.unsplash.com/photo-1474302770737-173ee21bab63?auto=format&amp;fit=crop&amp;q=80&amp;w=1600 1600w, https://images.unsplash.com/photo-1474302770737-173ee21bab63?auto=format&amp;fit=crop&amp;q=80&amp;w=2000 2000w" sizes="(max-width: 960px) 100vw, 50vw" alt="Executive private jet Mexico JETCAB" loading="lazy" width="900" height="600">
     </div>
   </div>
 </section>
@@ -830,27 +827,27 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:64px 48p
     <a href="#contact" class="btn-ghost">View all destinations →</a>
   </div>
   <div class="dest-grid">
-    <a class="dc rv rv-d1" href="https://jetcab.mx/private-jet-mexico-city-cancun/" aria-label="Private jet to Cancún"><div class="dc-bg" style="background-image:url('https://jetcab.mx/wp-content/uploads/2024/10/vuelosprivadosacancun-1-scaled.jpg')"></div><div class="dc-ol"></div><span class="dc-urgency">● Popular route</span><span class="dc-flytime">2h 15m from CDMX</span><div class="dc-info"><span class="dc-city">Cancún</span><span class="dc-ctry">Mexico</span></div></a>
-    <a class="dc rv rv-d2" href="https://jetcab.mx/private-jet-mexico-city-los-cabos/" aria-label="Private jet to Los Cabos"><div class="dc-bg" style="background-image:url('https://jetcab.mx/wp-content/uploads/2024/10/vuelos-privados-a-los-cabos-scaled.jpg')"></div><div class="dc-ol"></div><span class="dc-urgency">● Popular route</span><span class="dc-flytime">2h 30m from CDMX</span><div class="dc-info"><span class="dc-city">Los Cabos</span><span class="dc-ctry">Mexico</span></div></a>
-    <a class="dc rv rv-d3" href="https://jetcab.mx/private-jet-mexico-city-puerto-vallarta/" aria-label="Private jet to Puerto Vallarta"><div class="dc-bg" style="background-image:url('https://jetcab.mx/wp-content/uploads/2024/11/Vuelos-privados-a-puerto-vallarta-scaled.jpg')"></div><div class="dc-ol"></div><span class="dc-urgency">● Available today</span><span class="dc-flytime">1h 45m from CDMX</span><div class="dc-info"><span class="dc-city">Puerto Vallarta</span><span class="dc-ctry">Mexico</span></div></a>
-    <a class="dc rv rv-d4" href="https://jetcab.mx/private-jet-mexico-city-monterrey/" aria-label="Private jet to Monterrey"><div class="dc-bg" style="background-image:url('https://jetcab.mx/wp-content/uploads/2024/10/Vuelosprivadosmonterrey-scaled.jpg')"></div><div class="dc-ol"></div><span class="dc-urgency">● Popular route</span><span class="dc-flytime">1h 15m from CDMX</span><div class="dc-info"><span class="dc-city">Monterrey</span><span class="dc-ctry">Mexico</span></div></a>
-    <a class="dc rv rv-d1" href="https://jetcab.mx/private-jet-mexico-city-guadalajara/" aria-label="Private jet to Guadalajara"><div class="dc-bg" style="background-image:url('https://jetcab.mx/wp-content/uploads/2024/10/vuelos-privados-a-Guadalajara-scaled.jpg')"></div><div class="dc-ol"></div><span class="dc-urgency">● Popular route</span><span class="dc-flytime">50m from CDMX</span><div class="dc-info"><span class="dc-city">Guadalajara</span><span class="dc-ctry">Mexico</span></div></a>
+    <a class="dc rv rv-d1" href="https://jetcab.mx/private-jet-mexico-city-cancun/" aria-label="Private jet to Cancún"><div class="dc-bg" style="background-image:url('https://jetcab.mx/wp-content/uploads/2024/10/vuelosprivadosacancun-1-768x514.jpg')"></div><div class="dc-ol"></div><span class="dc-urgency">● Popular route</span><span class="dc-flytime">2h 15m from CDMX</span><div class="dc-info"><span class="dc-city">Cancún</span><span class="dc-ctry">Mexico</span></div></a>
+    <a class="dc rv rv-d2" href="https://jetcab.mx/private-jet-mexico-city-los-cabos/" aria-label="Private jet to Los Cabos"><div class="dc-bg" style="background-image:url('https://jetcab.mx/wp-content/uploads/2024/10/vuelos-privados-a-los-cabos-768x512.jpg')"></div><div class="dc-ol"></div><span class="dc-urgency">● Popular route</span><span class="dc-flytime">2h 30m from CDMX</span><div class="dc-info"><span class="dc-city">Los Cabos</span><span class="dc-ctry">Mexico</span></div></a>
+    <a class="dc rv rv-d3" href="https://jetcab.mx/private-jet-mexico-city-puerto-vallarta/" aria-label="Private jet to Puerto Vallarta"><div class="dc-bg" style="background-image:url('https://jetcab.mx/wp-content/uploads/2024/11/Vuelos-privados-a-puerto-vallarta-768x557.jpg')"></div><div class="dc-ol"></div><span class="dc-urgency">● Available today</span><span class="dc-flytime">1h 45m from CDMX</span><div class="dc-info"><span class="dc-city">Puerto Vallarta</span><span class="dc-ctry">Mexico</span></div></a>
+    <a class="dc rv rv-d4" href="https://jetcab.mx/private-jet-mexico-city-monterrey/" aria-label="Private jet to Monterrey"><div class="dc-bg" style="background-image:url('https://jetcab.mx/wp-content/uploads/2024/10/Vuelosprivadosmonterrey-768x512.jpg')"></div><div class="dc-ol"></div><span class="dc-urgency">● Popular route</span><span class="dc-flytime">1h 15m from CDMX</span><div class="dc-info"><span class="dc-city">Monterrey</span><span class="dc-ctry">Mexico</span></div></a>
+    <a class="dc rv rv-d1" href="https://jetcab.mx/private-jet-mexico-city-guadalajara/" aria-label="Private jet to Guadalajara"><div class="dc-bg" style="background-image:url('https://jetcab.mx/wp-content/uploads/2024/10/vuelos-privados-a-Guadalajara-768x512.jpg')"></div><div class="dc-ol"></div><span class="dc-urgency">● Popular route</span><span class="dc-flytime">50m from CDMX</span><div class="dc-info"><span class="dc-city">Guadalajara</span><span class="dc-ctry">Mexico</span></div></a>
     <a class="dc rv rv-d2" href="https://jetcab.mx/private-jet-mexico-city-acapulco/" aria-label="Private jet to Acapulco"><div class="dc-bg" style="background-image:url('https://jetcab.mx/wp-content/uploads/2024/10/vuelosprivadosaacapulcomexico-1024x684.jpg')"></div><div class="dc-ol"></div><span class="dc-urgency">● Popular route</span><span class="dc-flytime">45m from CDMX</span><div class="dc-info"><span class="dc-city">Acapulco</span><span class="dc-ctry">Mexico</span></div></a>
-    <a class="dc rv rv-d3" href="https://jetcab.mx/private-jet-mexico-city-queretaro/" aria-label="Private jet to Querétaro"><div class="dc-bg" style="background-image:url('https://jetcab.mx/wp-content/uploads/2024/10/Vuelosprivadosaqueretaro-scaled.jpg')"></div><div class="dc-ol"></div><span class="dc-urgency">● Available today</span><span class="dc-flytime">35m from CDMX</span><div class="dc-info"><span class="dc-city">Querétaro</span><span class="dc-ctry">Mexico</span></div></a>
-    <a class="dc rv rv-d4" href="https://jetcab.mx/private-jet-toluca-airport/" aria-label="Private jet to Toluca"><div class="dc-bg" style="background-image:url('https://jetcab.mx/wp-content/uploads/2024/10/vuelos-privados-a-toluca-scaled.jpg')"></div><div class="dc-ol"></div><span class="dc-urgency">● Hub city</span><span class="dc-flytime">Departs from AIT</span><div class="dc-info"><span class="dc-city">Toluca</span><span class="dc-ctry">Mexico</span></div></a>
-    <a class="dc rv rv-d1" href="https://jetcab.mx/private-jet-mexico-city/" aria-label="Private jet to Mexico City"><div class="dc-bg" style="background-image:url('https://jetcab.mx/wp-content/uploads/2024/10/vuelos-privados-a-cdmx-scaled.jpg')"></div><div class="dc-ol"></div><span class="dc-urgency">● Popular route</span><span class="dc-flytime">Departs from AIT</span><div class="dc-info"><span class="dc-city">Mexico City</span><span class="dc-ctry">Mexico</span></div></a>
-    <a class="dc rv rv-d2" href="https://jetcab.mx/private-jet-mexico-city-new-york/" aria-label="Private jet to New York"><div class="dc-bg" style="background-image:url('https://jetcab.mx/wp-content/uploads/2024/10/vuelosprivadosanuevayork-scaled.jpg')"></div><div class="dc-ol"></div><span class="dc-urgency">● Popular route</span><span class="dc-flytime">5h 30m from CDMX</span><div class="dc-info"><span class="dc-city">New York</span><span class="dc-ctry">United States</span></div></a>
-    <a class="dc rv rv-d3" href="https://jetcab.mx/private-jet-mexico-city-miami/" aria-label="Private jet to Miami"><div class="dc-bg" style="background-image:url('https://jetcab.mx/wp-content/uploads/2026/10/jet-privado-mexico-miami-skyline.jpg')"></div><div class="dc-ol"></div><span class="dc-urgency">● Popular route</span><span class="dc-flytime">3h 30m from CDMX</span><div class="dc-info"><span class="dc-city">Miami</span><span class="dc-ctry">United States</span></div></a>
-    <a class="dc rv rv-d4" href="https://jetcab.mx/private-jet-mexico-city-houston/" aria-label="Private jet to Houston"><div class="dc-bg" style="background-image:url('https://jetcab.mx/wp-content/uploads/2026/10/jet-privado-mexico-houston-skyline.jpg')"></div><div class="dc-ol"></div><span class="dc-urgency">● Popular route</span><span class="dc-flytime">2h 45m from CDMX</span><div class="dc-info"><span class="dc-city">Houston</span><span class="dc-ctry">United States</span></div></a>
+    <a class="dc rv rv-d3" href="https://jetcab.mx/private-jet-mexico-city-queretaro/" aria-label="Private jet to Querétaro"><div class="dc-bg" style="background-image:url('https://jetcab.mx/wp-content/uploads/2024/10/Vuelosprivadosaqueretaro-768x432.jpg')"></div><div class="dc-ol"></div><span class="dc-urgency">● Available today</span><span class="dc-flytime">35m from CDMX</span><div class="dc-info"><span class="dc-city">Querétaro</span><span class="dc-ctry">Mexico</span></div></a>
+    <a class="dc rv rv-d4" href="https://jetcab.mx/private-jet-toluca-airport/" aria-label="Private jet to Toluca"><div class="dc-bg" style="background-image:url('https://jetcab.mx/wp-content/uploads/2024/10/vuelos-privados-a-toluca-768x576.jpg')"></div><div class="dc-ol"></div><span class="dc-urgency">● Hub city</span><span class="dc-flytime">Departs from AIT</span><div class="dc-info"><span class="dc-city">Toluca</span><span class="dc-ctry">Mexico</span></div></a>
+    <a class="dc rv rv-d1" href="https://jetcab.mx/private-jet-mexico-city/" aria-label="Private jet to Mexico City"><div class="dc-bg" style="background-image:url('https://jetcab.mx/wp-content/uploads/2024/10/vuelos-privados-a-cdmx-768x432.jpg')"></div><div class="dc-ol"></div><span class="dc-urgency">● Popular route</span><span class="dc-flytime">Departs from AIT</span><div class="dc-info"><span class="dc-city">Mexico City</span><span class="dc-ctry">Mexico</span></div></a>
+    <a class="dc rv rv-d2" href="https://jetcab.mx/private-jet-mexico-city-new-york/" aria-label="Private jet to New York"><div class="dc-bg" style="background-image:url('https://jetcab.mx/wp-content/uploads/2024/10/vuelosprivadosanuevayork-768x461.jpg')"></div><div class="dc-ol"></div><span class="dc-urgency">● Popular route</span><span class="dc-flytime">5h 30m from CDMX</span><div class="dc-info"><span class="dc-city">New York</span><span class="dc-ctry">United States</span></div></a>
+    <a class="dc rv rv-d3" href="https://jetcab.mx/private-jet-mexico-city-miami/" aria-label="Private jet to Miami"><div class="dc-bg" style="background-image:url('https://jetcab.mx/wp-content/uploads/2026/10/jet-privado-mexico-miami-skyline-768x602.jpg')"></div><div class="dc-ol"></div><span class="dc-urgency">● Popular route</span><span class="dc-flytime">3h 30m from CDMX</span><div class="dc-info"><span class="dc-city">Miami</span><span class="dc-ctry">United States</span></div></a>
+    <a class="dc rv rv-d4" href="https://jetcab.mx/private-jet-mexico-city-houston/" aria-label="Private jet to Houston"><div class="dc-bg" style="background-image:url('https://jetcab.mx/wp-content/uploads/2026/10/jet-privado-mexico-houston-skyline-768x608.jpg')"></div><div class="dc-ol"></div><span class="dc-urgency">● Popular route</span><span class="dc-flytime">2h 45m from CDMX</span><div class="dc-info"><span class="dc-city">Houston</span><span class="dc-ctry">United States</span></div></a>
     <a class="dc rv rv-d1" href="https://jetcab.mx/private-jet-mexico-city-los-angeles/" aria-label="Private jet to Los Angeles"><div class="dc-bg" style="background-image:url('https://images.unsplash.com/photo-1444723121867-7a241cacace9?auto=format&fit=crop&w=1200&q=80')"></div><div class="dc-ol"></div><span class="dc-urgency">● Popular route</span><span class="dc-flytime">3h 45m from CDMX</span><div class="dc-info"><span class="dc-city">Los Angeles</span><span class="dc-ctry">United States</span></div></a>
-    <a class="dc rv rv-d3" href="https://jetcab.mx/private-jet-mexico-city-las-vegas/" aria-label="Private jet to Las Vegas"><div class="dc-bg" style="background-image:url('https://jetcab.mx/wp-content/uploads/2024/10/Vuelos-Privados-a-Las-Vegas-scaled.jpg')"></div><div class="dc-ol"></div><span class="dc-urgency">● High demand</span><span class="dc-flytime">3h 50m from CDMX</span><div class="dc-info"><span class="dc-city">Las Vegas</span><span class="dc-ctry">United States</span></div></a>
-    <a class="dc rv rv-d4" href="https://jetcab.mx/private-jet-mexico-city-san-diego/" aria-label="Private jet to San Diego"><div class="dc-bg" style="background-image:url('https://jetcab.mx/wp-content/uploads/2024/10/vuelos-privados-a-san-diego-scaled.jpg')"></div><div class="dc-ol"></div><span class="dc-urgency">● Popular route</span><span class="dc-flytime">3h 20m from CDMX</span><div class="dc-info"><span class="dc-city">San Diego</span><span class="dc-ctry">United States</span></div></a>
-    <a class="dc rv rv-d1" href="https://jetcab.mx/private-jet-mexico-city-tijuana/" aria-label="Private jet to Tijuana"><div class="dc-bg" style="background-image:url('https://jetcab.mx/wp-content/uploads/2024/10/vuelosprivadosatijuana-scaled.jpg')"></div><div class="dc-ol"></div><span class="dc-urgency">● Available today</span><span class="dc-flytime">3h 10m from CDMX</span><div class="dc-info"><span class="dc-city">Tijuana</span><span class="dc-ctry">Mexico</span></div></a>
-    <a class="dc rv rv-d2" href="https://jetcab.mx/private-jet-mexico-city-mcallen/" aria-label="Private jet to McAllen"><div class="dc-bg" style="background-image:url('https://jetcab.mx/wp-content/uploads/2024/10/VuelosPrivadosa-a-Mcallen-scaled.jpg')"></div><div class="dc-ol"></div><span class="dc-urgency">● Border route</span><span class="dc-flytime">1h 30m from CDMX</span><div class="dc-info"><span class="dc-city">McAllen</span><span class="dc-ctry">United States</span></div></a>
-    <a class="dc rv rv-d3" href="https://jetcab.mx/private-jet-mexico-to-usa/" aria-label="Private jet to United States"><div class="dc-bg" style="background-image:url('https://jetcab.mx/wp-content/uploads/2024/10/Vuelos-privados-a-estados-unidos-scaled.jpg')"></div><div class="dc-ol"></div><span class="dc-urgency">● Multiple routes</span><span class="dc-flytime">USA destinations</span><div class="dc-info"><span class="dc-city">United States</span><span class="dc-ctry">North America</span></div></a>
-    <a class="dc rv rv-d4" href="https://jetcab.mx/private-jet-mexico-city-havana/" aria-label="Private jet to Cuba"><div class="dc-bg" style="background-image:url('https://jetcab.mx/wp-content/uploads/2024/10/vuelosprivadosacuba-scaled.jpg')"></div><div class="dc-ol"></div><span class="dc-urgency">● International</span><span class="dc-flytime">2h 30m from CDMX</span><div class="dc-info"><span class="dc-city">Cuba</span><span class="dc-ctry">Caribbean</span></div></a>
-    <a class="dc rv rv-d1" href="https://jetcab.mx/private-jet-mexico-to-spain/" aria-label="Private jet to Spain"><div class="dc-bg" style="background-image:url('https://jetcab.mx/wp-content/uploads/2024/10/vuelos-privados-a-espana-scaled.jpg')"></div><div class="dc-ol"></div><span class="dc-urgency">● Transatlantic</span><span class="dc-flytime">11h from CDMX</span><div class="dc-info"><span class="dc-city">Spain</span><span class="dc-ctry">Europe</span></div></a>
-    <a class="dc rv rv-d2" href="https://jetcab.mx/private-jet-mexico-to-europe/" aria-label="Private jet to Europe"><div class="dc-bg" style="background-image:url('https://jetcab.mx/wp-content/uploads/2024/10/Vuelos-privados-a-europa-scaled.jpg')"></div><div class="dc-ol"></div><span class="dc-urgency">● Transatlantic</span><span class="dc-flytime">Europe routes</span><div class="dc-info"><span class="dc-city">Europe</span><span class="dc-ctry">International</span></div></a>
+    <a class="dc rv rv-d3" href="https://jetcab.mx/private-jet-mexico-city-las-vegas/" aria-label="Private jet to Las Vegas"><div class="dc-bg" style="background-image:url('https://jetcab.mx/wp-content/uploads/2024/10/Vuelos-Privados-a-Las-Vegas-768x512.jpg')"></div><div class="dc-ol"></div><span class="dc-urgency">● High demand</span><span class="dc-flytime">3h 50m from CDMX</span><div class="dc-info"><span class="dc-city">Las Vegas</span><span class="dc-ctry">United States</span></div></a>
+    <a class="dc rv rv-d4" href="https://jetcab.mx/private-jet-mexico-city-san-diego/" aria-label="Private jet to San Diego"><div class="dc-bg" style="background-image:url('https://jetcab.mx/wp-content/uploads/2024/10/vuelos-privados-a-san-diego-768x576.jpg')"></div><div class="dc-ol"></div><span class="dc-urgency">● Popular route</span><span class="dc-flytime">3h 20m from CDMX</span><div class="dc-info"><span class="dc-city">San Diego</span><span class="dc-ctry">United States</span></div></a>
+    <a class="dc rv rv-d1" href="https://jetcab.mx/private-jet-mexico-city-tijuana/" aria-label="Private jet to Tijuana"><div class="dc-bg" style="background-image:url('https://jetcab.mx/wp-content/uploads/2024/10/vuelosprivadosatijuana-768x510.jpg')"></div><div class="dc-ol"></div><span class="dc-urgency">● Available today</span><span class="dc-flytime">3h 10m from CDMX</span><div class="dc-info"><span class="dc-city">Tijuana</span><span class="dc-ctry">Mexico</span></div></a>
+    <a class="dc rv rv-d2" href="https://jetcab.mx/private-jet-mexico-city-mcallen/" aria-label="Private jet to McAllen"><div class="dc-bg" style="background-image:url('https://jetcab.mx/wp-content/uploads/2024/10/VuelosPrivadosa-a-Mcallen-768x498.jpg')"></div><div class="dc-ol"></div><span class="dc-urgency">● Border route</span><span class="dc-flytime">1h 30m from CDMX</span><div class="dc-info"><span class="dc-city">McAllen</span><span class="dc-ctry">United States</span></div></a>
+    <a class="dc rv rv-d3" href="https://jetcab.mx/private-jet-mexico-to-usa/" aria-label="Private jet to United States"><div class="dc-bg" style="background-image:url('https://jetcab.mx/wp-content/uploads/2024/10/Vuelos-privados-a-estados-unidos-768x512.jpg')"></div><div class="dc-ol"></div><span class="dc-urgency">● Multiple routes</span><span class="dc-flytime">USA destinations</span><div class="dc-info"><span class="dc-city">United States</span><span class="dc-ctry">North America</span></div></a>
+    <a class="dc rv rv-d4" href="https://jetcab.mx/private-jet-mexico-city-havana/" aria-label="Private jet to Cuba"><div class="dc-bg" style="background-image:url('https://jetcab.mx/wp-content/uploads/2024/10/vuelosprivadosacuba-768x512.jpg')"></div><div class="dc-ol"></div><span class="dc-urgency">● International</span><span class="dc-flytime">2h 30m from CDMX</span><div class="dc-info"><span class="dc-city">Cuba</span><span class="dc-ctry">Caribbean</span></div></a>
+    <a class="dc rv rv-d1" href="https://jetcab.mx/private-jet-mexico-to-spain/" aria-label="Private jet to Spain"><div class="dc-bg" style="background-image:url('https://jetcab.mx/wp-content/uploads/2024/10/vuelos-privados-a-espana-768x576.jpg')"></div><div class="dc-ol"></div><span class="dc-urgency">● Transatlantic</span><span class="dc-flytime">11h from CDMX</span><div class="dc-info"><span class="dc-city">Spain</span><span class="dc-ctry">Europe</span></div></a>
+    <a class="dc rv rv-d2" href="https://jetcab.mx/private-jet-mexico-to-europe/" aria-label="Private jet to Europe"><div class="dc-bg" style="background-image:url('https://jetcab.mx/wp-content/uploads/2024/10/Vuelos-privados-a-europa-768x512.jpg')"></div><div class="dc-ol"></div><span class="dc-urgency">● Transatlantic</span><span class="dc-flytime">Europe routes</span><div class="dc-info"><span class="dc-city">Europe</span><span class="dc-ctry">International</span></div></a>
     <div class="dest-more rv rv-d3" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
       <p class="dest-more-n">+200</p>
       <span class="dest-more-l">Available destinations</span>
@@ -1168,8 +1165,10 @@ document.querySelectorAll('.faq-q').forEach(function(q){
   }
   v.addEventListener('canplaythrough', onReady, {once:true});
   v.addEventListener('playing', onReady, {once:true});
-  // Trigger load
-  v.load();
+  // Video solo en pantallas grandes y después de cargar la página; en celular queda la imagen (ahorra ~11 MB)
+  var c = navigator.connection || {};
+  if (!window.matchMedia('(min-width: 900px)').matches || c.saveData || /2g/.test(c.effectiveType || '')) return;
+  window.addEventListener('load', function(){ setTimeout(function(){ v.src = v.getAttribute('data-src'); v.load(); var p = v.play(); if (p && p.catch) p.catch(function(){}); }, 1200); });
 })();
 
 // ─── CANVAS FLIGHT-PATH PARTICLE NETWORK ─────────────────────────────────────
