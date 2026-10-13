@@ -27,6 +27,7 @@ function jetcab_is_en() {
     $p = jetcab_path();
     $en = in_array($p, array_values(jetcab_lang_pairs()), true)
         || strpos($p, '/private-jet-mexico-city-') === 0
+        || in_array($p, array('/private-jet-destination-guide/', '/private-jet-charter-mexico-guide/'), true)
         || (is_singular('post') && has_category('english'));
     return $en;
 }
