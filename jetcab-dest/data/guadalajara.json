@@ -45,7 +45,7 @@
  "journey": [
   {
    "time": "7:00 am",
-   "t": "Leave Polanco",
+   "t": "Leave your home or office",
    "d": "Your driver heads west to Toluca on the México-Toluca highway while you go over the day's agenda. At this hour the drive takes around an hour. For this domestic flight you only need an official photo ID."
   },
   {
@@ -101,7 +101,7 @@
   },
   {
    "q": "How long is a private jet from Mexico City to Guadalajara?",
-   "a": "About 50 minutes in the air from Toluca (AIT) to Guadalajara International (GDL), the fastest connection between Mexico's two largest cities. Add about an hour by car from Polanco to Toluca and under 10 minutes from the curb to the aircraft steps."
+   "a": "About 50 minutes in the air from Toluca (AIT) to Guadalajara International (GDL), the fastest connection between Mexico's two largest cities. Add about an hour by car from Polanco, Santa Fe, Lomas or Interlomas to Toluca and under 10 minutes from the curb to the aircraft steps."
   },
   {
    "q": "Can you fly direct to Guadalajara?",

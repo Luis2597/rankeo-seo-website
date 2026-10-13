@@ -23,9 +23,9 @@
   {"t": "Customs arranged in advance", "d": "JETCAB files the eAPIS manifest with US Customs about 24 hours ahead and coordinates your arrival at McAllen. On landing, officers clear your group at the airport without the crowds of a commercial arrival hall, and your car is a few steps away."},
   {"t": "One fare for everyone", "d": "From $8,000 USD one way covers the full aircraft with crew, fuel, catering and permits. A family shopping trip, a patient with relatives, or four partners heading to a closing all share the same cabin and the same price, quoted in 30 minutes."}
  ],
- "journey_title": "Your day from Polanco to McAllen",
+ "journey_title": "Your day from Mexico City to McAllen",
  "journey": [
-  {"time": "6:50 am", "t": "Leave Polanco", "d": "Your driver picks you up early for the 45 to 60 minute drive west to Toluca. If you would rather skip the highway, the JETCAB helicopter transfer from Polanco, Lomas, Santa Fe or Reforma takes about 25 minutes."},
+  {"time": "6:50 am", "t": "Leave your home or office", "d": "Your driver picks you up early for the 45 to 60 minute drive west to Toluca. If you would rather skip the highway, the JETCAB helicopter transfer from Polanco, Lomas, Santa Fe or Reforma takes about 25 minutes."},
   {"time": "8:00 am", "t": "Boarding at Toluca FBO", "d": "Car to aircraft steps in under 10 minutes at the private terminal. Your passport and visa details went into the eAPIS manifest the day before, so there is nothing to fill out here. Bags go into the hold and you take your seat."},
   {"time": "8:15 am", "t": "North over the Sierra", "d": "The flight heads north toward the Texas border. Ninety minutes is enough for breakfast and a call, or simply for watching the Sierra Madre Oriental give way to the flat ranchland and farm fields of Tamaulipas below."},
   {"time": "9:45 am", "t": "Landing at MFE", "d": "You land at McAllen International about 1 hour 30 minutes after takeoff. In winter the clock matches Mexico City, and in summer Texas is one hour ahead. US Customs clears your party at the airport, and your car is waiting."},

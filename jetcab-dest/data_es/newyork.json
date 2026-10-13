@@ -41,12 +41,12 @@
    "d": "JETCAB opera vuelos privados desde Toluca desde 1999 con permiso de operación de la AFAC, la autoridad de aviación civil de México. Las cotizaciones a Nueva York se confirman por WhatsApp en 30 minutos, con tripulación, combustible, catering y permisos incluidos."
   }
  ],
- "journey_title": "De Polanco a Park Avenue en una tarde",
+ "journey_title": "De la Ciudad de México a Park Avenue en una tarde",
  "journey": [
   {
    "time": "8:00 a. m.",
-   "t": "Sale de su casa en Polanco",
-   "d": "Su chofer va al poniente rumbo al Aeropuerto Internacional de Toluca, a 45 o 60 minutos en auto desde Polanco. Si el tráfico de la mañana se ve pesado, un traslado en helicóptero lo lleva en unos 25 minutos."
+   "t": "Sale de su casa u oficina",
+   "d": "Su chofer va al poniente rumbo al Aeropuerto Internacional de Toluca, a 45 o 60 minutos en auto desde Polanco, Lomas o Santa Fe. Si el tráfico de la mañana se ve pesado, un traslado en helicóptero lo lleva en unos 25 minutos."
   },
   {
    "time": "9:00 a. m.",

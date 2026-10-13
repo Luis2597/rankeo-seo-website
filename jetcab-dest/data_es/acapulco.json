@@ -42,11 +42,11 @@
    "d": "Si se pregunta cuánto cuesta un jet privado a Acapulco, los vuelos parten de 1,500 USD por trayecto, por aeronave, con tripulación, combustible, catering y permisos incluidos. Las aeronaves más grandes para grupos se cotizan en 30 minutos, y el precio cubre a todos a bordo, sin sorpresas por asiento."
   }
  ],
- "journey_title": "Viernes por la tarde, de Polanco a la bahía",
+ "journey_title": "Viernes por la tarde, de la Ciudad de México a la bahía",
  "journey": [
   {
    "time": "3:00 p. m.",
-   "t": "Salida de Polanco",
+   "t": "Salida de su casa u oficina",
    "d": "En lugar de sumarse a la fila de autos que bajan por la Autopista del Sol, su chofer toma la autopista México-Toluca hacia el poniente, cerca de una hora al aeropuerto. Para este vuelo nacional basta una identificación oficial con fotografía."
   },
   {
@@ -102,7 +102,7 @@
   },
   {
    "q": "¿Cuánto dura un vuelo en jet privado de la Ciudad de México a Acapulco?",
-   "a": "Unos 45 minutos de Toluca (AIT) al Aeropuerto Internacional de Acapulco (ACA), la ruta en jet privado más corta de la zona de la Ciudad de México al Pacífico. Sume cerca de una hora en auto de Polanco a Toluca y menos de 10 minutos del auto a la escalinata."
+   "a": "Unos 45 minutos de Toluca (AIT) al Aeropuerto Internacional de Acapulco (ACA), la ruta en jet privado más corta de la zona de la Ciudad de México al Pacífico. Sume cerca de una hora en auto desde Polanco, Santa Fe, Lomas o Interlomas hasta Toluca y menos de 10 minutos del auto a la escalinata."
   },
   {
    "q": "¿Puedo ir y volver a Acapulco el mismo día en jet privado?",

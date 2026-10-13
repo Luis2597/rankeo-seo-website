@@ -41,12 +41,12 @@
    "d": "Envíe sus fechas y el número de pasajeros por WhatsApp y reciba en 30 minutos un precio confirmado por la aeronave completa. JETCAB opera desde Toluca desde 1999 con permiso de operación de la AFAC, la autoridad de aviación civil de México."
   }
  ],
- "journey_title": "De Polanco a Beverly Hills a primera hora de la tarde",
+ "journey_title": "De la Ciudad de México a Beverly Hills a primera hora de la tarde",
  "journey": [
   {
    "time": "7:30 a. m.",
-   "t": "Sale de su casa en Polanco",
-   "d": "Su chofer va al poniente rumbo al Aeropuerto Internacional de Toluca, a 45 o 60 minutos en auto desde Polanco. Si la carretera se ve lenta, un traslado en helicóptero hace el mismo trayecto en unos 25 minutos."
+   "t": "Sale de su casa u oficina",
+   "d": "Su chofer va al poniente rumbo al Aeropuerto Internacional de Toluca, a 45 o 60 minutos en auto desde Polanco, Lomas o Santa Fe. Si la carretera se ve lenta, un traslado en helicóptero hace el mismo trayecto en unos 25 minutos."
   },
   {
    "time": "8:30 a. m.",
@@ -97,7 +97,7 @@
  "faq": [
   {
    "q": "¿Cuánto dura un vuelo en jet privado de la Ciudad de México a Los Ángeles?",
-   "a": "Unas 3 horas 45 minutos del Aeropuerto Internacional de Toluca (TLC) a Van Nuys (VNY). Sume de 45 a 60 minutos en auto de Polanco a Toluca, o unos 25 en helicóptero, y alrededor de 15 minutos de Van Nuys a Beverly Hills."
+   "a": "Unas 3 horas 45 minutos del Aeropuerto Internacional de Toluca (TLC) a Van Nuys (VNY). Sume de 45 a 60 minutos en auto desde Polanco, Santa Fe, Lomas o Interlomas hasta Toluca, o unos 25 en helicóptero, y alrededor de 15 minutos de Van Nuys a Beverly Hills."
   },
   {
    "q": "¿Cuánto cuesta alquilar un jet privado a Los Ángeles?",

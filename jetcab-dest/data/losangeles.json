@@ -41,12 +41,12 @@
    "d": "Send your dates and passenger count on WhatsApp and receive a confirmed price for the whole aircraft within 30 minutes. JETCAB has operated from Toluca since 1999 under an operating permit from the AFAC, Mexico's civil aviation authority."
   }
  ],
- "journey_title": "Polanco to Beverly Hills by early afternoon",
+ "journey_title": "Mexico City to Beverly Hills by early afternoon",
  "journey": [
   {
    "time": "7:30 am",
-   "t": "Leave home in Polanco",
-   "d": "Your driver heads west to Toluca International Airport, 45 to 60 minutes by car from Polanco. If traffic on the highway looks slow, a helicopter transfer covers the same trip in about 25 minutes."
+   "t": "Leave your home or office",
+   "d": "Your driver heads west to Toluca International Airport, 45 to 60 minutes by car from Polanco, Lomas or Santa Fe. If traffic on the highway looks slow, a helicopter transfer covers the same trip in about 25 minutes."
   },
   {
    "time": "8:30 am",
@@ -97,7 +97,7 @@
  "faq": [
   {
    "q": "How long is a private jet flight from Mexico City to Los Angeles?",
-   "a": "About 3 hours 45 minutes from Toluca International Airport (TLC) to Van Nuys (VNY). Add 45 to 60 minutes by car from Polanco to Toluca, or about 25 by helicopter, and roughly 15 minutes from Van Nuys to Beverly Hills."
+   "a": "About 3 hours 45 minutes from Toluca International Airport (TLC) to Van Nuys (VNY). Add 45 to 60 minutes by car from Polanco, Santa Fe, Lomas or Interlomas to Toluca, or about 25 by helicopter, and roughly 15 minutes from Van Nuys to Beverly Hills."
   },
   {
    "q": "How much does it cost to fly private to LA?",

@@ -46,7 +46,7 @@
  "journey": [
   {
    "time": "7:00 a. m.",
-   "t": "Salida de Polanco",
+   "t": "Salida de su casa u oficina",
    "d": "Su chofer toma la autopista México-Toluca hacia el poniente mientras usted repasa la agenda del día. A esta hora el trayecto toma cerca de una hora. Para este vuelo nacional solo necesita una identificación oficial con fotografía."
   },
   {
@@ -102,7 +102,7 @@
   },
   {
    "q": "¿Cuánto dura un vuelo en jet privado de la Ciudad de México a Guadalajara?",
-   "a": "Unos 50 minutos en el aire de Toluca (AIT) al Aeropuerto Internacional de Guadalajara (GDL), la conexión más rápida entre las dos ciudades más grandes de México. Sume cerca de una hora en auto de Polanco a Toluca y menos de 10 minutos del auto a la escalinata."
+   "a": "Unos 50 minutos en el aire de Toluca (AIT) al Aeropuerto Internacional de Guadalajara (GDL), la conexión más rápida entre las dos ciudades más grandes de México. Sume cerca de una hora en auto desde Polanco, Santa Fe, Lomas o Interlomas hasta Toluca y menos de 10 minutos del auto a la escalinata."
   },
   {
    "q": "¿Se puede volar directo a Guadalajara?",
