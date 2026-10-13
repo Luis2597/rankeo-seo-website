@@ -39,6 +39,13 @@ add_shortcode('jetcab_blog', function ($atts) {
     $guide = $lang === 'en' ? 'Main page:' : 'Página de servicio:';
     $also = $lang === 'en' ? 'Searches this section answers:' : 'Búsquedas que responde esta sección:';
     $h = '<div class="jcb">';
+    // Guías principales: contenido informativo separado de las landings comerciales.
+    $guias = $lang === 'en'
+        ? array(array('https://jetcab.mx/private-jet-destination-guide/', 'Private jet destination guide: routes, flight times and prices'), array('https://jetcab.mx/private-jet-charter-mexico-guide/', 'Private jet charter in Mexico: complete guide'), array('https://jetcab.mx/private-jet-faq/', 'Private jet charter FAQ'))
+        : array(array('https://jetcab.mx/destinos/', 'Destinos de jet privado: tiempos de vuelo y precios'), array('https://jetcab.mx/flota/#que-avion-conviene', 'Flota y guía de aviones: qué avión conviene según la ruta'), array('https://jetcab.mx/preguntas-frecuentes/', 'Preguntas frecuentes sobre jets privados'), array('https://jetcab.mx/precios-jet-privado/', 'Precios de jet privado por ruta y aeronave'));
+    $h .= '<section class="jcb-g"><h2>' . ($lang === 'en' ? 'Main guides' : 'Guías principales') . '</h2><ul>';
+    foreach ($guias as $gg) $h .= '<li><a href="' . esc_url($gg[0]) . '">' . esc_html($gg[1]) . '</a></li>';
+    $h .= '</ul></section>';
     foreach (jetcab_blog_grupos($lang) as $g) {
         $items = '';
         foreach ($g['p'] as $slug) {

@@ -303,3 +303,10 @@ Pendiente:
 - Cada post lleva FAQPage JSON-LD con todas sus preguntas, además del Article de Yoast.
 - El primer post se publicó el 12 oct; el resto sigue L-M-V hasta el 25 dic. Índice del blog: `/blog/` y `/private-jet-guides/`.
 - GEO (DataForSEO LLM Mentions): respuestas con IA de Google en México, JETCAB 1 mención («cuanto cuesta rentar un avión privado») contra flyflapper 117, patriotaviation 52, fly-select 13; ChatGPT (muestra EN) JETCAB 0, flyflapper 28. Bots de IA (OAI-SearchBot, GPTBot, PerplexityBot, ClaudeBot, Google-Extended, Bingbot) reciben 200. IndexNow enviado (200).
+
+### 12.3 Landings comerciales y guías en páginas propias (12 oct, noche)
+- Menú principal ES: PRECIOS y BLOG añadidos; NUESTRA FLOTA apunta a /flota/; DESTINOS apunta a la nueva /destinos/ (guía de destinos con tiempos y precios, conserva su desplegable). Pie: BLOG.
+- Guía de aviones (qué avión conviene, tablas de clases y precios a EE. UU.) dentro de /flota/#que-avion-conviene; la página separada /guia-de-aviones-privados/ quedó en borrador y redirige 301 a /flota/. Fotos de aviones y precios del home ES sin tocar.
+- /renta-de-aviones-privados/: la tabla de guía se cambió por un bloque comercial (precios desde, cotizar, enlaces a flota y destinos).
+- /en/: las secciones «Routes & Pricing» (2,036 palabras) y «Complete Guide» (956) pasaron a /private-jet-destination-guide/ y /private-jet-charter-mexico-guide/; /en/ baja de 4,562 a 1,625 palabras con un bloque comercial y enlace «Guides» en el menú. Hreflang /destinos/ <-> /private-jet-destination-guide/.
+- /blog/ y /private-jet-guides/ muestran «Guías principales» arriba.

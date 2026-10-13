@@ -66,22 +66,17 @@ function jetcab_helicopteros_extra() {
 }
 
 function jetcab_aviones_extra() {
-    $h  = '<section class="jcr" id="tipos-de-avion-privado"><div class="jcr-in">';
-    $h .= '<h2>¿Qué avión privado conviene para su ruta?</h2>';
-    $h .= '<p class="a">La renta de un avión privado con JETCAB se cotiza por aeronave completa según la ruta. Un Learjet 35 para 7 pasajeros vuela de Toluca a Guadalajara desde 1,800 USD; un Challenger 605 para 12 va a Cancún desde 6,500 USD; un Gulfstream GV para 16 cruza a Nueva York sin escalas desde 28,000 USD.</p>';
-    $h .= '<div class="jct-wrap"><table class="jct"><thead><tr><th>Clase</th><th>Avión</th><th>Pasajeros</th><th>Para qué ruta</th><th>Precio de referencia</th></tr></thead><tbody>';
-    $h .= '<tr><td>Light jet</td><td><strong>Learjet 35 / 45</strong></td><td>hasta 7</td><td>Nacional: Guadalajara, Monterrey, Puerto Vallarta, Cancún, Los Cabos</td><td>desde 1,800 USD o 80,000 MXN en ruta corta</td></tr>';
-    $h .= '<tr><td>Midsize</td><td><strong>Challenger 605</strong></td><td>hasta 12</td><td>Cancún, Houston, Miami, Los Ángeles, con cabina de pie</td><td>desde 6,500 USD a Cancún</td></tr>';
-    $h .= '<tr><td>Long range</td><td><strong>Gulfstream GV</strong></td><td>hasta 16</td><td>Nueva York sin escalas, Europa</td><td>desde 28,000 USD a Nueva York; Europa desde 100,000 USD</td></tr>';
-    $h .= '</tbody></table></div>';
-    $h .= '<h2>¿Cuánto cuesta rentar un avión privado a Estados Unidos?</h2>';
-    $h .= '<div class="jct-wrap"><table class="jct"><thead><tr><th>Destino</th><th>Learjet 35</th><th>Challenger 605</th><th>Gulfstream GV</th><th>Tiempo</th></tr></thead><tbody>';
-    $h .= '<tr><td>Houston</td><td>3,800 USD</td><td>7,500 USD</td><td>14,000 USD</td><td>2 h 45 min</td></tr>';
-    $h .= '<tr><td>Miami</td><td>4,800 USD</td><td>9,500 USD</td><td>18,000 USD</td><td>3 h 30 min</td></tr>';
-    $h .= '<tr><td>Los Ángeles</td><td>5,200 USD</td><td>10,500 USD</td><td>19,000 USD</td><td>3 h 45 min</td></tr>';
-    $h .= '<tr><td>Nueva York</td><td>9,500 USD con escala técnica</td><td>18,500 USD</td><td>28,000 USD sin escalas</td><td>5 h 30 min</td></tr>';
-    $h .= '</tbody></table></div>';
-    $h .= '<p>Los precios son por avión y sencillo, desde Toluca, con tripulación, combustible, catering y permisos. Para Estados Unidos conviene confirmar con unas 24 horas por el aviso de aduana. <a href="https://jetcab.mx/precios-jet-privado/" style="color:#C9973F">Vea todos los precios de jet privado</a> o <a href="https://jetcab.mx/preguntas-frecuentes/" style="color:#C9973F">las preguntas frecuentes</a>.</p>';
+    // Bloque comercial corto: la guía detallada vive en /guia-de-aviones-privados/ (las landings son para vender).
+    $h  = '<section class="jcr" id="renta-avion-privado-precios"><div class="jcr-in">';
+    $h .= '<h2>Renta de avión privado desde 1,800 USD</h2>';
+    $h .= '<p class="a">Precio por aeronave completa desde Toluca, con tripulación, combustible, catering y permisos. Cotización cerrada en 30 minutos.</p>';
+    $h .= '<div class="jch-rates">';
+    foreach (array(array('Guadalajara', 'Learjet 35 · 50 min', '1,800 USD', '/vuelos-privados-a-guadalajara/'), array('Cancún', 'Learjet 35 · 2 h 15 min', '3,200 USD', '/vuelos-privados-a-cancun/'), array('Houston', 'Learjet 35 · 2 h 45 min', '3,800 USD', '/vuelo-privado-cdmx-houston/'), array('Miami', 'Learjet 35 · 3 h 30 min', '4,800 USD', '/vuelo-privado-cdmx-miami/')) as $r) {
+        $h .= '<a class="jch-rate" href="https://jetcab.mx' . $r[3] . '"><span class="r">Toluca a ' . $r[0] . '<small>' . $r[1] . '</small></span><span class="p">desde ' . $r[2] . '</span></a>';
+    }
+    $h .= '</div>';
+    $h .= '<a class="jcr-cta" href="https://jetcab.mx/cotizar/">Cotizar mi vuelo</a>';
+    $h .= '<div class="jcr-links"><a href="https://jetcab.mx/flota/#que-avion-conviene">Qué avión conviene según la ruta</a><a href="https://jetcab.mx/destinos/">Todos los destinos</a><a href="https://jetcab.mx/precios-jet-privado/">Todos los precios</a></div>';
     $h .= '</div></section>';
     return $h;
 }
@@ -118,3 +113,9 @@ add_filter('the_content', function ($content) {
         return jetcab_post_publicado($m[1]) ? $m[0] : $m[3];
     }, $content);
 }, 30);
+
+// La guía de aviones vive dentro de /flota/ (sección NUESTRA FLOTA del menú): la página separada redirige allí.
+add_action('template_redirect', function () {
+    $p = isset($_SERVER['REQUEST_URI']) ? trim(strtok($_SERVER['REQUEST_URI'], '?'), '/') : '';
+    if ($p === 'guia-de-aviones-privados') { wp_redirect('https://jetcab.mx/flota/#que-avion-conviene', 301); exit; }
+}, 1);
