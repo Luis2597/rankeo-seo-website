@@ -1,7 +1,7 @@
 <?php
 /*
  * JETCAB Landings por tipo de jet
- * /light-jets-toluca/      → keyword: vuelos cortos nacionales desde Toluca (Learjet 35/75, Hawker 800, desde $80,000 MXN)
+ * /light-jets-toluca/      → keyword: vuelos cortos nacionales desde Toluca (Learjet 35/75, Hawker 800, desde $1,500 USD)
  * /long-range-jets-toluca/ → keyword: jets privados intercontinentales Toluca (Gulfstream G650/G650ER, Global Express, desde $100,000 USD)
  * Mismo patrón técnico que jetcab-routes-domestic-v1.php (rewrite + query var + template_redirect).
  */
@@ -16,9 +16,9 @@ add_action("template_redirect", function() {
     $pages = [
         "light-jets-toluca" => [
             "title"      => 'Light Jets desde Toluca | Vuelos Cortos Nacionales — JETCAB',
-            "meta_desc"  => 'Light jets desde Toluca para vuelos cortos nacionales: Learjet 35/75 y Hawker 800, 4 a 8 pax, desde $80,000 MXN. Acapulco en 45 min, Monterrey 1h 15m. JETCAB.',
+            "meta_desc"  => 'Light jets desde Toluca para vuelos cortos nacionales: Learjet 35/75 y Hawker 800, 4 a 8 pax, desde $1,500 USD. Acapulco en 45 min, Monterrey 1h 15m. JETCAB.',
             "h1"         => 'Light jets desde Toluca: vuelos cortos nacionales',
-            "tag"        => 'Light Jet · 4–8 pasajeros · desde $80,000 MXN',
+            "tag"        => 'Light Jet · 4–8 pasajeros · desde $1,500 USD',
             "sub"        => 'Learjet 35, Learjet 45 y Hawker 800 listos en 2 horas en el FBO privado de Toluca. Acapulco en 45 minutos, Monterrey en 1 hora 15. Precio por aeronave, no por asiento.',
             "wa_text"    => 'Hola%2C+quiero+cotizar+un+light+jet+desde+Toluca.',
             "hero_img"   => '1436491865332-7a61a109cc05',
@@ -27,14 +27,14 @@ add_action("template_redirect", function() {
             "img_2"      => '1581093806997-124204d9fa9d',
             "alt_2"      => 'Cabina de piel de un light jet para vuelos cortos nacionales desde Toluca',
             "q_h2"       => '¿Cuánto cuesta rentar un light jet desde Toluca?',
-            "answer"     => 'Rentar un light jet desde Toluca cuesta desde $80,000 MXN por aeronave completa en rutas cortas nacionales como Toluca–Acapulco (45 minutos) o Toluca–Querétaro (35 minutos), con tripulación, combustible y tasas incluidas. Para Toluca–Guadalajara (50 minutos) o Toluca–Monterrey (1 hora 15) la referencia es de $1,800 a $2,200 USD. Los light jets de JETCAB (Learjet 35, Learjet 45 y Hawker 800) transportan de 4 a 8 pasajeros y despegan en 2 horas desde su solicitud.',
+            "answer"     => 'Rentar un light jet desde Toluca cuesta desde $1,500 USD por aeronave completa en rutas cortas nacionales como Toluca–Acapulco (45 minutos) o Toluca–Querétaro (35 minutos), con tripulación, combustible y tasas incluidas. Para Toluca–Guadalajara (50 minutos) o Toluca–Monterrey (1 hora 15) la referencia es de $1,800 a $2,200 USD. Los light jets de JETCAB (Learjet 35, Learjet 45 y Hawker 800) transportan de 4 a 8 pasajeros y despegan en 2 horas desde su solicitud.',
             "intro_1"    => 'Un light jet es la herramienta correcta cuando el vuelo dura menos de 2 horas 30 y el grupo es de 4 a 8 personas. Es la flota más ágil de JETCAB: tripulación en base, aeronave en hangar propio en el Aeropuerto Internacional de Toluca (AIT) y plan de vuelo nacional sin permisos internacionales. De su mensaje al despegue pasan 2 horas.',
             "intro_2"    => 'La cuenta es simple. La Autopista del Sol a Acapulco toma de 4 a 5 horas un viernes; el Learjet 35 aterriza en 45 minutos. Un pasajero comercial a Monterrey invierte 4 horas de puerta a puerta; en light jet desde Toluca son 2 horas 30, con junta a las 9:00 y de regreso en la CDMX a las 18:30.',
             "fleet_h2"   => 'Los tres light jets de JETCAB',
             "fleet_p"    => 'Certificación DGAC, mantenimiento bajo estándar del fabricante y tripulación propia. Precio de referencia Toluca–Acapulco, por aeronave completa.',
             "currency"   => 'MXN',
             "aircraft"   => [
-                ["name" => 'Learjet 35', "class" => 'Light Jet', "img" => 'https://jetcab.mx/wp-content/uploads/2024/11/Learjet35enrenta.jpeg', "alt" => 'Learjet 35, light jet para vuelos cortos nacionales desde Toluca', "desc" => 'El clásico de la flota. Cabina de piel para 7 pasajeros, crucero a 850 km/h, alcance de 3,700 km. Para equipos pequeños y salidas de última hora.', "pax" => '7', "speed" => '850 km/h', "extra_l" => 'Alcance', "extra_v" => '3,700 km', "price" => '$80,000', "price_num" => '80000'],
+                ["name" => 'Learjet 35', "class" => 'Light Jet', "img" => 'https://jetcab.mx/wp-content/uploads/2024/11/Learjet35enrenta.jpeg', "alt" => 'Learjet 35, light jet para vuelos cortos nacionales desde Toluca', "desc" => 'El clásico de la flota. Cabina de piel para 7 pasajeros, crucero a 850 km/h, alcance de 3,700 km. Para equipos pequeños y salidas de última hora.', "pax" => '7', "speed" => '850 km/h', "extra_l" => 'Alcance', "extra_v" => '3,700 km', "price" => '$1,500', "price_num" => '1500'],
                 ["name" => 'Hawker 800', "class" => 'Light Jet', "img" => 'https://jetcab.mx/wp-content/uploads/2024/11/Hawker-800-en-renta.jpeg', "alt" => 'Hawker 800, light jet de cabina ancha con baño cerrado', "desc" => 'Cabina ancha con baño cerrado y 8 asientos. La opción cómoda para familias en rutas de playa: Acapulco, Ixtapa, Huatulco.', "pax" => '8', "speed" => '830 km/h', "extra_l" => 'Alcance', "extra_v" => '2,800 km', "price" => 'Cotizar', "price_num" => ''],
                 ["name" => 'Learjet 45', "class" => 'Light Jet', "img" => 'https://jetcab.mx/wp-content/uploads/2024/11/Learjet-45-en-renta.jpeg', "alt" => 'Learjet 45, light jet moderno con Wi-Fi y cabina ampliada', "desc" => 'La versión moderna del Learjet: 8 asientos, Wi-Fi, pantallas individuales y cabina ampliada. Para directivos que trabajan en el aire.', "pax" => '8', "speed" => '860 km/h', "extra_l" => 'Wi-Fi', "extra_v" => 'A bordo', "price" => 'Cotizar', "price_num" => ''],
             ],
@@ -53,12 +53,12 @@ add_action("template_redirect", function() {
                 ['No conviene:', 'rutas internacionales largas. Para Nueva York, Madrid o Londres sin escalas, la cabina correcta es un long range: Gulfstream G650 o Global Express.'],
             ],
             "faqs" => [
-                ["q" => '¿Cuánto cuesta rentar un light jet desde Toluca?', "a" => 'Desde $80,000 MXN por aeronave completa en rutas cortas como Toluca–Acapulco (45 minutos) o Toluca–Querétaro (35 minutos), con tripulación, combustible y tasas de aterrizaje incluidas. Toluca–Guadalajara desde $1,800 USD y Toluca–Monterrey desde $2,200 USD. El precio es por avión, no por asiento: con 7 pasajeros a bordo el costo por persona baja de forma considerable.'],
+                ["q" => '¿Cuánto cuesta rentar un light jet desde Toluca?', "a" => 'Desde $1,500 USD por aeronave completa en rutas cortas como Toluca–Acapulco (45 minutos) o Toluca–Querétaro (35 minutos), con tripulación, combustible y tasas de aterrizaje incluidas. Toluca–Guadalajara desde $1,800 USD y Toluca–Monterrey desde $2,200 USD. El precio es por avión, no por asiento: con 7 pasajeros a bordo el costo por persona baja de forma considerable.'],
                 ["q" => '¿Qué light jets opera JETCAB desde Toluca?', "a" => 'Tres aeronaves: Learjet 35 (7 pasajeros, 850 km/h), Learjet 45 (8 pasajeros, cabina ampliada, Wi-Fi) y Hawker 800 (8 pasajeros, cabina ancha con baño cerrado). Las tres están certificadas por DGAC, se mantienen bajo estándar del fabricante y despegan del FBO privado del Aeropuerto Internacional de Toluca (AIT), a 40 minutos de Santa Fe.'],
                 ["q" => '¿Cuántos pasajeros caben en un light jet?', "a" => 'De 4 a 8 pasajeros con equipaje de mano y maletas medianas. El Learjet 35 acomoda 7; el Learjet 45 y el Hawker 800, 8. Para grupos de 9 a 12 o para vuelos de más de 3 horas con cabina de pie, el Challenger 605 midsize desde $6,500 USD es la siguiente cabina. Le decimos cuál conviene al cotizar.'],
                 ["q" => '¿Qué rutas conviene volar en light jet desde Toluca?', "a" => 'Cualquier ruta nacional de hasta 2 horas 30: Toluca–Acapulco en 45 minutos, Toluca–Querétaro en 35, Toluca–Guadalajara en 50, Toluca–Monterrey en 1 hora 15, Toluca–Puerto Vallarta en 1 hora 45 y Toluca–Cancún en 2 horas 15. Para Houston o Miami la referencia es el Challenger 605; para Nueva York sin escalas, un long range.'],
                 ["q" => '¿En cuánto tiempo puede despegar un light jet desde Toluca?', "a" => 'En 2 horas desde su mensaje, sujeto a disponibilidad. Los light jets son la flota más ágil de JETCAB: tripulación en base, aeronave en hangar propio y plan de vuelo nacional sin permisos internacionales. Llega al FBO privado de Toluca 15 minutos antes y aborda directo desde su camioneta en menos de 10 minutos.'],
-                ["q" => '¿Vale la pena un light jet a Acapulco si en carretera son 4 horas?', "a" => 'La Autopista del Sol toma de 4 a 5 horas un viernes por la tarde; el Learjet 35 aterriza en Acapulco en 45 minutos. Desde $80,000 MXN por aeronave, un grupo de 7 convierte un fin de semana de dos noches en uno de tres. La camioneta espera al pie de la escalinata en la terminal de aviación general de Acapulco.'],
+                ["q" => '¿Vale la pena un light jet a Acapulco si en carretera son 4 horas?', "a" => 'La Autopista del Sol toma de 4 a 5 horas un viernes por la tarde; el Learjet 35 aterriza en Acapulco en 45 minutos. Desde $1,500 USD por aeronave, un grupo de 7 convierte un fin de semana de dos noches en uno de tres. La camioneta espera al pie de la escalinata en la terminal de aviación general de Acapulco.'],
                 ["q" => '¿Puedo hacer viaje redondo en el día con un light jet?', "a" => 'Sí, es el uso más frecuente de la flota light: salida 7:00 de Toluca, junta en Monterrey a las 9:00 y de regreso en la CDMX a las 18:30. La tripulación permanece en destino durante su agenda sin cargo de pernocta en viajes redondos el mismo día. Aplica igual para Guadalajara, Querétaro, León y Acapulco.'],
             ],
             "links" => [
@@ -70,7 +70,7 @@ add_action("template_redirect", function() {
                 ['https://jetcab.mx/#flota', 'Ver toda la flota JETCAB'],
             ],
             "cta_h2"     => '¿Acapulco o Monterrey esta semana?',
-            "cta_p"      => 'Light jet listo en 2 horas en Toluca. Desde $80,000 MXN por aeronave. Cotización en 30 minutos.',
+            "cta_p"      => 'Light jet listo en 2 horas en Toluca. Desde $1,500 USD por aeronave. Cotización en 30 minutos.',
             "cta_btn"    => 'Cotizar light jet por WhatsApp',
         ],
         "long-range-jets-toluca" => [
@@ -180,7 +180,7 @@ function jetcab_landing_tipos_jet_page($p, $slug) {
 {"@context":"https://schema.org","@graph":[
 {"@type":"WebPage","@id":"<?php echo $canonical; ?>","url":"<?php echo $canonical; ?>","name":"<?php echo jc_json_str($p['title']); ?>","description":"<?php echo jc_json_str($p['meta_desc']); ?>","inLanguage":"es-MX","isPartOf":{"@type":"WebSite","@id":"https://jetcab.mx/#website","url":"https://jetcab.mx","name":"JETCAB"}},
 {"@type":"Service","name":"<?php echo jc_json_str($p['h1']); ?>","description":"<?php echo jc_json_str($p['meta_desc']); ?>","provider":{"@type":"LocalBusiness","name":"JETCAB","url":"https://jetcab.mx","telephone":"+52-729-108-1200","foundingDate":"1999","areaServed":"México"},"serviceType":"Renta de jet privado","areaServed":"México","hasOfferCatalog":{"@id":"<?php echo $catalog_id; ?>"},"offers":{"@type":"Offer","priceCurrency":"<?php echo $p['currency']; ?>","price":"<?php echo $min_price; ?>","priceSpecification":{"@type":"UnitPriceSpecification","priceCurrency":"<?php echo $p['currency']; ?>","price":"<?php echo $min_price; ?>","unitText":"por aeronave"}}},
-{"@type":"OfferCatalog","@id":"<?php echo $catalog_id; ?>","name":"<?php echo jc_json_str($p['fleet_h2']); ?>","itemListElement":[<?php $oc=array_map(function($a) use ($p){return '{"@type":"Offer","name":"'.jc_json_str($a["name"]).'",'.($a["price_num"]!=='' ? '"priceCurrency":"'.$p["currency"].'","price":"'.$a["price_num"].'",' : '').'"availability":"https://schema.org/InStock","itemOffered":{"@type":"Product","name":"'.jc_json_str($a["name"]).'","description":"'.jc_json_str($a["desc"]).'","category":"'.jc_json_str($a["class"]).'"}}';},$p['aircraft']);echo implode(',',$oc);?>]},
+{"@type":"OfferCatalog","@id":"<?php echo $catalog_id; ?>","name":"<?php echo jc_json_str($p['fleet_h2']); ?>","itemListElement":[<?php $oc=array_map(function($a) use ($p){return '{"@type":"Offer","name":"'.jc_json_str($a["name"]).'",'.($a["price_num"]!=='' ? '"priceCurrency":"'.$p["currency"].'","price":"'.$a["price_num"].'",' : '').'"availability":"https://schema.org/InStock","itemOffered":{"@type":"Service","serviceType":"Renta de jet privado","name":"'.jc_json_str($a["name"]).'","description":"'.jc_json_str($a["desc"]).'","category":"'.jc_json_str($a["class"]).'"}}';},$p['aircraft']);echo implode(',',$oc);?>]},
 {"@type":"FAQPage","mainEntity":[<?php $fq=array_map(function($f){return '{"@type":"Question","name":"'.jc_json_str($f["q"]).'","acceptedAnswer":{"@type":"Answer","text":"'.jc_json_str($f["a"]).'"}}';},$p['faqs']);echo implode(',',$fq);?>]}
 ]}
 </script>
