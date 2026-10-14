@@ -3,7 +3,7 @@
    se publica en Vercel y aquí se sirve en su URL de jetcab.mx con caché de 12 h. Sustituye a las rutas v4 (snippet 8), a las rutas ES
    vuelo-privado-cdmx-* y al contenido de las páginas WP de destino, cuyas URLs se conservan. «Guías relacionadas» se llena en vivo con los
    artículos publicados que enlazan a cada destino. Para refrescar todas: subir JETCAB_DEST_V. Snippet 29. */
-if (!defined('JETCAB_DEST_V')) define('JETCAB_DEST_V', '7');
+if (!defined('JETCAB_DEST_V')) define('JETCAB_DEST_V', '8');
 
 function jetcab_dest_slugs() {
     return array('private-jet-mexico-city-cancun', 'private-jet-mexico-city-los-cabos', 'private-jet-mexico-city-puerto-vallarta', 'private-jet-mexico-city-monterrey',
