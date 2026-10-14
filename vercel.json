@@ -36,13 +36,34 @@
       ]
     },
     {
-      "source": "/jetcab-dest/(.*)",
+      "source": "/(jetcab-.*)",
       "headers": [
         {
           "key": "X-Robots-Tag",
           "value": "noindex, nofollow"
         }
       ]
+    },
+    {
+      "source": "/(deal-or-deal.*)",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow"
+        }
+      ]
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/seo-bogota",
+      "destination": "/agencia-seo-bogota",
+      "permanent": true
+    },
+    {
+      "source": "/seo-medellin",
+      "destination": "/agencia-seo-medellin",
+      "permanent": true
     }
   ]
 }

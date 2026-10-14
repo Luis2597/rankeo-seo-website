@@ -1,5 +1,7 @@
 User-agent: *
 Allow: /
+# Bloquear parámetros de búsqueda que generan URLs duplicadas
+Disallow: /*?*
 
 # Rastreadores de motores de respuesta con IA: bienvenidos (GEO)
 User-agent: GPTBot
@@ -17,8 +19,6 @@ Allow: /
 User-agent: Applebot-Extended
 Allow: /
 
-# Bloquear parámetros de búsqueda que generan URLs duplicadas
-Disallow: /*?*
 
 # Resumen del sitio para modelos de lenguaje
 # https://rankeo.agency/llms.txt

@@ -48,7 +48,7 @@ def escribir(rel, texto):
 
 def hoy_cdmx():
     # CDMX es UTC-6 todo el año desde 2022 (sin horario de verano).
-    return (datetime.datetime.utcnow() - datetime.timedelta(hours=6)).date()
+    return (datetime.datetime.now(datetime.timezone.utc) - datetime.timedelta(hours=6)).date()
 
 
 def titulo(html):
