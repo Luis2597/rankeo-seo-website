@@ -32,7 +32,7 @@ add_action("template_redirect", function() {
             "intro_2"    => 'La cuenta es simple. La Autopista del Sol a Acapulco toma de 4 a 5 horas un viernes; el Learjet 35 aterriza en 45 minutos. Un pasajero comercial a Monterrey invierte 4 horas de puerta a puerta; en light jet desde Toluca son 2 horas 30, con junta a las 9:00 y de regreso en la CDMX a las 18:30.',
             "fleet_h2"   => 'Los tres light jets de JETCAB',
             "fleet_p"    => 'Certificación DGAC, mantenimiento bajo estándar del fabricante y tripulación propia. Precio de referencia Toluca–Acapulco, por aeronave completa.',
-            "currency"   => 'MXN',
+            "currency"   => 'USD',
             "aircraft"   => [
                 ["name" => 'Learjet 35', "class" => 'Light Jet', "img" => 'https://jetcab.mx/wp-content/uploads/2024/11/Learjet35enrenta.jpeg', "alt" => 'Learjet 35, light jet para vuelos cortos nacionales desde Toluca', "desc" => 'El clásico de la flota. Cabina de piel para 7 pasajeros, crucero a 850 km/h, alcance de 3,700 km. Para equipos pequeños y salidas de última hora.', "pax" => '7', "speed" => '850 km/h', "extra_l" => 'Alcance', "extra_v" => '3,700 km', "price" => '$1,500', "price_num" => '1500'],
                 ["name" => 'Hawker 800', "class" => 'Light Jet', "img" => 'https://jetcab.mx/wp-content/uploads/2024/11/Hawker-800-en-renta.jpeg', "alt" => 'Hawker 800, light jet de cabina ancha con baño cerrado', "desc" => 'Cabina ancha con baño cerrado y 8 asientos. La opción cómoda para familias en rutas de playa: Acapulco, Ixtapa, Huatulco.', "pax" => '8', "speed" => '830 km/h', "extra_l" => 'Alcance', "extra_v" => '2,800 km', "price" => 'Cotizar', "price_num" => ''],
