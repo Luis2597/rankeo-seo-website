@@ -55,6 +55,9 @@ add_action('template_redirect', function () {
     }
     if (!$html) return; // sin copia: WordPress sigue con la página que exista
     $html = str_replace('<!--JC_GUIDES-->', jetcab_dest_guides('https://jetcab.mx/' . $p . '/', $es), $html);
+    // Consentimiento de cookies (snippet 33): default antes de GA4 y aviso antes de </body>
+    if (function_exists('jc_consent_head') && strpos($html, 'jc-consent-default') === false) $html = preg_replace('/<head([^>]*)>/i', '<head$1>' . jc_consent_head(), $html, 1);
+    if (function_exists('jc_consent_banner') && stripos($html, 'id="jc-cookies"') === false) $html = preg_replace('/<\/body>/i', jc_consent_banner($es ? 'es' : 'en') . '</body>', $html, 1);
     status_header(200);
     header('Content-Type: text/html; charset=utf-8');
     echo $html;

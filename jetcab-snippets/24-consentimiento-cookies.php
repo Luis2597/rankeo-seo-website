@@ -43,4 +43,4 @@ if (!function_exists('jc_consent_banner')) {
 
 // Páginas ES servidas por WordPress
 add_action('wp_head', function () { if (!is_admin()) echo jc_consent_head(); }, 1);
-add_action('wp_footer', function () { if (!is_admin()) echo jc_consent_banner('es'); }, 99);
+add_action('wp_footer', function () { if (!is_admin()) echo jc_consent_banner(function_exists('jetcab_is_en') && jetcab_is_en() ? 'en' : 'es'); }, 99);
