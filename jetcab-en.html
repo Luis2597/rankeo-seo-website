@@ -200,7 +200,7 @@ nav.solid{background:rgba(10,9,8,.96);backdrop-filter:blur(16px);border-bottom:1
 .btn-ghost:hover{border-color:rgba(255,255,255,.5);color:#fff}
 .btn-ghost:active{transform:scale(0.97)}
 .fleet-tabs{display:flex;gap:0;padding:0 48px;max-width:1208px;margin:0 auto;border-bottom:1px solid var(--border);overflow-x:auto}
-.ftab{background:none;border:none;border-bottom:2px solid transparent;padding:16px 24px;font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);cursor:pointer;transition:all .2s;white-space:nowrap}
+.ftab{background:none;border:none;border-bottom:2px solid transparent;padding:16px 24px;font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);cursor:pointer;transition:color .2s ease,border-color .2s ease;white-space:nowrap}
 .ftab.on,.ftab:hover{color:var(--orange);border-bottom-color:var(--orange)}
 .fleet-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);padding:1px 0;max-width:1160px;margin:0 auto;padding:0 48px;margin-top:2px}
 .fc{background:var(--bg2);cursor:pointer;transition:background .2s,transform .12s ease,box-shadow .12s ease;overflow:hidden;transform-style:preserve-3d;will-change:transform}
@@ -342,8 +342,8 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:64px 48p
 /* MOBILE DRAWER */
 .drawer-overlay{position:fixed;inset:0;background:rgba(0,0,0,.7);z-index:300;opacity:0;pointer-events:none;transition:opacity .3s}
 .drawer-overlay.open{opacity:1;pointer-events:all}
-.drawer{position:fixed;top:0;right:0;bottom:0;width:280px;background:var(--bg2);z-index:400;transform:translateX(100%);visibility:hidden;transition:transform .35s cubic-bezier(0.4,0,0.2,1),visibility 0s linear .35s;padding:24px;display:flex;flex-direction:column;gap:6px}
-.drawer.open{transform:translateX(0);visibility:visible;transition:transform .35s cubic-bezier(0.4,0,0.2,1),visibility 0s}
+.drawer{position:fixed;top:0;right:0;bottom:0;width:280px;background:var(--bg2);z-index:400;transform:translateX(100%);visibility:hidden;transition:transform .4s cubic-bezier(.32,.72,0,1),visibility 0s linear .35s;padding:24px;display:flex;flex-direction:column;gap:6px}
+.drawer.open{transform:translateX(0);visibility:visible;transition:transform .4s cubic-bezier(.32,.72,0,1),visibility 0s}
 .drawer-close{background:none;border:none;color:var(--muted);font-size:22px;cursor:pointer;align-self:flex-end;margin-bottom:16px;line-height:1;min-width:44px;min-height:44px}
 .drawer a{display:block;padding:12px 8px;font-family:'Barlow Condensed',sans-serif;font-size:15px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--cream);border-bottom:1px solid var(--border);transition:color .2s}
 .drawer a:hover{color:var(--orange)}
@@ -549,6 +549,28 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:64px 48p
 .ft-legal{display:flex;flex-wrap:wrap;align-items:center;gap:0 20px;margin-top:16px;padding-top:4px;border-top:1px solid rgba(255,255,255,.06)}
 .ft-legal a{display:inline-flex;align-items:center;min-height:44px;font-size:12px;letter-spacing:.06em;color:rgba(255,255,255,.72);text-decoration:underline;text-decoration-color:rgba(255,255,255,.28);text-underline-offset:3px;transition:color .2s}
 .ft-legal a:hover{color:#fff}
+/* Escala tipográfica (oct 2026): mínimos legibles por rol. Etiquetas 11–12px, botones 13px, texto secundario 13–14px. */
+.fc-cat,.fc-avail,.dc-urgency{font-size:11px;letter-spacing:.16em}
+.fc-avail{padding:5px 10px}
+.fc-sl{font-size:11px;letter-spacing:.14em;color:rgba(255,255,255,.62)}
+.hud-label{font-size:10px;letter-spacing:.28em;color:rgba(255,255,255,.55)}
+.sbc-l,.dc-ctry,.dest-more-l{font-size:12px;letter-spacing:.16em}
+.dc-flytime{font-size:13px;letter-spacing:.1em;color:rgba(255,255,255,.72)}
+.cfl,.bf-l{font-size:12px;letter-spacing:.16em}
+.cfl{color:rgba(255,255,255,.72)}
+.bf-l{color:#5f5f5f}
+.cfi::placeholder{color:rgba(255,255,255,.5)}
+.bf-btn small{font-size:11px;letter-spacing:.12em}
+.btn-o,.btn-ghost{font-size:13px;letter-spacing:.16em}
+.cf-sub{font-size:13px;letter-spacing:.18em}
+.n-cta,.ha{font-size:12px}
+.sec-tag,.xp-eye{font-size:12px;letter-spacing:.3em}
+.fc-desc{font-size:14px;line-height:1.5}
+.fc-link{font-size:12px}
+.tc-sub,.cf-note{font-size:13px;letter-spacing:.04em}
+.px-note,.test-note,.cf-legal{font-size:13px}
+/* Zoom de imágenes solo con ratón: en táctil el hover se queda pegado tras el toque. */
+@media (hover:none){.fc:hover .fc-img img,.car-slide:hover .car-slide-bg,.dc:hover .dc-bg,.jm-gthumb:hover{transform:none}}
 </style>
 </head>
 <body>
@@ -1261,7 +1283,7 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:64px 48p
     </div>
     <div class="ft-legal"><a href="https://jetcab.mx/terms/">Terms</a><a href="https://jetcab.mx/privacy/">Privacy</a><a href="#cookie-settings">Cookie settings</a><a href="https://jetcab.mx/politica-de-cancelacion/" hreflang="es">Cancellation policy (Spanish)</a></div>
   </div>
-<div style="background:rgba(0,0,0,.4);border-top:1px solid rgba(255,255,255,.06);padding:12px 24px;text-align:center"><a href="https://rankeo.agency" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;min-height:44px;font-family:'Barlow',sans-serif;font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.62);text-decoration:none;display:inline-flex;align-items:center;gap:6px" onmouseover="this.style.color='rgba(255,255,255,.9)'" onmouseout="this.style.color='rgba(255,255,255,.62)'">Website &amp; SEO by <span style="color:#F04E23">Rankeo</span></a></div>
+<div style="background:rgba(0,0,0,.4);border-top:1px solid rgba(255,255,255,.06);padding:12px 24px;text-align:center"><a href="https://rankeo.agency" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;min-height:44px;font-family:'Barlow',sans-serif;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.62);text-decoration:none;display:inline-flex;align-items:center;gap:6px" onmouseover="this.style.color='rgba(255,255,255,.9)'" onmouseout="this.style.color='rgba(255,255,255,.62)'">Website &amp; SEO by <span style="color:#F04E23">Rankeo</span></a></div>
 </footer>
 <!-- MOBILE DRAWER -->
 <div class="drawer-overlay" id="drawer-overlay" aria-hidden="true"></div>

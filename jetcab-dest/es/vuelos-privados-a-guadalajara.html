@@ -140,6 +140,12 @@ footer{background:#070707;border-top:1px solid var(--ln);padding:56px 0 30px;fon
 @media(max-width:960px){.nl{display:none}.burger{display:flex}.story{grid-template-columns:1fr;gap:28px}.story img{height:340px}.wy-grid{grid-template-columns:1fr 1fr}.ac-grid,.info{grid-template-columns:1fr}.ft{grid-template-columns:1fr 1fr}}
 @media(max-width:640px){body{font-size:16px}.sec{padding:60px 0}.hero{min-height:88vh;padding-bottom:46px}.wy-grid,.pl-grid{grid-template-columns:1fr}.pl img{height:230px}.pl figcaption{padding:18px 20px 22px}.badge{font-size:11px;letter-spacing:.1em;padding:7px 12px}.jr li{grid-template-columns:1fr;gap:4px}.gal img{height:240px}.rb .ln:before,.rb .ln:after{width:28px}.ft{grid-template-columns:1fr}.ctas .btn{width:100%}}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
+/* Pulido (oct 2026): respuesta al presionar, elevación solo con ratón, etiqueta del héroe legible en móvil. */
+.btn{transition:transform .16s cubic-bezier(.23,1,.32,1),background-color .2s ease,box-shadow .2s ease}
+.btn:active{transform:scale(.97)}
+@media (hover:none){.btn-o:hover,.ac:hover,.pl:hover{transform:none}}
+@media (max-width:768px){.badge{font-size:12px}}
+@media (prefers-reduced-motion:reduce){.btn:active{transform:none}}
 </style>
 </head>
 <body>

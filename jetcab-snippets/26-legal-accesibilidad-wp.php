@@ -16,6 +16,14 @@ add_action('wp_head', function () {
        . '.jc-legal nav{display:flex;flex-wrap:wrap;gap:4px 22px;justify-content:center}'
        . '.jc-legal a{color:#d6d6d6;text-decoration:underline;text-underline-offset:3px;display:inline-block;min-height:44px;line-height:44px}'
        . '.jc-legal p{max-width:820px;margin:6px auto 0;font-size:13px}'
+       // Tamaños mínimos legibles (oct 2026): formulario de /cotizar/, etiquetas de flota y crédito del pie.
+       . 'html body .wpforms-container .wpforms-field-label{font-size:13px!important}'
+       . 'html body .wpforms-container .wpforms-field-sublabel{font-size:12px!important;color:rgba(255,255,255,.62)!important}'
+       . 'html body .wpforms-container .wpforms-field-label-inline{font-size:14px!important;color:rgba(255,255,255,.8)!important}'
+       . 'html body .wpforms-container .wpforms-submit{font-size:14px!important;letter-spacing:.14em!important}'
+       . 'html body .wpforms-container .wpforms-submit:active{transform:scale(.97)}'
+       . 'html body .fl-tag{font-size:12px!important}'
+       . 'a[href$="rankeo.agency"],a[href$="rankeo.agency"] span{font-size:11px!important}'
        . '</style>' . "\n";
 }, 99);
 
