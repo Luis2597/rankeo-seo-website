@@ -125,11 +125,11 @@ nav.solid{background:rgba(10,9,8,.96);backdrop-filter:blur(16px);border-bottom:1
 .hero-grain{position:absolute;inset:0;opacity:.04;z-index:1;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='1'/%3E%3C/svg%3E");background-size:200px 200px}
 /* Canvas particle network */
 #hero-canvas{position:absolute;inset:0;z-index:1;pointer-events:none;opacity:.35;width:100%;height:100%}
-.hero-ol{position:absolute;inset:0;z-index:2;background:linear-gradient(to bottom,rgba(10,9,8,.55) 0%,rgba(10,9,8,.18) 35%,rgba(10,9,8,.6) 75%,rgba(10,9,8,1) 100%)}
+.hero-ol{position:absolute;inset:0;z-index:2;background:radial-gradient(ellipse 62% 56% at 50% 46%,rgba(10,9,8,.5) 0%,rgba(10,9,8,.22) 62%,rgba(10,9,8,0) 100%),linear-gradient(to bottom,rgba(10,9,8,.6) 0%,rgba(10,9,8,.3) 35%,rgba(10,9,8,.62) 75%,rgba(10,9,8,1) 100%)}
 .hero-c{position:relative;z-index:3;width:100%;max-width:860px;padding:120px 24px 90px;text-align:center}
-.hero-eyebrow{font-size:10px;font-weight:600;letter-spacing:.4em;text-transform:uppercase;color:var(--orange);margin-bottom:20px;display:block}
+.hero-eyebrow{font-size:11px;font-weight:700;letter-spacing:.4em;text-transform:uppercase;color:var(--orange);margin-bottom:20px;display:block;text-shadow:0 1px 14px rgba(0,0,0,.55)}
 .hero-title{font-family:'Barlow Condensed',sans-serif;font-size:clamp(54px,12vw,130px);font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--white);line-height:.88;margin-bottom:10px}
-.hero-sub{font-family:'Barlow Condensed',sans-serif;font-size:clamp(13px,2vw,17px);font-weight:400;letter-spacing:.3em;text-transform:uppercase;color:var(--muted);margin-bottom:44px}
+.hero-sub{font-family:'Barlow Condensed',sans-serif;font-size:clamp(13px,2vw,17px);font-weight:400;letter-spacing:.3em;text-transform:uppercase;color:var(--muted);margin-bottom:44px;text-shadow:0 1px 14px rgba(0,0,0,.6)}
 .bform{display:flex;align-items:stretch;background:rgba(255,255,255,.97);width:100%;box-shadow:0 24px 64px rgba(0,0,0,.55),0 6px 20px rgba(0,0,0,.3);border-radius:4px;transition:box-shadow .4s ease;transform:translateZ(0)}
 .bform:hover,.bform:focus-within{box-shadow:0 32px 80px rgba(0,0,0,.6),0 8px 28px rgba(240,120,40,.12)}
 .bf{flex:1;padding:6px 18px;border-right:1px solid rgba(0,0,0,.06);cursor:text;transition:background .15s}
@@ -485,23 +485,32 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:64px 48p
 .xp-h{font-family:'Barlow Condensed',sans-serif;font-size:clamp(46px,8vw,104px);font-weight:800;line-height:.92;letter-spacing:.02em;text-transform:uppercase;color:#fff;margin:0 0 24px}
 .xp-p{font-size:clamp(16px,1.6vw,19px);line-height:1.7;color:var(--cream);max-width:600px;margin:0 auto}
 .xp-scene{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden;background:#000}
-.xp-v{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform:scale(1.08);transition:transform 2.4s cubic-bezier(.2,.6,.2,1)}
+.xp-in{position:absolute;inset:0;transform-origin:50% 0;will-change:transform}
+.xp-dim{position:absolute;inset:0;background:#000;opacity:0;pointer-events:none}
+.xp-v{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform:scale(1.08);transition:transform 2.6s cubic-bezier(.23,1,.32,1)}
 .xp-scene.on .xp-v{transform:scale(1)}
 .xp-shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.15) 0%,rgba(0,0,0,0) 35%,rgba(0,0,0,.72) 100%)}
-.xp-cap{position:absolute;left:clamp(20px,6vw,88px);right:clamp(20px,6vw,88px);bottom:clamp(40px,10vh,110px);max-width:620px;color:#fff;opacity:0;transform:translateY(28px);transition:opacity .9s ease .25s,transform .9s ease .25s}
-.xp-scene.on .xp-cap{opacity:1;transform:none}
+.xp-cap{position:absolute;left:clamp(20px,6vw,88px);right:clamp(20px,6vw,88px);bottom:clamp(40px,10vh,110px);max-width:620px;color:#fff}
+.xp-cap>*{opacity:0;transform:translateY(18px);transition:opacity .7s cubic-bezier(.23,1,.32,1),transform .7s cubic-bezier(.23,1,.32,1)}
+.xp-scene.on .xp-cap>*{opacity:1;transform:none}
+.xp-scene.on .xp-cap>:nth-child(1){transition-delay:.15s}.xp-scene.on .xp-cap>:nth-child(2){transition-delay:.22s}.xp-scene.on .xp-cap>:nth-child(3){transition-delay:.29s}
 .xp-n{display:block;font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:700;letter-spacing:.38em;color:var(--orange);margin-bottom:12px}
+.xp-n i{font-style:normal;color:rgba(255,255,255,.55)}
 .xp-cap h3{font-family:'Barlow Condensed',sans-serif;font-size:clamp(34px,5.4vw,68px);font-weight:800;line-height:.98;text-transform:uppercase;letter-spacing:.02em;margin:0 0 14px;text-shadow:0 2px 24px rgba(0,0,0,.45)}
 .xp-cap p{font-size:clamp(15px,1.5vw,18px);line-height:1.65;color:rgba(255,255,255,.9);margin:0;text-shadow:0 1px 12px rgba(0,0,0,.5)}
 .xp-moments{position:relative;z-index:1;background:#050505;padding:100px 24px 110px;max-width:1240px;margin:0 auto;text-align:center}
 .xm-grid{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:250px;gap:12px;margin-top:10px}
 .xm{margin:0;overflow:hidden;border-radius:6px;background:#111}
-.xm img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .7s cubic-bezier(.2,.6,.2,1)}
-.xm:hover img{transform:scale(1.05)}
+.xm{clip-path:inset(0 0 100% 0);transition:clip-path 1.1s cubic-bezier(.77,0,.175,1)}
+.xm.in{clip-path:inset(0 0 0 0)}
+.xm-grid .xm:nth-child(2){transition-delay:.07s}.xm-grid .xm:nth-child(3){transition-delay:.14s}.xm-grid .xm:nth-child(4){transition-delay:.21s}.xm-grid .xm:nth-child(5){transition-delay:.28s}
+.xm img{width:100%;height:100%;object-fit:cover;display:block;transform:scale(1.06);transition:transform 1.4s cubic-bezier(.23,1,.32,1)}
+.xm.in img{transform:scale(1)}
+@media(hover:hover) and (pointer:fine){.xm.in:hover img{transform:scale(1.04);transition-duration:.6s}}
 .xm-a{grid-column:span 2;grid-row:span 2}
 .xp-cta{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:44px}
 @media(max-width:768px){.xp-v{object-position:var(--xpos,50%) 50%}.xp-cap{bottom:156px;right:20px}.xp-intro{padding:80px 20px 50px}.xm-grid{grid-template-columns:1fr 1fr;grid-auto-rows:150px}.xm-a{grid-column:span 2;grid-row:span 2}.xp-moments{padding:70px 16px 80px}}
-@media(prefers-reduced-motion:reduce){.xp-v,.xp-cap,.xm img{transition:none!important;transform:none!important}.xp-cap{opacity:1}}
+@media(prefers-reduced-motion:reduce){.xp-v,.xp-cap>*,.xm img,.xp-in{transition:none!important;transform:none!important}.xp-cap>*{opacity:1}.xm{clip-path:none;transition:opacity .3s ease}}
 </style>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"WebSite","name":"JETCAB","url":"https://jetcab.mx/","description":"Mexico's premier private jet and helicopter charter company. DGAC certified, 25 years of experience, 2,000+ flights completed.","potentialAction":{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://jetcab.mx/en/#contact"},"query-input":"required name=flight_route"},"@id":"https://jetcab.mx/#website","inLanguage":["es-MX","en-US"]}
@@ -565,12 +574,12 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:64px 48p
     <form class="bform" id="qt-form" novalidate>
       <div class="bf">
         <label class="bf-l" for="qt-from">From</label>
-        <select id="qt-from" name="origin"><option value="tlc">Mexico City · Toluca (TLC)</option><option value="other">Other city</option></select>
+        <select id="qt-from" name="origin"><option value="tlc">Mexico City (TLC)</option><option value="other">Other city</option></select>
       </div>
       <div class="bf">
         <label class="bf-l" for="qt-to">To</label>
         <select id="qt-to" name="destination">
-          <option value="">Choose destination</option>
+          <option value="">Where to?</option>
           <optgroup label="Mexico"><option value="acapulco">Acapulco</option><option value="cancun">Cancún</option><option value="guadalajara">Guadalajara</option><option value="loscabos">Los Cabos</option><option value="monterrey">Monterrey</option><option value="puertovallarta">Puerto Vallarta</option><option value="queretaro">Querétaro</option><option value="tijuana">Tijuana</option></optgroup>
           <optgroup label="United States &amp; Caribbean"><option value="havana">Havana, Cuba</option><option value="houston">Houston</option><option value="lasvegas">Las Vegas</option><option value="losangeles">Los Angeles</option><option value="mcallen">McAllen</option><option value="miami">Miami</option><option value="newyork">New York</option><option value="sandiego">San Diego</option></optgroup>
           <optgroup label="Europe"><option value="spain">Spain (Madrid, Barcelona)</option><option value="europe">Other Europe (London, Paris…)</option></optgroup>
@@ -666,24 +675,36 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:64px 48p
   </div>
   <div class="xp-scenes">
     <article class="xp-scene">
+      <div class="xp-in">
       <video class="xp-v" style="--xpos:50%" muted loop playsinline preload="none" poster="https://jetcab.mx/wp-content/uploads/2026/10/jetcab-exp-boarding.jpg" data-src="https://jetcab.mx/wp-content/uploads/2026/10/jetcab-exp-boarding-900.mp4" data-src-m="https://jetcab.mx/wp-content/uploads/2026/10/jetcab-exp-boarding-540.mp4" aria-hidden="true"></video>
       <div class="xp-shade" aria-hidden="true"></div>
-      <div class="xp-cap"><span class="xp-n">01</span><h3>Tarmac to cabin in 10 minutes</h3><p>Your car drives right to the aircraft stairs at Toluca&rsquo;s private FBO. No terminals, no lines, no gate changes.</p></div>
+      <div class="xp-dim" aria-hidden="true"></div>
+      <div class="xp-cap"><span class="xp-n">01 <i>/ 04</i></span><h3>Tarmac to cabin in 10 minutes</h3><p>Your car drives right to the aircraft stairs at Toluca&rsquo;s private FBO. No terminals, no lines, no gate changes.</p></div>
+      </div>
     </article>
     <article class="xp-scene">
+      <div class="xp-in">
       <video class="xp-v" style="--xpos:28%" muted loop playsinline preload="none" poster="https://jetcab.mx/wp-content/uploads/2026/10/jetcab-exp-service.jpg" data-src="https://jetcab.mx/wp-content/uploads/2026/10/jetcab-exp-service-900.mp4" data-src-m="https://jetcab.mx/wp-content/uploads/2026/10/jetcab-exp-service-540.mp4" aria-hidden="true"></video>
       <div class="xp-shade" aria-hidden="true"></div>
-      <div class="xp-cap"><span class="xp-n">02</span><h3>Your table at 40,000 feet</h3><p>Catering and drinks are included on every charter, prepared to your taste before you board.</p></div>
+      <div class="xp-dim" aria-hidden="true"></div>
+      <div class="xp-cap"><span class="xp-n">02 <i>/ 04</i></span><h3>Your table at 40,000 feet</h3><p>Catering and drinks are included on every charter, prepared to your taste before you board.</p></div>
+      </div>
     </article>
     <article class="xp-scene">
+      <div class="xp-in">
       <video class="xp-v" style="--xpos:52%" muted loop playsinline preload="none" poster="https://jetcab.mx/wp-content/uploads/2026/10/jetcab-exp-toast.jpg" data-src="https://jetcab.mx/wp-content/uploads/2026/10/jetcab-exp-toast-900.mp4" data-src-m="https://jetcab.mx/wp-content/uploads/2026/10/jetcab-exp-toast-540.mp4" aria-hidden="true"></video>
       <div class="xp-shade" aria-hidden="true"></div>
-      <div class="xp-cap"><span class="xp-n">03</span><h3>Close the deal. Celebrate it.</h3><p>A private cabin for your team, your partners or your family. Talk freely, toast freely.</p></div>
+      <div class="xp-dim" aria-hidden="true"></div>
+      <div class="xp-cap"><span class="xp-n">03 <i>/ 04</i></span><h3>Close the deal. Celebrate it.</h3><p>A private cabin for your team, your partners or your family. Talk freely, toast freely.</p></div>
+      </div>
     </article>
     <article class="xp-scene">
+      <div class="xp-in">
       <video class="xp-v" style="--xpos:45%" muted loop playsinline preload="none" poster="https://jetcab.mx/wp-content/uploads/2026/10/jetcab-exp-window.jpg" data-src="https://jetcab.mx/wp-content/uploads/2026/10/jetcab-exp-window-900.mp4" data-src-m="https://jetcab.mx/wp-content/uploads/2026/10/jetcab-exp-window-540.mp4" aria-hidden="true"></video>
       <div class="xp-shade" aria-hidden="true"></div>
-      <div class="xp-cap"><span class="xp-n">04</span><h3>Arrive rested, ahead of schedule</h3><p>Above the clouds and on your own timetable. You land where you need to be, ready for what comes next.</p></div>
+      <div class="xp-dim" aria-hidden="true"></div>
+      <div class="xp-cap"><span class="xp-n">04 <i>/ 04</i></span><h3>Arrive rested, ahead of schedule</h3><p>Above the clouds and on your own timetable. You land where you need to be, ready for what comes next.</p></div>
+      </div>
     </article>
   </div>
   <div class="xp-moments">
@@ -921,27 +942,27 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:64px 48p
 <section class="carousel" id="accion">
   <div class="car-hdr rv">
     <div>
-      <span class="sec-tag">Real Experience</span>
+      <span class="sec-tag">Life on Board</span>
       <h2 class="sec-h">Private Jet & Helicopter Charter Fleet</h2>
     </div>
     <p style="font-size:14px;color:rgba(255,255,255,.72);max-width:360px;text-align:right">JETCAB is more than an aircraft — it's the people, the experiences and the details that make every flight unforgettable.</p>
   </div>
   <div style="overflow:hidden;contain:paint;max-width:100vw">
     <div class="car-track">
-      <div class="car-slide"><div class="car-slide-bg" style="background-image:url('https://images.unsplash.com/photo-1464037866556-6812c9d1c72e?auto=format&fit=crop&w=600&q=80')"></div></div>
-      <div class="car-slide"><div class="car-slide-bg" style="background-image:url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=600&q=80')"></div></div>
-      <div class="car-slide"><div class="car-slide-bg" style="background-image:url('https://images.unsplash.com/photo-1474302770737-173ee21bab63?auto=format&fit=crop&w=600&q=80')"></div></div>
-      <div class="car-slide"><div class="car-slide-bg" style="background-image:url('https://images.unsplash.com/photo-1540962351504-03099e0a754b?auto=format&fit=crop&w=600&q=80')"></div></div>
-      <div class="car-slide"><div class="car-slide-bg" style="background-image:url('https://images.unsplash.com/photo-1556388158-158ea5ccacbd?auto=format&fit=crop&w=600&q=80')"></div></div>
-      <div class="car-slide"><div class="car-slide-bg" style="background-image:url('https://images.unsplash.com/photo-1436891678271-9c672565d8f6?auto=format&fit=crop&w=600&q=80')"></div></div>
-      <div class="car-slide"><div class="car-slide-bg" style="background-image:url('https://images.unsplash.com/photo-1583416750470-965b2707b355?auto=format&fit=crop&w=600&q=80')"></div></div>
-      <div class="car-slide"><div class="car-slide-bg" style="background-image:url('https://images.unsplash.com/photo-1464037866556-6812c9d1c72e?auto=format&fit=crop&w=600&q=80')"></div></div>
-      <div class="car-slide"><div class="car-slide-bg" style="background-image:url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=600&q=80')"></div></div>
-      <div class="car-slide"><div class="car-slide-bg" style="background-image:url('https://images.unsplash.com/photo-1474302770737-173ee21bab63?auto=format&fit=crop&w=600&q=80')"></div></div>
-      <div class="car-slide"><div class="car-slide-bg" style="background-image:url('https://images.unsplash.com/photo-1540962351504-03099e0a754b?auto=format&fit=crop&w=600&q=80')"></div></div>
-      <div class="car-slide"><div class="car-slide-bg" style="background-image:url('https://images.unsplash.com/photo-1556388158-158ea5ccacbd?auto=format&fit=crop&w=600&q=80')"></div></div>
-      <div class="car-slide"><div class="car-slide-bg" style="background-image:url('https://images.unsplash.com/photo-1436891678271-9c672565d8f6?auto=format&fit=crop&w=600&q=80')"></div></div>
-      <div class="car-slide"><div class="car-slide-bg" style="background-image:url('https://images.unsplash.com/photo-1583416750470-965b2707b355?auto=format&fit=crop&w=600&q=80')"></div></div>
+      <div class="car-slide"><div class="car-slide-bg" style="background-image:url('https://jetcab.mx/wp-content/uploads/2026/10/jetcab-onboard-2517931.jpg')"></div></div>
+      <div class="car-slide"><div class="car-slide-bg" style="background-image:url('https://jetcab.mx/wp-content/uploads/2026/10/jetcab-onboard-5778612.jpg')"></div></div>
+      <div class="car-slide"><div class="car-slide-bg" style="background-image:url('https://jetcab.mx/wp-content/uploads/2026/10/jetcab-onboard-6700137.jpg')"></div></div>
+      <div class="car-slide"><div class="car-slide-bg" style="background-image:url('https://jetcab.mx/wp-content/uploads/2026/10/jetcab-onboard-4170200.jpg')"></div></div>
+      <div class="car-slide"><div class="car-slide-bg" style="background-image:url('https://jetcab.mx/wp-content/uploads/2026/10/jetcab-onboard-5778714.jpg')"></div></div>
+      <div class="car-slide"><div class="car-slide-bg" style="background-image:url('https://jetcab.mx/wp-content/uploads/2026/10/jetcab-onboard-5778458.jpg')"></div></div>
+      <div class="car-slide"><div class="car-slide-bg" style="background-image:url('https://jetcab.mx/wp-content/uploads/2026/10/jetcab-onboard-6700054.jpg')"></div></div>
+      <div class="car-slide"><div class="car-slide-bg" style="background-image:url('https://jetcab.mx/wp-content/uploads/2026/10/jetcab-onboard-2517931.jpg')"></div></div>
+      <div class="car-slide"><div class="car-slide-bg" style="background-image:url('https://jetcab.mx/wp-content/uploads/2026/10/jetcab-onboard-5778612.jpg')"></div></div>
+      <div class="car-slide"><div class="car-slide-bg" style="background-image:url('https://jetcab.mx/wp-content/uploads/2026/10/jetcab-onboard-6700137.jpg')"></div></div>
+      <div class="car-slide"><div class="car-slide-bg" style="background-image:url('https://jetcab.mx/wp-content/uploads/2026/10/jetcab-onboard-4170200.jpg')"></div></div>
+      <div class="car-slide"><div class="car-slide-bg" style="background-image:url('https://jetcab.mx/wp-content/uploads/2026/10/jetcab-onboard-5778714.jpg')"></div></div>
+      <div class="car-slide"><div class="car-slide-bg" style="background-image:url('https://jetcab.mx/wp-content/uploads/2026/10/jetcab-onboard-5778458.jpg')"></div></div>
+      <div class="car-slide"><div class="car-slide-bg" style="background-image:url('https://jetcab.mx/wp-content/uploads/2026/10/jetcab-onboard-6700054.jpg')"></div></div>
     </div>
   </div>
 </section>
@@ -1645,7 +1666,7 @@ var JETS = {
     cat:'Short Range Jet · 4 to 7 Passengers',
     tagline:'The definitive executive jet for Mexico & US border routes',
     img:'https://jetcab.mx/wp-content/uploads/2024/11/Learjet35enrenta.jpeg',
-    gallery:['https://images.unsplash.com/photo-1464037866556-6812c9d1c72e?auto=format&fit=crop&w=600&q=80','https://images.unsplash.com/photo-1583416750470-965b2707b355?auto=format&fit=crop&w=600&q=80','https://images.unsplash.com/photo-1474302770737-173ee21bab63?auto=format&fit=crop&w=600&q=80'],
+    gallery:['https://jetcab.mx/wp-content/uploads/2026/10/jetcab-onboard-6700137.jpg','https://jetcab.mx/wp-content/uploads/2026/10/jetcab-onboard-5778612.jpg','https://images.unsplash.com/photo-1474302770737-173ee21bab63?auto=format&fit=crop&w=600&q=80'],
     price:'From $1,800 USD one way',
     waText:'Hi JETCAB, I\'d like to inquire about the Learjet 35 charter.',
     specs:[
@@ -1676,7 +1697,7 @@ var JETS = {
     cat:'Mid-Size Jet · 6 to 9 Passengers',
     tagline:'Stand-up cabin, full galley, intercontinental range',
     img:'https://jetcab.mx/wp-content/uploads/2024/11/Challenger-605-en-renta.jpeg',
-    gallery:['https://images.unsplash.com/photo-1474302770737-173ee21bab63?auto=format&fit=crop&w=600&q=80','https://images.unsplash.com/photo-1540962351504-03099e0a754b?auto=format&fit=crop&w=600&q=80','https://images.unsplash.com/photo-1464037866556-6812c9d1c72e?auto=format&fit=crop&w=600&q=80'],
+    gallery:['https://images.unsplash.com/photo-1474302770737-173ee21bab63?auto=format&fit=crop&w=600&q=80','https://images.unsplash.com/photo-1540962351504-03099e0a754b?auto=format&fit=crop&w=600&q=80','https://jetcab.mx/wp-content/uploads/2026/10/jetcab-onboard-6700137.jpg'],
     price:'From $6,500 USD one way',
     waText:'Hi JETCAB, I\'d like to inquire about the Challenger 605 charter.',
     specs:[
@@ -1707,7 +1728,7 @@ var JETS = {
     cat:'Long Range Jet · 8 to 16 Passengers',
     tagline:'Mexico City to London. Non-stop. The pinnacle of global aviation.',
     img:'https://jetcab.mx/wp-content/uploads/2024/11/Gulfstream-Gv-en-Renta.jpeg',
-    gallery:['https://images.unsplash.com/photo-1474302770737-173ee21bab63?auto=format&fit=crop&w=600&q=80','https://images.unsplash.com/photo-1583416750470-965b2707b355?auto=format&fit=crop&w=600&q=80','https://images.unsplash.com/photo-1556388158-158ea5ccacbd?auto=format&fit=crop&w=600&q=80'],
+    gallery:['https://images.unsplash.com/photo-1474302770737-173ee21bab63?auto=format&fit=crop&w=600&q=80','https://jetcab.mx/wp-content/uploads/2026/10/jetcab-onboard-5778612.jpg','https://jetcab.mx/wp-content/uploads/2026/10/jetcab-onboard-6700054.jpg'],
     price:'From $12,000 USD one way',
     waText:'Hi JETCAB, I\'d like to inquire about the Gulfstream GV charter.',
     specs:[
@@ -1738,7 +1759,7 @@ var JETS = {
     cat:'Short Range Jet · 8 Passengers',
     tagline:'Superior comfort for regional routes throughout Mexico and the US',
     img:'https://jetcab.mx/wp-content/uploads/2024/11/Learjet-45-en-renta.jpeg',
-    gallery:['https://images.unsplash.com/photo-1464037866556-6812c9d1c72e?auto=format&fit=crop&w=600&q=80','https://images.unsplash.com/photo-1583416750470-965b2707b355?auto=format&fit=crop&w=600&q=80','https://images.unsplash.com/photo-1474302770737-173ee21bab63?auto=format&fit=crop&w=600&q=80'],
+    gallery:['https://jetcab.mx/wp-content/uploads/2026/10/jetcab-onboard-6700137.jpg','https://jetcab.mx/wp-content/uploads/2026/10/jetcab-onboard-5778612.jpg','https://images.unsplash.com/photo-1474302770737-173ee21bab63?auto=format&fit=crop&w=600&q=80'],
     price:'Quote on request',
     waText:'Hi JETCAB, I\'d like to inquire about the Learjet 45 charter.',
     specs:[
@@ -1769,7 +1790,7 @@ var JETS = {
     cat:'Mid-Range Jet · 8 Passengers',
     tagline:'A proven mid-size platform — reliable, spacious, and built for demanding routes',
     img:'https://jetcab.mx/wp-content/uploads/2024/11/Hawker-700-en-renta.jpeg',
-    gallery:['https://images.unsplash.com/photo-1474302770737-173ee21bab63?auto=format&fit=crop&w=600&q=80','https://images.unsplash.com/photo-1540962351504-03099e0a754b?auto=format&fit=crop&w=600&q=80','https://images.unsplash.com/photo-1464037866556-6812c9d1c72e?auto=format&fit=crop&w=600&q=80'],
+    gallery:['https://images.unsplash.com/photo-1474302770737-173ee21bab63?auto=format&fit=crop&w=600&q=80','https://images.unsplash.com/photo-1540962351504-03099e0a754b?auto=format&fit=crop&w=600&q=80','https://jetcab.mx/wp-content/uploads/2026/10/jetcab-onboard-6700137.jpg'],
     price:'Quote on request',
     waText:'Hi JETCAB, I\'d like to inquire about the Hawker 700 charter.',
     specs:[
@@ -1800,7 +1821,7 @@ var JETS = {
     cat:'Mid-Range Jet · 8 + 1 Passengers',
     tagline:'Extended range and an enhanced cabin — the Hawker at its best',
     img:'https://jetcab.mx/wp-content/uploads/2024/11/Hawker-800-en-renta.jpeg',
-    gallery:['https://images.unsplash.com/photo-1583416750470-965b2707b355?auto=format&fit=crop&w=600&q=80','https://images.unsplash.com/photo-1474302770737-173ee21bab63?auto=format&fit=crop&w=600&q=80','https://images.unsplash.com/photo-1540962351504-03099e0a754b?auto=format&fit=crop&w=600&q=80'],
+    gallery:['https://jetcab.mx/wp-content/uploads/2026/10/jetcab-onboard-5778612.jpg','https://images.unsplash.com/photo-1474302770737-173ee21bab63?auto=format&fit=crop&w=600&q=80','https://images.unsplash.com/photo-1540962351504-03099e0a754b?auto=format&fit=crop&w=600&q=80'],
     price:'Quote on request',
     waText:'Hi JETCAB, I\'d like to inquire about the Hawker 800 charter.',
     specs:[
@@ -1831,7 +1852,7 @@ var JETS = {
     cat:'Long Range Jet · 7 Passengers',
     tagline:'Non-stop to the US East Coast and beyond — Gulfstream performance at a mid-size price',
     img:'https://jetcab.mx/wp-content/uploads/2024/11/GulfstreamG150enrenta.jpeg',
-    gallery:['https://images.unsplash.com/photo-1474302770737-173ee21bab63?auto=format&fit=crop&w=600&q=80','https://images.unsplash.com/photo-1583416750470-965b2707b355?auto=format&fit=crop&w=600&q=80','https://images.unsplash.com/photo-1556388158-158ea5ccacbd?auto=format&fit=crop&w=600&q=80'],
+    gallery:['https://images.unsplash.com/photo-1474302770737-173ee21bab63?auto=format&fit=crop&w=600&q=80','https://jetcab.mx/wp-content/uploads/2026/10/jetcab-onboard-5778612.jpg','https://jetcab.mx/wp-content/uploads/2026/10/jetcab-onboard-6700054.jpg'],
     price:'Quote on request',
     waText:'Hi JETCAB, I\'d like to inquire about the Gulfstream G150 charter.',
     specs:[
@@ -1862,7 +1883,7 @@ var JETS = {
     cat:'Long Range Jet · 13 Passengers',
     tagline:'The aircraft that changed what a group charter could be — intercontinental, unstoppable',
     img:'https://jetcab.mx/wp-content/uploads/2024/11/WhatsApp-Image-2024-11-04-at-14.21.53.jpeg',
-    gallery:['https://images.unsplash.com/photo-1556388158-158ea5ccacbd?auto=format&fit=crop&w=600&q=80','https://images.unsplash.com/photo-1474302770737-173ee21bab63?auto=format&fit=crop&w=600&q=80','https://images.unsplash.com/photo-1583416750470-965b2707b355?auto=format&fit=crop&w=600&q=80'],
+    gallery:['https://jetcab.mx/wp-content/uploads/2026/10/jetcab-onboard-6700054.jpg','https://images.unsplash.com/photo-1474302770737-173ee21bab63?auto=format&fit=crop&w=600&q=80','https://jetcab.mx/wp-content/uploads/2026/10/jetcab-onboard-5778612.jpg'],
     price:'Quote on request',
     waText:'Hi JETCAB, I\'d like to inquire about the Legacy 600 charter.',
     specs:[
@@ -1893,7 +1914,7 @@ var JETS = {
     cat:'Light Helicopter · 3 to 5 Passengers',
     tagline:'Urban transfers, yacht access and remote landing zones — no runway needed',
     img:'https://jetcab.mx/wp-content/uploads/2024/11/Bel-206-en-renta.jpeg',
-    gallery:['https://images.unsplash.com/photo-1540962351504-03099e0a754b?auto=format&fit=crop&w=600&q=80','https://images.unsplash.com/photo-1474302770737-173ee21bab63?auto=format&fit=crop&w=600&q=80','https://images.unsplash.com/photo-1583416750470-965b2707b355?auto=format&fit=crop&w=600&q=80'],
+    gallery:['https://images.unsplash.com/photo-1540962351504-03099e0a754b?auto=format&fit=crop&w=600&q=80','https://images.unsplash.com/photo-1474302770737-173ee21bab63?auto=format&fit=crop&w=600&q=80','https://jetcab.mx/wp-content/uploads/2026/10/jetcab-onboard-5778612.jpg'],
     price:'Quote on request',
     waText:'Hi JETCAB, I\'d like to inquire about Bell 206 helicopter charter.',
     specs:[
@@ -1924,7 +1945,7 @@ var JETS = {
     cat:'Premium Helicopter · Up to 15 Passengers',
     tagline:'The world\'s most advanced executive helicopter — for groups who refuse compromise',
     img:'https://jetcab.mx/wp-content/uploads/2024/11/Renta-de-Helicopteros-Mex.jpeg',
-    gallery:['https://images.unsplash.com/photo-1556388158-158ea5ccacbd?auto=format&fit=crop&w=600&q=80','https://images.unsplash.com/photo-1474302770737-173ee21bab63?auto=format&fit=crop&w=600&q=80','https://images.unsplash.com/photo-1540962351504-03099e0a754b?auto=format&fit=crop&w=600&q=80'],
+    gallery:['https://jetcab.mx/wp-content/uploads/2026/10/jetcab-onboard-6700054.jpg','https://images.unsplash.com/photo-1474302770737-173ee21bab63?auto=format&fit=crop&w=600&q=80','https://images.unsplash.com/photo-1540962351504-03099e0a754b?auto=format&fit=crop&w=600&q=80'],
     price:'Quote on request',
     waText:'Hi JETCAB, I\'d like to inquire about the AW139 helicopter charter.',
     specs:[
@@ -2227,6 +2248,14 @@ function closeDest(){
   document.body.style.overflow='';
 }
 document.addEventListener('keydown',function(e){if(e.key==='Escape'){closeJet();closeDest();}});
+/* Momentos a bordo: las fotos se revelan de abajo hacia arriba una sola vez */
+(function(){
+  var ms = document.querySelectorAll('.xm');
+  if (!ms.length) return;
+  if (!('IntersectionObserver' in window)) { ms.forEach(function(m){ m.classList.add('in'); }); return; }
+  var io = new IntersectionObserver(function(es){ es.forEach(function(e){ if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }); }, {rootMargin: '0px 0px -12% 0px'});
+  ms.forEach(function(m){ io.observe(m); });
+})();
 /* Experiencia: las escenas se apilan al hacer scroll; sólo la de arriba carga y reproduce su video */
 (function(){
   var scenes = [].slice.call(document.querySelectorAll('.xp-scene'));
@@ -2248,7 +2277,20 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape'){closeJet();
       } else if (v && !v.paused) { v.pause(); }
     });
   }
-  window.addEventListener('scroll', function(){ if (!tick) { tick = true; requestAnimationFrame(update); } }, {passive: true});
+  // Profundidad: cuando la siguiente escena sube, la de abajo se aleja un poco y se oscurece
+  var ins = scenes.map(function(s){ return s.querySelector('.xp-in'); }), dims = scenes.map(function(s){ return s.querySelector('.xp-dim'); });
+  var calm = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function depth(){
+    if (calm) return;
+    var h = window.innerHeight;
+    for (var i = 0; i < scenes.length - 1; i++) {
+      var t = scenes[i + 1].getBoundingClientRect().top, k = Math.min(1, Math.max(0, 1 - t / h));
+      ins[i].style.transform = k > 0 ? 'scale(' + (1 - 0.07 * k).toFixed(4) + ')' : '';
+      dims[i].style.opacity = (0.55 * k).toFixed(3);
+    }
+  }
+  window.addEventListener('scroll', function(){ if (!tick) { tick = true; requestAnimationFrame(function(){ depth(); update(); }); } }, {passive: true});
+  depth();
   window.addEventListener('resize', update);
   update();
 })();
