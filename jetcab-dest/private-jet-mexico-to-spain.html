@@ -40,17 +40,17 @@ h3{font-size:22px;font-weight:700;color:#fff;line-height:1.2}
 .k{font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:700;letter-spacing:.3em;text-transform:uppercase;color:var(--o);margin-bottom:12px}
 .lead{color:#cfcfcf;max-width:760px}
 .btn{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:0 28px;border-radius:4px;font-family:'Barlow Condensed',sans-serif;font-size:17px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;transition:transform .2s,background .2s}
-.btn-o{background:var(--o);color:#fff}.btn-o:hover{background:#ff6a2b;transform:translateY(-1px)}
+.btn-o{background:var(--o);color:#111}.btn-o:hover{background:#ff6a2b;transform:translateY(-1px)}
 .btn-g{border:1px solid rgba(255,255,255,.35);color:#fff}.btn-g:hover{border-color:#fff}
 /* nav */
 .nav{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;align-items:center;justify-content:space-between;padding:0 20px;height:68px;background:rgba(11,11,11,.82);backdrop-filter:blur(14px);border-bottom:1px solid var(--ln)}
 .logo{font-family:'Barlow Condensed',sans-serif;font-size:26px;font-weight:800;letter-spacing:.18em;color:#fff;text-decoration:none;display:inline-flex;align-items:center;min-height:44px}.logo span{color:var(--o)}
 .nl{display:flex;gap:26px;align-items:center}.nl a{font-size:14px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;color:#ddd;display:inline-flex;align-items:center;min-height:44px}.nl a:hover{color:var(--o)}
-.nl .btn{min-height:42px;padding:0 18px;font-size:15px;color:#fff}
+.nl .btn{min-height:42px;padding:0 18px;font-size:15px}.nl .btn-o{color:#111}
 .burger{display:none;width:48px;height:48px;background:none;border:1px solid var(--ln);border-radius:4px;color:#fff;cursor:pointer}
 .burger svg{width:22px;height:22px;margin:auto}
-.drawer{position:fixed;inset:0;z-index:60;background:#0B0B0B;display:flex;flex-direction:column;padding:90px 28px 30px;transform:translateX(100%);transition:transform .3s}
-.drawer.open{transform:none}.drawer a{font-family:'Barlow Condensed',sans-serif;font-size:30px;font-weight:700;text-transform:uppercase;color:#fff;text-decoration:none;padding:10px 0;border-bottom:1px solid var(--ln);min-height:44px}
+.drawer{position:fixed;inset:0;z-index:60;background:#0B0B0B;display:flex;flex-direction:column;padding:90px 28px 30px;transform:translateX(100%);visibility:hidden;transition:transform .3s,visibility 0s .3s}
+.drawer.open{transform:none;visibility:visible;transition:transform .3s}.drawer a{font-family:'Barlow Condensed',sans-serif;font-size:30px;font-weight:700;text-transform:uppercase;color:#fff;text-decoration:none;padding:10px 0;border-bottom:1px solid var(--ln);min-height:44px}
 .drawer .x{position:absolute;top:12px;right:16px;width:48px;height:48px;background:none;border:0;color:#fff;font-size:34px;cursor:pointer}
 /* hero */
 .hero{position:relative;min-height:92vh;display:flex;align-items:flex-end;padding:120px 0 70px;overflow:hidden}
@@ -123,13 +123,18 @@ h3{font-size:22px;font-weight:700;color:#fff;line-height:1.2}
 .rel a{display:flex;flex-direction:column;justify-content:center;min-height:64px;padding:12px 16px;border:1px solid var(--ln);border-radius:6px;text-decoration:none;transition:border-color .2s}
 .rel a:hover{border-color:var(--o)}.rel span{font-weight:600;color:#fff}.rel small{color:var(--mu);font-size:13px}
 .gd{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px;margin-top:26px}.gd a{display:block;padding:18px 20px;border:1px solid var(--ln);border-radius:6px;text-decoration:none;color:#fff;font-weight:600;min-height:44px}.gd a:hover{border-color:var(--o)}.gd small{display:block;color:var(--o);font-size:12px;letter-spacing:.2em;text-transform:uppercase;margin-bottom:6px}
+/* skip link, inline links, legal */
+.skip{position:fixed;left:12px;top:-60px;z-index:100;background:#fff;color:#111;padding:12px 18px;border-radius:4px;font-weight:600;text-decoration:none}.skip:focus{top:12px}
+main p a,.answer a,.fq p a,.info p a{text-decoration:underline;text-underline-offset:2px}
+.disc{font-size:14px;line-height:1.55;color:#b8b8b8;max-width:760px;margin-top:16px}
+.lg{display:flex;flex-wrap:wrap;gap:4px 20px}.lg a{display:inline-flex;align-items:center;min-height:32px;color:#bbb;text-decoration:underline;text-underline-offset:2px}.lg a:hover{color:#fff}
 /* footer */
 footer{background:#070707;border-top:1px solid var(--ln);padding:56px 0 30px;font-size:15px;color:var(--mu)}
 .ft{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:28px}
-.ft h4{font-family:'Barlow Condensed',sans-serif;font-size:13px;letter-spacing:.3em;text-transform:uppercase;color:var(--o);margin-bottom:12px}
+.ft h3{font-family:'Barlow Condensed',sans-serif;font-size:13px;letter-spacing:.3em;text-transform:uppercase;color:var(--o);margin-bottom:12px}
 .ft a{display:flex;align-items:center;min-height:36px;text-decoration:none;color:#bbb}.ft a:hover{color:#fff}
-.legal{margin-top:34px;padding-top:20px;border-top:1px solid var(--ln);display:flex;flex-wrap:wrap;gap:10px 24px;justify-content:space-between;font-size:13px}
-.credits{font-size:12px;color:#6f6f6f;margin-top:14px}
+.legal{margin-top:34px;padding-top:20px;border-top:1px solid var(--ln);display:flex;flex-wrap:wrap;gap:10px 24px;justify-content:space-between;align-items:center;font-size:13px}
+.credits{font-size:12px;color:#9a9a9a;margin-top:14px}
 .wa-f{position:fixed;right:18px;bottom:18px;z-index:40;width:58px;height:58px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 24px rgba(0,0,0,.4)}
 .wa-f svg{width:30px;height:30px;fill:#fff}
 @media(max-width:960px){.nl{display:none}.burger{display:flex}.story{grid-template-columns:1fr;gap:28px}.story img{height:340px}.wy-grid{grid-template-columns:1fr 1fr}.ac-grid,.info{grid-template-columns:1fr}.ft{grid-template-columns:1fr 1fr}}
@@ -138,6 +143,7 @@ footer{background:#070707;border-top:1px solid var(--ln);padding:56px 0 30px;fon
 </style>
 </head>
 <body>
+<a class="skip" href="#main">Skip to content</a>
 <nav class="nav" aria-label="Main">
   <a class="logo" href="https://jetcab.mx/en/" aria-label="JETCAB">JET<span>CAB</span></a>
   <div class="nl">
@@ -148,9 +154,9 @@ footer{background:#070707;border-top:1px solid var(--ln);padding:56px 0 30px;fon
     <a href="https://jetcab.mx/vuelos-privados-a-espana/" hreflang="es">ES</a>
     <a class="btn btn-o" href="https://wa.me/527291081200?text=Hi%20JETCAB%2C%20I%27d%20like%20a%20quote%20for%20a%20private%20jet%20to%20Spain." target="_blank" rel="noopener">Get a quote</a>
   </div>
-  <button class="burger" id="burger" aria-label="Open menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
+  <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="drawer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
 </nav>
-<div class="drawer" id="drawer" aria-label="Menu">
+<nav class="drawer" id="drawer" aria-label="Menu">
   <button class="x" id="drawer-close" aria-label="Close menu">&times;</button>
   <a href="https://jetcab.mx/en/">Home</a>
   <a href="https://jetcab.mx/en/#destinations">Destinations</a>
@@ -160,7 +166,8 @@ footer{background:#070707;border-top:1px solid var(--ln);padding:56px 0 30px;fon
   
   <a href="https://jetcab.mx/vuelos-privados-a-espana/" hreflang="es">Español</a>
   <a href="https://wa.me/527291081200?text=Hi%20JETCAB%2C%20I%27d%20like%20a%20quote%20for%20a%20private%20jet%20to%20Spain." target="_blank" rel="noopener" style="color:var(--o)">Get a quote</a>
-</div>
+</nav>
+<main id="main" tabindex="-1">
 
 <header class="hero">
   <img src="https://jetcab.mx/wp-content/uploads/2024/10/vuelos-privados-a-espana-1-1024x626.jpg" srcset="https://jetcab.mx/wp-content/uploads/2024/10/vuelos-privados-a-espana-1-768x469.jpg 768w, https://jetcab.mx/wp-content/uploads/2024/10/vuelos-privados-a-espana-1-1024x626.jpg 1024w, https://jetcab.mx/wp-content/uploads/2024/10/vuelos-privados-a-espana-1-1536x938.jpg 1536w, https://jetcab.mx/wp-content/uploads/2024/10/vuelos-privados-a-espana-1-2048x1251.jpg 2048w, https://jetcab.mx/wp-content/uploads/2024/10/vuelos-privados-a-espana-1-scaled.jpg 2560w" sizes="100vw" alt="Madrid and Barcelona, Spain, private jet charter destination from Mexico City" width="1800" height="1100" fetchpriority="high">
@@ -196,7 +203,7 @@ footer{background:#070707;border-top:1px solid var(--ln);padding:56px 0 30px;fon
 
 <section class="sec" style="background:var(--bg2)"><div class="wrap">
   <p class="k">Why fly private</p><h2>Why charter a private jet to Spain</h2>
-  <div class="wy-grid"><div class="wy"><span class="wy-n">01</span><h3>Nonstop across the Atlantic</h3><p>The Gulfstream GV and Global Express have the range to fly from Toluca to Madrid or Barcelona in about 11 hours without a fuel stop. You board once in Mexico and step off in Spain, with your luggage in the same hold the whole way.</p></div><div class="wy"><span class="wy-n">02</span><h3>Room for up to 16</h3><p>Long-range cabins carry up to 16 passengers with space to work, dine and sleep. A family heading to a summer villa, or a board traveling to a week of meetings in Madrid, crosses the Atlantic together with every suitcase aboard.</p></div><div class="wy"><span class="wy-n">03</span><h3>Permits handled end to end</h3><p>Transatlantic flights need overflight permits across several countries and arrival coordination in Spain. JETCAB arranges them together with handling at your Spanish airport. Allow 48 to 72 hours from confirmation so every clearance is in place before departure.</p></div><div class="wy"><span class="wy-n">04</span><h3>One price, all included</h3><p>Long-range charters to Spain start at $100,000 USD one way for the whole aircraft, with crew, fuel, catering and permits included. Other aircraft, return legs and multi-city itineraries are quoted on WhatsApp within 30 minutes of your request.</p></div></div>
+  <div class="wy-grid"><div class="wy"><span class="wy-n">01</span><h3>Nonstop across the Atlantic</h3><p>The Gulfstream GV and Global Express have the range to fly from Toluca to Madrid or Barcelona in about 11 hours without a fuel stop. You board once in Mexico and step off in Spain, with your luggage in the same hold the whole way.</p></div><div class="wy"><span class="wy-n">02</span><h3>Room for up to 16</h3><p>Long-range cabins carry up to 16 passengers with space to work, dine and sleep. A family heading to a summer villa, or a board traveling to a week of meetings in Madrid, crosses the Atlantic together with every suitcase aboard.</p></div><div class="wy"><span class="wy-n">03</span><h3>Permits handled end to end</h3><p>Transatlantic flights need overflight permits across several countries and arrival coordination in Spain. JETCAB arranges them together with handling at your Spanish airport. Allow 48 to 72 hours from confirmation so every clearance is in place before departure.</p></div><div class="wy"><span class="wy-n">04</span><h3>One price for the whole aircraft</h3><p>Long-range charters to Spain start at $100,000 USD one way for the whole aircraft, with crew, fuel, catering and permits included. Other aircraft, return legs and multi-city itineraries are quoted on WhatsApp within 30 minutes of your request.</p></div></div>
 </div></section>
 
 <section class="sec"><div class="wrap">
@@ -209,6 +216,7 @@ footer{background:#070707;border-top:1px solid var(--ln);padding:56px 0 30px;fon
   <p class="lead">One way, per whole aircraft, not per seat. Every price includes crew, fuel, catering, airport fees and permits, and is confirmed in writing within 30 minutes.</p>
   <div class="ac-grid"><article class="ac"><img src="https://jetcab.mx/wp-content/uploads/2024/11/Gulfstream-Gv-en-Renta.jpeg" srcset="https://jetcab.mx/wp-content/uploads/2024/11/Gulfstream-Gv-en-Renta.jpeg 738w" sizes="(max-width: 960px) 100vw, 50vw" alt="Gulfstream GV private jet charter to Spain" loading="lazy" width="800" height="500"><div class="ac-b"><h3>Gulfstream GV</h3><p>Long range · up to 16 passengers · nonstop</p><div class="ac-p">from $100,000 USD</div></div></article><article class="ac"><img src="https://jetcab.mx/wp-content/uploads/2024/11/Gulfstream-Gv-en-Renta.jpeg" srcset="https://jetcab.mx/wp-content/uploads/2024/11/Gulfstream-Gv-en-Renta.jpeg 738w" sizes="(max-width: 960px) 100vw, 50vw" alt="Global Express private jet charter to Spain" loading="lazy" width="800" height="500"><div class="ac-b"><h3>Global Express</h3><p>Long range · up to 16 passengers</p><div class="ac-p">Quote in 30 min</div></div></article><article class="ac"><img src="https://jetcab.mx/wp-content/uploads/2024/11/Challenger-605-en-renta.jpeg" srcset="https://jetcab.mx/wp-content/uploads/2024/11/Challenger-605-en-renta-768x384.jpeg 768w, https://jetcab.mx/wp-content/uploads/2024/11/Challenger-605-en-renta.jpeg 783w" sizes="(max-width: 960px) 100vw, 50vw" alt="Challenger 605 private jet charter to Spain" loading="lazy" width="800" height="500"><div class="ac-b"><h3>Challenger 605</h3><p>Midsize · up to 12 passengers · technical stop</p><div class="ac-p">Quote in 30 min</div></div></article></div>
   <div class="incl"><span>Crew</span><span>Fuel</span><span>Catering</span><span>Permits</span><span>Private terminal</span><span>Quote in 30 min</span></div>
+  <p class="disc">Reference prices per aircraft, one way, in USD, crew and fuel included. VAT (IVA) not included; overnight crew stays, itinerary changes or special catering are itemized in your quote. Subject to availability.</p>
 </div></section>
 
 <section class="sec"><div class="wrap">
@@ -243,21 +251,22 @@ footer{background:#070707;border-top:1px solid var(--ln);padding:56px 0 30px;fon
   <p class="k">More routes</p><h2>Private jet destinations from Mexico City</h2>
   <div class="rel"><a href="https://jetcab.mx/private-jet-mexico-city-cancun/"><span>Cancún</span><small>2h 15m</small></a><a href="https://jetcab.mx/private-jet-mexico-city-los-cabos/"><span>Los Cabos</span><small>2h 30m</small></a><a href="https://jetcab.mx/private-jet-mexico-city-puerto-vallarta/"><span>Puerto Vallarta</span><small>1h 45m</small></a><a href="https://jetcab.mx/private-jet-mexico-city-monterrey/"><span>Monterrey</span><small>1h 15m</small></a><a href="https://jetcab.mx/private-jet-mexico-city-guadalajara/"><span>Guadalajara</span><small>50 min</small></a><a href="https://jetcab.mx/private-jet-mexico-city-acapulco/"><span>Acapulco</span><small>45 min</small></a><a href="https://jetcab.mx/private-jet-mexico-city-queretaro/"><span>Querétaro</span><small>35 min</small></a><a href="https://jetcab.mx/private-jet-toluca-airport/"><span>Toluca</span><small>Home base</small></a><a href="https://jetcab.mx/private-jet-mexico-city/"><span>Mexico City</span><small>Departures</small></a><a href="https://jetcab.mx/private-jet-mexico-city-new-york/"><span>New York</span><small>5h 30m</small></a><a href="https://jetcab.mx/private-jet-mexico-city-miami/"><span>Miami</span><small>3h 30m</small></a><a href="https://jetcab.mx/private-jet-mexico-city-houston/"><span>Houston</span><small>2h 45m</small></a><a href="https://jetcab.mx/private-jet-mexico-city-los-angeles/"><span>Los Angeles</span><small>3h 45m</small></a><a href="https://jetcab.mx/private-jet-mexico-city-las-vegas/"><span>Las Vegas</span><small>3h 50m</small></a><a href="https://jetcab.mx/private-jet-mexico-city-san-diego/"><span>San Diego</span><small>3h 20m</small></a><a href="https://jetcab.mx/private-jet-mexico-city-tijuana/"><span>Tijuana</span><small>3h 10m</small></a><a href="https://jetcab.mx/private-jet-mexico-city-mcallen/"><span>McAllen</span><small>1h 30m</small></a><a href="https://jetcab.mx/private-jet-mexico-to-usa/"><span>United States</span><small>From 1h 30m</small></a><a href="https://jetcab.mx/private-jet-mexico-city-havana/"><span>Havana</span><small>2h 30m</small></a><a href="https://jetcab.mx/private-jet-mexico-to-europe/"><span>Europe</span><small>10.5 to 13h</small></a></div>
 </div></section>
+</main>
 
 <footer><div class="wrap">
   <div class="ft">
     <div><a class="logo" href="https://jetcab.mx/en/">JET<span>CAB</span></a><p style="margin-top:10px">Private jet and helicopter charter from Toluca International Airport since 1999.</p></div>
-    <div><h4>Charter</h4><a href="https://jetcab.mx/en/">Private jet charter Mexico</a><a href="https://jetcab.mx/helicopter-charter-mexico-city/">Helicopter charter</a><a href="https://jetcab.mx/private-jet-destination-guide/">Destination guide</a><a href="https://jetcab.mx/private-jet-charter-mexico-guide/">Charter guide</a></div><div><h4>Learn</h4><a href="https://jetcab.mx/private-jet-guides/">Blog</a><a href="https://jetcab.mx/private-jet-faq/">FAQ</a><a href="https://jetcab.mx/vuelos-privados-a-espana/">Versión en español</a></div>
-    <div><h4>Contact</h4><a href="tel:+527291081200">+52 729 108 1200</a><a href="https://wa.me/527291081200?text=Hi%20JETCAB%2C%20I%27d%20like%20a%20quote%20for%20a%20private%20jet%20to%20Spain." target="_blank" rel="noopener">WhatsApp 24/7</a><a href="mailto:contacto@jetcab.mx">contacto@jetcab.mx</a></div>
+    <div><h3>Charter</h3><a href="https://jetcab.mx/en/">Private jet charter Mexico</a><a href="https://jetcab.mx/helicopter-charter-mexico-city/">Helicopter charter</a><a href="https://jetcab.mx/private-jet-destination-guide/">Destination guide</a><a href="https://jetcab.mx/private-jet-charter-mexico-guide/">Charter guide</a></div><div><h3>Learn</h3><a href="https://jetcab.mx/private-jet-guides/">Blog</a><a href="https://jetcab.mx/private-jet-faq/">FAQ</a><a href="https://jetcab.mx/vuelos-privados-a-espana/">Versión en español</a></div>
+    <div><h3>Contact</h3><a href="tel:+527291081200">+52 729 108 1200</a><a href="https://wa.me/527291081200?text=Hi%20JETCAB%2C%20I%27d%20like%20a%20quote%20for%20a%20private%20jet%20to%20Spain." target="_blank" rel="noopener">WhatsApp 24/7</a><a href="mailto:contacto@jetcab.mx">contacto@jetcab.mx</a></div>
   </div>
-  <div class="legal"><span>&copy; <span id="yr">2026</span> JETCAB. Toluca International Airport, Hangar 62, Mexico.</span><a href="https://rankeo.agency" style="text-decoration:none">Website &amp; SEO by Rankeo</a></div>
+  <div class="legal"><span>&copy; <span id="yr">2026</span> JETCAB. Toluca International Airport, Hangar 62, Mexico.</span><nav class="lg" aria-label="Legal"><a href="https://jetcab.mx/terms/">Terms</a><a href="https://jetcab.mx/privacy/">Privacy</a><a href="#cookie-settings">Cookie settings</a><a href="https://jetcab.mx/politica-de-cancelacion/" hreflang="es">Cancellation policy (Spanish)</a></nav><a href="https://rankeo.agency" style="text-decoration:none">Website &amp; SEO by Rankeo</a></div>
   <p class="credits">Photos of Madrid: Fernando Pascullo, CC BY-SA 4.0; Barcelona: M McBey, CC BY 2.0; Marbella: Milan Trninic (www.wedesignmarbella.com), CC BY-SA 4.0; Ibiza: Joselodos, CC0. Wikimedia Commons.</p>
-</div></footer>
-
+</div>
 <a class="wa-f" href="https://wa.me/527291081200?text=Hi%20JETCAB%2C%20I%27d%20like%20a%20quote%20for%20a%20private%20jet%20to%20Spain." target="_blank" rel="noopener" aria-label="Quote on WhatsApp"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+</footer>
 <script>
 (function(){var b=document.getElementById('burger'),d=document.getElementById('drawer'),c=document.getElementById('drawer-close');
-function op(){d.classList.add('open');document.body.style.overflow='hidden';}function cl(){d.classList.remove('open');document.body.style.overflow='';}
+function op(){d.classList.add('open');b.setAttribute('aria-expanded','true');document.body.style.overflow='hidden';if(c)c.focus();}function cl(){if(!d.classList.contains('open'))return;d.classList.remove('open');b.setAttribute('aria-expanded','false');document.body.style.overflow='';b.focus();}
 if(b)b.addEventListener('click',op);if(c)c.addEventListener('click',cl);d.querySelectorAll('a').forEach(function(a){a.addEventListener('click',cl);});
 document.addEventListener('keydown',function(e){if(e.key==='Escape')cl();});
 var y=document.getElementById('yr');if(y)y.textContent=new Date().getFullYear();})();

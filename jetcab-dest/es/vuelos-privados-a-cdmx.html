@@ -40,17 +40,17 @@ h3{font-size:22px;font-weight:700;color:#fff;line-height:1.2}
 .k{font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:700;letter-spacing:.3em;text-transform:uppercase;color:var(--o);margin-bottom:12px}
 .lead{color:#cfcfcf;max-width:760px}
 .btn{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:0 28px;border-radius:4px;font-family:'Barlow Condensed',sans-serif;font-size:17px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;transition:transform .2s,background .2s}
-.btn-o{background:var(--o);color:#fff}.btn-o:hover{background:#ff6a2b;transform:translateY(-1px)}
+.btn-o{background:var(--o);color:#111}.btn-o:hover{background:#ff6a2b;transform:translateY(-1px)}
 .btn-g{border:1px solid rgba(255,255,255,.35);color:#fff}.btn-g:hover{border-color:#fff}
 /* nav */
 .nav{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;align-items:center;justify-content:space-between;padding:0 20px;height:68px;background:rgba(11,11,11,.82);backdrop-filter:blur(14px);border-bottom:1px solid var(--ln)}
 .logo{font-family:'Barlow Condensed',sans-serif;font-size:26px;font-weight:800;letter-spacing:.18em;color:#fff;text-decoration:none;display:inline-flex;align-items:center;min-height:44px}.logo span{color:var(--o)}
 .nl{display:flex;gap:26px;align-items:center}.nl a{font-size:14px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;color:#ddd;display:inline-flex;align-items:center;min-height:44px}.nl a:hover{color:var(--o)}
-.nl .btn{min-height:42px;padding:0 18px;font-size:15px;color:#fff}
+.nl .btn{min-height:42px;padding:0 18px;font-size:15px}.nl .btn-o{color:#111}
 .burger{display:none;width:48px;height:48px;background:none;border:1px solid var(--ln);border-radius:4px;color:#fff;cursor:pointer}
 .burger svg{width:22px;height:22px;margin:auto}
-.drawer{position:fixed;inset:0;z-index:60;background:#0B0B0B;display:flex;flex-direction:column;padding:90px 28px 30px;transform:translateX(100%);transition:transform .3s}
-.drawer.open{transform:none}.drawer a{font-family:'Barlow Condensed',sans-serif;font-size:30px;font-weight:700;text-transform:uppercase;color:#fff;text-decoration:none;padding:10px 0;border-bottom:1px solid var(--ln);min-height:44px}
+.drawer{position:fixed;inset:0;z-index:60;background:#0B0B0B;display:flex;flex-direction:column;padding:90px 28px 30px;transform:translateX(100%);visibility:hidden;transition:transform .3s,visibility 0s .3s}
+.drawer.open{transform:none;visibility:visible;transition:transform .3s}.drawer a{font-family:'Barlow Condensed',sans-serif;font-size:30px;font-weight:700;text-transform:uppercase;color:#fff;text-decoration:none;padding:10px 0;border-bottom:1px solid var(--ln);min-height:44px}
 .drawer .x{position:absolute;top:12px;right:16px;width:48px;height:48px;background:none;border:0;color:#fff;font-size:34px;cursor:pointer}
 /* hero */
 .hero{position:relative;min-height:92vh;display:flex;align-items:flex-end;padding:120px 0 70px;overflow:hidden}
@@ -123,13 +123,18 @@ h3{font-size:22px;font-weight:700;color:#fff;line-height:1.2}
 .rel a{display:flex;flex-direction:column;justify-content:center;min-height:64px;padding:12px 16px;border:1px solid var(--ln);border-radius:6px;text-decoration:none;transition:border-color .2s}
 .rel a:hover{border-color:var(--o)}.rel span{font-weight:600;color:#fff}.rel small{color:var(--mu);font-size:13px}
 .gd{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px;margin-top:26px}.gd a{display:block;padding:18px 20px;border:1px solid var(--ln);border-radius:6px;text-decoration:none;color:#fff;font-weight:600;min-height:44px}.gd a:hover{border-color:var(--o)}.gd small{display:block;color:var(--o);font-size:12px;letter-spacing:.2em;text-transform:uppercase;margin-bottom:6px}
+/* skip link, inline links, legal */
+.skip{position:fixed;left:12px;top:-60px;z-index:100;background:#fff;color:#111;padding:12px 18px;border-radius:4px;font-weight:600;text-decoration:none}.skip:focus{top:12px}
+main p a,.answer a,.fq p a,.info p a{text-decoration:underline;text-underline-offset:2px}
+.disc{font-size:14px;line-height:1.55;color:#b8b8b8;max-width:760px;margin-top:16px}
+.lg{display:flex;flex-wrap:wrap;gap:4px 20px}.lg a{display:inline-flex;align-items:center;min-height:32px;color:#bbb;text-decoration:underline;text-underline-offset:2px}.lg a:hover{color:#fff}
 /* footer */
 footer{background:#070707;border-top:1px solid var(--ln);padding:56px 0 30px;font-size:15px;color:var(--mu)}
 .ft{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:28px}
-.ft h4{font-family:'Barlow Condensed',sans-serif;font-size:13px;letter-spacing:.3em;text-transform:uppercase;color:var(--o);margin-bottom:12px}
+.ft h3{font-family:'Barlow Condensed',sans-serif;font-size:13px;letter-spacing:.3em;text-transform:uppercase;color:var(--o);margin-bottom:12px}
 .ft a{display:flex;align-items:center;min-height:36px;text-decoration:none;color:#bbb}.ft a:hover{color:#fff}
-.legal{margin-top:34px;padding-top:20px;border-top:1px solid var(--ln);display:flex;flex-wrap:wrap;gap:10px 24px;justify-content:space-between;font-size:13px}
-.credits{font-size:12px;color:#6f6f6f;margin-top:14px}
+.legal{margin-top:34px;padding-top:20px;border-top:1px solid var(--ln);display:flex;flex-wrap:wrap;gap:10px 24px;justify-content:space-between;align-items:center;font-size:13px}
+.credits{font-size:12px;color:#9a9a9a;margin-top:14px}
 .wa-f{position:fixed;right:18px;bottom:18px;z-index:40;width:58px;height:58px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 24px rgba(0,0,0,.4)}
 .wa-f svg{width:30px;height:30px;fill:#fff}
 @media(max-width:960px){.nl{display:none}.burger{display:flex}.story{grid-template-columns:1fr;gap:28px}.story img{height:340px}.wy-grid{grid-template-columns:1fr 1fr}.ac-grid,.info{grid-template-columns:1fr}.ft{grid-template-columns:1fr 1fr}}
@@ -138,6 +143,7 @@ footer{background:#070707;border-top:1px solid var(--ln);padding:56px 0 30px;fon
 </style>
 </head>
 <body>
+<a class="skip" href="#main">Saltar al contenido</a>
 <nav class="nav" aria-label="Main">
   <a class="logo" href="https://jetcab.mx/" aria-label="JETCAB">JET<span>CAB</span></a>
   <div class="nl">
@@ -150,9 +156,9 @@ footer{background:#070707;border-top:1px solid var(--ln);padding:56px 0 30px;fon
     <a href="https://jetcab.mx/private-jet-mexico-city/" hreflang="en">EN</a>
     <a class="btn btn-o" href="https://wa.me/527291081200?text=Hola%20JETCAB%2C%20quiero%20cotizar%20un%20vuelo%20privado%20a%20Ciudad%20de%20M%C3%A9xico." target="_blank" rel="noopener">Cotizar</a>
   </div>
-  <button class="burger" id="burger" aria-label="Abrir menú"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
+  <button class="burger" id="burger" aria-label="Abrir menú" aria-expanded="false" aria-controls="drawer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
 </nav>
-<div class="drawer" id="drawer" aria-label="Menu">
+<nav class="drawer" id="drawer" aria-label="Menu">
   <button class="x" id="drawer-close" aria-label="Cerrar menú">&times;</button>
   <a href="https://jetcab.mx/">Inicio</a>
   <a href="https://jetcab.mx/flota/">Nuestra flota</a>
@@ -163,7 +169,8 @@ footer{background:#070707;border-top:1px solid var(--ln);padding:56px 0 30px;fon
   
   <a href="https://jetcab.mx/private-jet-mexico-city/" hreflang="en">English</a>
   <a href="https://wa.me/527291081200?text=Hola%20JETCAB%2C%20quiero%20cotizar%20un%20vuelo%20privado%20a%20Ciudad%20de%20M%C3%A9xico." target="_blank" rel="noopener" style="color:var(--o)">Cotizar</a>
-</div>
+</nav>
+<main id="main" tabindex="-1">
 
 <header class="hero">
   <img src="https://jetcab.mx/wp-content/uploads/2024/10/vuelos-privados-a-cdmx-1024x576.jpg" srcset="https://jetcab.mx/wp-content/uploads/2024/10/vuelos-privados-a-cdmx-768x432.jpg 768w, https://jetcab.mx/wp-content/uploads/2024/10/vuelos-privados-a-cdmx-1024x576.jpg 1024w, https://jetcab.mx/wp-content/uploads/2024/10/vuelos-privados-a-cdmx-1536x864.jpg 1536w, https://jetcab.mx/wp-content/uploads/2024/10/vuelos-privados-a-cdmx-2048x1152.jpg 2048w, https://jetcab.mx/wp-content/uploads/2024/10/vuelos-privados-a-cdmx-scaled.jpg 2560w" sizes="100vw" alt="Ciudad de México, CDMX, destino en jet privado desde la Ciudad de México" width="1800" height="1100" fetchpriority="high">
@@ -206,6 +213,7 @@ footer{background:#070707;border-top:1px solid var(--ln);padding:56px 0 30px;fon
   <p class="lead">Precio por trayecto sencillo y por aeronave completa, no por asiento. Incluye tripulación, combustible, catering, derechos de aeropuerto y permisos, y se confirma por escrito en 30 minutos.</p>
   <div class="pr"><div class="pr-r"><span>Guadalajara · 50 min</span><b>desde $1,800 USD</b></div><div class="pr-r"><span>Monterrey · 1h 15m</span><b>desde $2,200 USD</b></div><div class="pr-r"><span>Cancún · 2h 15m</span><b>desde $3,200 USD</b></div><div class="pr-r"><span>Miami · 3h 30m</span><b>desde $4,800 USD</b></div></div>
   <div class="incl"><span>Tripulación</span><span>Combustible</span><span>Catering</span><span>Permisos</span><span>Terminal privada</span><span>Cotización en 30 min</span></div>
+  <p class="disc">Precios de referencia por aeronave, viaje sencillo, en USD, con tripulación y combustible. No incluyen IVA; pernocta de tripulación, cambios de itinerario o catering especial se detallan en la cotización. Sujetos a disponibilidad.</p>
 </div></section>
 
 <section class="sec"><div class="wrap">
@@ -240,21 +248,22 @@ footer{background:#070707;border-top:1px solid var(--ln);padding:56px 0 30px;fon
   <p class="k">Más rutas</p><h2>Destinos en jet privado desde la Ciudad de México</h2>
   <div class="rel"><a href="https://jetcab.mx/vuelos-privados-a-cancun/"><span>Cancún</span><small>2h 15m</small></a><a href="https://jetcab.mx/vuelos-privados-a-los-cabos/"><span>Los Cabos</span><small>2h 30m</small></a><a href="https://jetcab.mx/vuelos-privados-a-puerto-vallarta/"><span>Puerto Vallarta</span><small>1h 45m</small></a><a href="https://jetcab.mx/vuelos-privados-a-monterrey/"><span>Monterrey</span><small>1h 15m</small></a><a href="https://jetcab.mx/vuelos-privados-a-guadalajara/"><span>Guadalajara</span><small>50 min</small></a><a href="https://jetcab.mx/vuelos-privados-a-acapulco/"><span>Acapulco</span><small>45 min</small></a><a href="https://jetcab.mx/vuelos-privados-a-queretaro-jetcab/"><span>Querétaro</span><small>35 min</small></a><a href="https://jetcab.mx/vuelos-privados-toluca/"><span>Toluca</span><small>Base JETCAB</small></a><a href="https://jetcab.mx/vuelo-privado-cdmx-nueva-york/"><span>Nueva York</span><small>5h 30m</small></a><a href="https://jetcab.mx/vuelo-privado-cdmx-miami/"><span>Miami</span><small>3h 30m</small></a><a href="https://jetcab.mx/vuelo-privado-cdmx-houston/"><span>Houston</span><small>2h 45m</small></a><a href="https://jetcab.mx/vuelo-privado-cdmx-los-angeles/"><span>Los Ángeles</span><small>3h 45m</small></a><a href="https://jetcab.mx/vuelos-privados-a-las-vegas/"><span>Las Vegas</span><small>3h 50m</small></a><a href="https://jetcab.mx/vuelos-privados-a-san-diego/"><span>San Diego</span><small>3h 20m</small></a><a href="https://jetcab.mx/vuelos-privados-a-tijuana/"><span>Tijuana</span><small>3h 10m</small></a><a href="https://jetcab.mx/vuelos-privados-a-mcallen/"><span>McAllen</span><small>1h 30m</small></a><a href="https://jetcab.mx/vuelos-privados-a-estados-unidos/"><span>Estados Unidos</span><small>Desde 1h 30m</small></a><a href="https://jetcab.mx/vuelos-privados-a-cuba/"><span>La Habana</span><small>2h 30m</small></a><a href="https://jetcab.mx/vuelos-privados-a-espana/"><span>España</span><small>~11 h</small></a><a href="https://jetcab.mx/vuelos-privados-a-europa/"><span>Europa</span><small>10.5 a 13 h</small></a></div>
 </div></section>
+</main>
 
 <footer><div class="wrap">
   <div class="ft">
     <div><a class="logo" href="https://jetcab.mx/">JET<span>CAB</span></a><p style="margin-top:10px">Renta de jets privados y helicópteros desde el Aeropuerto Internacional de Toluca desde 1999.</p></div>
-    <div><h4>Servicios</h4><a href="https://jetcab.mx/renta-de-aviones-privados/">Renta de aviones privados</a><a href="https://jetcab.mx/precios-jet-privado/">Precios de jet privado</a><a href="https://jetcab.mx/helicopteros-en-renta-cdmx/">Renta de helicópteros</a><a href="https://jetcab.mx/flota/ambulancia-aerea/">Ambulancia aérea</a></div><div><h4>Aprenda</h4><a href="https://jetcab.mx/blog/">Blog</a><a href="https://jetcab.mx/preguntas-frecuentes/">Preguntas frecuentes</a><a href="https://jetcab.mx/destinos/">Destinos</a><a href="https://jetcab.mx/private-jet-mexico-city/">English version</a></div>
-    <div><h4>Contacto</h4><a href="tel:+527291081200">+52 729 108 1200</a><a href="https://wa.me/527291081200?text=Hola%20JETCAB%2C%20quiero%20cotizar%20un%20vuelo%20privado%20a%20Ciudad%20de%20M%C3%A9xico." target="_blank" rel="noopener">WhatsApp 24/7</a><a href="mailto:contacto@jetcab.mx">contacto@jetcab.mx</a></div>
+    <div><h3>Servicios</h3><a href="https://jetcab.mx/renta-de-aviones-privados/">Renta de aviones privados</a><a href="https://jetcab.mx/precios-jet-privado/">Precios de jet privado</a><a href="https://jetcab.mx/helicopteros-en-renta-cdmx/">Renta de helicópteros</a><a href="https://jetcab.mx/flota/ambulancia-aerea/">Ambulancia aérea</a></div><div><h3>Aprenda</h3><a href="https://jetcab.mx/blog/">Blog</a><a href="https://jetcab.mx/preguntas-frecuentes/">Preguntas frecuentes</a><a href="https://jetcab.mx/destinos/">Destinos</a><a href="https://jetcab.mx/private-jet-mexico-city/">English version</a></div>
+    <div><h3>Contacto</h3><a href="tel:+527291081200">+52 729 108 1200</a><a href="https://wa.me/527291081200?text=Hola%20JETCAB%2C%20quiero%20cotizar%20un%20vuelo%20privado%20a%20Ciudad%20de%20M%C3%A9xico." target="_blank" rel="noopener">WhatsApp 24/7</a><a href="mailto:contacto@jetcab.mx">contacto@jetcab.mx</a></div>
   </div>
-  <div class="legal"><span>&copy; <span id="yr">2026</span> JETCAB. Aeropuerto Internacional de Toluca, Hangar 62, México.</span><a href="https://rankeo.agency" style="text-decoration:none">Sitio web y SEO por Rankeo</a></div>
+  <div class="legal"><span>&copy; <span id="yr">2026</span> JETCAB. Aeropuerto Internacional de Toluca, Hangar 62, México.</span><nav class="lg" aria-label="Legal"><a href="https://jetcab.mx/terms/" hreflang="en">Términos (en inglés)</a><a href="https://jetcab.mx/aviso-de-privacidad/">Aviso de privacidad</a><a href="https://jetcab.mx/politica-de-cookies/">Política de cookies</a><a href="#cookie-settings">Configuración de cookies</a><a href="https://jetcab.mx/politica-de-cancelacion/">Política de cancelación</a></nav><a href="https://rankeo.agency" style="text-decoration:none">Sitio web y SEO por Rankeo</a></div>
   <p class="credits">Fotos de Polanco: Raystormxc, CC BY-SA 3.0; Paseo de la Reforma: Fernando Flores, CC BY-SA 2.0; Chapultepec: EneasMx, CC BY-SA 4.0; Santa Fe: Fernando montes17, CC BY-SA 4.0. Wikimedia Commons.</p>
-</div></footer>
-
+</div>
 <a class="wa-f" href="https://wa.me/527291081200?text=Hola%20JETCAB%2C%20quiero%20cotizar%20un%20vuelo%20privado%20a%20Ciudad%20de%20M%C3%A9xico." target="_blank" rel="noopener" aria-label="Cotizar por WhatsApp"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+</footer>
 <script>
 (function(){var b=document.getElementById('burger'),d=document.getElementById('drawer'),c=document.getElementById('drawer-close');
-function op(){d.classList.add('open');document.body.style.overflow='hidden';}function cl(){d.classList.remove('open');document.body.style.overflow='';}
+function op(){d.classList.add('open');b.setAttribute('aria-expanded','true');document.body.style.overflow='hidden';if(c)c.focus();}function cl(){if(!d.classList.contains('open'))return;d.classList.remove('open');b.setAttribute('aria-expanded','false');document.body.style.overflow='';b.focus();}
 if(b)b.addEventListener('click',op);if(c)c.addEventListener('click',cl);d.querySelectorAll('a').forEach(function(a){a.addEventListener('click',cl);});
 document.addEventListener('keydown',function(e){if(e.key==='Escape')cl();});
 var y=document.getElementById('yr');if(y)y.textContent=new Date().getFullYear();})();

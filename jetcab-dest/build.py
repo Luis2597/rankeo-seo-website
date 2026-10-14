@@ -46,7 +46,10 @@ ES_NAME = {'cancun': 'Cancún', 'loscabos': 'Los Cabos', 'puertovallarta': 'Puer
 ES_TIME = {'Home base': 'Base JETCAB', 'Departures': 'Salidas', 'From 1h 30m': 'Desde 1h 30m', '10.5 to 13h': '10.5 a 13 h', '~11h': '~11 h'}
 
 L = {
- 'en': dict(LANG='en', LOCALE='en_US', ALT='es', ALTSHORT='ES', ALTLONG='Español', QUOTE='Get a quote', MENU='Open menu', CLOSE='Close menu',
+ 'en': dict(SKIP='Skip to content', LEGALNAV='Legal',
+            DISC='Reference prices per aircraft, one way, in USD, crew and fuel included. VAT (IVA) not included; overnight crew stays, itinerary changes or special catering are itemized in your quote. Subject to availability.',
+            LEGAL='<a href="https://jetcab.mx/terms/">Terms</a><a href="https://jetcab.mx/privacy/">Privacy</a><a href="#cookie-settings">Cookie settings</a><a href="https://jetcab.mx/politica-de-cancelacion/" hreflang="es">Cancellation policy (Spanish)</a>',
+            LANG='en', LOCALE='en_US', ALT='es', ALTSHORT='ES', ALTLONG='Español', QUOTE='Get a quote', MENU='Open menu', CLOSE='Close menu',
             QUOTE30='Get a quote in 30 minutes', SEEPRICES='See prices', TOLUCA='Toluca · Mexico City',
             TRUST='<span><b>25 years</b> flying from Toluca</span><span><b>2,000+</b> flights</span><span>AFAC permit</span><span>Jet <b>ready in 2h</b></span>',
             K1='The trip', K2='Why fly private', K3='Door to door', K4='Aircraft and prices', K5='At your destination', K6='Questions', K7='More routes',
@@ -64,7 +67,10 @@ L = {
             NAV=[('Destinations', 'https://jetcab.mx/en/#destinations'), ('Fleet', 'https://jetcab.mx/en/#fleet'), ('Blog', 'https://jetcab.mx/private-jet-guides/'), ('FAQ', 'https://jetcab.mx/private-jet-faq/')],
             FT=[('Charter', [('Private jet charter Mexico', 'https://jetcab.mx/en/'), ('Helicopter charter', 'https://jetcab.mx/helicopter-charter-mexico-city/'), ('Destination guide', 'https://jetcab.mx/private-jet-destination-guide/'), ('Charter guide', 'https://jetcab.mx/private-jet-charter-mexico-guide/')]),
                 ('Learn', [('Blog', 'https://jetcab.mx/private-jet-guides/'), ('FAQ', 'https://jetcab.mx/private-jet-faq/')])]),
- 'es': dict(LANG='es-MX', LOCALE='es_MX', ALT='en', ALTSHORT='EN', ALTLONG='English', QUOTE='Cotizar', MENU='Abrir menú', CLOSE='Cerrar menú',
+ 'es': dict(SKIP='Saltar al contenido', LEGALNAV='Legal',
+            DISC='Precios de referencia por aeronave, viaje sencillo, en USD, con tripulación y combustible. No incluyen IVA; pernocta de tripulación, cambios de itinerario o catering especial se detallan en la cotización. Sujetos a disponibilidad.',
+            LEGAL='<a href="https://jetcab.mx/terms/" hreflang="en">Términos (en inglés)</a><a href="https://jetcab.mx/aviso-de-privacidad/">Aviso de privacidad</a><a href="https://jetcab.mx/politica-de-cookies/">Política de cookies</a><a href="#cookie-settings">Configuración de cookies</a><a href="https://jetcab.mx/politica-de-cancelacion/">Política de cancelación</a>',
+            LANG='es-MX', LOCALE='es_MX', ALT='en', ALTSHORT='EN', ALTLONG='English', QUOTE='Cotizar', MENU='Abrir menú', CLOSE='Cerrar menú',
             QUOTE30='Cotizar en 30 minutos', SEEPRICES='Ver precios', TOLUCA='Toluca · Ciudad de México',
             TRUST='<span><b>25 años</b> volando desde Toluca</span><span><b>2,000+</b> vuelos</span><span>Permiso AFAC</span><span>Jet <b>listo en 2 h</b></span>',
             K1='El viaje', K2='Por qué volar privado', K3='De puerta a puerta', K4='Aeronaves y precios', K5='En su destino', K6='Preguntas', K7='Más rutas',
@@ -139,7 +145,7 @@ def page(i, c, pimgs, lang='en'):
     T = TEMPLATE if not d.get('hub') else re.sub(r'<div class="rb">.*?</div></div>\s*', '', TEMPLATE, flags=re.S)
     nav = ''.join('\n    <a href="%s">%s</a>' % (u, e(n)) for n, u in l['NAV'])
     drawer = ''.join('<a href="%s">%s</a>\n  ' % (u, e(n)) for n, u in ([('Home', l['HOME'])] if lang == 'en' else []) + l['NAV'])
-    ftcols = ''.join('<div><h4>%s</h4>%s</div>' % (e(h), ''.join('<a href="%s">%s</a>' % (u, e(n)) for n, u in items)) for h, items in l['FT'][:-1] + [(l['FT'][-1][0], l['FT'][-1][1] + [('Versión en español' if lang == 'en' else 'English version', alt_url)])])
+    ftcols = ''.join('<div><h3>%s</h3>%s</div>' % (e(h), ''.join('<a href="%s">%s</a>' % (u, e(n)) for n, u in items)) for h, items in l['FT'][:-1] + [(l['FT'][-1][0], l['FT'][-1][1] + [('Versión en español' if lang == 'en' else 'English version', alt_url)])])
     rep = {'{{BADGE}}': badge, '{{TITLE}}': e(c['title']), '{{META}}': e(c['meta']), '{{URL}}': url, '{{EN_URL}}': URL(i), '{{ES_URL}}': ES_URL(i), '{{ALT_URL}}': alt_url,
            '{{HOME}}': l['HOME'], '{{NAV}}': nav, '{{DRAWER}}': drawer, '{{FTCOLS}}': ftcols, '{{GUIDES}}': '<!--JC_GUIDES-->',
            '{{HERO}}': e(hero), '{{LD}}': ldtxt.replace('</', '<\\/'), '{{H1}}': e(c['h1']), '{{SUB}}': e(c['hero_sub']), '{{WA}}': e(wa), '{{TO}}': e(d['iata']), '{{TIME}}': e(tlabel(i)), '{{NAME}}': e(name),
@@ -149,7 +155,7 @@ def page(i, c, pimgs, lang='en'):
            '{{DOC_T}}': e(c['docs_title']), '{{DOC}}': e(c['docs']), '{{FAQ_T}}': e(l['FAQT'] % c['dest']), '{{FAQ}}': faq, '{{CTA_T}}': e(c['cta_title']), '{{CTA_S}}': e(c['cta_sub']),
            '{{REL}}': rel, '{{CREDITS}}': (l['PHOTOS'] % credits) if credits else '',
            '{{L_HEROALT}}': e(l['HEROALT'] % c['dest_full']), '{{L_STORYALT}}': e(l['STORYALT'] % c['dest_full'])}
-    for k in ['LANG', 'LOCALE', 'ALT', 'ALTSHORT', 'ALTLONG', 'QUOTE', 'MENU', 'CLOSE', 'QUOTE30', 'SEEPRICES', 'TOLUCA', 'TRUST', 'K1', 'K2', 'K3', 'K4', 'K5', 'K6', 'K7', 'PRLEAD', 'INCL', 'QUOTEWA', 'CALL', 'RELH2', 'CONTACT', 'FTP', 'ADDR', 'RANKEO']:
+    for k in ['LANG', 'LOCALE', 'ALT', 'ALTSHORT', 'ALTLONG', 'QUOTE', 'MENU', 'CLOSE', 'QUOTE30', 'SEEPRICES', 'TOLUCA', 'TRUST', 'K1', 'K2', 'K3', 'K4', 'K5', 'K6', 'K7', 'PRLEAD', 'INCL', 'QUOTEWA', 'CALL', 'RELH2', 'CONTACT', 'FTP', 'ADDR', 'RANKEO', 'SKIP', 'LEGALNAV', 'DISC', 'LEGAL']:
         rep['{{L_%s}}' % k] = l[k]
     for k, v in rep.items(): T = T.replace(k, v)
     assert '{{' not in T, re.findall(r'\{\{\w+\}\}', T)
