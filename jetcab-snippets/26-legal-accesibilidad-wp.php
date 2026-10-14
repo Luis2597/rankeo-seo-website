@@ -21,7 +21,7 @@ add_action('wp_head', function () {
        . 'html body .wpforms-container .wpforms-field-sublabel{font-size:12px!important;color:rgba(255,255,255,.62)!important}'
        . 'html body .wpforms-container .wpforms-field ul li label.wpforms-field-label-inline{font-size:14px!important;color:rgba(255,255,255,.8)!important}'
        . 'html body .wpforms-container button.wpforms-submit[id^="wpforms-submit"]{font-size:14px!important;letter-spacing:.14em!important}'
-       . 'html body #wpforms-submit-80{font-size:14px!important}'
+       . 'html body.page-id-100 #wpforms-submit-80.wpforms-submit{font-size:14px!important;letter-spacing:.12em!important;white-space:nowrap!important;height:auto!important;min-height:52px!important;padding:14px 20px!important;line-height:1.2!important}'
        . 'html body .wpforms-container .wpforms-submit:active{transform:scale(.97)}'
        . 'html body .fl-tag{font-size:12px!important}'
        . 'a[href$="rankeo.agency"],a[href$="rankeo.agency"] span{font-size:11px!important}'
