@@ -563,9 +563,10 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:64px 48p
   <div class="hero-bg">
     <!-- Aerial private aviation video — muted autoplay loop -->
     <video class="hero-video" id="hero-video" muted loop playsinline preload="none"
-      poster="https://jetcab.mx/wp-content/uploads/2026/10/jetcab-experience-poster.jpg"
+      data-poster="https://jetcab.mx/wp-content/uploads/2026/10/jetcab-experience-poster.jpg"
       data-src="https://jetcab.mx/wp-content/uploads/2026/10/jetcab-experience3-1080.mp4"
-      data-src-m="https://jetcab.mx/wp-content/uploads/2026/10/jetcab-experience3-vert.mp4" data-poster-m="https://jetcab.mx/wp-content/uploads/2026/10/jetcab-experience3-vert.jpg"></video>
+      data-src-m="https://jetcab.mx/wp-content/uploads/2026/10/jetcab-experience3-vert-lite.mp4" data-poster-m="https://jetcab.mx/wp-content/uploads/2026/10/jetcab-experience3-vert.jpg"></video>
+    <script>(function(v){if(v)v.poster=v.getAttribute(window.matchMedia("(min-width: 900px)").matches?"data-poster":"data-poster-m")||v.getAttribute("data-poster");})(document.getElementById("hero-video"));</script>
   </div>
   <div class="hero-grain" aria-hidden="true"></div>
   <canvas id="hero-canvas" aria-hidden="true"></canvas>
@@ -1323,9 +1324,8 @@ document.querySelectorAll('.faq-q').forEach(function(q){
   // Video de la experiencia (720p en celular 1.9 MB, 1080p en escritorio 4.4 MB) que se carga después de mostrar la página
   var c = navigator.connection || {};
   if (c.saveData || /2g/.test(c.effectiveType || '')) return;
-  if (!window.matchMedia('(min-width: 900px)').matches && v.getAttribute('data-poster-m')) v.poster = v.getAttribute('data-poster-m');
   function go(){ v.src = v.getAttribute(window.matchMedia('(min-width: 900px)').matches ? 'data-src' : 'data-src-m'); v.load(); var p = v.play(); if (p && p.catch) p.catch(function(){}); }
-  if (document.readyState === 'complete') setTimeout(go, 600); else window.addEventListener('load', function(){ setTimeout(go, 600); });
+  if (document.readyState === 'complete') setTimeout(go, 1800); else window.addEventListener('load', function(){ setTimeout(go, 1800); });
 })();
 
 // ─── CANVAS FLIGHT-PATH PARTICLE NETWORK ─────────────────────────────────────
