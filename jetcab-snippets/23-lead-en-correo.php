@@ -46,4 +46,13 @@ add_action('rest_api_init', function () {
             return array('ok' => true, 'mail' => (bool) $sent);
         },
     ));
+    // Consulta de las solicitudes guardadas (solo administradores).
+    register_rest_route('jetcab/v1', '/leads', array(
+        'methods'             => 'GET',
+        'permission_callback' => function () { return current_user_can('manage_options'); },
+        'callback'            => function () {
+            $log = get_option('jetcab_leads_en', array());
+            return is_array($log) ? $log : array();
+        },
+    ));
 });
