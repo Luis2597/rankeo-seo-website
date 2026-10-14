@@ -35,7 +35,7 @@ Precios por aeronave, sencillo, desde Toluca, en USD:
 
 Precio base por vuelo (sin avión asignado; dilo así): Acapulco desde 1,500 USD (45 min), Querétaro desde 3,000 (35 min), Mazatlán desde 7,500, McAllen desde 8,000 (1 h 30 min), San Diego desde 9,000 (3 h 20 min), Tijuana desde 12,000 (3 h 10 min), Las Vegas desde 15,000 (3 h 50 min), La Habana desde 1,800 (2 h 30 min).
 
-Por clase: light jet desde 80,000 MXN en ruta corta; long range intercontinental (Europa, España) desde 100,000 USD.
+Por clase: light jet desde 1,500 USD en ruta corta; long range intercontinental (Europa, España) desde 100,000 USD.
 
 Tarifas por hora publicadas en la página en español (úsalas como «desde»): jet de corto alcance 1,700 USD/h; medio alcance 2,700 USD/h; largo alcance 5,400 USD/h; helicóptero monomotor (Bell 206) 1,500 USD/h; helicóptero bimotor (AW139) 3,500 USD/h; ambulancia aérea 2,700 USD/h.
 

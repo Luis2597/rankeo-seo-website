@@ -33,7 +33,7 @@ Prices in USD, one-way, per aircraft (not per seat), departing Toluca Internatio
 - McAllen from 8,000; San Diego from 9,000; Tijuana from 12,000; Las Vegas from 15,000 (base flight, aircraft assigned at quote)
 
 ## By aircraft class
-- Light jet, short domestic route: from 80,000 MXN
+- Light jet, short domestic route: from 1,500 USD
 - Long range, intercontinental (Europe): from 100,000 USD
 - Hourly reference: short-range jet from 1,700 USD/h; midsize from 2,700 USD/h; long range from 5,400 USD/h
 
