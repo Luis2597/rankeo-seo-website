@@ -1,24 +1,24 @@
 {
  "ig": {"tpl": "errfix",
-  "cover": {"img": "p02.jpg", "pos": "center 40%", "h": "5 errores que <br>*te esconden* <br>en Google Maps"},
+  "cover": {"img": "unsplash/1659872078778-5acbe1bdb143.jpg", "pos": "center 40%", "h": "5 errores que <br>*te esconden* <br>en Google Maps"},
   "body": [
-   {"err": "Categoría equivocada", "sol": "La categoría exacta de lo que vendes", "p": "Google te muestra según tu categoría principal. Si dice «tienda» y vendes llantas, <b>no sales cuando buscan llantas</b>."},
-   {"err": "Horarios viejos", "sol": "Horarios al día, festivos incluidos", "p": "Un cliente que llega y encuentra cerrado <b>no vuelve</b>. Y además deja una mala reseña."},
-   {"err": "Cero fotos reales", "sol": "Fotos de tu local, tu equipo y tu trabajo", "p": "Las fichas con fotos propias <b>generan más confianza</b> que las que solo tienen el logo. Sube nuevas cada mes."},
-   {"err": "Reseñas sin respuesta", "sol": "Responde todas, buenas y malas", "p": "Quien lee tus reseñas también lee cómo contestas. <b>Una respuesta amable vende</b> más que cinco estrellas solas."},
-   {"err": "Datos distintos en cada sitio", "sol": "El mismo nombre, dirección y teléfono", "p": "Tu web, Maps, Facebook y directorios deben decir lo mismo. <b>Si no coinciden, Google duda</b> y te muestra menos."}
+   {"img": "unsplash/1658077830601-8903acdbd3b0.jpg", "pos": "center 50%", "err": "Categoría equivocada", "sol": "La categoría exacta de lo que vendes", "p": "Google te muestra según tu categoría principal. Si dice «tienda» y vendes llantas, <b>no sales cuando buscan llantas</b>."},
+   {"img": "unsplash/1694094244883-4da7785493ab.jpg", "pos": "center 40%", "err": "Horarios viejos", "sol": "Horarios al día, festivos incluidos", "p": "Un cliente que llega y encuentra cerrado <b>no vuelve</b>. Y además deja una mala reseña."},
+   {"img": "unsplash/1615006801329-249dcef6aa0f.jpg", "pos": "center 45%", "err": "Cero fotos reales", "sol": "Fotos de tu local, tu equipo y tu trabajo", "p": "Las fichas con fotos propias <b>generan más confianza</b> que las que solo tienen el logo. Sube nuevas cada mes."},
+   {"img": "unsplash/1576176243977-7c62b6472a31.jpg", "pos": "center 35%", "err": "Reseñas sin respuesta", "sol": "Responde todas, buenas y malas", "p": "Quien lee tus reseñas también lee cómo contestas. <b>Una respuesta amable vende</b> más que cinco estrellas solas."},
+   {"img": "unsplash/1759256243611-502772ac391b.jpg", "pos": "center 50%", "err": "Datos distintos en cada sitio", "sol": "El mismo nombre, dirección y teléfono", "p": "Tu web, Maps, Facebook y directorios deben decir lo mismo. <b>Si no coinciden, Google duda</b> y te muestra menos."}
   ],
-  "close": {"h": "¿Cuántos *tiene tu ficha*?", "p": "Escríbenos <b>\"AUDITORÍA\"</b> por DM y revisamos tu ficha de Google y tu web gratis.", "btn": "Revisar mi ficha"}
+  "close": {"img": "unsplash/1719934683539-69895fe5fb2e.jpg", "pos": "center", "h": "¿Cuántos *tiene tu ficha*?", "p": "Escríbenos <b>\"AUDITORÍA\"</b> por DM y revisamos tu ficha de Google y tu web gratis.", "btn": "Revisar mi ficha"}
  },
  "li": {"tpl": "editorial",
-  "cover": {"img": "ai/a03.jpg", "pos": "center 0%", "k": "GEO · 5 SEÑALES", "h": "¿Por qué ChatGPT recomienda *a tu competencia*?", "sub": "Lo que revisa la IA antes de nombrar un negocio, y cómo trabajarlo en el tuyo."},
+  "cover": {"img": "unsplash/1677691820099-a6e8040aa077.jpg", "pos": "center 35%", "k": "GEO · 5 SEÑALES", "h": "¿Por qué ChatGPT recomienda *a tu competencia*?", "sub": "Lo que revisa la IA antes de nombrar un negocio, y cómo trabajarlo en el tuyo."},
   "body": [
-   {"k": "CLARIDAD", "img": "tech/t12.jpg", "h": "Dices qué haces, *dónde y para quién*", "p": "Si tu web no lo explica en una frase, <b>la IA no tiene qué repetir</b> cuando alguien pregunta por tu servicio."},
-   {"k": "CONSISTENCIA", "img": "tech/t04.jpg", "h": "Los mismos datos *en todas partes*", "p": "Nombre, servicios y ubicación iguales en tu web, Google y directorios. <b>La IA confía en lo que coincide.</b>"},
-   {"k": "MENCIONES", "img": "tech/t05.jpg", "h": "Otros hablan *de ti*", "p": "Reseñas, medios y directorios de tu sector. <b>Lo que se dice fuera de tu web</b> pesa más que lo que dices tú."},
-   {"k": "RESPUESTAS", "img": "tech/t17.jpg", "h": "Respondes *lo que te preguntan*", "p": "Guías y preguntas frecuentes escritas como habla tu cliente. <b>La IA cita a quien ya respondió.</b>"},
-   {"k": "BASE TÉCNICA", "img": "tech/t01.jpg", "h": "Google *ya te entiende*", "p": "Web rápida, indexada y con datos estructurados. <b>Sin SEO no hay GEO:</b> la IA se apoya en lo que Google ya considera confiable."}
+   {"k": "CLARIDAD", "img": "unsplash/1548611716-ad782502c9d2.jpg", "pos": "center 55%", "h": "Dices qué haces, *dónde y para quién*", "p": "Si tu web no lo explica en una frase, <b>la IA no tiene qué repetir</b> cuando alguien pregunta por tu servicio."},
+   {"k": "CONSISTENCIA", "img": "unsplash/1672872476232-da16b45c9001.jpg", "pos": "center 50%", "h": "Los mismos datos *en todas partes*", "p": "Nombre, servicios y ubicación iguales en tu web, Google y directorios. <b>La IA confía en lo que coincide.</b>"},
+   {"k": "MENCIONES", "img": "unsplash/1583244532610-2a234e7c3eca.jpg", "pos": "center 40%", "h": "Otros hablan *de ti*", "p": "Reseñas, medios y directorios de tu sector. <b>Lo que se dice fuera de tu web</b> pesa más que lo que dices tú."},
+   {"k": "RESPUESTAS", "img": "unsplash/1651804805680-3565ef7807f6.jpg", "pos": "center 50%", "h": "Respondes *lo que te preguntan*", "p": "Guías y preguntas frecuentes escritas como habla tu cliente. <b>La IA cita a quien ya respondió.</b>"},
+   {"k": "BASE TÉCNICA", "img": "unsplash/1620794511798-d7ba5299a087.jpg", "pos": "center 50%", "h": "Google *ya te entiende*", "p": "Web rápida, indexada y con datos estructurados. <b>Sin SEO no hay GEO:</b> la IA se apoya en lo que Google ya considera confiable."}
   ],
-  "close": {"img": "Vtl6cOhO87Y.jpg", "pos": "center 60%", "h": "¿Qué dice la IA *de tu negocio*?", "p": "Te mostramos cómo te describen hoy ChatGPT, Gemini y Perplexity con una auditoría SEO + GEO gratuita.", "btn": "Solicitar auditoría"}
+  "close": {"img": "unsplash/1551726742-e7fef3db157e.jpg", "pos": "center 50%", "h": "¿Qué dice la IA *de tu negocio*?", "p": "Te mostramos cómo te describen hoy ChatGPT, Gemini y Perplexity con una auditoría SEO + GEO gratuita.", "btn": "Solicitar auditoría"}
  }
 }
