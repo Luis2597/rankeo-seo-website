@@ -12,6 +12,8 @@ add_action('wp_head', function () {
        . '.entry-content p a:not([class]),.entry-content li a:not([class]),.jc-more a,.jc-benefits a,.jc-section p a:not([class]),.jcr p a:not([class]),.jch p a:not([class]),.jc-autor a{text-decoration:underline;text-underline-offset:3px}'
        // Botón de llamar (snippet 20) encima del WhatsApp flotante de algunas páginas: se sube para que ambos se vean
        . 'body:has(a[aria-label="WhatsApp JETCAB"][style*="position:fixed"]) .jc-call{bottom:92px}'
+       // /en/ (página 2895) fija el selector de idioma arriba en móvil y otro snippet lo manda abajo: sin esto se estira entre los dos
+       . 'body.page-id-2895 .jc-lang-switch{bottom:auto!important;height:auto!important}'
        . '.jc-legal{background:#0D0D0D;border-top:1px solid rgba(255,255,255,.08);padding:18px 24px 22px;font:14px/1.5 Barlow,Arial,sans-serif;color:#b5b5b5;text-align:center}'
        . '.jc-legal nav{display:flex;flex-wrap:wrap;gap:4px 22px;justify-content:center}'
        . '.jc-legal a{color:#d6d6d6;text-decoration:underline;text-underline-offset:3px;display:inline-block;min-height:44px;line-height:44px}'
@@ -30,7 +32,8 @@ add_action('wp_head', function () {
 
 // Enlaces legales + aviso de precios al pie de todas las páginas WP (ES o EN según la página).
 add_action('wp_footer', function () {
-    if (is_admin()) return;
+    // /en/ (página 2895) ya trae sus enlaces legales, y su CSS fija todo <nav> arriba: la fila taparía el encabezado
+    if (is_admin() || is_page(2895)) return;
     $en = function_exists('jetcab_is_en') && jetcab_is_en();
     $l = $en
         ? array('Legal', array('Terms & conditions' => 'https://jetcab.mx/terms/', 'Privacy policy' => 'https://jetcab.mx/privacy/', 'Cookie settings' => '#cookie-settings', 'Cancellation policy (Spanish)' => 'https://jetcab.mx/politica-de-cancelacion/'),

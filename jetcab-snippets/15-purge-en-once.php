@@ -3,7 +3,7 @@
 add_action('init', function () {
     if (get_option('jetcab_en_purge_20261014d') === '1') return;
     delete_transient('jetcab_en_v3');
-    // Sin esto WPCode puede seguir sirviendo la copia anterior de /en/ (visto el 13 oct 2026).
-    if (function_exists('wpcode') && isset(wpcode()->cache) && method_exists(wpcode()->cache, 'cache_all_loaded_snippets')) wpcode()->cache->cache_all_loaded_snippets();
+    // No llamar aquí a wpcode()->cache->cache_all_loaded_snippets(): en 'init' la lista de WPCode aún está incompleta,
+    // la caché queda sin sus snippets PHP y /en/ deja de servirse desde Vercel (pasó el 14 oct 2026).
     update_option('jetcab_en_purge_20261014d', '1');
 }, 1);
