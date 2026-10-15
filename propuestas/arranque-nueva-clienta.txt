@@ -1,0 +1,9 @@
+Sesión nueva: propuesta para cerrar a una nueva clienta de Rankeo.
+
+1. Lee propuestas/caso-jetcab-cifras-oct2026.md (cifras verificadas del caso JETCAB y reglas de marca) y CLAUDE.md.
+2. Pregúntale a Luis en español, breve: nombre de la clienta, giro del negocio, ciudad o país, sitio web (si tiene) y qué le interesa o qué problema tiene. No armes nada personalizado sin esos datos.
+3. Con su respuesta:
+   - revisa su sitio y su competencia con DataForSEO (credenciales en ~/.dataforseo_creds);
+   - arma un PDF de propuesta con la marca Rankeo: el caso de éxito de JETCAB con sus cifras reales, el diagnóstico breve de la clienta y una oferta atractiva basada en los planes vigentes ($199 / $349 / $649), sin cambiar precios sin autorización de Luis.
+   Antes de entregarlo, revisa que el PDF no tenga páginas en blanco.
+4. Guarda todo en propuestas/ y mándale el PDF a Luis.
