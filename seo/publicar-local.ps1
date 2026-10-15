@@ -26,6 +26,10 @@ try {
     Paso 'git commit' { git commit -m "Blog: publicar post programado ($hoy)" -- blog sitemap.xml llms.txt } | Out-Null
     Paso 'git push' { git push origin master } | Out-Null
     Log "Publicado y subido ($(git rev-parse --short HEAD))."
+    # Avisar a Bing cuando Vercel ya publicó (si falla, el post ya está arriba: solo se registra).
+    Start-Sleep -Seconds 120
+    $aviso = python seo/indexnow.py --ultimo-commit 2>&1 | Out-String
+    Log $aviso.Trim()
 } catch {
     Log "ERROR: $_"
     exit 1
