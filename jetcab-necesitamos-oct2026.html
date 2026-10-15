@@ -17,7 +17,8 @@ body{font-family:"Plus Jakarta Sans",sans-serif;background:var(--bg);color:var(-
 .hero p{color:rgba(255,255,255,.7);max-width:640px}
 .meta{margin-top:18px;font-size:12px;color:rgba(255,255,255,.5)}
 .wrap{padding:8px 48px 40px}
-.prio{margin-top:28px;break-inside:avoid-page}
+.prio{margin-top:28px}
+.prio-hd{break-after:avoid}
 .prio-hd{display:flex;align-items:baseline;gap:12px;border-bottom:2px solid var(--ink);padding-bottom:6px;margin-bottom:12px}
 .prio-hd h2{font-family:Syne,sans-serif;font-weight:800;font-size:20px;letter-spacing:-.02em}
 .prio-hd small{color:var(--sub);font-size:12px}
@@ -34,7 +35,15 @@ body{font-family:"Plus Jakarta Sans",sans-serif;background:var(--bg);color:var(-
 .ans{margin-top:10px;border:1px dashed #C9C3BA;border-radius:8px;min-height:74px;padding:8px 10px;background:repeating-linear-gradient(transparent 0 23px,#ECE7DF 23px 24px);background-position:0 30px;background-clip:content-box}
 .ans span{font-size:11px;font-weight:700;color:var(--sub);text-transform:uppercase;letter-spacing:.05em;background:#fff}
 .foot{margin-top:28px;font-size:12px;color:var(--sub);border-top:1px solid var(--bd);padding-top:12px}
-@page{size:A4;margin:0}
+@page{size:A4;margin:12mm 0}
+@page:first{margin-top:0}
+.thanks{margin-top:28px;background:var(--ink);color:#fff;border-radius:14px;padding:22px 24px;break-inside:avoid}
+.thanks h2{font-family:Syne,sans-serif;font-size:19px;margin-bottom:8px}
+.thanks p{color:rgba(255,255,255,.75);font-size:13.5px}
+.thanks .motto{margin-top:14px;padding-top:12px;border-top:1px solid rgba(255,255,255,.15);font-family:Syne,sans-serif;font-weight:800;font-size:15px;color:#fff;letter-spacing:-.01em}
+.thanks .motto{}
+.thanks .sig{margin-top:12px;color:#fff;font-weight:700}
+.thanks .sig span{display:block;font-weight:400;color:rgba(255,255,255,.6);font-size:12px}
 @media print{body{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
 </style>
 </head>
@@ -186,6 +195,13 @@ body{font-family:"Plus Jakarta Sans",sans-serif;background:var(--bg);color:var(-
     <li><b>Número de cotizaciones reales</b> (punto 2)</li>
     <li><b>Si pueden operar vuelos desde Estados Unidos</b> (punto 3)</li>
   </ul>
+</div>
+
+<div class="thanks">
+  <h2>Gracias por su confianza</h2>
+  <p>Gracias por el tiempo que se toman para responder. Cada dato que nos comparten se convierte en contenido más preciso, en un perfil de Google más completo y en más clientes que los encuentran a ustedes primero. Si algo no queda claro, con gusto lo revisamos juntos por WhatsApp o en una llamada.</p>
+  <p class="motto">«Tus clientes ya no solo buscan en Google. Nosotros decidimos dónde apareces: en todos.»</p>
+  <p class="sig">Luis Díaz<span>Fundador, Rankeo</span></p>
 </div>
 
 <div class="foot"><b>Aviso de confidencialidad.</b> Este documento y la información que contiene son confidenciales y para uso exclusivo de JETCAB y Rankeo. No debe compartirse con terceros sin autorización de ambas partes.<br><br>Rankeo · SEO + GEO · WhatsApp +52 55 3289 4890 · rankeo.agency</div>
