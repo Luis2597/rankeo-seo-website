@@ -1,0 +1,24 @@
+{
+ "ig": {"tpl": "editorial",
+  "cover": {"img": "unsplash/1594663653925-365bcbf7ef86.jpg", "pos": "center 40%", "k": "SEO LOCAL · 5 COSAS", "h": "Antes de ir, *te busca* en su celular", "sub": "Lo que revisa tu cliente en Google antes de decidir si va contigo o con el de enfrente."},
+  "body": [
+   {"k": "HORARIO", "img": "unsplash/1599595344070-c456bea6ee98.jpg", "pos": "center 45%", "h": "Si estás *abierto ahora*", "p": "El filtro «abierto ahora» es de los más usados. <b>Si tu horario está mal, no apareces</b> justo cuando te buscan."},
+   {"k": "CERCANÍA", "img": "unsplash/1604357209793-fca5dca89f97.jpg", "pos": "center 55%", "h": "Qué tan *cerca* estás", "p": "Google ordena por distancia y relevancia. <b>Tu dirección exacta y tu zona en la descripción</b> te ponen en el mapa correcto."},
+   {"k": "FACHADA", "img": "unsplash/1588848567248-8203ed798b4e.jpg", "pos": "center 50%", "h": "Cómo se ve *tu entrada*", "p": "Quiere reconocer el lugar al llegar. <b>Fotos reales de tu fachada, de día y de noche,</b> le quitan la duda."},
+   {"k": "RESEÑAS", "img": "unsplash/1567925034354-b1d753b4ba24.jpg", "pos": "center 35%", "h": "Qué dicen *otros clientes*", "p": "Lee primero las más recientes. <b>Cinco reseñas de este mes</b> pesan más que cincuenta de hace dos años."},
+   {"k": "CONTACTO", "img": "unsplash/1517940322679-2b003a168fd2.jpg", "pos": "center 40%", "h": "Si te puede *escribir ya*", "p": "WhatsApp, teléfono y una web que cargue rápido. <b>Si tiene que buscar cómo contactarte, se va.</b>"}
+  ],
+  "close": {"img": "unsplash/1589435155166-9c5b148060be.jpg", "pos": "center 50%", "h": "¿Qué ve hoy *tu cliente*?", "p": "Escríbenos \"AUDITORÍA\" por DM y revisamos gratis tu ficha de Google y tu web.", "btn": "Quiero mi auditoría"}
+ },
+ "li": {"tpl": "errfix",
+  "cover": {"img": "ai/a06.jpg", "pos": "center 40%", "h": "5 errores que *te borran* de las respuestas de la IA"},
+  "body": [
+   {"img": "ai/a02.jpg", "pos": "center 40%", "err": "Bloquear a los bots de IA", "sol": "Revisa tu robots.txt hoy", "p": "Muchos sitios bloquean a GPTBot o PerplexityBot sin saberlo. <b>Si no te pueden leer, no te pueden citar.</b>"},
+   {"img": "tech/t13.jpg", "pos": "center 50%", "err": "Contenido solo en JavaScript", "sol": "El texto, en el HTML", "p": "Varios rastreadores de IA no ejecutan JavaScript. <b>Si tu texto aparece después de cargar,</b> para ellos la página está vacía."},
+   {"img": "ai/a10.jpg", "pos": "center 40%", "err": "Textos que no responden", "sol": "La respuesta en las primeras líneas", "p": "La IA busca frases que pueda repetir. <b>Responde primero y explica después.</b>"},
+   {"img": "ai/a14.jpg", "pos": "center 50%", "err": "Nadie habla de ti", "sol": "Menciones en sitios de tu sector", "p": "Directorios, medios y reseñas. <b>La IA cruza fuentes</b> antes de recomendar a alguien."},
+   {"img": "tech/t14.jpg", "pos": "center 50%", "err": "Sin datos estructurados", "sol": "Schema de negocio, servicios y FAQ", "p": "El marcado schema dice <b>qué eres, qué vendes y dónde</b> sin que Google ni la IA tengan que adivinar."}
+  ],
+  "close": {"img": "ai/a07.jpg", "pos": "center", "h": "¿Te cita *la IA*?", "p": "Revisamos tu sitio con una auditoría <b>SEO + GEO gratuita</b> y te decimos qué arreglar primero.", "btn": "Solicitar auditoría"}
+ }
+}
