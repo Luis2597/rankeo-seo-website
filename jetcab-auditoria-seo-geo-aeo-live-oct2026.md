@@ -324,3 +324,7 @@ Resultado final: 0 enlaces rotos, 0 anclas rotas, 0 errores de consola, 0 desbor
 - /blog/ y /private-jet-guides/ («Private Jet Blog») listan solo artículos publicados en tarjetas con imagen, categoría, resumen, autor («Equipo de operaciones de JETCAB» / «JETCAB operations team») y fecha (snippet 26).
 - Navegadores: el hosting manda Cache-Control max-age=2678400 en HTML; quien ya visitó el sitio ve copias viejas. Pendiente pedir a GoDaddy bajar el TTL de HTML a 1 h.
 - Autor real: pendiente nombre y cargo (José Chávez u otra persona) para pasar de Organization a Person.
+
+## 10. Seguimiento semanal, 19 de octubre
+
+Semana del 11 al 17 de octubre contra la anterior: impresiones 1.756 a 5.164 (casi el triple), clics 27 a 70, posición media 10,2 a 7,5. La página de precios lidera con 1.470 impresiones y 15 clics en posición 4,8; helicópteros CDMX pasa de 0 a 11 clics (posición 10,9 a 6,4). «cuanto cuesta un jet privado» suma 118 impresiones en posición 4,4. Sesiones orgánicas 111 a 117 y directas 44 a 89. Eventos clave ya contando: 3 cotizaciones, 2 WhatsApp y 1 teléfono marcados como conversión. Las seis URLs pendientes de la semana pasada ya están indexadas. Sin cambios de título esta semana: los paneles de wmux están editando JETCAB en paralelo (snippets 35 a 39 y títulos de precios), así que se evitó pisar su trabajo. Por mejorar: renta-de-aviones-privados (216 impresiones, 0 clics, posición 10,1) y Cancún (posición 23,9).
