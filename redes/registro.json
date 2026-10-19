@@ -2,5 +2,7 @@
  {"fecha": "2026-10-15", "red": "instagram", "carrusel": 12, "plantilla": "errfix", "tema": "5 errores que te esconden en Google Maps", "link": "https://www.instagram.com/p/Deh0mwmnYBf/", "nota": "reemplaza al carrusel 10 (https://www.instagram.com/p/DehwkC3iRxJ/), rechazado por fotos genéricas; Luis lo borra"},
  {"fecha": "2026-10-15", "red": "linkedin", "carrusel": 13, "plantilla": "editorial", "tema": "Por qué ChatGPT recomienda a tu competencia (5 señales GEO)", "link": "https://www.linkedin.com/feed/update/urn:li:ugcPost:7516596925849079808", "nota": "reemplaza al carrusel 11 (urn:li:ugcPost:7516588214783119360); Luis lo borra"},
  {"fecha": "2026-10-16", "red": "instagram", "carrusel": 14, "plantilla": "editorial", "tema": "Antes de ir, te busca en su celular (5 cosas que revisa tu cliente en Google)", "link": "https://www.instagram.com/p/DeksnKgnT9U/"},
- {"fecha": "2026-10-16", "red": "linkedin", "carrusel": 15, "plantilla": "errfix", "tema": "5 errores que te borran de las respuestas de la IA", "link": "https://www.linkedin.com/feed/update/urn:li:ugcPost:7517001569758961664"}
+ {"fecha": "2026-10-16", "red": "linkedin", "carrusel": 15, "plantilla": "errfix", "tema": "5 errores que te borran de las respuestas de la IA", "link": "https://www.linkedin.com/feed/update/urn:li:ugcPost:7517001569758961664"},
+ {"fecha": "2026-10-19", "red": "instagram", "carrusel": 16, "plantilla": "errfix", "tema": "5 errores que hacen que tu web no venda", "link": "https://www.instagram.com/p/DerrNvuFF0I/"},
+ {"fecha": "2026-10-19", "red": "linkedin", "carrusel": 17, "plantilla": "editorial", "tema": "¿La IA ya te manda clientes? 5 señales para medirlo", "link": "", "error": "pendiente: extensión de Chrome desconectada"}
 ]

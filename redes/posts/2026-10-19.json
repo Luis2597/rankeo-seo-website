@@ -1,0 +1,24 @@
+{
+ "ig": {"tpl": "errfix",
+  "cover": {"img": "unsplash/1503951914875-452162b0f3f1.jpg", "pos": "center 35%", "h": "5 errores que hacen que tu web *no venda*"},
+  "body": [
+   {"img": "unsplash/1506377711776-dbdc2f3c20d9.jpg", "pos": "center 45%", "err": "WhatsApp escondido", "sol": "Botón de WhatsApp en cada página", "p": "Tu cliente quiere preguntar ya. <b>Si tiene que buscar cómo escribirte,</b> le escribe a otro."},
+   {"img": "unsplash/1607662314436-fae8c0794974.jpg", "pos": "center 40%", "err": "Tarda en abrir", "sol": "Rápida en el celular", "p": "Casi todos te ven desde el teléfono. <b>Fotos pesadas y plugins de más</b> hacen que se vayan antes de ver nada."},
+   {"img": "unsplash/1603912699214-92627f304eb6.jpg", "pos": "center 50%", "err": "No dices dónde estás", "sol": "Ciudad y zona desde el inicio", "p": "Quien te busca quiere algo cerca. <b>Pon tu ciudad en el título y tu dirección visible,</b> y Google también lo entiende."},
+   {"img": "unsplash/1621605815971-fbc98d665033.jpg", "pos": "center 50%", "err": "Cero precios", "sol": "Al menos un «desde»", "p": "No hace falta tu lista completa. <b>Un rango o un precio de entrada</b> filtra curiosos y atrae a quien sí va a comprar."},
+   {"img": "unsplash/1585747860715-2ba37e788b70.jpg", "pos": "center 45%", "err": "Nada que lo pruebe", "sol": "Trabajos y reseñas reales", "p": "Fotos de lo que haces y opiniones de clientes con nombre. <b>Eso convence más que cualquier frase bonita.</b>"}
+  ],
+  "close": {"img": "unsplash/1545262722-9e0d80a0bc01.jpg", "pos": "center 40%", "h": "¿Cuántos *tiene tu web*?", "p": "Escríbenos <b>\"AUDITORÍA\"</b> por DM y revisamos tu web y tu ficha de Google gratis.", "btn": "Revisar mi web"}
+ },
+ "li": {"tpl": "editorial",
+  "cover": {"img": "ai/a13.jpg", "pos": "center 45%", "k": "MEDICIÓN · 5 SEÑALES", "h": "¿La IA ya te *manda clientes*?", "sub": "Cinco datos que puedes revisar esta semana para saber si apareces en ChatGPT, Perplexity y AI Overviews."},
+  "body": [
+   {"k": "REFERIDOS", "img": "tech/t01.jpg", "pos": "center 50%", "h": "Visitas que llegan *desde ChatGPT*", "p": "En Google Analytics revisa tus fuentes de tráfico. <b>chatgpt.com y perplexity.ai</b> ya aparecen como sitios que te mandan visitas."},
+   {"k": "PRUEBA", "img": "tech/t09.jpg", "pos": "center 40%", "h": "Pregunta *como tu cliente*", "p": "Escribe en ChatGPT lo que buscaría alguien que te necesita. <b>Anota si te nombra, a quién nombra y qué cita.</b>"},
+   {"k": "SEARCH CONSOLE", "img": "tech/t11.jpg", "pos": "center 50%", "h": "Más impresiones, *menos clics*", "p": "Puede ser AI Overviews respondiendo arriba de ti. <b>Revisa qué consultas cambiaron</b> y si tu página es la citada."},
+   {"k": "MARCA", "img": "ai/a15.jpg", "pos": "center 40%", "h": "Más búsquedas de *tu nombre*", "p": "Quien recibe una recomendación de la IA luego te busca por nombre. <b>Si eso crece, algo está funcionando.</b>"},
+   {"k": "CLIENTES", "img": "tech/t08.jpg", "pos": "center 45%", "h": "Pregunta *cómo te conocieron*", "p": "Agrega «ChatGPT u otra IA» como opción en tu formulario. <b>Es el dato más directo que vas a tener.</b>"}
+  ],
+  "close": {"img": "ai/a11.jpg", "pos": "center 50%", "h": "¿Sabes *cómo te ve* la IA?", "p": "Con una auditoría SEO + GEO gratuita te mostramos qué dicen hoy de tu negocio ChatGPT, Gemini y Perplexity.", "btn": "Solicitar auditoría"}
+ }
+}
