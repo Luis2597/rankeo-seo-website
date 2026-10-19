@@ -124,6 +124,8 @@ body {
 img, video, canvas { display: block; max-width: 100%; }
 a { color: inherit; text-decoration: none; }
 button { font: inherit; color: inherit; background: none; border: 0; padding: 0; cursor: pointer; }
+a, button { touch-action: manipulation; }
+button, .pill, .ulink, .nav a, .menu a, .wa { -webkit-user-select: none; user-select: none; -webkit-touch-callout: none; }
 :focus-visible { outline: 1px solid var(--plat); outline-offset: 4px; }
 ::selection { background: var(--plat); color: var(--obs); }
 .wrap { width: 100%; max-width: 1480px; margin-inline: auto; padding-left: max(var(--gutter), env(safe-area-inset-left)); padding-right: max(var(--gutter), env(safe-area-inset-right)); }
@@ -244,6 +246,7 @@ html.js .mani-text .w { opacity: .4; }
 /* ANATOMÍA DEL ANILLO 3D */
 .gem { position: relative; }
 .gem-sticky { position: relative; height: 100vh; height: 100svh; min-height: 680px; overflow: hidden; }
+.gem-stage { position: absolute; inset: 0; }
 .gem-canvas { position: absolute; inset: 0; width: 100%; height: 100%; }
 .gem-fallback { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: .55; display: none; }
 .gem.no-webgl .gem-fallback { display: block; }
@@ -441,12 +444,16 @@ html.js .mani-text .w { opacity: .4; }
   /* Colecciones: scroll horizontal nativo con snap */
   .hs-track { height: auto; padding-block: 110px 80px; overflow-x: auto; width: auto; scroll-snap-type: x mandatory; scrollbar-width: none; overscroll-behavior-x: contain; scroll-padding-inline: var(--gutter); }
   .hs-track::-webkit-scrollbar { display: none; }
-  .hs-intro { width: 78vw; }
+  .hs-intro { width: 66vw; }
   .panel, .panel.wide { width: 78vw; height: 112vw; max-height: 620px; scroll-snap-align: start; }
   .panel-media img, .panel-media video { left: 0; width: 100%; }
   .hs-bar, .hs-nav { display: none; }
   .gem { height: auto; }
-  .gem-ui { padding-top: 92px; padding-bottom: 24px; }
+  .gem-sticky { height: auto; min-height: 0; display: flex; flex-direction: column; padding-block: 96px 40px; }
+  .gem-ui { display: contents; }
+  .gem-ui > :nth-child(2) { display: none; }
+  .gem-stage { position: relative; order: 2; height: min(118vw, 540px); margin-block: 8px; }
+  .gem-ui > :last-child { order: 3; }
   .gem-head p { font-size: 15px; }
   /* En celular: puntos numerados sobre cada pieza y la leyenda abajo */
   .part .ln, .part .txt { display: none; }
@@ -468,6 +475,7 @@ html.js .mani-text .w { opacity: .4; }
   .facts { grid-template-columns: 1fr 1fr; }
   .facts div:nth-child(3) { padding-left: 0; border-left: 0; }
   .facts div { padding-bottom: 28px; }
+  .facts b { font-size: 1.7rem; }
   .steps li { grid-template-columns: 56px 1fr; }
   .steps li p { grid-column: 2; }
 }
@@ -598,6 +606,7 @@ html.js .mani-text .w { opacity: .4; }
   <!-- ANATOMÍA DEL ANILLO 3D -->
   <section class="gem" id="compromiso" aria-labelledby="gem-h">
     <div class="gem-sticky">
+      <div class="gem-stage">
       <canvas class="gem-canvas" id="gemCanvas" aria-hidden="true"></canvas>
       <img class="gem-fallback" src="/demo/img/joyeria/solitarios.jpg" alt="Anillos de compromiso con diamante oval y esmeralda sobre fondo negro" loading="lazy" width="960" height="960">
       <div class="parts" aria-hidden="true">
@@ -605,6 +614,7 @@ html.js .mani-text .w { opacity: .4; }
         <div class="part l" data-part="1" style="--i:1;--len:140px"><span class="dot"><b>2</b></span><i class="ln"></i><div class="txt"><b class="pt">Cabeza de seis uñas</b><p>Platino 950. Sujeta la piedra con el mínimo metal para que le entre luz por los lados.</p></div></div>
         <div class="part l" data-part="2" style="--i:2;--len:80px"><span class="dot"><b>3</b></span><i class="ln"></i><div class="txt"><b class="pt">Pavé</b><p>14 diamantes de 1.3 mm engastados a mano, 0.14 ct en total.</p></div></div>
         <div class="part l" data-part="3" style="--i:3;--len:120px"><span class="dot"><b>4</b></span><i class="ln"></i><div class="txt"><b class="pt">Aro</b><p>Oro amarillo de 18 kilates, 2 mm de ancho, con el sello grabado por dentro.</p></div></div>
+      </div>
       </div>
       <div class="gem-ui">
         <div class="wrap gem-head">
@@ -1215,7 +1225,7 @@ if (renderer) {
     const w = canvas.clientWidth, h = canvas.clientHeight;
     renderer.setSize(w, h, false);
     camera.aspect = w / h;
-    view = w < 700 ? { z0: 11.5, z1: 15.5, ty0: 0.35, ty1: 0.32, x: 0 }
+    view = w < 700 ? { z0: 6.4, z1: 8.4, ty0: 0.2, ty1: 0.44, x: 0 }
       : w < 1100 ? { z0: 8.4, z1: 9.6, ty0: 0.2, ty1: 0.4, x: 0.55 }
       : { z0: 7.6, z1: 8.6, ty0: 0.2, ty1: 0.4, x: w < 1380 ? 1.8 : 1.45 };
     ring.position.x = view.x;
