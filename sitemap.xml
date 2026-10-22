@@ -263,4 +263,12 @@
     <xhtml:link rel="alternate" hreflang="es-MX" href="https://rankeo.agency/blog/como-conseguir-resenas-en-google"/>
   </url>
 
+  <url>
+    <loc>https://rankeo.agency/blog/que-es-seo</loc>
+    <lastmod>2026-10-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="es-MX" href="https://rankeo.agency/blog/que-es-seo"/>
+  </url>
+
 </urlset>
